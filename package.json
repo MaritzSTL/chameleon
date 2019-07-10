@@ -1,0 +1,36 @@
+{
+  "name": "chameleon",
+  "version": "0.0.1",
+  "description": "Chameleon Web Components - A collection of lightweight, unidirectional, framework-agnostic elements based on the Chameleon Design System",
+  "scripts": {
+    "test": "karma start",
+    "build": "rollup --config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "homepage": "https://github.com/MaritzSTL/chameleon#readme",
+  "devDependencies": {
+    "husky": "^3.0.0",
+    "lerna": "^3.15.0",
+    "prettier": "1.18.2",
+    "pretty-quick": "^1.11.1",
+    "rollup": "^1.16.7",
+    "rollup-plugin-babel-minify": "^9.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

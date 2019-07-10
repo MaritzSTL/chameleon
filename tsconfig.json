@@ -1,0 +1,5 @@
+{
+  "compilerOptions": {
+    "target": "es2015" // https://github.com/Polymer/lit-element/issues/54#issuecomment-445558141
+  }
+}

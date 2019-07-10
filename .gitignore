@@ -1,0 +1,16 @@
+# Logs
+npm-debug.log*
+lerna-debug.log*
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# Dependency directories
+node_modules/
+
+# System files
+.DS_Store
+
+# Generated distribution files
+dist/
