@@ -5,7 +5,9 @@ import minify from "rollup-plugin-babel-minify";
 const globalLibs = {
     "lit-element": "litElement"
   },
-  externalLibs = ["lit-element"];
+  externalLibs = ["lit-element"],
+  devPlugins = [resolve(), typescript()],
+  prodPlugins = [resolve(), typescript(), minify({ comments: false })];
 
 export default [
   /**
@@ -20,7 +22,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [resolve(), typescript()]
+    plugins: [...devPlugins]
   },
   {
     input: "packages/button/src/cha-button.ts",
@@ -31,6 +33,6 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [resolve(), typescript(), minify({ comments: false })]
+    plugins: [...prodPlugins]
   }
 ];

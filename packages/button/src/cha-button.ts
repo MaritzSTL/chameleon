@@ -5,6 +5,8 @@ import {
   html,
   property
 } from "lit-element";
+import base from "@cha/theme/base";
+import style from "@cha/theme/base/button";
 
 @customElement("cha-button")
 export default class ChaButton extends LitElement {
@@ -13,6 +15,11 @@ export default class ChaButton extends LitElement {
    */
   @property({ type: Boolean, reflect: true })
   disabled = false;
+
+  /**
+   * Styles
+   */
+  static styles = [base, style];
 
   /**
    * Template
