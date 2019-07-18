@@ -1,0 +1,48 @@
+{
+  "name": "chameleon",
+  "version": "0.0.1",
+  "description": "Chameleon Web Components - A collection of lightweight, unidirectional, framework-agnostic elements based on the Chameleon Design System",
+  "scripts": {
+    "setup": "npm install && lerna exec npm install && lerna exec npm link",
+    "clean": "del-cli node_modules && lerna clean --yes",
+    "test": "karma start",
+    "dev": "start-storybook",
+    "build": "rollup --config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "homepage": "https://github.com/MaritzSTL/chameleon#readme",
+  "devDependencies": {
+    "@storybook/polymer": "^5.1.9",
+    "@types/node": "^12.6.2",
+    "@types/storybook__polymer": "^5.1.0",
+    "@types/webpack-env": "^1.14.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "del-cli": "^2.0.0",
+    "husky": "^3.0.0",
+    "lerna": "^3.15.0",
+    "lit-html": "^1.1.1",
+    "polymer-webpack-loader": "^2.0.3",
+    "prettier": "1.18.2",
+    "pretty-quick": "^1.11.1",
+    "rollup": "^1.16.7",
+    "rollup-plugin-babel-minify": "^9.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

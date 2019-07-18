@@ -1,0 +1,19 @@
+{
+  "name": "@cha/theme",
+  "version": "0.0.1",
+  "description": "Chameleon design language",
+  "main": "base/base.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/core#readme",
+  "dependencies": {
+    "lit-element": "^2.2.0"
+  }
+}
