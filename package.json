@@ -4,6 +4,7 @@
   "description": "Chameleon Web Components - A collection of lightweight, unidirectional, framework-agnostic elements based on the Chameleon Design System",
   "scripts": {
     "setup": "lerna exec npm install && lerna exec npm link",
+    "clean": "del-cli node_modules && lerna clean --yes",
     "test": "karma start",
     "dev": "start-storybook",
     "build": "rollup --config"
@@ -25,6 +26,7 @@
     "@types/webpack-env": "^1.14.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
+    "del-cli": "^2.0.0",
     "husky": "^3.0.0",
     "lerna": "^3.15.0",
     "lit-html": "^1.1.1",
