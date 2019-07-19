@@ -5,7 +5,7 @@
   "scripts": {
     "setup": "npm install && lerna exec npm install && lerna exec npm link",
     "clean": "del-cli node_modules && lerna clean --yes",
-    "test": "karma start",
+    "test": "karma start --coverage",
     "dev": "start-storybook",
     "build": "rollup --config"
   },
@@ -20,8 +20,11 @@
   },
   "homepage": "https://github.com/MaritzSTL/chameleon#readme",
   "devDependencies": {
+    "@open-wc/testing": "^2.0.4",
+    "@open-wc/testing-helpers": "^1.0.16",
     "@storybook/addon-knobs": "^5.1.9",
     "@storybook/polymer": "^5.1.9",
+    "@types/jasmine": "^3.3.14",
     "@types/node": "^12.6.2",
     "@types/storybook__addon-knobs": "^5.0.3",
     "@types/storybook__polymer": "^5.1.0",
@@ -30,6 +33,11 @@
     "babel-loader": "^8.0.6",
     "del-cli": "^2.0.0",
     "husky": "^3.0.0",
+    "jasmine-core": "^3.4.0",
+    "karma": "^4.2.0",
+    "karma-chrome-launcher": "^3.0.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-typescript": "^4.1.1",
     "lerna": "^3.15.0",
     "lit-html": "^1.1.1",
     "polymer-webpack-loader": "^2.0.3",
