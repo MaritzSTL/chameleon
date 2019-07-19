@@ -5,6 +5,7 @@ import {
   html,
   property
 } from "lit-element";
+import { classMap } from "lit-html/directives/class-map";
 import base from "@cha/theme/base";
 import style from "@cha/theme/base/button";
 
@@ -15,6 +16,8 @@ export default class ChaButton extends LitElement {
    */
   @property({ type: Boolean, reflect: true })
   disabled = false;
+  @property({ type: String, reflect: true })
+  theme = "primary";
 
   /**
    * Styles
@@ -26,7 +29,10 @@ export default class ChaButton extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <button ?disabled="${this.disabled}">
+      <button
+        class="${classMap({ [this.theme]: true })}"
+        ?disabled="${this.disabled}"
+      >
         <slot></slot>
       </button>
     `;
