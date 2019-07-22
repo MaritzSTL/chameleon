@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, boolean } from "@storybook/addon-knobs";
+import { withKnobs, boolean, radios } from "@storybook/addon-knobs";
 import { html } from "lit-html";
 import "../../packages/button/src/cha-button";
 
@@ -11,9 +11,20 @@ stories.addDecorator(withKnobs as any);
 
 stories.add(
   "Button",
-  () =>
-    html`
-      <cha-button ?disabled="${boolean("Disabled", false)}">Button</cha-button>
-    `,
+  () => {
+    const disabled = boolean("Disabled", false);
+    const themeLabel = "Theme";
+    const themeOptions = {
+      Primary: "primary",
+      Secondary: "secondary",
+      Text: "text"
+    };
+    const defaultThemeValue = "primary";
+    const theme = radios(themeLabel, themeOptions, defaultThemeValue);
+
+    return html`
+      <cha-button ?disabled="${disabled}" theme="${theme}">Button</cha-button>
+    `;
+  },
   { info: { inline: true } }
 );

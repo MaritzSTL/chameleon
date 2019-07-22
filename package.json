@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "Chameleon Web Components - A collection of lightweight, unidirectional, framework-agnostic elements based on the Chameleon Design System",
   "scripts": {
-    "setup": "npm install && lerna exec npm install && lerna exec npm link",
+    "setup": "npm install && lerna exec npm install && lerna exec npm link && make link_deps",
     "clean": "del-cli node_modules && lerna clean --yes",
-    "test": "karma start",
+    "test": "karma start --coverage",
     "dev": "start-storybook",
     "build": "rollup --config"
   },

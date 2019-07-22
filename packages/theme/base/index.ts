@@ -8,6 +8,8 @@ export default css`
     --color-surface: #ffffff;
     --color-black: #000000;
     --color-primary: #2c6fb7;
+    --color-gray-lightest: #e1e3e4;
+    --color-gray-darkest: #6c737a;
 
     --font-letter-spacing: 0.018em;
     --font-size-paragraph-medium: 0.938em;
