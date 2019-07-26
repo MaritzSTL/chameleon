@@ -34,5 +34,55 @@ export default [
       external: externalLibs
     },
     plugins: [...prodPlugins]
+  },
+  /**
+   * cha-input
+   */
+  {
+    input: "packages/input/src/cha-input.ts",
+    output: {
+      file: "packages/input/dist/cha-input.js",
+      format: "umd",
+      name: "cha-input",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/input/src/cha-input.ts",
+    output: {
+      file: "packages/input/dist/cha-input.min.js",
+      format: "umd",
+      name: "cha-input",
+      globals: globalLibs,
+      external: externalLibs,
+      plugins: [...prodPlugins]
+    }
+  },
+  /**
+   * cha-textarea
+   */
+  {
+    input: "packages/textarea/src/cha-textarea.ts",
+    output: {
+      file: "packages/textarea/dist/cha-textarea.js",
+      format: "umd",
+      name: "cha-textarea",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/textarea/src/cha-textarea.ts",
+    output: {
+      file: "packages/textarea/dist/cha-textarea.min.js",
+      format: "umd",
+      name: "cha-textarea",
+      globals: globalLibs,
+      external: externalLibs,
+      plugins: [...prodPlugins]
+    }
   }
 ];

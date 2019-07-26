@@ -6,13 +6,6 @@
   "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/textarea#readme",
   "license": "MIT",
   "main": "src/cha-textarea.ts",
-  "directories": {
-    "src": "src",
-    "test": "__tests__"
-  },
-  "files": [
-    "src"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"

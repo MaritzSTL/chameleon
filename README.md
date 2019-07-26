@@ -1,5 +1,5 @@
 <p align="center">
-  ![Chameleon logo](docs/assets/chameleon.jpg)
+  <img src="/maritzstl/chameleon/raw/master/docs/assets/chameleon.jpg" />
 </p>
 
 # Chameleon (Currently In Development)
