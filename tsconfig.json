@@ -9,5 +9,5 @@
     "module": "es2015",
     "target": "es2015" // https://github.com/Polymer/lit-element/issues/54#issuecomment-445558141
   },
-  "exclude": ["node_modules"]
+  "exclude": ["**/node_modules", "**/__tests__"]
 }
