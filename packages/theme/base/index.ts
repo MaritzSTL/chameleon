@@ -5,6 +5,7 @@ export default css`
     --border-radius: 0.313em;
     --button-padding: 0.75em 1.375em;
     --input-padding: 0.625em 0.5em;
+    --textarea-padding: 0.438em 0.813em;
 
     --color-surface: #ffffff;
     --color-black: #000000;

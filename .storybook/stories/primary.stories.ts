@@ -1,8 +1,15 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, boolean, radios, text } from "@storybook/addon-knobs";
+import {
+  withKnobs,
+  boolean,
+  radios,
+  text,
+  number
+} from "@storybook/addon-knobs";
 import { html } from "lit-html";
 import "../../packages/button/src/cha-button";
 import "../../packages/input/src/cha-input";
+import "../../packages/textarea/src/cha-textarea";
 
 const stories = storiesOf("Chameleon", module);
 
@@ -110,6 +117,34 @@ stories.add(
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
       </cha-input>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Textarea",
+  () => {
+    const disabled = boolean("Disabled", false);
+    const label = text("Label", "");
+    const error = text("Error", "");
+    const placeholder = text("Placeholder", "Text...");
+    const minlength = number("minlength", 0);
+    const maxlength = number("maxlength", 500);
+    const rows = number("Rows", 2);
+    const cols = number("Columns", 20);
+
+    return html`
+      <cha-textarea
+        ?disabled="${disabled}"
+        .placeholder="${placeholder}"
+        .label="${label}"
+        .validationMessage="${error}"
+        .minlength="${minlength}"
+        .maxlength="${maxlength}"
+        .rows="${rows}"
+        .cols="${cols}"
+      ></cha-textarea>
     `;
   },
   { info: { inline: true } }
