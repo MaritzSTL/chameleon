@@ -1,0 +1,26 @@
+{
+  "name": "@cha/textarea",
+  "version": "0.0.1",
+  "description": "Chameleon textarea",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/textarea#readme",
+  "license": "MIT",
+  "main": "src/cha-textarea.ts",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  }
+}
