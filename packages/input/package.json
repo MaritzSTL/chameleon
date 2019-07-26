@@ -1,0 +1,29 @@
+{
+  "name": "@cha/input",
+  "version": "0.0.1",
+  "description": "Chameleon input",
+  "author": "Ryan Coleman <me@ryuhhnn.com>",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/input#readme",
+  "license": "MIT",
+  "main": "src/cha-input.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.0"
+  }
+}
