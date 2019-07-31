@@ -8,7 +8,8 @@
     "test": "karma start --coverage",
     "dev": "start-storybook",
     "build": "rollup --config",
-    "build-storybook": "build-storybook -c .storybook -o .out && cp -a .out/./ docs/ && del-cli .out"
+    "build-storybook": "build-storybook -c .storybook -o .out && cp -a .out/./ docs/ && del-cli .out",
+    "publish-packages": "lerna publish --yes"
   },
   "repository": {
     "type": "git",
