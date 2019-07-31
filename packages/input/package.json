@@ -1,15 +1,15 @@
 {
-  "name": "@cha/input",
+  "name": "@chameleon-ds/input",
   "version": "0.0.1",
   "description": "Chameleon input",
   "author": "Maritz Motivation Solutions, Inc.",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/input#readme",
   "license": "MIT",
-  "main": "src/cha-input.ts",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/input#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
+  "main": "dist/chameleon-input.js",
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },

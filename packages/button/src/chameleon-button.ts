@@ -6,11 +6,11 @@ import {
   property
 } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
-import base from "@cha/theme/base";
-import style from "@cha/theme/base/button";
+import base from "@chameleon-ds/theme/base";
+import style from "@chameleon-ds/theme/base/button";
 
-@customElement("cha-button")
-export default class ChaButton extends LitElement {
+@customElement("chameleon-button")
+export default class ChameleonButton extends LitElement {
   /**
    * Properties
    */

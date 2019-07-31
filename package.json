@@ -1,10 +1,10 @@
 {
-  "name": "chameleon",
+  "name": "chameleon-ds",
   "version": "0.0.1",
   "description": "Chameleon Web Components - A collection of lightweight, unidirectional, framework-agnostic elements based on the Chameleon Design System",
   "scripts": {
     "setup": "npm install && lerna exec npm install && lerna exec npm link && make link_deps",
-    "clean": "lerna clean --yes && del-cli node_modules",
+    "clean": "lerna clean --yes && del-cli 'node_modules' '**/dist'",
     "test": "karma start --coverage",
     "dev": "start-storybook",
     "build": "rollup --config",

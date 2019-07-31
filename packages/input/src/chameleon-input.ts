@@ -7,11 +7,11 @@ import {
 } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import base from "@cha/theme/base";
-import style from "@cha/theme/base/input";
+import base from "@chameleon-ds/theme/base";
+import style from "@chameleon-ds/theme/base/input";
 
-@customElement("cha-input")
-export default class ChaInput extends LitElement {
+@customElement("chameleon-input")
+export default class ChameleonInput extends LitElement {
   /**
    * Properties
    */

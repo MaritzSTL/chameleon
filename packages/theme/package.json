@@ -1,18 +1,21 @@
 {
-  "name": "@cha/theme",
+  "name": "@chameleon-ds/theme",
   "version": "0.0.1",
   "description": "Chameleon design language",
-  "main": "base/base.ts",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/core#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "author": "Maritz Motivation Solutions, Inc.",
-  "license": "MIT",
+  "main": "base/base.ts",
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/core#readme",
   "dependencies": {
     "lit-element": "^2.2.0"
   }

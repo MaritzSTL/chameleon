@@ -1,21 +1,21 @@
 {
-  "name": "@cha/button",
+  "name": "@chameleon-ds/button",
   "version": "0.0.1",
   "description": "Chameleon button",
-  "main": "src/cha-button.ts",
-  "scripts": {
-    "test": "karma start"
-  },
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/button#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "author": "Maritz Motivation Solutions, Inc.",
-  "license": "MIT",
+  "main": "dist/chameleon-button.js",
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/button#readme",
   "dependencies": {
     "lit-element": "^2.2.0"
   }

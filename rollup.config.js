@@ -11,75 +11,75 @@ const globalLibs = {
 
 export default [
   /**
-   * cha-button
+   * chameleon-button
    */
   {
-    input: "packages/button/src/cha-button.ts",
+    input: "packages/button/src/chameleon-button.ts",
     output: {
-      file: "packages/button/dist/cha-button.js",
+      file: "packages/button/dist/chameleon-button.js",
       format: "umd",
-      name: "cha-button",
+      name: "chameleon-button",
       globals: globalLibs,
       external: externalLibs
     },
     plugins: [...devPlugins]
   },
   {
-    input: "packages/button/src/cha-button.ts",
+    input: "packages/button/src/chameleon-button.ts",
     output: {
-      file: "packages/button/dist/cha-button.min.js",
+      file: "packages/button/dist/chameleon-button.min.js",
       format: "umd",
-      name: "cha-button",
+      name: "chameleon-button",
       globals: globalLibs,
       external: externalLibs
     },
     plugins: [...prodPlugins]
   },
   /**
-   * cha-input
+   * chameleon-input
    */
   {
-    input: "packages/input/src/cha-input.ts",
+    input: "packages/input/src/chameleon-input.ts",
     output: {
-      file: "packages/input/dist/cha-input.js",
+      file: "packages/input/dist/chameleon-input.js",
       format: "umd",
-      name: "cha-input",
+      name: "chameleon-input",
       globals: globalLibs,
       external: externalLibs
     },
     plugins: [...devPlugins]
   },
   {
-    input: "packages/input/src/cha-input.ts",
+    input: "packages/input/src/chameleon-input.ts",
     output: {
-      file: "packages/input/dist/cha-input.min.js",
+      file: "packages/input/dist/chameleon-input.min.js",
       format: "umd",
-      name: "cha-input",
+      name: "chameleon-input",
       globals: globalLibs,
       external: externalLibs
     },
     plugins: [...prodPlugins]
   },
   /**
-   * cha-textarea
+   * chameleon-textarea
    */
   {
-    input: "packages/textarea/src/cha-textarea.ts",
+    input: "packages/textarea/src/chameleon-textarea.ts",
     output: {
-      file: "packages/textarea/dist/cha-textarea.js",
+      file: "packages/textarea/dist/chameleon-textarea.js",
       format: "umd",
-      name: "cha-textarea",
+      name: "chameleon-textarea",
       globals: globalLibs,
       external: externalLibs
     },
     plugins: [...devPlugins]
   },
   {
-    input: "packages/textarea/src/cha-textarea.ts",
+    input: "packages/textarea/src/chameleon-textarea.ts",
     output: {
-      file: "packages/textarea/dist/cha-textarea.min.js",
+      file: "packages/textarea/dist/chameleon-textarea.min.js",
       format: "umd",
-      name: "cha-textarea",
+      name: "chameleon-textarea",
       globals: globalLibs,
       external: externalLibs
     },

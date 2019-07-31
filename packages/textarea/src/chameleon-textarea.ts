@@ -6,11 +6,11 @@ import {
   property
 } from "lit-element";
 import { nothing } from "lit-html";
-import base from "@cha/theme/base";
-import style from "@cha/theme/base/textarea";
+import base from "@chameleon-ds/theme/base";
+import style from "@chameleon-ds/theme/base/textarea";
 
-@customElement("cha-textarea")
-export default class ChaTextarea extends LitElement {
+@customElement("chameleon-textarea")
+export default class ChameleonTextarea extends LitElement {
   /**
    * Properties
    */
