@@ -10,6 +10,7 @@ export default css`
     --color-surface: #ffffff;
     --color-black: #000000;
     --color-primary: #2c6fb7;
+    --color-primary-dark: #004587;
     --color-error: #bc1c16;
     --color-gray-lightest: #e1e3e4;
     --color-gray-light: #c4c7ca;
