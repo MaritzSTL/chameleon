@@ -1,1 +1,1 @@
-# chameleon-core
+# Chameleon Theme
