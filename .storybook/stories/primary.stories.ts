@@ -7,9 +7,9 @@ import {
   number
 } from "@storybook/addon-knobs";
 import { html } from "lit-html";
-import "../../packages/button/src/cha-button";
-import "../../packages/input/src/cha-input";
-import "../../packages/textarea/src/cha-textarea";
+import "../../packages/button/src/chameleon-button";
+import "../../packages/input/src/chameleon-input";
+import "../../packages/textarea/src/chameleon-textarea";
 
 const stories = storiesOf("Chameleon", module);
 
@@ -31,7 +31,9 @@ stories.add(
     const theme = radios(themeLabel, themeOptions, defaultThemeValue);
 
     return html`
-      <cha-button ?disabled="${disabled}" theme="${theme}">Button</cha-button>
+      <chameleon-button ?disabled="${disabled}" theme="${theme}"
+        >Button</chameleon-button
+      >
     `;
   },
   { info: { inline: true } }
@@ -58,15 +60,15 @@ stories.add(
 
     return html`
       <h3>Field / Basic</h3>
-      <cha-input
+      <chameleon-input
         ?disabled="${disabled}"
         .type="${typeSelection}"
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
-      ></cha-input>
+      ></chameleon-input>
       <h3>Field / Icon Left</h3>
-      <cha-input
+      <chameleon-input
         ?disabled="${disabled}"
         icon-left
         .type="${typeSelection}"
@@ -90,9 +92,9 @@ stories.add(
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-      </cha-input>
+      </chameleon-input>
       <h3>Field / Icon Right</h3>
-      <cha-input
+      <chameleon-input
         ?disabled="${disabled}"
         icon-right
         .type="${typeSelection}"
@@ -116,7 +118,7 @@ stories.add(
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-      </cha-input>
+      </chameleon-input>
     `;
   },
   { info: { inline: true } }
@@ -135,7 +137,7 @@ stories.add(
     const cols = number("Columns", 20);
 
     return html`
-      <cha-textarea
+      <chameleon-textarea
         ?disabled="${disabled}"
         .placeholder="${placeholder}"
         .label="${label}"
@@ -144,7 +146,7 @@ stories.add(
         .maxlength="${maxlength}"
         .rows="${rows}"
         .cols="${cols}"
-      ></cha-textarea>
+      ></chameleon-textarea>
     `;
   },
   { info: { inline: true } }
