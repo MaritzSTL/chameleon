@@ -56,9 +56,9 @@ export default [
       format: "umd",
       name: "cha-input",
       globals: globalLibs,
-      external: externalLibs,
-      plugins: [...prodPlugins]
-    }
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   },
   /**
    * cha-textarea
@@ -81,8 +81,8 @@ export default [
       format: "umd",
       name: "cha-textarea",
       globals: globalLibs,
-      external: externalLibs,
-      plugins: [...prodPlugins]
-    }
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   }
 ];
