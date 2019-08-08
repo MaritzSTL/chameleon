@@ -3,7 +3,8 @@ import {
   TemplateResult,
   customElement,
   html,
-  property
+  property,
+  PropertyValues
 } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
@@ -46,6 +47,14 @@ export default class ChameleonInput extends LitElement {
   @property({ type: String })
   value = "";
 
+  // The input's min value (available in type="number")
+  @property({ type: Number, reflect: true })
+  min = null;
+
+  // The input's max value (available in type="number")
+  @property({ type: Number, reflect: true })
+  max = null;
+
   // The input's label
   @property({ type: String })
   label = "";
@@ -81,23 +90,66 @@ export default class ChameleonInput extends LitElement {
         })}"
       >
         <slot name="icon-left"></slot>
-        <input
-          name="cha-input"
-          .type="${this.type}"
-          .placeholder="${this.placeholder}"
-          .value="${this.value}"
-          ?autocomplete="${this.autocomplete}"
-          ?autofocus="${this.autofocus}"
-          ?disabled="${this.disabled}"
-          ?readonly="${this.readonly}"
-          ?required="${this.required}"
-          @blur="${this._handleBlur}"
-          @invalid="${this._handleInvalid}"
-        />
+        ${this._inputEl}
         <slot name="icon-right"></slot>
       </div>
       ${this.errorText}
     `;
+  }
+
+  get _inputEl(): TemplateResult {
+    switch (this.type) {
+      case "text":
+        return html`
+          <input
+            name="cha-input"
+            .type="${this.type}"
+            .placeholder="${this.placeholder}"
+            .value="${this.value}"
+            ?autocomplete="${this.autocomplete}"
+            ?autofocus="${this.autofocus}"
+            ?disabled="${this.disabled}"
+            ?readonly="${this.readonly}"
+            ?required="${this.required}"
+            @blur="${this._handleBlur}"
+            @invalid="${this._handleInvalid}"
+          />
+        `;
+      case "number":
+        return html`
+          <input
+            name="cha-input"
+            .type="${this.type}"
+            .placeholder="${this.placeholder}"
+            .value="${this.value}"
+            .min="${this.min}"
+            .max="${this.max}"
+            ?autocomplete="${this.autocomplete}"
+            ?autofocus="${this.autofocus}"
+            ?disabled="${this.disabled}"
+            ?readonly="${this.readonly}"
+            ?required="${this.required}"
+            @blur="${this._handleBlur}"
+            @invalid="${this._handleInvalid}"
+          />
+        `;
+      default:
+        return html`
+          <input
+            name="cha-input"
+            .type="${this.type}"
+            .placeholder="${this.placeholder}"
+            .value="${this.value}"
+            ?autocomplete="${this.autocomplete}"
+            ?autofocus="${this.autofocus}"
+            ?disabled="${this.disabled}"
+            ?readonly="${this.readonly}"
+            ?required="${this.required}"
+            @blur="${this._handleBlur}"
+            @invalid="${this._handleInvalid}"
+          />
+        `;
+    }
   }
 
   get _el(): HTMLInputElement | null {

@@ -11,6 +11,7 @@ export default css`
     border-radius: var(--border-radius);
     font-size: var(--font-size-input);
     padding: var(--input-padding);
+    width: 100%;
   }
 
   label {

@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "experimentalDecorators": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
     "noEmit": true,
     "strict": true,
     "lib": ["es2015", "dom"],
