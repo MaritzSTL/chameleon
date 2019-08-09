@@ -3,8 +3,7 @@ import {
   TemplateResult,
   customElement,
   html,
-  property,
-  PropertyValues
+  property
 } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
@@ -111,6 +110,7 @@ export default class ChameleonInput extends LitElement {
             ?disabled="${this.disabled}"
             ?readonly="${this.readonly}"
             ?required="${this.required}"
+            @input="${this._handleInput}"
             @blur="${this._handleBlur}"
             @invalid="${this._handleInvalid}"
           />
@@ -129,6 +129,7 @@ export default class ChameleonInput extends LitElement {
             ?disabled="${this.disabled}"
             ?readonly="${this.readonly}"
             ?required="${this.required}"
+            @input="${this._handleInput}"
             @blur="${this._handleBlur}"
             @invalid="${this._handleInvalid}"
           />
@@ -145,6 +146,7 @@ export default class ChameleonInput extends LitElement {
             ?disabled="${this.disabled}"
             ?readonly="${this.readonly}"
             ?required="${this.required}"
+            @input="${this._handleInput}"
             @blur="${this._handleBlur}"
             @invalid="${this._handleInvalid}"
           />
@@ -187,6 +189,11 @@ export default class ChameleonInput extends LitElement {
   checkValidity(): boolean {
     if (this._el !== null) return this._el.checkValidity();
     else return false;
+  }
+
+  _handleInput(e: any): void {
+    // e must have a value of `any` right now because of: https://stackoverflow.com/a/57331338/3713527
+    this.value = e.target.value;
   }
 
   _handleBlur(): void {
