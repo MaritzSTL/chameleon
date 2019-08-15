@@ -84,5 +84,30 @@ export default [
       external: externalLibs
     },
     plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-card
+   */
+  {
+    input: "packages/card/src/chameleon-card.ts",
+    output: {
+      file: "packages/card/dist/chameleon-card.js",
+      format: "umd",
+      name: "chameleon-card",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/card/src/chameleon-card.ts",
+    output: {
+      file: "packages/card/dist/chameleon-card.min.js",
+      format: "umd",
+      name: "chameleon-card",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   }
 ];
