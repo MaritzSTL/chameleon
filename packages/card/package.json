@@ -18,5 +18,9 @@
   },
   "dependencies": {
     "lit-element": "^2.2.0"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "903c637e2d1f3693b6c0b5fca5c1e6363ecb15c1"
 }
