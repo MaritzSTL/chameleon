@@ -7,9 +7,4 @@ export default css`
     display: inline-block;
     padding: 10px;
   }
-
-  .chameleon-card {
-    background-color: var(--color-surface);
-    border: 1px solid var(--gray-lightest);
-  }
 `;
