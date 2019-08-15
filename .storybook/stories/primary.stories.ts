@@ -10,6 +10,7 @@ import { html } from "lit-html";
 import "../../packages/button/src/chameleon-button";
 import "../../packages/input/src/chameleon-input";
 import "../../packages/textarea/src/chameleon-textarea";
+import "../../packages/card/src/chameleon-card";
 
 const stories = storiesOf("Chameleon", module);
 
@@ -147,6 +148,19 @@ stories.add(
         .rows="${rows}"
         .cols="${cols}"
       ></chameleon-textarea>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Card",
+  () => {
+    return html`
+      <chameleon-card>
+        <h3>Card</h3>
+        <p>Here is some sample content for the card</p>
+      </chameleon-card>
     `;
   },
   { info: { inline: true } }
