@@ -109,5 +109,30 @@ export default [
       external: externalLibs
     },
     plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-radio
+   */
+  {
+    input: "packages/radio/src/chameleon-radio.ts",
+    output: {
+      file: "packages/radio/dist/chameleon-radio.js",
+      format: "umd",
+      name: "chameleon-radio",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/radio/src/chameleon-radio.ts",
+    output: {
+      file: "packages/radio/dist/chameleon-radio.min.js",
+      format: "umd",
+      name: "chameleon-radio",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   }
 ];
