@@ -15,6 +15,7 @@ export default css`
     --color-gray-lightest: #e1e3e4;
     --color-gray-light: #c4c7ca;
     --color-gray-darkest: #6c737a;
+    --color-box-shadow: rgba(159, 164, 168, 0.6);
 
     --font-letter-spacing: 0.018em;
     --font-size-paragraph-medium: 0.938em;

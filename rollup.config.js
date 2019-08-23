@@ -134,5 +134,30 @@ export default [
       external: externalLibs
     },
     plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-switch
+   */
+  {
+    input: "packages/switch/src/chameleon-switch.ts",
+    output: {
+      file: "packages/switch/dist/chameleon-switch.js",
+      format: "umd",
+      name: "chameleon-switch",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/switch/src/chameleon-switch.ts",
+    output: {
+      file: "packages/switch/dist/chameleon-switch.min.js",
+      format: "umd",
+      name: "chameleon-switch",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   }
 ];
