@@ -1,0 +1,25 @@
+{
+  "name": "@chameleon-ds/radio",
+  "version": "0.1.0",
+  "description": "Chameleon radio",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/radio#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "dist/chameleon-radio.js",
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
