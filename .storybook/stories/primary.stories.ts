@@ -11,6 +11,7 @@ import "../../packages/button/src/chameleon-button";
 import "../../packages/input/src/chameleon-input";
 import "../../packages/textarea/src/chameleon-textarea";
 import "../../packages/card/src/chameleon-card";
+import "../../packages/radio/src/chameleon-radio";
 
 const stories = storiesOf("Chameleon", module);
 
@@ -161,6 +162,23 @@ stories.add(
         <h3>Card</h3>
         <p>Here is some sample content for the card</p>
       </chameleon-card>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Radio",
+  () => {
+    const label = text("Label", "");
+    const checked = boolean("Checked", true);
+
+    return html`
+      <chameleon-radio
+        label="${label}"
+        name="test"
+        ?checked="${checked}"
+      ></chameleon-radio>
     `;
   },
   { info: { inline: true } }
