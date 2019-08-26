@@ -159,5 +159,30 @@ export default [
       external: externalLibs
     },
     plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-checkbox
+   */
+  {
+    input: "packages/checkbox/src/chameleon-checkbox.ts",
+    output: {
+      file: "packages/checkbox/dist/chameleon-checkbox.js",
+      format: "umd",
+      name: "chameleon-checkbox",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/checkbox/src/chameleon-checkbox.ts",
+    output: {
+      file: "packages/checkbox/dist/chameleon-checkbox.min.js",
+      format: "umd",
+      name: "chameleon-checkbox",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   }
 ];
