@@ -13,6 +13,7 @@ import "../../packages/textarea/src/chameleon-textarea";
 import "../../packages/card/src/chameleon-card";
 import "../../packages/radio/src/chameleon-radio";
 import "../../packages/switch/src/chameleon-switch";
+import "../../packages/checkbox/src/chameleon-checkbox";
 
 const stories = storiesOf("Chameleon", module);
 
@@ -197,6 +198,23 @@ stories.add(
         name="test"
         ?checked="${checked}"
       ></chameleon-switch>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Checkbox",
+  () => {
+    const label = text("Label", "");
+    const checked = boolean("Checked", true);
+
+    return html`
+      <chameleon-checkbox
+        label="${label}"
+        name="test"
+        ?checked="${checked}"
+      ></chameleon-checkbox>
     `;
   },
   { info: { inline: true } }
