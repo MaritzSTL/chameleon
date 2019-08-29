@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/MaritzSTL/chameleon#readme",
   "devDependencies": {
+    "@storybook/addon-backgrounds": "^5.1.11",
     "@storybook/addon-knobs": "^5.1.9",
     "@storybook/polymer": "^5.1.9",
     "@types/node": "^12.6.2",

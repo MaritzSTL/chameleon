@@ -1,0 +1,25 @@
+{
+  "name": "@chameleon-ds/card-header",
+  "version": "0.1.0",
+  "description": "Chameleon card header",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/card-header#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "dist/chameleon-card-header.js",
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
