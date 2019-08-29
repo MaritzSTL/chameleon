@@ -11,6 +11,8 @@ export default css`
     --color-black: #000000;
     --color-primary: #2c6fb7;
     --color-primary-dark: #004587;
+    --color-secondary: #69c9b9;
+    --color-secondary-dark: #349889;
     --color-error: #bc1c16;
     --color-gray-lightest: #e1e3e4;
     --color-gray-light: #c4c7ca;
@@ -19,6 +21,8 @@ export default css`
 
     --font-letter-spacing: 0.018em;
     --font-size-paragraph-medium: 0.938em;
+    --font-size-subtitle: 0.938em;
+    --font-size-title: 1.4em;
     --font-size-input: 0.938em;
     --font-size-label: 0.875em;
   }

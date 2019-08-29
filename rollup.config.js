@@ -111,6 +111,31 @@ export default [
     plugins: [...prodPlugins]
   },
   /**
+   * chameleon-card-header
+   */
+  {
+    input: "packages/card-header/src/chameleon-card-header.ts",
+    output: {
+      file: "packages/card-header/dist/chameleon-card-header.js",
+      format: "umd",
+      name: "chameleon-card-header",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/card-header/src/chameleon-card-header.ts",
+    output: {
+      file: "packages/card-header/dist/chameleon-card-header.min.js",
+      format: "umd",
+      name: "chameleon-card-header",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
    * chameleon-radio
    */
   {
