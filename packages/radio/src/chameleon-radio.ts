@@ -27,6 +27,10 @@ export default class ChameleonRadio extends LitElement {
   @property({ type: String })
   value = "";
 
+  // A Boolean to disable radio button
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
   /**
    * Styles
    */
@@ -37,8 +41,14 @@ export default class ChameleonRadio extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <input type="radio" ?checked="${this.checked}" value="${this.value}" />
-      <span class="checkmark"></span>
+      <input
+        type="radio"
+        ?checked="${this.checked}"
+        value="${this.value}"
+        ?disabled="${this.disabled}"
+        aria-checked="${this.checked}"
+      />
+      <span class="checkmark ${this.disabled ? "disabled" : ""}"></span>
       ${this.labelText}
     `;
   }

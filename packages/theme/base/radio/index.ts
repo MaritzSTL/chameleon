@@ -17,6 +17,10 @@ export default css`
     display: none;
   }
 
+  input[disabled] {
+    cursor: auto;
+  }
+
   .checkmark {
     background-color: var(--color-surface);
     border: 2px solid var(--color-gray-lightest);
@@ -36,6 +40,11 @@ export default css`
   input:checked ~ .checkmark {
     background-color: var(--color-primary);
     border: none;
+  }
+
+  input:checked ~ .checkmark.disabled {
+    background-color: var(--color-gray-lightest);
+    cursor: auto;
   }
 
   .checkmark:after {
