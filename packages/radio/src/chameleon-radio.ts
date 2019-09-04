@@ -46,7 +46,6 @@ export default class ChameleonRadio extends LitElement {
         ?checked="${this.checked}"
         value="${this.value}"
         ?disabled="${this.disabled}"
-        aria-checked="${this.checked}"
       />
       <span class="checkmark ${this.disabled ? "disabled" : ""}"></span>
       ${this.labelText}
