@@ -57,4 +57,14 @@ export default css`
     transform: translate(-50%, -50%);
     width: 8px;
   }
+
+  :host([disabled]),
+  input[disabled] {
+    pointer-events: none;
+  }
+
+  input:checked ~ .checkmark.disabled {
+    background-color: var(--color-gray-lightest);
+    pointer-events: none;
+  }
 `;

@@ -14,12 +14,14 @@ stories.add(
   () => {
     const label = text("Label", "");
     const checked = boolean("Checked", true);
+    const disabled = boolean("Disabled", false);
 
     return html`
       <chameleon-radio
         label="${label}"
         name="test"
         ?checked="${checked}"
+        ?disabled=${disabled}
       ></chameleon-radio>
     `;
   },
