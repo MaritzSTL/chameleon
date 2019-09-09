@@ -76,11 +76,12 @@
       >
         ${searchIcon("icon-right")}
       </chameleon-input>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(132)(module))},599:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(65),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(41);__webpack_require__(607);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Radio",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Radio",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(132)(module))},599:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(65),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(41);__webpack_require__(607);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Radio",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Radio",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-radio
         label="${label}"
         name="test"
         ?checked="${checked}"
+        ?disabled=${disabled}
       ></chameleon-radio>
     `},{info:{inline:!0}})}.call(this,__webpack_require__(132)(module))},600:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(65),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(41);__webpack_require__(608);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Switch",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Switch",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-switch
@@ -204,7 +205,7 @@
       ${""!==this.title?lit_element.c`
             <h2>${this.title}</h2>
           `:lit_html.c}
-    `}};chameleon_card_header_ChameleonCardHeader.styles=[base.a,card_header],__decorate([Object(lit_element.d)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"title",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"subtitle",void 0);chameleon_card_header_ChameleonCardHeader=__decorate([Object(lit_element.b)("chameleon-card-header")],chameleon_card_header_ChameleonCardHeader)},605:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(159),lit_html=__webpack_require__(82),base=__webpack_require__(66),base_checkbox=__webpack_require__(57).a`
+    `}};chameleon_card_header_ChameleonCardHeader.styles=[base.a,card_header],__decorate([Object(lit_element.d)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"title",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"subtitle",void 0);chameleon_card_header_ChameleonCardHeader=__decorate([Object(lit_element.b)("chameleon-card-header")],chameleon_card_header_ChameleonCardHeader)},605:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(160),lit_html=__webpack_require__(82),base=__webpack_require__(66),base_checkbox=__webpack_require__(57).a`
   :host {
     align-items: center;
     cursor: pointer;
@@ -382,7 +383,7 @@
         <label for="cha-input">${this.label}</label>
       `:lit_html.f}get errorText(){return""!==this.validationMessage?lit_element.c`
         <span class="error">${this.validationMessage}</span>
-      `:lit_html.f}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}_handleInput(e){this.value=e.target.value}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}};chameleon_input_ChameleonInput.styles=[base.a,input],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autocomplete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autofocus",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"type",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"min",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"max",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"validationMessage",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-left",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-right",void 0);chameleon_input_ChameleonInput=__decorate([Object(lit_element.b)("chameleon-input")],chameleon_input_ChameleonInput)},607:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(160),lit_html=__webpack_require__(83),base=__webpack_require__(66),base_radio=__webpack_require__(57).a`
+      `:lit_html.f}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}_handleInput(e){this.value=e.target.value}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}};chameleon_input_ChameleonInput.styles=[base.a,input],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autocomplete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autofocus",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"type",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"min",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"max",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"validationMessage",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-left",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-right",void 0);chameleon_input_ChameleonInput=__decorate([Object(lit_element.b)("chameleon-input")],chameleon_input_ChameleonInput)},607:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(142),lit_html=__webpack_require__(83),base=__webpack_require__(66),base_radio=__webpack_require__(57).a`
   :host {
     align-items: center;
     cursor: pointer;
@@ -439,11 +440,26 @@
     transform: translate(-50%, -50%);
     width: 8px;
   }
-`,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};let chameleon_radio_ChameleonRadio=class ChameleonRadio extends lit_element.a{constructor(){super(...arguments),this.label="",this.checked=!1,this.value=""}render(){return lit_element.c`
-      <input type="radio" ?checked="${this.checked}" value="${this.value}" />
-      <span class="checkmark"></span>
+
+  :host([disabled]),
+  input[disabled] {
+    pointer-events: none;
+  }
+
+  input:checked ~ .checkmark.disabled {
+    background-color: var(--color-gray-lightest);
+    pointer-events: none;
+  }
+`,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};let chameleon_radio_ChameleonRadio=class ChameleonRadio extends lit_element.a{constructor(){super(...arguments),this.label="",this.checked=!1,this.value="",this.disabled=!1}render(){return lit_element.c`
+      <input
+        type="radio"
+        ?checked="${this.checked}"
+        value="${this.value}"
+        ?disabled="${this.disabled}"
+      />
+      <span class="checkmark ${this.disabled?"disabled":""}"></span>
       ${this.labelText}
-    `}get labelText(){return""!==this.label?this.label:lit_html.c}};chameleon_radio_ChameleonRadio.styles=[base.a,base_radio],__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"value",void 0);chameleon_radio_ChameleonRadio=__decorate([Object(lit_element.b)("chameleon-radio")],chameleon_radio_ChameleonRadio)},608:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(161),lit_html=__webpack_require__(84),base=__webpack_require__(66),base_switch=__webpack_require__(57).a`
+    `}get labelText(){return""!==this.label?this.label:lit_html.c}};chameleon_radio_ChameleonRadio.styles=[base.a,base_radio],__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"disabled",void 0);chameleon_radio_ChameleonRadio=__decorate([Object(lit_element.b)("chameleon-radio")],chameleon_radio_ChameleonRadio)},608:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(161),lit_html=__webpack_require__(84),base=__webpack_require__(66),base_switch=__webpack_require__(57).a`
   :host {
     align-items: center;
     display: inline-flex;
@@ -580,4 +596,4 @@
     --font-size-label: 0.875em;
   }
 `}},[[334,1,2]]]);
-//# sourceMappingURL=main.1e95487eff22e76c6c3e.bundle.js.map
+//# sourceMappingURL=main.751d816da79ecd0757d7.bundle.js.map
