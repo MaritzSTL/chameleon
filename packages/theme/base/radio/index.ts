@@ -17,10 +17,6 @@ export default css`
     display: none;
   }
 
-  input[disabled] {
-    cursor: auto;
-  }
-
   .checkmark {
     background-color: var(--color-surface);
     border: 2px solid var(--color-gray-lightest);
@@ -42,11 +38,6 @@ export default css`
     border: none;
   }
 
-  input:checked ~ .checkmark.disabled {
-    background-color: var(--color-gray-lightest);
-    cursor: auto;
-  }
-
   .checkmark:after {
     content: "";
     display: none;
@@ -65,5 +56,15 @@ export default css`
     top: 50%;
     transform: translate(-50%, -50%);
     width: 8px;
+  }
+
+  :host([disabled]),
+  input[disabled] {
+    pointer-events: none;
+  }
+
+  input:checked ~ .checkmark.disabled {
+    background-color: var(--color-gray-lightest);
+    pointer-events: none;
   }
 `;
