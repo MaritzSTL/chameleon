@@ -10,8 +10,8 @@ Chameleon Web Components - A collection of lightweight, unidirectional, framewor
 
 The Chameleon project relies on some awesome tools in order to work properly. You'll want to have the following installed:
 
-- [Node.js](https://nodejs.org) - JavaScript runtime built on Chrome's V8 JavaScript Engine (at the time of writing, this course is built against v11.10.0)
-- [Git](https://git-scm.com/downloads) - Version control software for cloning this repository to run examples
+- [Node.js](https://nodejs.org) - JavaScript runtime built on Chrome's V8 JavaScript Engine (this project uses v12.7.0)
+- [Git](https://git-scm.com/downloads) - Version control software for cloning this repository
 - [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm) - A bash script to manage multiple active node.js versions
 
 ## Setup
