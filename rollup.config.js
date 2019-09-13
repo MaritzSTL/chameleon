@@ -136,6 +136,31 @@ export default [
     plugins: [...prodPlugins]
   },
   /**
+   * chameleon-card-image
+   */
+  {
+    input: "packages/card-image/src/chameleon-card-image.ts",
+    output: {
+      file: "packages/card-image/dist/chameleon-card-image.js",
+      format: "umd",
+      name: "chameleon-card-image",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/card-image/src/chameleon-card-image.ts",
+    output: {
+      file: "packages/card-image/dist/chameleon-card-image.min.js",
+      format: "umd",
+      name: "chameleon-card-image",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
    * chameleon-radio
    */
   {

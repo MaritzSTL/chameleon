@@ -14,7 +14,7 @@ export default css`
   button {
     background-color: var(--color-primary);
     border: 1px solid var(--color-primary);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-input);
     color: var(--color-surface);
     cursor: pointer;
     font-size: var(--font-size-paragraph-medium);

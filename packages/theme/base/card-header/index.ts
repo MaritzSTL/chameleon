@@ -3,6 +3,7 @@ import { css } from "lit-element";
 export default css`
   :host {
     display: block;
+    margin-bottom: 11px;
   }
 
   h3,

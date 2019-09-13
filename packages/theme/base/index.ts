@@ -2,7 +2,8 @@ import { css } from "lit-element";
 
 export default css`
   :host {
-    --border-radius: 0.313em;
+    --border-radius: 0.5em;
+    --border-radius-input: 0.313em;
     --button-padding: 0.75em 1.375em;
     --input-padding: 0.625em 0.5em;
     --textarea-padding: 0.438em 0.813em;
