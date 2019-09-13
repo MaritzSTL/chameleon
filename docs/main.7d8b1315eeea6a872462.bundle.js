@@ -1,4 +1,31 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{334:function(module,exports,__webpack_require__){__webpack_require__(335),__webpack_require__(435),module.exports=__webpack_require__(436)},436:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(65);const req=__webpack_require__(580);Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.configure)(function loadStories(){req.keys().forEach(req)},module)}.call(this,__webpack_require__(132)(module))},580:function(module,exports,__webpack_require__){var map={"./button.stories.ts":581,"./card.stories.ts":596,"./checkbox.stories.ts":597,"./input.stories.ts":598,"./radio.stories.ts":599,"./switch.stories.ts":600,"./textarea.stories.ts":601};function webpackContext(req){var id=webpackContextResolve(req);return __webpack_require__(id)}function webpackContextResolve(req){if(!__webpack_require__.o(map,req)){var e=new Error("Cannot find module '"+req+"'");throw e.code="MODULE_NOT_FOUND",e}return map[req]}webpackContext.keys=function webpackContextKeys(){return Object.keys(map)},webpackContext.resolve=webpackContextResolve,module.exports=webpackContext,webpackContext.id=580},581:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(65),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(41);__webpack_require__(602);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Button",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Primary",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{28:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(15);__webpack_exports__.a=lit_element__WEBPACK_IMPORTED_MODULE_0__.a`
+  :host {
+    --border-radius: 0.5em;
+    --border-radius-input: 0.313em;
+    --button-padding: 0.75em 1.375em;
+    --input-padding: 0.625em 0.5em;
+    --textarea-padding: 0.438em 0.813em;
+
+    --color-surface: #ffffff;
+    --color-black: #000000;
+    --color-primary: #2c6fb7;
+    --color-primary-dark: #004587;
+    --color-secondary: #69c9b9;
+    --color-secondary-dark: #349889;
+    --color-error: #bc1c16;
+    --color-gray-lightest: #e1e3e4;
+    --color-gray-light: #c4c7ca;
+    --color-gray-darkest: #6c737a;
+    --color-box-shadow: rgba(159, 164, 168, 0.6);
+
+    --font-letter-spacing: 0.018em;
+    --font-size-paragraph-medium: 0.938em;
+    --font-size-subtitle: 0.938em;
+    --font-size-title: 1.4em;
+    --font-size-input: 0.938em;
+    --font-size-label: 0.875em;
+  }
+`},310:function(module,exports,__webpack_require__){__webpack_require__(311),__webpack_require__(414),module.exports=__webpack_require__(415)},415:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(38);const req=__webpack_require__(570);Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.configure)(function loadStories(){req.keys().forEach(req)},module)}.call(this,__webpack_require__(93)(module))},570:function(module,exports,__webpack_require__){var map={"./button.stories.ts":571,"./card.stories.ts":583,"./checkbox.stories.ts":584,"./input.stories.ts":585,"./radio.stories.ts":586,"./switch.stories.ts":587,"./textarea.stories.ts":588};function webpackContext(req){var id=webpackContextResolve(req);return __webpack_require__(id)}function webpackContextResolve(req){if(!__webpack_require__.o(map,req)){var e=new Error("Cannot find module '"+req+"'");throw e.code="MODULE_NOT_FOUND",e}return map[req]}webpackContext.keys=function webpackContextKeys(){return Object.keys(map)},webpackContext.resolve=webpackContextResolve,module.exports=webpackContext,webpackContext.id=570},571:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(38),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(0),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(14);__webpack_require__(589);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Button",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Primary",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-button ?disabled="${disabled}" theme="primary"
         >Button</chameleon-button
       >
@@ -10,7 +37,7 @@
       <chameleon-button ?disabled="${disabled}" theme="text"
         >Button</chameleon-button
       >
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(132)(module))},596:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(65),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(41);__webpack_require__(603),__webpack_require__(604);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Card",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(93)(module))},583:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(38),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(0),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(14);__webpack_require__(590),__webpack_require__(591),__webpack_require__(592);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Card",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.addParameters({backgrounds:[{name:"gray",value:"#f5f5f8",default:!0},{name:"black",value:"#252a33"}]}),stories.add("Basic",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-card>
         <chameleon-card-header
           title="${titleText}"
@@ -23,13 +50,29 @@
         <h3>Card</h3>
         <p>Here is some sample content for the card</p>
       </chameleon-card>
-    `,{info:{inline:!0}})}.call(this,__webpack_require__(132)(module))},597:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(65),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(41);__webpack_require__(605);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Checkbox",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Checkbox",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `,{info:{inline:!0}}),stories.add("Image",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO"),imageSrc=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Image Source","https://images.unsplash.com/photo-1474644746397-786f431dc663?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1080&q=80"),altText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("ALT Text","St. Louis Landscape");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <chameleon-card rounded>
+        <chameleon-card-header
+          title="${titleText}"
+          subtitle="${subtitleText}"
+        ></chameleon-card-header>
+        <chameleon-card-image
+          src="${imageSrc}"
+          alt="${altText}"
+        ></chameleon-card-image>
+        <p>
+          Sample text…Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+          Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
+          turpis.
+        </p>
+      </chameleon-card>
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(93)(module))},584:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(38),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(0),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(14);__webpack_require__(593);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Checkbox",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Checkbox",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-checkbox
         label="${label}"
         name="test"
         ?checked="${checked}"
       ></chameleon-checkbox>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(132)(module))},598:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(65),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(41);__webpack_require__(606);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Input",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const searchIcon=slot=>lit_html__WEBPACK_IMPORTED_MODULE_2__.svg`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(93)(module))},585:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(38),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(0),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(14);__webpack_require__(594);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Input",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const searchIcon=slot=>lit_html__WEBPACK_IMPORTED_MODULE_2__.svg`
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -76,20 +119,20 @@
       >
         ${searchIcon("icon-right")}
       </chameleon-input>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(132)(module))},599:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(65),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(41);__webpack_require__(607);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Radio",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Radio",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(93)(module))},586:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(38),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(0),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(14);__webpack_require__(595);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Radio",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Radio",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-radio
         label="${label}"
         name="test"
         ?checked="${checked}"
         ?disabled=${disabled}
       ></chameleon-radio>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(132)(module))},600:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(65),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(41);__webpack_require__(608);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Switch",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Switch",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(93)(module))},587:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(38),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(0),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(14);__webpack_require__(596);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Switch",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Switch",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-switch
         label="${label}"
         name="test"
         ?checked="${checked}"
       ></chameleon-switch>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(132)(module))},601:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(65),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(41);__webpack_require__(609);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Textarea",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Textarea",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),minlength=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("minlength",0),maxlength=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("maxlength",500),rows=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Rows",2),cols=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Columns",20);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(93)(module))},588:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(38),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(0),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(14);__webpack_require__(597);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Textarea",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Textarea",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),minlength=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("minlength",0),maxlength=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("maxlength",500),rows=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Rows",2),cols=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Columns",20);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-textarea
         ?disabled="${disabled}"
         .placeholder="${placeholder}"
@@ -100,7 +143,7 @@
         .rows="${rows}"
         .cols="${cols}"
       ></chameleon-textarea>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(132)(module))},602:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(169),class_map=__webpack_require__(332),base=__webpack_require__(66),base_button=__webpack_require__(57).a`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(93)(module))},589:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(137),class_map=__webpack_require__(308),base=__webpack_require__(28),base_button=__webpack_require__(15).a`
   :host {
     display: inline;
   }
@@ -114,7 +157,7 @@
   button {
     background-color: var(--color-primary);
     border: 1px solid var(--color-primary);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-input);
     color: var(--color-surface);
     cursor: pointer;
     font-size: var(--font-size-paragraph-medium);
@@ -161,22 +204,27 @@
       >
         <slot></slot>
       </button>
-    `}};chameleon_button_ChameleonButton.styles=[base.a,base_button],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"theme",void 0);chameleon_button_ChameleonButton=__decorate([Object(lit_element.b)("chameleon-button")],chameleon_button_ChameleonButton)},603:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(213),base=__webpack_require__(66),card=__webpack_require__(57).a`
+    `}};chameleon_button_ChameleonButton.styles=[base.a,base_button],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"theme",void 0);chameleon_button_ChameleonButton=__decorate([Object(lit_element.b)("chameleon-button")],chameleon_button_ChameleonButton)},590:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(179),base=__webpack_require__(28),card=__webpack_require__(15).a`
   :host {
     background-color: var(--color-surface);
     display: inline-block;
     max-width: 344px;
-    padding: 10px;
+    padding: 16px;
   }
 
   :host([outline]) {
     border: 1px solid var(--color-gray-lightest);
   }
+
+  :host([rounded]) {
+    border-radius: var(--border-radius);
+  }
 `,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};let chameleon_card_ChameleonCard=class ChameleonCard extends lit_element.a{render(){return lit_element.c`
       <slot></slot>
-    `}};chameleon_card_ChameleonCard.styles=[base.a,card];chameleon_card_ChameleonCard=__decorate([Object(lit_element.b)("chameleon-card")],chameleon_card_ChameleonCard)},604:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(141),lit_html=__webpack_require__(72),base=__webpack_require__(66),card_header=__webpack_require__(57).a`
+    `}};chameleon_card_ChameleonCard.styles=[base.a,card];chameleon_card_ChameleonCard=__decorate([Object(lit_element.b)("chameleon-card")],chameleon_card_ChameleonCard)},591:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(102),lit_html=__webpack_require__(42),base=__webpack_require__(28),card_header=__webpack_require__(15).a`
   :host {
     display: block;
+    margin-bottom: 11px;
   }
 
   h3,
@@ -205,7 +253,19 @@
       ${""!==this.title?lit_element.c`
             <h2>${this.title}</h2>
           `:lit_html.c}
-    `}};chameleon_card_header_ChameleonCardHeader.styles=[base.a,card_header],__decorate([Object(lit_element.d)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"title",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"subtitle",void 0);chameleon_card_header_ChameleonCardHeader=__decorate([Object(lit_element.b)("chameleon-card-header")],chameleon_card_header_ChameleonCardHeader)},605:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(160),lit_html=__webpack_require__(82),base=__webpack_require__(66),base_checkbox=__webpack_require__(57).a`
+    `}};chameleon_card_header_ChameleonCardHeader.styles=[base.a,card_header],__decorate([Object(lit_element.d)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"title",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"subtitle",void 0);chameleon_card_header_ChameleonCardHeader=__decorate([Object(lit_element.b)("chameleon-card-header")],chameleon_card_header_ChameleonCardHeader)},592:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(136),base=__webpack_require__(28),card_image=__webpack_require__(15).a`
+  :host {
+    display: inline-block;
+  }
+
+  img {
+    border-radius: var(--border-radius);
+    vertical-align: top;
+    width: 100%;
+  }
+`,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};let chameleon_card_image_ChameleonCardImage=class ChameleonCardImage extends lit_element.a{constructor(){super(...arguments),this.src="",this.alt=""}render(){return lit_element.c`
+      <img src="${this.src}" alt="${this.alt}" />
+    `}};chameleon_card_image_ChameleonCardImage.styles=[base.a,card_image],__decorate([Object(lit_element.d)({type:String})],chameleon_card_image_ChameleonCardImage.prototype,"src",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_card_image_ChameleonCardImage.prototype,"alt",void 0);chameleon_card_image_ChameleonCardImage=__decorate([Object(lit_element.b)("chameleon-card-image")],chameleon_card_image_ChameleonCardImage)},593:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(124),lit_html=__webpack_require__(52),base=__webpack_require__(28),base_checkbox=__webpack_require__(15).a`
   :host {
     align-items: center;
     cursor: pointer;
@@ -262,7 +322,7 @@
       <input type="checkbox" ?checked="${this.checked}" value="${this.value}" />
       <span class="checkmark"></span>
       ${this.labelText}
-    `}get labelText(){return""!==this.label?this.label:lit_html.c}};chameleon_checkbox_ChameleonCheckbox.styles=[base.a,base_checkbox],__decorate([Object(lit_element.d)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"value",void 0);chameleon_checkbox_ChameleonCheckbox=__decorate([Object(lit_element.b)("chameleon-checkbox")],chameleon_checkbox_ChameleonCheckbox)},606:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(39),lit_html=__webpack_require__(56),class_map=__webpack_require__(333),base=__webpack_require__(66),input=__webpack_require__(57).a`
+    `}get labelText(){return""!==this.label?this.label:lit_html.c}};chameleon_checkbox_ChameleonCheckbox.styles=[base.a,base_checkbox],__decorate([Object(lit_element.d)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"value",void 0);chameleon_checkbox_ChameleonCheckbox=__decorate([Object(lit_element.b)("chameleon-checkbox")],chameleon_checkbox_ChameleonCheckbox)},594:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(12),lit_html=__webpack_require__(27),class_map=__webpack_require__(309),base=__webpack_require__(28),input=__webpack_require__(15).a`
   :host {
     display: inline-flex;
     flex-direction: column;
@@ -270,7 +330,7 @@
 
   input {
     border: 1px solid var(--color-gray-light);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-input);
     font-size: var(--font-size-input);
     padding: var(--input-padding);
   }
@@ -383,7 +443,7 @@
         <label for="cha-input">${this.label}</label>
       `:lit_html.f}get errorText(){return""!==this.validationMessage?lit_element.c`
         <span class="error">${this.validationMessage}</span>
-      `:lit_html.f}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}_handleInput(e){this.value=e.target.value}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}};chameleon_input_ChameleonInput.styles=[base.a,input],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autocomplete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autofocus",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"type",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"min",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"max",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"validationMessage",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-left",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-right",void 0);chameleon_input_ChameleonInput=__decorate([Object(lit_element.b)("chameleon-input")],chameleon_input_ChameleonInput)},607:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(142),lit_html=__webpack_require__(83),base=__webpack_require__(66),base_radio=__webpack_require__(57).a`
+      `:lit_html.f}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}_handleInput(e){this.value=e.target.value}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}};chameleon_input_ChameleonInput.styles=[base.a,input],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autocomplete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autofocus",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"type",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"min",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"max",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"validationMessage",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-left",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-right",void 0);chameleon_input_ChameleonInput=__decorate([Object(lit_element.b)("chameleon-input")],chameleon_input_ChameleonInput)},595:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(103),lit_html=__webpack_require__(53),base=__webpack_require__(28),base_radio=__webpack_require__(15).a`
   :host {
     align-items: center;
     cursor: pointer;
@@ -459,7 +519,7 @@
       />
       <span class="checkmark ${this.disabled?"disabled":""}"></span>
       ${this.labelText}
-    `}get labelText(){return""!==this.label?this.label:lit_html.c}};chameleon_radio_ChameleonRadio.styles=[base.a,base_radio],__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"disabled",void 0);chameleon_radio_ChameleonRadio=__decorate([Object(lit_element.b)("chameleon-radio")],chameleon_radio_ChameleonRadio)},608:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(161),lit_html=__webpack_require__(84),base=__webpack_require__(66),base_switch=__webpack_require__(57).a`
+    `}get labelText(){return""!==this.label?this.label:lit_html.c}};chameleon_radio_ChameleonRadio.styles=[base.a,base_radio],__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"disabled",void 0);chameleon_radio_ChameleonRadio=__decorate([Object(lit_element.b)("chameleon-radio")],chameleon_radio_ChameleonRadio)},596:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(125),lit_html=__webpack_require__(54),base=__webpack_require__(28),base_switch=__webpack_require__(15).a`
   :host {
     align-items: center;
     display: inline-flex;
@@ -521,7 +581,7 @@
         <span class="slider"></span>
       </div>
       ${this.labelText}
-    `}get labelText(){return""!==this.label?this.label:lit_html.c}};chameleon_switch_ChameleonSwitch.styles=[base.a,base_switch],__decorate([Object(lit_element.d)({type:String})],chameleon_switch_ChameleonSwitch.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_switch_ChameleonSwitch.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_switch_ChameleonSwitch.prototype,"value",void 0);chameleon_switch_ChameleonSwitch=__decorate([Object(lit_element.b)("chameleon-switch")],chameleon_switch_ChameleonSwitch)},609:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(43),lit_html=__webpack_require__(73),base=__webpack_require__(66),base_textarea=__webpack_require__(57).a`
+    `}get labelText(){return""!==this.label?this.label:lit_html.c}};chameleon_switch_ChameleonSwitch.styles=[base.a,base_switch],__decorate([Object(lit_element.d)({type:String})],chameleon_switch_ChameleonSwitch.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_switch_ChameleonSwitch.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_switch_ChameleonSwitch.prototype,"value",void 0);chameleon_switch_ChameleonSwitch=__decorate([Object(lit_element.b)("chameleon-switch")],chameleon_switch_ChameleonSwitch)},597:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(16),lit_html=__webpack_require__(43),base=__webpack_require__(28),base_textarea=__webpack_require__(15).a`
   :host {
     display: inline-flex;
     flex-direction: column;
@@ -529,7 +589,7 @@
 
   textarea {
     border: 1px solid var(--color-gray-light);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-input);
     font-size: var(--font-size-input);
     padding: var(--textarea-padding);
   }
@@ -569,31 +629,5 @@
         <label for="cha-textarea">${this.label}</label>
       `:lit_html.c}get errorText(){return""!==this.validationMessage?lit_element.c`
         <span class="error">${this.validationMessage}</span>
-      `:lit_html.c}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}};chameleon_textarea_ChameleonTextarea.styles=[base.a,base_textarea],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autocomplete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autofocus",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"cols",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"maxlength",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"minlength",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"rows",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"spellcheck",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"validationMessage",void 0);chameleon_textarea_ChameleonTextarea=__decorate([Object(lit_element.b)("chameleon-textarea")],chameleon_textarea_ChameleonTextarea)},66:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(57);__webpack_exports__.a=lit_element__WEBPACK_IMPORTED_MODULE_0__.a`
-  :host {
-    --border-radius: 0.313em;
-    --button-padding: 0.75em 1.375em;
-    --input-padding: 0.625em 0.5em;
-    --textarea-padding: 0.438em 0.813em;
-
-    --color-surface: #ffffff;
-    --color-black: #000000;
-    --color-primary: #2c6fb7;
-    --color-primary-dark: #004587;
-    --color-secondary: #69c9b9;
-    --color-secondary-dark: #349889;
-    --color-error: #bc1c16;
-    --color-gray-lightest: #e1e3e4;
-    --color-gray-light: #c4c7ca;
-    --color-gray-darkest: #6c737a;
-    --color-box-shadow: rgba(159, 164, 168, 0.6);
-
-    --font-letter-spacing: 0.018em;
-    --font-size-paragraph-medium: 0.938em;
-    --font-size-subtitle: 0.938em;
-    --font-size-title: 1.4em;
-    --font-size-input: 0.938em;
-    --font-size-label: 0.875em;
-  }
-`}},[[334,1,2]]]);
-//# sourceMappingURL=main.751d816da79ecd0757d7.bundle.js.map
+      `:lit_html.c}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}};chameleon_textarea_ChameleonTextarea.styles=[base.a,base_textarea],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autocomplete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autofocus",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"cols",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"maxlength",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"minlength",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"rows",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"spellcheck",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"validationMessage",void 0);chameleon_textarea_ChameleonTextarea=__decorate([Object(lit_element.b)("chameleon-textarea")],chameleon_textarea_ChameleonTextarea)}},[[310,1,2]]]);
+//# sourceMappingURL=main.7d8b1315eeea6a872462.bundle.js.map
