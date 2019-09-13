@@ -8,7 +8,7 @@ export default css`
 
   textarea {
     border: 1px solid var(--color-gray-light);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-input);
     font-size: var(--font-size-input);
     padding: var(--textarea-padding);
   }
