@@ -12,13 +12,20 @@ module.exports = config => {
       ],
       plugins: [require.resolve("@open-wc/karma-esm"), "karma-*"],
       frameworks: ["esm"],
-      babelConfig: require("./babel.config.js"),
       esm: {
         nodeResolve: true,
         compatibility: "all",
-        babel: true,
-        nodeResolve: true,
-        fileExtensions: [".ts"]
+        fileExtensions: [".ts"],
+        customBabelConfig: {
+          presets: ["@babel/preset-typescript"],
+          plugins: [
+            [
+              "@babel/plugin-proposal-decorators",
+              { decoratorsBeforeExport: true }
+            ],
+            "@babel/plugin-proposal-class-properties"
+          ]
+        }
       }
     })
   );
