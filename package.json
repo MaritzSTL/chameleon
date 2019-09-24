@@ -13,7 +13,7 @@
     "dev": "start-storybook",
     "build": "rollup --config",
     "build-storybook": "build-storybook -c .storybook -o .out && cp -a .out/./ docs/ && del-cli .out",
-    "publish-packages": "lerna publish --yes"
+    "publish-packages": "lerna publish --yes from-package"
   },
   "repository": {
     "type": "git",
