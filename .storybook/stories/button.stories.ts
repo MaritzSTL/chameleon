@@ -13,9 +13,13 @@ stories.add(
   "Primary",
   () => {
     const disabled = boolean("Disabled", false);
+    const fullWidth = boolean("Full Width", false);
 
     return html`
-      <chameleon-button ?disabled="${disabled}" theme="primary"
+      <chameleon-button
+        ?disabled="${disabled}"
+        theme="primary"
+        ?full-width="${fullWidth}"
         >Button</chameleon-button
       >
     `;
@@ -27,9 +31,13 @@ stories.add(
   "Secondary",
   () => {
     const disabled = boolean("Disabled", false);
+    const fullWidth = boolean("Full Width", false);
 
     return html`
-      <chameleon-button ?disabled="${disabled}" theme="secondary"
+      <chameleon-button
+        ?disabled="${disabled}"
+        theme="secondary"
+        ?full-width="${fullWidth}"
         >Button</chameleon-button
       >
     `;
@@ -41,9 +49,13 @@ stories.add(
   "Text",
   () => {
     const disabled = boolean("Disabled", false);
+    const fullWidth = boolean("Full Width", false);
 
     return html`
-      <chameleon-button ?disabled="${disabled}" theme="text"
+      <chameleon-button
+        ?disabled="${disabled}"
+        theme="text"
+        ?full-width="${fullWidth}"
         >Button</chameleon-button
       >
     `;
