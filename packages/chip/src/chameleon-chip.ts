@@ -16,6 +16,7 @@ export default class ChameleonChip extends LitElement {
    * Properties
    */
 
+  // TODO(Nodza): Make chip closeable https://github.com/MaritzSTL/chameleon/issues/81
   // A Boolean which, if true, indicates that the chip is closeable
   // @property({ type: Boolean, reflect: true })
   // closeable = false;
