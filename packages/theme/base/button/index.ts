@@ -9,6 +9,7 @@ export default css`
     background-color: var(--color-gray-lightest);
     border-color: var(--color-gray-lightest);
     color: var(--color-gray-darkest);
+    pointer-events: none;
   }
 
   button {
