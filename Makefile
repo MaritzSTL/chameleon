@@ -6,6 +6,7 @@ link_deps:
 	cd packages/dialog && npm link @chameleon-ds/theme && cd ../..
 	cd packages/radio && npm link @chameleon-ds/theme && cd ../..
 	cd packages/switch && npm link @chameleon-ds/theme && cd ../..
+	cd packages/chip && npm link @chameleon-ds/theme && cd ../..
 	cd packages/checkbox && npm link @chameleon-ds/theme && cd ../..
 	cd packages/card-header && npm link @chameleon-ds/theme && cd ../..
 	cd packages/card-image && npm link @chameleon-ds/theme && cd ../..
