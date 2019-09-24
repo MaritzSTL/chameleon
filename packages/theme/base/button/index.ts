@@ -5,6 +5,10 @@ export default css`
     display: inline;
   }
 
+  :host([full-width]) button {
+    width: 100%;
+  }
+
   button[disabled] {
     background-color: var(--color-gray-lightest);
     border-color: var(--color-gray-lightest);
