@@ -9,7 +9,9 @@ export default css`
   input {
     border: 1px solid var(--color-gray-light);
     border-radius: var(--border-radius-input);
+    box-sizing: border-box;
     font-size: var(--font-size-input);
+    max-width: 100%;
     padding: var(--input-padding);
   }
 
