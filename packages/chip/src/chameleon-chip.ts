@@ -1,12 +1,4 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
-import { nothing } from "lit-html";
-import { classMap } from "lit-html/directives/class-map";
+import { LitElement, TemplateResult, customElement, html } from "lit-element";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/chip";
 
@@ -31,11 +23,9 @@ export default class ChameleonChip extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <div>
-        <span>
-          <slot></slot>
-        </span>
-      </div>
+      <span>
+        <slot></slot>
+      </span>
     `;
   }
 }
