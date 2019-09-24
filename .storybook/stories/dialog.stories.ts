@@ -12,10 +12,30 @@ stories.addDecorator(withKnobs as any);
 stories.add(
   "Basic",
   () => {
-    const dialogVisible = boolean("Disabled", false);
+    // let dialogVisible = false;
+    let dialogVisible = boolean("Open", true);
+    const toggleDialog = () => {
+      dialogVisible = !dialogVisible;
+    };
+
+    const closeDialog = () => {
+      dialogVisible = false;
+    };
 
     return html`
-      <chameleon-dialog></chameleon-dialog>
+      <h1>Yolo!</h1>
+      <chameleon-dialog
+        ?opened="${!dialogVisible}"
+        @dialog.accept="${() => console.log("Ok")}"
+        @dialog.cancel="${() => console.log("Cancel")}"
+      >
+        <h2>Icon</h2>
+        <h1 class="dialog-title">Title</h1>
+        <p class="dialog-body">This is a dialog</p>
+      </chameleon-dialog>
+      <!-- <button @click="${toggleDialog}">
+        Open
+      </button> -->
     `;
   },
   { info: { inline: true } }

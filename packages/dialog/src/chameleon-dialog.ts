@@ -8,6 +8,8 @@ import {
 import { classMap } from "lit-html/directives/class-map";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/dialog";
+import "../../button/src/chameleon-button";
+import "../../card/src/chameleon-card";
 
 @customElement("chameleon-dialog")
 export default class ChameleonDialog extends LitElement {
@@ -31,30 +33,31 @@ export default class ChameleonDialog extends LitElement {
     return html`
       <div
         class="${classMap({
-          dialog: true,
+          overlay: true,
           opened: !this.opened,
           closed: this.opened
         })}"
       >
-        <h1 class="title ">Title</h1>
-        <p class="content">This is a dialog</p>
-        <div class="buttons">
-          <button
-            class="accept"
-            @click="${() =>
-              this.dispatchEvent(new CustomEvent("dialog.accept"))}"
-          >
-            Ok
-          </button>
-          <button
-            class="cancel"
-            @click="${() =>
-              this.dispatchEvent(new CustomEvent("dialog.cancel"))}"
-          >
-            Cancel
-          </button>
+        <chameleon-card>
+          <div class="dialog">
+            <slot></slot>
+            <div class="buttons">
+              <chameleon-button
+                theme="primary"
+                @click="${() =>
+                  this.dispatchEvent(new CustomEvent("dialog.accept"))}"
+                >Okay</chameleon-button
+              >
+              <chameleon-button
+                theme="secondary"
+                @click="${() =>
+                  this.dispatchEvent(new CustomEvent("dialog.cancel"))}"
+                >Cancel</chameleon-button
+              >
+            </div>
+          </div>
         </div>
-      </div>
+      </chameleon-card>
     `;
   }
 }
