@@ -11,6 +11,7 @@ export default css`
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
     padding: 0.5em;
   }
 
@@ -42,13 +43,63 @@ export default css`
     width: 300px;
     height: 360px;
     padding: 48px;
+    animation-name: dialogopen;
+    animation-duration: 1s;
   }
 
-  .buttons {
-    display: flex;
-    flex-direction: row;
+  .actions {
+    width: 100%;
   }
   chameleon-button {
-    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    width: 100%;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    color: var(--color-gray-darkest);
+  }
+
+  :slotted(*) {
+    color: var(--color-gray-darkest);
+    height: 1.125em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+  }
+
+  ::slotted([slot="default-icon"]) {
+    color: var(--color-secondary-dark);
+    height: 2.625em;
+  }
+
+  ::slotted([slot="title"]) {
+    color: var(--color-primary);
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 2.25em;
+    letter-spacing: 0.016em;
+  }
+
+  ::slotted([slot="actions"]) {
+    margin-top: 1.5em;
+  }
+  ::slotted([slot="actions"]) *:not(:last-of-type) {
+    margin-bottom: 1.5em;
+  }
+
+  :host([slot="actions"]) {
+    background-color: green;
+  }
+
+  @keyframes dialogopen {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
