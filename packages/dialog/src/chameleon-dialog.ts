@@ -19,12 +19,9 @@ export default class ChameleonDialog extends LitElement {
   @property({ type: Boolean, reflect: true })
   opened = false;
 
-  @property({ type: String, reflect: true })
-  theme = "primary";
-
   // Card has an icon
   @property({ type: Boolean, reflect: true })
-  "default-icon" = false;
+  "icon" = false;
 
   /**
    * Styles
@@ -45,10 +42,13 @@ export default class ChameleonDialog extends LitElement {
       >
         <chameleon-card>
           <div class="dialog">
-            <slot name="default-icon"></slot>
+            <slot name="icon"></slot>
             <slot name="title"></slot>
             <slot></slot>
-            <slot name="actions"></slot>
+            <div class="actions">
+              <slot name="accept-action"></slot>
+              <slot name="decline-action"></slot>
+            </div>
           </div>
         </div>
       </chameleon-card>

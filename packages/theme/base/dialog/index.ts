@@ -41,14 +41,16 @@ export default css`
     margin: auto;
     background-color: #ffffff;
     width: 300px;
-    height: 360px;
     padding: 48px;
     animation-name: dialogopen;
     animation-duration: 1s;
   }
 
   .actions {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    margin-top: 1.5em;
   }
   chameleon-button {
     margin-bottom: 0.5em;
@@ -70,7 +72,7 @@ export default css`
     width: auto;
   }
 
-  ::slotted([slot="default-icon"]) {
+  ::slotted([slot="icon"]) {
     color: var(--color-secondary-dark);
     height: 2.625em;
   }
@@ -79,19 +81,16 @@ export default css`
     color: var(--color-primary);
     font-size: 2em;
     font-weight: 300;
-    line-height: 2.25em;
     letter-spacing: 0.016em;
+    margin: 1em 0;
   }
 
-  ::slotted([slot="actions"]) {
-    margin-top: 1.5em;
-  }
-  ::slotted([slot="actions"]) *:not(:last-of-type) {
-    margin-bottom: 1.5em;
+  ::slotted([slot="accept-action"]) {
+    margin-top: 1em;
   }
 
-  :host([slot="actions"]) {
-    background-color: green;
+  ::slotted([slot="decline-action"]) {
+    margin-top: 1em;
   }
 
   @keyframes dialogopen {

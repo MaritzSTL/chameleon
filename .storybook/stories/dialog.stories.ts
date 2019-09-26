@@ -28,22 +28,61 @@ stories.add(
 
     return html`
       <h1>Yolo!</h1>
-      <chameleon-dialog
-        ?opened="${!dialogVisible}"
-        @dialog.accept="${() => console.log("Ok")}"
-        @dialog.cancel="${() => console.log("Cancel")}"
-      >
-        ${defaultIcon("default-icon")}
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <h1>Yolo!</h1>
+      <chameleon-dialog ?opened="${!dialogVisible}">
+        ${defaultIcon("icon")}
         <h1 slot="title">Title</h1>
         We’re sorry but your session has expired. You will need to log back in
         to continue.
-        <div slot="actions">
+        <div slot="accept-action">
           <chameleon-button
             full-width
             theme="primary"
             @click="${() => console.log("Accept")}"
             >Okay</chameleon-button
           >
+        </div>
+        <div slot="decline-action">
           <chameleon-button
             full-width
             theme="secondary"
