@@ -24,12 +24,6 @@ export default class ChameleonHero extends LitElement {
   @property({ type: String })
   backgroundImageUrl = "";
 
-  // @property({ type: String })
-  // primaryDarkHex = "";
-
-  // @property({ type: String })
-  // primaryLightHex = "";
-
   /**
    * Styles
    */
@@ -65,36 +59,16 @@ export default class ChameleonHero extends LitElement {
   heroBackgroundImageStyles() {
     return this.backgroundImageUrl
       ? {
-          backgroundImage: `url(${
-            this.backgroundImageUrl
-          }?w=1920), linear-gradient(to right, ${hexToRgba(
-            this.primaryDarkHex,
-            false,
-            "1"
-          )},
-          ${hexToRgba(this.primaryLightHex, false, "1")})
-                          `
+          backgroundImage: `url(${this.backgroundImageUrl}?w=1920)
+        `
         }
       : {
-          backgroundImage: `linear-gradient(to right, ${hexToRgba(
-            this.primaryDarkHex,
-            false,
-            "1"
-          )},
-                          ${hexToRgba(this.primaryLightHex, false, "1")}
-                          )
-                          `
+          backgroundImage: `linear-gradient(to right, var(--color-primary-dark), var(--color-secondary-dark)) 
+        `
         };
   }
 
   get hasHeading() {
     return this.title || this.subTitle;
-  }
-  get primaryDarkHex() {
-    return window.ShadyCSS.getComputedStyleValue(this, "--primary-color-dark");
-  }
-
-  get primaryLightHex() {
-    return window.ShadyCSS.getComputedStyleValue(this, "--primary-color-light");
   }
 }

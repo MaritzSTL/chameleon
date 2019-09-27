@@ -25,6 +25,10 @@ singularity-header {
   font-size: 22px;
 }
 
+.surface-color {
+  color: var(--color-surface);
+}
+
 .heading {
   padding-left: 112px;
 }
