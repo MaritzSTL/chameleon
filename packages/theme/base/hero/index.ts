@@ -17,6 +17,10 @@ export default css`
   align-items: center;
 }
 
+.hero-text {
+  font-size: var(--font-size-paragraph-medium);
+}
+
 singularity-header {
   display: inline-block;
 }

@@ -22,6 +22,9 @@ export default class ChameleonHero extends LitElement {
   subTitle = "";
 
   @property({ type: String })
+  heroText = "";
+
+  @property({ type: String })
   backgroundImageUrl = "";
 
   /**
@@ -44,6 +47,7 @@ export default class ChameleonHero extends LitElement {
                     <p class="landing-subtitle surface-color">
                       ${this.subTitle}
                     </p>
+                    <p class="hero-text surface-color">${this.heroText}</p>
                     <slot name="search"></slot>
                   </div>
                 </div>
