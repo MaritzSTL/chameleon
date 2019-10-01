@@ -67,8 +67,4 @@ singularity-header {
       min-height:initial;
       padding-top: 150px;
       padding-bottom: 150px;
-  }
-
-  .gd {
-      z-index:1;
   }`;

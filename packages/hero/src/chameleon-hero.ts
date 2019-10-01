@@ -25,7 +25,7 @@ export default class ChameleonHero extends LitElement {
   heroText = "";
 
   @property({ type: String })
-  backgroundImageUrl = "";
+  imageUrl = "";
 
   /**
    * Styles
@@ -38,7 +38,7 @@ export default class ChameleonHero extends LitElement {
   render(): TemplateResult {
     return html`
       <div class="hero" style="${styleMap(this.heroBackgroundImageStyles())}">
-        <div class="gd ${this.hasHeading ? "heading" : ""}">
+        <div class="${this.hasHeading ? "heading" : ""}">
           ${this.hasHeading
             ? html`
                 <div class="col-12 col-md-12 col-lg-6 col-xl-6 title-subtitle">
@@ -61,9 +61,9 @@ export default class ChameleonHero extends LitElement {
   }
 
   heroBackgroundImageStyles() {
-    return this.backgroundImageUrl
+    return this.imageUrl
       ? {
-          backgroundImage: `url(${this.backgroundImageUrl}?w=1920)
+          backgroundImage: `url(${this.imageUrl}?w=1920)
         `
         }
       : {

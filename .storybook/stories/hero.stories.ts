@@ -47,7 +47,7 @@ stories.add(
         title="${title}"
         subTitle="${subtitle}"
         heroText="${heroText}"
-        backgroundImageUrl="${imageUrl}"
+        imageUrl="${imageUrl}"
       >
       </chameleon-hero>
     `;
