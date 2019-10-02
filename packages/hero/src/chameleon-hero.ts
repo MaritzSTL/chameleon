@@ -38,21 +38,22 @@ export default class ChameleonHero extends LitElement {
   render(): TemplateResult {
     return html`
       <div class="hero" style="${styleMap(this.heroBackgroundImageStyles())}">
-        <div class="${this.hasHeading ? "heading" : ""}">
-          ${this.hasHeading
-            ? html`
-                <div class="col-12 col-md-12 col-lg-6 col-xl-6 title-subtitle">
-                  <div>
-                    <h1 class="pax surface-color">${this.title}</h1>
-                    <p class="landing-subtitle surface-color">
-                      ${this.subTitle}
-                    </p>
-                    <p class="hero-text surface-color">${this.heroText}</p>
-                    <slot name="search"></slot>
+        <header class="${this.hasHeading ? "heading" : ""}">
+          ${
+            this.hasHeading
+              ? html`
+                  <div class="title-subtitle">
+                    <div>
+                      <h1 class="pax surface-color">${this.title}</h1>
+                      <p class="landing-subtitle surface-color">
+                        ${this.subTitle}
+                      </p>
+                      <p class="hero-text surface-color">${this.heroText}</p>
+                    </div>
                   </div>
-                </div>
-              `
-            : nothing}
+                `
+              : nothing
+          }
           <slot name="in-grid"></slot>
         </div>
         <slot></slot>
