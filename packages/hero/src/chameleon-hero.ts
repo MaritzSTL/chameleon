@@ -27,6 +27,9 @@ export default class ChameleonHero extends LitElement {
   @property({ type: String })
   imageUrl = "";
 
+  @property({ type: String })
+  gradient = "var(--color-primary-dark), var(--color-secondary-dark)";
+
   /**
    * Styles
    */
@@ -71,7 +74,7 @@ export default class ChameleonHero extends LitElement {
         `
         }
       : {
-          backgroundImage: `linear-gradient(to right, var(--color-primary-dark), var(--color-secondary-dark)) 
+          backgroundImage: `linear-gradient(to right, ${this.gradient}) 
         `
         };
   }

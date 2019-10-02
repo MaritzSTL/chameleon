@@ -18,12 +18,14 @@ stories.add(
       "Text",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet non curabitur gravida arcu ac tortor dignissim convallis aenean. Viverra adipiscing at in tellus integer feugiat."
     );
+    const gradientColors = text("Hex Colors", "#B72126, #14264B");
 
     return html`
       <chameleon-hero
         title="${title}"
         subTitle="${subtitle}"
         heroText="${heroText}"
+        gradient="${gradientColors}"
       >
       </chameleon-hero>
     `;
