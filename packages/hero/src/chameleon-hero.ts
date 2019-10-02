@@ -38,25 +38,28 @@ export default class ChameleonHero extends LitElement {
   render(): TemplateResult {
     return html`
       <div class="hero" style="${styleMap(this.heroBackgroundImageStyles())}">
-        <header class="${this.hasHeading ? "heading" : ""}">
-          ${
-            this.hasHeading
-              ? html`
-                  <div class="title-subtitle">
-                    <div>
-                      <h1 class="pax surface-color">${this.title}</h1>
-                      <p class="landing-subtitle surface-color">
-                        ${this.subTitle}
-                      </p>
-                      <p class="hero-text surface-color">${this.heroText}</p>
-                    </div>
-                  </div>
-                `
-              : nothing
-          }
-          <slot name="in-grid"></slot>
-        </div>
-        <slot></slot>
+        <header class="heading">
+          ${this.title
+            ? html`
+                <h1 class="surface-color">${this.title}</h1>
+              `
+            : nothing}
+          ${this.subTitle
+            ? html`
+                <p class="hero-subtitle surface-color">
+                  ${this.subTitle}
+                </p>
+              `
+            : nothing}
+          ${this.heroText
+            ? html`
+                <p class="surface-color">
+                  ${this.heroText}
+                </p>
+              `
+            : nothing}
+          <slot></slot>
+        </header>
       </div>
     `;
   }
@@ -71,9 +74,5 @@ export default class ChameleonHero extends LitElement {
           backgroundImage: `linear-gradient(to right, var(--color-primary-dark), var(--color-secondary-dark)) 
         `
         };
-  }
-
-  get hasHeading() {
-    return this.title || this.subTitle;
   }
 }
