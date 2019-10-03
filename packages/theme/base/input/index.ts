@@ -15,12 +15,17 @@ export default css`
     padding: var(--input-padding);
   }
 
+  .invalid input {
+    border-color: var(--color-error);
+  }
   label {
     color: var(--color-gray-darkest);
     font-size: var(--font-size-label);
     margin-bottom: 10px;
   }
-
+  label.invalid {
+    color: var(--color-error);
+  }
   .error {
     color: var(--color-error);
     font-size: var(--font-size-label);
