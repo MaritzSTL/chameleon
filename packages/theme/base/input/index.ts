@@ -20,14 +20,21 @@ export default css`
   .invalid input {
     border-color: var(--color-error);
   }
+
+  .invalid ::slotted(svg) {
+    color: var(--color-error);
+  }
+
   label {
     color: var(--color-gray-darkest);
     font-size: var(--font-size-label);
     margin-bottom: 10px;
   }
+
   label.invalid {
     color: var(--color-error);
   }
+
   .error {
     color: var(--color-error);
     font-size: var(--font-size-label);
@@ -35,6 +42,7 @@ export default css`
     display: flex;
     align-items: center;
   }
+
   .error svg {
     padding-right: 0.5rem;
   }
