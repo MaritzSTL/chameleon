@@ -24,6 +24,7 @@
     --font-size-title: 1.4em;
     --font-size-input: 0.938em;
     --font-size-label: 0.875em;
+    --font-family: Arial, Helvetica, sans-serif;
   }
 `},582:function(module,exports,__webpack_require__){var map={"./button.stories.ts":583,"./card.stories.ts":598,"./checkbox.stories.ts":599,"./chip.stories.ts":600,"./input.stories.ts":601,"./radio.stories.ts":602,"./switch.stories.ts":603,"./textarea.stories.ts":604};function webpackContext(req){var id=webpackContextResolve(req);return __webpack_require__(id)}function webpackContextResolve(req){if(!__webpack_require__.o(map,req)){var e=new Error("Cannot find module '"+req+"'");throw e.code="MODULE_NOT_FOUND",e}return map[req]}webpackContext.keys=function webpackContextKeys(){return Object.keys(map)},webpackContext.resolve=webpackContextResolve,module.exports=webpackContext,webpackContext.id=582},583:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(59),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(37);__webpack_require__(605);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Button",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Primary",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),fullWidth=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Width",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-button
@@ -156,7 +157,7 @@
         .rows="${rows}"
         .cols="${cols}"
       ></chameleon-textarea>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(108)(module))},605:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(170),class_map=__webpack_require__(334),base=__webpack_require__(45),base_button=__webpack_require__(44).a`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(108)(module))},605:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(170),class_map=__webpack_require__(335),base=__webpack_require__(45),base_button=__webpack_require__(44).a`
   :host {
     display: inline;
   }
@@ -371,10 +372,11 @@
       <span>
         <slot></slot>
       </span>
-    `}};chameleon_chip_ChameleonChip.styles=[base.a,chip];chameleon_chip_ChameleonChip=__decorate([Object(lit_element.b)("chameleon-chip")],chameleon_chip_ChameleonChip)},611:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(42),lit_html=__webpack_require__(58),class_map=__webpack_require__(335),base=__webpack_require__(45),input=__webpack_require__(44).a`
+    `}};chameleon_chip_ChameleonChip.styles=[base.a,chip];chameleon_chip_ChameleonChip=__decorate([Object(lit_element.b)("chameleon-chip")],chameleon_chip_ChameleonChip)},611:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(42),lit_html=__webpack_require__(49),class_map=__webpack_require__(252),base=__webpack_require__(45),input=__webpack_require__(44).a`
   :host {
     display: inline-flex;
     flex-direction: column;
+    font-family: var(--font-family);
   }
 
   input {
@@ -382,8 +384,17 @@
     border-radius: var(--border-radius-input);
     box-sizing: border-box;
     font-size: var(--font-size-input);
+    font-family: var(--font-family);
     max-width: 100%;
     padding: var(--input-padding);
+  }
+
+  .invalid input {
+    border-color: var(--color-error);
+  }
+
+  .invalid ::slotted(svg) {
+    color: var(--color-error);
   }
 
   label {
@@ -392,10 +403,20 @@
     margin-bottom: 10px;
   }
 
+  label.invalid {
+    color: var(--color-error);
+  }
+
   .error {
     color: var(--color-error);
     font-size: var(--font-size-label);
     margin-top: 3px;
+    display: flex;
+    align-items: center;
+  }
+
+  .error svg {
+    padding-right: 0.5rem;
   }
 
   .input-wrapper {
@@ -433,10 +454,11 @@
   ::slotted([slot="icon-right"]) {
     right: 13px;
   }
-`,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};let chameleon_input_ChameleonInput=class ChameleonInput extends lit_element.a{constructor(){super(...arguments),this.autocomplete=!1,this.autofocus=!1,this.disabled=!1,this.readonly=!1,this.required=!1,this.type="text",this.placeholder="",this.value="",this.min=null,this.max=null,this.label="",this.validationMessage="",this["icon-left"]=!1,this["icon-right"]=!1}render(){return lit_element.c`
+`,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};let chameleon_input_ChameleonInput=class ChameleonInput extends lit_element.a{constructor(){super(...arguments),this.autocomplete=!1,this.autofocus=!1,this.disabled=!1,this.readonly=!1,this.required=!1,this.type="text",this.placeholder="",this.value="",this.min=null,this.max=null,this.label="",this.validationMessage="",this["icon-left"]=!1,this["icon-right"]=!1}firstUpdated(){this.requestUpdate()}render(){return lit_element.c`
       ${this.labelText}
       <div
-        class="${Object(class_map.a)({"input-wrapper":!0,"icon-left":this["icon-left"],"icon-right":this["icon-right"]})}"
+        class="
+        ${Object(class_map.a)({invalid:this._invalidState,"input-wrapper":!0,"icon-left":this["icon-left"],"icon-right":this["icon-right"]})}"
       >
         <slot name="icon-left"></slot>
         ${this._inputEl}
@@ -491,10 +513,31 @@
             @invalid="${this._handleInvalid}"
           />
         `}}get _el(){return null!==this.shadowRoot?this.shadowRoot.querySelector("input"):null}get labelText(){return""!==this.label?lit_element.c`
-        <label for="cha-input">${this.label}</label>
+        <label
+          for="cha-input"
+          class="${Object(class_map.a)({invalid:this._invalidState})}"
+          >${this.label}</label
+        >
       `:lit_html.f}get errorText(){return""!==this.validationMessage?lit_element.c`
-        <span class="error">${this.validationMessage}</span>
-      `:lit_html.f}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}_handleInput(e){this.value=e.target.value}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}};chameleon_input_ChameleonInput.styles=[base.a,input],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autocomplete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autofocus",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"type",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"min",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"max",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"validationMessage",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-left",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-right",void 0);chameleon_input_ChameleonInput=__decorate([Object(lit_element.b)("chameleon-input")],chameleon_input_ChameleonInput)},612:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(142),lit_html=__webpack_require__(87),base=__webpack_require__(45),base_radio=__webpack_require__(44).a`
+        <span class="error">${this.warningIcon} ${this.validationMessage}</span>
+      `:lit_html.f}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}get _invalidState(){if(null!==this._el)return!this.checkValidity()||this.validationMessage.length>0}_handleInput(e){this.value=e.target.value}_handleBlur(){this.checkValidity()&&(this.validationMessage="")}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}get warningIcon(){return lit_html.g`
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-search"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+  `}};chameleon_input_ChameleonInput.styles=[base.a,input],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autocomplete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autofocus",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"type",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"min",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"max",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_input_ChameleonInput.prototype,"validationMessage",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-left",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-right",void 0);chameleon_input_ChameleonInput=__decorate([Object(lit_element.b)("chameleon-input")],chameleon_input_ChameleonInput)},612:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(142),lit_html=__webpack_require__(87),base=__webpack_require__(45),base_radio=__webpack_require__(44).a`
   :host {
     align-items: center;
     cursor: pointer;
@@ -681,4 +724,4 @@
       `:lit_html.c}get errorText(){return""!==this.validationMessage?lit_element.c`
         <span class="error">${this.validationMessage}</span>
       `:lit_html.c}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}};chameleon_textarea_ChameleonTextarea.styles=[base.a,base_textarea],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autocomplete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autofocus",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"cols",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"maxlength",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"minlength",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"rows",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"spellcheck",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"validationMessage",void 0);chameleon_textarea_ChameleonTextarea=__decorate([Object(lit_element.b)("chameleon-textarea")],chameleon_textarea_ChameleonTextarea)}},[[336,1,2]]]);
-//# sourceMappingURL=main.443aa326633d748f285f.bundle.js.map
+//# sourceMappingURL=main.11e34af91b9998fc8387.bundle.js.map
