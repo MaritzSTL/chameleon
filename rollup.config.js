@@ -234,5 +234,30 @@ export default [
       external: externalLibs
     },
     plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-hero
+   */
+  {
+    input: "packages/hero/src/chameleon-hero.ts",
+    output: {
+      file: "packages/hero/dist/chameleon-hero.js",
+      format: "umd",
+      name: "chameleon-hero",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/hero/src/chameleon-hero.ts",
+    output: {
+      file: "packages/hero/dist/chameleon-hero.min.js",
+      format: "umd",
+      name: "chameleon-hero",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   }
 ];
