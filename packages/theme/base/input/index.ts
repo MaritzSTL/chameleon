@@ -4,6 +4,7 @@ export default css`
   :host {
     display: inline-flex;
     flex-direction: column;
+    font-family: var(--font-family);
   }
 
   input {
@@ -11,8 +12,17 @@ export default css`
     border-radius: var(--border-radius-input);
     box-sizing: border-box;
     font-size: var(--font-size-input);
+    font-family: var(--font-family);
     max-width: 100%;
     padding: var(--input-padding);
+  }
+
+  .invalid input {
+    border-color: var(--color-error);
+  }
+
+  .invalid ::slotted(svg) {
+    color: var(--color-error);
   }
 
   label {
@@ -21,10 +31,20 @@ export default css`
     margin-bottom: 10px;
   }
 
+  label.invalid {
+    color: var(--color-error);
+  }
+
   .error {
     color: var(--color-error);
     font-size: var(--font-size-label);
     margin-top: 3px;
+    display: flex;
+    align-items: center;
+  }
+
+  .error svg {
+    padding-right: 0.5rem;
   }
 
   .input-wrapper {
