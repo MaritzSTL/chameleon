@@ -12,6 +12,7 @@ export default css`
     border-radius: var(--border-radius-input);
     box-sizing: border-box;
     font-size: var(--font-size-input);
+    font-family: var(--font-family);
     max-width: 100%;
     padding: var(--input-padding);
   }
