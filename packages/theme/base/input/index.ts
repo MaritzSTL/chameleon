@@ -4,6 +4,7 @@ export default css`
   :host {
     display: inline-flex;
     flex-direction: column;
+    font-family: var(--font-family);
   }
 
   input {
@@ -30,6 +31,11 @@ export default css`
     color: var(--color-error);
     font-size: var(--font-size-label);
     margin-top: 3px;
+    display: flex;
+    align-items: center;
+  }
+  .error svg {
+    padding-right: 0.5rem;
   }
 
   .input-wrapper {

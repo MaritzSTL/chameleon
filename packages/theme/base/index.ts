@@ -26,5 +26,6 @@ export default css`
     --font-size-title: 1.4em;
     --font-size-input: 0.938em;
     --font-size-label: 0.875em;
+    --font-family: Arial, Helvetica, sans-serif;
   }
 `;
