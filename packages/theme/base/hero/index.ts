@@ -6,11 +6,11 @@ export default css`
   }
 
   .hero {
-    display: flex;
     align-items: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    display: flex;
     min-height: 400px;
     width: 100%;
   }

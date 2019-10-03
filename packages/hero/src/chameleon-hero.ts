@@ -79,24 +79,17 @@ export default class ChameleonHero extends LitElement {
   heroBackgroundImageStyles() {
     if (this.theme === "imageGradient") {
       return {
-        backgroundImage: `linear-gradient(to right, ${this.overlay}), url(${this.imageUrl}?w=1920)`
+        backgroundImage: `linear-gradient(to right, ${this.overlay}), url(${this.imageUrl})`
       };
     } else if (this.theme === "image") {
       return {
-        backgroundImage: `url(${this.imageUrl}?w=1920)`
+        backgroundImage: `url(${this.imageUrl})`
       };
     } else {
       return {
         backgroundImage: `linear-gradient(to right, ${this.gradient})`
       };
     }
-    // return this.imageUrl
-    //   ? {
-    //       backgroundImage: `linear-gradient(to right, ${this.overlay}), url(${this.imageUrl}?w=1920)`
-    //     }
-    //   : {
-    //       backgroundImage: `linear-gradient(to right, ${this.gradient})`
-    //     };
   }
 
   hex2rgba(hex, alpha = 0.5) {
