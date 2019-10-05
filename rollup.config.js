@@ -259,5 +259,30 @@ export default [
       external: externalLibs
     },
     plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-chip
+   */
+  {
+    input: "packages/chip/src/chameleon-chip.ts",
+    output: {
+      file: "packages/chip/dist/chameleon-chip.js",
+      format: "umd",
+      name: "chameleon-chip",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/chip/src/chameleon-chip.ts",
+    output: {
+      file: "packages/chip/dist/chameleon-chip.min.js",
+      format: "umd",
+      name: "chameleon-chip",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   }
 ];
