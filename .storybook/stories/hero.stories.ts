@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, text } from "@storybook/addon-knobs";
+import { withKnobs, text, number } from "@storybook/addon-knobs";
 import { html } from "lit-html";
 import "../../packages/hero/src/chameleon-hero";
 
@@ -19,7 +19,7 @@ stories.add(
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet non curabitur gravida arcu ac tortor dignissim convallis aenean. Viverra adipiscing at in tellus integer feugiat."
     );
     const gradientColors = text("Hex Colors", "#B72126, #14264B");
-    const heroTheme = "gradient";
+    const heroType = "gradient";
 
     return html`
       <chameleon-hero
@@ -27,7 +27,7 @@ stories.add(
         subTitle="${subtitle}"
         heroText="${heroText}"
         gradient="${gradientColors}"
-        theme="${heroTheme}"
+        type="${heroType}"
       >
       </chameleon-hero>
     `;
@@ -45,7 +45,7 @@ stories.add(
       "Cursus eget nunc scelerisque viverra mauris in. Tellus integer feugiat scelerisque varius. Nisl purus in mollis nunc sed id. Risus viverra adipiscing at in tellus."
     );
     const imageUrl = text("Image URL", "https://picsum.photos/id/122/2100/856");
-    const heroTheme = "image";
+    const heroType = "image";
 
     return html`
       <chameleon-hero
@@ -53,7 +53,7 @@ stories.add(
         subTitle="${subtitle}"
         heroText="${heroText}"
         imageUrl="${imageUrl}"
-        theme="${heroTheme}"
+        type="${heroType}"
       >
       </chameleon-hero>
     `;
@@ -71,7 +71,9 @@ stories.add(
       "Cursus eget nunc scelerisque viverra mauris in. Tellus integer feugiat scelerisque varius. Nisl purus in mollis nunc sed id. Risus viverra adipiscing at in tellus."
     );
     const imageUrl = text("Image URL", "https://picsum.photos/id/703/2100/856");
-    const heroTheme = "imageGradient";
+    const heroType = "imageGradient";
+    const gradientColors = text("Hex Colors", "#B72126, #14264B");
+    const gradientAlpha = number("Gradient Alpha", 0.5);
 
     return html`
       <chameleon-hero
@@ -79,7 +81,9 @@ stories.add(
         subTitle="${subtitle}"
         heroText="${heroText}"
         imageUrl="${imageUrl}"
-        theme="${heroTheme}"
+        type="${heroType}"
+        gradient="${gradientColors}"
+        gradientAlpha="${gradientAlpha}"
       >
       </chameleon-hero>
     `;
