@@ -38,7 +38,7 @@ export default class ChameleonHero extends LitElement {
   gradientAlpha = 0.5;
 
   @property({ type: Boolean })
-  skeleton = false;
+  loading = false;
 
   /**
    * Styles
@@ -50,7 +50,7 @@ export default class ChameleonHero extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      ${!this.skeleton
+      ${!this.loading
         ? html`
             <div class="hero" style="${styleMap(this.backgroundImageStyles)}">
               <header class="heading">

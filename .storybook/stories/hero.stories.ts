@@ -20,7 +20,7 @@ stories.add(
     );
     const gradientColors = text("Hex Colors", "#B72126, #14264B");
     const heroType = "gradient";
-    const skeleton = boolean("Skeleton", false);
+    const loading = boolean("Loading", false);
 
     return html`
       <chameleon-hero
@@ -29,7 +29,7 @@ stories.add(
         heroText="${heroText}"
         gradient="${gradientColors}"
         type="${heroType}"
-        ?skeleton="${skeleton}"
+        ?loading="${loading}"
       >
       </chameleon-hero>
     `;
@@ -48,7 +48,7 @@ stories.add(
     );
     const imageUrl = text("Image URL", "https://picsum.photos/id/122/2100/856");
     const heroType = "image";
-    const skeleton = boolean("Skeleton", false);
+    const loading = boolean("Loading", false);
 
     return html`
       <chameleon-hero
@@ -57,7 +57,7 @@ stories.add(
         heroText="${heroText}"
         imageUrl="${imageUrl}"
         type="${heroType}"
-        ?skeleton="${skeleton}"
+        ?loading="${loading}"
       >
       </chameleon-hero>
     `;
@@ -78,7 +78,7 @@ stories.add(
     const heroType = "imageGradient";
     const gradientColors = text("Hex Colors", "#B72126, #14264B");
     const gradientAlpha = number("Gradient Alpha", 0.5);
-    const skeleton = boolean("Skeleton", false);
+    const loading = boolean("Loading", false);
 
     return html`
       <chameleon-hero
@@ -89,7 +89,7 @@ stories.add(
         type="${heroType}"
         gradient="${gradientColors}"
         gradientAlpha="${gradientAlpha}"
-        ?skeleton="${skeleton}"
+        ?loading="${loading}"
       >
       </chameleon-hero>
     `;
