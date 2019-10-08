@@ -9,7 +9,7 @@ import { styleMap } from "lit-html/directives/style-map.js";
 import { nothing } from "lit-html";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/hero";
-import "../../skeleton/src/chameleon-skeleton";
+import "@chameleon-ds/skeleton";
 
 @customElement("chameleon-hero")
 export default class ChameleonHero extends LitElement {
@@ -50,8 +50,11 @@ export default class ChameleonHero extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      ${!this.loading
+      ${this.loading
         ? html`
+            <chameleon-skeleton height="${400}"></chameleon-skeleton>
+          `
+        : html`
             <div class="hero" style="${styleMap(this.backgroundImageStyles)}">
               <header class="heading">
                 ${this.title
@@ -76,9 +79,6 @@ export default class ChameleonHero extends LitElement {
                 <slot></slot>
               </header>
             </div>
-          `
-        : html`
-            <chameleon-skeleton height="${400}"></chameleon-skeleton>
           `}
     `;
   }
