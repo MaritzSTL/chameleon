@@ -284,5 +284,30 @@ export default [
       external: externalLibs
     },
     plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-uploader
+   */
+  {
+    input: "packages/uploader/src/chameleon-uploader.ts",
+    output: {
+      file: "packages/uploader/dist/chameleon-uploader.js",
+      format: "umd",
+      name: "chameleon-uploader",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/uploader/src/chameleon-uploader.ts",
+    output: {
+      file: "packages/uploader/dist/chameleon-uploader.min.js",
+      format: "umd",
+      name: "chameleon-uploader",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   }
 ];
