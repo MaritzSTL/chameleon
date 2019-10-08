@@ -10,3 +10,4 @@ link_deps:
 	cd packages/checkbox && npm link @chameleon-ds/theme && cd ../..
 	cd packages/card-header && npm link @chameleon-ds/theme && cd ../..
 	cd packages/card-image && npm link @chameleon-ds/theme && cd ../..
+	cd packages/tabs && npm link @chameleon-ds/theme && cd ../..
