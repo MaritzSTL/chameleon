@@ -61,6 +61,31 @@ export default [
     plugins: [...prodPlugins]
   },
   /**
+   * chameleon-skeleton
+   */
+  {
+    input: "packages/skeleton/src/chameleon-skeleton.ts",
+    output: {
+      file: "packages/skeleton/dist/chameleon-skeleton.js",
+      format: "umd",
+      name: "chameleon-skeleton",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/skeleton/src/chameleon-skeleton.ts",
+    output: {
+      file: "packages/skeleton/dist/chameleon-skeleton.min.js",
+      format: "umd",
+      name: "chameleon-skeleton",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
    * chameleon-textarea
    */
   {
