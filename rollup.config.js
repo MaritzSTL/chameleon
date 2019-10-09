@@ -335,5 +335,30 @@ export default [
       external: externalLibs
     },
     plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-loader
+   */
+  {
+    input: "packages/loader/src/chameleon-loader.ts",
+    output: {
+      file: "packages/loader/dist/chameleon-loader.js",
+      format: "umd",
+      name: "chameleon-loader",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/loader/src/chameleon-loader.ts",
+    output: {
+      file: "packages/loader/dist/chameleon-loader.min.js",
+      format: "umd",
+      name: "chameleon-loader",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   }
 ];
