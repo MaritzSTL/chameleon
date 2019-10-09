@@ -5,13 +5,22 @@ import {
   html,
   property
 } from "lit-element";
-import { nothing } from "lit-html";
+import { nothing, svg, SVGTemplateResult } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/input";
 
 @customElement("chameleon-input")
 export default class ChameleonInput extends LitElement {
+  /**
+   * Lifecycle Methods
+   */
+  firstUpdated() {
+    // TODO(ryuhhnn): This isn't the best strategy for hydrating in the
+    // correct error state. Come back to this to come up with better solution.
+    this.requestUpdate();
+  }
+
   /**
    * Properties
    */
@@ -82,7 +91,9 @@ export default class ChameleonInput extends LitElement {
     return html`
       ${this.labelText}
       <div
-        class="${classMap({
+        class="
+        ${classMap({
+          invalid: this._invalidState,
           "input-wrapper": true,
           "icon-left": this["icon-left"],
           "icon-right": this["icon-right"]
@@ -163,7 +174,11 @@ export default class ChameleonInput extends LitElement {
   get labelText(): TemplateResult | object {
     if (this.label !== "") {
       return html`
-        <label for="cha-input">${this.label}</label>
+        <label
+          for="cha-input"
+          class="${classMap({ invalid: this._invalidState })}"
+          >${this.label}</label
+        >
       `;
     } else return nothing;
   }
@@ -171,7 +186,7 @@ export default class ChameleonInput extends LitElement {
   get errorText(): TemplateResult | object {
     if (this.validationMessage !== "") {
       return html`
-        <span class="error">${this.validationMessage}</span>
+        <span class="error">${this.warningIcon} ${this.validationMessage}</span>
       `;
     } else return nothing;
   }
@@ -191,17 +206,47 @@ export default class ChameleonInput extends LitElement {
     else return false;
   }
 
+  get _invalidState(): boolean {
+    if (this._el !== null) {
+      if (!this.checkValidity() || this.validationMessage.length > 0) {
+        return true;
+      } else return false;
+    }
+  }
+
   _handleInput(e: any): void {
     // e must have a value of `any` right now because of: https://stackoverflow.com/a/57331338/3713527
     this.value = e.target.value;
   }
 
   _handleBlur(): void {
-    this.checkValidity();
+    const elementValid = this.checkValidity();
+    if (elementValid) this.validationMessage = "";
   }
 
   _handleInvalid(): void {
     this.validationMessage =
       this._el !== null ? this._el.validationMessage : "";
+  }
+
+  get warningIcon(): SVGTemplateResult {
+    return svg`
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-search"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+  `;
   }
 }

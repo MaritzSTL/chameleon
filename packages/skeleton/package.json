@@ -1,15 +1,15 @@
 {
-  "name": "@chameleon-ds/theme",
-  "version": "0.4.8",
-  "description": "Chameleon design language",
+  "name": "@chameleon-ds/skeleton",
+  "version": "0.1.0",
+  "description": "Chameleon skeleton",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/core#readme",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/skeleton#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "base/base.ts",
+  "main": "dist/chameleon-skeleton.js",
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
@@ -22,5 +22,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "903c637e2d1f3693b6c0b5fca5c1e6363ecb15c1"
+  "gitHead": "0f8abecfe290971a220b969fc4d82fba4f6869ad"
 }

@@ -1,15 +1,15 @@
 {
-  "name": "@chameleon-ds/theme",
-  "version": "0.4.8",
-  "description": "Chameleon design language",
+  "name": "@chameleon-ds/rice-ball-desert",
+  "version": "0.1.0",
+  "description": "Chameleon rice ball dessert",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/core#readme",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/rice-ball-dessert#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "base/base.ts",
+  "main": "dist/chameleon-rice-ball-dessert.js",
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
@@ -21,6 +21,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "903c637e2d1f3693b6c0b5fca5c1e6363ecb15c1"
+  }
 }
