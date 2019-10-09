@@ -337,25 +337,25 @@ export default [
     plugins: [...prodPlugins]
   },
   /**
-   * chameleon-tabs
+   * chameleon-loader
    */
   {
-    input: "packages/tabs/src/chameleon-tabs.ts",
+    input: "packages/loader/src/chameleon-loader.ts",
     output: {
-      file: "packages/tabs/dist/chameleon-tabs.js",
+      file: "packages/loader/dist/chameleon-loader.js",
       format: "umd",
-      name: "chameleon-tabs",
+      name: "chameleon-loader",
       globals: globalLibs,
       external: externalLibs
     },
     plugins: [...devPlugins]
   },
   {
-    input: "packages/tabs/src/chameleon-tabs.ts",
+    input: "packages/loader/src/chameleon-loader.ts",
     output: {
-      file: "packages/tabs/dist/chameleon-tabs.min.js",
+      file: "packages/loader/dist/chameleon-loader.min.js",
       format: "umd",
-      name: "chameleon-tabs",
+      name: "chameleon-loader",
       globals: globalLibs,
       external: externalLibs
     },

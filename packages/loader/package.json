@@ -1,15 +1,15 @@
 {
-  "name": "@chameleon-ds/rice-ball-dessert",
+  "name": "@chameleon-ds/loader",
   "version": "0.1.0",
-  "description": "Chameleon rice ball dessert",
+  "description": "Chameleon loader",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/rice-ball-dessert#readme",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/loader#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-rice-ball-dessert.js",
+  "main": "dist/chameleon-loader.js",
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
