@@ -61,6 +61,31 @@ export default [
     plugins: [...prodPlugins]
   },
   /**
+   * chameleon-skeleton
+   */
+  {
+    input: "packages/skeleton/src/chameleon-skeleton.ts",
+    output: {
+      file: "packages/skeleton/dist/chameleon-skeleton.js",
+      format: "umd",
+      name: "chameleon-skeleton",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/skeleton/src/chameleon-skeleton.ts",
+    output: {
+      file: "packages/skeleton/dist/chameleon-skeleton.min.js",
+      format: "umd",
+      name: "chameleon-skeleton",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
    * chameleon-textarea
    */
   {
@@ -280,6 +305,32 @@ export default [
       file: "packages/chip/dist/chameleon-chip.min.js",
       format: "umd",
       name: "chameleon-chip",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-rice-ball-dessert
+   */
+  {
+    input: "packages/rice-ball-dessert/src/chameleon-rice-ball-dessert.ts",
+    output: {
+      file: "packages/rice-ball-dessert/dist/chameleon-rice-ball-dessert.js",
+      format: "umd",
+      name: "chameleon-rice-ball-dessert",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/rice-ball-dessert/src/chameleon-rice-ball-dessert.ts",
+    output: {
+      file:
+        "packages/rice-ball-dessert/dist/chameleon-rice-ball-dessert.min.js",
+      format: "umd",
+      name: "chameleon-rice-ball-dessert",
       globals: globalLibs,
       external: externalLibs
     },
