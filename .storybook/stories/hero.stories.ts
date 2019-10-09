@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, text, number } from "@storybook/addon-knobs";
+import { withKnobs, text, number, boolean } from "@storybook/addon-knobs";
 import { html } from "lit-html";
 import "../../packages/hero/src/chameleon-hero";
 
@@ -20,6 +20,7 @@ stories.add(
     );
     const gradientColors = text("Hex Colors", "#B72126, #14264B");
     const heroType = "gradient";
+    const loading = boolean("Loading", false);
 
     return html`
       <chameleon-hero
@@ -28,6 +29,7 @@ stories.add(
         heroText="${heroText}"
         gradient="${gradientColors}"
         type="${heroType}"
+        ?loading="${loading}"
       >
       </chameleon-hero>
     `;
@@ -46,6 +48,7 @@ stories.add(
     );
     const imageUrl = text("Image URL", "https://picsum.photos/id/122/2100/856");
     const heroType = "image";
+    const loading = boolean("Loading", false);
 
     return html`
       <chameleon-hero
@@ -54,6 +57,7 @@ stories.add(
         heroText="${heroText}"
         imageUrl="${imageUrl}"
         type="${heroType}"
+        ?loading="${loading}"
       >
       </chameleon-hero>
     `;
@@ -74,6 +78,7 @@ stories.add(
     const heroType = "imageGradient";
     const gradientColors = text("Hex Colors", "#B72126, #14264B");
     const gradientAlpha = number("Gradient Alpha", 0.5);
+    const loading = boolean("Loading", false);
 
     return html`
       <chameleon-hero
@@ -84,6 +89,7 @@ stories.add(
         type="${heroType}"
         gradient="${gradientColors}"
         gradientAlpha="${gradientAlpha}"
+        ?loading="${loading}"
       >
       </chameleon-hero>
     `;
