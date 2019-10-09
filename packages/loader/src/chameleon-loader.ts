@@ -22,8 +22,4 @@ export default class ChameleonLoader extends LitElement {
       </div>
     `;
   }
-
-  static get properties() {
-    return {};
-  }
 }
