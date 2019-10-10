@@ -1,31 +1,46 @@
 import { css } from "lit-element";
 
 export default css`
-  :host {
-    background-color: var(--color-surface);
-    display: inline-block;
-    max-width: 344px;
-    padding: 16px;
+  .cha-uploader {
+    display: flex;
   }
 
   .upload-container {
-    min-height: 266px;
-    width: 296px;
-    margin: 0 auto;
-  }
-
-  .image-preview {
-    overflow: hidden;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    min-height: 75px;
+    width: 500px;
+    background-color: #f5f5f8;
+    border: 1px dashed var(--gray-light, #c4c7ca);
+    padding: 10px 40px;
+    text-align: center;
+    align-items: center;
   }
 
   #image-preview {
-    width: 300px;
-    height: 300px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  .image-preview-container {
+    margin-top: 5px;
+    width: 200px;
+    height: 100px;
   }
 
   #uploader {
-    background-color: var(--surface-color, #ffffff);
     border-radius: 5px;
-    border: 1px dashed var(--gray-light, #c4c7ca);
+  }
+
+  .upload-label {
+    margin: 0 auto;
+  }
+
+  ::slotted(chameleon-button) {
+    padding: 0;
   }
 `;

@@ -7,6 +7,7 @@ import {
 } from "lit-element";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/uploader";
+import "../../button/src/chameleon-button";
 
 @customElement("chameleon-uploader")
 export default class ChameleonUploader extends LitElement {
@@ -19,7 +20,7 @@ export default class ChameleonUploader extends LitElement {
    * Properties
    */
   @property({ type: String })
-  label = "";
+  label = "Drag & Drop your file or";
 
   @property({ type: Number })
   maxFileSize = 1024; // size in bytes
@@ -32,9 +33,30 @@ export default class ChameleonUploader extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <div id="uploader" class="upload-container">
-        <div class="file-container">
-          <label class="upload-label">${this.label}</label>
+      <div class="cha-uploader">
+        <div class="upload-container">
+          <span class="upload-icon"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-image"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline></svg
+          ></span>
+          <label class="upload-label">
+            ${this.label}
+            <chameleon-button theme="text">Browse Files</chameleon-button>
+          </label>
+
           <label class="file-label">
             <input
               id="file"
@@ -44,13 +66,14 @@ export default class ChameleonUploader extends LitElement {
               accept="image/*"
               @change="${($event: any) =>
                 this.onInputChange($event.target.files)}"
+              style="display:none"
             />
 
             <span class="file-control"></span>
           </label>
-          <div class="image-preview-container">
-            <div id="image-preview"></div>
-          </div>
+        </div>
+        <div class="image-preview-container">
+          <div id="image-preview"></div>
         </div>
       </div>
       <slot></slot>
