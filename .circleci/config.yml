@@ -9,6 +9,7 @@ jobs:
       - run:
           name: Install Dependencies
           command: |
+            npm config set prefix '~/.npm-global'
             npm run setup
       - run: # run tests
           name: Test
