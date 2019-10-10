@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/input",
-  "version": "0.2.13",
+  "version": "0.3.0",
   "description": "Chameleon input",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,7 +9,12 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-input.js",
+  "main": "index.js",
+  "module": "index.js",
+  "files": [
+    "/dist/",
+    "/index.js"
+  ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },

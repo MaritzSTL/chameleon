@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/rice-ball-dessert",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Chameleon rice ball dessert",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,7 +9,12 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-rice-ball-dessert.js",
+  "main": "index.js",
+  "module": "index.js",
+  "files": [
+    "/dist/",
+    "/index.js"
+  ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
