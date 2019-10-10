@@ -35,26 +35,32 @@ export default class ChameleonUploader extends LitElement {
     return html`
       <div class="cha-uploader">
         <div class="upload-container">
-          <span class="upload-icon"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-image"
-            >
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline></svg
-          ></span>
           <label class="upload-label">
+            <span class="upload-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-image"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+            </span>
             ${this.label}
-            <chameleon-button theme="text">Browse Files</chameleon-button>
+            <chameleon-button
+              id="file-button"
+              theme="text"
+              @click="${this.onGetFile}"
+              >Browse Files</chameleon-button
+            >
           </label>
 
           <label class="file-label">
@@ -66,7 +72,6 @@ export default class ChameleonUploader extends LitElement {
               accept="image/*"
               @change="${($event: any) =>
                 this.onInputChange($event.target.files)}"
-              style="display:none"
             />
 
             <span class="file-control"></span>
@@ -99,6 +104,10 @@ export default class ChameleonUploader extends LitElement {
       );
       return false;
     }
+  }
+
+  onGetFile() {
+    this.shadowRoot.getElementById("file").click();
   }
 
   __handleFileUpload(file) {

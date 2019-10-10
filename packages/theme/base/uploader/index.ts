@@ -1,23 +1,33 @@
 import { css } from "lit-element";
 
 export default css`
-  .cha-uploader {
+  :host {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cha-uploader {
   }
 
   .upload-container {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: stretch;
     align-items: center;
-    min-height: 75px;
-    width: 500px;
     background-color: #f5f5f8;
-    border: 1px dashed var(--gray-light, #c4c7ca);
+    border: 1px solid var(--gray-light, #c4c7ca);
     padding: 10px 40px;
-    text-align: center;
+  }
+
+  .upload-label {
+    display: flex;
+    justify-content: center;
     align-items: center;
+  }
+
+  .upload-icon {
+    margin-right: 0.3125rem;
   }
 
   #image-preview {
@@ -40,7 +50,11 @@ export default css`
     margin: 0 auto;
   }
 
-  ::slotted(chameleon-button) {
-    padding: 0;
+  chameleon-button {
+    --button-padding: 0.3125rem;
+  }
+
+  input[type="file"] {
+    display: none;
   }
 `;
