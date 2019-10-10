@@ -2,6 +2,9 @@
   <img src="docs/assets/chameleon.jpg" />
 </p>
 
+[![CircleCI](https://circleci.com/gh/MaritzSTL/chameleon/tree/master.svg?style=svg)](https://circleci.com/gh/MaritzSTL/chameleon/tree/master)
+[![codecov](https://codecov.io/gh/MaritzSTL/chameleon/branch/master/graph/badge.svg)](https://codecov.io/gh/MaritzSTL/chameleon)
+
 # Chameleon (Currently In Development)
 
 Chameleon Web Components - A collection of lightweight, unidirectional, framework-agnostic elements based on the Chameleon Design System

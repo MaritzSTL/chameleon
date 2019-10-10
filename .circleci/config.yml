@@ -1,0 +1,30 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/chameleon
+    docker:
+      - image: circleci/node:current-browsers
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: |
+            sudo npm install -g npm@latest
+            npm install -g codecov
+      - restore_cache: # special step to restore the dependency cache
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Build Elements
+          command: |
+            npm run setup
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run: # run tests
+          name: Test
+          command: npm test
+      - run: # run coverage report
+          name: Code Coverage
+          command: |
+            codecov
