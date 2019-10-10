@@ -7,27 +7,16 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update npm
-          command: |
-            npm install -g npm@latest
-            npm install -g codecov
-      - restore_cache: # special step to restore the dependency cache
-          key: dependency-cache-{{ checksum "package-lock.json" }}
-      - run:
           name: Install Dependencies
           command: |
             npm run setup
-      - save_cache: # special step to save the dependency cache
-          key: dependency-cache-{{ checksum "package-lock.json" }}
-          paths:
-            - ./node_modules
       - run: # run tests
           name: Test
           command: npm test
       - run: # run coverage report
           name: Code Coverage
           command: |
-            codecov
+            npx codecov
       - run:
           name: Build
           command: |
