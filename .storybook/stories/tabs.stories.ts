@@ -14,14 +14,14 @@ stories.add(
   "Tabs",
   () => {
     return html`
-      <chameleon-tabs initial="One">
-        <chameleon-tab name="One">
+      <chameleon-tabs selected="0">
+        <chameleon-tab>
           Tab One
         </chameleon-tab>
-        <chameleon-tab name="Two">
+        <chameleon-tab>
           Tab Two
         </chameleon-tab>
-        <chameleon-tab name="Three">
+        <chameleon-tab>
           Tab Three
         </chameleon-tab>
       </chameleon-tabs>

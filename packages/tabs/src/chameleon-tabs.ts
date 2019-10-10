@@ -5,30 +5,46 @@ import {
   property,
   html
 } from "lit-element";
-import { nothing } from "lit-html";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/tabs";
 
 @customElement("chameleon-tabs")
 export default class ChameleonTabs extends LitElement {
+  constructor() {
+    super();
+    this.addEventListener("selected-changed", this._handleSelectedChanged);
+  }
+
   /**
    * Lifecycle Methods
    */
   firstUpdated() {
     const tabs = Array.from(this.querySelectorAll("chameleon-tab"));
 
-    if (!this.selectedTab && tabs)
-      this.selectedTab = (<HTMLElement>tabs[0]).dataset.name;
+    if (tabs.length <= 0)
+      throw new Error(
+        "<chameleon-tabs> must have at least one <chameleon-tab> element"
+      );
+
+    tabs.forEach((tab, i) => tab.setAttribute("data-index", i.toString()));
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has("selected")) {
+      const tabs = Array.from(this.querySelectorAll("chameleon-tab"));
+
+      tabs.forEach((tab, i) => {
+        tab.removeAttribute("active");
+        if (i === this.selected) tab.setAttribute("active", "true");
+      });
+    }
   }
 
   /**
    * Properties
    */
-  @property({ type: String, reflect: true })
-  initial;
-
-  @property({ type: String })
-  selectedTab;
+  @property({ type: Number, reflect: true })
+  selected = 0;
 
   /**
    * Styles
@@ -40,43 +56,12 @@ export default class ChameleonTabs extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <header>${this.tabs}</header>
-      ${this.selected}
+      <slot></slot>
     `;
   }
 
-  get tabs(): Array<TemplateResult> {
-    const tabs = Array.from(this.querySelectorAll("chameleon-tab"));
-
-    if (tabs.length <= 0)
-      throw new Error(
-        "<chameleon-tabs> must have at least one <chameleon-tab> element"
-      );
-
-    return tabs.map(tab => {
-      const tabName = tab.getAttribute("name");
-
-      return html`
-        <div class="tab" data-name="${tabName}" @click="${this.toggleTab}">
-          ${tabName}
-        </div>
-      `;
-    });
-  }
-
-  get selected(): TemplateResult | object {
-    const tabs = Array.from(this.querySelectorAll("chameleon-tab"));
-
-    if (tabs.length <= 0) return nothing;
-
-    const selected = tabs.find(
-      tab => tab.getAttribute("name") === this.selectedTab
-    );
-
-    return selected ? selected : tabs[0];
-  }
-
-  toggleTab(e: MouseEvent): void {
-    this.selectedTab = (<HTMLElement>e.target).dataset.name;
+  _handleSelectedChanged(e): void {
+    e.preventDefault();
+    this.selected = parseInt(e.detail.value);
   }
 }
