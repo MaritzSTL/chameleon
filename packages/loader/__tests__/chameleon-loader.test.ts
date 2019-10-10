@@ -1,10 +1,10 @@
 import { fixture, html, expect } from "@open-wc/testing";
-import "../src/chameleon-rice-ball-dessert";
+import "../src/chameleon-loader";
 
-describe("chameleon-rice-ball-dessert", () => {
+describe("chameleon-loader", () => {
   it("renders", async () => {
     const el = await fixture(html`
-      <chameleon-rice-ball-dessert></chameleon-rice-ball-dessert>
+      <chameleon-loader></chameleon-loader>
     `);
     expect(Boolean(el.shadowRoot)).to.equal(true);
   });

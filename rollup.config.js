@@ -360,5 +360,55 @@ export default [
       external: externalLibs
     },
     plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-loader
+   */
+  {
+    input: "packages/loader/src/chameleon-loader.ts",
+    output: {
+      file: "packages/loader/dist/chameleon-loader.js",
+      format: "umd",
+      name: "chameleon-loader",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/loader/src/chameleon-loader.ts",
+    output: {
+      file: "packages/loader/dist/chameleon-loader.min.js",
+      format: "umd",
+      name: "chameleon-loader",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-tabs
+   */
+  {
+    input: "packages/tabs/src/chameleon-tabs.ts",
+    output: {
+      file: "packages/tabs/dist/chameleon-tabs.js",
+      format: "umd",
+      name: "chameleon-tabs",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/tabs/src/chameleon-tabs.ts",
+    output: {
+      file: "packages/tabs/dist/chameleon-tabs.min.js",
+      format: "umd",
+      name: "chameleon-tabs",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   }
 ];

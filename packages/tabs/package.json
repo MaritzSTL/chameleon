@@ -1,15 +1,15 @@
 {
-  "name": "@chameleon-ds/rice-ball-dessert",
+  "name": "@chameleon-ds/tabs",
   "version": "0.1.0",
-  "description": "Chameleon rice ball dessert",
+  "description": "Chameleon tabs",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/rice-ball-dessert#readme",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/tabs#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-rice-ball-dessert.js",
+  "main": "dist/chameleon-tabs.js",
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
