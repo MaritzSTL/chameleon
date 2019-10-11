@@ -16,8 +16,8 @@ export default css`
     justify-content: center;
     align-items: center;
     background-color: #f5f5f8;
-    border: 1px solid var(--gray-light, #c4c7ca);
-    padding: 10px 40px;
+    border: 0.0625rem solid var(--gray-light, #c4c7ca);
+    padding: 0.625rem 2.5rem;
   }
 
   .upload-label {
@@ -35,11 +35,11 @@ export default css`
   }
 
   .image-preview-container {
-    margin-top: 5px;
+    margin-top: 0.3125rem;
   }
 
   #uploader {
-    border-radius: 5px;
+    border-radius: 0.3125rem;
   }
 
   .upload-label {

@@ -41,7 +41,19 @@ export default class ChameleonUploader extends LitElement {
   render(): TemplateResult {
     return html`
       <div class="cha-uploader">
-        <div class="upload-container">
+        <div
+          id="#drop-zone"
+          class="upload-container"
+          @drop="${e => {
+            this.dropHandler(e);
+          }}"
+          @dragover="${e => {
+            this.dragOverHandler(e);
+          }}"
+          @dragend="${e => {
+            this.dragEndHandler(e);
+          }}"
+        >
           <label class="upload-label">
             ${this.fileName
               ? html`
@@ -146,6 +158,7 @@ export default class ChameleonUploader extends LitElement {
         console.error(`File must not exeed ${this.maxFileSize}`);
         return false;
       } else if (!this.__checkFileType(selectedFile.type)) {
+        // TODO: Add chameleon-alert message
         console.error("This file type is not allowed");
         return false;
       }
@@ -153,6 +166,7 @@ export default class ChameleonUploader extends LitElement {
       this.__handleFileUpload(selectedFile);
       this.fileName = selectedFile.name;
     } else {
+      // TODO: Add chameleon-alert message
       console.error(
         files.length === 0 ? "No file was uploaded" : "Only one file at a time"
       );
@@ -167,6 +181,46 @@ export default class ChameleonUploader extends LitElement {
   removeFile() {
     // TODO(nodza): Handle delete button
     console.log("File removed");
+  }
+
+  dropHandler(ev) {
+    console.log("File(s) dropped");
+
+    // Prevent default behavior (Prevent file from being opened)
+    ev.preventDefault();
+
+    if (ev.dataTransfer.items) {
+      // Use DataTransferItemList interface to access the file(s)
+      for (var i = 0; i < ev.dataTransfer.items.length; i++) {
+        // If dropped items aren't files, reject them
+        if (ev.dataTransfer.items[i].kind === "file") {
+          var file = ev.dataTransfer.items[i].getAsFile();
+          this.__handleFileUpload(file);
+        }
+      }
+    } else {
+      // Use DataTransfer interface to access the file(s)
+      for (var i = 0; i < ev.dataTransfer.files.length; i++) {
+        this.fileName = ev.dataTransfer.files[i].name;
+      }
+    }
+  }
+
+  dragStartHandler(ev) {
+    console.log("Drag started");
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  dragOverHandler(ev) {
+    // console.log("File(s) in drop zone");
+
+    // Prevent default behavior (Prevent file from being opened)
+    ev.preventDefault();
+  }
+
+  dragEndHandler(ev) {
+    console.log("Drag ended");
+    ev.dataTransfer.setData("text", ev.target.id);
   }
 
   __handleFileUpload(file) {
