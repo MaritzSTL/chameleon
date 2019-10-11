@@ -5,6 +5,7 @@ import {
   property,
   html
 } from "lit-element";
+import { nothing } from "lit-html";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/uploader";
 import "../../button/src/chameleon-button";
@@ -22,11 +23,17 @@ export default class ChameleonUploader extends LitElement {
   @property({ type: String })
   label = "Drag & Drop your file or";
 
+  @property({ type: String })
+  fileName = "";
+
   @property({ type: Number })
   maxFileSize = 1024; // size in bytes
 
   @property({ type: Array })
   acceptedFileTypes = ["image/gif", "image/jpeg", "image/png"];
+
+  @property({ type: ArrayBuffer })
+  img;
 
   /**
    * Template
@@ -36,31 +43,71 @@ export default class ChameleonUploader extends LitElement {
       <div class="cha-uploader">
         <div class="upload-container">
           <label class="upload-label">
-            <span class="upload-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-image"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                <polyline points="21 15 16 10 5 21"></polyline>
-              </svg>
-            </span>
-            ${this.label}
-            <chameleon-button
-              id="file-button"
-              theme="text"
-              @click="${this.onGetFile}"
-              >Browse Files</chameleon-button
-            >
+            ${this.fileName
+              ? html`
+                  ${this.fileName}
+                  <chameleon-button
+                    id="remove-button"
+                    theme="text"
+                    @click="${this.removeFile}"
+                  >
+                    <span class="upload-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-trash-2"
+                      >
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path
+                          d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                        ></path>
+                        <line x1="10" y1="11" x2="10" y2="17"></line>
+                        <line x1="14" y1="11" x2="14" y2="17"></line>
+                      </svg>
+                    </span>
+                  </chameleon-button>
+                `
+              : html`
+                  <span class="upload-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-image"
+                    >
+                      <rect
+                        x="3"
+                        y="3"
+                        width="18"
+                        height="18"
+                        rx="2"
+                        ry="2"
+                      ></rect>
+                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                      <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                  </span>
+                  ${this.label}
+                  <chameleon-button
+                    id="file-button"
+                    theme="text"
+                    @click="${this.onGetFile}"
+                    >Browse Files</chameleon-button
+                  >
+                `}
           </label>
 
           <label class="file-label">
@@ -78,7 +125,13 @@ export default class ChameleonUploader extends LitElement {
           </label>
         </div>
         <div class="image-preview-container">
-          <div id="image-preview"></div>
+          <div id="image-preview">
+            ${this.img
+              ? html`
+                  <img src="${this.img}" />
+                `
+              : nothing}
+          </div>
         </div>
       </div>
       <slot></slot>
@@ -98,6 +151,7 @@ export default class ChameleonUploader extends LitElement {
       }
 
       this.__handleFileUpload(selectedFile);
+      this.fileName = selectedFile.name;
     } else {
       console.error(
         files.length === 0 ? "No file was uploaded" : "Only one file at a time"
@@ -110,6 +164,11 @@ export default class ChameleonUploader extends LitElement {
     this.shadowRoot.getElementById("file").click();
   }
 
+  removeFile() {
+    // TODO(nodza): Handle delete button
+    console.log("File removed");
+  }
+
   __handleFileUpload(file) {
     const reader = new FileReader();
 
@@ -118,11 +177,7 @@ export default class ChameleonUploader extends LitElement {
     };
 
     reader.onload = () => {
-      const imagePreviewContainer: HTMLElement = this.shadowRoot.querySelector(
-        "#image-preview"
-      );
-      imagePreviewContainer.style.backgroundImage = `url(${reader.result})`;
-
+      this.img = reader.result;
       // TODO(nodza): Emit an event to indicate upload successfully complete
     };
 

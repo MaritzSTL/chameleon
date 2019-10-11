@@ -32,14 +32,10 @@ export default css`
 
   #image-preview {
     overflow: hidden;
-    width: 100%;
-    height: 100%;
   }
 
   .image-preview-container {
     margin-top: 5px;
-    width: 200px;
-    height: 100px;
   }
 
   #uploader {
