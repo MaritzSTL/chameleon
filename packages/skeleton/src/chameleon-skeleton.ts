@@ -43,8 +43,8 @@ export default class ChameleonSkeleton extends LitElement {
       <svg height="${this.height}" width="${this.width}">
         <rect
           class="rectangle"
-          height="${this.height}"
-          width="${this.width}"
+          height="100%"
+          width="100%"
           x="0"
           y="0"
           rx="10"
