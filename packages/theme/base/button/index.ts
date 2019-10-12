@@ -23,6 +23,7 @@ export default css`
     color: var(--color-surface);
     cursor: pointer;
     font-size: var(--font-size-paragraph-medium);
+    font-family: inherit;
     letter-spacing: var(--font-letter-spacing);
     padding: var(--button-padding);
     transition: all 150ms linear;
