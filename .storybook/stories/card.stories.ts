@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, text } from "@storybook/addon-knobs";
+import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 import { html } from "lit-html";
 import "../../packages/card/src/chameleon-card";
 import "../../packages/card-header/src/chameleon-card-header";
@@ -23,9 +23,10 @@ stories.add(
   () => {
     const subtitleText = text("Subtitle", "Destination");
     const titleText = text("Title", "St. Louis, MO");
+    const accentColorSelected = boolean("Top Border", true);
 
     return html`
-      <chameleon-card>
+      <chameleon-card ?accentColor="${accentColorSelected}">
         <chameleon-card-header
           title="${titleText}"
           subtitle="${subtitleText}"

@@ -1,4 +1,10 @@
-import { LitElement, TemplateResult, customElement, html } from "lit-element";
+import {
+  LitElement,
+  TemplateResult,
+  customElement,
+  html,
+  property
+} from "lit-element";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/card";
 
@@ -8,6 +14,12 @@ export default class ChameleonCard extends LitElement {
    * Styles
    */
   static styles = [base, style];
+
+  /**
+   * Properties
+   */
+  @property({ type: String })
+  accentColor = "";
 
   /**
    * Template
