@@ -1,4 +1,5 @@
 link_deps:
+	# Link Theme
 	cd packages/button && npm link @chameleon-ds/theme && cd ../..
 	cd packages/input && npm link @chameleon-ds/theme && cd ../..
 	cd packages/textarea && npm link @chameleon-ds/theme && cd ../..
@@ -13,4 +14,8 @@ link_deps:
 	cd packages/tabs && npm link @chameleon-ds/theme && cd ../..
 	cd packages/loader && npm link @chameleon-ds/theme && cd ../..
 	cd packages/skeleton && npm link @chameleon-ds/theme && cd ../..
+	cd packages/paginator && npm link @chameleon-ds/theme && cd ../..
+
+	# Packages
 	cd packages/hero && npm link @chameleon-ds/skeleton && cd ../..
+	cd packages/paginator && npm link @chameleon-ds/button && cd ../..

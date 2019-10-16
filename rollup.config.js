@@ -410,5 +410,30 @@ export default [
       external: externalLibs
     },
     plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-paginator
+   */
+  {
+    input: "packages/paginator/src/chameleon-paginator.ts",
+    output: {
+      file: "packages/paginator/dist/chameleon-paginator.js",
+      format: "umd",
+      name: "chameleon-paginator",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/paginator/src/chameleon-paginator.ts",
+    output: {
+      file: "packages/paginator/dist/chameleon-paginator.min.js",
+      format: "umd",
+      name: "chameleon-paginator",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   }
 ];
