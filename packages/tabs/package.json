@@ -1,0 +1,30 @@
+{
+  "name": "@chameleon-ds/tabs",
+  "version": "0.2.1",
+  "description": "Chameleon tabs",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/tabs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "index.js",
+  "module": "index.js",
+  "files": [
+    "/dist/",
+    "/index.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

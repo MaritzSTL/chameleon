@@ -26,6 +26,17 @@ module.exports = config => {
             "@babel/plugin-proposal-class-properties"
           ]
         }
+      },
+      coverageIstanbulReporter: {
+        thresholds: {
+          emitWarning: true, // set to `true` to not fail the test command when thresholds are not met
+          // thresholds for all files
+          global: {
+            statements: 80,
+            branches: 80,
+            functions: 80
+          }
+        }
       }
     })
   );
