@@ -19,7 +19,10 @@ export default class ChameleonToast extends LitElement {
   render(): TemplateResult {
     return html`
       <button @click="${this.myFunction}">Show Snackbar</button>
-      <div id="snackbar">Some text some message..</div>
+      <div id="snackbar">
+        Some text some message..
+        <a @click="${this.closeToast}">X</a>
+      </div>
     `;
   }
   myFunction(): void {
@@ -28,10 +31,10 @@ export default class ChameleonToast extends LitElement {
 
     // Add the "show" class to DIV
     x.className = "show";
+  }
 
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function() {
-      x.className = x.className.replace("show", "");
-    }, 3000);
+  closeToast() {
+    const x = this.shadowRoot.getElementById("snackbar");
+    x.className = x.className.replace("show", "");
   }
 }
