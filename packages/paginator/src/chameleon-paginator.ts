@@ -9,7 +9,7 @@ import {
 } from "lit-element";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/paginator";
-// import "@chameleon-ds/button";
+import "@chameleon-ds/button";
 
 @customElement("chameleon-paginator")
 export default class ChameleonPaginator extends LitElement {
@@ -44,16 +44,31 @@ export default class ChameleonPaginator extends LitElement {
       <chameleon-button theme="text" @click="${this._previous}"
         >${this.iconLeftCircle}</chameleon-button
       >
-      <ul>
-        ${this.pages.map(page =>
-          page === this.currentPage
-            ? html`
-                <li class="current">${page}</li>
-              `
-            : html`
-                <li>${page}</li>
-              `
-        )}
+      <ul class="pages">
+        ${this.pages.map(page => {
+          // debugger;
+          if (page === this.currentPage) {
+            return html`
+              <li
+                class="page current"
+                data-page="${page}"
+                @click="${this._goToPage}"
+              >
+                <span>${page}</span>
+              </li>
+            `;
+          } else if (page !== this.separator) {
+            return html`
+              <li class="page" data-page="${page}" @click="${this._goToPage}">
+                <span>${page}</span>
+              </li>
+            `;
+          } else {
+            return html`
+              <li class="page separator"><span>${page}</span></li>
+            `;
+          }
+        })}
       </ul>
       <chameleon-button theme="text" @click="${this._next}"
         >${this.iconRightCircle}</chameleon-button
@@ -129,9 +144,30 @@ export default class ChameleonPaginator extends LitElement {
 
   _previous(): void {
     this.currentPage--;
+    this.dispatchChange();
   }
 
   _next(): void {
     this.currentPage++;
+    this.dispatchChange();
+  }
+
+  _goToPage(e: MouseEvent): void {
+    this.currentPage = parseInt(
+      (<HTMLElement>(<HTMLElement>e.target).closest("[data-page]")).dataset.page
+    );
+    this.dispatchChange();
+  }
+
+  private dispatchChange(): void {
+    this.dispatchEvent(
+      new CustomEvent("page-change", {
+        detail: {
+          currentPage: this.currentPage
+        },
+        composed: true,
+        bubbles: true
+      })
+    );
   }
 }

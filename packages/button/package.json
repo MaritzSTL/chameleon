@@ -13,6 +13,8 @@
   "module": "index.js",
   "files": [
     "/dist/",
+    "/src/",
+    "!/src/__tests__",
     "/index.js"
   ],
   "scripts": {

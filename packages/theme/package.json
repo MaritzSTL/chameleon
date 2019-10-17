@@ -9,7 +9,6 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "base/base.ts",
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },

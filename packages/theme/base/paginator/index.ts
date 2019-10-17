@@ -6,32 +6,37 @@ export default css`
     display: flex;
   }
 
-  ul {
+  .pages {
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  li {
+  .page {
+    box-sizing: border-box;
+    cursor: pointer;
     display: inline-block;
-    margin: 13px;
+    margin: 18px;
   }
 
-  .current {
-    position: relative;
+  .separator {
+    cursor: auto;
+  }
+
+  .current,
+  .page:not(.separator):hover {
     color: var(--color-surface);
+    margin: 0 4px;
   }
 
-  .current:after {
-    content: "";
-    display: block;
-    height: 36px;
-    width: 36px;
+  .current span,
+  .page:not(.separator):hover {
+    align-items: center;
     background-color: var(--color-primary);
-    position: absolute;
-    top: -18px;
-    left: -18px;
-    z-index: -1;
     border-radius: 50%;
+    display: inline-flex;
+    height: 36px;
+    justify-content: center;
+    width: 36px;
   }
 `;
