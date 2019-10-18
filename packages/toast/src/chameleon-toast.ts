@@ -42,10 +42,14 @@ export default class ChameleonToast extends LitElement {
         style="background-color: ${this.backgroundColor}"
       >
         <div class="toast-text" style="color: ${this.color};">
-          This website uses cookies to remember you and improve your experience.
-          By using our site, you accept our use of cookies.
+          <slot name="toast-text">
+            This website uses cookies to remember you and improve your
+            experience. By using our site, you accept our use of cookies.
+          </slot>
         </div>
-        <a class="x-symbol" @click="${this.closeToast}">x </a>
+        <a class="x-symbol" @click="${this.closeToast}">
+          <slot name="x">x</slot>
+        </a>
       </div>
     `;
   }
