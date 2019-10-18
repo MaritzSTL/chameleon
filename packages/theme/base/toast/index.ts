@@ -20,6 +20,13 @@ export default css`
     justify-content: space-between;
   }
 
+  @media (max-width: 768px) {
+    #toast {
+      min-width: 90%;
+      max-width: 90%;
+    }
+  }
+
   /* Show the toast when clicking on a button (class added with JavaScript) */
   #toast.show-closeable {
     visibility: visible; /* Show the toast */
