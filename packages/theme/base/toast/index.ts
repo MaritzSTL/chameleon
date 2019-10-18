@@ -34,8 +34,14 @@ export default css`
     -webkit-animation: fadein 0.5s;
     animation: fadein 0.5s;
   }
-  .x-symbol {
+  .closed-icon {
     align-self: center;
+  }
+
+  ::slotted(*) {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
   }
 
   /* Animations to fade the toast in */

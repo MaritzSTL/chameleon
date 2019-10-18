@@ -47,8 +47,8 @@ export default class ChameleonToast extends LitElement {
             experience. By using our site, you accept our use of cookies.
           </slot>
         </div>
-        <a class="x-symbol" @click="${this.closeToast}">
-          <slot name="x">x</slot>
+        <a class="closed-icon" @click="${this.closeToast}">
+          <slot name="closed-icon">x</slot>
         </a>
       </div>
     `;

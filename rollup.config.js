@@ -415,9 +415,9 @@ export default [
    * chameleon-toast
    */
   {
-    input: "packages/tabs/src/chameleon-toast.ts",
+    input: "packages/toast/src/chameleon-toast.ts",
     output: {
-      file: "packages/tabs/dist/chameleon-toast.js",
+      file: "packages/toast/dist/chameleon-toast.js",
       format: "umd",
       name: "chameleon-toast",
       globals: globalLibs,
@@ -426,9 +426,9 @@ export default [
     plugins: [...devPlugins]
   },
   {
-    input: "packages/tabs/src/chameleon-toast.ts",
+    input: "packages/toast/src/chameleon-toast.ts",
     output: {
-      file: "packages/tabs/dist/chameleon-toast.min.js",
+      file: "packages/toast/dist/chameleon-toast.min.js",
       format: "umd",
       name: "chameleon-toast",
       globals: globalLibs,
