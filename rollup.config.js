@@ -61,6 +61,31 @@ export default [
     plugins: [...prodPlugins]
   },
   /**
+   * chameleon-skeleton
+   */
+  {
+    input: "packages/skeleton/src/chameleon-skeleton.ts",
+    output: {
+      file: "packages/skeleton/dist/chameleon-skeleton.js",
+      format: "umd",
+      name: "chameleon-skeleton",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/skeleton/src/chameleon-skeleton.ts",
+    output: {
+      file: "packages/skeleton/dist/chameleon-skeleton.min.js",
+      format: "umd",
+      name: "chameleon-skeleton",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
    * chameleon-textarea
    */
   {
@@ -230,6 +255,157 @@ export default [
       file: "packages/checkbox/dist/chameleon-checkbox.min.js",
       format: "umd",
       name: "chameleon-checkbox",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-hero
+   */
+  {
+    input: "packages/hero/src/chameleon-hero.ts",
+    output: {
+      file: "packages/hero/dist/chameleon-hero.js",
+      format: "umd",
+      name: "chameleon-hero",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/hero/src/chameleon-hero.ts",
+    output: {
+      file: "packages/hero/dist/chameleon-hero.min.js",
+      format: "umd",
+      name: "chameleon-hero",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-chip
+   */
+  {
+    input: "packages/chip/src/chameleon-chip.ts",
+    output: {
+      file: "packages/chip/dist/chameleon-chip.js",
+      format: "umd",
+      name: "chameleon-chip",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/chip/src/chameleon-chip.ts",
+    output: {
+      file: "packages/chip/dist/chameleon-chip.min.js",
+      format: "umd",
+      name: "chameleon-chip",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-rice-ball-dessert
+   */
+  {
+    input: "packages/rice-ball-dessert/src/chameleon-rice-ball-dessert.ts",
+    output: {
+      file: "packages/rice-ball-dessert/dist/chameleon-rice-ball-dessert.js",
+      format: "umd",
+      name: "chameleon-rice-ball-dessert",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/rice-ball-dessert/src/chameleon-rice-ball-dessert.ts",
+    output: {
+      file:
+        "packages/rice-ball-dessert/dist/chameleon-rice-ball-dessert.min.js",
+      format: "umd",
+      name: "chameleon-rice-ball-dessert",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-loader
+   */
+  {
+    input: "packages/loader/src/chameleon-loader.ts",
+    output: {
+      file: "packages/loader/dist/chameleon-loader.js",
+      format: "umd",
+      name: "chameleon-loader",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/loader/src/chameleon-loader.ts",
+    output: {
+      file: "packages/loader/dist/chameleon-loader.min.js",
+      format: "umd",
+      name: "chameleon-loader",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-tabs
+   */
+  {
+    input: "packages/tabs/src/chameleon-tabs.ts",
+    output: {
+      file: "packages/tabs/dist/chameleon-tabs.js",
+      format: "umd",
+      name: "chameleon-tabs",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/tabs/src/chameleon-tabs.ts",
+    output: {
+      file: "packages/tabs/dist/chameleon-tabs.min.js",
+      format: "umd",
+      name: "chameleon-tabs",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-tab
+   */
+  {
+    input: "packages/tabs/src/chameleon-tab.ts",
+    output: {
+      file: "packages/tabs/dist/chameleon-tab.js",
+      format: "umd",
+      name: "chameleon-tab",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/tabs/src/chameleon-tab.ts",
+    output: {
+      file: "packages/tabs/dist/chameleon-tab.min.js",
+      format: "umd",
+      name: "chameleon-tab",
       globals: globalLibs,
       external: externalLibs
     },
