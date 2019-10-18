@@ -2,8 +2,8 @@
 <html lang="en">
   {% include head.html %}
   <body>
-    <nav id="navigation">
-      <img src="/assets/img/logo--mm.png" />
+    <nav id="navigation" class="container">
+      <a href="/"><img src="/assets/img/logo--mm.png"/></a>
       <ul class="nav-links">
         {% for item in site.data.navigation.nav_links %}
         <span class="nav-links__top">{{ item.title }}</span>
@@ -15,6 +15,9 @@
           {% endfor %}
         </ul>
         {% endfor %}
+        <span class="nav-links__top"
+          ><a href="/assets/storybook">Sandbox</a></span
+        >
       </ul>
     </nav>
     {{ content }}
