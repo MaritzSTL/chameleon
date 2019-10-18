@@ -38,7 +38,7 @@ export default css`
     align-self: center;
   }
 
-  /* Animations to fade the toast in and out */
+  /* Animations to fade the toast in */
   @-webkit-keyframes fadein {
     from {
       bottom: 0;
