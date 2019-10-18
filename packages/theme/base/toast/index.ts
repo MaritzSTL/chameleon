@@ -1,32 +1,37 @@
 import { css } from "lit-element";
 
 export default css`
-  /* The snackbar - position it at the bottom and in the middle of the screen */
-  #snackbar {
+  /* The toast - position it at the bottom and in the middle of the screen */
+  #toast {
     visibility: hidden; /* Hidden by default. Visible on click */
-    min-width: 33%; /* Set a default minimum width */
-    margin-left: -125px; /* Divide value of min-width by 2 */
+    min-width: 28%; /* Set a default minimum width */
+    max-width: 28%; /* Set a default max width */
     background-color: #333; /* Black background color */
-    color: #fff; /* White text color */
-    text-align: center; /* Centered text */
+    color: #f5f5f8; /* off white text color */
+    text-align: left; /* left-aligned text */
     border-radius: 10px; /* Rounded borders */
-    padding: 16px; /* Padding */
+    padding: 1rem; /* Padding */
     position: fixed; /* Sit on top of the screen */
     z-index: 1; /* Add a z-index if needed */
-    left: 10%; /* left toast */
     bottom: 30px; /* 30px from the bottom */
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    justify-content: space-between;
   }
 
-  /* Show the snackbar when clicking on a button (class added with JavaScript) */
-  #snackbar.show {
-    visibility: visible; /* Show the snackbar */
-    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-  However, delay the fade out process for 2.5 seconds */
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  /* Show the toast when clicking on a button (class added with JavaScript) */
+  #toast.show-closeable {
+    visibility: visible; /* Show the toast */
+    /* Add animation: Take 0.5 seconds to fade in the toast.*/
+    -webkit-animation: fadein 0.5s;
+    animation: fadein 0.5s;
+  }
+  .x-symbol {
+    align-self: center;
   }
 
-  /* Animations to fade the snackbar in and out */
+  /* Animations to fade the toast in and out */
   @-webkit-keyframes fadein {
     from {
       bottom: 0;

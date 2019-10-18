@@ -1,4 +1,10 @@
-import { LitElement, TemplateResult, customElement, html } from "lit-element";
+import {
+  LitElement,
+  TemplateResult,
+  customElement,
+  html,
+  property
+} from "lit-element";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/toast";
 
@@ -7,6 +13,18 @@ export default class ChameleonToast extends LitElement {
   /**
    * Properties
    */
+
+  // The font color of the toast
+  @property({ type: String })
+  color = "";
+
+  // A Boolean which, if true, the toast is visible
+  @property({ type: Boolean, reflect: true })
+  showCloseable = true;
+
+  // The background color of the toast
+  @property({ type: String })
+  backgroundColor = "";
 
   /**
    * Styles
@@ -18,23 +36,22 @@ export default class ChameleonToast extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <button @click="${this.myFunction}">Show Snackbar</button>
-      <div id="snackbar">
-        Some text some message..
-        <a @click="${this.closeToast}">X</a>
+      <div
+        id="toast"
+        class="${this.showCloseable ? "show-closeable" : ""}"
+        style="background-color: ${this.backgroundColor}"
+      >
+        <div class="toast-text" style="color: ${this.color};">
+          This website uses cookies to remember you and improve your experience.
+          By using our site, you accept our use of cookies.
+        </div>
+        <a class="x-symbol" @click="${this.closeToast}">x </a>
       </div>
     `;
   }
-  myFunction(): void {
-    // Get the snackbar DIV
-    const x = this.shadowRoot.getElementById("snackbar");
-
-    // Add the "show" class to DIV
-    x.className = "show";
-  }
 
   closeToast() {
-    const x = this.shadowRoot.getElementById("snackbar");
-    x.className = x.className.replace("show", "");
+    const x = this.shadowRoot.getElementById("toast");
+    x.className = x.className.replace("show-closeable", "");
   }
 }
