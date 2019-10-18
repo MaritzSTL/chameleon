@@ -7,6 +7,7 @@ import {
   svg,
   SVGTemplateResult
 } from "lit-element";
+import { nothing } from "lit-html";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/paginator";
 import "@chameleon-ds/button";
@@ -46,7 +47,6 @@ export default class ChameleonPaginator extends LitElement {
       >
       <ul class="pages">
         ${this.pages.map(page => {
-          // debugger;
           if (page === this.currentPage) {
             return html`
               <li
@@ -63,6 +63,8 @@ export default class ChameleonPaginator extends LitElement {
                 <span>${page}</span>
               </li>
             `;
+          } else if (isNaN(parseInt(page)) && page !== this.separator) {
+            return nothing;
           } else {
             return html`
               <li class="page separator"><span>${page}</span></li>
