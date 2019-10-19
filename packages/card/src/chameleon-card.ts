@@ -19,7 +19,7 @@ export default class ChameleonCard extends LitElement {
    * Properties
    */
   @property({ type: String })
-  accentColor = "";
+  accentColor;
 
   /**
    * Template
@@ -28,5 +28,16 @@ export default class ChameleonCard extends LitElement {
     return html`
       <slot></slot>
     `;
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has("accentColor") && this.accentColor !== "")
+      this.style.borderTop = `7px solid ${this.accentColor}`;
+    else if (
+      changedProperties.has("accentColor") &&
+      this.accentColor !== undefined
+    ) {
+      this.style.borderTop = `7px solid var(--color-primary)`;
+    }
   }
 }

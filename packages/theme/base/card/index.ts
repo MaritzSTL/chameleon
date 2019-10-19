@@ -8,10 +8,6 @@ export default css`
     padding: 16px;
   }
 
-  :host([accentColor]) {
-    border-top: 7px solid var(--color-primary);
-  }
-
   :host([outline]) {
     border: 1px solid var(--color-gray-lightest);
   }
