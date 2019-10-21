@@ -7,10 +7,9 @@ export default css`
     font-family: var(--font-family);
   }
 
-  .component-wrapper:hover input:not(.invalid),
-  .component-wrapper:active input:not(.invalid) {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+  .component-wrapper {
+    display: flex;
+    flex-direction: column;
   }
 
   input {
@@ -27,6 +26,12 @@ export default css`
     border-color: var(--color-error);
   }
 
+  .component-wrapper:hover:not(.invalid) input:not([disabled]),
+  .component-wrapper:active:not(.invalid) input:not([disabled]) {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
   .invalid ::slotted(svg) {
     color: var(--color-error);
   }
@@ -41,8 +46,8 @@ export default css`
     color: var(--color-error);
   }
 
-  .component-wrapper:hover label:not(.invalid),
-  .component-wrapper:active label:not(.invalid) {
+  :host:not([disabled]) .component-wrapper:hover label:not(.invalid),
+  :host:not([disabled]) .component-wrapper:active label:not(.invalid) {
     color: var(--color-primary);
   }
 

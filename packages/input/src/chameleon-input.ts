@@ -89,12 +89,17 @@ export default class ChameleonInput extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <div class="component-wrapper">
+      <div
+        class="
+      ${classMap({
+          "component-wrapper": true,
+          invalid: this._invalidState
+        })}"
+      >
         ${this.labelText}
         <div
           class="
         ${classMap({
-            invalid: this._invalidState,
             "input-wrapper": true,
             "icon-left": this["icon-left"],
             "icon-right": this["icon-right"]
