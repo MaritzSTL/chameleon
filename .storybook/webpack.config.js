@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.ts$/,
@@ -9,5 +11,8 @@ module.exports = ({ config }) => {
     ]
   });
   config.resolve.extensions.push(".ts");
+  config.resolve.alias["lit-element"] = path.resolve(
+    "node_modules/lit-element"
+  );
   return config;
 };

@@ -22,8 +22,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/button/src/chameleon-button.ts",
@@ -34,8 +33,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-input
@@ -49,8 +47,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/input/src/chameleon-input.ts",
@@ -61,8 +58,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-skeleton
@@ -76,8 +72,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/skeleton/src/chameleon-skeleton.ts",
@@ -88,8 +83,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-textarea
@@ -103,8 +97,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/textarea/src/chameleon-textarea.ts",
@@ -115,8 +108,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-card
@@ -130,8 +122,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/card/src/chameleon-card.ts",
@@ -142,8 +133,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-card-header
@@ -157,8 +147,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/card-header/src/chameleon-card-header.ts",
@@ -169,8 +158,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-card-image
@@ -184,8 +172,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/card-image/src/chameleon-card-image.ts",
@@ -196,8 +183,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-radio
@@ -211,8 +197,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/radio/src/chameleon-radio.ts",
@@ -223,8 +208,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-switch
@@ -238,8 +222,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/switch/src/chameleon-switch.ts",
@@ -250,8 +233,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-checkbox
@@ -265,8 +247,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/checkbox/src/chameleon-checkbox.ts",
@@ -277,8 +258,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-hero
@@ -292,8 +272,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/hero/src/chameleon-hero.ts",
@@ -304,8 +283,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-chip
@@ -319,8 +297,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/chip/src/chameleon-chip.ts",
@@ -331,8 +308,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-rice-ball-dessert
@@ -346,8 +322,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/rice-ball-dessert/src/chameleon-rice-ball-dessert.ts",
@@ -359,8 +334,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-loader
@@ -374,8 +348,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/loader/src/chameleon-loader.ts",
@@ -386,8 +359,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-tabs
@@ -401,8 +373,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/tabs/src/chameleon-tabs.ts",
@@ -413,8 +384,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-tab
@@ -428,8 +398,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/tabs/src/chameleon-tab.ts",
@@ -440,8 +409,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   },
   /**
    * chameleon-filterable-table
@@ -455,8 +423,7 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...devPlugins],
-    preserveSymlinks: true
+    plugins: [...devPlugins]
   },
   {
     input: "packages/filterable-table/src/chameleon-filterable-table.ts",
@@ -467,7 +434,6 @@ export default [
       globals: globalLibs,
       external: externalLibs
     },
-    plugins: [...prodPlugins],
-    preserveSymlinks: true
+    plugins: [...prodPlugins]
   }
 ];
