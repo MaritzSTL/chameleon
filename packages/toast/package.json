@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/toast",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Chameleon toast",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "/dist/",
     "/src/",
     "!/src/__tests__",
-    "/index.js"
+    "/index.ts"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
