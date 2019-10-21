@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
-import { html } from "lit-html";
+import { html, svg } from "lit-html";
 import "../../packages/sheet/src/chameleon-sheet";
 
 const stories = storiesOf("Sheet", module);
@@ -12,16 +12,26 @@ stories.addDecorator(withKnobs as any);
 stories.add(
   "Sheet",
   () => {
-    const header = text("Label", "");
-    const subHeader = text("Sub Label", "");
-    let __sheetOpened = boolean("Open", true);
+    const header = text("Label", "Saint Louis");
+    const subHeader = text("Sub Label", "Tour Guide");
+    const sheetOpened = boolean("Open", false);
 
     return html`
       <chameleon-sheet
         header="${header}"
         subHeader="${subHeader}"
-        ?__sheetOpened="${__sheetOpened}"
-      ></chameleon-sheet>
+        ?sheetOpened="${sheetOpened}"
+      >
+        <section slot="details">
+          <p>city: saint louis</p>
+        </section>
+        <section slot="content">
+          <p>state: MO</p>
+        </section>
+        <section slot="actions">
+          <p>sports: Cardnials</p>
+        </section></chameleon-sheet
+      >
     `;
   },
   { info: { inline: true } }

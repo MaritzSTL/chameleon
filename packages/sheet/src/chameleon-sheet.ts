@@ -7,6 +7,7 @@ import {
 } from "lit-element";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/sheet";
+import { nothing, svg, SVGTemplateResult } from "lit-html";
 
 @customElement("chameleon-sheet")
 export default class ChameleonSheet extends LitElement {
@@ -24,7 +25,7 @@ export default class ChameleonSheet extends LitElement {
 
   // Boolean for open/closed sheet
   @property({ type: Boolean, reflect: true })
-  __sheetOpened = true;
+  sheetOpened = false;
 
   /**
    * Styles
@@ -35,46 +36,45 @@ export default class ChameleonSheet extends LitElement {
    * Template
    */
   render(): TemplateResult {
-    const itemCategory = this.subHeader
-      ? html`
-          <div class="item-category">
-            <p class="p-small gray-darkest">${this.subHeader}</p>
-          </div>
-        `
-      : "";
     return html`
-      <div
-        class="side-nav-wrapper
-        ${this.__sheetOpened ? "" : "collapsed"}"
-      >
-        <div class="side-menu">
-          <div class="sheet-header">
-            <div class="item-name-container">
-              <div class="item-name">
-                <h3 class="admin">${this.header}</h3>
-              </div>
-              <div class="close-icon" @click="${this._closeSheet}"></div>
-            </div>
-            ${itemCategory}
-            <slot name="details"></slot>
-          </div>
-          <slot name="actions"></slot>
-          <slot name="content"></slot>
+      <header class="head-container">
+        <h3 class="header">${this.header}</h3>
+        <div class="close-icon" @click="${this._toggleSheet}">
+          ${this.closeIcon}
         </div>
-      </div>
+        <div class="sub-container">
+          ${this.subHeader
+            ? html`
+                <span class="sub-header">${this.subHeader}</span>
+              `
+            : nothing}
+        </div>
+
+        <slot name="details"></slot>
+      </header>
+      <slot name="actions"></slot>
+      <slot name="content"></slot>
     `;
   }
 
-  _openSheet(): void {
-    this.__sheetOpened = true;
-  }
-
-  _closeSheet(): void {
-    this.__sheetOpened = false;
-    const e = new CustomEvent("mtz.closesheet", {
+  _toggleSheet(): void {
+    this.sheetOpened = !this.sheetOpened;
+    const e = new CustomEvent("toggle-sheet", {
       bubbles: true,
       composed: true
     });
     this.dispatchEvent(e);
+  }
+
+  get closeIcon(): SVGTemplateResult {
+    const slots = Array.from(this.querySelectorAll("[slot]"));
+    const closeIcon = slots.find(slot => slot.slot === "close-icon");
+
+    if (closeIcon === undefined)
+      return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+    else
+      return html`
+        <slot name="close-icon"></slot>
+      `;
   }
 }
