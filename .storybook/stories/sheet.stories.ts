@@ -12,7 +12,7 @@ stories.addDecorator(withKnobs as any);
 stories.add(
   "Sheet",
   () => {
-    const header = text("Label", "Saint Louis");
+    const header = text("Label", "Missouri");
     const subHeader = text("Sub Label", "Tour Guide");
     const sheetOpened = boolean("Open", false);
 
@@ -23,7 +23,9 @@ stories.add(
         ?sheetOpened="${sheetOpened}"
       >
         <section slot="details">
-          <p>city: saint louis</p>
+          <p>City: Saint Louis</p>
+          <p>Sports: Cards</p>
+          <p>Parks: Forest Park</p>
         </section>
         <section slot="content">
           <p>state: MO</p>

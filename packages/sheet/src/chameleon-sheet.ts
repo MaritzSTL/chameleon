@@ -66,7 +66,7 @@ export default class ChameleonSheet extends LitElement {
     this.dispatchEvent(e);
   }
 
-  get closeIcon(): SVGTemplateResult {
+  get closeIcon(): SVGTemplateResult | TemplateResult {
     const slots = Array.from(this.querySelectorAll("[slot]"));
     const closeIcon = slots.find(slot => slot.slot === "close-icon");
 
