@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/chameleon.jpg" />
+  <img src="assets/chameleon.jpg" />
 </p>
 
 [![CircleCI](https://circleci.com/gh/MaritzSTL/chameleon/tree/master.svg?style=svg)](https://circleci.com/gh/MaritzSTL/chameleon/tree/master)
