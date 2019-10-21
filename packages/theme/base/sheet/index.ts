@@ -9,25 +9,35 @@ export default css`
     min-width: 320px;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
+    background-color: var(--color-surface);
   }
   :host([sheetOpened]) {
     transform: translateX(0);
+    padding: 18px;
   }
   .header {
     color: var(--color-primary);
-    display: inline;
     font-size: 24px;
     font-weight: 400;
   }
   .sub-header {
-    color: var(--color-primary);
+    display: block;
+    color: var(--color-gray-darkest);
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 20px;
   }
   .close-icon {
     display: inline-block;
     cursor: pointer;
     float: right;
+    margin-right: 5px;
   }
-  p {
+  ::slotted(*) {
     color: var(--color-gray-darkest);
+  }
+  ::slotted([slot="actions"]) {
+    border-top: solid 2px #e1e3e4;
+    border-bottom: solid 2px #e1e3e4;
   }
 `;

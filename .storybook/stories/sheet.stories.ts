@@ -9,6 +9,13 @@ const stories = storiesOf("Sheet", module);
 // to this and make these types compatible.
 stories.addDecorator(withKnobs as any);
 
+stories.addParameters({
+  backgrounds: [
+    { name: "gray", value: "#f5f5f8", default: true },
+    { name: "black", value: "#252a33" }
+  ]
+});
+
 stories.add(
   "Sheet",
   () => {
@@ -24,14 +31,16 @@ stories.add(
       >
         <section slot="details">
           <p>City: Saint Louis</p>
-          <p>Sports: Cards</p>
           <p>Parks: Forest Park</p>
         </section>
         <section slot="content">
-          <p>state: MO</p>
+          <p>Food: Blue Ocean Sushi</p>
+          <p>Art: Saint Louis Art Gallery</p>
         </section>
         <section slot="actions">
-          <p>sports: Cardnials</p>
+          <p>Hockey: Blues</p>
+          <p>Baseball: Cards</p>
+          <p>Famous People: Nelly</p>
         </section></chameleon-sheet
       >
     `;

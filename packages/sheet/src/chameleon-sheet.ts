@@ -38,21 +38,20 @@ export default class ChameleonSheet extends LitElement {
   render(): TemplateResult {
     return html`
       <header class="head-container">
-        <h3 class="header">${this.header}</h3>
         <div class="close-icon" @click="${this._toggleSheet}">
           ${this.closeIcon}
         </div>
-        <div class="sub-container">
-          ${this.subHeader
-            ? html`
-                <span class="sub-header">${this.subHeader}</span>
-              `
-            : nothing}
-        </div>
+        <h3 class="header">${this.header}</h3>
 
         <slot name="details"></slot>
       </header>
+
       <slot name="actions"></slot>
+      ${this.subHeader
+        ? html`
+            <span class="sub-header">${this.subHeader}</span>
+          `
+        : nothing}
       <slot name="content"></slot>
     `;
   }
