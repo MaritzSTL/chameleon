@@ -14,3 +14,4 @@ link_deps:
 	cd packages/loader && npm link @chameleon-ds/theme && cd ../..
 	cd packages/skeleton && npm link @chameleon-ds/theme && cd ../..
 	cd packages/hero && npm link @chameleon-ds/skeleton && cd ../..
+	cd packages/toast && npm link @chameleon-ds/theme && cd ../..
