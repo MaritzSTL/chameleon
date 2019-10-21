@@ -14,5 +14,6 @@ module.exports = ({ config }) => {
   config.resolve.alias["lit-element"] = path.resolve(
     "node_modules/lit-element"
   );
+  config.resolve.alias["lit-html"] = path.resolve("node_modules/lit-html");
   return config;
 };
