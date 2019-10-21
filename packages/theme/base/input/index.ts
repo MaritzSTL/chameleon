@@ -30,10 +30,6 @@ export default css`
     color: var(--color-primary);
   }
 
-  .invalid ::slotted(svg) {
-    color: var(--color-error);
-  }
-
   label {
     color: var(--color-gray-darkest);
     font-size: var(--font-size-label);
@@ -87,6 +83,10 @@ export default css`
     top: 50%;
     transform: translateY(-50%);
     width: auto;
+  }
+
+  .invalid ::slotted(svg) {
+    color: var(--color-error);
   }
 
   ::slotted([slot="icon-left"]) {
