@@ -12,7 +12,7 @@
     "test:compatibility": "karma start --compatibility all --auto-watch=true --single-run=false",
     "dev": "start-storybook",
     "build": "rollup --config",
-    "build-storybook": "build-storybook -c .storybook -o .out && cp -a .out/./ docs/ && del-cli .out",
+    "build-storybook": "build-storybook -c .storybook -o .out && cp -a .out/./ docs/assets/storybook/ && del-cli .out",
     "publish-packages": "lerna publish --yes from-package"
   },
   "repository": {
