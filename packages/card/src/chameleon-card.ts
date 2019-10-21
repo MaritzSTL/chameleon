@@ -1,4 +1,10 @@
-import { LitElement, TemplateResult, customElement, html } from "lit-element";
+import {
+  LitElement,
+  TemplateResult,
+  customElement,
+  html,
+  property
+} from "lit-element";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/card";
 
@@ -10,11 +16,28 @@ export default class ChameleonCard extends LitElement {
   static styles = [base, style];
 
   /**
+   * Properties
+   */
+  @property({ type: String })
+  accentColor;
+
+  /**
    * Template
    */
   render(): TemplateResult {
     return html`
       <slot></slot>
     `;
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has("accentColor") && this.accentColor !== "")
+      this.style.borderTop = `7px solid ${this.accentColor}`;
+    else if (
+      changedProperties.has("accentColor") &&
+      this.accentColor !== undefined
+    ) {
+      this.style.borderTop = `7px solid var(--color-primary)`;
+    }
   }
 }
