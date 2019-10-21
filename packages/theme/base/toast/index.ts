@@ -34,8 +34,10 @@ export default css`
     -webkit-animation: fadein 0.5s;
     animation: fadein 0.5s;
   }
+
   .closed-icon {
     align-self: center;
+    display: flex;
   }
 
   ::slotted(*) {
