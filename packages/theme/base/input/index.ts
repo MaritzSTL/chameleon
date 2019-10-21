@@ -2,13 +2,11 @@ import { css } from "lit-element";
 
 export default css`
   :host {
-    display: inline-flex;
-    flex-direction: column;
     font-family: var(--font-family);
   }
 
   .component-wrapper {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
   }
 
