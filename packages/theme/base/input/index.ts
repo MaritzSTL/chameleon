@@ -7,6 +7,12 @@ export default css`
     font-family: var(--font-family);
   }
 
+  .component-wrapper:hover input:not(.invalid),
+  .component-wrapper:active input:not(.invalid) {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
   input {
     border: 1px solid var(--color-gray-light);
     border-radius: var(--border-radius-input);
@@ -33,6 +39,11 @@ export default css`
 
   label.invalid {
     color: var(--color-error);
+  }
+
+  .component-wrapper:hover label:not(.invalid),
+  .component-wrapper:active label:not(.invalid) {
+    color: var(--color-primary);
   }
 
   .error {
