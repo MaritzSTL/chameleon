@@ -1,10 +1,10 @@
 {
-  "name": "@chameleon-ds/card",
-  "version": "0.3.0",
-  "description": "Chameleon card",
+  "name": "@chameleon-ds/toast",
+  "version": "0.1.0",
+  "description": "Chameleon toast",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/card#readme",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/toast#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
@@ -13,6 +13,8 @@
   "module": "index.js",
   "files": [
     "/dist/",
+    "/src/",
+    "!/src/__tests__",
     "/index.js"
   ],
   "scripts": {
@@ -26,6 +28,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "903c637e2d1f3693b6c0b5fca5c1e6363ecb15c1"
+  }
 }

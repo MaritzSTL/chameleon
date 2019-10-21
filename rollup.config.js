@@ -410,5 +410,30 @@ export default [
       external: externalLibs
     },
     plugins: [...prodPlugins]
+  },
+  /**
+   * chameleon-toast
+   */
+  {
+    input: "packages/toast/src/chameleon-toast.ts",
+    output: {
+      file: "packages/toast/dist/chameleon-toast.js",
+      format: "umd",
+      name: "chameleon-toast",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/toast/src/chameleon-toast.ts",
+    output: {
+      file: "packages/toast/dist/chameleon-toast.min.js",
+      format: "umd",
+      name: "chameleon-toast",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
   }
 ];
