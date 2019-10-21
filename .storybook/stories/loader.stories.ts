@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs } from "@storybook/addon-knobs";
-import { html } from "lit-html";
+import { html } from "lit-element";
 import "../../packages/loader/src/chameleon-loader";
 
 const stories = storiesOf("Loader", module);

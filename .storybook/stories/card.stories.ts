@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, text } from "@storybook/addon-knobs";
-import { html } from "lit-html";
+import { html } from "lit-element";
 import "../../packages/card/src/chameleon-card";
 import "../../packages/card-header/src/chameleon-card-header";
 import "../../packages/card-image/src/chameleon-card-image";
