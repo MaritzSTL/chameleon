@@ -69,13 +69,11 @@ export default class ChameleonFilterableTable extends LitElement {
                   ${this.columns.map(column => {
                     console.log("column", column);
                     console.log("row", row);
-                    const template = html`
+                    return html`
                       <td>
                         ${column.row(row)}
                       </td>
                     `;
-                    console.log("template", template);
-                    return template;
                   })}
                 </tr>
 

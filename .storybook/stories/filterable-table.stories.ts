@@ -37,9 +37,6 @@ const columns = [
     header: "Column 1",
     row: (row: any) => {
       return html`
-        <span>hello 2</span>
-      `;
-      return html`
         ${row.field1}
       `;
     },
