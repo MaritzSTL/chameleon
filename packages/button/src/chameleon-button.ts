@@ -5,7 +5,6 @@ import {
   html,
   property
 } from "lit-element";
-import { nothing, svg, SVGTemplateResult } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/button";
@@ -27,6 +26,10 @@ export default class ChameleonButton extends LitElement {
   @property({ type: Boolean, reflect: true })
   "icon-right" = false;
 
+  // Element has a icon only
+  @property({ type: Boolean, reflect: true })
+  "icon-only" = false;
+
   /**
    * Styles
    */
@@ -44,6 +47,7 @@ export default class ChameleonButton extends LitElement {
         <slot name="icon-left"></slot>
         <slot></slot>
         <slot name="icon-right"></slot>
+        <slot name="icon-only"></slot>
       </button>
     `;
   }
