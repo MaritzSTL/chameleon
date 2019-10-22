@@ -60,27 +60,26 @@ export default class ChameleonFilterableTable extends LitElement {
 
         <tbody>
           ${this.rows.map(
-            (row: any, index: Number) =>
-              html`
+            (row: any, index: number): TemplateResult => {
+              return html`
                 <tr
                   class=${classMap(this.rowClassMap(row, index))}
                   data-row=${index}
                 >
-                  ${this.columns.map(column => {
-                    console.log("column", column);
-                    console.log("row", row);
-                    return html`
-                      <td>
-                        ${column.row(row)}
-                      </td>
-                    `;
-                  })}
+                  ${this.columns.map(
+                    column =>
+                      html`
+                        <td>
+                          ${column.row(row)}
+                        </td>
+                      `
+                  )}
                 </tr>
 
-                <!-- ${row.details && row.showDetails
+                ${row.details && row.showDetails
                   ? row.details.map(
-                      detailsRow =>
-                        html`
+                      (detailsRow: any, index: number): TemplateResult => {
+                        return html`
                           <tr
                             class="details-row ${classMap(
                               this.rowClassMap(row, index)
@@ -96,10 +95,12 @@ export default class ChameleonFilterableTable extends LitElement {
                                 `
                             )}
                           </tr>
-                        `
+                        `;
+                      }
                     )
-                  : nothing} -->
-              `
+                  : nothing}
+              `;
+            }
           )}
         </tbody>
       </table>
@@ -118,7 +119,7 @@ export default class ChameleonFilterableTable extends LitElement {
     `;
   }
 
-  rowClassMap(item: any, index: Number): any {
+  rowClassMap(item: any, index: number): any {
     return {
       "highlight-row": index === this.highlightRow,
       "show-details": item.showDetails

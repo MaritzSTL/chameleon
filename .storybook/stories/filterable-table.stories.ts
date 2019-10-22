@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs } from "@storybook/addon-knobs";
-import { html } from "lit-element";
+import { TemplateResult, html } from "lit-element";
 
 import "../../packages/filterable-table/src/chameleon-filterable-table";
 
@@ -35,116 +35,125 @@ const filterChange = () => {
 const columns = [
   {
     header: "Column 1",
-    row: (row: any) => {
-      return html`
+    row: (row: any): TemplateResult =>
+      html`
         ${row.field1}
-      `;
-    },
-    detailsRow: (detailsRow: any, row: any) => {
-      return html`
-        ${detailsRow.detailField1}
-      `;
-    }
+      `,
+    detailsRow: (detailsRow: any, row: any): TemplateResult =>
+      html`
+        <!-- ${detailsRow.detailsField1} -->
+      `
   },
   {
     header: "Column 2",
-    row: (row: any) => {
-      return html`
+    row: (row: any): TemplateResult =>
+      html`
         ${row.field2}
-      `;
-    },
-    detailsRow: (detailsRow: any, row: any) => {
-      return html`
-        ${row.detailField2}
-      `;
-    }
+      `,
+    detailsRow: (detailsRow: any, row: any): TemplateResult =>
+      html`
+        ${detailsRow.detailsField2}
+      `
   },
   {
     header: "Column 3",
-    row: (row: any) => {
-      return html`
+    row: (row: any): TemplateResult =>
+      html`
         ${row.field3}
-      `;
-    },
-    detailsRow: (detailsRow: any, row: any) => {
-      return html`
-        ${row.detailField3}
-      `;
-    }
+      `,
+    detailsRow: (detailsRow: any, row: any): TemplateResult =>
+      html`
+        ${detailsRow.detailsField3}
+      `
   },
   {
     header: "Column 4",
-    row: (row: any) => {
-      return html`
+    row: (row: any): TemplateResult =>
+      html`
         ${row.field4}
-      `;
-    },
-    detailsRow: (detailsRow: any, row: any) => {
-      return html`
-        ${row.detailField4}
-      `;
-    }
+      `,
+    detailsRow: (detailsRow: any, row: any): TemplateResult =>
+      html`
+        ${detailsRow.detailsField4}
+      `
   }
 ];
 
 const rows = [
   {
-    field1: "Field 1",
-    field2: "Field 2",
-    field3: "Field 3",
-    field4: "Field 4",
-    showDetails: true,
+    field1: "Row 1 - Field 1",
+    field2: "Row 1 - Field 2",
+    field3: "Row 1 - Field 3",
+    field4: "Row 1 - Field 4",
+    showDetails: false,
     details: [
       {
-        detailsField1: "detailsField 1",
-        detailsField2: "detailsField 2",
-        detailsField3: "detailsField 3",
-        detailsField4: "detailsField 4"
+        detailsField1: "Details Row 1 - Field 1",
+        detailsField2: "Details Row 1 - Field 2",
+        detailsField3: "Details Row 1 - Field 3",
+        detailsField4: "Details Row 1 - Field 4"
       }
     ]
   },
   {
-    field1: "Field 1",
-    field2: "Field 2",
-    field3: "Field 3",
-    field4: "Field 4",
+    field1: "Row 2 - Field 1",
+    field2: "Row 2 - Field 2",
+    field3: "Row 2 - Field 3",
+    field4: "Row 2 - Field 4",
     showDetails: true,
     details: [
       {
-        detailsField1: "detailsField 1",
-        detailsField2: "detailsField 2",
-        detailsField3: "detailsField 3",
-        detailsField4: "detailsField 4"
+        detailsField1: "Details Row 1 - Field 1",
+        detailsField2: "Details Row 1 - Field 2",
+        detailsField3: "Details Row 1 - Field 3",
+        detailsField4: "Details Row 1 - Field 4"
+      },
+      {
+        detailsField1: "Details Row 2 - Field 1",
+        detailsField2: "Details Row 2 - Field 2",
+        detailsField3: "Details Row 2 - Field 3",
+        detailsField4: "Details Row 2 - Field 4"
       }
     ]
   },
   {
-    field1: "Field 1",
-    field2: "Field 2",
-    field3: "Field 3",
-    field4: "Field 4",
+    field1: "Row 3 - Field 1",
+    field2: "Row 3 - Field 2",
+    field3: "Row 3 - Field 3",
+    field4: "Row 3 - Field 4",
     showDetails: true,
-    details: [
-      {
-        detailsField1: "detailsField 1",
-        detailsField2: "detailsField 2",
-        detailsField3: "detailsField 3",
-        detailsField4: "detailsField 4"
-      }
-    ]
+    details: []
   },
   {
-    field1: "Field 1",
-    field2: "Field 2",
-    field3: "Field 3",
-    field4: "Field 4",
+    field1: "Row 4 - Field 1",
+    field2: "Row 4 - Field 2",
+    field3: "Row 4 - Field 3",
+    field4: "Row 4 - Field 4",
     showDetails: true,
     details: [
       {
-        detailsField1: "detailsField 1",
-        detailsField2: "detailsField 2",
-        detailsField3: "detailsField 3",
-        detailsField4: "detailsField 4"
+        detailsField1: "Details Row 1 - Field 1",
+        detailsField2: "Details Row 1 - Field 2",
+        detailsField3: "Details Row 1 - Field 3",
+        detailsField4: "Details Row 1 - Field 4"
+      },
+      {
+        detailsField1: "Details Row 2 - Field 1",
+        detailsField2: "Details Row 2 - Field 2",
+        detailsField3: "Details Row 2 - Field 3",
+        detailsField4: "Details Row 2 - Field 4"
+      },
+      {
+        detailsField1: "Details Row 3 - Field 1",
+        detailsField2: "Details Row 3 - Field 2",
+        detailsField3: "Details Row 3 - Field 3",
+        detailsField4: "Details Row 3 - Field 4"
+      },
+      {
+        detailsField1: "Details Row 4 - Field 1",
+        detailsField2: "Details Row 4 - Field 2",
+        detailsField3: "Details Row 4 - Field 3",
+        detailsField4: "Details Row 4 - Field 4"
       }
     ]
   }
