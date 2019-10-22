@@ -10,10 +10,13 @@ export default css`
 
     --color-surface: #ffffff;
     --color-black: #000000;
+    --color-background: #f5f5f8;
     --color-primary: #2c6fb7;
     --color-primary-dark: #004587;
+    --color-primary-light: #679dea;
     --color-secondary: #69c9b9;
     --color-secondary-dark: #349889;
+    --color-secondary-light: #9cfceb;
     --color-error: #bc1c16;
     --color-gray-lightest: #e1e3e4;
     --color-gray-light: #c4c7ca;
@@ -21,10 +24,10 @@ export default css`
     --color-box-shadow: rgba(159, 164, 168, 0.6);
 
     --font-letter-spacing: 0.018em;
-    --font-size-paragraph-medium: 0.938em;
-    --font-size-subtitle: 0.938em;
+    --font-size-paragraph-medium: 0.9375em;
+    --font-size-subtitle: 0.9375em;
     --font-size-title: 1.4em;
-    --font-size-input: 0.938em;
+    --font-size-input: 0.9375em;
     --font-size-label: 0.875em;
     --font-family: Arial, Helvetica, sans-serif;
   }

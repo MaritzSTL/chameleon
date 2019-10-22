@@ -5,6 +5,10 @@ export default css`
     --th-and-td-text-align: left;
     --thead-th-vert-align: bottom;
 
+    --row-hover-color: var(--color-surface);
+    --row-highlight-color: var(--color-primary-light);
+
+    background-color: var(--color-background);
     display: block;
     font-family: var(--font-family);
   }
@@ -18,7 +22,7 @@ export default css`
   table th {
     border-bottom: 3px solid var(--color-secondary);
     font-size: var(--font-size-label);
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
     vertical-align: var(--thead-th-vert-align, initial);
   }
 
@@ -57,16 +61,16 @@ export default css`
 
   table tr:last-child td,
   table tr.details-row:last-child td {
-    border-bottom: 1px solid var(--gray-light, #c4c7ca);
+    border-bottom: 1px solid var(--color-gray-light);
   }
 
   tr.active,
   tbody:hover tr {
-    background-color: var(--surface-color, #ffffff);
+    background-color: var(--row-hover-color);
     transition: background-color 0.25s ease;
 
     &.highlight-row {
-      background-color: var(--primary-color-light);
+      background-color: var(--row-highlight-color);
     }
   }
 `;

@@ -46,7 +46,6 @@ export default class ChameleonFilterableTable extends LitElement {
     return html`
       <table>
         <thead>
-        </thead>
           <tr>
             ${this.columns.map(
               column => html`
@@ -58,10 +57,10 @@ export default class ChameleonFilterableTable extends LitElement {
           </tr>
         </thead>
 
-        <tbody>
-          ${this.rows.map(
-            (row: any, index: number): TemplateResult => {
-              return html`
+        ${this.rows.map(
+          (row: any, index: number): TemplateResult => {
+            return html`
+              <tbody>
                 <tr
                   class=${classMap(this.rowClassMap(row, index))}
                   data-row=${index}
@@ -99,10 +98,10 @@ export default class ChameleonFilterableTable extends LitElement {
                       }
                     )
                   : nothing}
-              `;
-            }
-          )}
-        </tbody>
+              </tbody>
+            `;
+          }
+        )}
       </table>
     `;
   }
