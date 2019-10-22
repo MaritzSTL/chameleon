@@ -186,6 +186,31 @@ export default [
     plugins: [...prodPlugins]
   },
   /**
+   * chameleon-card-footer
+   */
+  {
+    input: "packages/card-footer/src/chameleon-card-footer.ts",
+    output: {
+      file: "packages/card-footer/dist/chameleon-card-footer.js",
+      format: "umd",
+      name: "chameleon-card-footer",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...devPlugins]
+  },
+  {
+    input: "packages/card-footer/src/chameleon-card-footer.ts",
+    output: {
+      file: "packages/card-footer/dist/chameleon-card-footer.min.js",
+      format: "umd",
+      name: "chameleon-card-footer",
+      globals: globalLibs,
+      external: externalLibs
+    },
+    plugins: [...prodPlugins]
+  },
+  /**
    * chameleon-radio
    */
   {
