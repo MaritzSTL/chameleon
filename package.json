@@ -54,6 +54,7 @@
     "rollup-plugin-babel-minify": "^9.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript": "^1.0.1",
+    "sinon": "^7.5.0",
     "tslib": "^1.10.0",
     "typescript": "^3.5.3"
   },
