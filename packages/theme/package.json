@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/theme",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Chameleon design language",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,8 +9,17 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
+  "main": "base/index.js",
+  "module": "base/index.js",
+  "files": [
+    "/**/*.d.ts",
+    "/**/*.d.ts.map",
+    "/**/*.js",
+    "/**/*.js.map"
+  ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
   },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"
