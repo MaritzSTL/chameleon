@@ -17,14 +17,14 @@ export default css`
     padding: 18px;
   }
   .header {
-    font-family: Lato;
+    font-family: var(--font-family);
     color: var(--color-primary);
     font-size: 24px;
     font-weight: 400;
   }
   .sub-header {
     display: block;
-    font-family: Lato;
+    font-family: var(--font-family);
     color: var(--color-gray-darkest);
     font-size: 20px;
     font-weight: 400;
