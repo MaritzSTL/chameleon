@@ -11,6 +11,7 @@
     "test:prune-snapshots": "karma start --prune-snapshots",
     "test:compatibility": "karma start --compatibility all --auto-watch=true --single-run=false",
     "dev": "start-storybook",
+    "generate-codecov": "codecov",
     "build": "lerna exec yarn run build",
     "build-storybook": "build-storybook -c .storybook -o .out && cp -a .out/./ docs/assets/storybook/ && del-cli .out",
     "publish-packages": "lerna publish --yes from-package"
