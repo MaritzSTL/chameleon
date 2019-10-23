@@ -57,5 +57,11 @@ export default class ChameleonToast extends LitElement {
   closeToast() {
     const x = this.shadowRoot!.getElementById("toast");
     x!.className = x!.className.replace("show-closeable", "");
+    this.dispatchEvent(
+      new CustomEvent("close-toast", {
+        bubbles: true,
+        composed: true
+      })
+    );
   }
 }
