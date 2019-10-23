@@ -18,10 +18,10 @@ export default class ChameleonPaginator extends LitElement {
    * Properties
    */
   @property({ type: Number })
-  totalItems;
+  totalItems = null;
 
   @property({ type: Number })
-  pageSize;
+  pageSize = null;
 
   @property({ type: Number })
   currentPage = 1;
@@ -87,7 +87,12 @@ export default class ChameleonPaginator extends LitElement {
   }
 
   get totalPages(): number {
-    return Math.ceil(this.totalItems / this.pageSize);
+    const totalItems = this.totalItems;
+    const pageSize = this.pageSize;
+
+    if (totalItems === null || pageSize === null) return 0;
+
+    return Math.ceil(totalItems / pageSize);
   }
 
   get pages(): Array<number | string> {
@@ -155,9 +160,12 @@ export default class ChameleonPaginator extends LitElement {
   }
 
   _goToPage(e: MouseEvent): void {
-    this.currentPage = parseInt(
-      (<HTMLElement>(<HTMLElement>e.target).closest("[data-page]")).dataset.page
-    );
+    const page = (<HTMLElement>(<HTMLElement>e.target).closest("[data-page]"))
+      .dataset.page;
+
+    if (page === undefined) return;
+
+    this.currentPage = parseInt(page);
     this.dispatchChange();
   }
 

@@ -719,13 +719,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@chameleon-ds/theme@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.npmjs.org/@chameleon-ds/theme/-/theme-0.5.0.tgz#5205b0450356f5d9f16902d9c0862e9362383c98"
-  integrity sha512-pjCyw4rGhgHV4tQmBo9qjfp0bn6Wj6w2tU29a4v8JXerWrKHHYeOhw9iEw2lSCmbG3zk3hytXXPmRyBR2zv80Q==
-  dependencies:
-    lit-element "^2.2.0"
-
 "@comandeer/babel-plugin-banner@^5.0.0":
   version "5.0.0"
   resolved "https://registry.npmjs.org/@comandeer/babel-plugin-banner/-/babel-plugin-banner-5.0.0.tgz#30969cb08e810b67810d41761d0cfac292231ea9"
@@ -11868,7 +11861,7 @@ webpack-sources@^1.4.0, webpack-sources@^1.4.1:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.33.0, webpack@^4.38.0:
+webpack@^4.33.0, webpack@^4.38.0, webpack@^4.41.2:
   version "4.41.2"
   resolved "https://registry.npmjs.org/webpack/-/webpack-4.41.2.tgz#c34ec76daa3a8468c9b61a50336d8e3303dce74e"
   integrity sha512-Zhw69edTGfbz9/8JJoyRQ/pq8FYUoY0diOXqW0T6yhgdhCv6wr0hra5DwwWexNRns2Z2+gsnrNcbe9hbGBgk/A==
