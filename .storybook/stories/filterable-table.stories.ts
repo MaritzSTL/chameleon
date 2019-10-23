@@ -11,11 +11,47 @@ const stories = storiesOf("Filterable Table", module);
 stories.addDecorator(withKnobs as any);
 
 stories.add(
-  "Filterable Table",
+  "Basic",
   () => {
     return html`
       <chameleon-filterable-table
         .columns=${columns}
+        .rows=${rows}
+        .pageSize=${pageSize}
+        .totalNumPages=${totalNumPages}
+        .currentPage=${currentPage}
+        .totalItems=${totalItems}
+        @filterChange=${filterChange}
+      ></chameleon-filterable-table>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Details Rows",
+  () => {
+    return html`
+      <chameleon-filterable-table
+        .columns=${columnsWithDetailFields}
+        .rows=${rows}
+        .pageSize=${pageSize}
+        .totalNumPages=${totalNumPages}
+        .currentPage=${currentPage}
+        .totalItems=${totalItems}
+        @filterChange=${filterChange}
+      ></chameleon-filterable-table>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Filters",
+  () => {
+    return html`
+      <chameleon-filterable-table
+        .columns=${columnsWithFilters}
         .rows=${rows}
         .pageSize=${pageSize}
         .totalNumPages=${totalNumPages}
@@ -38,10 +74,41 @@ const columns = [
     row: (row: any): TemplateResult =>
       html`
         ${row.field1}
+      `
+  },
+  {
+    header: "Column 2",
+    row: (row: any): TemplateResult =>
+      html`
+        ${row.field2}
+      `
+  },
+  {
+    header: "Column 3",
+    row: (row: any): TemplateResult =>
+      html`
+        ${row.field3}
+      `
+  },
+  {
+    header: "Column 4",
+    row: (row: any): TemplateResult =>
+      html`
+        ${row.field4}
+      `
+  }
+];
+
+const columnsWithDetailFields = [
+  {
+    header: "Column 1",
+    row: (row: any): TemplateResult =>
+      html`
+        ${row.field1}
       `,
     detailsRow: (detailsRow: any, row: any): TemplateResult =>
       html`
-        <!-- ${detailsRow.detailsField1} -->
+        ${detailsRow.detailsField1}
       `
   },
   {
@@ -75,6 +142,50 @@ const columns = [
     detailsRow: (detailsRow: any, row: any): TemplateResult =>
       html`
         ${detailsRow.detailsField4}
+      `
+  }
+];
+
+const columnsWithFilters = [
+  {
+    header: "Column 1",
+    row: (row: any): TemplateResult =>
+      html`
+        ${row.field1}
+      `
+  },
+  {
+    header: "Column 2",
+    filter: {
+      name: "column2"
+    },
+    sortable: true,
+    row: (row: any): TemplateResult =>
+      html`
+        ${row.field2}
+      `
+  },
+  {
+    header: "Column 3",
+    filter: {
+      name: "column3"
+    },
+    searchable: true,
+    row: (row: any): TemplateResult =>
+      html`
+        ${row.field3}
+      `
+  },
+  {
+    header: "Column 3",
+    filter: {
+      name: "column3"
+    },
+    searchable: true,
+    sortable: true,
+    row: (row: any): TemplateResult =>
+      html`
+        ${row.field3}
       `
   }
 ];
