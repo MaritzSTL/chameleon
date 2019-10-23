@@ -177,15 +177,15 @@ const columnsWithFilters = [
       `
   },
   {
-    header: "Column 3",
+    header: "Column 4",
     filter: {
-      name: "column3"
+      name: "column4"
     },
     searchable: true,
     sortable: true,
     row: (row: any): TemplateResult =>
       html`
-        ${row.field3}
+        ${row.field4}
       `
   }
 ];
