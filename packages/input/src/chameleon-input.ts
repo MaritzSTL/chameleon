@@ -218,6 +218,8 @@ export default class ChameleonInput extends LitElement {
       if (!this.checkValidity() || this.validationMessage.length > 0) {
         return true;
       } else return false;
+    } else {
+      return true;
     }
   }
 

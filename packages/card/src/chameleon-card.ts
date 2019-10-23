@@ -3,7 +3,8 @@ import {
   TemplateResult,
   customElement,
   html,
-  property
+  property,
+  PropertyValues
 } from "lit-element";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/card";
@@ -19,7 +20,7 @@ export default class ChameleonCard extends LitElement {
    * Properties
    */
   @property({ type: String })
-  accentColor;
+  accentColor = null;
 
   /**
    * Template
@@ -30,7 +31,7 @@ export default class ChameleonCard extends LitElement {
     `;
   }
 
-  updated(changedProperties) {
+  updated(changedProperties: PropertyValues) {
     if (changedProperties.has("accentColor") && this.accentColor !== "")
       this.style.borderTop = `7px solid ${this.accentColor}`;
     else if (
