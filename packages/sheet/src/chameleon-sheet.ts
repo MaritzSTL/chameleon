@@ -5,9 +5,9 @@ import {
   html,
   property
 } from "lit-element";
+import { nothing, svg, SVGTemplateResult } from "lit-html";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/sheet";
-import { nothing, svg, SVGTemplateResult } from "lit-html";
 
 @customElement("chameleon-sheet")
 export default class ChameleonSheet extends LitElement {

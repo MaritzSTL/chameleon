@@ -10,37 +10,60 @@ export default css`
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     background-color: var(--color-surface);
-    padding: 18px;
   }
-  :host([sheetOpened]) {
+
+  :host([sheetopened]) {
     transform: translateX(0);
-    padding: 18px;
   }
+
+  .head-container {
+    position: relative;
+    padding: 20px;
+  }
+
   .header {
     font-family: var(--font-family);
     color: var(--color-primary);
-    font-size: 24px;
+    font-size: var(--font-size-title);
     font-weight: 400;
+    margin-top: 0;
   }
+
   .sub-header {
     display: block;
     font-family: var(--font-family);
-    color: var(--color-gray-darkest);
-    font-size: 20px;
+    color: var(--color-primary);
+    font-size: 1rem;
     font-weight: 400;
-    margin-top: 20px;
+    margin: 16px 20px 0 20px;
   }
+
   .close-icon {
-    display: inline-block;
+    display: flex;
     cursor: pointer;
-    float: right;
-    margin-right: 5px;
+    margin: 20px 20px 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
-  ::slotted(*) {
+
+  ::slotted(p) {
     color: var(--color-gray-darkest);
   }
+
+  ::slotted([slot="details"]) {
+    font-size: var(--font-size-subtitle);
+  }
+
   ::slotted([slot="actions"]) {
     border-top: solid 2px #e1e3e4;
     border-bottom: solid 2px #e1e3e4;
+    padding: 20px;
+    font-size: var(--font-size-subtitle);
+  }
+
+  ::slotted([slot="content"]) {
+    padding: 0 20px;
+    font-size: var(--font-size-label);
   }
 `;

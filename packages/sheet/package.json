@@ -1,7 +1,7 @@
 {
   "name": "@chameleon-ds/sheet",
-  "version": "0.1.2",
-  "description": "Chameleon card image",
+  "version": "0.1.0",
+  "description": "Chameleon sheet",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
   "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/sheet#readme",
@@ -9,14 +9,24 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-sheet.js",
+  "main": "chameleon-sheet.js",
+  "module": "chameleon-sheet.js",
+  "files": [
+    "/src/",
+    "/chameleon-sheet.d.ts",
+    "/chameleon-sheet.d.ts.map",
+    "/chameleon-sheet.js",
+    "/chameleon-sheet.js.map"
+  ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
   },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
+    "@chameleon-ds/theme": "^0.6.0",
     "lit-element": "^2.2.0"
   },
   "publishConfig": {
