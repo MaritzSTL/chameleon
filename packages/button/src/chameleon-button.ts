@@ -18,6 +18,17 @@ export default class ChameleonButton extends LitElement {
   disabled = false;
   @property({ type: String, reflect: true })
   theme = "primary";
+  // Element has a left icon
+  @property({ type: Boolean, reflect: true })
+  "icon-left" = false;
+
+  // Element has a right icon
+  @property({ type: Boolean, reflect: true })
+  "icon-right" = false;
+
+  // Element has a icon only
+  @property({ type: Boolean, reflect: true })
+  "icon-only" = false;
 
   /**
    * Styles
@@ -33,7 +44,10 @@ export default class ChameleonButton extends LitElement {
         class="${classMap({ [this.theme]: true })}"
         ?disabled="${this.disabled}"
       >
+        <slot name="icon-left"></slot>
         <slot></slot>
+        <slot name="icon-right"></slot>
+        <slot name="icon-only"></slot>
       </button>
     `;
   }

@@ -16,3 +16,9 @@ node_modules/
 dist/
 _site/
 .jekyll-cache/
+
+# Compiler Output
+/**/*.js
+/**/*.js.map
+/**/*.d.ts
+/**/*.d.ts.map

@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/toast",
-  "version": "0.1.2",
+  "version": "0.2.1",
   "description": "Chameleon toast",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,22 +9,24 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "index.js",
-  "module": "index.js",
+  "main": "chameleon-toast.js",
+  "module": "chameleon-toast.js",
   "files": [
-    "/dist/",
     "/src/",
-    "!/src/__tests__",
-    "/index.ts"
+    "/chameleon-toast.d.ts",
+    "/chameleon-toast.d.ts.map",
+    "/chameleon-toast.js",
+    "/chameleon-toast.js.map"
   ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
   },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/theme": "^0.5.0",
+    "@chameleon-ds/theme": "^0.6.0",
     "lit-element": "^2.2.0"
   },
   "publishConfig": {

@@ -1,7 +1,7 @@
 import { fixture, html, expect } from "@open-wc/testing";
 import "../src/chameleon-toast";
 
-describe("chameleon-toastt", () => {
+describe("chameleon-toast", () => {
   it("renders", async () => {
     const el = await fixture(html`
       <chameleon-toast></chameleon-toast>
