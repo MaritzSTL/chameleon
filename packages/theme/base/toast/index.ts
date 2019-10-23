@@ -20,6 +20,10 @@ export default css`
     justify-content: space-between;
   }
 
+  .toast-text {
+    margin: 0 5px;
+  }
+
   @media (max-width: 768px) {
     #toast {
       min-width: 90%;
@@ -27,12 +31,28 @@ export default css`
     }
   }
 
-  /* Show the toast when clicking on a button (class added with JavaScript) */
+  @media (max-width: 420px) {
+    #toast {
+      bottom: 70px;
+      min-width: 0px;
+    }
+  }
+
+  /* Show the toast */
   #toast.show-closeable {
     visibility: visible; /* Show the toast */
     /* Add animation: Take 0.5 seconds to fade in the toast.*/
     -webkit-animation: fadein 0.5s;
     animation: fadein 0.5s;
+  }
+
+  /* Hide the toast */
+  #toast.hide-closeable {
+    visibility: visible;
+    -webkit-animation: fadeout 0.5s forwards;
+    animation: fadeout 0.5s forwards;
+    /* Show the toast */
+    /* Add animation: Take 0.5 seconds to fade out the toast. */
   }
 
   .closed-icon {
@@ -66,6 +86,51 @@ export default css`
     to {
       bottom: 30px;
       opacity: 1;
+    }
+  }
+  /* Animations to fade the toast out */
+  @-webkit-keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 1;
+    }
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 1;
+    }
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 420px) {
+    @-webkit-keyframes fadeout {
+      from {
+        bottom: 70px;
+        opacity: 1;
+      }
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
+    }
+    @keyframes fadeout {
+      from {
+        bottom: 70px;
+        opacity: 1;
+      }
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
     }
   }
 `;
