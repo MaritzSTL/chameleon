@@ -20,10 +20,21 @@ export default css`
     justify-content: space-between;
   }
 
+  .toast-text {
+    margin: 0 5px;
+  }
+
   @media (max-width: 768px) {
     #toast {
       min-width: 90%;
       max-width: 90%;
+    }
+  }
+
+  @media (max-width: 420px) {
+    #toast {
+      bottom: 70px;
+      min-width: 0px;
     }
   }
 
