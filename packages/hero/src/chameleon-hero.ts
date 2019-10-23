@@ -114,8 +114,8 @@ export default class ChameleonHero extends LitElement {
       .map(h => this.hex2rgba(h.trim(), this.gradientAlpha));
   }
 
-  private hex2rgba(hex, alpha = 0.5) {
-    const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+  private hex2rgba(hex: string, alpha = 0.5) {
+    const [r, g, b] = hex!.match(/\w\w/g)!.map(x => parseInt(x, 16));
     return `rgba(${r},${g},${b},${alpha})`;
   }
 }

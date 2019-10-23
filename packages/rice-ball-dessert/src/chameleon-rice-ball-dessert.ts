@@ -1,6 +1,5 @@
 import {
   LitElement,
-  css,
   TemplateResult,
   customElement,
   html,
