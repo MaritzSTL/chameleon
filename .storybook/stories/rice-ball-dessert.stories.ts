@@ -12,8 +12,11 @@ stories.addDecorator(withKnobs as any);
 stories.add(
   "Basic",
   () => {
+    const ballColor = text("Ball Color", "");
     return html`
-      <chameleon-rice-ball-dessert></chameleon-rice-ball-dessert>
+      <chameleon-rice-ball-dessert
+        riceBallColor=${ballColor}
+      ></chameleon-rice-ball-dessert>
     `;
   },
   { info: { inline: true } }

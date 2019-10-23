@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, text } from "@storybook/addon-knobs";
-import { html } from "lit-element";
+import { withKnobs, boolean, text } from "@storybook/addon-knobs";
+import { html } from "lit-html";
 import "../../packages/card/src/chameleon-card";
 import "../../packages/card-header/src/chameleon-card-header";
 import "../../packages/card-image/src/chameleon-card-image";
@@ -76,6 +76,31 @@ stories.add(
           Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
           turpis.
         </p>
+      </chameleon-card>
+    `;
+  },
+
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Border",
+  () => {
+    const subtitleText = text("Subtitle", "Destination");
+    const titleText = text("Title", "St. Louis, MO");
+    const rounded = boolean("Rounded", true);
+    const accentColorSelected = text("Top Border", "green");
+
+    return html`
+      <chameleon-card
+        ?rounded="${rounded}"
+        accentColor="${accentColorSelected}"
+      >
+        <chameleon-card-header
+          title="${titleText}"
+          subtitle="${subtitleText}"
+        ></chameleon-card-header>
+        <p>Here is some sample content for the card</p>
       </chameleon-card>
     `;
   },

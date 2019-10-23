@@ -89,21 +89,28 @@ export default class ChameleonInput extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      ${this.labelText}
       <div
         class="
-        ${classMap({
-          invalid: this._invalidState,
-          "input-wrapper": true,
-          "icon-left": this["icon-left"],
-          "icon-right": this["icon-right"]
+      ${classMap({
+          "component-wrapper": true,
+          invalid: this._invalidState
         })}"
       >
-        <slot name="icon-left"></slot>
-        ${this._inputEl}
-        <slot name="icon-right"></slot>
+        ${this.labelText}
+        <div
+          class="
+        ${classMap({
+            "input-wrapper": true,
+            "icon-left": this["icon-left"],
+            "icon-right": this["icon-right"]
+          })}"
+        >
+          <slot name="icon-left"></slot>
+          ${this._inputEl}
+          <slot name="icon-right"></slot>
+        </div>
+        ${this.errorText}
       </div>
-      ${this.errorText}
     `;
   }
 
@@ -211,6 +218,8 @@ export default class ChameleonInput extends LitElement {
       if (!this.checkValidity() || this.validationMessage.length > 0) {
         return true;
       } else return false;
+    } else {
+      return true;
     }
   }
 

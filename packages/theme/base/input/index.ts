@@ -2,9 +2,12 @@ import { css } from "lit-element";
 
 export default css`
   :host {
+    font-family: var(--font-family);
+  }
+
+  .component-wrapper {
     display: inline-flex;
     flex-direction: column;
-    font-family: var(--font-family);
   }
 
   input {
@@ -22,8 +25,10 @@ export default css`
     border-color: var(--color-error);
   }
 
-  .invalid ::slotted(svg) {
-    color: var(--color-error);
+  .component-wrapper:hover:not(.invalid) input:not([disabled]),
+  .component-wrapper:active:not(.invalid) input:not([disabled]) {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
   }
 
   label {
@@ -34,6 +39,11 @@ export default css`
 
   label.invalid {
     color: var(--color-error);
+  }
+
+  :host:not([disabled]) .component-wrapper:hover label:not(.invalid),
+  :host:not([disabled]) .component-wrapper:active label:not(.invalid) {
+    color: var(--color-primary);
   }
 
   .error {
@@ -74,6 +84,10 @@ export default css`
     top: 50%;
     transform: translateY(-50%);
     width: auto;
+  }
+
+  .invalid ::slotted(svg) {
+    color: var(--color-error);
   }
 
   ::slotted([slot="icon-left"]) {

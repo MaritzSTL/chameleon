@@ -10,15 +10,15 @@ jobs:
           name: Install Dependencies
           command: |
             npm config set prefix '~/.npm-global'
-            npm run setup
+            yarn setup
       - run: # run tests
           name: Test
-          command: npm test
+          command: yarn test
       - run: # run coverage report
           name: Code Coverage
           command: |
-            npx codecov
+            yarn run generate-codecov
       - run:
           name: Build
           command: |
-            npm run build
+            yarn build:ci

@@ -10,7 +10,7 @@ const stories = storiesOf("Input", module);
 // to this and make these types compatible.
 stories.addDecorator(withKnobs as any);
 
-const searchIcon = slot => svg`
+const searchIcon = (slot: string) => svg`
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
