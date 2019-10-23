@@ -68,7 +68,7 @@ export default class ChameleonFilterableTable extends LitElement {
                   data-row=${index}
                 >
                   ${this.columns.map(
-                    column =>
+                    (column: any) =>
                       html`
                         <td>
                           ${column.row(row)}
@@ -87,7 +87,7 @@ export default class ChameleonFilterableTable extends LitElement {
                             )}"
                             data-row=${index}
                           >
-                            ${this.columns.map(column =>
+                            ${this.columns.map((column: any) =>
                               column.detailsRow
                                 ? html`
                                     <td>
@@ -165,7 +165,10 @@ export default class ChameleonFilterableTable extends LitElement {
   getColumnSort(column: any) {
     return column.sortable
       ? html`
-          <div class="sort-icons" @click=${() => this.handleSortClick(column)}>
+          <div
+            class="sort-icons"
+            @click=${(e: any) => this.handleSortClick(e, column)}
+          >
             <div class="icon-container">
               ${this.chevronUpIcon()}
             </div>
@@ -184,7 +187,9 @@ export default class ChameleonFilterableTable extends LitElement {
 
   handleFilterInput() {}
 
-  handleSortClick(column: any) {}
+  handleSortClick(e: any, column: any) {
+    console.log(e, column);
+  }
 
   chevronUpIcon() {
     return svg`

@@ -106,7 +106,7 @@ const columnsWithDetailFields = [
       html`
         ${row.field1}
       `,
-    detailsRow: (detailsRow: any, row: any): TemplateResult =>
+    detailsRow: (detailsRow: any): TemplateResult =>
       html`
         ${detailsRow.detailsField1}
       `
@@ -117,7 +117,7 @@ const columnsWithDetailFields = [
       html`
         ${row.field2}
       `,
-    detailsRow: (detailsRow: any, row: any): TemplateResult =>
+    detailsRow: (detailsRow: any): TemplateResult =>
       html`
         ${detailsRow.detailsField2}
       `
@@ -128,7 +128,7 @@ const columnsWithDetailFields = [
       html`
         ${row.field3}
       `,
-    detailsRow: (detailsRow: any, row: any): TemplateResult =>
+    detailsRow: (detailsRow: any): TemplateResult =>
       html`
         ${detailsRow.detailsField3}
       `
@@ -139,7 +139,7 @@ const columnsWithDetailFields = [
       html`
         ${row.field4}
       `,
-    detailsRow: (detailsRow: any, row: any): TemplateResult =>
+    detailsRow: (detailsRow: any): TemplateResult =>
       html`
         ${detailsRow.detailsField4}
       `
