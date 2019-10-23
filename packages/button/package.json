@@ -9,14 +9,18 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "index.js",
-  "module": "index.js",
+  "main": "chameleon-button.js",
+  "module": "chameleon-button.js",
   "files": [
-    "/dist/",
-    "/index.js"
+    "/src/",
+    "/chameleon-button.d.ts",
+    "/chameleon-button.d.ts.map",
+    "/chameleon-button.js",
+    "/chameleon-button.js.map"
   ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
   },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"
