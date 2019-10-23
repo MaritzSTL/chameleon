@@ -15,6 +15,7 @@ export default css`
     font-family: var(--font-family);
     max-width: 100%;
     padding: var(--input-padding);
+    width: 100%;
   }
 
   .invalid input {

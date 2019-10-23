@@ -5,7 +5,7 @@ import {
   property,
   html
 } from "lit-element";
-import { nothing } from "lit-html";
+import { svg, nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map.js";
 
 import base from "@chameleon-ds/theme/base";
@@ -50,7 +50,9 @@ export default class ChameleonFilterableTable extends LitElement {
             ${this.columns.map(
               column => html`
                 <th>
-                  ${this.getColumnHeader(column)}
+                  <div class="header-container">
+                    ${this.getColumnHeader(column)}
+                  </div>
                 </th>
               `
             )}
@@ -85,13 +87,14 @@ export default class ChameleonFilterableTable extends LitElement {
                             )}"
                             data-row=${index}
                           >
-                            ${this.columns.map(
-                              column =>
-                                html`
-                                  <td>
-                                    ${column.detailsRow(detailsRow, row)}
-                                  </td>
-                                `
+                            ${this.columns.map(column =>
+                              column.detailsRow
+                                ? html`
+                                    <td>
+                                      ${column.detailsRow(detailsRow, row)}
+                                    </td>
+                                  `
+                                : nothing
                             )}
                           </tr>
                         `;
@@ -106,22 +109,118 @@ export default class ChameleonFilterableTable extends LitElement {
     `;
   }
 
-  getColumnHeader(column: any) {
-    return html`
-      <span>${column.header}</span>
-    `;
-  }
-
-  getColumnSort(column: any) {
-    return html`
-      <span class="fa-stack fa-1x"></span>
-    `;
-  }
-
   rowClassMap(item: any, index: number): any {
     return {
       "highlight-row": index === this.highlightRow,
       "show-details": item.showDetails
     };
+  }
+
+  getColumnHeader(column: any): TemplateResult {
+    return column.filter && column.filter.name
+      ? column.filter.items
+        ? html`
+            <div class="sort-container">
+              <span class="column-header">
+                ${column.header}
+              </span>
+
+              ${this.getColumnSort(column)}
+            </div>
+
+            <!-- <mtzwc-filterable-search
+              .items=""
+              .placeholder="${column.filterableSearchPlaceholder}"
+              .name="${column.filter.name}"
+              @selection-changed="${this.handleSelectionChanged}"
+            ></mtzwc-filterable-search> -->
+          `
+        : html`
+            <div class="sort-container">
+              <span class="column-header">
+                ${column.header}
+              </span>
+
+              ${this.getColumnSort(column)}
+            </div>
+
+            ${column.searchable &&
+              html`
+                <chameleon-input
+                  class="search-input"
+                  outlined
+                  placeholder="Search"
+                  name=${column.filter.name}
+                  @input=${this.handleFilterInput}
+                ></chameleon-input>
+              `}
+          `
+      : html`
+          <span>
+            ${column.header}
+          </span>
+        `;
+  }
+
+  getColumnSort(column: any) {
+    return column.sortable
+      ? html`
+          <div class="sort-icons" @click=${() => this.handleSortClick(column)}>
+            <div class="icon-container">
+              ${this.chevronUpIcon()}
+            </div>
+
+            <div class="icon-container">
+              ${this.chevronDownIcon()}
+            </div>
+          </div>
+        `
+      : nothing;
+  }
+
+  getSelectableItems() {}
+
+  handleSelectionChanged() {}
+
+  handleFilterInput() {}
+
+  handleSortClick(column: any) {}
+
+  chevronUpIcon() {
+    return svg`
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-chevron-up"
+      >
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    `;
+  }
+
+  chevronDownIcon() {
+    return svg`
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-chevron-down"
+      >
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    `;
   }
 }
