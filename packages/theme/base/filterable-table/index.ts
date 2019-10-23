@@ -28,7 +28,7 @@ export default css`
 
   table th {
     border-bottom: 3px solid var(--color-secondary);
-    font-size: var(--font-size-label);
+    font-size: var(--font-size-table-header);
     padding: 1rem 0.5rem;
     vertical-align: top;
   }
@@ -36,7 +36,7 @@ export default css`
   table td {
     border-bottom: 1px solid var(--color-gray-light);
     border-top: 1px solid var(--color-gray-light);
-    font-size: var(--font-size-input);
+    font-size: var(--font-size-table-content);
     padding: 1.5rem 0.5rem;
   }
 
@@ -75,7 +75,7 @@ export default css`
 
   table th .header-container {
     display: grid;
-    grid-auto-rows: 1fr;
+    grid-auto-rows: 2em 1fr;
   }
 
   table th .header-container > * {

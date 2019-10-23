@@ -8,6 +8,8 @@ import {
 import { svg, nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map.js";
 
+import { isEqual } from "lodash";
+
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/filterable-table";
 
@@ -32,7 +34,10 @@ export default class ChameleonFilterableTable extends LitElement {
   rows = [];
 
   @property({ type: Number })
-  highlightRow: null;
+  highlightRow = null;
+
+  @property({ type: Object })
+  params = {};
 
   /**
    * Styles
@@ -128,12 +133,12 @@ export default class ChameleonFilterableTable extends LitElement {
               ${this.getColumnSort(column)}
             </div>
 
-            <!-- <mtzwc-filterable-search
+            <!-- <chameleon-filterable-search
               .items=""
               .placeholder="${column.filterableSearchPlaceholder}"
               .name="${column.filter.name}"
               @selection-changed="${this.handleSelectionChanged}"
-            ></mtzwc-filterable-search> -->
+            ></chameleon-filterable-search> -->
           `
         : html`
             <div class="sort-container">
@@ -185,7 +190,17 @@ export default class ChameleonFilterableTable extends LitElement {
 
   handleSelectionChanged() {}
 
-  handleFilterInput() {}
+  handleFilterInput(e: CustomEvent) {
+    if (!isEqual(this.params, e.detail.params)) {
+      this.params = JSON.parse(JSON.stringify(e.detail.params));
+
+      // const currentPage = e.detail.paginationOnly
+      //   ? e.detail.params.pagination.currentPage
+      //   : 1;
+
+      // This is where we fetch more results with the updated filter
+    }
+  }
 
   handleSortClick(e: any, column: any) {
     console.log(e, column);
