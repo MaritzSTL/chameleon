@@ -34,8 +34,10 @@ export default class ChameleonCard extends LitElement {
   updated(changedProperties: PropertyValues) {
     if (changedProperties.has("accentColor") && this.accentColor !== "")
       this.style.borderTop = `7px solid ${this.accentColor}`;
-    else if (
+
+    if (
       changedProperties.has("accentColor") &&
+      this.accentColor === "" &&
       this.accentColor !== undefined
     ) {
       this.style.borderTop = `7px solid var(--color-primary)`;
