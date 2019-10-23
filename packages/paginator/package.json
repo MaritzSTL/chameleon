@@ -12,10 +12,11 @@
   "main": "index.js",
   "module": "index.js",
   "files": [
-    "/dist/",
     "/src/",
-    "!/src/__tests__",
-    "/index.js"
+    "/chameleon-paginator.d.ts",
+    "/chameleon-paginator.d.ts.map",
+    "/chameleon-paginator.js",
+    "/chameleon-paginator.js.map"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
@@ -24,6 +25,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
+    "@chameleon-ds/button": "^0.3.1",
     "lit-element": "^2.2.0"
   },
   "publishConfig": {
