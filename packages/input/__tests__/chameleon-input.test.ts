@@ -17,6 +17,12 @@ describe("chameleon-input", () => {
     expect(Boolean(element.shadowRoot)).to.equal(true);
   });
 
+  it("_el returns null if shadowRoot is null", () => {
+    sinon.stub(element, "shadowRoot").get(() => null);
+
+    expect(element._el).to.be.null;
+  });
+
   it("_inputEl renders number type", async () => {
     element = await litFixture(
       html`
@@ -67,8 +73,20 @@ describe("chameleon-input", () => {
     expect(element.validity.constructor.name).to.equal("ValidityState");
   });
 
+  it("validity returns false if _el is null", () => {
+    sinon.stub(element, "_el").get(() => null);
+
+    expect(element.validity).to.be.undefined;
+  });
+
   it("willValidate returns a boolean", () => {
     expect(typeof element.willValidate).to.equal("boolean");
+  });
+
+  it("willValidate returns false if _el is null", () => {
+    sinon.stub(element, "_el").get(() => null);
+
+    expect(element.willValidate).to.be.false;
   });
 
   it("handles input", () => {
@@ -87,8 +105,29 @@ describe("chameleon-input", () => {
     expect(checkValidity.calledImmediatelyAfter(handleBlur));
   });
 
+  it("_handleBlur else path", () => {
+    element.checkValidity = sinon.stub(() => false);
+    element._handleBlur();
+
+    expect(element.validationMessage).to.equal("");
+  });
+
+  it("checkValidity returns false if _el is null", () => {
+    sinon.stub(element, "_el").get(() => null);
+
+    expect(element.checkValidity()).to.be.false;
+  });
+
   it("_handleInvalid sets validationMessage", () => {
     element._handleInvalid();
+
     expect(element.validationMessage).to.equal(element._el.validationMessage);
+  });
+
+  it("_handleInvalid returns an empty string if _el is null", () => {
+    sinon.stub(element, "_el").get(() => null);
+    element._handleInvalid();
+
+    expect(element.validationMessage).to.equal("");
   });
 });
