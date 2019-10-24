@@ -28,8 +28,37 @@ describe("chameleon-tabs", () => {
     expect(spy).to.be.calledOnce;
   });
 
-  // it("throws error if no tabs are given", () => {
-  //   const tabs = () => new ChameleonTabs();
-  //   expect(tabs()).to.throw();
-  // });
+  it("throws error if no tabs are given", () => {
+    expect(() => new ChameleonTabs().firstUpdated()).to.throw();
+  });
+
+  it("updates selected tab", async () => {
+    element.selected = 0;
+    element.requestUpdate();
+    await element.updateComplete;
+
+    expect(element.selected).to.equal(0);
+  });
+
+  it("sets active attribute to true", async () => {
+    element = await litFixture(
+      html`
+        <chameleon-tabs>
+          <chameleon-tab></chameleon-tab>
+          <chameleon-tab></chameleon-tab>
+        </chameleon-tabs>
+      `
+    );
+    element.selected = 0;
+    element.requestUpdate();
+    await element.updateComplete;
+
+    expect(element.selected).to.equal(0);
+
+    element.selected = 1;
+    element.requestUpdate();
+    await element.updateComplete;
+
+    expect(element.selected).to.equal(1);
+  });
 });
