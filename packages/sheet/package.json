@@ -1,22 +1,22 @@
 {
-  "name": "@chameleon-ds/toast",
-  "version": "0.2.3",
-  "description": "Chameleon toast",
+  "name": "@chameleon-ds/sheet",
+  "version": "0.1.1",
+  "description": "Chameleon sheet",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/toast#readme",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/sheet#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-toast.js",
-  "module": "chameleon-toast.js",
+  "main": "chameleon-sheet.js",
+  "module": "chameleon-sheet.js",
   "files": [
     "/src/",
-    "/chameleon-toast.d.ts",
-    "/chameleon-toast.d.ts.map",
-    "/chameleon-toast.js",
-    "/chameleon-toast.js.map"
+    "/chameleon-sheet.d.ts",
+    "/chameleon-sheet.d.ts.map",
+    "/chameleon-sheet.js",
+    "/chameleon-sheet.js.map"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

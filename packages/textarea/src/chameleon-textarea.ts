@@ -85,7 +85,6 @@ export default class ChameleonTextarea extends LitElement {
       ${this.labelText}
       <textarea
         name="cha-textarea"
-        .value="${this.value}"
         ?autocomplete="${this.autocomplete}"
         ?autofocus="${this.autofocus}"
         cols="${this.cols}"
@@ -99,6 +98,7 @@ export default class ChameleonTextarea extends LitElement {
         spellcheck="${this.spellcheck}"
         @blur="${this._handleBlur}"
         @invalid="${this._handleInvalid}"
+        @input="${this._handleInput}"
       ></textarea>
       ${this.errorText}
     `;
@@ -141,12 +141,16 @@ export default class ChameleonTextarea extends LitElement {
     else return false;
   }
 
-  _handleBlur(): void {
+  private _handleBlur(): void {
     this.checkValidity();
   }
 
-  _handleInvalid(): void {
+  private _handleInvalid(): void {
     this.validationMessage =
       this._el !== null ? this._el.validationMessage : "";
+  }
+
+  private _handleInput(e: InputEvent): void {
+    this.value = (<HTMLTextAreaElement>e.target)!.value;
   }
 }

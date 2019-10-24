@@ -21,6 +21,7 @@ export default class ChameleonCardHeader extends LitElement {
    */
   @property({ type: String })
   title = "";
+
   @property({ type: String })
   subtitle = "";
 
