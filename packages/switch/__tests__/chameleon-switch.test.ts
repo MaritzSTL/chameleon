@@ -13,13 +13,9 @@ describe("chameleon-switch", () => {
     expect(Boolean(element.shadowRoot)).to.equal(true);
   });
 
-  it("should have tag name defined", () => {
-    expect(element.tagName.toLowerCase()).to.equal("chameleon-switch");
-  });
+  it("renders labelText", () => {
+    element.label = "chameleon";
 
-  it("sets default values in constructor", () => {
-    expect(element.label).to.equal("");
-    expect(element.value).to.equal("");
-    expect(element.checked).to.be.false;
+    expect(element.labelText).to.equal("chameleon");
   });
 });
