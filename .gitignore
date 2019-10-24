@@ -19,6 +19,8 @@ _site/
 
 # Compiler Output
 /**/*.js
+!docs/assets/storybook/**/*.js
 /**/*.js.map
+!docs/assets/storybook/**/*.js.map
 /**/*.d.ts
 /**/*.d.ts.map
