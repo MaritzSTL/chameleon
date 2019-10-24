@@ -5,6 +5,10 @@ export default css`
     display: inline;
   }
 
+  :host([full-width]) {
+    flex: 1;
+  }
+
   :host([full-width]) button {
     width: 100%;
   }
