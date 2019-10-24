@@ -9,8 +9,15 @@ export default css`
     flex: 1;
   }
 
+  :host([full-width]) a,
   :host([full-width]) button {
+    flex: 1;
     width: 100%;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
   }
 
   button[disabled] {
