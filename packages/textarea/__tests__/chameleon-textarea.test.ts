@@ -22,6 +22,12 @@ describe("chameleon-textarea", () => {
     expect(el.constructor.name).to.equal("HTMLTextAreaElement");
   });
 
+  it("_el returns null if shadowRoot is null", () => {
+    sinon.stub(element, "shadowRoot").get(() => null);
+
+    expect(element._el).to.be.null;
+  });
+
   it("renders labelText", () => {
     element.label = "chameleon";
     expect(element.labelText.constructor.name).to.equal("TemplateResult");
@@ -36,12 +42,30 @@ describe("chameleon-textarea", () => {
     expect(element.validity.constructor.name).to.equal("ValidityState");
   });
 
+  it("validity returns undefined if _el is null", () => {
+    sinon.stub(element, "_el").get(() => null);
+
+    expect(element.validity).to.be.undefined;
+  });
+
   it("willValidate returns a boolean", () => {
     expect(typeof element.willValidate).to.equal("boolean");
   });
 
+  it("willValidate returns false if _el is null", () => {
+    sinon.stub(element, "_el").get(() => null);
+
+    expect(element.willValidate).to.be.false;
+  });
+
   it("checkValidity returns a boolean", () => {
     expect(typeof element.checkValidity()).to.equal("boolean");
+  });
+
+  it("checkValidity returns false if _el is null", () => {
+    sinon.stub(element, "_el").get(() => null);
+
+    expect(element.checkValidity()).to.be.false;
   });
 
   it("_handleBlur calls checkValidity", () => {
@@ -57,6 +81,13 @@ describe("chameleon-textarea", () => {
   it("_handleInvalid sets validationMessage", () => {
     element._handleInvalid();
     expect(element.validationMessage).to.equal(element._el.validationMessage);
+  });
+
+  it("_handleInvalid returns an empty string if _el is null", () => {
+    sinon.stub(element, "_el").get(() => null);
+    element._handleInvalid();
+
+    expect(element.validationMessage).to.equal("");
   });
 
   it("handles input", () => {
