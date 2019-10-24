@@ -5,6 +5,7 @@ import {
   html,
   property
 } from "lit-element";
+import { classMap } from "lit-html/directives/class-map";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/toast";
 
@@ -38,7 +39,11 @@ export default class ChameleonToast extends LitElement {
     return html`
       <div
         id="toast"
-        class="${this.showCloseable ? "show-closeable" : ""}"
+        class="
+        ${classMap({
+          "show-closeable": this.showCloseable,
+          "hide-closeable": !this.showCloseable
+        })}"
         style="background-color: ${this.backgroundColor}"
       >
         <div class="toast-text" style="color: ${this.color};">
@@ -57,6 +62,7 @@ export default class ChameleonToast extends LitElement {
   closeToast() {
     const x = this.shadowRoot!.getElementById("toast");
     x!.className = x!.className.replace("show-closeable", "");
+    this.showCloseable = !this.showCloseable;
     this.dispatchEvent(
       new CustomEvent("close-toast", {
         bubbles: true,
