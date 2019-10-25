@@ -1,10 +1,10 @@
 import { css } from "lit-element";
 
 export default css`
-  .opened {
+  .open {
     display: flex;
   }
-  .closed {
+  .close {
     display: none;
   }
   .dialog {

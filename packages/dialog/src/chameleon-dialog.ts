@@ -8,7 +8,6 @@ import {
 import { classMap } from "lit-html/directives/class-map";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/dialog";
-import "../../button/src/chameleon-button";
 import "../../card/src/chameleon-card";
 
 @customElement("chameleon-dialog")
@@ -17,7 +16,7 @@ export default class ChameleonDialog extends LitElement {
    * Properties
    */
   @property({ type: Boolean, reflect: true })
-  opened = false;
+  open = true;
 
   // Card has an icon
   @property({ type: Boolean, reflect: true })
@@ -36,8 +35,8 @@ export default class ChameleonDialog extends LitElement {
       <div
         class="${classMap({
           overlay: true,
-          opened: !this.opened,
-          closed: this.opened
+          open: this.open,
+          close: !this.open
         })}"
       >
         <chameleon-card>
