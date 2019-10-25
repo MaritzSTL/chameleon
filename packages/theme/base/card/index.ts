@@ -3,7 +3,9 @@ import { css } from "lit-element";
 export default css`
   :host {
     background-color: var(--color-surface);
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     max-width: 344px;
     padding: 16px;
   }
