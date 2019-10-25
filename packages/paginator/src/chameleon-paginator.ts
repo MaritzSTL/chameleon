@@ -42,9 +42,15 @@ export default class ChameleonPaginator extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <chameleon-button theme="text" @click="${this._previous}"
-        >${this.iconLeftCircle}</chameleon-button
-      >
+      ${this.isFirstPage
+        ? html`
+            <div class="placeholder"></div>
+          `
+        : html`
+            <chameleon-button theme="text" @click="${this._previous}"
+              >${this.iconLeftCircle}</chameleon-button
+            >
+          `}
       <ul class="pages">
         ${this.pages.map(page => {
           if (page === this.currentPage) {
@@ -63,8 +69,6 @@ export default class ChameleonPaginator extends LitElement {
                 <span>${page}</span>
               </li>
             `;
-          } else if (isNaN(parseInt(page)) && page !== this.separator) {
-            return nothing;
           } else {
             return html`
               <li class="page separator"><span>${page}</span></li>
@@ -72,9 +76,13 @@ export default class ChameleonPaginator extends LitElement {
           }
         })}
       </ul>
-      <chameleon-button theme="text" @click="${this._next}"
-        >${this.iconRightCircle}</chameleon-button
-      >
+      ${this.isLastPage
+        ? nothing
+        : html`
+            <chameleon-button theme="text" @click="${this._next}"
+              >${this.iconRightCircle}</chameleon-button
+            >
+          `}
     `;
   }
 
@@ -84,6 +92,14 @@ export default class ChameleonPaginator extends LitElement {
 
   get iconRightCircle(): SVGTemplateResult {
     return svg`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>`;
+  }
+
+  get isFirstPage(): boolean {
+    return this.currentPage === 1;
+  }
+
+  get isLastPage(): boolean {
+    return this.currentPage === this.totalPages;
   }
 
   get totalPages(): number {

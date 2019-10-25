@@ -21,6 +21,7 @@ export default css`
 
   .separator {
     cursor: auto;
+    margin: 14px;
   }
 
   .current,
@@ -38,5 +39,9 @@ export default css`
     height: 36px;
     justify-content: center;
     width: 36px;
+  }
+
+  .placeholder {
+    width: 68px;
   }
 `;
