@@ -47,7 +47,10 @@ export default class ChameleonPaginator extends LitElement {
             <div class="placeholder"></div>
           `
         : html`
-            <chameleon-button theme="text" @click="${this._previous}"
+            <chameleon-button
+              theme="text"
+              name="prev"
+              @click="${this._previous}"
               >${this.iconLeftCircle}</chameleon-button
             >
           `}
@@ -79,9 +82,9 @@ export default class ChameleonPaginator extends LitElement {
       ${this.isLastPage
         ? nothing
         : html`
-            <chameleon-button theme="text" @click="${this._next}"
-              >${this.iconRightCircle}</chameleon-button
-            >
+            <chameleon-button theme="text" name="next" @click="${this._next}">
+              ${this.iconRightCircle}
+            </chameleon-button>
           `}
     `;
   }
@@ -178,10 +181,9 @@ export default class ChameleonPaginator extends LitElement {
   _goToPage(e: MouseEvent): void {
     const page = (<HTMLElement>(<HTMLElement>e.target).closest("[data-page]"))
       .dataset.page;
+    const currentPage = parseInt(String(page));
 
-    if (page === undefined) return;
-
-    this.currentPage = parseInt(page);
+    this.currentPage = isNaN(currentPage) ? 1 : currentPage;
     this.dispatchChange();
   }
 
