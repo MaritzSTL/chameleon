@@ -18,7 +18,7 @@ stories.add(
     return html`
       <chameleon-paginator
         totalItems="${totalItems ? totalItems : 0}"
-        pageSize="${pageSize}"
+        pageSize="${pageSize ? pageSize : 0}"
       ></chameleon-paginator>
     `;
   },
