@@ -50,7 +50,11 @@ export default class ChameleonButton extends LitElement {
     return html`
       ${this.href && !this.disabled
         ? html`
-            <a href=${this.href} target=${this.getTarget()}>
+            <a
+              href=${this.href}
+              target=${this.getTarget()}
+              rel=${this.getRel()}
+            >
               ${this.renderButton()}
             </a>
           `
@@ -76,5 +80,9 @@ export default class ChameleonButton extends LitElement {
 
   getTarget(): string {
     return this["new-tab"] ? `_blank` : `_top`;
+  }
+
+  getRel(): string {
+    return this["new-tab"] ? `noopener noreferrer` : ``;
   }
 }
