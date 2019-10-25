@@ -10,7 +10,7 @@
     "test:update-snapshots": "karma start --update-snapshots",
     "test:prune-snapshots": "karma start --prune-snapshots",
     "test:compatibility": "karma start --compatibility all --auto-watch=true --single-run=false",
-    "dev": "start-storybook",
+    "dev": "start-storybook -p 60000",
     "generate-codecov": "codecov",
     "build:ci": "lerna exec --concurrency 1 -- yarn run build",
     "build": "lerna exec yarn run build",
