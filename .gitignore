@@ -14,3 +14,13 @@ node_modules/
 
 # Generated distribution files
 dist/
+_site/
+.jekyll-cache/
+
+# Compiler Output
+/**/*.js
+!docs/assets/storybook/**/*.js
+/**/*.js.map
+!docs/assets/storybook/**/*.js.map
+/**/*.d.ts
+/**/*.d.ts.map

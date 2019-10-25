@@ -1,11 +1,23 @@
-import { fixture, html, expect } from "@open-wc/testing";
+import { litFixture, html, expect } from "@open-wc/testing";
 import "../src/chameleon-checkbox";
 
+const fixture = html`
+  <chameleon-checkbox></chameleon-checkbox>
+`;
+
 describe("chameleon-checkbox", () => {
-  it("renders", async () => {
-    const el = await fixture(html`
-      <chameleon-checkbox></chameleon-checkbox>
-    `);
-    expect(Boolean(el.shadowRoot)).to.equal(true);
+  let element;
+
+  beforeEach(async () => {
+    element = await litFixture(fixture);
+  });
+
+  it("renders", () => {
+    expect(Boolean(element.shadowRoot)).to.equal(true);
+  });
+
+  it("shows label text", () => {
+    element.label = "chameleon";
+    expect(element.labelText).to.equal("chameleon");
   });
 });

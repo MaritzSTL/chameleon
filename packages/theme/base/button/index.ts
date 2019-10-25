@@ -5,6 +5,10 @@ export default css`
     display: inline;
   }
 
+  :host([full-width]) {
+    flex: 1;
+  }
+
   :host([full-width]) button {
     width: 100%;
   }
@@ -17,6 +21,9 @@ export default css`
   }
 
   button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color-primary);
     border: 1px solid var(--color-primary);
     border-radius: var(--border-radius-input);
@@ -48,6 +55,7 @@ export default css`
     border-color: transparent;
     color: var(--color-primary);
     text-decoration: underline;
+    align-self: center;
   }
 
   .text:hover {
@@ -59,5 +67,17 @@ export default css`
   button[disabled].text {
     background-color: transparent;
     border-color: transparent;
+  }
+
+  ::slotted([slot="icon-left"]) {
+    margin-right: 0.1875rem;
+  }
+
+  ::slotted([slot="icon-right"]) {
+    margin-left: 0.1875rem;
+  }
+
+  ::slotted([slot="icon-only"]) {
+    padding: 0.1875rem;
   }
 `;
