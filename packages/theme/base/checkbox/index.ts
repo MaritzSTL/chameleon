@@ -10,7 +10,7 @@ export default css`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    vertical-align: middle;
+    vertical-align: top;
   }
 
   input {
