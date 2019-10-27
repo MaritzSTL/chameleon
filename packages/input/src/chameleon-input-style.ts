@@ -30,7 +30,12 @@ export default css`
     color: var(--color-primary);
   }
 
-  label {
+  .label-row {
+    display: flex;
+  }
+
+  label,
+  .label-row span {
     color: var(--color-gray-darkest);
     font-size: var(--font-size-label);
     margin-bottom: 10px;
@@ -38,6 +43,17 @@ export default css`
 
   label.invalid {
     color: var(--color-error);
+  }
+
+  .label-row span {
+    flex: 1;
+    align-self: flex-end;
+    display: flex;
+    justify-content: end;
+  }
+
+  .label-row span svg {
+    padding-right: 3px;
   }
 
   :host:not([disabled]) .component-wrapper:hover label:not(.invalid),
