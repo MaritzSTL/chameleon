@@ -78,7 +78,7 @@ export default class ChameleonButton extends LitElement {
         ${this.loading
           ? html`
               <slot name="icon-loading">
-                <chameleon-spinner></chameleon-spinner>
+                <chameleon-loader></chameleon-loader>
               </slot>
             `
           : nothing}
