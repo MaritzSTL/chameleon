@@ -6,7 +6,8 @@ import {
   property
 } from "lit-element";
 import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/loader";
+import style from "./chameleon-loader-style";
+import { materializeLoaderStyle } from "./materialize-loader-style";
 
 @customElement("chameleon-loader")
 export default class ChameleonLoader extends LitElement {
@@ -16,13 +17,19 @@ export default class ChameleonLoader extends LitElement {
   static styles = [base, style];
 
   @property({ type: String, reflect: true })
-  loader = "ellipsis";
+  loader = "spinner";
 
   /**
    * Template
    */
   render(): TemplateResult {
-    return html``;
+    switch (this.loader) {
+      case "ellipsis":
+        return this.renderEllipsisLoader();
+      case "spinner":
+      default:
+        return this.renderSpinnerLoader();
+    }
   }
 
   renderEllipsisLoader(): TemplateResult {
@@ -37,6 +44,23 @@ export default class ChameleonLoader extends LitElement {
   }
 
   renderSpinnerLoader(): TemplateResult {
-    return html``;
+    return html`
+      <style>
+        ${materializeLoaderStyle}
+      </style>
+      <div class="spinner preloader-wrapper active">
+        <div class="spinner-layer">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+    `;
   }
 }
