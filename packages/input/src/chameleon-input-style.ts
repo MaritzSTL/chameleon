@@ -41,6 +41,7 @@ export default css`
     margin-bottom: 10px;
   }
 
+  .component-wrapper.invalid .label-row span,
   label.invalid {
     color: var(--color-error);
   }
@@ -56,8 +57,10 @@ export default css`
     padding-right: 3px;
   }
 
-  :host:not([disabled]) .component-wrapper:hover label:not(.invalid),
-  :host:not([disabled]) .component-wrapper:active label:not(.invalid) {
+  .component-wrapper:hover:not(.invalid):not(.disabled) label,
+  .component-wrapper:active:not(.invalid):not(.disabled) label,
+  .component-wrapper:hover:not(.invalid):not(.disabled) .label-row span,
+  .component-wrapper:active:not(.invalid):not(.disabled) .label-row span {
     color: var(--color-primary);
   }
 

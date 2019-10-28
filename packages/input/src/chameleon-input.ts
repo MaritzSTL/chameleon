@@ -97,7 +97,8 @@ export default class ChameleonInput extends LitElement {
         class="
       ${classMap({
           "component-wrapper": true,
-          invalid: this._invalidState
+          invalid: this._invalidState,
+          disabled: this.disabled
         })}"
       >
         <div
