@@ -74,7 +74,7 @@ describe("chameleon-input", () => {
 
     const toggleableEl = await litFixture(element.toggleText);
 
-    expect(toggleableEl).dom.to.contain("<span <svg");
+    expect(toggleableEl).to.contain.html("<svg");
   });
 
   it("returns validity", () => {
@@ -141,7 +141,8 @@ describe("chameleon-input", () => {
 
   it("_toggleType switches between password and text types of input", () => {
     element.type = "password";
-    element._toggleType;
+    element.toggleable = true;
+    element._toggleType();
 
     expect(element.type).to.equal("text");
   });
