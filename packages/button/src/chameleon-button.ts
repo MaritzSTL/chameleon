@@ -5,6 +5,7 @@ import {
   html,
   property
 } from "lit-element";
+import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/button";
@@ -16,6 +17,10 @@ export default class ChameleonButton extends LitElement {
    */
   @property({ type: Boolean, reflect: true })
   disabled = false;
+
+  @property({ type: Boolean, reflect: true })
+  loading = false;
+
   @property({ type: String, reflect: true })
   theme = "primary";
   // Element has a left icon
@@ -67,9 +72,16 @@ export default class ChameleonButton extends LitElement {
   renderButton(): TemplateResult {
     return html`
       <button
-        class="${classMap({ [this.theme]: true })}"
-        ?disabled="${this.disabled}"
+        class=${classMap({ [this.theme]: true })}
+        ?disabled=${this.disabled || this.loading}
       >
+        ${this.loading
+          ? html`
+              <slot name="icon-loading">
+                <chameleon-spinner></chameleon-spinner>
+              </slot>
+            `
+          : nothing}
         <slot name="icon-left"></slot>
         <slot></slot>
         <slot name="icon-right"></slot>
