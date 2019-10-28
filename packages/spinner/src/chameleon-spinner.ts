@@ -1,7 +1,7 @@
 import { LitElement, TemplateResult, customElement, html } from "lit-element";
 import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/spinner";
-import { materializeLoaderStyle } from "@chameleon-ds/theme/base/spinner/materialize-loader-style";
+import style from "./chameleon-spinner-style";
+import { materializeLoaderStyle } from "./materialize-loader-style";
 
 @customElement("chameleon-spinner")
 export default class ChameleonSpinner extends LitElement {
