@@ -1,0 +1,35 @@
+{
+  "name": "@chameleon-ds/spinner",
+  "version": "0.1.1",
+  "description": "Chameleon spinner",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/spinner#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "chameleon-spinner.js",
+  "module": "chameleon-spinner.js",
+  "files": [
+    "/src/",
+    "/chameleon-spinner.d.ts",
+    "/chameleon-spinner.d.ts.map",
+    "/chameleon-spinner.js",
+    "/chameleon-spinner.js.map"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "@chameleon-ds/theme": "^0.6.1",
+    "lit-element": "^2.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
