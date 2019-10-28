@@ -30,18 +30,37 @@ export default css`
     color: var(--color-primary);
   }
 
-  label {
+  .label-row {
+    display: flex;
+  }
+
+  label,
+  .label-row span {
     color: var(--color-gray-darkest);
     font-size: var(--font-size-label);
     margin-bottom: 10px;
   }
 
+  .component-wrapper.invalid .label-row span,
   label.invalid {
     color: var(--color-error);
   }
 
-  :host:not([disabled]) .component-wrapper:hover label:not(.invalid),
-  :host:not([disabled]) .component-wrapper:active label:not(.invalid) {
+  .label-row span {
+    flex: 1;
+    align-self: flex-end;
+    display: flex;
+    justify-content: end;
+  }
+
+  .label-row span svg {
+    padding-right: 3px;
+  }
+
+  .component-wrapper:hover:not(.invalid):not(.disabled) label,
+  .component-wrapper:active:not(.invalid):not(.disabled) label,
+  .component-wrapper:hover:not(.invalid):not(.disabled) .label-row span,
+  .component-wrapper:active:not(.invalid):not(.disabled) .label-row span {
     color: var(--color-primary);
   }
 
