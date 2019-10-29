@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/radio",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "Chameleon radio",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "lit-element": "^2.2.0"
+    "lit-element": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"

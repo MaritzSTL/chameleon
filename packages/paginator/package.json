@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/paginator",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Chameleon paginator",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -26,8 +26,8 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/button": "^0.3.2",
-    "lit-element": "^2.2.0"
+    "@chameleon-ds/button": "^1.0.0",
+    "lit-element": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"

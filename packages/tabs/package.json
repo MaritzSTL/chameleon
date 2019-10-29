@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/tabs",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "Chameleon tabs",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -34,7 +34,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "lit-element": "^2.2.0"
+    "lit-element": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"

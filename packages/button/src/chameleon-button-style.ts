@@ -37,7 +37,7 @@ export default css`
     color: var(--color-surface, #ffffff);
     cursor: pointer;
     font-size: var(--font-size-paragraph-medium, 0.938rem);
-    font-family: inherit;
+    font-family: var(--font-family, sans-serif);
     letter-spacing: var(--font-letter-spacing, 0.018rem);
     padding: var(--button-padding, 0.75rem 1.375rem);
     transition: all 150ms linear;
