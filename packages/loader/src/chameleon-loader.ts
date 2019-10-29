@@ -13,7 +13,7 @@ export default class ChameleonLoader extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [style, materializeLoaderStyle];
 
   @property({ type: String, reflect: true })
   loader = "spinner";
@@ -44,9 +44,6 @@ export default class ChameleonLoader extends LitElement {
 
   renderSpinnerLoader(): TemplateResult {
     return html`
-      <style>
-        ${materializeLoaderStyle}
-      </style>
       <div class="spinner preloader-wrapper active">
         <div class="spinner-layer">
           <div class="circle-clipper left">
