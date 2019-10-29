@@ -12,8 +12,6 @@ import { classMap } from "lit-html/directives/class-map";
 import { nothing } from "lit-html";
 import base from "@chameleon-ds/theme/base";
 import style from "@chameleon-ds/theme/base/select";
-import { SelectableOption, SelectionTarget } from "../types";
-import { InputEvent, ClassList } from "@maritz/mtz-types";
 
 @customElement("chameleon-select")
 export default class ChameleonSelect extends LitElement {
@@ -76,6 +74,22 @@ export default class ChameleonSelect extends LitElement {
   @property({ type: Boolean }) disabled = false;
   @property({ type: Boolean }) searchable = false;
   @property({ type: Boolean }) valid = true;
+
+  // type SelectionTarget = EventTarget & {
+  //   getAttribute(arg0: string);
+  //   hasAttribute(arg0: string);
+  //   textContent: string;
+  // };
+
+  // type SelectableOption = {
+  //   value: string;
+  //   label: string;
+  //   subLabel: string;
+  //   preLabel: TemplateResult | string;
+  //   postLabel: TemplateResult | string;
+  //   startDateLabel: TemplateResult | string;
+  //   endDateLabel: TemplateResult | string;
+  // };
 
   /**
    * Template
