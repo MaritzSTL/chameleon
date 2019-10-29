@@ -1,0 +1,38 @@
+{
+  "name": "@chameleon-ds/sheet",
+  "version": "1.0.0",
+  "description": "Chameleon sheet",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/sheet#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "chameleon-sheet.js",
+  "module": "chameleon-sheet.js",
+  "files": [
+    "/src/",
+    "/chameleon-sheet-style.d.ts",
+    "/chameleon-sheet-style.d.ts.map",
+    "/chameleon-sheet-style.js",
+    "/chameleon-sheet-style.js.map",
+    "/chameleon-sheet.d.ts",
+    "/chameleon-sheet.d.ts.map",
+    "/chameleon-sheet.js",
+    "/chameleon-sheet.js.map"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

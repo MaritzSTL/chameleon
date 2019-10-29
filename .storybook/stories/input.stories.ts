@@ -33,6 +33,7 @@ stories.add(
   "Basic",
   () => {
     const disabled = boolean("Disabled", false);
+    const toggleable = boolean("Toggleable password visibility", false);
     const label = text("Label", "");
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
@@ -51,6 +52,7 @@ stories.add(
     return html`
       <chameleon-input
         ?disabled="${disabled}"
+        ?toggleable="${toggleable}"
         .type="${typeSelection}"
         .placeholder="${placeholder}"
         .label="${label}"
@@ -65,6 +67,7 @@ stories.add(
   "Icon Left",
   () => {
     const disabled = boolean("Disabled", false);
+    const toggleable = boolean("Toggleable password visibility", false);
     const label = text("Label", "");
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
@@ -83,6 +86,7 @@ stories.add(
     return html`
       <chameleon-input
         ?disabled="${disabled}"
+        ?toggleable="${toggleable}"
         icon-left
         .type="${typeSelection}"
         .placeholder="${placeholder}"
@@ -100,6 +104,7 @@ stories.add(
   "Icon Right",
   () => {
     const disabled = boolean("Disabled", false);
+    const toggleable = boolean("Toggleable password visibility", false);
     const label = text("Label", "");
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
@@ -118,6 +123,7 @@ stories.add(
     return html`
       <chameleon-input
         ?disabled="${disabled}"
+        ?toggleable="${toggleable}"
         icon-right
         .type="${typeSelection}"
         .placeholder="${placeholder}"

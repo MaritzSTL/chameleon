@@ -6,15 +6,14 @@ import {
   property,
   PropertyValues
 } from "lit-element";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/card";
+import style from "./chameleon-card-style";
 
 @customElement("chameleon-card")
 export default class ChameleonCard extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Properties
@@ -34,8 +33,10 @@ export default class ChameleonCard extends LitElement {
   updated(changedProperties: PropertyValues) {
     if (changedProperties.has("accentColor") && this.accentColor !== "")
       this.style.borderTop = `7px solid ${this.accentColor}`;
-    else if (
+
+    if (
       changedProperties.has("accentColor") &&
+      this.accentColor === "" &&
       this.accentColor !== undefined
     ) {
       this.style.borderTop = `7px solid var(--color-primary)`;

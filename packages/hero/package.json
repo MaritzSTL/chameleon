@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/hero",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Chameleon hero",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -13,6 +13,10 @@
   "module": "chameleon-hero.js",
   "files": [
     "/src/",
+    "/chameleon-hero-style.d.ts",
+    "/chameleon-hero-style.d.ts.map",
+    "/chameleon-hero-style.js",
+    "/chameleon-hero-style.js.map",
     "/chameleon-hero.d.ts",
     "/chameleon-hero.d.ts.map",
     "/chameleon-hero.js",
@@ -26,8 +30,8 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/theme": "^0.5.0",
-    "lit-element": "^2.2.0"
+    "@chameleon-ds/skeleton": "^1.0.0",
+    "lit-element": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"

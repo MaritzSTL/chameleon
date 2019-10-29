@@ -7,8 +7,7 @@ import {
 } from "lit-element";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { nothing } from "lit-html";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/hero";
+import style from "./chameleon-hero-style";
 import "@chameleon-ds/skeleton/src/chameleon-skeleton";
 
 @customElement("chameleon-hero")
@@ -43,7 +42,7 @@ export default class ChameleonHero extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template

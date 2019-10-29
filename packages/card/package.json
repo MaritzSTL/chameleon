@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/card",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Chameleon card",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -13,6 +13,10 @@
   "module": "chameleon-card.js",
   "files": [
     "/src/",
+    "/chameleon-card-style.d.ts",
+    "/chameleon-card-style.d.ts.map",
+    "/chameleon-card-style.js",
+    "/chameleon-card-style.js.map",
     "/chameleon-card.d.ts",
     "/chameleon-card.d.ts.map",
     "/chameleon-card.js",
@@ -26,8 +30,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/theme": "^0.5.0",
-    "lit-element": "^2.2.0"
+    "lit-element": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"

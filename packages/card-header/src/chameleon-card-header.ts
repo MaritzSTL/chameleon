@@ -6,21 +6,21 @@ import {
   property
 } from "lit-element";
 import { nothing } from "lit-html";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/card-header";
+import style from "./chameleon-card-header-style";
 
 @customElement("chameleon-card-header")
 export default class ChameleonCardHeader extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Properties
    */
   @property({ type: String })
   title = "";
+
   @property({ type: String })
   subtitle = "";
 

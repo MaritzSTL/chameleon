@@ -6,8 +6,7 @@ import {
   property
 } from "lit-element";
 import { nothing } from "lit-html";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/radio";
+import style from "./chameleon-radio-style";
 
 @customElement("chameleon-radio")
 export default class ChameleonRadio extends LitElement {
@@ -34,7 +33,7 @@ export default class ChameleonRadio extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template

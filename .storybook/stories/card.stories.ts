@@ -4,6 +4,8 @@ import { html } from "lit-html";
 import "../../packages/card/src/chameleon-card";
 import "../../packages/card-header/src/chameleon-card-header";
 import "../../packages/card-image/src/chameleon-card-image";
+import "../../packages/card-footer/src/chameleon-card-footer";
+import "../../packages/button/src/chameleon-button";
 
 const stories = storiesOf("Card", module);
 
@@ -101,6 +103,28 @@ stories.add(
           subtitle="${subtitleText}"
         ></chameleon-card-header>
         <p>Here is some sample content for the card</p>
+      </chameleon-card>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Footer",
+  () => {
+    const subtitleText = text("Subtitle", "Destination");
+    const titleText = text("Title", "St. Louis, MO");
+
+    return html`
+      <chameleon-card>
+        <chameleon-card-header
+          title="${titleText}"
+          subtitle="${subtitleText}"
+        ></chameleon-card-header>
+        <p>Here is some sample content for the card</p>
+        <chameleon-card-footer>
+          <chameleon-button theme="secondary">Button</chameleon-button>
+        </chameleon-card-footer>
       </chameleon-card>
     `;
   },

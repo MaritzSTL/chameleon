@@ -1,6 +1,7 @@
 # Logs
 npm-debug.log*
 lerna-debug.log*
+yarn-error.log*
 
 # Coverage directory used by tools like istanbul
 coverage
@@ -19,6 +20,8 @@ _site/
 
 # Compiler Output
 /**/*.js
+!docs/assets/storybook/**/*.js
 /**/*.js.map
+!docs/assets/storybook/**/*.js.map
 /**/*.d.ts
 /**/*.d.ts.map
