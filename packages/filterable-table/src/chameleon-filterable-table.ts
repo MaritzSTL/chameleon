@@ -111,6 +111,8 @@ export default class ChameleonFilterableTable extends LitElement {
           }
         )}
       </table>
+
+      <chameleon-paginator></chameleon-paginator>
     `;
   }
 

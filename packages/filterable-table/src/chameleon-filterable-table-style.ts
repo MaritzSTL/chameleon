@@ -107,4 +107,9 @@ export default css`
   table th .search-input {
     width: 100%;
   }
+
+  chameleon-paginator {
+    display: flex;
+    justify-content: center;
+  }
 `;
