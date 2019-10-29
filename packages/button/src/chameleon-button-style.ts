@@ -21,9 +21,9 @@ export default css`
   }
 
   button[disabled] {
-    background-color: var(--color-gray-lightest);
-    border-color: var(--color-gray-lightest);
-    color: var(--color-gray-darkest);
+    background-color: var(--color-gray-lightest, #e1e3e4);
+    border-color: var(--color-gray-lightest, #e1e3e4);
+    color: var(--color-gray-darkest, #6c737a);
     pointer-events: none;
   }
 
@@ -31,36 +31,36 @@ export default css`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    border-radius: var(--border-radius-input);
-    color: var(--color-surface);
+    background-color: var(--color-primary, #2c6fb7);
+    border: 1px solid var(--color-primary, #2c6fb7);
+    border-radius: var(--border-radius-input, 0.313rem);
+    color: var(--color-surface, #ffffff);
     cursor: pointer;
-    font-size: var(--font-size-paragraph-medium);
-    font-family: inherit;
-    letter-spacing: var(--font-letter-spacing);
-    padding: var(--button-padding);
+    font-size: var(--font-size-paragraph-medium, 0.938rem);
+    font-family: var(--font-family, sans-serif);
+    letter-spacing: var(--font-letter-spacing, 0.018rem);
+    padding: var(--button-padding, 0.75rem 1.375rem);
     transition: all 150ms linear;
   }
 
   button:hover {
-    background-color: var(--color-primary-dark);
-    border-color: var(--color-primary-dark);
+    background-color: var(--color-primary-dark, #004587);
+    border-color: var(--color-primary-dark, #004587);
   }
 
   .secondary {
-    background-color: var(--color-surface);
-    color: var(--color-primary);
+    background-color: var(--color-surface, #ffffff);
+    color: var(--color-primary, #2c6fb7);
   }
 
   .secondary:hover {
-    color: var(--color-surface);
+    color: var(--color-surface, #ffffff);
   }
 
   .text {
     background-color: transparent;
     border-color: transparent;
-    color: var(--color-primary);
+    color: var(--color-primary, #2c6fb7);
     text-decoration: underline;
     align-self: center;
   }
@@ -68,7 +68,7 @@ export default css`
   .text:hover {
     background-color: transparent;
     border-color: transparent;
-    color: var(--color-primary-dark);
+    color: var(--color-primary-dark, #004587);
   }
 
   button[disabled].text {

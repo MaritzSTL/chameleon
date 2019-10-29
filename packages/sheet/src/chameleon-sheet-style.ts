@@ -9,7 +9,7 @@ export default css`
     min-width: 320px;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
-    background-color: var(--color-surface);
+    background-color: var(--color-surface, #ffffff);
   }
 
   :host([sheetopened]) {
@@ -22,17 +22,17 @@ export default css`
   }
 
   .header {
-    font-family: var(--font-family);
-    color: var(--color-primary);
-    font-size: var(--font-size-title);
+    font-family: var(--font-family, sans-serif);
+    color: var(--color-primary, #2c6fb7);
+    font-size: var(--font-size-title, 1.4rem);
     font-weight: 400;
     margin-top: 0;
   }
 
   .sub-header {
     display: block;
-    font-family: var(--font-family);
-    color: var(--color-primary);
+    font-family: var(--font-family, sans-serif);
+    color: var(--color-primary, #2c6fb7);
     font-size: 1rem;
     font-weight: 400;
     margin: 16px 20px 0 20px;
@@ -48,22 +48,22 @@ export default css`
   }
 
   ::slotted(p) {
-    color: var(--color-gray-darkest);
+    color: var(--color-gray-darkest, #6c737a);
   }
 
   ::slotted([slot="details"]) {
-    font-size: var(--font-size-subtitle);
+    font-size: var(--font-size-subtitle, 0.938rem);
   }
 
   ::slotted([slot="actions"]) {
     border-top: solid 2px #e1e3e4;
     border-bottom: solid 2px #e1e3e4;
     padding: 20px;
-    font-size: var(--font-size-subtitle);
+    font-size: var(--font-size-subtitle, 0.938rem);
   }
 
   ::slotted([slot="content"]) {
     padding: 0 20px;
-    font-size: var(--font-size-label);
+    font-size: var(--font-size-label, 0.875rem);
   }
 `;

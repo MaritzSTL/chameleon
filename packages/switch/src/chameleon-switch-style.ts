@@ -4,7 +4,7 @@ export default css`
   :host {
     align-items: center;
     display: inline-flex;
-    font-size: var(--font-size-input);
+    font-size: var(--font-size-input, 0.938rem);
   }
 
   .switch {
@@ -20,7 +20,7 @@ export default css`
   }
 
   .slider {
-    background-color: var(--color-gray-lightest);
+    background-color: var(--color-gray-lightest, #e1e3e4);
     border-radius: 10px;
     bottom: 0;
     cursor: pointer;
@@ -32,10 +32,10 @@ export default css`
   }
 
   .slider:before {
-    background-color: var(--color-surface);
+    background-color: var(--color-surface, #ffffff);
     border-radius: 50%;
     bottom: 2px;
-    box-shadow: 1px 0 3px var(--color-box-shadow);
+    box-shadow: 1px 0 3px var(--color-box-shadow, rgba(159, 164, 168, 0.6));
     content: "";
     height: 16px;
     left: 2px;
@@ -45,11 +45,11 @@ export default css`
   }
 
   input:checked + .slider {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary, #2c6fb7);
   }
 
   input:focus + .slider {
-    box-shadow: 0 0 3px var(--color-gray-dark);
+    box-shadow: 0 0 3px var(--color-gray-dark, #9fa4a8);
   }
 
   input:checked + .slider:before {

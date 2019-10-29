@@ -5,7 +5,7 @@ export default css`
     align-items: center;
     cursor: pointer;
     display: inline-flex;
-    font-size: var(--font-size-input);
+    font-size: var(--font-size-input, 0.938rem);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -20,7 +20,7 @@ export default css`
 
   .checkmark {
     background-color: transparent;
-    border: 2px solid var(--color-gray-lightest);
+    border: 2px solid var(--color-gray-lightest, #e1e3e4);
     border-radius: 3px;
     box-sizing: border-box;
     display: inline-block;
@@ -31,17 +31,17 @@ export default css`
   }
 
   :host:hover input ~ .checkmark {
-    background-color: var(--color-surface);
+    background-color: var(--color-surface, #ffffff);
   }
 
   input:checked ~ .checkmark {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary, #2c6fb7);
     border: none;
   }
 
   .checkmark:after {
-    border-bottom: 2px solid var(--color-surface);
-    border-right: 2px solid var(--color-surface);
+    border-bottom: 2px solid var(--color-surface, #ffffff);
+    border-right: 2px solid var(--color-surface, #ffffff);
     content: "";
     display: none;
     height: 13px;

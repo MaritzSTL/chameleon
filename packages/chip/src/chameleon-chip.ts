@@ -1,6 +1,5 @@
 import { LitElement, TemplateResult, customElement, html } from "lit-element";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/chip";
+import style from "./chameleon-chip-style";
 
 @customElement("chameleon-chip")
 export default class ChameleonChip extends LitElement {
@@ -16,7 +15,7 @@ export default class ChameleonChip extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template

@@ -27,8 +27,6 @@ describe("chameleon-loader", () => {
     const el = await fixture(html`
       <chameleon-loader loader="ellipsis"></chameleon-loader>
     `);
-    expect(Boolean(el.shadowRoot.querySelector(".lds-ellipsis"))).to.equal(
-      true
-    );
+    expect(Boolean(el.shadowRoot.querySelector(".ellipsis"))).to.equal(true);
   });
 });

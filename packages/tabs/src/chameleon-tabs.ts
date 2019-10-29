@@ -6,8 +6,7 @@ import {
   html,
   PropertyValues
 } from "lit-element";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/tabs";
+import style from "./chameleon-tabs-style";
 
 @customElement("chameleon-tabs")
 export default class ChameleonTabs extends LitElement {
@@ -50,7 +49,7 @@ export default class ChameleonTabs extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template
