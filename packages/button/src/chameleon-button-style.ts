@@ -87,4 +87,13 @@ export default css`
   ::slotted([slot="icon-only"]) {
     padding: 0.1875rem;
   }
+
+  slot[name="icon-loading"] > * {
+    position: absolute;
+  }
+
+  /* If the loading icon is rendered, hide the rest of the button content */
+  slot[name="icon-loading"] ~ * {
+    visibility: hidden;
+  }
 `;
