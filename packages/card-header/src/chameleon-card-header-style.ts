@@ -14,14 +14,14 @@ export default css`
   }
 
   h3 {
-    color: var(--color-secondary-dark);
-    font-size: var(--font-size-subtitle);
+    color: var(--color-secondary-dark, #349889);
+    font-size: var(--font-size-subtitle, 0.938rem);
     line-height: 21px;
     white-space: nowrap;
   }
 
   h2 {
-    font-size: var(--font-size-title);
+    font-size: var(--font-size-title, 1.4rem);
     line-height: 27px;
     max-height: 52px;
   }

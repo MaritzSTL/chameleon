@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-const styles = css`
+export default css`
   html,
   body {
     width: 100%;
@@ -27,6 +27,7 @@ const styles = css`
     -webkit-clip-path: inset(-40px -30px 25% -20px);
     clip-path: inset(-40px -30px 25% -20px);
   }
+
   .riceball .face {
     position: absolute;
     top: 50%;
@@ -40,6 +41,7 @@ const styles = css`
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
   }
+
   .riceball .face::before,
   .riceball .face::after {
     display: block;
@@ -51,39 +53,47 @@ const styles = css`
     background: #000;
     border-radius: 50%;
   }
+
   .riceball .face::before {
     left: -40px;
   }
+
   .riceball .face::after {
     right: -40px;
   }
+
   .riceball.uno {
     left: 150px;
     bottom: 65px;
     -webkit-animation: 3s rice-up infinite;
     animation: 3s rice-up infinite;
   }
+
   .riceball.uno .face {
     -webkit-transform: translate(-50%, -50%) rotate(-20deg);
     transform: translate(-50%, -50%) rotate(-20deg);
     -webkit-animation: 3s face-bob infinite;
     animation: 3s face-bob infinite;
   }
+
   .riceball.uno .face::before,
   .riceball.uno .face::after {
     -webkit-animation: 3s eye-bulge infinite;
     animation: 3s eye-bulge infinite;
   }
+
   .riceball.dos {
     left: 20px;
     bottom: -35px;
     -webkit-animation: 1s little-bob1 linear infinite;
     animation: 1s little-bob1 linear infinite;
   }
+
   .riceball.dos .face {
     -webkit-transform: translate(-50%, -50%) rotate(-5deg);
     transform: translate(-50%, -50%) rotate(-5deg);
   }
+
   .riceball.tres {
     bottom: 0;
     right: 30px;
@@ -178,6 +188,7 @@ const styles = css`
     -webkit-animation: spoon-up 3s infinite;
     animation: spoon-up 3s infinite;
   }
+
   .spoon .scoop {
     position: absolute;
     top: 50%;
@@ -191,6 +202,7 @@ const styles = css`
     background-blend-mode: hard-light;
     box-shadow: inset -10px -5px 15px #ceb499, 10px 10px 50px -10px #c5ae9f;
   }
+
   .spoon .scoop::before {
     display: block;
     content: "";
@@ -212,17 +224,20 @@ const styles = css`
       top: -60%;
       left: -200px;
     }
+
     25% {
       top: -80%;
       -webkit-transform: rotate(15deg);
       transform: rotate(15deg);
     }
+
     50% {
       top: -90%;
       left: -300px;
       -webkit-transform: rotate(25deg);
       transform: rotate(25deg);
     }
+
     100% {
       top: -60%;
       left: -200px;
@@ -236,17 +251,20 @@ const styles = css`
       top: -60%;
       left: -200px;
     }
+
     25% {
       top: -80%;
       -webkit-transform: rotate(15deg);
       transform: rotate(15deg);
     }
+
     50% {
       top: -90%;
       left: -300px;
       -webkit-transform: rotate(25deg);
       transform: rotate(25deg);
     }
+
     100% {
       top: -60%;
       left: -200px;
@@ -254,6 +272,7 @@ const styles = css`
       transform: rotate(25deg);
     }
   }
+
   @-webkit-keyframes rice-up {
     0% {
       left: 150px;
@@ -261,21 +280,25 @@ const styles = css`
       -webkit-clip-path: inset(-40px -30px 25% -20px);
       clip-path: inset(-40px -30px 25% -20px);
     }
+
     25% {
       bottom: 160px;
       -webkit-clip-path: inset(-40px -30px 0 -20px);
       clip-path: inset(-40px -30px 0 -20px);
     }
+
     50% {
       left: 20px;
       bottom: 140px;
       -webkit-clip-path: inset(-40px -30px 0 -20px);
       clip-path: inset(-40px -30px 0 -20px);
     }
+
     55% {
       -webkit-clip-path: inset(-40px -30px 0 -20px);
       clip-path: inset(-40px -30px 0 -20px);
     }
+
     100% {
       left: 150px;
       bottom: 65px;
@@ -283,6 +306,7 @@ const styles = css`
       clip-path: inset(-40px -30px 25% -20px);
     }
   }
+
   @keyframes rice-up {
     0% {
       left: 150px;
@@ -290,21 +314,25 @@ const styles = css`
       -webkit-clip-path: inset(-40px -30px 25% -20px);
       clip-path: inset(-40px -30px 25% -20px);
     }
+
     25% {
       bottom: 160px;
       -webkit-clip-path: inset(-40px -30px 0 -20px);
       clip-path: inset(-40px -30px 0 -20px);
     }
+
     50% {
       left: 20px;
       bottom: 140px;
       -webkit-clip-path: inset(-40px -30px 0 -20px);
       clip-path: inset(-40px -30px 0 -20px);
     }
+
     55% {
       -webkit-clip-path: inset(-40px -30px 0 -20px);
       clip-path: inset(-40px -30px 0 -20px);
     }
+
     100% {
       left: 150px;
       bottom: 65px;
@@ -312,126 +340,150 @@ const styles = css`
       clip-path: inset(-40px -30px 25% -20px);
     }
   }
+
   @-webkit-keyframes face-bob {
     0% {
       -webkit-transform: translate(-50%, -50%) rotate(10deg);
       transform: translate(-50%, -50%) rotate(10deg);
     }
+
     50% {
       height: 10px;
       -webkit-transform: translate(-50%, -50%) rotate(-10deg);
       transform: translate(-50%, -50%) rotate(-10deg);
     }
+
     100% {
       -webkit-transform: translate(-50%, -50%) rotate(10deg);
       transform: translate(-50%, -50%) rotate(10deg);
     }
   }
+
   @keyframes face-bob {
     0% {
       -webkit-transform: translate(-50%, -50%) rotate(10deg);
       transform: translate(-50%, -50%) rotate(10deg);
     }
+
     50% {
       height: 10px;
       -webkit-transform: translate(-50%, -50%) rotate(-10deg);
       transform: translate(-50%, -50%) rotate(-10deg);
     }
+
     100% {
       -webkit-transform: translate(-50%, -50%) rotate(10deg);
       transform: translate(-50%, -50%) rotate(10deg);
     }
   }
+
   @-webkit-keyframes eye-bulge {
     0% {
       width: 12px;
       height: 12px;
     }
+
     50% {
       width: 18px;
       height: 18px;
     }
+
     100% {
       width: 12px;
       height: 12px;
     }
   }
+
   @keyframes eye-bulge {
     0% {
       width: 12px;
       height: 12px;
     }
+
     50% {
       width: 18px;
       height: 18px;
     }
+
     100% {
       width: 12px;
       height: 12px;
     }
   }
+
   @-webkit-keyframes little-bob1 {
     0% {
       bottom: -35px;
       -webkit-clip-path: inset(-40px -30px 25% -20px);
       clip-path: inset(-40px -30px 25% -20px);
     }
+
     50% {
       bottom: -33px;
       -webkit-clip-path: inset(-40px -30px 23% -20px);
       clip-path: inset(-40px -30px 23% -20px);
     }
+
     100% {
       bottom: -35px;
       -webkit-clip-path: inset(-40px -30px 25% -20px);
       clip-path: inset(-40px -30px 25% -20px);
     }
   }
+
   @keyframes little-bob1 {
     0% {
       bottom: -35px;
       -webkit-clip-path: inset(-40px -30px 25% -20px);
       clip-path: inset(-40px -30px 25% -20px);
     }
+
     50% {
       bottom: -33px;
       -webkit-clip-path: inset(-40px -30px 23% -20px);
       clip-path: inset(-40px -30px 23% -20px);
     }
+
     100% {
       bottom: -35px;
       -webkit-clip-path: inset(-40px -30px 25% -20px);
       clip-path: inset(-40px -30px 25% -20px);
     }
   }
+
   @-webkit-keyframes little-bob2 {
     0% {
       bottom: 0;
       -webkit-clip-path: inset(-40px -30px 25% -20px);
       clip-path: inset(-40px -30px 25% -20px);
     }
+
     50% {
       bottom: -2px;
       -webkit-clip-path: inset(-40px -30px 26% -20px);
       clip-path: inset(-40px -30px 26% -20px);
     }
+
     100% {
       bottom: 0;
       -webkit-clip-path: inset(-40px -30px 25% -20px);
       clip-path: inset(-40px -30px 25% -20px);
     }
   }
+
   @keyframes little-bob2 {
     0% {
       bottom: 0;
       -webkit-clip-path: inset(-40px -30px 25% -20px);
       clip-path: inset(-40px -30px 25% -20px);
     }
+
     50% {
       bottom: -2px;
       -webkit-clip-path: inset(-40px -30px 26% -20px);
       clip-path: inset(-40px -30px 26% -20px);
     }
+
     100% {
       bottom: 0;
       -webkit-clip-path: inset(-40px -30px 25% -20px);
@@ -439,5 +491,3 @@ const styles = css`
     }
   }
 `;
-
-export { styles };

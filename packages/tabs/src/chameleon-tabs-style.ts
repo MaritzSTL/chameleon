@@ -16,17 +16,17 @@ export default css`
     height: 65px;
     justify-content: center;
     padding: 8px 12px;
-    color: var(--color-gray-light);
+    color: var(--color-gray-light, #c4c7ca);
   }
 
   ::slotted(chameleon-tab:hover) {
     cursor: pointer;
-    color: var(--color-secondary);
+    color: var(--color-secondary, #69c9b9);
   }
 
   ::slotted([active]) {
-    border-bottom: solid 1px var(--color-secondary);
-    box-shadow: inset 0 -2px 0 0 var(--color-secondary);
-    color: var(--color-secondary);
+    border-bottom: solid 1px var(--color-secondary, #69c9b9);
+    box-shadow: inset 0 -2px 0 0 var(--color-secondary, #69c9b9);
+    color: var(--color-secondary, #69c9b9);
   }
 `;

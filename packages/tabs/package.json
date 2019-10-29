@@ -34,7 +34,6 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/theme": "^0.6.1",
     "lit-element": "^2.2.0"
   },
   "publishConfig": {

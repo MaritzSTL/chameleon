@@ -6,7 +6,7 @@ export default css`
   }
 
   img {
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius, 0.5rem);
     vertical-align: top;
     width: 100%;
   }

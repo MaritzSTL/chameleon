@@ -2,7 +2,7 @@ import { css } from "lit-element";
 
 export default css`
   :host {
-    font-family: var(--font-family);
+    font-family: var(--font-family, sans-serif);
   }
 
   .component-wrapper {
@@ -11,43 +11,43 @@ export default css`
   }
 
   input {
-    border: 1px solid var(--color-gray-light);
-    border-radius: var(--border-radius-input);
+    border: 1px solid var(--color-gray-light, #c4c7ca);
+    border-radius: var(--border-radius-input, 0.313rem);
     box-sizing: border-box;
-    font-size: var(--font-size-input);
-    font-family: var(--font-family);
+    font-size: var(--font-size-input, 0.938rem);
+    font-family: var(--font-family, sans-serif);
     max-width: 100%;
-    padding: var(--input-padding);
+    padding: var(--input-padding, 0.625rem 0.5rem);
   }
 
   .invalid input {
-    border-color: var(--color-error);
+    border-color: var(--color-error, #bc1c16);
   }
 
   .component-wrapper:hover:not(.invalid) input:not([disabled]),
   .component-wrapper:active:not(.invalid) input:not([disabled]) {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+    border-color: var(--color-primary, #2c6fb7);
+    color: var(--color-primary, #2c6fb7);
   }
 
   label {
-    color: var(--color-gray-darkest);
-    font-size: var(--font-size-label);
+    color: var(--color-gray-darkest, #6c737a);
+    font-size: var(--font-size-label, 0.875rem);
     margin-bottom: 10px;
   }
 
   label.invalid {
-    color: var(--color-error);
+    color: var(--color-error, #bc1c16);
   }
 
   :host:not([disabled]) .component-wrapper:hover label:not(.invalid),
   :host:not([disabled]) .component-wrapper:active label:not(.invalid) {
-    color: var(--color-primary);
+    color: var(--color-primary, #2c6fb7);
   }
 
   .error {
-    color: var(--color-error);
-    font-size: var(--font-size-label);
+    color: var(--color-error, #bc1c16);
+    font-size: var(--font-size-label, 0.875rem);
     margin-top: 3px;
     display: flex;
     align-items: center;
@@ -73,11 +73,11 @@ export default css`
   svg {
     width: 100%;
     height: 100%;
-    color: var(--color-gray-darkest);
+    color: var(--color-gray-darkest, #6c737a);
   }
 
   ::slotted(*) {
-    color: var(--color-gray-darkest);
+    color: var(--color-gray-darkest, #6c737a);
     height: 18px;
     position: absolute;
     top: 50%;
@@ -86,7 +86,7 @@ export default css`
   }
 
   .invalid ::slotted(svg) {
-    color: var(--color-error);
+    color: var(--color-error, #bc1c16);
   }
 
   ::slotted([slot="icon-left"]) {

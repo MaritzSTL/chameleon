@@ -26,14 +26,14 @@ export default css`
 
   .current,
   .page:not(.separator):hover {
-    color: var(--color-surface);
+    color: var(--color-surface, #ffffff);
     margin: 0 4px;
   }
 
   .current span,
   .page:not(.separator):hover {
     align-items: center;
-    background-color: var(--color-primary);
+    background-color: var(--color-primary, #2c6fb7);
     border-radius: 50%;
     display: inline-flex;
     height: 36px;
