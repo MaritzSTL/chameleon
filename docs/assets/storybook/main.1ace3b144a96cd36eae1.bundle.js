@@ -561,14 +561,14 @@
     box-sizing: border-box;
   }
 
-  .lds-ellipsis {
+  .ellipsis {
     display: inline-block;
     position: relative;
     width: 64px;
     height: 64px;
   }
 
-  .lds-ellipsis div {
+  .ellipsis div {
     position: absolute;
     top: 27px;
     width: 11px;
@@ -578,27 +578,27 @@
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
 
-  .lds-ellipsis div:nth-child(1) {
+  .ellipsis div:nth-child(1) {
     left: 6px;
-    animation: lds-ellipsis1 0.6s infinite;
+    animation: ellipsis1 0.6s infinite;
   }
 
-  .lds-ellipsis div:nth-child(2) {
+  .ellipsis div:nth-child(2) {
     left: 6px;
-    animation: lds-ellipsis2 0.6s infinite;
+    animation: ellipsis2 0.6s infinite;
   }
 
-  .lds-ellipsis div:nth-child(3) {
+  .ellipsis div:nth-child(3) {
     left: 26px;
-    animation: lds-ellipsis2 0.6s infinite;
+    animation: ellipsis2 0.6s infinite;
   }
 
-  .lds-ellipsis div:nth-child(4) {
+  .ellipsis div:nth-child(4) {
     left: 45px;
-    animation: lds-ellipsis3 0.6s infinite;
+    animation: ellipsis3 0.6s infinite;
   }
 
-  @keyframes lds-ellipsis1 {
+  @keyframes ellipsis1 {
     0% {
       transform: scale(0);
     }
@@ -607,7 +607,7 @@
     }
   }
 
-  @keyframes lds-ellipsis3 {
+  @keyframes ellipsis3 {
     0% {
       transform: scale(1);
     }
@@ -616,7 +616,7 @@
     }
   }
 
-  @keyframes lds-ellipsis2 {
+  @keyframes ellipsis2 {
     0% {
       transform: translate(0, 0);
     }
@@ -1041,9 +1041,6 @@
         <div></div>
       </div>
     `}renderSpinnerLoader(){return lit_element.d`
-      <style>
-        ${materialize_loader_style}
-      </style>
       <div class="spinner preloader-wrapper active">
         <div class="spinner-layer">
           <div class="circle-clipper left">
@@ -1057,7 +1054,7 @@
           </div>
         </div>
       </div>
-    `}};chameleon_loader_ChameleonLoader.styles=[chameleon_loader_style],__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_loader_ChameleonLoader.prototype,"loader",void 0);chameleon_loader_ChameleonLoader=__decorate([Object(lit_element.c)("chameleon-loader")],chameleon_loader_ChameleonLoader)},595:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_card_style=lit_element.b`
+    `}};chameleon_loader_ChameleonLoader.styles=[chameleon_loader_style,materialize_loader_style],__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_loader_ChameleonLoader.prototype,"loader",void 0);chameleon_loader_ChameleonLoader=__decorate([Object(lit_element.c)("chameleon-loader")],chameleon_loader_ChameleonLoader)},595:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_card_style=lit_element.b`
   :host {
     background-color: var(--color-surface, #ffffff);
     display: flex;
@@ -2407,4 +2404,4 @@
       `:lit_html.nothing}get errorText(){return""!==this.validationMessage?lit_element.d`
         <span class="error">${this.validationMessage}</span>
       `:lit_html.nothing}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}_handleInput(e){this.value=e.target.value}};chameleon_textarea_ChameleonTextarea.styles=[chameleon_textarea_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autocomplete",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autofocus",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"cols",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"maxlength",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"minlength",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"placeholder",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"readonly",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"required",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"rows",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"spellcheck",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"value",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"validationMessage",void 0);chameleon_textarea_ChameleonTextarea=__decorate([Object(lit_element.c)("chameleon-textarea")],chameleon_textarea_ChameleonTextarea)}},[[272,1,2]]]);
-//# sourceMappingURL=main.e98a9f729964e48ce38d.bundle.js.map
+//# sourceMappingURL=main.1ace3b144a96cd36eae1.bundle.js.map
