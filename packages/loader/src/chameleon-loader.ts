@@ -6,14 +6,15 @@ import {
   property
 } from "lit-element";
 import style from "./chameleon-loader-style";
-import materializeLoaderStyle from "./materialize-loader-style";
+import spinnerStyle from "./chameleon-loader-spinner-style";
+import ellipsisStyle from "./chameleon-loader-ellipsis-style";
 
 @customElement("chameleon-loader")
 export default class ChameleonLoader extends LitElement {
   /**
    * Styles
    */
-  static styles = [style, materializeLoaderStyle];
+  static styles = [style];
 
   @property({ type: String, reflect: true })
   loader = "spinner";
@@ -33,6 +34,10 @@ export default class ChameleonLoader extends LitElement {
 
   renderEllipsisLoader(): TemplateResult {
     return html`
+      <style>
+        ${ellipsisStyle}
+      </style>
+
       <div class="ellipsis">
         <div></div>
         <div></div>
@@ -44,19 +49,17 @@ export default class ChameleonLoader extends LitElement {
 
   renderSpinnerLoader(): TemplateResult {
     return html`
-      <div class="spinner preloader-wrapper active">
-        <div class="spinner-layer">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div>
-          <div class="gap-patch">
-            <div class="circle"></div>
-          </div>
-          <div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-        </div>
-      </div>
+      <style>
+        ${spinnerStyle}
+      </style>
+
+      <svg
+        class="spinner"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="50" cy="50" r="45" />
+      </svg>
     `;
   }
 }
