@@ -13,6 +13,10 @@
   "module": "chameleon-hero.js",
   "files": [
     "/src/",
+    "/chameleon-hero-style.d.ts",
+    "/chameleon-hero-style.d.ts.map",
+    "/chameleon-hero-style.js",
+    "/chameleon-hero-style.js.map",
     "/chameleon-hero.d.ts",
     "/chameleon-hero.d.ts.map",
     "/chameleon-hero.js",

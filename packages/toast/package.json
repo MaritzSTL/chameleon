@@ -13,6 +13,10 @@
   "module": "chameleon-toast.js",
   "files": [
     "/src/",
+    "/chameleon-toast-style.d.ts",
+    "/chameleon-toast-style.d.ts.map",
+    "/chameleon-toast-style.js",
+    "/chameleon-toast-style.js.map",
     "/chameleon-toast.d.ts",
     "/chameleon-toast.d.ts.map",
     "/chameleon-toast.js",

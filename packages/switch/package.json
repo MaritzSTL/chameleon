@@ -13,6 +13,10 @@
   "module": "chameleon-switch.js",
   "files": [
     "/src/",
+    "/chameleon-switch-style.d.ts",
+    "/chameleon-switch-style.d.ts.map",
+    "/chameleon-switch-style.js",
+    "/chameleon-switch-style.js.map",
     "/chameleon-switch.d.ts",
     "/chameleon-switch.d.ts.map",
     "/chameleon-switch.js",

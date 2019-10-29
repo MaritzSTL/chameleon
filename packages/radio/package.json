@@ -13,6 +13,10 @@
   "module": "chameleon-radio.js",
   "files": [
     "/src/",
+    "/chameleon-radio-style.d.ts",
+    "/chameleon-radio-style.d.ts.map",
+    "/chameleon-radio-style.js",
+    "/chameleon-radio-style.js.map",
     "/chameleon-radio.d.ts",
     "/chameleon-radio.d.ts.map",
     "/chameleon-radio.js",

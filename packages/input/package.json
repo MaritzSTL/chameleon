@@ -13,6 +13,10 @@
   "module": "chameleon-input.js",
   "files": [
     "/src/",
+    "/chameleon-input-style.d.ts",
+    "/chameleon-input-style.d.ts.map",
+    "/chameleon-input-style.js",
+    "/chameleon-input-style.js.map",
     "/chameleon-input.d.ts",
     "/chameleon-input.d.ts.map",
     "/chameleon-input.js",

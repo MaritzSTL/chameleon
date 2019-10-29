@@ -13,6 +13,10 @@
   "module": "index.js",
   "files": [
     "/src/",
+    "/chameleon-paginator-style.d.ts",
+    "/chameleon-paginator-style.d.ts.map",
+    "/chameleon-paginator-style.js",
+    "/chameleon-paginator-style.js.map",
     "/chameleon-paginator.d.ts",
     "/chameleon-paginator.d.ts.map",
     "/chameleon-paginator.js",

@@ -13,6 +13,10 @@
   "module": "index.js",
   "files": [
     "/src/",
+    "/chameleon-tabs-style.d.ts",
+    "/chameleon-tabs-style.d.ts.map",
+    "/chameleon-tabs-style.js",
+    "/chameleon-tabs-style.js.map",
     "/chameleon-tab.d.ts",
     "/chameleon-tab.d.ts.map",
     "/chameleon-tab.js",

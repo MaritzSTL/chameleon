@@ -13,6 +13,10 @@
   "module": "chameleon-checkbox.js",
   "files": [
     "/src/",
+    "/chameleon-checkbox-style.d.ts",
+    "/chameleon-checkbox-style.d.ts.map",
+    "/chameleon-checkbox-style.js",
+    "/chameleon-checkbox-style.js.map",
     "/chameleon-checkbox.d.ts",
     "/chameleon-checkbox.d.ts.map",
     "/chameleon-checkbox.js",

@@ -13,6 +13,10 @@
   "module": "chameleon-chip.js",
   "files": [
     "/src/",
+    "/chameleon-chip-style.d.ts",
+    "/chameleon-chip-style.d.ts.map",
+    "/chameleon-chip-style.js",
+    "/chameleon-chip-style.js.map",
     "/chameleon-chip.d.ts",
     "/chameleon-chip.d.ts.map",
     "/chameleon-chip.js",

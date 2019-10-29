@@ -13,6 +13,10 @@
   "module": "chameleon-card.js",
   "files": [
     "/src/",
+    "/chameleon-card-style.d.ts",
+    "/chameleon-card-style.d.ts.map",
+    "/chameleon-card-style.js",
+    "/chameleon-card-style.js.map",
     "/chameleon-card.d.ts",
     "/chameleon-card.d.ts.map",
     "/chameleon-card.js",

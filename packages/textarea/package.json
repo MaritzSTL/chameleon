@@ -13,6 +13,10 @@
   "module": "chameleon-textarea.js",
   "files": [
     "/src/",
+    "/chameleon-textarea-style.d.ts",
+    "/chameleon-textarea-style.d.ts.map",
+    "/chameleon-textarea-style.js",
+    "/chameleon-textarea-style.js.map",
     "/chameleon-textarea.d.ts",
     "/chameleon-textarea.d.ts.map",
     "/chameleon-textarea.js",
