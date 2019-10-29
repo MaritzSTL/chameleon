@@ -9,7 +9,7 @@ import {
 } from "lit-element";
 import { nothing } from "lit-html";
 import style from "./chameleon-paginator-style";
-import "@chameleon-ds/button";
+import "@chameleon-ds/button/src/chameleon-button";
 
 @customElement("chameleon-paginator")
 export default class ChameleonPaginator extends LitElement {

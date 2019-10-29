@@ -8,7 +8,7 @@ import {
 import { styleMap } from "lit-html/directives/style-map.js";
 import { nothing } from "lit-html";
 import style from "./chameleon-hero-style";
-import "@chameleon-ds/skeleton";
+import "@chameleon-ds/skeleton/src/chameleon-skeleton";
 
 @customElement("chameleon-hero")
 export default class ChameleonHero extends LitElement {
