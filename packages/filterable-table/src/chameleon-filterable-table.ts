@@ -11,7 +11,7 @@ import { classMap } from "lit-html/directives/class-map.js";
 import { isEqual } from "lodash";
 
 import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/filterable-table";
+import style from "./chameleon-filterable-table-style";
 
 @customElement("chameleon-filterable-table")
 export default class ChameleonFilterableTable extends LitElement {

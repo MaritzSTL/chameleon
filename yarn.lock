@@ -719,6 +719,13 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@chameleon-ds/theme@^0.5.0":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@chameleon-ds/theme/-/theme-0.5.1.tgz#cc5e01e1f8c19b813c867ac6f705ff5d4c25ba97"
+  integrity sha512-qzVegkl/0ZVEGtZxoZV8czCvPDuhpsput2NEgOCFn/kUpjD5NEd6oOEt1J5qhfPwB1YYoMp1ZQ1AFgy60HLPsg==
+  dependencies:
+    lit-element "^2.2.0"
+
 "@comandeer/babel-plugin-banner@^5.0.0":
   version "5.0.0"
   resolved "https://registry.npmjs.org/@comandeer/babel-plugin-banner/-/babel-plugin-banner-5.0.0.tgz#30969cb08e810b67810d41761d0cfac292231ea9"
