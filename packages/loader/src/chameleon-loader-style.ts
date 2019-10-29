@@ -1,44 +1,53 @@
 import { css } from "lit-element";
 
 export default css`
-  .ellipsis {
+  :host {
+    box-sizing: border-box;
+    --loader-color: var(--color-primary, #2c6fb7);
+  }
+
+  :host * {
+    box-sizing: border-box;
+  }
+
+  .lds-ellipsis {
     display: inline-block;
     position: relative;
     width: 64px;
     height: 64px;
   }
 
-  .ellipsis div {
+  .lds-ellipsis div {
     position: absolute;
     top: 27px;
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background: var(--loader-color, #2c6fb7);
+    background: var(--loader-color);
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
 
-  .ellipsis div:nth-child(1) {
+  .lds-ellipsis div:nth-child(1) {
     left: 6px;
-    animation: ellipsis1 0.6s infinite;
+    animation: lds-ellipsis1 0.6s infinite;
   }
 
-  .ellipsis div:nth-child(2) {
+  .lds-ellipsis div:nth-child(2) {
     left: 6px;
-    animation: ellipsis2 0.6s infinite;
+    animation: lds-ellipsis2 0.6s infinite;
   }
 
-  .ellipsis div:nth-child(3) {
+  .lds-ellipsis div:nth-child(3) {
     left: 26px;
-    animation: ellipsis2 0.6s infinite;
+    animation: lds-ellipsis2 0.6s infinite;
   }
 
-  .ellipsis div:nth-child(4) {
+  .lds-ellipsis div:nth-child(4) {
     left: 45px;
-    animation: ellipsis3 0.6s infinite;
+    animation: lds-ellipsis3 0.6s infinite;
   }
 
-  @keyframes ellipsis1 {
+  @keyframes lds-ellipsis1 {
     0% {
       transform: scale(0);
     }
@@ -47,7 +56,7 @@ export default css`
     }
   }
 
-  @keyframes ellipsis3 {
+  @keyframes lds-ellipsis3 {
     0% {
       transform: scale(1);
     }
@@ -56,7 +65,7 @@ export default css`
     }
   }
 
-  @keyframes ellipsis2 {
+  @keyframes lds-ellipsis2 {
     0% {
       transform: translate(0, 0);
     }

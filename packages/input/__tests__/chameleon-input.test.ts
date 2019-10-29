@@ -69,6 +69,14 @@ describe("chameleon-input", () => {
     expect(errorText).dom.to.equal("<span class='error'>chameleon</span>");
   });
 
+  it("renders toggleText", async () => {
+    element.toggleable = true;
+
+    const toggleableEl = await litFixture(element.toggleText);
+
+    expect(toggleableEl).to.contain.html("<svg");
+  });
+
   it("returns validity", () => {
     expect(element.validity.constructor.name).to.equal("ValidityState");
   });
@@ -129,5 +137,13 @@ describe("chameleon-input", () => {
     element._handleInvalid();
 
     expect(element.validationMessage).to.equal("");
+  });
+
+  it("_toggleType switches between password and text types of input", () => {
+    element.type = "password";
+    element.toggleable = true;
+    element._toggleType();
+
+    expect(element.type).to.equal("text");
   });
 });

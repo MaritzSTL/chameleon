@@ -10,10 +10,20 @@ const stories = storiesOf("Loader", module);
 stories.addDecorator(withKnobs as any);
 
 stories.add(
-  "Loader",
+  "Spinner (Default)",
   () => {
     return html`
-      <chameleon-loader></chameleon-loader>
+      <chameleon-loader loader="spinner"></chameleon-loader>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Ellipsis",
+  () => {
+    return html`
+      <chameleon-loader loader="ellipsis"></chameleon-loader>
     `;
   },
   { info: { inline: true } }
