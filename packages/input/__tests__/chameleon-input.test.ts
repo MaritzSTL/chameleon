@@ -70,11 +70,18 @@ describe("chameleon-input", () => {
   });
 
   it("renders toggleText", async () => {
+    element.type = "password";
     element.toggleable = true;
 
     const toggleableEl = await litFixture(element.toggleText);
 
     expect(toggleableEl).to.contain.html("<svg");
+  });
+
+  it("_toggleType to toggle this.type", async () => {
+    element._toggleType();
+
+    expect(element.type).to.equal("password");
   });
 
   it("returns validity", () => {
