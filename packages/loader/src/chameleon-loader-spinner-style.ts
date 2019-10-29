@@ -9,7 +9,6 @@ export default css`
   /* SVG styles. */
   svg {
     animation: 2s linear infinite svg-animation;
-    max-width: 100px;
   }
 
   /* SVG animation. */

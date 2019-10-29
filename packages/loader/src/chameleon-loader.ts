@@ -19,6 +19,9 @@ export default class ChameleonLoader extends LitElement {
   @property({ type: String, reflect: true })
   loader = "spinner";
 
+  @property({ type: String, reflect: true })
+  size = "auto";
+
   /**
    * Template
    */
@@ -57,6 +60,8 @@ export default class ChameleonLoader extends LitElement {
         class="spinner"
         viewBox="0 0 100 100"
         xmlns="http://www.w3.org/2000/svg"
+        height=${this.size}
+        width=${this.size}
       >
         <circle cx="50" cy="50" r="45" />
       </svg>

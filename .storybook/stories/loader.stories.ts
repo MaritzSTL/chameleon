@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, number } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import { html } from "lit-html";
 import "../../packages/loader/src/chameleon-loader";
 
@@ -12,12 +12,10 @@ stories.addDecorator(withKnobs as any);
 stories.add(
   "Spinner (Default)",
   () => {
-    const containerSize = number("Container Width", 21);
+    const size = text("Size", "21px");
 
     return html`
-      <div style="height: ${containerSize}px; width: ${containerSize}px;">
-        <chameleon-loader loader="spinner"></chameleon-loader>
-      </div>
+      <chameleon-loader loader="spinner" size="${size}"></chameleon-loader>
     `;
   },
   { info: { inline: true } }
