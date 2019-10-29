@@ -81,7 +81,7 @@ export default class ChameleonInput extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template
