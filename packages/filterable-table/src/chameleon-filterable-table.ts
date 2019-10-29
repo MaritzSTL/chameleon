@@ -112,7 +112,10 @@ export default class ChameleonFilterableTable extends LitElement {
         )}
       </table>
 
-      <chameleon-paginator></chameleon-paginator>
+      <chameleon-paginator
+        totalItems=${100}
+        pageSize=${6}
+      ></chameleon-paginator>
     `;
   }
 
@@ -134,7 +137,7 @@ export default class ChameleonFilterableTable extends LitElement {
 
               ${this.getColumnSort(column)}
             </div>
-
+            Filterable Search
             <!-- <chameleon-filterable-search
               .items=""
               .placeholder="${column.filterableSearchPlaceholder}"

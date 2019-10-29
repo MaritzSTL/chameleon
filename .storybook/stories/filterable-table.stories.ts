@@ -18,10 +18,8 @@ stories.add(
         .columns=${columns}
         .rows=${rows}
         .pageSize=${pageSize}
-        .totalNumPages=${totalNumPages}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
-        @filterChange=${filterChange}
       ></chameleon-filterable-table>
     `;
   },
@@ -36,10 +34,8 @@ stories.add(
         .columns=${columnsWithDetailFields}
         .rows=${rows}
         .pageSize=${pageSize}
-        .totalNumPages=${totalNumPages}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
-        @filterChange=${filterChange}
       ></chameleon-filterable-table>
     `;
   },
@@ -54,19 +50,13 @@ stories.add(
         .columns=${columnsWithFilters}
         .rows=${rows}
         .pageSize=${pageSize}
-        .totalNumPages=${totalNumPages}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
-        @filterChange=${filterChange}
       ></chameleon-filterable-table>
     `;
   },
   { info: { inline: true } }
 );
-
-const filterChange = () => {
-  console.log("filterChange");
-};
 
 const columns = [
   {
@@ -179,7 +169,8 @@ const columnsWithFilters = [
   {
     header: "Column 4",
     filter: {
-      name: "column4"
+      name: "column4",
+      items: ["filter1", "filter2", "filter3"]
     },
     searchable: true,
     sortable: true,
@@ -271,8 +262,6 @@ const rows = [
 ];
 
 const pageSize = 6;
-
-const totalNumPages = 1;
 
 const currentPage = 1;
 
