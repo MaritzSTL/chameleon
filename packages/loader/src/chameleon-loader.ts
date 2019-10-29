@@ -5,16 +5,15 @@ import {
   html,
   property
 } from "lit-element";
-import base from "@chameleon-ds/theme/base";
 import style from "./chameleon-loader-style";
-import { materializeLoaderStyle } from "./materialize-loader-style";
+import materializeLoaderStyle from "./materialize-loader-style";
 
 @customElement("chameleon-loader")
 export default class ChameleonLoader extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style, materializeLoaderStyle];
 
   @property({ type: String, reflect: true })
   loader = "spinner";
@@ -34,7 +33,7 @@ export default class ChameleonLoader extends LitElement {
 
   renderEllipsisLoader(): TemplateResult {
     return html`
-      <div class="lds-ellipsis">
+      <div class="ellipsis">
         <div></div>
         <div></div>
         <div></div>
@@ -45,9 +44,6 @@ export default class ChameleonLoader extends LitElement {
 
   renderSpinnerLoader(): TemplateResult {
     return html`
-      <style>
-        ${materializeLoaderStyle}
-      </style>
       <div class="spinner preloader-wrapper active">
         <div class="spinner-layer">
           <div class="circle-clipper left">

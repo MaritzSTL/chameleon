@@ -6,8 +6,7 @@ import {
   property
 } from "lit-element";
 import { nothing } from "lit-html";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/checkbox";
+import style from "./chameleon-checkbox-style";
 
 @customElement("chameleon-checkbox")
 export default class ChameleonCheckbox extends LitElement {
@@ -30,7 +29,7 @@ export default class ChameleonCheckbox extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template

@@ -7,8 +7,7 @@ import {
 } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/button";
+import style from "./chameleon-button-style";
 
 @customElement("chameleon-button")
 export default class ChameleonButton extends LitElement {
@@ -23,6 +22,7 @@ export default class ChameleonButton extends LitElement {
 
   @property({ type: String, reflect: true })
   theme = "primary";
+
   // Element has a left icon
   @property({ type: Boolean, reflect: true })
   "icon-left" = false;
@@ -46,7 +46,7 @@ export default class ChameleonButton extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template

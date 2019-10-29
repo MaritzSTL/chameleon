@@ -5,8 +5,7 @@ import {
   html,
   property
 } from "lit-element";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/card-image";
+import style from "./chameleon-card-image-style";
 
 @customElement("chameleon-card-image")
 export default class ChameleonCardImage extends LitElement {
@@ -25,7 +24,7 @@ export default class ChameleonCardImage extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template

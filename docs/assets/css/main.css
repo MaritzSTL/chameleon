@@ -45,18 +45,19 @@ h6 {
 }
 
 #navigation .nav-links .nav-links__submenu {
+  background-color: #ffffff;
   display: none;
   position: absolute;
   top: 100%;
-  padding: 10px 0;
+  padding: 10px;
 }
 
 #navigation .nav-links__top:hover + .nav-links__submenu {
-  display: block;
+  display: flex;
 }
 
 #navigation .nav-links__submenu:hover {
-  display: block;
+  display: flex;
 }
 
 #navigation .nav-links__submenu .nav-links__submenu-link {
@@ -140,7 +141,7 @@ h6 {
 
 /* 
 ==============================
-      Colors Pages
+      Colors Page
 ==============================
 */
 
@@ -284,3 +285,11 @@ h6 {
 .tile .primary-shades .shade-2 {
   background-color: rgba(255, 255, 255, 0.6);
 }
+
+/* 
+==============================
+      Typography Page
+==============================
+*/
+
+

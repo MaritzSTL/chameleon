@@ -8,9 +8,8 @@ import {
   SVGTemplateResult
 } from "lit-element";
 import { nothing } from "lit-html";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/paginator";
-import "@chameleon-ds/button";
+import style from "./chameleon-paginator-style";
+import "@chameleon-ds/button/src/chameleon-button";
 
 @customElement("chameleon-paginator")
 export default class ChameleonPaginator extends LitElement {
@@ -35,7 +34,7 @@ export default class ChameleonPaginator extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template

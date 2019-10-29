@@ -6,15 +6,14 @@ import {
   property,
   PropertyValues
 } from "lit-element";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/card";
+import style from "./chameleon-card-style";
 
 @customElement("chameleon-card")
 export default class ChameleonCard extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Properties

@@ -5,7 +5,7 @@
  */
 import { css } from "lit-element";
 
-export const materializeLoaderStyle = css`
+export default css`
   /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
   /* Document
    ========================================================================== */

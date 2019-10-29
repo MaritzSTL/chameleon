@@ -6,8 +6,7 @@ import {
   property
 } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/toast";
+import style from "./chameleon-toast-style";
 
 @customElement("chameleon-toast")
 export default class ChameleonToast extends LitElement {
@@ -30,7 +29,7 @@ export default class ChameleonToast extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template
