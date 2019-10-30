@@ -16,7 +16,8 @@ const defaultIcon = (slot: any) => svg`
 stories.add(
   "Basic",
   () => {
-    let dialogVisible = boolean("Open", true);
+    const dialogVisible = boolean("Open", true);
+    const dismissible = boolean("Dismissible", true);
 
     return html`
       <h1>Yolo!</h1>
@@ -61,7 +62,7 @@ stories.add(
       <h1>Yolo!</h1>
       <h1>Yolo!</h1>
       <h1>Yolo!</h1>
-      <chameleon-dialog ?open="${dialogVisible}">
+      <chameleon-dialog ?open="${dialogVisible}" ?dismissible="${dismissible}">
         ${defaultIcon("icon")}
         <h1 slot="title">Title</h1>
         We’re sorry but your session has expired. You will need to log back in

@@ -52,6 +52,16 @@ export default css`
     align-self: stretch;
     margin-top: 1.5em;
   }
+
+  .close-icon {
+    display: flex;
+    cursor: pointer;
+    margin: 20px 20px 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
   chameleon-button {
     margin-bottom: 0.5em;
     width: 100%;
