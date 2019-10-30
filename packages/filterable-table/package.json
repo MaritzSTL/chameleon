@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/filterable-table",
-  "version": "0.2.1",
+  "version": "0.1.0",
   "description": "Chameleon Filterable Table",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -13,6 +13,10 @@
   "module": "index.js",
   "files": [
     "/src/",
+    "/chameleon-filterable-table-style.d.ts",
+    "/chameleon-filterable-table-style.d.ts.map",
+    "/chameleon-filterable-table-style.js",
+    "/chameleon-filterable-table-style.js.map",
     "/chameleon-filterable-table.d.ts",
     "/chameleon-filterable-table.d.ts.map",
     "/chameleon-filterable-table.js",
@@ -26,7 +30,6 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/theme": "^0.5.0",
     "@types/lodash": "^4.14.144",
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2",
