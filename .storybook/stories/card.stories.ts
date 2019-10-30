@@ -27,6 +27,11 @@ stories.add(
     const titleText = text("Title", "St. Louis, MO");
 
     return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
       <chameleon-card>
         <chameleon-card-header
           title="${titleText}"
@@ -43,6 +48,11 @@ stories.add(
   "Outline",
   () => {
     return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
       <chameleon-card outline>
         <h3>Card</h3>
         <p>Here is some sample content for the card</p>
@@ -64,6 +74,11 @@ stories.add(
     const altText = text("ALT Text", "St. Louis Landscape");
 
     return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
       <chameleon-card rounded>
         <chameleon-card-header
           title="${titleText}"
@@ -94,6 +109,11 @@ stories.add(
     const accentColorSelected = text("Top Border", "green");
 
     return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
       <chameleon-card
         ?rounded="${rounded}"
         accentColor="${accentColorSelected}"
@@ -116,6 +136,11 @@ stories.add(
     const titleText = text("Title", "St. Louis, MO");
 
     return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
       <chameleon-card>
         <chameleon-card-header
           title="${titleText}"
