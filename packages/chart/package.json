@@ -1,0 +1,38 @@
+{
+  "name": "@chameleon-ds/chart",
+  "version": "0.1.0",
+  "description": "Chameleon chart",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/chart#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "chameleon-chart.js",
+  "module": "chameleon-chart.js",
+  "files": [
+    "/src/",
+    "/chameleon-chart-style.d.ts",
+    "/chameleon-chart-style.d.ts.map",
+    "/chameleon-chart-style.js",
+    "/chameleon-chart-style.js.map",
+    "/chameleon-chart.d.ts",
+    "/chameleon-chart.d.ts.map",
+    "/chameleon-chart.js",
+    "/chameleon-chart.js.map"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
