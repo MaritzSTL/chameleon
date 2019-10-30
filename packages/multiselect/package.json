@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/multiselect",
-  "version": "0.4.2",
+  "version": "0.1.0",
   "description": "Chameleon multiselect",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -13,6 +13,10 @@
   "module": "chameleon-multiselect.js",
   "files": [
     "/src/",
+    "/chameleon-multiselect-style.d.ts",
+    "/chameleon-multiselect-style.d.ts.map",
+    "/chameleon-multiselect-style.js",
+    "/chameleon-multiselect-style.js.map",
     "/chameleon-multiselect.d.ts",
     "/chameleon-multiselect.d.ts.map",
     "/chameleon-multiselect.js",
