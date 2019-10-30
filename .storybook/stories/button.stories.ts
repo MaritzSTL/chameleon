@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, boolean } from "@storybook/addon-knobs";
+import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 import { html, svg } from "lit-html";
 import "../../packages/button/src/chameleon-button";
 
@@ -21,15 +21,22 @@ stories.add(
   "Primary",
   () => {
     const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading", false);
     const fullWidth = boolean("Full Width", false);
+    const href = text("Link", "");
+    const newTab = boolean("Open Link in New Tab", false);
 
     return html`
       <chameleon-button
-        ?disabled="${disabled}"
+        ?disabled=${disabled}
+        ?loading=${loading}
         theme="primary"
-        ?full-width="${fullWidth}"
-        >Button</chameleon-button
+        ?full-width=${fullWidth}
+        href=${href}
+        ?new-tab=${newTab}
       >
+        Button
+      </chameleon-button>
     `;
   },
   { info: { inline: true } }
@@ -39,13 +46,19 @@ stories.add(
   "Secondary",
   () => {
     const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading", false);
     const fullWidth = boolean("Full Width", false);
+    const href = text("Link", "");
+    const newTab = boolean("Open Link in New Tab", false);
 
     return html`
       <chameleon-button
-        ?disabled="${disabled}"
+        ?disabled=${disabled}
+        ?loading=${loading}
         theme="secondary"
-        ?full-width="${fullWidth}"
+        ?full-width=${fullWidth}
+        href=${href}
+        ?new-tab=${newTab}
         >Button</chameleon-button
       >
     `;
@@ -57,13 +70,19 @@ stories.add(
   "Text",
   () => {
     const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading", false);
     const fullWidth = boolean("Full Width", false);
+    const href = text("Link", "");
+    const newTab = boolean("Open Link in New Tab", false);
 
     return html`
       <chameleon-button
-        ?disabled="${disabled}"
+        ?disabled=${disabled}
+        ?loading=${loading}
         theme="text"
-        ?full-width="${fullWidth}"
+        ?full-width=${fullWidth}
+        href=${href}
+        ?new-tab=${newTab}
         >Button</chameleon-button
       >
     `;
@@ -75,14 +94,20 @@ stories.add(
   "Text with Icon",
   () => {
     const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading", false);
     const fullWidth = boolean("Full Width", false);
+    const href = text("Link", "");
+    const newTab = boolean("Open Link in New Tab", false);
 
     return html`
       <chameleon-button
-        ?disabled="${disabled}"
+        ?disabled=${disabled}
+        ?loading=${loading}
         theme="text"
-        ?full-width="${fullWidth}"
+        ?full-width=${fullWidth}
         icon-left
+        href=${href}
+        ?new-tab=${newTab}
         >${plusIcon("icon-left")}Add</chameleon-button
       >
     `;
@@ -94,9 +119,18 @@ stories.add(
   "Icon Only",
   () => {
     const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading", false);
+    const href = text("Link", "");
+    const newTab = boolean("Open Link in New Tab", false);
 
     return html`
-      <chameleon-button ?disabled="${disabled}" icon-only theme="text"
+      <chameleon-button
+        ?disabled=${disabled}
+        ?loading=${loading}
+        icon-only
+        theme="text"
+        href=${href}
+        ?new-tab=${newTab}
         >${arrowIcon("icon-only")}</chameleon-button
       >
     `;

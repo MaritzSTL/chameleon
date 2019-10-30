@@ -6,8 +6,7 @@ import {
   property
 } from "lit-element";
 import { nothing, svg, SVGTemplateResult } from "lit-html";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/sheet";
+import style from "./chameleon-sheet-style";
 
 @customElement("chameleon-sheet")
 export default class ChameleonSheet extends LitElement {
@@ -30,7 +29,7 @@ export default class ChameleonSheet extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template

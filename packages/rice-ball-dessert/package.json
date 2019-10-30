@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/rice-ball-dessert",
-  "version": "0.3.1",
+  "version": "1.0.0",
   "description": "Chameleon rice ball dessert",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -13,10 +13,10 @@
   "module": "chameleon-rice-ball-dessert.js",
   "files": [
     "/src/",
-    "/chameleon-rice-ball-dessert-styles.d.ts",
-    "/chameleon-rice-ball-dessert-styles.d.ts.map",
-    "/chameleon-rice-ball-dessert-styles.js",
-    "/chameleon-rice-ball-dessert-styles.js.map",
+    "/chameleon-rice-ball-dessert-style.d.ts",
+    "/chameleon-rice-ball-dessert-style.d.ts.map",
+    "/chameleon-rice-ball-dessert-style.js",
+    "/chameleon-rice-ball-dessert-style.js.map",
     "/chameleon-rice-ball-dessert.d.ts",
     "/chameleon-rice-ball-dessert.d.ts.map",
     "/chameleon-rice-ball-dessert.js",
@@ -30,7 +30,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "lit-element": "^2.2.0"
+    "lit-element": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"

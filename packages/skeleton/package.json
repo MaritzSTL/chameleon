@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/skeleton",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "Chameleon skeleton",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -13,6 +13,10 @@
   "module": "chameleon-skeleton.js",
   "files": [
     "/src/",
+    "/chameleon-skeleton-style.d.ts",
+    "/chameleon-skeleton-style.d.ts.map",
+    "/chameleon-skeleton-style.js",
+    "/chameleon-skeleton-style.js.map",
     "/chameleon-skeleton.d.ts",
     "/chameleon-skeleton.d.ts.map",
     "/chameleon-skeleton.js",
@@ -26,8 +30,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/theme": "^0.6.1",
-    "lit-element": "^2.2.0"
+    "lit-element": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"

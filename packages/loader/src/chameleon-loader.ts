@@ -1,24 +1,61 @@
-import { LitElement, TemplateResult, customElement, html } from "lit-element";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/loader";
+import {
+  LitElement,
+  TemplateResult,
+  customElement,
+  html,
+  property
+} from "lit-element";
+import style from "./chameleon-loader-style";
+import materializeLoaderStyle from "./materialize-loader-style";
 
 @customElement("chameleon-loader")
 export default class ChameleonLoader extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style, materializeLoaderStyle];
+
+  @property({ type: String, reflect: true })
+  loader = "spinner";
 
   /**
    * Template
    */
   render(): TemplateResult {
+    switch (this.loader) {
+      case "ellipsis":
+        return this.renderEllipsisLoader();
+      case "spinner":
+      default:
+        return this.renderSpinnerLoader();
+    }
+  }
+
+  renderEllipsisLoader(): TemplateResult {
     return html`
-      <div class="lds-ellipsis">
+      <div class="ellipsis">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
+      </div>
+    `;
+  }
+
+  renderSpinnerLoader(): TemplateResult {
+    return html`
+      <div class="spinner preloader-wrapper active">
+        <div class="spinner-layer">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
       </div>
     `;
   }

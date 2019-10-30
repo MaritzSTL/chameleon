@@ -6,8 +6,7 @@ import {
   property
 } from "lit-element";
 import { nothing } from "lit-html";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/textarea";
+import style from "./chameleon-textarea-style";
 
 @customElement("chameleon-textarea")
 export default class ChameleonTextarea extends LitElement {
@@ -75,7 +74,7 @@ export default class ChameleonTextarea extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template
