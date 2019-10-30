@@ -40,7 +40,7 @@ export default css`
     --font-size-input: 0.938rem;
     --font-size-label: 0.875rem;
     --font-family: sans-serif;
-    --font-size-table-header: 1em;
-    --font-size-table-content: 0.875em;
+    --font-size-table-header: 1rem;
+    --font-size-table-content: 0.875rem;
   }
 `;

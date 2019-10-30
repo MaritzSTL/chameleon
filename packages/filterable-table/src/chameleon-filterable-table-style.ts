@@ -4,12 +4,12 @@ export default css`
   :host {
     --th-and-td-text-align: left;
 
-    --row-hover-color: var(--color-surface);
-    --row-highlight-color: var(--color-primary-light);
+    --row-hover-color: var(--color-surface, #ffffff);
+    --row-highlight-color: var(--color-primary-light, #679dea);
 
-    background-color: var(--color-background);
+    background-color: var(--color-background, #f5f5f8);
     display: block;
-    font-family: var(--font-family);
+    font-family: var(--font-family, sans-serif);
   }
 
   table {
@@ -20,23 +20,23 @@ export default css`
 
   table th,
   table td {
-    color: var(--color-black);
+    color: var(--color-black, #000000);
     line-height: 1.4;
     text-align: var(--th-and-td-text-align, initial);
     width: var(--filterable-table-column-width, initial);
   }
 
   table th {
-    border-bottom: 3px solid var(--color-secondary);
-    font-size: var(--font-size-table-header);
+    border-bottom: 3px solid var(--color-secondary, #69c9b9);
+    font-size: var(--font-size-table-header, 1rem);
     padding: 1rem 0.5rem;
     vertical-align: top;
   }
 
   table td {
-    border-bottom: 1px solid var(--color-gray-light);
-    border-top: 1px solid var(--color-gray-light);
-    font-size: var(--font-size-table-content);
+    border-bottom: 1px solid var(--color-gray-light, #c4c7ca);
+    border-top: 1px solid var(--color-gray-light, #c4c7ca);
+    font-size: var(--font-size-table-content, 0.875rem);
     padding: 1.5rem 0.5rem;
   }
 
@@ -60,7 +60,7 @@ export default css`
 
   table tr:last-child td,
   table tr.details-row:last-child td {
-    border-bottom: 1px solid var(--color-gray-light);
+    border-bottom: 1px solid var(--color-gray-light, #c4c7ca);
   }
 
   table tr.active,
