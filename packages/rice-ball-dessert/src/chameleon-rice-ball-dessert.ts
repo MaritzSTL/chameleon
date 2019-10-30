@@ -5,20 +5,21 @@ import {
   html,
   property
 } from "lit-element";
-import { styles as riceBallStyles } from "./chameleon-rice-ball-dessert-styles";
+import style from "./chameleon-rice-ball-dessert-style";
 
 @customElement("chameleon-rice-ball-dessert")
-export default class ChameleonCard extends LitElement {
+export default class ChameleonRiceBallDessert extends LitElement {
   /**
    * Properties
    */
   // Rice ball color
   @property({ type: String })
   riceBallColor = "red";
+
   /**
    * Styles
    */
-  static styles = [riceBallStyles];
+  static styles = [style];
 
   /**
    * Template

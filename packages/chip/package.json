@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/chip",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Chameleon chip",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -13,6 +13,10 @@
   "module": "chameleon-chip.js",
   "files": [
     "/src/",
+    "/chameleon-chip-style.d.ts",
+    "/chameleon-chip-style.d.ts.map",
+    "/chameleon-chip-style.js",
+    "/chameleon-chip-style.js.map",
     "/chameleon-chip.d.ts",
     "/chameleon-chip.d.ts.map",
     "/chameleon-chip.js",
@@ -26,8 +30,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/theme": "^0.6.1",
-    "lit-element": "^2.2.0"
+    "lit-element": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"
