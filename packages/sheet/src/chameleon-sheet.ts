@@ -7,6 +7,7 @@ import {
 } from "lit-element";
 import { nothing, svg, SVGTemplateResult } from "lit-html";
 import style from "./chameleon-sheet-style";
+import "@chameleon-ds/button/src/chameleon-button";
 
 @customElement("chameleon-sheet")
 export default class ChameleonSheet extends LitElement {
@@ -37,9 +38,14 @@ export default class ChameleonSheet extends LitElement {
   render(): TemplateResult {
     return html`
       <header class="head-container">
-        <div class="close-icon" @click="${this._toggleSheet}">
-          ${this.closeIcon}
-        </div>
+        <chameleon-button
+          class="close-icon"
+          icon-only
+          theme="text"
+          @click="${this._toggleSheet}"
+          >${this.closeIcon}</chameleon-button
+        >
+
         <h3 class="header">${this.header}</h3>
 
         <slot name="details"></slot>
