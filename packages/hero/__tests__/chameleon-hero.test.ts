@@ -12,7 +12,7 @@ describe("chameleon-hero", () => {
     element = await litFixture(fixture);
   });
 
-  it("renders", async () => {
+  it("renders", () => {
     expect(Boolean(element.shadowRoot)).to.equal(true);
   });
 

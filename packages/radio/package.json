@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/radio",
-  "version": "0.3.1",
+  "version": "1.0.0",
   "description": "Chameleon radio",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -13,6 +13,10 @@
   "module": "chameleon-radio.js",
   "files": [
     "/src/",
+    "/chameleon-radio-style.d.ts",
+    "/chameleon-radio-style.d.ts.map",
+    "/chameleon-radio-style.js",
+    "/chameleon-radio-style.js.map",
     "/chameleon-radio.d.ts",
     "/chameleon-radio.d.ts.map",
     "/chameleon-radio.js",
@@ -26,8 +30,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/theme": "^0.6.0",
-    "lit-element": "^2.2.0"
+    "lit-element": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"

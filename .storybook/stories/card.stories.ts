@@ -4,6 +4,8 @@ import { html } from "lit-html";
 import "../../packages/card/src/chameleon-card";
 import "../../packages/card-header/src/chameleon-card-header";
 import "../../packages/card-image/src/chameleon-card-image";
+import "../../packages/card-footer/src/chameleon-card-footer";
+import "../../packages/button/src/chameleon-button";
 
 const stories = storiesOf("Card", module);
 
@@ -25,6 +27,11 @@ stories.add(
     const titleText = text("Title", "St. Louis, MO");
 
     return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
       <chameleon-card>
         <chameleon-card-header
           title="${titleText}"
@@ -41,6 +48,11 @@ stories.add(
   "Outline",
   () => {
     return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
       <chameleon-card outline>
         <h3>Card</h3>
         <p>Here is some sample content for the card</p>
@@ -62,6 +74,11 @@ stories.add(
     const altText = text("ALT Text", "St. Louis Landscape");
 
     return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
       <chameleon-card rounded>
         <chameleon-card-header
           title="${titleText}"
@@ -92,6 +109,11 @@ stories.add(
     const accentColorSelected = text("Top Border", "green");
 
     return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
       <chameleon-card
         ?rounded="${rounded}"
         accentColor="${accentColorSelected}"
@@ -101,6 +123,33 @@ stories.add(
           subtitle="${subtitleText}"
         ></chameleon-card-header>
         <p>Here is some sample content for the card</p>
+      </chameleon-card>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Footer",
+  () => {
+    const subtitleText = text("Subtitle", "Destination");
+    const titleText = text("Title", "St. Louis, MO");
+
+    return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
+      <chameleon-card>
+        <chameleon-card-header
+          title="${titleText}"
+          subtitle="${subtitleText}"
+        ></chameleon-card-header>
+        <p>Here is some sample content for the card</p>
+        <chameleon-card-footer>
+          <chameleon-button theme="secondary">Button</chameleon-button>
+        </chameleon-card-footer>
       </chameleon-card>
     `;
   },

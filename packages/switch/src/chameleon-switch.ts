@@ -6,8 +6,7 @@ import {
   property
 } from "lit-element";
 import { nothing } from "lit-html";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/switch";
+import style from "./chameleon-switch-style";
 
 @customElement("chameleon-switch")
 export default class ChameleonSwitch extends LitElement {
@@ -30,7 +29,7 @@ export default class ChameleonSwitch extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template

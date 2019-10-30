@@ -6,8 +6,7 @@ import {
   property
 } from "lit-element";
 import { nothing } from "lit-html";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/textarea";
+import style from "./chameleon-textarea-style";
 
 @customElement("chameleon-textarea")
 export default class ChameleonTextarea extends LitElement {
@@ -72,10 +71,14 @@ export default class ChameleonTextarea extends LitElement {
   @property({ type: String })
   validationMessage = "";
 
+  // Prevents users from manualy changing the size of the textarea
+  @property({ type: Boolean })
+  nonresizeable = false;
+
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template
@@ -96,6 +99,7 @@ export default class ChameleonTextarea extends LitElement {
         ?required="${this.required}"
         rows="${this.rows}"
         spellcheck="${this.spellcheck}"
+        ?nonresizeable="${this.nonresizeable}"
         @blur="${this._handleBlur}"
         @invalid="${this._handleInvalid}"
         @input="${this._handleInput}"
