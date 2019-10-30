@@ -20,7 +20,7 @@ stories.add(
     const maxlength = number("maxlength", 500);
     const rows = number("Rows", 2);
     const cols = number("Columns", 20);
-    const nonresizeable = boolean("resizeable", false);
+    const nonresizeable = boolean("non-resizeable", false);
 
     return html`
       <chameleon-textarea
