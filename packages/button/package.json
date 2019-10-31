@@ -9,18 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-button.js",
-  "module": "chameleon-button.js",
+  "main": "src/chameleon-button.js",
+  "module": "src/chameleon-button.js",
   "files": [
-    "/src/",
-    "/chameleon-button-style.d.ts",
-    "/chameleon-button-style.d.ts.map",
-    "/chameleon-button-style.js",
-    "/chameleon-button-style.js.map",
-    "/chameleon-button.d.ts",
-    "/chameleon-button.d.ts.map",
-    "/chameleon-button.js",
-    "/chameleon-button.js.map"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -30,7 +22,6 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/loader": "^1.1.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {

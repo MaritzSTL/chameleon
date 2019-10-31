@@ -9,18 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "index.js",
-  "module": "index.js",
+  "main": "src/chameleon-paginator.js",
+  "module": "src/chameleon-paginator.js",
   "files": [
-    "/src/",
-    "/chameleon-paginator-style.d.ts",
-    "/chameleon-paginator-style.d.ts.map",
-    "/chameleon-paginator-style.js",
-    "/chameleon-paginator-style.js.map",
-    "/chameleon-paginator.d.ts",
-    "/chameleon-paginator.d.ts.map",
-    "/chameleon-paginator.js",
-    "/chameleon-paginator.js.map"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

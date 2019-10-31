@@ -9,18 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-rice-ball-dessert.js",
-  "module": "chameleon-rice-ball-dessert.js",
+  "main": "src/chameleon-rice-ball-dessert.js",
+  "module": "src/chameleon-rice-ball-dessert.js",
   "files": [
-    "/src/",
-    "/chameleon-rice-ball-dessert-style.d.ts",
-    "/chameleon-rice-ball-dessert-style.d.ts.map",
-    "/chameleon-rice-ball-dessert-style.js",
-    "/chameleon-rice-ball-dessert-style.js.map",
-    "/chameleon-rice-ball-dessert.d.ts",
-    "/chameleon-rice-ball-dessert.d.ts.map",
-    "/chameleon-rice-ball-dessert.js",
-    "/chameleon-rice-ball-dessert.js.map"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

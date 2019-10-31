@@ -9,18 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-checkbox.js",
-  "module": "chameleon-checkbox.js",
+  "main": "src/chameleon-checkbox.js",
+  "module": "src/chameleon-checkbox.js",
   "files": [
-    "/src/",
-    "/chameleon-checkbox-style.d.ts",
-    "/chameleon-checkbox-style.d.ts.map",
-    "/chameleon-checkbox-style.js",
-    "/chameleon-checkbox-style.js.map",
-    "/chameleon-checkbox.d.ts",
-    "/chameleon-checkbox.d.ts.map",
-    "/chameleon-checkbox.js",
-    "/chameleon-checkbox.js.map"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
