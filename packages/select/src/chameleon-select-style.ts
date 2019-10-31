@@ -5,6 +5,7 @@ export default css`
     display: block;
     box-sizing: border-box;
     position: relative;
+    width: 400px;
   }
 
   :host * {

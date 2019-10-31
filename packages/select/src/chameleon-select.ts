@@ -90,22 +90,6 @@ export default class ChameleonSelect extends LitElement {
   @property({ type: Boolean })
   valid = true;
 
-  // type SelectionTarget = EventTarget & {
-  //   getAttribute(arg0: string);
-  //   hasAttribute(arg0: string);
-  //   textContent: string;
-  // };
-
-  // type SelectableOption = {
-  //   value: string;
-  //   label: string;
-  //   subLabel: string;
-  //   preLabel: TemplateResult | string;
-  //   postLabel: TemplateResult | string;
-  //   startDateLabel: TemplateResult | string;
-  //   endDateLabel: TemplateResult | string;
-  // };
-
   /**
    * Template
    */
@@ -289,9 +273,11 @@ export default class ChameleonSelect extends LitElement {
    * @param {Event} e - Click event on a SelectionTarget
    */
   addSelection(e: MouseEvent): void {
+    console.log(e);
     let value = <string | undefined>(
       e.composedPath().find(e => (<HTMLElement>e).getAttribute("value"))
     );
+    console.log(value);
     this.filteredOptions = [];
 
     // We don't want this event to bubble up to chameleon-select otherwise
@@ -299,6 +285,7 @@ export default class ChameleonSelect extends LitElement {
     e.stopPropagation();
 
     const option = this.options.find(option => option.value === value);
+    console.log(option);
     this.selectedOption = option || <SelectableOption>{};
 
     // Dispatch a change event
