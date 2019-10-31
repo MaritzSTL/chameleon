@@ -27,7 +27,6 @@ export default css`
   .component-wrapper:hover:not(.invalid) input:not([disabled]),
   .component-wrapper:active:not(.invalid) input:not([disabled]) {
     border-color: var(--color-primary, #2c6fb7);
-    color: var(--color-primary, #2c6fb7);
   }
 
   .label-row {
