@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/dialog",
-  "version": "0.1.9",
+  "version": "0.1.0",
   "description": "Chameleon dialog",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,18 +9,30 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-dialog.js",
+  "main": "chameleon-dialog.js",
+  "module": "chameleon-dialog.js",
+  "files": [
+    "/src/",
+    "/chameleon-dialog-style.d.ts",
+    "/chameleon-dialog-style.d.ts.map",
+    "/chameleon-dialog-style.js",
+    "/chameleon-dialog-style.js.map",
+    "/chameleon-dialog.d.ts",
+    "/chameleon-dialog.d.ts.map",
+    "/chameleon-dialog.js",
+    "/chameleon-dialog.js.map"
+  ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
   },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "lit-element": "^2.2.0"
+    "lit-element": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "903c637e2d1f3693b6c0b5fca5c1e6363ecb15c1"
+  }
 }
