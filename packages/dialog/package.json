@@ -9,18 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-dialog.js",
-  "module": "chameleon-dialog.js",
+  "main": "dist/chameleon-dialog.js",
+  "module": "dist/chameleon-dialog.js",
   "files": [
     "/src/",
-    "/chameleon-dialog-style.d.ts",
-    "/chameleon-dialog-style.d.ts.map",
-    "/chameleon-dialog-style.js",
-    "/chameleon-dialog-style.js.map",
-    "/chameleon-dialog.d.ts",
-    "/chameleon-dialog.d.ts.map",
-    "/chameleon-dialog.js",
-    "/chameleon-dialog.js.map"
+    "/dist/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
