@@ -9,10 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "src/chameleon-textarea.js",
-  "module": "src/chameleon-textarea.js",
+  "main": "dist/chameleon-textarea.js",
+  "module": "dist/chameleon-textarea.js",
   "files": [
-    "/src/"
+    "/src/",
+    "/dist/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

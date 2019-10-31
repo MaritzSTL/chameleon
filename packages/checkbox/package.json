@@ -9,10 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "src/chameleon-checkbox.js",
-  "module": "src/chameleon-checkbox.js",
+  "main": "dist/chameleon-checkbox.js",
+  "module": "dist/chameleon-checkbox.js",
   "files": [
-    "/src/"
+    "/src/",
+    "/dist/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
