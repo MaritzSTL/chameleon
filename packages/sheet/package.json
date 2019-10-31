@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/sheet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Chameleon sheet",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,18 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-sheet.js",
-  "module": "chameleon-sheet.js",
+  "main": "dist/chameleon-sheet.js",
+  "module": "dist/chameleon-sheet.js",
   "files": [
     "/src/",
-    "/chameleon-sheet-style.d.ts",
-    "/chameleon-sheet-style.d.ts.map",
-    "/chameleon-sheet-style.js",
-    "/chameleon-sheet-style.js.map",
-    "/chameleon-sheet.d.ts",
-    "/chameleon-sheet.d.ts.map",
-    "/chameleon-sheet.js",
-    "/chameleon-sheet.js.map"
+    "/dist/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
