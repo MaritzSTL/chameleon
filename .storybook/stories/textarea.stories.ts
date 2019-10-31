@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, boolean, text, number } from "@storybook/addon-knobs";
 import { html } from "lit-html";
-import "../../packages/textarea/src/chameleon-textarea";
+import "@chameleon-ds/textarea/src/chameleon-textarea";
 
 const stories = storiesOf("Textarea", module);
 
