@@ -1,11 +1,11 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 import { html } from "lit-html";
-import "../../packages/card/src/chameleon-card";
-import "../../packages/card-header/src/chameleon-card-header";
-import "../../packages/card-image/src/chameleon-card-image";
-import "../../packages/card-footer/src/chameleon-card-footer";
-import "../../packages/button/src/chameleon-button";
+import "@chameleon-ds/card/src/chameleon-card";
+import "@chameleon-ds/card-header/src/chameleon-card-header";
+import "@chameleon-ds/card-image/src/chameleon-card-image";
+import "@chameleon-ds/card-footer/src/chameleon-card-footer";
+import "@chameleon-ds/button/src/chameleon-button";
 
 const stories = storiesOf("Card", module);
 

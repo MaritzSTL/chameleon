@@ -1,8 +1,7 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs } from "@storybook/addon-knobs";
 import { html } from "lit-html";
-import "../../packages/tabs/src/chameleon-tabs";
-import "../../packages/tabs/src/chameleon-tab";
+import "@chameleon-ds/tabs/src/index";
 
 const stories = storiesOf("Tabs", module);
 
