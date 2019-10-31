@@ -10,6 +10,7 @@ import { classMap } from "lit-html/directives/class-map";
 import base from "@chameleon-ds/theme/base";
 import style from "./chameleon-dialog-style";
 import "../../card/src/chameleon-card";
+import "@chameleon-ds/button/src/chameleon-button";
 
 @customElement("chameleon-dialog")
 export default class ChameleonDialog extends LitElement {
