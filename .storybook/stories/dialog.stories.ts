@@ -20,48 +20,6 @@ stories.add(
     const dismissible = boolean("Dismissible", true);
 
     return html`
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
-      <h1>Yolo!</h1>
       <chameleon-dialog ?open="${dialogVisible}" ?dismissible="${dismissible}">
         ${defaultIcon("icon")}
         <h1 slot="title">Title</h1>

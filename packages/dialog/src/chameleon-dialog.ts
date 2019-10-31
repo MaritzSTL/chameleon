@@ -50,9 +50,14 @@ export default class ChameleonDialog extends LitElement {
           ${
             this.dismissible
               ? html`
-                  <div class="close-icon" @click="${this._toggleDialog}">
+                  <chameleon-button
+                    theme="text"
+                    class="close-icon"
+                    icon-only
+                    @click="${this._toggleDialog}"
+                  >
                     ${this.closeIcon}
-                  </div>
+                  </chameleon-button>
                 `
               : nothing
           }

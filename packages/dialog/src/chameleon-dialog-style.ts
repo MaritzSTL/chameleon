@@ -56,15 +56,10 @@ export default css`
   .close-icon {
     display: flex;
     cursor: pointer;
-    margin: 20px 20px 0 0;
     position: absolute;
+    margin: 0;
     top: 0;
     right: 0;
-  }
-
-  chameleon-button {
-    margin-bottom: 0.5em;
-    width: 100%;
   }
 
   svg {
