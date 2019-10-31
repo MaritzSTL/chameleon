@@ -33,7 +33,9 @@ export default css`
   .label-row {
     display: flex;
   }
-
+  .label-row.split-row {
+    justify-content: space-between;
+  }
   label,
   .label-row span {
     color: var(--color-gray-darkest, #6c737a);
@@ -47,10 +49,8 @@ export default css`
   }
 
   .label-row span {
-    flex: 1;
-    align-self: flex-end;
     display: flex;
-    justify-content: end;
+    align-items: flex-end;
   }
 
   .label-row span svg {
