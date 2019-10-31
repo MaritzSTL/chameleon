@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/loader",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Chameleon loader",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,22 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-loader.js",
-  "module": "chameleon-loader.js",
+  "main": "dist/chameleon-loader.js",
+  "module": "dist/chameleon-loader.js",
   "files": [
     "/src/",
-    "/chameleon-loader-style.d.ts",
-    "/chameleon-loader-style.d.ts.map",
-    "/chameleon-loader-style.js",
-    "/chameleon-loader-style.js.map",
-    "/materialize-loader-style.d.ts",
-    "/materialize-loader-style.d.ts.map",
-    "/materialize-loader-style.js",
-    "/materialize-loader-style.js.map",
-    "/chameleon-loader.d.ts",
-    "/chameleon-loader.d.ts.map",
-    "/chameleon-loader.js",
-    "/chameleon-loader.js.map"
+    "/dist/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
