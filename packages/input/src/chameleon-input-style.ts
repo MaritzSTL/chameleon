@@ -27,13 +27,14 @@ export default css`
   .component-wrapper:hover:not(.invalid) input:not([disabled]),
   .component-wrapper:active:not(.invalid) input:not([disabled]) {
     border-color: var(--color-primary, #2c6fb7);
-    color: var(--color-primary, #2c6fb7);
   }
 
   .label-row {
     display: flex;
   }
-
+  .label-row.split-row {
+    justify-content: space-between;
+  }
   label,
   .label-row span {
     color: var(--color-gray-darkest, #6c737a);
@@ -47,10 +48,8 @@ export default css`
   }
 
   .label-row span {
-    flex: 1;
-    align-self: flex-end;
     display: flex;
-    justify-content: end;
+    align-items: flex-end;
   }
 
   .label-row span svg {

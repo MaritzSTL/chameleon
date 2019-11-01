@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/checkbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Chameleon checkbox",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,18 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-checkbox.js",
-  "module": "chameleon-checkbox.js",
+  "main": "dist/chameleon-checkbox.js",
+  "module": "dist/chameleon-checkbox.js",
   "files": [
     "/src/",
-    "/chameleon-checkbox-style.d.ts",
-    "/chameleon-checkbox-style.d.ts.map",
-    "/chameleon-checkbox-style.js",
-    "/chameleon-checkbox-style.js.map",
-    "/chameleon-checkbox.d.ts",
-    "/chameleon-checkbox.d.ts.map",
-    "/chameleon-checkbox.js",
-    "/chameleon-checkbox.js.map"
+    "/dist/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/card-header",
-  "version": "0.4.0",
+  "version": "1.0.1",
   "description": "Chameleon card header",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,18 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-card-header.js",
-  "module": "chameleon-card-header.js",
+  "main": "dist/chameleon-card-header.js",
+  "module": "dist/chameleon-card-header.js",
   "files": [
     "/src/",
-    "/chameleon-card-header-style.d.ts",
-    "/chameleon-card-header-style.d.ts.map",
-    "/chameleon-card-header-style.js",
-    "/chameleon-card-header-style.js.map",
-    "/chameleon-card-header.d.ts",
-    "/chameleon-card-header.d.ts.map",
-    "/chameleon-card-header.js",
-    "/chameleon-card-header.js.map"
+    "/dist/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
