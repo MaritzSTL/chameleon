@@ -106,7 +106,6 @@ export default class ChameleonMultiselect extends LitElement {
     const selectedOptions = <Array<SelectableOption>>[];
     values.forEach(value => {
       const option = this.options.find(option => option.value === value);
-      console.log(this.options.indexOf(option || <SelectableOption>{}));
       if (option) selectedOptions.push(option as SelectableOption);
       else throw new Error(`${value} doesn't exist within the options array`);
     });
