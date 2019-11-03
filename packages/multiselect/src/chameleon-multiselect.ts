@@ -95,14 +95,14 @@ export default class ChameleonMultiselect extends LitElement {
    * The true canonical value of the selector
    * @return {Array<string>}
    */
-  get value(): Array<string> {
+  get value(): Array<SelectableOption["value"]> {
     return this.selectedOptions.map(option => option.value);
   }
 
   /**
    * Sets the canonical value of the selector
    */
-  set value(values: Array<string>) {
+  set value(values: Array<SelectableOption["value"]>) {
     const selectedOptions = <Array<SelectableOption>>[];
     values.forEach(value => {
       const option = this.options.find(option => option.value === value);
