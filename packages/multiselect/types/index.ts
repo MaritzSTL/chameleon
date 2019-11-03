@@ -6,12 +6,12 @@ export type SelectableOption = {
   subLabel: string;
   preLabel: TemplateResult | string;
   postLabel: TemplateResult | string;
-  startDateLabel: TemplateResult | string;
-  endDateLabel: TemplateResult | string;
 };
 
 export type SelectionTarget = EventTarget & {
-  getAttribute(arg0: string);
-  hasAttribute(arg0: string);
-  textContent: string;
+  hasAttribute(name: string): Element;
+  getAttribute(name: string): string;
+  dataset: {
+    value: string;
+  };
 };
