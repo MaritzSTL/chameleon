@@ -1,28 +1,37 @@
 import { css } from "lit-element";
 
 export default css`
-  :host {
-    display: flex;
+  .alert {
+    border-radius: 18px;
+    width: 400px;
+    padding: 20px;
+    background-color: #e32636;
+    color: white;
+    margin-bottom: 15px;
   }
 
-  :host(chameleon-alert) {
-    padding: 0.75rem 1.25rem;
-    margin: 1rem 0 1rem 0;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    line-height: 1.5;
-    font-size: 16px;
-    font-weight: 400;
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 25px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
   }
 
-  :host(chameleon-alert[success]) {
-    border: 1px solid rgba(6, 132, 63, 0.8);
-    background-color: rgba(6, 132, 63, 0.1);
-    color: rgba(6, 132, 63, 1);
+  .closebtn:hover {
+    color: black;
   }
 
-  .fa-times {
+  .icon {
+    margin-right: 15px;
     height: 24px;
     cursor: pointer;
+  }
+
+  .message: {
+    font-size: 20px;
   }
 `;

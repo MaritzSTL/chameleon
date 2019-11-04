@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import { html } from "lit-html";
 import "../../packages/alert/src/chameleon-alert";
 
@@ -12,11 +12,12 @@ stories.addDecorator(withKnobs as any);
 stories.add(
   "Alert (Default)",
   () => {
+    const message = text(
+      "Alert Message",
+      "This is an alert message from chameleon!"
+    );
     return html`
-      <chameleon-alert></chameleon-alert>
-      <section slot="message">
-        <p>this is an alert message!!!</p>
-      </section>
+      <chameleon-alert .message="${message}"> </chameleon-alert>
     `;
   },
   { info: { inline: true } }

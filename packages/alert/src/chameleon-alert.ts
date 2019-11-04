@@ -7,7 +7,6 @@ import {
   svg,
   SVGTemplateResult
 } from "lit-element";
-import { nothing } from "lit-html";
 import style from "./chameleon-alert-style";
 
 @customElement("chameleon-alert")
@@ -20,29 +19,24 @@ export default class ChameleonAlert extends LitElement {
   /**
    * Properties
    */
-  @property({ type: Boolean, reflect: true })
-  dismissable = true;
+  @property({ type: String })
+  message = "this is a good alert box I built";
 
   /**
    * Template
    */
   render(): TemplateResult {
     return html`
-      <slot name="message"></slot>
-      ${this.dismissable
-        ? html`
-            <div class="icon-wrapper layout_column flex justify_content-center">
-              <span @click="${this.handleClose}">
-                ${this.alertIcon}
-              </span>
-            </div>
-          `
-        : nothing}
+      <div class="alert">
+        <span class="icon">${this.alertIcon}</span>
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        <span class="message">${this.message}</span>
+      </div>
     `;
-  }
-
-  handleClose(): void {
-    this.dispatchEvent(new CustomEvent("close"));
   }
 
   get alertIcon(): SVGTemplateResult {
