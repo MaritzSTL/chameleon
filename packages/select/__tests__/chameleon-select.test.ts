@@ -1,5 +1,5 @@
 import { litFixture, html, expect } from "@open-wc/testing";
-import sinon from "sinon";
+
 import "../src/chameleon-select";
 
 const fixture = html`
@@ -9,7 +9,8 @@ const fixture = html`
 describe("chameleon-select", () => {
   let element;
 
-  it("renders", () => {
+  it("renders", async () => {
+    element = await litFixture(fixture);
     expect(Boolean(element.shadowRoot)).to.equal(true);
   });
 });

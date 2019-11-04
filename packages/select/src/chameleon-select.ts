@@ -200,7 +200,7 @@ export default class ChameleonSelect extends LitElement {
    * @return {TemplateResult}
    */
   get renderedselectedOption(): TemplateResult {
-    if (this.selectedOption.value !== "") {
+    if (this.selectedOption.value !== undefined) {
       // If the options are object values
       const option = this.selectedOption;
       return html`
