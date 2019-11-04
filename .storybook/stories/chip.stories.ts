@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, text, boolean } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import { html } from "lit-html";
 import "@chameleon-ds/chip/src/chameleon-chip";
 
@@ -25,14 +25,10 @@ stories.add(
 stories.add(
   "With Icon",
   () => {
-    const closeable = boolean("Closeable", true);
     const valueText = text("Label", "Crunchy");
 
     return html`
-      <chameleon-chip
-        value="${valueText}"
-        closeable="${closeable}"
-      ></chameleon-chip>
+      <chameleon-chip value="${valueText}" closeable></chameleon-chip>
     `;
   },
   { info: { inline: true } }

@@ -35,7 +35,7 @@ export default class ChameleonChip extends LitElement {
   render(): TemplateResult {
     return html`
       <span>
-        ${this.value}
+        ${this._value}
         <slot></slot>
         ${this.closeable
           ? html`
@@ -48,7 +48,7 @@ export default class ChameleonChip extends LitElement {
 
   _remove() {
     const e = new CustomEvent("remove-chip", {
-      detail: { value: this.value },
+      detail: { value: this._value },
       bubbles: true,
       composed: true
     });
