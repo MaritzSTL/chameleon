@@ -21,6 +21,9 @@ export default class ChameleonChip extends LitElement {
   @property({ type: Boolean, reflect: true })
   closeable = false;
 
+  @property({ type: String })
+  _value = "";
+
   /**
    * Styles
    */
@@ -52,8 +55,6 @@ export default class ChameleonChip extends LitElement {
     this.dispatchEvent(e);
   }
 
-  private _value: string;
-
   get removeIcon(): SVGTemplateResult {
     return svg`<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
   }
@@ -62,7 +63,7 @@ export default class ChameleonChip extends LitElement {
     if (this._value !== "") {
       return this._value;
     } else {
-      return this.shadowRoot.querySelectorAll("slot")[0].slot; // slot text on content
+      return this.shadowRoot!.querySelectorAll("slot")[0].slot;
     }
   }
 
