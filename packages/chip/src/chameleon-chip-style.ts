@@ -22,9 +22,7 @@ export default css`
     padding: 3px 14px;
   }
 
-  ::slotted(svg) {
+  svg {
     padding-left: 10px;
-    height: 12px;
-    width: auto;
   }
 `;
