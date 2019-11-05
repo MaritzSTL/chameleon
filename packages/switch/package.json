@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/switch",
-  "version": "0.1.6",
+  "version": "1.0.1",
   "description": "Chameleon switch",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -10,14 +10,20 @@
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
   "main": "dist/chameleon-switch.js",
+  "module": "dist/chameleon-switch.js",
+  "files": [
+    "/src/",
+    "/dist/"
+  ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
   },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "lit-element": "^2.2.0"
+    "lit-element": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"

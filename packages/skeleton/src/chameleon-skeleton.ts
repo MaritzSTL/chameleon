@@ -5,8 +5,7 @@ import {
   html,
   property
 } from "lit-element";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/skeleton";
+import style from "./chameleon-skeleton-style";
 
 @customElement("chameleon-skeleton")
 export default class ChameleonSkeleton extends LitElement {
@@ -15,17 +14,20 @@ export default class ChameleonSkeleton extends LitElement {
    */
   @property({ type: Boolean, reflect: true })
   disabled = false;
+
   @property({ type: String, reflect: true })
   theme = "primary";
+
   @property({ type: String, reflect: true })
   height = "100%";
+
   @property({ type: String, reflect: true })
   width = "100%";
 
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template
@@ -43,8 +45,8 @@ export default class ChameleonSkeleton extends LitElement {
       <svg height="${this.height}" width="${this.width}">
         <rect
           class="rectangle"
-          height="${this.height}"
-          width="${this.width}"
+          height="100%"
+          width="100%"
           x="0"
           y="0"
           rx="10"

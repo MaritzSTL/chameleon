@@ -7,8 +7,8 @@ import {
 } from "lit-element";
 import { nothing } from "lit-html";
 import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/uploader";
-import "../../button/src/chameleon-button";
+import style from "./chameleon-uploader-style";
+import "@chameleon-ds/button/src/chameleon-button";
 
 @customElement("chameleon-uploader")
 export default class ChameleonUploader extends LitElement {
@@ -44,13 +44,13 @@ export default class ChameleonUploader extends LitElement {
         <div
           id="#drop-zone"
           class="upload-container"
-          @drop="${e => {
+          @drop="${(e: any) => {
             this.dropHandler(e);
           }}"
-          @dragover="${e => {
+          @dragover="${(e: any) => {
             this.dragOverHandler(e);
           }}"
-          @dragend="${e => {
+          @dragend="${(e: any) => {
             this.dragEndHandler(e);
           }}"
         >
@@ -175,7 +175,7 @@ export default class ChameleonUploader extends LitElement {
   }
 
   onGetFile() {
-    this.shadowRoot.getElementById("file").click();
+    this.shadowRoot!.getElementById("file").click();
   }
 
   removeFile() {
@@ -183,7 +183,7 @@ export default class ChameleonUploader extends LitElement {
     console.log("File removed");
   }
 
-  dropHandler(ev) {
+  dropHandler(ev: any) {
     console.log("File(s) dropped");
 
     // Prevent default behavior (Prevent file from being opened)
@@ -206,24 +206,24 @@ export default class ChameleonUploader extends LitElement {
     }
   }
 
-  dragStartHandler(ev) {
+  dragStartHandler(ev: any) {
     console.log("Drag started");
     ev.dataTransfer.setData("text", ev.target.id);
   }
 
-  dragOverHandler(ev) {
+  dragOverHandler(ev: any) {
     // console.log("File(s) in drop zone");
 
     // Prevent default behavior (Prevent file from being opened)
     ev.preventDefault();
   }
 
-  dragEndHandler(ev) {
+  dragEndHandler(ev: any) {
     console.log("Drag ended");
     ev.dataTransfer.setData("text", ev.target.id);
   }
 
-  __handleFileUpload(file) {
+  __handleFileUpload(file: File) {
     const reader = new FileReader();
 
     reader.onloadstart = () => {

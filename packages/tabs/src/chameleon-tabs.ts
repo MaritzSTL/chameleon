@@ -3,10 +3,10 @@ import {
   TemplateResult,
   customElement,
   property,
-  html
+  html,
+  PropertyValues
 } from "lit-element";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/tabs";
+import style from "./chameleon-tabs-style";
 
 @customElement("chameleon-tabs")
 export default class ChameleonTabs extends LitElement {
@@ -29,7 +29,7 @@ export default class ChameleonTabs extends LitElement {
     tabs.forEach((tab, i) => tab.setAttribute("data-index", i.toString()));
   }
 
-  updated(changedProperties) {
+  updated(changedProperties: PropertyValues) {
     if (changedProperties.has("selected")) {
       const tabs = Array.from(this.querySelectorAll("chameleon-tab"));
 
@@ -49,7 +49,7 @@ export default class ChameleonTabs extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template
@@ -60,7 +60,7 @@ export default class ChameleonTabs extends LitElement {
     `;
   }
 
-  _handleSelectedChanged(e): void {
+  _handleSelectedChanged(e: any): void {
     e.preventDefault();
     this.selected = parseInt(e.detail.value);
   }

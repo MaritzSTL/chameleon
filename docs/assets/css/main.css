@@ -1,0 +1,295 @@
+html,
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.container,
+article.post {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+}
+
+#navigation {
+  align-items: center;
+  display: flex;
+  height: 116px;
+  justify-content: space-between;
+}
+
+#navigation img {
+  height: auto;
+  width: 390px;
+}
+
+#navigation ul {
+  margin: 0;
+  padding: 0;
+}
+
+#navigation .nav-links__top:not(:last-of-type) {
+  margin-right: 48px;
+}
+
+#navigation .nav-links {
+  position: relative;
+}
+
+#navigation .nav-links .nav-links__submenu {
+  background-color: #ffffff;
+  display: none;
+  position: absolute;
+  top: 100%;
+  padding: 10px;
+}
+
+#navigation .nav-links__top:hover + .nav-links__submenu {
+  display: flex;
+}
+
+#navigation .nav-links__submenu:hover {
+  display: flex;
+}
+
+#navigation .nav-links__submenu .nav-links__submenu-link {
+  display: inline-block;
+}
+
+#navigation .nav-links__submenu .nav-links__submenu-link a {
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.52px;
+  color: #6c737a;
+  text-decoration: none;
+}
+
+#navigation .nav-links__submenu .nav-links__submenu-link a:hover {
+  color: #349889;
+}
+
+#navigation .nav-links__submenu .nav-links__submenu-link:not(:last-of-type) {
+  margin-right: 31px;
+}
+
+#navigation .nav-links__top {
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+#navigation .nav-links__top a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 
+==============================
+          Home Page
+==============================
+*/
+
+.header {
+  height: 243px;
+  background-color: #252a33;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12%;
+}
+
+.header h3 {
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.13;
+  letter-spacing: -0.26px;
+}
+
+/* 
+==============================
+      Interior Pages
+==============================
+*/
+
+.post-title {
+  font-size: 38px;
+  letter-spacing: -0.3px;
+  color: #252a33;
+}
+
+.post-content p {
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: 0.25px;
+  color: #6c737a;
+}
+
+.post-content h2 {
+  font-size: 20px;
+  letter-spacing: 0.17px;
+  color: #2c6fb7;
+}
+
+/* 
+==============================
+      Colors Page
+==============================
+*/
+
+.color-grid {
+  display: grid;
+  grid-gap: 25px;
+  grid-auto-rows: 1fr;
+  margin-bottom: 64px;
+}
+
+.color-grid .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 23px;
+}
+
+.color-grid .tile [class*="-shades"] {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  height: 140px;
+  grid-auto-rows: 1fr;
+}
+
+.color-grid .tile div {
+  height: 128px;
+  border-radius: 5px;
+}
+
+.tile span {
+  display: block;
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: 0.25px;
+  color: #6c737a;
+}
+
+.tile .name {
+  font-family: Lato;
+  font-size: 15.2px;
+  font-weight: bold;
+  line-height: 1.84;
+  letter-spacing: 0.5px;
+  color: #252a33;
+}
+
+.tile .variable {
+  color: #d00081;
+}
+
+.tile .primary-color {
+  background-color: #2c6fb7;
+}
+
+.tile .secondary-color {
+  background-color: #69c9b9;
+}
+
+.tile .p-light-color {
+  background-color: #679dea;
+}
+
+.tile .p-dark-color {
+  background-color: #004587;
+}
+
+.tile .s-light-color {
+  background-color: #9cfceb;
+}
+
+.tile .s-dark-color {
+  background-color: #349889;
+}
+
+.tile .black-color {
+  background-color: #252a33;
+}
+
+.tile .gray-darkest {
+  background-color: #6c737a;
+}
+
+.tile .gray-dark {
+  background-color: #9fa4a8;
+}
+
+.tile .gray-light {
+  background-color: #c4c7ca;
+}
+
+.tile .gray-lightest {
+  background-color: #e1e3e4;
+}
+
+.tile .background-color {
+  background-color: #f5f5f8;
+}
+
+.tile .surface-color {
+  border: solid 1px #e1e3e4;
+}
+
+.tile .warning-color {
+  background-color: #fcb61a;
+}
+
+.tile .warning-color-light {
+  background-color: #fdd375;
+}
+
+.tile .warning-color-lightest {
+  background-color: #fef0d1;
+}
+
+.tile .error-color {
+  background-color: #bc1c16;
+}
+
+.tile .error-color-light {
+  background-color: #d67673;
+}
+
+.tile .error-color-lightest {
+  background-color: #f1d1d0;
+}
+.tile .success-color {
+  background-color: #00870a;
+}
+
+.tile .success-color-light {
+  background-color: #66b76c;
+}
+
+.tile .success-color-lightest {
+  background-color: #cce7ce;
+}
+
+.tile .primary-shades .shade-1 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.tile .primary-shades .shade-2 {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* 
+==============================
+      Typography Page
+==============================
+*/
+
+

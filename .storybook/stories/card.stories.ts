@@ -1,9 +1,11 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, text } from "@storybook/addon-knobs";
+import { withKnobs, boolean, text } from "@storybook/addon-knobs";
 import { html } from "lit-html";
-import "../../packages/card/src/chameleon-card";
-import "../../packages/card-header/src/chameleon-card-header";
-import "../../packages/card-image/src/chameleon-card-image";
+import "@chameleon-ds/card/src/chameleon-card";
+import "@chameleon-ds/card-header/src/chameleon-card-header";
+import "@chameleon-ds/card-image/src/chameleon-card-image";
+import "@chameleon-ds/card-footer/src/chameleon-card-footer";
+import "@chameleon-ds/button/src/chameleon-button";
 
 const stories = storiesOf("Card", module);
 
@@ -25,6 +27,11 @@ stories.add(
     const titleText = text("Title", "St. Louis, MO");
 
     return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
       <chameleon-card>
         <chameleon-card-header
           title="${titleText}"
@@ -41,6 +48,11 @@ stories.add(
   "Outline",
   () => {
     return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
       <chameleon-card outline>
         <h3>Card</h3>
         <p>Here is some sample content for the card</p>
@@ -62,6 +74,11 @@ stories.add(
     const altText = text("ALT Text", "St. Louis Landscape");
 
     return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
       <chameleon-card rounded>
         <chameleon-card-header
           title="${titleText}"
@@ -76,6 +93,63 @@ stories.add(
           Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
           turpis.
         </p>
+      </chameleon-card>
+    `;
+  },
+
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Border",
+  () => {
+    const subtitleText = text("Subtitle", "Destination");
+    const titleText = text("Title", "St. Louis, MO");
+    const rounded = boolean("Rounded", true);
+    const accentColorSelected = text("Top Border", "green");
+
+    return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
+      <chameleon-card
+        ?rounded="${rounded}"
+        accentColor="${accentColorSelected}"
+      >
+        <chameleon-card-header
+          title="${titleText}"
+          subtitle="${subtitleText}"
+        ></chameleon-card-header>
+        <p>Here is some sample content for the card</p>
+      </chameleon-card>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Footer",
+  () => {
+    const subtitleText = text("Subtitle", "Destination");
+    const titleText = text("Title", "St. Louis, MO");
+
+    return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
+      <chameleon-card>
+        <chameleon-card-header
+          title="${titleText}"
+          subtitle="${subtitleText}"
+        ></chameleon-card-header>
+        <p>Here is some sample content for the card</p>
+        <chameleon-card-footer>
+          <chameleon-button theme="secondary">Button</chameleon-button>
+        </chameleon-card-footer>
       </chameleon-card>
     `;
   },

@@ -7,9 +7,8 @@ import {
 } from "lit-element";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { nothing } from "lit-html";
-import base from "@chameleon-ds/theme/base";
-import style from "@chameleon-ds/theme/base/hero";
-import "@chameleon-ds/skeleton/src/chameleon-skeleton";
+import style from "./chameleon-hero-style";
+import "@chameleon-ds/skeleton";
 
 @customElement("chameleon-hero")
 export default class ChameleonHero extends LitElement {
@@ -43,7 +42,7 @@ export default class ChameleonHero extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template
@@ -114,8 +113,8 @@ export default class ChameleonHero extends LitElement {
       .map(h => this.hex2rgba(h.trim(), this.gradientAlpha));
   }
 
-  private hex2rgba(hex, alpha = 0.5) {
-    const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+  private hex2rgba(hex: string, alpha = 0.5) {
+    const [r, g, b] = hex!.match(/\w\w/g)!.map(x => parseInt(x, 16));
     return `rgba(${r},${g},${b},${alpha})`;
   }
 }
