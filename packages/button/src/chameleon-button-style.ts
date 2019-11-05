@@ -36,6 +36,7 @@ export default css`
     cursor: pointer;
     display: flex;
     font-family: var(--font-family, sans-serif);
+    font-weight: var(--font-weight, normal);
     font-size: var(--font-size-paragraph-medium, 0.938rem);
     justify-content: center;
     letter-spacing: var(--font-letter-spacing, 0.018rem);
