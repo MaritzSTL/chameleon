@@ -274,8 +274,8 @@ export default class ChameleonSelect extends LitElement {
    */
   addSelection(e: MouseEvent): void {
     console.log(e);
-    let value = <string | undefined>(
-      e.composedPath().find(e => (<HTMLElement>e).getAttribute("value"))
+    let value = <Element | undefined>(
+      e.composedPath().find(e => (<HTMLElement>e).hasAttribute("value"))
     );
     console.log(value);
     this.filteredOptions = [];
@@ -284,8 +284,7 @@ export default class ChameleonSelect extends LitElement {
     // it will reopen the optionsList
     e.stopPropagation();
 
-    const option = this.options.find(option => option.value === value);
-    console.log(option);
+    const option = this.options.find(option => option.value === value!.getAttribute("value");
     this.selectedOption = option || <SelectableOption>{};
 
     // Dispatch a change event
