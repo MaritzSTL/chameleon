@@ -1,16 +1,16 @@
 {
-  "name": "@chameleon-ds/sheet",
-  "version": "1.0.2",
-  "description": "Chameleon sheet",
+  "name": "@chameleon-ds/dialog",
+  "version": "0.1.0",
+  "description": "Chameleon dialog",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/sheet#readme",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/dialog#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-sheet.js",
-  "module": "dist/chameleon-sheet.js",
+  "main": "dist/chameleon-dialog.js",
+  "module": "dist/chameleon-dialog.js",
   "files": [
     "/src/",
     "/dist/"
