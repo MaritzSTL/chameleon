@@ -9,11 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-chip.js",
-  "module": "dist/chameleon-chip.js",
+  "main": "src/chameleon-chip.js",
+  "module": "src/chameleon-chip.js",
   "files": [
-    "/src/",
-    "/dist/"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

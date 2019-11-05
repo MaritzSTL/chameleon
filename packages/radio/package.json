@@ -9,11 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-radio.js",
-  "module": "dist/chameleon-radio.js",
+  "main": "src/chameleon-radio.js",
+  "module": "src/chameleon-radio.js",
   "files": [
-    "/src/",
-    "/dist/"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
