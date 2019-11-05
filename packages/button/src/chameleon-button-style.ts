@@ -43,6 +43,7 @@ export default css`
     padding: var(--button-padding, 0.75rem 1.375rem);
     position: relative;
     transition: all 150ms linear;
+    height: var(--button-height, 40px);
   }
 
   button:hover {
