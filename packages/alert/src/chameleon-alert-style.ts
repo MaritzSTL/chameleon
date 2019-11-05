@@ -1,22 +1,17 @@
 import { css } from "lit-element";
 
 export default css`
-  .alert {
-    border-radius: 18px;
-    width: 400px;
+  :host {
+    display: inline-block;
     padding: 20px;
-    background-color: #e32636;
-    color: white;
-    margin-bottom: 15px;
+    border-radius: var(--border-radius-input, 0.313rem);
+    background-color: var(--color-error-lightest, #fef0d1);
+    color: var(--color-error, #bc1c16);
   }
 
   .closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 25px;
-    line-height: 20px;
+    margin: 0px 0px 0px 15px;
+    color: var(--color-error, #bc1c16);
     cursor: pointer;
     transition: 0.3s;
   }
@@ -26,12 +21,11 @@ export default css`
   }
 
   .icon {
-    margin-right: 15px;
+    margin: 0px 15px 0px 0px;
     height: 24px;
-    cursor: pointer;
   }
 
   .message: {
-    font-size: 20px;
+    font-size: var(--font-size-input, 0.938rem);
   }
 `;

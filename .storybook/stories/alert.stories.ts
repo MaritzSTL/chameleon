@@ -7,7 +7,7 @@ const stories = storiesOf("Alert", module);
 
 // Typecasting this as "any" is a quick workaround. Please come back
 // to this and make these types compatible.
-stories.addDecorator(withKnobs as any);
+stories.addDecorator(withKnobs);
 
 stories.add(
   "Alert (Default)",

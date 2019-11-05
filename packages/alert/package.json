@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/alert",
-  "version": "1.0.1",
+  "version": "0.1.0",
   "description": "Chameleon alert",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -13,14 +13,7 @@
   "module": "chameleon-alert.js",
   "files": [
     "/src/",
-    "/chameleon-alert-style.d.ts",
-    "/chameleon-alert-style.d.ts.map",
-    "/chameleon-alert-style.js",
-    "/chameleon-alert-style.js.map",
-    "/chameleon-alert.d.ts",
-    "/chameleon-alert.d.ts.map",
-    "/chameleon-alert.js",
-    "/chameleon-alert.js.map"
+    "/dist/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

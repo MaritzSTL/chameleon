@@ -20,22 +20,18 @@ export default class ChameleonAlert extends LitElement {
    * Properties
    */
   @property({ type: String })
-  message = "this is a good alert box I built";
+  message = "";
 
   /**
    * Template
    */
   render(): TemplateResult {
     return html`
-      <div class="alert">
-        <span class="icon">${this.alertIcon}</span>
-        <span
-          class="closebtn"
-          onclick="this.parentElement.style.display='none';"
-          >&times;</span
-        >
-        <span class="message">${this.message}</span>
-      </div>
+      <span class="icon">${this.alertIcon}</span>
+      <span class="message">${this.message}</span>
+      <span class="closebtn" onclick="element.parentNode.removeChild()"
+        >${this.closeIcon}</span
+      >
     `;
   }
 
@@ -56,6 +52,24 @@ export default class ChameleonAlert extends LitElement {
       </circle>
       <line x1="12" y1="8" x2="12" y2="12"></line>
       <line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
+  `;
+  }
+
+  get closeIcon(): SVGTemplateResult {
+    return svg`
+      <svg xmlns="http://www.w3.org/2000/svg" 
+      width="24" 
+      height="24" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      stroke-width="2" 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      class="feather feather-x">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
   `;
   }
