@@ -31,7 +31,24 @@ export default css`
   }
 
   #image-preview {
-    overflow: hidden;
+    position: relative;
+  }
+
+  #image-preview svg {
+    height: 25px;
+    width: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--color-gray-lightest, #e1e3e4);
+    border-radius: 50%;
+    padding: 2px;
+  }
+
+  #remove-button {
+    cursor: pointer;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 0;
   }
 
   .image-preview-container {
@@ -40,6 +57,7 @@ export default css`
 
   #uploader {
     border-radius: 0.3125rem;
+    align-items: flex-end;
   }
 
   .upload-label {

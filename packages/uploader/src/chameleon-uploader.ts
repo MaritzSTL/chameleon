@@ -5,7 +5,7 @@ import {
   property,
   html
 } from "lit-element";
-import { nothing } from "lit-html";
+import { nothing, SVGTemplateResult, svg } from "lit-html";
 import base from "@chameleon-ds/theme/base";
 import style from "./chameleon-uploader-style";
 import "@chameleon-ds/button/src/chameleon-button";
@@ -35,112 +35,21 @@ export default class ChameleonUploader extends LitElement {
   @property({ type: ArrayBuffer })
   img = {} as ArrayBuffer;
 
+  @property({ type: Boolean })
+  showPreviewImage = false;
+
   /**
    * Template
    */
   render(): TemplateResult {
     return html`
-      <div class="cha-uploader">
-        <div
-          id="#drop-zone"
-          class="upload-container"
-          @drop="${this.dropHandler}"
-          @dragover="${this.dragOverHandler}"
-          @dragend="${this.dragEndHandler}"
-        >
-          <label class="upload-label">
-            ${this.fileName
-              ? html`
-                  ${this.fileName}
-                  <chameleon-button
-                    id="remove-button"
-                    theme="text"
-                    @click="${this.removeFile}"
-                  >
-                    <span class="upload-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-trash-2"
-                      >
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path
-                          d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-                        ></path>
-                        <line x1="10" y1="11" x2="10" y2="17"></line>
-                        <line x1="14" y1="11" x2="14" y2="17"></line>
-                      </svg>
-                    </span>
-                  </chameleon-button>
-                `
-              : html`
-                  <span class="upload-icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="feather feather-image"
-                    >
-                      <rect
-                        x="3"
-                        y="3"
-                        width="18"
-                        height="18"
-                        rx="2"
-                        ry="2"
-                      ></rect>
-                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                      <polyline points="21 15 16 10 5 21"></polyline>
-                    </svg>
-                  </span>
-                  ${this.label}
-                  <chameleon-button
-                    id="file-button"
-                    theme="text"
-                    @click="${this.onGetFile}"
-                    >Browse Files</chameleon-button
-                  >
-                `}
-          </label>
-
-          <label class="file-label">
-            <input
-              id="file"
-              name="files[]"
-              type="file"
-              class="file-input"
-              accept="image/*"
-              @change="${($event: any) =>
-                this.onInputChange($event.target.files)}"
-            />
-
-            <span class="file-control"></span>
-          </label>
-        </div>
-        <div class="image-preview-container">
-          <div id="image-preview">
-            ${this.img
-              ? html`
-                  <img src="${this.img}" />
-                `
-              : nothing}
-          </div>
-        </div>
-      </div>
-      <slot></slot>
+      ${this.showPreviewImage
+        ? html`
+            ${this.renderImagePreview()}
+          `
+        : html`
+            ${this.renderDragZone()}
+          `}
     `;
   }
 
@@ -157,8 +66,10 @@ export default class ChameleonUploader extends LitElement {
 
       this.__handleFileUpload(selectedFile);
       this.fileName = selectedFile.name;
+      this.showPreviewImage = true;
     } else {
       // TODO: Add chameleon-alert message
+      this.showPreviewImage = false;
       console.error(
         files.length === 0 ? "No file was uploaded" : "Only one file at a time"
       );
@@ -170,8 +81,7 @@ export default class ChameleonUploader extends LitElement {
   }
 
   removeFile() {
-    // TODO(nodza): Handle delete button
-    console.log("File removed");
+    this.showPreviewImage = false;
   }
 
   dropHandler(ev: any) {
@@ -223,10 +133,12 @@ export default class ChameleonUploader extends LitElement {
 
     reader.onload = () => {
       this.img = reader.result as ArrayBuffer;
+      this.showPreviewImage = true;
       // TODO(nodza): Emit an event to indicate upload successfully complete
     };
 
     reader.onloadend = () => {
+      this.showPreviewImage = true;
       console.log("Mission accomplished");
     };
 
@@ -242,5 +154,87 @@ export default class ChameleonUploader extends LitElement {
 
   __checkFileType(type: string): boolean {
     return this.acceptedFileTypes.includes(type);
+  }
+
+  get removeIcon(): SVGTemplateResult | TemplateResult {
+    return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+  }
+
+  renderImagePreview() {
+    return html`
+      <div class="image-preview-container">
+        <div id="image-preview">
+          <chameleon-button
+            id="remove-button"
+            icon-only
+            theme="text"
+            @click="${this.removeFile}"
+            >${this.removeIcon}</chameleon-button
+          >
+          ${this.showPreviewImage
+            ? html`
+                <img src="${this.img}" />
+              `
+            : nothing}
+        </div>
+      </div>
+    `;
+  }
+
+  renderDragZone() {
+    return html`
+      <div class="cha-uploader">
+        <div
+          id="#drop-zone"
+          class="upload-container"
+          @drop="${this.dropHandler}"
+          @dragover="${this.dragOverHandler}"
+          @dragend="${this.dragEndHandler}"
+        >
+          <label class="upload-label">
+            <span class="upload-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-image"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+            </span>
+            ${this.label}
+            <chameleon-button
+              id="file-button"
+              theme="text"
+              @click="${this.onGetFile}"
+              >Open File Selector</chameleon-button
+            >
+          </label>
+
+          <label class="file-label">
+            <input
+              id="file"
+              name="files[]"
+              type="file"
+              class="file-input"
+              accept="image/*"
+              @change="${($event: any) =>
+                this.onInputChange($event.target.files)}"
+            />
+
+            <span class="file-control"></span>
+          </label>
+        </div>
+      </div>
+      <slot></slot>
+    `;
   }
 }
