@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/card",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Chameleon card",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,11 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-card.js",
-  "module": "dist/chameleon-card.js",
+  "main": "src/chameleon-card.js",
+  "module": "src/chameleon-card.js",
   "files": [
-    "/src/",
-    "/dist/"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/button",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Chameleon button",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,11 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-button.js",
-  "module": "dist/chameleon-button.js",
+  "main": "src/chameleon-button.js",
+  "module": "src/chameleon-button.js",
   "files": [
-    "/src/",
-    "/dist/"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -23,7 +22,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/loader": "^1.1.1",
+    "@chameleon-ds/loader": "^1.2.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
