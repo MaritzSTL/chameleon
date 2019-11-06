@@ -1,6 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "../src/chameleon-sheet";
+import "@chameleon-ds/sheet/src/chameleon-sheet";
 
 const fixture = html`
   <chameleon-sheet></chameleon-sheet>
@@ -24,7 +24,7 @@ describe("chameleon-sheet", () => {
 
     expect(element).shadowDom.to.equal(`
       <header class="head-container">
-        <div class="close-icon"></div>
+        <chameleon-button class="close-icon" href="" icon-only="" theme="text"></chameleon-button>
         <h3 class="header"></h3>
         <slot name="details"></slot>
       </header>

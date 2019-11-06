@@ -1,6 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
-import "../src/chameleon-card";
-import ChameleonCard from "../src/chameleon-card";
+import "@chameleon-ds/card/src/chameleon-card";
+import ChameleonCard from "@chameleon-ds/card/src/chameleon-card";
 
 describe("chameleon-card", () => {
   it("renders", async () => {
