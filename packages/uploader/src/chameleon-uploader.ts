@@ -33,7 +33,7 @@ export default class ChameleonUploader extends LitElement {
   acceptedFileTypes = ["image/gif", "image/jpeg", "image/png"];
 
   @property({ type: ArrayBuffer })
-  img;
+  img = {} as ArrayBuffer;
 
   /**
    * Template
@@ -44,15 +44,9 @@ export default class ChameleonUploader extends LitElement {
         <div
           id="#drop-zone"
           class="upload-container"
-          @drop="${(e: any) => {
-            this.dropHandler(e);
-          }}"
-          @dragover="${(e: any) => {
-            this.dragOverHandler(e);
-          }}"
-          @dragend="${(e: any) => {
-            this.dragEndHandler(e);
-          }}"
+          @drop="${this.dropHandler}"
+          @dragover="${this.dragOverHandler}"
+          @dragend="${this.dragEndHandler}"
         >
           <label class="upload-label">
             ${this.fileName
@@ -150,17 +144,15 @@ export default class ChameleonUploader extends LitElement {
     `;
   }
 
-  onInputChange(files: FileList) {
+  onInputChange(files: FileList): void {
     if (files.length === 1) {
       const selectedFile = files[0];
 
       if (!this.__checkFileSize(selectedFile.size)) {
         console.error(`File must not exeed ${this.maxFileSize}`);
-        return false;
       } else if (!this.__checkFileType(selectedFile.type)) {
         // TODO: Add chameleon-alert message
         console.error("This file type is not allowed");
-        return false;
       }
 
       this.__handleFileUpload(selectedFile);
@@ -170,12 +162,11 @@ export default class ChameleonUploader extends LitElement {
       console.error(
         files.length === 0 ? "No file was uploaded" : "Only one file at a time"
       );
-      return false;
     }
   }
 
   onGetFile() {
-    this.shadowRoot!.getElementById("file").click();
+    this.shadowRoot!.getElementById("file")!.click();
   }
 
   removeFile() {
@@ -231,7 +222,7 @@ export default class ChameleonUploader extends LitElement {
     };
 
     reader.onload = () => {
-      this.img = reader.result;
+      this.img = reader.result as ArrayBuffer;
       // TODO(nodza): Emit an event to indicate upload successfully complete
     };
 
@@ -250,6 +241,6 @@ export default class ChameleonUploader extends LitElement {
   }
 
   __checkFileType(type: string): boolean {
-    return type && this.acceptedFileTypes.includes(type);
+    return this.acceptedFileTypes.includes(type);
   }
 }
