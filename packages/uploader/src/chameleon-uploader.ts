@@ -82,6 +82,7 @@ export default class ChameleonUploader extends LitElement {
 
   removeFile() {
     this.showPreviewImage = false;
+    this.img = {} as ArrayBuffer;
   }
 
   dropHandler(ev: any) {
