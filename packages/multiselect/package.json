@@ -12,8 +12,7 @@
   "main": "chameleon-multiselect.js",
   "module": "chameleon-multiselect.js",
   "files": [
-    "/src/",
-    "/dist/"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -23,7 +22,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/chip": "^0.4.1",
+    "@chameleon-ds/chip": "^0.5.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
