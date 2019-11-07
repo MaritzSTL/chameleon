@@ -7,9 +7,10 @@ export default css`
     --button-padding: 0.75rem 1.375rem;
     --input-padding: 0.625rem 0.5rem;
     --textarea-padding: 0.438rem 0.813rem;
+    --multiselect-padding: 0.438rem 0.5rem;
 
     --color-surface: #ffffff;
-    --color-black: #000000;
+    --color-black: #252a33;
     --color-background: #f5f5f8;
     --color-primary: #2c6fb7;
     --color-primary-light: #679dea;
