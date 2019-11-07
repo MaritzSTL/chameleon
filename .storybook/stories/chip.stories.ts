@@ -28,7 +28,7 @@ stories.add(
   () => {
     const valueText = text("Value", "Crunchy");
     document.addEventListener("remove-chip", e =>
-      console.log((<CustomEvent>e).detail.value)
+      console.log("Chameleon Chip Close Event: ", (<CustomEvent>e).detail.value)
     );
 
     return html`
