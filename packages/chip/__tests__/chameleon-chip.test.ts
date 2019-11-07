@@ -1,5 +1,5 @@
 import { fixture, html, expect } from "@open-wc/testing";
-import "../src/chameleon-chip";
+import "@chameleon-ds/chip/src/chameleon-chip";
 
 describe("chameleon-chip", () => {
   it("renders", async () => {
