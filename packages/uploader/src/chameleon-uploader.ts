@@ -212,9 +212,15 @@ export default class ChameleonUploader extends LitElement {
 
     reader.onloadend = () => {
       this.showPreviewImage = true;
-      console.log("Mission accomplished");
-      debugger;
-      // TODO(nodza): Emit an event to indicate upload successfully complete
+      this.dispatchEvent(
+        new CustomEvent("file-loaded", {
+          detail: {
+            fileName: this.fileName
+          },
+          bubbles: true,
+          composed: true
+        })
+      );
     };
 
     reader.onerror = err => {
