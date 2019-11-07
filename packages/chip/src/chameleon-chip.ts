@@ -58,12 +58,11 @@ export default class ChameleonChip extends LitElement {
     if (this._value !== "") {
       return this._value;
     } else {
-      // return this.shadowRoot!.querySelectorAll("slot")[0].slot;
-      return "";
+      return this.innerText;
     }
   }
 
-  set value(val: string) {
-    this._value = val;
+  set value(value: string) {
+    this._value = value;
   }
 }
