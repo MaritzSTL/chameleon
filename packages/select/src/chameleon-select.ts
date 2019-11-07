@@ -284,7 +284,9 @@ export default class ChameleonSelect extends LitElement {
     // it will reopen the optionsList
     e.stopPropagation();
 
-    const option = this.options.find(option => option.value === value!.getAttribute("value");
+    const option = this.options.find(
+      option => option.value === value!.getAttribute("value")
+    );
     this.selectedOption = option || <SelectableOption>{};
 
     // Dispatch a change event
