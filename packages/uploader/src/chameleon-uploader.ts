@@ -82,6 +82,7 @@ export default class ChameleonUploader extends LitElement {
           class="upload-container"
           @drop="${this.dropHandler}"
           @dragover="${this.dragOverHandler}"
+          @dragleave="${this.dragLeaveHandler}"
           @dragend="${this.dragEndHandler}"
         >
           <label class="upload-label">
@@ -193,10 +194,29 @@ export default class ChameleonUploader extends LitElement {
   dragOverHandler(ev: any) {
     console.log("It's above me now");
     ev.preventDefault();
+    const dragArea = <HTMLElement>(
+      this.shadowRoot!.querySelector(".upload-container")
+    );
+    dragArea!.style.borderColor = "var(--color-gray-lightest, #e1e3e4)";
+    dragArea!.style.borderStyle = "dashed";
+    dragArea!.style.borderWidth = "medium";
+    dragArea!.style.color = "var(--color-gray-darkest, #6c737a)";
+  }
+
+  dragLeaveHandler(ev: any) {
+    ev.preventDefault();
+    const dragArea = <HTMLElement>(
+      this.shadowRoot!.querySelector(".upload-container")
+    );
+    dragArea!.style.borderColor = "";
+    dragArea!.style.borderStyle = "";
+    dragArea!.style.borderWidth = "";
+    dragArea!.style.color = "";
   }
 
   dragEndHandler(ev: any) {
     console.log("Drag ended");
+    debugger;
     ev.dataTransfer.setData("text", ev.target.id);
   }
 
