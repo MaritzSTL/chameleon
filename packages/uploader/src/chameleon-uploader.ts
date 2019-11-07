@@ -191,6 +191,7 @@ export default class ChameleonUploader extends LitElement {
   }
 
   dragOverHandler(ev: any) {
+    console.log("It's above me now");
     ev.preventDefault();
   }
 
