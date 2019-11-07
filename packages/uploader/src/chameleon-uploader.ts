@@ -53,114 +53,6 @@ export default class ChameleonUploader extends LitElement {
     `;
   }
 
-  onInputChange(files: FileList): void {
-    if (files.length === 1) {
-      const selectedFile = files[0];
-
-      if (!this.__checkFileSize(selectedFile.size)) {
-        console.error(`File must not exeed ${this.maxFileSize}`);
-      } else if (!this.__checkFileType(selectedFile.type)) {
-        // TODO: Add chameleon-alert message
-        console.error("This file type is not allowed");
-      }
-
-      this.__handleFileUpload(selectedFile);
-      this.fileName = selectedFile.name;
-      this.showPreviewImage = true;
-    } else {
-      // TODO: Add chameleon-alert message
-      this.showPreviewImage = false;
-      console.error(
-        files.length === 0 ? "No file was uploaded" : "Only one file at a time"
-      );
-    }
-  }
-
-  onGetFile() {
-    this.shadowRoot!.getElementById("file")!.click();
-  }
-
-  removeFile() {
-    this.showPreviewImage = false;
-    this.img = {} as ArrayBuffer;
-  }
-
-  dropHandler(ev: any) {
-    console.log("File(s) dropped");
-
-    // Prevent default behavior (Prevent file from being opened)
-    ev.preventDefault();
-
-    if (ev.dataTransfer.items) {
-      // Use DataTransferItemList interface to access the file(s)
-      for (var i = 0; i < ev.dataTransfer.items.length; i++) {
-        // If dropped items aren't files, reject them
-        if (ev.dataTransfer.items[i].kind === "file") {
-          var file = ev.dataTransfer.items[i].getAsFile();
-          this.__handleFileUpload(file);
-        }
-      }
-    } else {
-      // Use DataTransfer interface to access the file(s)
-      for (var i = 0; i < ev.dataTransfer.files.length; i++) {
-        this.fileName = ev.dataTransfer.files[i].name;
-      }
-    }
-  }
-
-  dragStartHandler(ev: any) {
-    console.log("Drag started");
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
-
-  dragOverHandler(ev: any) {
-    // console.log("File(s) in drop zone");
-
-    // Prevent default behavior (Prevent file from being opened)
-    ev.preventDefault();
-  }
-
-  dragEndHandler(ev: any) {
-    console.log("Drag ended");
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
-
-  __handleFileUpload(file: File) {
-    const reader = new FileReader();
-
-    reader.onloadstart = () => {
-      console.log("Initiating upload...");
-    };
-
-    reader.onload = () => {
-      this.img = reader.result as ArrayBuffer;
-      this.showPreviewImage = true;
-      // TODO(nodza): Emit an event to indicate upload successfully complete
-    };
-
-    reader.onloadend = () => {
-      this.showPreviewImage = true;
-      console.log("Mission accomplished");
-    };
-
-    reader.onerror = err => {
-      console.error("Uhh. What had happened was...", err);
-    };
-    reader.readAsDataURL(file);
-  }
-
-  __checkFileSize(size: number): boolean {
-    return size / this.maxFileSize / this.maxFileSize <= this.maxFileSize;
-  }
-
-  __checkFileType(type: string): boolean {
-    return this.acceptedFileTypes.includes(type);
-  }
-
-  get removeIcon(): SVGTemplateResult | TemplateResult {
-    return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
-  }
-
   renderImagePreview() {
     return html`
       <div class="image-preview-container">
@@ -169,7 +61,7 @@ export default class ChameleonUploader extends LitElement {
             id="remove-button"
             icon-only
             theme="text"
-            @click="${this.removeFile}"
+            @click="${this.onRemoveFile}"
             >${this.removeIcon}</chameleon-button
           >
           ${this.showPreviewImage
@@ -237,5 +129,122 @@ export default class ChameleonUploader extends LitElement {
       </div>
       <slot></slot>
     `;
+  }
+
+  onInputChange(files: FileList): void {
+    if (files.length === 1) {
+      const selectedFile = files[0];
+      const approvedFileType = this.__checkFileType(selectedFile.type);
+
+      if (!this.__checkFileSize(selectedFile.size)) {
+        this.dispatchErrorMessage(`File must not exeed ${this.maxFileSize}`);
+      } else if (!this.__checkFileType(selectedFile.type)) {
+        this.dispatchErrorMessage("This file type is not allowed");
+      }
+
+      if (approvedFileType) {
+        this.__handleFileUpload(selectedFile);
+        this.fileName = selectedFile.name;
+        this.showPreviewImage = true;
+      } else {
+        this.showPreviewImage = false;
+      }
+    } else {
+      const errorMessage =
+        files.length === 0 ? "No file was uploaded" : "Only one file at a time";
+      this.dispatchErrorMessage(errorMessage);
+      this.showPreviewImage = false;
+      console.error(errorMessage);
+    }
+  }
+
+  onGetFile() {
+    this.shadowRoot!.getElementById("file")!.click();
+  }
+
+  onRemoveFile() {
+    this.showPreviewImage = false;
+    this.img = {} as ArrayBuffer;
+  }
+
+  dropHandler(ev: any) {
+    console.log("File(s) dropped");
+    ev.preventDefault();
+
+    if (ev.dataTransfer.items) {
+      for (var i = 0; i < ev.dataTransfer.items.length; i++) {
+        if (ev.dataTransfer.items[i].kind === "file") {
+          var file = ev.dataTransfer.items[i].getAsFile();
+          this.__handleFileUpload(file);
+        }
+      }
+    } else {
+      for (var i = 0; i < ev.dataTransfer.files.length; i++) {
+        this.fileName = ev.dataTransfer.files[i].name;
+      }
+    }
+  }
+
+  dragStartHandler(ev: any) {
+    console.log("Drag started");
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  dragOverHandler(ev: any) {
+    ev.preventDefault();
+  }
+
+  dragEndHandler(ev: any) {
+    console.log("Drag ended");
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  __handleFileUpload(file: File) {
+    const reader = new FileReader();
+
+    reader.onloadstart = () => {
+      console.log("Initiating upload...");
+    };
+
+    reader.onload = () => {
+      this.img = reader.result as ArrayBuffer;
+    };
+
+    reader.onloadend = () => {
+      this.showPreviewImage = true;
+      console.log("Mission accomplished");
+      debugger;
+      // TODO(nodza): Emit an event to indicate upload successfully complete
+    };
+
+    reader.onerror = err => {
+      console.error("Uhh. What had happened was...", err);
+    };
+    reader.readAsDataURL(file);
+  }
+
+  __checkFileSize(size: number): boolean {
+    return size / this.maxFileSize / this.maxFileSize <= this.maxFileSize;
+  }
+
+  __checkFileType(type: string): boolean {
+    return this.acceptedFileTypes.includes(type);
+  }
+
+  get removeIcon(): SVGTemplateResult | TemplateResult {
+    return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+  }
+
+  private dispatchErrorMessage(message: string): void {
+    console.log(message);
+    this.dispatchEvent(
+      new CustomEvent("uploader-error", {
+        detail: {
+          errorMessage: message
+        },
+        composed: true,
+        bubbles: true
+      })
+    );
   }
 }

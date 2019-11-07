@@ -12,10 +12,8 @@ stories.addDecorator(withKnobs as any);
 stories.add(
   "Single File",
   () => {
-    // const label = text("Label", "Upload a single file");
-
     return html`
-      <chameleon-uploader id="uploader"></chameleon-uploader>
+      <chameleon-uploader></chameleon-uploader>
     `;
   },
   { info: { inline: true } }
