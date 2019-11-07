@@ -2,30 +2,29 @@ import { css } from "lit-element";
 
 export default css`
   :host {
-    display: inline-block;
-    padding: 20px;
+    align-items: center;
+    background-color: var(--color-error-lightest, #f1d1d0);
+    border: 1px solid var(--color-error, #bc1c16);
     border-radius: var(--border-radius-input, 0.313rem);
-    background-color: var(--color-error-lightest, #fef0d1);
     color: var(--color-error, #bc1c16);
+    display: inline-flex;
+    padding: 14px 10px;
   }
 
   .closebtn {
-    margin: 0px 0px 0px 15px;
     color: var(--color-error, #bc1c16);
     cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .closebtn:hover {
-    color: black;
+    display: flex;
+    margin: 0px 0px 0px 15px;
   }
 
   .icon {
-    margin: 0px 15px 0px 0px;
     height: 24px;
+    margin: 0px 15px 0px 0px;
   }
 
-  .message: {
+  .message {
     font-size: var(--font-size-input, 0.938rem);
+    font-weight: 600;
   }
 `;
