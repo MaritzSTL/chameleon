@@ -7,8 +7,10 @@ import {
 } from "lit-element";
 import { svg, nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map.js";
-
 import { isEqual } from "lodash";
+
+import "@chameleon-ds/multiselect/src/chameleon-multiselect";
+import "@chameleon-ds/paginator/src/chameleon-paginator";
 
 import style from "./chameleon-filterable-table-style";
 
@@ -136,7 +138,7 @@ export default class ChameleonFilterableTable extends LitElement {
 
               ${this.getColumnSort(column)}
             </div>
-            Filterable Search
+            <chameleon-multiselect></chameleon-multiselect>
             <!-- <chameleon-filterable-search
               .items=""
               .placeholder="${column.filterableSearchPlaceholder}"
