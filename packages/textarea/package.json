@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/textarea",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Chameleon textarea",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,11 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-textarea.js",
-  "module": "dist/chameleon-textarea.js",
+  "main": "src/chameleon-textarea.js",
+  "module": "src/chameleon-textarea.js",
   "files": [
-    "/src/",
-    "/dist/"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

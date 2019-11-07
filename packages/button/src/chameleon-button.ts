@@ -8,7 +8,7 @@ import {
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import style from "./chameleon-button-style";
-import "@chameleon-ds/loader";
+import "@chameleon-ds/loader/src/chameleon-loader";
 
 @customElement("chameleon-button")
 export default class ChameleonButton extends LitElement {
