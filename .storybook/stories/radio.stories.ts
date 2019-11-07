@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
-import { html } from "lit-element";
-import "../../packages/radio/src/chameleon-radio";
+import { html } from "lit-html";
+import "@chameleon-ds/radio/src/chameleon-radio";
 
 const stories = storiesOf("Radio", module);
 

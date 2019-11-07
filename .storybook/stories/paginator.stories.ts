@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, number } from "@storybook/addon-knobs";
 import { html } from "lit-html";
-import "../../packages/paginator/src/chameleon-paginator";
+import "@chameleon-ds/paginator/src/chameleon-paginator";
 
 const stories = storiesOf("Paginator", module);
 

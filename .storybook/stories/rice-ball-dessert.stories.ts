@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, text } from "@storybook/addon-knobs";
-import { html } from "lit-element";
-import "../../packages/rice-ball-dessert/src/chameleon-rice-ball-dessert";
+import { html } from "lit-html";
+import "@chameleon-ds/rice-ball-dessert/src/chameleon-rice-ball-dessert";
 
 const stories = storiesOf("Rice Ball Dessert", module);
 

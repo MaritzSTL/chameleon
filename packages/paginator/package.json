@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/paginator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Chameleon paginator",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,18 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "index.js",
-  "module": "index.js",
+  "main": "src/chameleon-paginator.js",
+  "module": "src/chameleon-paginator.js",
   "files": [
-    "/src/",
-    "/chameleon-paginator-style.d.ts",
-    "/chameleon-paginator-style.d.ts.map",
-    "/chameleon-paginator-style.js",
-    "/chameleon-paginator-style.js.map",
-    "/chameleon-paginator.d.ts",
-    "/chameleon-paginator.d.ts.map",
-    "/chameleon-paginator.js",
-    "/chameleon-paginator.js.map"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -30,7 +22,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/button": "^1.0.0",
+    "@chameleon-ds/button": "^1.1.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {

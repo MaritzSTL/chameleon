@@ -102,7 +102,8 @@ export default class ChameleonInput extends LitElement {
       >
         <div
           class="${classMap({
-            "label-row": true
+            "label-row": true,
+            "split-row": this.toggleable
           })}"
         >
           ${this.labelText}${this.toggleText}

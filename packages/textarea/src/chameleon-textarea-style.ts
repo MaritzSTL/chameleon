@@ -13,6 +13,10 @@ export default css`
     padding: var(--textarea-padding, 0.438rem 0.813rem);
   }
 
+  textarea[nonresizeable] {
+    resize: none;
+  }
+
   label {
     color: var(--color-gray-darkest, #6c737a);
     font-size: var(--font-size-label, 0.875rem);

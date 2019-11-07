@@ -71,6 +71,10 @@ export default class ChameleonTextarea extends LitElement {
   @property({ type: String })
   validationMessage = "";
 
+  // Prevents users from manualy changing the size of the textarea
+  @property({ type: Boolean })
+  nonresizeable = false;
+
   /**
    * Styles
    */
@@ -95,6 +99,7 @@ export default class ChameleonTextarea extends LitElement {
         ?required="${this.required}"
         rows="${this.rows}"
         spellcheck="${this.spellcheck}"
+        ?nonresizeable="${this.nonresizeable}"
         @blur="${this._handleBlur}"
         @invalid="${this._handleInvalid}"
         @input="${this._handleInput}"

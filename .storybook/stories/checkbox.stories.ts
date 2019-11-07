@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
-import { html } from "lit-element";
-import "../../packages/checkbox/src/chameleon-checkbox";
+import { html } from "lit-html";
+import "@chameleon-ds/checkbox/src/chameleon-checkbox";
 
 const stories = storiesOf("Checkbox", module);
 
