@@ -24,13 +24,6 @@ export default class ChameleonSelect extends LitElement {
     });
   }
 
-  /**
-   * Lifecycle Events
-   */
-  // firstUpdated(): void {
-  //   if (this._value !== undefined) this.setSelection(this._value);
-  // }
-
   updated(changedProperties: PropertyValues) {
     if (changedProperties.has("_value")) {
       this.setSelection(this._value);
@@ -77,6 +70,9 @@ export default class ChameleonSelect extends LitElement {
 
   @property({ type: String })
   _value = "";
+
+  @property({ type: String })
+  placeHolder = "";
 
   @property({ type: Boolean })
   active = false;
@@ -232,7 +228,7 @@ export default class ChameleonSelect extends LitElement {
       `;
     } else {
       return html`
-        <span class="chameleon-select placeholder">Select an option...</span>
+        <span class="chameleon-select placeholder">${this.placeHolder}</span>
       `;
     }
   }
@@ -304,7 +300,7 @@ export default class ChameleonSelect extends LitElement {
 
   /**
    * Directly sets the canonical value of the selector
-   * @param {Array<string> | string} value - The canonical value to be set
+   * @param {string | SelectableOption} value - The canonical value to be set
    */
   setSelection(value: string | SelectableOption) {
     if (value === "" || value === undefined) return; // Early return if no value or empty value

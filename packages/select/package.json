@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/select",
-  "version": "0.4.1",
+  "version": "0.1.0",
   "description": "Chameleon select",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -12,11 +12,7 @@
   "main": "chameleon-select.js",
   "module": "chameleon-select.js",
   "files": [
-    "/src/",
-    "/chameleon-select.d.ts",
-    "/chameleon-select.d.ts.map",
-    "/chameleon-select.js",
-    "/chameleon-select.js.map"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

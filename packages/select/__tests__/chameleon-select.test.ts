@@ -1,6 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 
-import "../src/chameleon-select";
+import "@chameleon-ds/select/src/chameleon-select";
 
 const fixture = html`
   <chameleon-select></chameleon-select>

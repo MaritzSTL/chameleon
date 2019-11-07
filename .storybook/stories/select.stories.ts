@@ -1,13 +1,13 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import { html } from "lit-html";
-import "../../packages/select/src/chameleon-select";
+import "@chameleon-ds/select/src/chameleon-select";
 
 const stories = storiesOf("Select", module);
 
 // Typecasting this as "any" is a quick workaround. Please come back
 // to this and make these types compatible.
-stories.addDecorator(withKnobs as any);
+stories.addDecorator(withKnobs);
 
 const exampleData = [
   {
@@ -81,10 +81,12 @@ const exampleData = [
 stories.add(
   "Basic",
   () => {
-    // const disabled = boolean("Disabled", false);
+    const placeHolder = text("Place Holder", "Please select an option");
 
     return html`
-      <chameleon-select .options="${exampleData}">select</chameleon-select>
+      <chameleon-select .options="${exampleData}" placeHolder="${placeHolder}"
+        >select</chameleon-select
+      >
     `;
   },
   { info: { inline: true } }
