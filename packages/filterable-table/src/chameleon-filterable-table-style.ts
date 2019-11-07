@@ -7,7 +7,6 @@ export default css`
     --row-hover-color: var(--color-surface, #ffffff);
     --row-highlight-color: var(--color-primary-light, #679dea);
 
-    background-color: var(--color-background, #f5f5f8);
     display: block;
     font-family: var(--font-family, sans-serif);
   }
