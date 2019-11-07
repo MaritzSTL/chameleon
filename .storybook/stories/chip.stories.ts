@@ -14,9 +14,10 @@ stories.addDecorator(withKnobs as any);
 stories.add(
   "Chip",
   () => {
-    const valueText = text("Label", "Salty");
+    const valueText = text("Value", "Salty");
+
     return html`
-      <chameleon-chip value="${valueText}"></chameleon-chip>
+      <chameleon-chip>${valueText}</chameleon-chip>
     `;
   },
   { info: { inline: true } }
@@ -25,10 +26,15 @@ stories.add(
 stories.add(
   "With Icon",
   () => {
-    const valueText = text("Label", "Crunchy");
+    const valueText = text("Value", "Crunchy");
+    document.addEventListener("remove-chip", e =>
+      console.log((<CustomEvent>e).detail.value)
+    );
 
     return html`
-      <chameleon-chip value="${valueText}" closeable></chameleon-chip>
+      <chameleon-chip .value="${valueText}" closeable
+        >${valueText}</chameleon-chip
+      >
     `;
   },
   { info: { inline: true } }

@@ -15,9 +15,6 @@ export default class ChameleonChip extends LitElement {
   /**
    * Properties
    */
-
-  // TODO(Nodza): Make chip closeable https://github.com/MaritzSTL/chameleon/issues/81
-  // A Boolean which, if true, indicates that the chip is closeable
   @property({ type: Boolean, reflect: true })
   closeable = false;
 
@@ -34,24 +31,22 @@ export default class ChameleonChip extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <span>
-        ${this._value}
-        <slot></slot>
-        ${this.closeable
-          ? html`
-              ${this.removeIcon}
-            `
-          : nothing}
-      </span>
+      <slot></slot>
+      ${this.closeable
+        ? html`
+            <span @click="${this._remove}">${this.removeIcon}</span>
+          `
+        : nothing}
     `;
   }
 
   _remove() {
     const e = new CustomEvent("remove-chip", {
-      detail: { value: this._value },
+      detail: { value: this.value },
       bubbles: true,
       composed: true
     });
+
     this.dispatchEvent(e);
   }
 
@@ -63,7 +58,8 @@ export default class ChameleonChip extends LitElement {
     if (this._value !== "") {
       return this._value;
     } else {
-      return this.shadowRoot!.querySelectorAll("slot")[0].slot;
+      // return this.shadowRoot!.querySelectorAll("slot")[0].slot;
+      return "";
     }
   }
 
