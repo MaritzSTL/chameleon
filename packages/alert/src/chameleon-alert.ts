@@ -29,10 +29,17 @@ export default class ChameleonAlert extends LitElement {
     return html`
       <span class="icon">${this.alertIcon}</span>
       <span class="message">${this.message}</span>
-      <span class="closebtn" onclick="element.parentNode.removeChild()"
+      <span id="closebtn" class="closebtn" @click="this.closeButton"
         >${this.closeIcon}</span
       >
     `;
+  }
+
+  closeButton(): any {
+    if (this.shadowRoot !== null) {
+      let close = this.shadowRoot.getElementById("closebtn");
+      close!.parentNode!.removeChild(close)!;
+    } else return;
   }
 
   get alertIcon(): SVGTemplateResult {
