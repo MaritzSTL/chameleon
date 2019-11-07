@@ -1,6 +1,5 @@
 import { litFixture, html, expect } from "@open-wc/testing";
-import sinon from "sinon";
-import "../src/chameleon-alert";
+import "@chameleon-ds/alert/src/chameleon-alert";
 
 const fixture = html`
   <chameleon-alert></chameleon-alert>
@@ -17,9 +16,12 @@ describe("chameleon-alert", () => {
     expect(Boolean(element.shadowRoot)).to.equal(true);
   });
 
-  it("_el returns null if shadowRoot is null", () => {
-    sinon.stub(element, "shadowRoot").get(() => null);
+  // TODO: this test passes when it shouldn't
+  xit("handle close removes the element from the DOM", async () => {
+    // element.handleClose();
+    // element.requestUpdate();
+    // await element.updateComplete;
 
-    expect(element._el).to.be.null;
+    expect(element).lightDom.to.equal("");
   });
 });
