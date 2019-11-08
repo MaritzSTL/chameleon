@@ -38,7 +38,7 @@ export default class ChameleonButton extends LitElement {
 
   // Element has an href
   @property({ type: String, reflect: true })
-  "href" = "";
+  "href" = null;
 
   // Element should open href in new tab/window
   @property({ type: Boolean, reflect: true })
