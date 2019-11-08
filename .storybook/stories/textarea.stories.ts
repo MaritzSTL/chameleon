@@ -5,9 +5,7 @@ import "@chameleon-ds/textarea/src/chameleon-textarea";
 
 const stories = storiesOf("Textarea", module);
 
-// Typecasting this as "any" is a quick workaround. Please come back
-// to this and make these types compatible.
-stories.addDecorator(withKnobs as any);
+stories.addDecorator(withKnobs);
 
 stories.add(
   "Textarea",

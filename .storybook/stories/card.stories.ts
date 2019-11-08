@@ -9,9 +9,7 @@ import "@chameleon-ds/button/src/chameleon-button";
 
 const stories = storiesOf("Card", module);
 
-// Typecasting this as "any" is a quick workaround. Please come back
-// to this and make these types compatible.
-stories.addDecorator(withKnobs as any);
+stories.addDecorator(withKnobs);
 
 stories.addParameters({
   backgrounds: [
