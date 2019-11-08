@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs } from "@storybook/addon-knobs";
 import { html } from "lit-html";
-import "../../packages/uploader/src/chameleon-uploader";
+import "@chameleon-ds/uploader/src/chameleon-uploader";
 
 const stories = storiesOf("Uploader", module);
 
