@@ -1,16 +1,16 @@
 {
-  "name": "@chameleon-ds/chip",
-  "version": "1.0.0",
-  "description": "Chameleon chip",
+  "name": "@chameleon-ds/select",
+  "version": "0.1.0",
+  "description": "Chameleon select",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/chip#readme",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/select#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "src/chameleon-chip.js",
-  "module": "src/chameleon-chip.js",
+  "main": "chameleon-select.js",
+  "module": "chameleon-select.js",
   "files": [
     "/src/"
   ],
@@ -22,9 +22,10 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "lit-element": "^2.2.1"
+    "lit-element": "^2.2.0"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "0f8abecfe290971a220b969fc4d82fba4f6869ad"
 }

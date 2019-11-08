@@ -1,16 +1,16 @@
 {
-  "name": "@chameleon-ds/chip",
-  "version": "1.0.0",
-  "description": "Chameleon chip",
+  "name": "@chameleon-ds/alert",
+  "version": "0.1.0",
+  "description": "Chameleon alert",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/chip#readme",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/alert#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "src/chameleon-chip.js",
-  "module": "src/chameleon-chip.js",
+  "main": "src/chameleon-alert.js",
+  "module": "src/chameleon-alert.js",
   "files": [
     "/src/"
   ],
