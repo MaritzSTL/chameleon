@@ -12,7 +12,8 @@
   "main": "src/chameleon-multiselect.js",
   "module": "src/chameleon-multiselect.js",
   "files": [
-    "/src/"
+    "/src/",
+    "/types/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

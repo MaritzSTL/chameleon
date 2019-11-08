@@ -12,7 +12,8 @@
   "main": "src/chameleon-select.js",
   "module": "src/chameleon-select.js",
   "files": [
-    "/src/"
+    "/src/",
+    "/types/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
