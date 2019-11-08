@@ -2,6 +2,7 @@ import { css } from "lit-element";
 
 export default css`
   :host {
+    font-family: var(--font-family, sans-serif);
     display: block;
     box-sizing: border-box;
     position: relative;
@@ -17,29 +18,28 @@ export default css`
   }
 
   :host([disabled]) .svg-inline--fa {
-    color: var(--chameleon-select-color-gray, #c4c7ca);
+    color: var(--color-gray-light, #c4c7ca);
   }
 
   :host([disabled]) .options__option-selected {
-    color: var(--chameleon-select-color-gray, #c4c7ca);
+    color: var(--color-gray-light, #c4c7ca);
   }
 
   .container {
-    background: var(--chameleon-select-background-color, #ffffff);
-    border: 1px solid var(--chameleon-select-border-color, #e8e8e8);
-    border-radius: var(--chameleon-select-border-radius, 5px);
+    background: var(--color-surface, #ffffff);
+    border: 1px solid var(--color-gray-light, #c4c7ca);
+    border-radius: var(--border-radius, 5px);
     cursor: pointer;
     min-height: 40px;
   }
 
   .container.active {
     border-bottom: none;
-    border-radius: var(--chameleon-select-border-radius, 5px)
-      var(--chameleon-select-border-radius, 5px) 0 0;
+    border-radius: var(--border-radius, 5px) var(--border-radius, 5px) 0 0;
   }
 
   .tags {
-    padding: var(--chameleon-select-container-padding, 15px);
+    padding: var(--input-padding, 15px);
     padding-right: 40px;
   }
 
@@ -59,13 +59,13 @@ export default css`
   }
 
   .search {
-    padding: var(--chameleon-select-container-padding, 15px);
+    padding: var(--input-padding, 15px);
   }
 
   .search__input {
-    border: 1px solid var(--chameleon-select-color-gray, #c4c7ca);
+    border: 1px solid var(--color-gray-light, #c4c7ca);
     border-radius: 5px;
-    font-size: 15px;
+    font-size: var(--font-size-input, 0.938rem);
     padding: 10px;
     width: 100%;
   }
@@ -75,7 +75,7 @@ export default css`
   }
 
   .placeholder {
-    color: var(--chameleon-select-color-gray-dark, #6c737a);
+    color: var(--color-gray-light-dark, #6c737a);
   }
 
   .options {
@@ -90,10 +90,9 @@ export default css`
   }
 
   .container.active .options {
-    border: 1px solid var(--chameleon-select-border-color, #e8e8e8);
+    border: 1px solid var(--color-gray-light, #c4c7ca);
     border-top: none;
-    border-radius: 0px 0px var(--chameleon-select-border-radius, 5px)
-      var(--chameleon-select-border-radius, 5px);
+    border-radius: 0px 0px var(--border-radius, 5px) var(--border-radius, 5px);
   }
 
   .options__list {
@@ -105,13 +104,13 @@ export default css`
   .options__option {
     align-items: center;
     display: flex;
-    padding: var(--chameleon-select-container-padding, 15px);
+    padding: var(--input-padding, 15px);
   }
 
   .options__option .svg-inline--fa,
   .options__option-selected .svg-inline--fa {
     height: 25px;
-    color: var(--chameleon-select-color-primary, #2c6fb7);
+    color: var(--color-primary, #2c6fb7);
   }
 
   .options__option:hover .svg-inline--fa {
@@ -143,8 +142,8 @@ export default css`
 
   .options__option-subLabel {
     display: inline;
-    color: var(--gray-darkest, #6c737a);
-    font-size: 14px;
+    color: var(--color-gray-darkest, #6c737a);
+    font-size: var(--font-size-input, 0.938rem);
     margin: 5px 0;
   }
 
@@ -153,7 +152,7 @@ export default css`
   }
 
   .options__option:hover {
-    background-color: var(--chameleon-select-color-primary, #2c6fb7);
+    background-color: var(--color-primary, #2c6fb7);
     color: #ffffff;
   }
 
@@ -173,8 +172,8 @@ export default css`
 
   .options__option-startDateLabel,
   .options__option-endDateLabel {
-    color: var(--gray-darkest, #6c737a);
-    font-size: 12px;
+    color: var(--color-gray-darkest, #6c737a);
+    font-size: var(--font-size-input, 0.938rem);
     display: block;
   }
 `;
