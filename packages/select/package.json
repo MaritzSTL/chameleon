@@ -1,16 +1,16 @@
 {
-  "name": "@chameleon-ds/button",
-  "version": "1.1.1",
-  "description": "Chameleon button",
+  "name": "@chameleon-ds/select",
+  "version": "0.1.0",
+  "description": "Chameleon select",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/button#readme",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/select#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "src/chameleon-button.js",
-  "module": "src/chameleon-button.js",
+  "main": "chameleon-select.js",
+  "module": "chameleon-select.js",
   "files": [
     "/src/"
   ],
@@ -22,8 +22,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/loader": "^1.2.0",
-    "lit-element": "^2.2.1"
+    "lit-element": "^2.2.0"
   },
   "publishConfig": {
     "access": "public"
