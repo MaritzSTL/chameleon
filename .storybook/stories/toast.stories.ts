@@ -5,9 +5,7 @@ import "@chameleon-ds/toast/src/chameleon-toast";
 
 const stories = storiesOf("Toast", module);
 
-// Typecasting this as "any" is a quick workaround. Please come back
-// to this and make these types compatible.
-stories.addDecorator(withKnobs as any);
+stories.addDecorator(withKnobs);
 
 stories.add(
   "Toast",
