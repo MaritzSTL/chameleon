@@ -142,4 +142,9 @@ export default css`
     font-size: 0.75rem;
     margin-left: auto;
   }
+
+  ::slotted(svg) {
+    color: var(--color-gray-darkest, #6c737a);
+    height: 16px;
+  }
 `;

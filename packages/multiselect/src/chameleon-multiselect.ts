@@ -10,15 +10,22 @@ import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
 import style from "./chameleon-multiselect-style";
 import { SelectableOption, SelectionTarget } from "../types";
-import "@chameleon-ds/chip";
+import "@chameleon-ds/chip/src/chameleon-chip";
 
 @customElement("chameleon-multiselect")
 export default class ChameleonMultiselect extends LitElement {
+  constructor() {
+    super();
+    this.addEventListener("remove-chip", <EventListener>this.handleChipClose);
+  }
+
   /**
    * Lifecycle Methods
    */
-  firstUpdated(): void {
-    this.renderedOptions = this.options;
+  disconnectedCallback() {
+    this.removeEventListener("remove-chip", <EventListener>(
+      this.handleChipClose
+    ));
   }
 
   /**
@@ -27,11 +34,6 @@ export default class ChameleonMultiselect extends LitElement {
   // An array of the possible options to be selected
   @property({ type: Array, reflect: true })
   options = <Array<SelectableOption>>[];
-
-  // An array of the possible options to be selected, minus what's
-  // already been selected
-  @property({ type: Array, reflect: true })
-  renderedOptions = <Array<SelectableOption>>[];
 
   // An array of filtered options
   @property({ type: Array, reflect: true })
@@ -82,12 +84,15 @@ export default class ChameleonMultiselect extends LitElement {
             "tags-active": this.selectedOptions.length > 0
           })}"
           type="text"
-          placeholder="${this.placeholder}"
+          placeholder="${this.renderedOptions.length > 0
+            ? this.placeholder
+            : ""}"
           @focus="${this.setActive}"
           @input="${this.handleSearch}"
         />
       </div>
       ${this.optionsList}
+      <slot name="icon"></slot>
     `;
   }
 
@@ -173,12 +178,23 @@ export default class ChameleonMultiselect extends LitElement {
     return this.selectedOptions.length > 0
       ? this.selectedOptions.map(
           option => html`
-            <chameleon-chip data-value="${option.value}"
+            <chameleon-chip .value="${option.value}" closeable
               >${option.label}</chameleon-chip
             >
           `
         )
       : nothing;
+  }
+
+  /**
+   * An array of the possible options to be selected, minus what's
+   * already been selected
+   * @return {Array<SelectableOption>}
+   */
+  get renderedOptions(): Array<SelectableOption> {
+    return this.options.filter(
+      option => !this.selectedOptions.includes(option)
+    );
   }
 
   setActive(): void {
@@ -205,7 +221,6 @@ export default class ChameleonMultiselect extends LitElement {
 
     if (selection) {
       this.selectedOptions = [...this.selectedOptions, selection];
-      this.renderedOptions.splice(this.renderedOptions.indexOf(selection), 1);
     }
 
     // Dispatch a change event
@@ -232,5 +247,12 @@ export default class ChameleonMultiselect extends LitElement {
     this.filteredOptions = this.options.filter(option => {
       return option.label.toLowerCase().includes(query);
     });
+  }
+
+  private handleChipClose(e: CustomEvent): void {
+    // TODO: I feel like there's a way to make this more performant
+    this.selectedOptions = [
+      ...this.selectedOptions.filter(option => option.value !== e.detail.value)
+    ];
   }
 }
