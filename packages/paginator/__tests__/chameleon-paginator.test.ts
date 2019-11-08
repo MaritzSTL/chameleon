@@ -1,6 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "../src/chameleon-paginator";
+import "@chameleon-ds/paginator/src/chameleon-paginator";
 
 const fixture = html`
   <chameleon-paginator totalItems="100" pageSize="10"></chameleon-paginator>

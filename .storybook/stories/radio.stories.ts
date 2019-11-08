@@ -5,9 +5,7 @@ import "@chameleon-ds/radio/src/chameleon-radio";
 
 const stories = storiesOf("Radio", module);
 
-// Typecasting this as "any" is a quick workaround. Please come back
-// to this and make these types compatible.
-stories.addDecorator(withKnobs as any);
+stories.addDecorator(withKnobs);
 
 stories.add(
   "Radio",

@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/skeleton",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Chameleon skeleton",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,11 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-skeleton.js",
-  "module": "dist/chameleon-skeleton.js",
+  "main": "src/chameleon-skeleton.js",
+  "module": "src/chameleon-skeleton.js",
   "files": [
-    "/src/",
-    "/dist/"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
