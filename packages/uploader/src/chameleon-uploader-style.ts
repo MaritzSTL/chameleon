@@ -7,6 +7,7 @@ export default css`
     justify-content: center;
   }
   .cha-uploader {
+    box-sizing: border-box;
   }
 
   .upload-container {
@@ -70,5 +71,10 @@ export default css`
 
   input[type="file"] {
     display: none;
+  }
+
+  :host([drag-active]) .cha-uploader {
+    border: dashed 2px var(--color-gray-lightest, #e1e3e4);
+    color: var(--color-gray-darkest, #6c737a);
   }
 `;

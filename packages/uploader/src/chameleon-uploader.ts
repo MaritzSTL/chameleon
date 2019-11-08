@@ -194,24 +194,12 @@ export default class ChameleonUploader extends LitElement {
   dragOverHandler(ev: any) {
     console.log("It's above me now");
     ev.preventDefault();
-    const dragArea = <HTMLElement>(
-      this.shadowRoot!.querySelector(".upload-container")
-    );
-    dragArea!.style.borderColor = "var(--color-gray-lightest, #e1e3e4)";
-    dragArea!.style.borderStyle = "dashed";
-    dragArea!.style.borderWidth = "medium";
-    dragArea!.style.color = "var(--color-gray-darkest, #6c737a)";
+    this.setAttribute("drag-active", "");
   }
 
   dragLeaveHandler(ev: any) {
     ev.preventDefault();
-    const dragArea = <HTMLElement>(
-      this.shadowRoot!.querySelector(".upload-container")
-    );
-    dragArea!.style.borderColor = "";
-    dragArea!.style.borderStyle = "";
-    dragArea!.style.borderWidth = "";
-    dragArea!.style.color = "";
+    this.removeAttribute("drag-active");
   }
 
   dragEndHandler(ev: any) {
