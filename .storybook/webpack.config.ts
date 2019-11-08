@@ -17,5 +17,7 @@ module.exports = ({ config }: { config: webpack.Configuration }) => {
     "@chameleon-ds/button/src/chameleon-button";
   config!.resolve!.alias!["@chameleon-ds/skeleton"] =
     "@chameleon-ds/skeleton/src/chameleon-skeleton";
+  config!.resolve!.alias!["@chameleon-ds/chip"] =
+    "@chameleon-ds/chip/src/chameleon-chip";
   return config;
 };
