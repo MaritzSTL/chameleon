@@ -223,16 +223,7 @@ export default class ChameleonMultiselect extends LitElement {
       this.selectedOptions = [...this.selectedOptions, selection];
     }
 
-    // Dispatch a change event
-    this.dispatchEvent(
-      new CustomEvent("chameleon.select", {
-        detail: {
-          value: this.value
-        },
-        bubbles: true,
-        composed: true
-      })
-    );
+    this.dispatchChangeEvent();
 
     this.toggleActive();
   }
@@ -254,5 +245,19 @@ export default class ChameleonMultiselect extends LitElement {
     this.selectedOptions = [
       ...this.selectedOptions.filter(option => option.value !== e.detail.value)
     ];
+
+    this.dispatchChangeEvent();
+  }
+
+  private dispatchChangeEvent(): void {
+    this.dispatchEvent(
+      new CustomEvent("chameleon.select", {
+        detail: {
+          value: this.value
+        },
+        bubbles: true,
+        composed: true
+      })
+    );
   }
 }
