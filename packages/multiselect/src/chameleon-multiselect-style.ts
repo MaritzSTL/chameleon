@@ -82,6 +82,7 @@ export default css`
     position: absolute;
     top: calc(100% + 13px);
     width: 100%;
+    z-index: 1;
   }
 
   .options__list {
