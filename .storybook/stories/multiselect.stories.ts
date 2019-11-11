@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
+import { eventDetails } from "../utils";
 import { html, svg } from "lit-html";
 import "@chameleon-ds/multiselect/src/chameleon-multiselect";
 
@@ -75,6 +76,7 @@ stories.add(
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
+        @chameleon.select=${eventDetails.action("chameleon.select")}
       ></chameleon-multiselect>
     `;
   },
@@ -95,6 +97,7 @@ stories.add(
         .placeholder="${placeholder}"
         .options="${options}"
         .value="${["arch"]}"
+        @chameleon.select=${eventDetails.action("chameleon.select")}
       ></chameleon-multiselect>
     `;
   },
@@ -114,6 +117,7 @@ stories.add(
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
+        @chameleon.select=${eventDetails.action("chameleon.select")}
       >
         ${searchIcon("icon")}
       </chameleon-multiselect>

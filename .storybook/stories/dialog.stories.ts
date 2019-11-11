@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, boolean } from "@storybook/addon-knobs";
+import { eventDetails } from "../utils";
 import { html, svg } from "lit-html";
 import "../../packages/dialog/src/chameleon-dialog";
 
@@ -18,7 +19,11 @@ stories.add(
     const dismissible = boolean("Dismissible", true);
 
     return html`
-      <chameleon-dialog ?open="${dialogVisible}" ?dismissible="${dismissible}">
+      <chameleon-dialog
+        ?open="${dialogVisible}"
+        ?dismissible="${dismissible}"
+        @toggle-dialog=${eventDetails.action("toggle-dialog")}
+      >
         ${defaultIcon("icon")}
         <h1 slot="title">Title</h1>
         We’re sorry but your session has expired. You will need to log back in

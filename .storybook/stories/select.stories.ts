@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, text } from "@storybook/addon-knobs";
+import { eventDetails } from "../utils";
 import { html } from "lit-html";
 import "@chameleon-ds/select/src/chameleon-select";
 
@@ -84,9 +85,13 @@ stories.add(
     const placeHolder = text("Place Holder", "Please select an option");
 
     return html`
-      <chameleon-select .options="${exampleData}" placeHolder="${placeHolder}"
-        >select</chameleon-select
-      >
+      <chameleon-select
+        .options="${exampleData}"
+        placeHolder="${placeHolder}"
+        @chameleon.select=${eventDetails.action("chameleon.select")}
+        @chameleon-select.close=${eventDetails.action("chameleon-select.close")}
+        >select
+      </chameleon-select>
     `;
   },
   { info: { inline: true } }
