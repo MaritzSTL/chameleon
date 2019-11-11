@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@chameleon-ds/chip": "^1.0.0",
+    "@chameleon-ds/loader": "^1.2.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
