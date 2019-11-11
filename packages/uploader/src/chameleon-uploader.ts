@@ -77,7 +77,7 @@ export default class ChameleonUploader extends LitElement {
     return html`
       <div class="cha-uploader">
         <div
-          id="#drop-zone"
+          id="drop-zone"
           class="upload-container"
           @drop="${this.dropHandler}"
           @dragover="${this.dragOverHandler}"
@@ -165,10 +165,10 @@ export default class ChameleonUploader extends LitElement {
   onRemoveFile() {
     this.showPreviewImage = false;
     this.img = {} as ArrayBuffer;
+    this.removeAttribute("drag-active");
   }
 
   dropHandler(ev: any) {
-    console.log("File(s) dropped");
     ev.preventDefault();
 
     if (ev.dataTransfer.items) {
@@ -186,12 +186,10 @@ export default class ChameleonUploader extends LitElement {
   }
 
   dragStartHandler(ev: any) {
-    console.log("Drag started");
     ev.dataTransfer.setData("text", ev.target.id);
   }
 
   dragOverHandler(ev: any) {
-    console.log("It's above me now");
     ev.preventDefault();
     this.setAttribute("drag-active", "");
   }
@@ -202,8 +200,6 @@ export default class ChameleonUploader extends LitElement {
   }
 
   dragEndHandler(ev: any) {
-    console.log("Drag ended");
-    debugger;
     ev.dataTransfer.setData("text", ev.target.id);
   }
 
@@ -211,7 +207,12 @@ export default class ChameleonUploader extends LitElement {
     const reader = new FileReader();
 
     reader.onloadstart = () => {
-      console.log("Initiating upload...");
+      this.dispatchEvent(
+        new CustomEvent("load-initiated", {
+          bubbles: true,
+          composed: true
+        })
+      );
     };
 
     reader.onload = () => {
@@ -221,7 +222,7 @@ export default class ChameleonUploader extends LitElement {
     reader.onloadend = () => {
       this.showPreviewImage = true;
       this.dispatchEvent(
-        new CustomEvent("file-loaded", {
+        new CustomEvent("load-ended", {
           detail: {
             fileName: this.fileName
           },
@@ -232,7 +233,7 @@ export default class ChameleonUploader extends LitElement {
     };
 
     reader.onerror = err => {
-      console.error("Uhh. What had happened was...", err);
+      console.error("File load error!", err);
     };
     reader.readAsDataURL(file);
   }

@@ -73,7 +73,7 @@ export default css`
     display: none;
   }
 
-  :host([drag-active]) .cha-uploader {
+  :host([drag-active]) .upload-container {
     border: dashed 2px var(--color-gray-lightest, #e1e3e4);
     color: var(--color-gray-darkest, #6c737a);
   }
