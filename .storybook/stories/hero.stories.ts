@@ -1,13 +1,11 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, text, number, boolean } from "@storybook/addon-knobs";
 import { html } from "lit-html";
-import "../../packages/hero/src/chameleon-hero";
+import "@chameleon-ds/hero/src/chameleon-hero";
 
 const stories = storiesOf("Hero", module);
 
-// Typecasting this as "any" is a quick workaround. Please come back
-// to this and make these types compatible.
-stories.addDecorator(withKnobs as any);
+stories.addDecorator(withKnobs);
 
 stories.add(
   "CSS Gradient",

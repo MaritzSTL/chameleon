@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/radio",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Chameleon radio",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,18 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-radio.js",
-  "module": "chameleon-radio.js",
+  "main": "src/chameleon-radio.js",
+  "module": "src/chameleon-radio.js",
   "files": [
-    "/src/",
-    "/chameleon-radio-style.d.ts",
-    "/chameleon-radio-style.d.ts.map",
-    "/chameleon-radio-style.js",
-    "/chameleon-radio-style.js.map",
-    "/chameleon-radio.d.ts",
-    "/chameleon-radio.d.ts.map",
-    "/chameleon-radio.js",
-    "/chameleon-radio.js.map"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

@@ -1,0 +1,34 @@
+{
+  "name": "@chameleon-ds/multiselect",
+  "version": "0.2.0",
+  "description": "Chameleon multiselect",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/multiselect#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "src/chameleon-multiselect.js",
+  "module": "src/chameleon-multiselect.js",
+  "files": [
+    "/src/",
+    "/types/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "@chameleon-ds/chip": "^1.0.0",
+    "@chameleon-ds/loader": "^1.2.0",
+    "lit-element": "^2.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "0f8abecfe290971a220b969fc4d82fba4f6869ad"
+}

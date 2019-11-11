@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/hero",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Chameleon hero",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,18 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-hero.js",
-  "module": "chameleon-hero.js",
+  "main": "src/chameleon-hero.js",
+  "module": "src/chameleon-hero.js",
   "files": [
-    "/src/",
-    "/chameleon-hero-style.d.ts",
-    "/chameleon-hero-style.d.ts.map",
-    "/chameleon-hero-style.js",
-    "/chameleon-hero-style.js.map",
-    "/chameleon-hero.d.ts",
-    "/chameleon-hero.d.ts.map",
-    "/chameleon-hero.js",
-    "/chameleon-hero.js.map"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -30,7 +22,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/skeleton": "^1.0.0",
+    "@chameleon-ds/skeleton": "^1.1.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {

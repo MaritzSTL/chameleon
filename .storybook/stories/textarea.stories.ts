@@ -1,13 +1,11 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, boolean, text, number } from "@storybook/addon-knobs";
 import { html } from "lit-html";
-import "../../packages/textarea/src/chameleon-textarea";
+import "@chameleon-ds/textarea/src/chameleon-textarea";
 
 const stories = storiesOf("Textarea", module);
 
-// Typecasting this as "any" is a quick workaround. Please come back
-// to this and make these types compatible.
-stories.addDecorator(withKnobs as any);
+stories.addDecorator(withKnobs);
 
 stories.add(
   "Textarea",
@@ -20,6 +18,7 @@ stories.add(
     const maxlength = number("maxlength", 500);
     const rows = number("Rows", 2);
     const cols = number("Columns", 20);
+    const nonresizeable = boolean("non-resizeable", false);
 
     return html`
       <chameleon-textarea
@@ -31,6 +30,7 @@ stories.add(
         .maxlength="${maxlength}"
         .rows="${rows}"
         .cols="${cols}"
+        .nonresizeable="${nonresizeable}"
       ></chameleon-textarea>
     `;
   },

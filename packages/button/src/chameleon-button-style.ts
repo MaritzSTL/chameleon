@@ -28,19 +28,22 @@ export default css`
   }
 
   button {
-    display: flex;
-    justify-content: center;
     align-items: center;
     background-color: var(--color-primary, #2c6fb7);
-    border: 1px solid var(--color-primary, #2c6fb7);
     border-radius: var(--border-radius-input, 0.313rem);
+    border: 1px solid var(--color-primary, #2c6fb7);
     color: var(--color-surface, #ffffff);
     cursor: pointer;
-    font-size: var(--font-size-paragraph-medium, 0.938rem);
+    display: flex;
     font-family: var(--font-family, sans-serif);
+    font-weight: var(--font-weight, normal);
+    font-size: var(--font-size-paragraph-medium, 0.938rem);
+    justify-content: center;
     letter-spacing: var(--font-letter-spacing, 0.018rem);
     padding: var(--button-padding, 0.75rem 1.375rem);
+    position: relative;
     transition: all 150ms linear;
+    height: var(--button-height, 40px);
   }
 
   button:hover {
@@ -86,5 +89,18 @@ export default css`
 
   ::slotted([slot="icon-only"]) {
     padding: 0.1875rem;
+  }
+
+  slot[name="icon-loading"] > * {
+    height: calc(100% - 1rem);
+    margin: 0.5rem 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  /* If the loading icon is rendered, hide the rest of the button content */
+  slot[name="icon-loading"] ~ * {
+    visibility: hidden;
   }
 `;

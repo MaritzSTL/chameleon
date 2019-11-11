@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/chip",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Chameleon chip",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,18 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-chip.js",
-  "module": "chameleon-chip.js",
+  "main": "src/chameleon-chip.js",
+  "module": "src/chameleon-chip.js",
   "files": [
-    "/src/",
-    "/chameleon-chip-style.d.ts",
-    "/chameleon-chip-style.d.ts.map",
-    "/chameleon-chip-style.js",
-    "/chameleon-chip-style.js.map",
-    "/chameleon-chip.d.ts",
-    "/chameleon-chip.d.ts.map",
-    "/chameleon-chip.js",
-    "/chameleon-chip.js.map"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

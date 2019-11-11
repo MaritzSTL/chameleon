@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/tabs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Chameleon tabs",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,26 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "index.js",
-  "module": "index.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
   "files": [
-    "/src/",
-    "/chameleon-tabs-style.d.ts",
-    "/chameleon-tabs-style.d.ts.map",
-    "/chameleon-tabs-style.js",
-    "/chameleon-tabs-style.js.map",
-    "/chameleon-tab.d.ts",
-    "/chameleon-tab.d.ts.map",
-    "/chameleon-tab.js",
-    "/chameleon-tab.js.map",
-    "/chameleon-tabs.d.ts",
-    "/chameleon-tabs.d.ts.map",
-    "/chameleon-tabs.js",
-    "/chameleon-tabs.js.map",
-    "/index.d.ts",
-    "/index.d.ts.map",
-    "/index.js",
-    "/index.js.map"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
