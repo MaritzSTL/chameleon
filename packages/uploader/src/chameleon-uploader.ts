@@ -6,7 +6,6 @@ import {
   html
 } from "lit-element";
 import { nothing, SVGTemplateResult, svg } from "lit-html";
-import base from "@chameleon-ds/theme/base";
 import style from "./chameleon-uploader-style";
 import "@chameleon-ds/button/src/chameleon-button";
 
@@ -15,7 +14,7 @@ export default class ChameleonUploader extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Properties
