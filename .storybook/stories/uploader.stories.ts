@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import { html } from "lit-html";
 import "@chameleon-ds/uploader/src/chameleon-uploader";
 
@@ -12,8 +12,9 @@ stories.addDecorator(withKnobs as any);
 stories.add(
   "Single File",
   () => {
+    const label = text("Label", "Drag and Drop your file or");
     return html`
-      <chameleon-uploader></chameleon-uploader>
+      <chameleon-uploader label="${label}"></chameleon-uploader>
     `;
   },
   { info: { inline: true } }

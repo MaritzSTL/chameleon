@@ -122,7 +122,6 @@ export default class ChameleonUploader extends LitElement {
               @change="${($event: any) =>
                 this.onInputChange($event.target.files)}"
             />
-
             <span class="file-control"></span>
           </label>
         </div>
