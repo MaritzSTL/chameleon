@@ -30,6 +30,12 @@ export default class ChameleonDate extends LitElement {
   @property({ type: Object })
   date = new Date();
 
+  @property({ type: String })
+  placeholder = "";
+
+  @property({ type: String })
+  label = "";
+
   private startDay = 0;
   private weekDayValues = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
@@ -43,7 +49,13 @@ export default class ChameleonDate extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <chameleon-input type="text">${this.calendarIcon}</chameleon-input>
+      <chameleon-input
+        type="text"
+        .placeholder="${this.placeholder}"
+        .label="${this.label}"
+        @focus="${this.toggleActive}"
+        >${this.calendarIcon}</chameleon-input
+      >
       ${this.active ? this.overlay : nothing}
     `;
   }
@@ -107,5 +119,9 @@ export default class ChameleonDate extends LitElement {
 
   get calendarIcon(): SVGTemplateResult {
     return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" slot="icon-right"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`;
+  }
+
+  toggleActive(): void {
+    this.active = true;
   }
 }

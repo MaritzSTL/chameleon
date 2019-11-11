@@ -3,22 +3,31 @@ import { css } from "lit-element";
 export default css`
   :host {
     display: block;
+    max-width: 301px;
     position: relative;
+    width: 301px;
   }
 
   .overlay {
+    left: 0;
     position: absolute;
     top: calc(100% + 13px);
-    left: 0;
+    width: 100%;
   }
 
-  chameleon-input:focus + .overlay {
+  chameleon-input {
+    width: 100%;
   }
 
   .day-of-week,
   .date-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    --button-padding: 0;
+  }
+
+  .date-grid {
+    grid-template-rows: repeat(5, calc(301px / 7));
   }
 
   .date-grid.offset-1 chameleon-button:first-child {
@@ -47,5 +56,10 @@ export default css`
 
   .date-grid.offset-7 chameleon-button:first-child {
     grid-column: 7;
+  }
+
+  .date-grid chameleon-button {
+    display: flex;
+    justify-content: center;
   }
 `;
