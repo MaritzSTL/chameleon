@@ -63,6 +63,12 @@ export default class ChameleonMultiselect extends LitElement {
   @property({ type: String })
   placeholder = "";
 
+  @property({ type: Boolean, reflect: true })
+  instantSearch = false;
+
+  @property({ type: String })
+  instantSearchValue = "";
+
   /**
    * Styles
    */
@@ -234,10 +240,13 @@ export default class ChameleonMultiselect extends LitElement {
    */
   handleSearch(e: InputEvent): void {
     const query = (e.target! as HTMLInputElement).value.toLowerCase();
-
-    this.filteredOptions = this.options.filter(option => {
-      return option.label.toLowerCase().includes(query);
-    });
+    if (this.instantSearch) {
+      this.instantSearchValue = query;
+      this.dispatchSearchEvent();
+    } else
+      this.filteredOptions = this.options.filter(option => {
+        return option.label.toLowerCase().includes(query);
+      });
   }
 
   private handleChipClose(e: CustomEvent): void {
@@ -254,6 +263,18 @@ export default class ChameleonMultiselect extends LitElement {
       new CustomEvent("chameleon.select", {
         detail: {
           value: this.value
+        },
+        bubbles: true,
+        composed: true
+      })
+    );
+  }
+
+  private dispatchSearchEvent(): void {
+    this.dispatchEvent(
+      new CustomEvent("chameleon.search", {
+        detail: {
+          value: this.instantSearchValue
         },
         bubbles: true,
         composed: true

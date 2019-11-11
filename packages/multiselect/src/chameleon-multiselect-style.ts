@@ -109,7 +109,8 @@ export default css`
     margin-right: 10px;
   }
 
-  .options__option-preLabel img {
+  .options__option-preLabel img,
+  svg {
     border-radius: 50%;
     height: 34px;
     vertical-align: top;
