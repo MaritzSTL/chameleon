@@ -288,6 +288,7 @@ export default class ChameleonInput extends LitElement {
       </svg>
   `;
   }
+
   get eyeIcon(): SVGTemplateResult {
     return svg`
       <svg
@@ -306,6 +307,7 @@ export default class ChameleonInput extends LitElement {
       </svg>
     `;
   }
+
   get eyeOffIcon(): SVGTemplateResult {
     return svg`
       <svg
