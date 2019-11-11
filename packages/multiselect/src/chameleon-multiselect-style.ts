@@ -148,4 +148,9 @@ export default css`
     color: var(--color-gray-darkest, #6c737a);
     height: 16px;
   }
+
+  chameleon-loader {
+    height: 24px;
+    width: 24px;
+  }
 `;

@@ -11,6 +11,7 @@ import { repeat } from "lit-html/directives/repeat";
 import style from "./chameleon-multiselect-style";
 import { SelectableOption, SelectionTarget } from "../types";
 import "@chameleon-ds/chip/src/chameleon-chip";
+import "@chameleon-ds/loader/src/chameleon-loader";
 
 @customElement("chameleon-multiselect")
 export default class ChameleonMultiselect extends LitElement {
@@ -69,6 +70,9 @@ export default class ChameleonMultiselect extends LitElement {
   @property({ type: String })
   instantSearchValue = "";
 
+  @property({ type: Boolean, reflect: true })
+  loading = false;
+
   /**
    * Styles
    */
@@ -98,7 +102,13 @@ export default class ChameleonMultiselect extends LitElement {
         />
       </div>
       ${this.optionsList}
-      <slot name="icon"></slot>
+      ${this.loading
+        ? html`
+            <chameleon-loader loader="spinner" size="24px"></chameleon-loader>
+          `
+        : html`
+            <slot name="icon"></slot>
+          `}
     `;
   }
 
