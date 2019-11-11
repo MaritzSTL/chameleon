@@ -66,12 +66,14 @@ stories.add(
   "Multiselect",
   () => {
     const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
 
     return html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
@@ -85,12 +87,14 @@ stories.add(
   "Pre-Selected Values",
   () => {
     const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
 
     return html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
@@ -105,12 +109,14 @@ stories.add(
   "With Icon",
   () => {
     const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
 
     return html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
