@@ -732,14 +732,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@chameleon-ds/multiselect@^0.1.0":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@chameleon-ds/multiselect/-/multiselect-0.1.1.tgz#cafc74f704d5dd207c86ebf05fe4d8c9fb0c8006"
-  integrity sha512-Gn418UUKMS0pUXLPx8AsUfoAPZHuIxcadtPAumnuHgAiX6YWtcQxS8iP/SEFQyiG6CF0TR/wqQRV94eohDqkbA==
-  dependencies:
-    "@chameleon-ds/chip" "^1.0.0"
-    lit-element "^2.2.1"
-
 "@emotion/cache@^10.0.17", "@emotion/cache@^10.0.9":
   version "10.0.19"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.19.tgz#d258d94d9c707dcadaf1558def968b86bb87ad71"

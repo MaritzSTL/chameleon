@@ -30,8 +30,8 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/paginator": "^1.1.0",
-    "@chameleon-ds/multiselect": "^0.1.0",
+    "@chameleon-ds/paginator": "^1.1.1",
+    "@chameleon-ds/multiselect": "^0.2.0",
     "@types/lodash": "^4.14.144",
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2",
