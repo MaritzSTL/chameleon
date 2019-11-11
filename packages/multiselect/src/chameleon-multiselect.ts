@@ -210,7 +210,7 @@ export default class ChameleonMultiselect extends LitElement {
   get renderedOptions(): Array<SelectableOption> {
     return this.options.filter(option => {
       return !this.selectedOptions.some(selectedOption => {
-        return option.value == selectedOption.value;
+        return option.value === selectedOption.value;
       });
     });
   }
