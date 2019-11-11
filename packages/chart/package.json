@@ -9,18 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "chameleon-chart.js",
-  "module": "chameleon-chart.js",
+  "main": "src/chameleon-chart.js",
+  "module": "src/chameleon-chart.js",
   "files": [
-    "/src/",
-    "/chameleon-chart-style.d.ts",
-    "/chameleon-chart-style.d.ts.map",
-    "/chameleon-chart-style.js",
-    "/chameleon-chart-style.js.map",
-    "/chameleon-chart.d.ts",
-    "/chameleon-chart.d.ts.map",
-    "/chameleon-chart.js",
-    "/chameleon-chart.js.map"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs } from "@storybook/addon-knobs";
 import { html } from "lit-html";
-import "../../packages/chart/src/chameleon-chart";
+import "@chameleon-ds/chart/src/chameleon-chart";
 
 const stories = storiesOf("Chart", module);
 
