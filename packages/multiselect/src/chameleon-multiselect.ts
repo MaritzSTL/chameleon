@@ -256,7 +256,7 @@ export default class ChameleonMultiselect extends LitElement {
       this.instantSearchValue = query;
       this.dispatchSearchEvent();
     } else
-      this.filteredOptions = this.options.filter(option => {
+      this.filteredOptions = this.renderedOptions.filter(option => {
         return option.label.toLowerCase().includes(query);
       });
   }
