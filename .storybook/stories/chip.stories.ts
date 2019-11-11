@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, text } from "@storybook/addon-knobs";
+import { eventDetails } from "../utils";
 import { html } from "lit-html";
 import "@chameleon-ds/chip/src/chameleon-chip";
 
@@ -13,7 +14,9 @@ stories.add(
     const valueText = text("Value", "Salty");
 
     return html`
-      <chameleon-chip>${valueText}</chameleon-chip>
+      <chameleon-chip @remove-chip=${eventDetails.action("remove-chip")}
+        >${valueText}</chameleon-chip
+      >
     `;
   },
   { info: { inline: true } }
@@ -28,7 +31,10 @@ stories.add(
     );
 
     return html`
-      <chameleon-chip .value="${valueText}" closeable
+      <chameleon-chip
+        .value="${valueText}"
+        closeable
+        @remove-chip=${eventDetails.action("remove-chip")}
         >${valueText}</chameleon-chip
       >
     `;

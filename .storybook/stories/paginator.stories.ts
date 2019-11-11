@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, number } from "@storybook/addon-knobs";
+import { eventDetails } from "../utils";
 import { html } from "lit-html";
 import "@chameleon-ds/paginator/src/chameleon-paginator";
 
@@ -17,6 +18,7 @@ stories.add(
       <chameleon-paginator
         totalItems="${totalItems ? totalItems : 0}"
         pageSize="${pageSize ? pageSize : 0}"
+        @page-change=${eventDetails.action("page-change")}
       ></chameleon-paginator>
     `;
   },
