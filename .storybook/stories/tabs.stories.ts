@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs } from "@storybook/addon-knobs";
+import { eventDetails } from "../utils";
 import { html } from "lit-html";
 import "@chameleon-ds/tabs/src/index";
 
@@ -11,7 +12,10 @@ stories.add(
   "Tabs",
   () => {
     return html`
-      <chameleon-tabs selected="0">
+      <chameleon-tabs
+        selected="0"
+        @selected-changed=${eventDetails.action("selected-changed")}
+      >
         <chameleon-tab>
           Tab One
         </chameleon-tab>
