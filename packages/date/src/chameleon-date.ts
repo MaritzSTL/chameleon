@@ -100,7 +100,9 @@ export default class ChameleonDate extends LitElement {
           this.days,
           day =>
             html`
-              <chameleon-button theme="text">${day.getDate()}</chameleon-button>
+              <chameleon-button theme="secondary"
+                >${day.getDate()}</chameleon-button
+              >
             `
         )}
       </div>
