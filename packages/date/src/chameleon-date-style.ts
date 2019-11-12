@@ -60,15 +60,8 @@ export default css`
 
   .date-grid chameleon-button {
     --border-radius-input: 0;
-    --color-primary: var(--color-gray-light, #c4c7ca);
-    --color-primary-dark: var(--color-gray-dark, #9fa4a8);
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-  }
-
-  .date-grid chameleon-button {
-    border-left: 1px solid var(--color-gray-light, #c4c7ca);
-    border-top: 1px solid var(--color-gray-light, #c4c7ca);
   }
 `;
