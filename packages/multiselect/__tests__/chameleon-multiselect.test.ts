@@ -89,8 +89,32 @@ describe("chameleon-multiselect", () => {
   });
 
   it("sets active to true on focus", () => {
-    // const onFocus = sinon.spy(element, "focus");
+    element.active = false;
     element.setActive();
     expect(element.active).to.be.true;
+  });
+
+  describe("value()", () => {
+    it("should set value", () => {});
+
+    it("should get value", () => {
+      const options = (element.options = [
+        {
+          value: "arch",
+          label: "Gateway Arch",
+          subLabel: "Historical Landmark"
+        },
+        {
+          value: "union-station",
+          label: "Union Station",
+          subLabel: "Historical Landmark"
+        }
+      ]);
+
+      const selectedOptions = options.map(option => {
+        return option.value;
+      });
+      expect(element.value).to.equal(selectedOptions);
+    });
   });
 });
