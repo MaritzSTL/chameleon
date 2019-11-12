@@ -22,7 +22,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/button": "^1.2.1",
+    "@chameleon-ds/button": "^1.2.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
