@@ -2,17 +2,27 @@ import { css } from "lit-element";
 
 export default css`
   :host {
-    display: inline;
+    --button-border-color: var(--color-primary, #2c6fb7);
+    --button-hover-color: var(--color-primary-dark, #004587);
+    --button-hover-text-color: var(--color-surface, #ffffff);
+    --button-text-color: var(--color-primary, #2c6fb7);
+    display: inline-flex;
+    height: var(--button-height, 40px);
   }
 
   :host([full-width]) {
-    flex: 1;
+    width: 100%;
   }
 
   :host([full-width]) a,
   :host([full-width]) button {
-    flex: 1;
     width: 100%;
+  }
+
+  :host([icon-only]) button,
+  :host([icon-left]) button,
+  :host([icon-right]) button {
+    padding: 0;
   }
 
   a {
@@ -31,7 +41,7 @@ export default css`
     align-items: center;
     background-color: var(--color-primary, #2c6fb7);
     border-radius: var(--border-radius-input, 0.313rem);
-    border: 1px solid var(--color-primary, #2c6fb7);
+    border: 1px solid var(--button-border-color);
     color: var(--color-surface, #ffffff);
     cursor: pointer;
     display: flex;
@@ -40,24 +50,26 @@ export default css`
     font-size: var(--font-size-paragraph-medium, 0.938rem);
     justify-content: center;
     letter-spacing: var(--font-letter-spacing, 0.018rem);
+    line-height: 1;
     padding: var(--button-padding, 0.75rem 1.375rem);
     position: relative;
     transition: all 150ms linear;
-    height: var(--button-height, 40px);
+    height: 100%;
+    width: 100%;
   }
 
   button:hover {
-    background-color: var(--color-primary-dark, #004587);
-    border-color: var(--color-primary-dark, #004587);
+    background-color: var(--button-hover-color);
+    border-color: var(--button-hover-color);
   }
 
   .secondary {
     background-color: var(--color-surface, #ffffff);
-    color: var(--color-primary, #2c6fb7);
+    color: var(--button-text-color);
   }
 
   .secondary:hover {
-    color: var(--color-surface, #ffffff);
+    color: var(--button-hover-text-color);
   }
 
   .text {

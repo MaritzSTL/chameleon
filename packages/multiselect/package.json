@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/multiselect",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "description": "Chameleon multiselect",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -12,7 +12,8 @@
   "main": "src/chameleon-multiselect.js",
   "module": "src/chameleon-multiselect.js",
   "files": [
-    "/src/"
+    "/src/",
+    "/types/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -23,6 +24,7 @@
   },
   "dependencies": {
     "@chameleon-ds/chip": "^1.0.0",
+    "@chameleon-ds/loader": "^1.2.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {

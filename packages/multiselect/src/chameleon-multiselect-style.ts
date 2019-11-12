@@ -82,6 +82,7 @@ export default css`
     position: absolute;
     top: calc(100% + 13px);
     width: 100%;
+    z-index: 1;
   }
 
   .options__list {
@@ -109,7 +110,8 @@ export default css`
     margin-right: 10px;
   }
 
-  .options__option-preLabel img {
+  .options__option-preLabel img,
+  svg {
     border-radius: 50%;
     height: 34px;
     vertical-align: top;
@@ -146,5 +148,10 @@ export default css`
   ::slotted(svg) {
     color: var(--color-gray-darkest, #6c737a);
     height: 16px;
+  }
+
+  chameleon-loader {
+    height: 24px;
+    width: 24px;
   }
 `;

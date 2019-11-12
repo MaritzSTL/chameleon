@@ -24,7 +24,7 @@ describe("chameleon-sheet", () => {
 
     expect(element).shadowDom.to.equal(`
       <header class="head-container">
-        <chameleon-button class="close-icon" href="" icon-only="" theme="text"></chameleon-button>
+        <chameleon-button class="close-icon" icon-only="" theme="text"></chameleon-button>
         <h3 class="header"></h3>
         <slot name="details"></slot>
       </header>

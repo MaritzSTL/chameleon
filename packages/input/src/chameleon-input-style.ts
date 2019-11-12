@@ -2,12 +2,14 @@ import { css } from "lit-element";
 
 export default css`
   :host {
+    display: inline-block;
     font-family: var(--font-family, sans-serif);
   }
 
   .component-wrapper {
     display: inline-flex;
     flex-direction: column;
+    width: 100%;
   }
 
   input {
@@ -16,7 +18,7 @@ export default css`
     box-sizing: border-box;
     font-size: var(--font-size-input, 0.938rem);
     font-family: var(--font-family, sans-serif);
-    max-width: 100%;
+    width: 100%;
     padding: var(--input-padding, 0.625rem 0.5rem);
   }
 
