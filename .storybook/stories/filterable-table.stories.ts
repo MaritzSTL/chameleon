@@ -1,6 +1,7 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs } from "@storybook/addon-knobs";
 import { TemplateResult, html } from "lit-element";
+import { nothing } from "lit-html";
 
 import "../../packages/filterable-table/src/chameleon-filterable-table";
 
@@ -96,10 +97,7 @@ const columnsWithDetailFields = [
       html`
         ${row.field1}
       `,
-    detailsRow: (detailsRow: any): TemplateResult =>
-      html`
-        ${detailsRow.detailsField1}
-      `
+    detailsRow: () => nothing
   },
   {
     header: "Column 2",
@@ -190,7 +188,6 @@ const rows = [
     showDetails: false,
     details: [
       {
-        detailsField1: "Details Row 1 - Field 1",
         detailsField2: "Details Row 1 - Field 2",
         detailsField3: "Details Row 1 - Field 3",
         detailsField4: "Details Row 1 - Field 4"
@@ -205,13 +202,11 @@ const rows = [
     showDetails: true,
     details: [
       {
-        detailsField1: "Details Row 1 - Field 1",
         detailsField2: "Details Row 1 - Field 2",
         detailsField3: "Details Row 1 - Field 3",
         detailsField4: "Details Row 1 - Field 4"
       },
       {
-        detailsField1: "Details Row 2 - Field 1",
         detailsField2: "Details Row 2 - Field 2",
         detailsField3: "Details Row 2 - Field 3",
         detailsField4: "Details Row 2 - Field 4"
@@ -234,25 +229,21 @@ const rows = [
     showDetails: true,
     details: [
       {
-        detailsField1: "Details Row 1 - Field 1",
         detailsField2: "Details Row 1 - Field 2",
         detailsField3: "Details Row 1 - Field 3",
         detailsField4: "Details Row 1 - Field 4"
       },
       {
-        detailsField1: "Details Row 2 - Field 1",
         detailsField2: "Details Row 2 - Field 2",
         detailsField3: "Details Row 2 - Field 3",
         detailsField4: "Details Row 2 - Field 4"
       },
       {
-        detailsField1: "Details Row 3 - Field 1",
         detailsField2: "Details Row 3 - Field 2",
         detailsField3: "Details Row 3 - Field 3",
         detailsField4: "Details Row 3 - Field 4"
       },
       {
-        detailsField1: "Details Row 4 - Field 1",
         detailsField2: "Details Row 4 - Field 2",
         detailsField3: "Details Row 4 - Field 3",
         detailsField4: "Details Row 4 - Field 4"
