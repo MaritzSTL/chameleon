@@ -208,9 +208,11 @@ export default class ChameleonMultiselect extends LitElement {
    * @return {Array<SelectableOption>}
    */
   get renderedOptions(): Array<SelectableOption> {
-    return this.options.filter(
-      option => !this.selectedOptions.includes(option)
-    );
+    return this.options.filter(option => {
+      return !this.selectedOptions.some(selectedOption => {
+        return option.value === selectedOption.value;
+      });
+    });
   }
 
   setActive(): void {
@@ -254,7 +256,7 @@ export default class ChameleonMultiselect extends LitElement {
       this.instantSearchValue = query;
       this.dispatchSearchEvent();
     } else
-      this.filteredOptions = this.options.filter(option => {
+      this.filteredOptions = this.renderedOptions.filter(option => {
         return option.label.toLowerCase().includes(query);
       });
   }
@@ -272,7 +274,8 @@ export default class ChameleonMultiselect extends LitElement {
     this.dispatchEvent(
       new CustomEvent("chameleon.select", {
         detail: {
-          value: this.value
+          value: this.value,
+          selectedOptions: this.selectedOptions
         },
         bubbles: true,
         composed: true
