@@ -1,0 +1,31 @@
+{
+  "name": "@chameleon-ds/accordion",
+  "version": "1.1.0",
+  "description": "Chameleon accordion",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/accordion#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "src/chameleon-accordion.js",
+  "module": "src/chameleon-accordion.js",
+  "files": [
+    "/src/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "903c637e2d1f3693b6c0b5fca5c1e6363ecb15c1"
+}
