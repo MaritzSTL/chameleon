@@ -168,7 +168,21 @@ const columnsWithFilters = [
     header: "Column 4",
     filter: {
       name: "column4",
-      items: ["filter1", "filter2", "filter3"]
+      // items: ["filter1", "filter2", "filter3"]
+      items: [
+        {
+          value: "filter1",
+          label: "Filter 1"
+        },
+        {
+          value: "filter2",
+          label: "Filter 2"
+        },
+        {
+          value: "filter3",
+          label: "Filter 3"
+        }
+      ]
     },
     searchable: true,
     sortable: true,

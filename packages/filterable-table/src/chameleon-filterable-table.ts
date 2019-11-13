@@ -7,7 +7,7 @@ import {
 } from "lit-element";
 import { svg, nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map.js";
-import { isEqual } from "lodash";
+// import { isEqual } from "lodash";
 
 import "@chameleon-ds/multiselect/src/chameleon-multiselect";
 import "@chameleon-ds/paginator/src/chameleon-paginator";
@@ -138,13 +138,14 @@ export default class ChameleonFilterableTable extends LitElement {
 
               ${this.getColumnSort(column)}
             </div>
-            <chameleon-multiselect></chameleon-multiselect>
-            <!-- <chameleon-filterable-search
-              .items=""
-              .placeholder="${column.filterableSearchPlaceholder}"
-              .name="${column.filter.name}"
-              @selection-changed="${this.handleSelectionChanged}"
-            ></chameleon-filterable-search> -->
+
+            <chameleon-multiselect
+              class="filter"
+              .label="${`this is the label`}"
+              .placeholder="${`Filter by`}"
+              .options=${column.filter.items}
+              @chameleon.select=${this.handleFilterSelect}
+            ></chameleon-multiselect>
           `
         : html`
             <div class="sort-container">
@@ -158,11 +159,11 @@ export default class ChameleonFilterableTable extends LitElement {
             ${column.searchable &&
               html`
                 <chameleon-input
-                  class="search-input"
+                  class="search"
                   outlined
                   placeholder="Search"
                   name=${column.filter.name}
-                  @input=${this.handleFilterInput}
+                  @chameleon.input=${this.handleSearchInput}
                 ></chameleon-input>
               `}
           `
@@ -194,18 +195,23 @@ export default class ChameleonFilterableTable extends LitElement {
 
   getSelectableItems() {}
 
-  handleSelectionChanged() {}
+  handleFilterSelect(e: CustomEvent) {
+    console.log("select changed", e);
+  }
 
-  handleFilterInput(e: CustomEvent) {
-    if (!isEqual(this.params, e.detail.params)) {
-      this.params = JSON.parse(JSON.stringify(e.detail.params));
+  handleSearchInput(e: CustomEvent) {
+    console.log("search changed");
+    console.log(e.detail);
+    console.log(e.detail.value);
+    // if (!isEqual(this.params, e.detail.params)) {
+    // this.params = JSON.parse(JSON.stringify(e.detail.params));
 
-      // const currentPage = e.detail.paginationOnly
-      //   ? e.detail.params.pagination.currentPage
-      //   : 1;
+    // const currentPage = e.detail.paginationOnly
+    //   ? e.detail.params.pagination.currentPage
+    //   : 1;
 
-      // This is where we fetch more results with the updated filter
-    }
+    // This is where we fetch more results with the updated filter
+    // }
   }
 
   handleSortClick(e: any, column: any) {

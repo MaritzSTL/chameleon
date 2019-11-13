@@ -103,8 +103,10 @@ export default css`
     width: 1rem;
   }
 
-  table th .search-input {
-    width: 100%;
+  table th .filter,
+  table th .search {
+    display: flex;
+    margin-top: 0.5rem;
   }
 
   chameleon-paginator {
