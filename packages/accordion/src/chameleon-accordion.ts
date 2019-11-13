@@ -10,7 +10,7 @@ import style from "./chameleon-accordion-style";
 import { AccordionItem } from "../types";
 
 @customElement("chameleon-accordion")
-export default class Chameleonaccordion extends LitElement {
+export default class ChameleonAccordion extends LitElement {
   /**
    * Styles
    */
@@ -32,29 +32,29 @@ export default class Chameleonaccordion extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <div>
+      <div class="accordion-container">
         ${this._accordionItems}
       </div>
     `;
   }
 
-  get _accordionItems(): Array<AccordionItem> {
+  get _accordionItems(): TemplateResult | object {
     return this.accordionItems.length > 0
       ? this.accordionItems.map(
           item =>
             html`
               <div
                 class="header"
-                id="header${item.index}"
+                id="header${this.index}"
                 role="button"
                 aria-expanded=${item.panelExpanded}
                 @click="toggle"
               >
-                <slot name="header"></slot>
+                ${item.header}
                 <slot name="icon"></slot>
               </div>
-              <div class="panel" id="panel${item.index}">
-                <slot name="panel"></slot>
+              <div class="panel" id="panel${this.index}">
+                ${item.panel}
               </div>
             `
         )
