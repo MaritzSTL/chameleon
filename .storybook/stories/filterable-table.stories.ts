@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs } from "@storybook/addon-knobs";
+import { eventDetails } from "../utils";
 import { TemplateResult, html } from "lit-element";
 import { nothing } from "lit-html";
 
@@ -53,6 +54,9 @@ stories.add(
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
+        @chameleon.filterable-table.search=${eventDetails.action(
+          "chameleon.filterable-table.search"
+        )}
       ></chameleon-filterable-table>
     `;
   },
@@ -156,7 +160,7 @@ const columnsWithFilters = [
   {
     header: "Column 3",
     filter: {
-      name: "column3"
+      name: "filterName_column3"
     },
     searchable: true,
     row: (row: any): TemplateResult =>
@@ -167,8 +171,7 @@ const columnsWithFilters = [
   {
     header: "Column 4",
     filter: {
-      name: "column4",
-      // items: ["filter1", "filter2", "filter3"]
+      name: "filterName_column4",
       items: [
         {
           value: "filter1",

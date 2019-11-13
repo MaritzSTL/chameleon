@@ -57,7 +57,7 @@ export default class ChameleonFilterableTable extends LitElement {
               column => html`
                 <th>
                   <div class="header-container">
-                    ${this.getColumnHeader(column)}
+                    ${this.renderColumnHeader(column)}
                   </div>
                 </th>
               `
@@ -127,7 +127,7 @@ export default class ChameleonFilterableTable extends LitElement {
     };
   }
 
-  getColumnHeader(column: any): TemplateResult {
+  renderColumnHeader(column: any): TemplateResult {
     return column.filter && column.filter.name
       ? column.filter.items
         ? html`
@@ -136,7 +136,7 @@ export default class ChameleonFilterableTable extends LitElement {
                 ${column.header}
               </span>
 
-              ${this.getColumnSort(column)}
+              ${this.renderColumnSort(column)}
             </div>
 
             <chameleon-multiselect
@@ -153,7 +153,7 @@ export default class ChameleonFilterableTable extends LitElement {
                 ${column.header}
               </span>
 
-              ${this.getColumnSort(column)}
+              ${this.renderColumnSort(column)}
             </div>
 
             ${column.searchable &&
@@ -163,7 +163,8 @@ export default class ChameleonFilterableTable extends LitElement {
                   outlined
                   placeholder="Search"
                   name=${column.filter.name}
-                  @chameleon.input=${this.handleSearchInput}
+                  @chameleon.input.input=${(e: CustomEvent) =>
+                    this.handleSearchInput(e, column)}
                 ></chameleon-input>
               `}
           `
@@ -174,35 +175,37 @@ export default class ChameleonFilterableTable extends LitElement {
         `;
   }
 
-  getColumnSort(column: any) {
+  renderColumnSort(column: any) {
     return column.sortable
       ? html`
           <div
             class="sort-icons"
-            @click=${(e: any) => this.handleSortClick(e, column)}
+            @click=${(e: any) => this.handleSort(e, column)}
           >
             <div class="icon-container">
-              ${this.chevronUpIcon()}
+              ${this.chevronUpIcon}
             </div>
 
             <div class="icon-container">
-              ${this.chevronDownIcon()}
+              ${this.chevronDownIcon}
             </div>
           </div>
         `
       : nothing;
   }
 
-  getSelectableItems() {}
+  handleSearchInput(e: CustomEvent, column: any): void {
+    this.dispatchEvent(
+      new CustomEvent("chameleon.filterable-table.search", {
+        detail: {
+          filter: column.filter.name,
+          value: e.detail.value
+        },
+        bubbles: true,
+        composed: true
+      })
+    );
 
-  handleFilterSelect(e: CustomEvent) {
-    console.log("select changed", e);
-  }
-
-  handleSearchInput(e: CustomEvent) {
-    console.log("search changed");
-    console.log(e.detail);
-    console.log(e.detail.value);
     // if (!isEqual(this.params, e.detail.params)) {
     // this.params = JSON.parse(JSON.stringify(e.detail.params));
 
@@ -214,11 +217,15 @@ export default class ChameleonFilterableTable extends LitElement {
     // }
   }
 
-  handleSortClick(e: any, column: any) {
+  handleFilterSelect(e: CustomEvent): void {
+    console.log("handleFilterSelect", e);
+  }
+
+  handleSort(e: any, column: any): void {
     console.log(e, column);
   }
 
-  chevronUpIcon() {
+  get chevronUpIcon() {
     return svg`
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -237,7 +244,7 @@ export default class ChameleonFilterableTable extends LitElement {
     `;
   }
 
-  chevronDownIcon() {
+  get chevronDownIcon() {
     return svg`
       <svg
         xmlns="http://www.w3.org/2000/svg"
