@@ -24,25 +24,23 @@ export default class ChameleonDate extends LitElement {
   /**
    * Lifecycle Methods
    */
+  firstUpdated() {
+    this.value = this.dateToString(this.date);
+  }
+
   updated(changedProperties: PropertyValues) {
     if (changedProperties.has("value")) {
-      this.date = new Date(this.value);
+      this.date = this.stringToDate(this.value);
     }
 
     if (changedProperties.has("date")) {
-      this.value = this.date.toISOString().split("T")[0];
+      this.value = this.dateToString(this.date);
     }
   }
 
   /**
    * Properties
    */
-  // TODO: Configure a start day
-  // Day of the week to start the calendar on
-  // Ex: Sunday = 0, Monday = 1, etc.
-  // @property({ type: Number })
-  // startDay = 0;
-
   @property({ type: Boolean })
   active = false;
 
@@ -56,7 +54,7 @@ export default class ChameleonDate extends LitElement {
   label = "";
 
   @property({ type: String })
-  value = this.date.toISOString().split("T")[0];
+  value = "";
 
   @property({ type: String, reflect: true })
   min = null;
@@ -64,6 +62,7 @@ export default class ChameleonDate extends LitElement {
   @property({ type: String, reflect: true })
   max = null;
 
+  // TODO: make these configurable properties
   private startDay = 0;
   private weekDayValues = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
@@ -131,7 +130,12 @@ export default class ChameleonDate extends LitElement {
   }
 
   get dateGrid(): TemplateResult {
-    // debugger;
+    const currentDate = new Date();
+    const minDate = this.min ? this.stringToDate(this.min || "").getTime() : -1;
+    const maxDate = this.max
+      ? this.stringToDate(this.max || "").getTime()
+      : Infinity;
+
     return html`
       <div class="date-grid offset-${this.days[0].getDay()}">
         ${repeat(
@@ -141,11 +145,18 @@ export default class ChameleonDate extends LitElement {
               <chameleon-button
                 theme="secondary"
                 class="${classMap({
-                  active: false,
-                  current: false
+                  active:
+                    day.getDate() == this.date.getDate() &&
+                    day.getMonth() == this.date.getMonth() &&
+                    day.getFullYear() == this.date.getFullYear(),
+                  current:
+                    day.getDate() == currentDate.getDate() &&
+                    day.getMonth() == currentDate.getMonth() &&
+                    day.getFullYear() == currentDate.getFullYear()
                 })}"
                 .value="${day}"
-                ?disabled="${false}"
+                ?disabled="${day.getTime() < minDate ||
+                  day.getTime() > maxDate}"
                 @click="${this.setDate}"
               >
                 ${day.getDate()}
@@ -224,5 +235,19 @@ export default class ChameleonDate extends LitElement {
     const date = (<DateSelectTarget>e.target)!.value;
     this.date = date;
     this.active = false;
+  }
+
+  private dateToString(date: Date): string {
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    return `${year}-${month}-${day}`;
+  }
+
+  private stringToDate(date: string): Date {
+    const [year, month, day] = date.split("-");
+
+    return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
   }
 }

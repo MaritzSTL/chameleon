@@ -14,6 +14,7 @@ export default css`
     box-shadow: 0 5px 12px 0 rgba(31, 40, 91, 0.2),
       0 2px 6px -1px rgba(31, 40, 91, 0.12), 0 1px 4px 0 rgba(31, 40, 91, 0.14);
     box-sizing: border-box;
+    color: var(--color-gray-darkest, #6c737a);
     left: 0;
     padding: var(--input-padding, 0.625rem 0.5rem);
     position: absolute;
@@ -23,18 +24,19 @@ export default css`
   }
 
   .overlay h3 {
-    color: var(--color-gray-darkest, #6c737a);
     font-size: var(--font-size-subtitle, 0.938rem);
   }
 
   .overlay header {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
   }
 
   .overlay header svg {
     color: var(--color-gray-darkest, #6c737a);
+    height: 25px;
   }
 
   chameleon-input {
@@ -91,6 +93,10 @@ export default css`
   }
 
   .date-grid chameleon-button[disabled] {
+    pointer-events: none;
+  }
+
+  .date-grid chameleon-button[disabled] {
     --border-radius-input: 0;
   }
 
@@ -99,6 +105,6 @@ export default css`
   }
 
   .date-grid chameleon-button.current {
-    --button-border-color: var(--color-gray-darkest, #6c737a);
+    --button-text-color: var(--color-secondary, #69c9b9);
   }
 `;
