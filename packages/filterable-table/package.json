@@ -9,18 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "index.js",
-  "module": "index.js",
+  "main": "src/chameleon-filterable-table.js",
+  "module": "src/chameleon-filterable-table.js",
   "files": [
     "/src/",
-    "/chameleon-filterable-table-style.d.ts",
-    "/chameleon-filterable-table-style.d.ts.map",
-    "/chameleon-filterable-table-style.js",
-    "/chameleon-filterable-table-style.js.map",
-    "/chameleon-filterable-table.d.ts",
-    "/chameleon-filterable-table.d.ts.map",
-    "/chameleon-filterable-table.js",
-    "/chameleon-filterable-table.js.map"
+    "/types/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

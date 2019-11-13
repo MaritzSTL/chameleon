@@ -7,38 +7,39 @@ import {
 } from "lit-element";
 import { svg, nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map.js";
-// import { isEqual } from "lodash";
 
 import "@chameleon-ds/multiselect/src/chameleon-multiselect";
 import "@chameleon-ds/paginator/src/chameleon-paginator";
 
 import style from "./chameleon-filterable-table-style";
+import {
+  Column,
+  Columns,
+  Row,
+  Rows,
+  Filters,
+  ChangeCustomEvent
+} from "../types";
 
 @customElement("chameleon-filterable-table")
 export default class ChameleonFilterableTable extends LitElement {
-  constructor() {
-    super();
-  }
-
-  /**
-   * Lifecycle Methods
-   */
-  firstUpdated() {}
-
   /**
    * Properties
    */
   @property({ type: Array })
-  columns = [];
+  columns = [] as Columns;
 
   @property({ type: Array })
-  rows = [];
+  rows = [] as Rows;
 
   @property({ type: Number })
   highlightRow = null;
 
   @property({ type: Object })
-  params = {};
+  filters = {} as Filters;
+
+  @property({ type: Number })
+  currentPage = 1;
 
   /**
    * Styles
@@ -49,6 +50,10 @@ export default class ChameleonFilterableTable extends LitElement {
    * Template
    */
   render(): TemplateResult {
+    console.log("columns");
+    console.log(this.columns);
+    console.log("rows");
+    console.log(this.rows);
     return html`
       <table>
         <thead>
@@ -66,7 +71,7 @@ export default class ChameleonFilterableTable extends LitElement {
         </thead>
 
         ${this.rows.map(
-          (row: any, index: number): TemplateResult => {
+          (row: Row, index: number): TemplateResult => {
             return html`
               <tbody>
                 <tr
@@ -74,7 +79,7 @@ export default class ChameleonFilterableTable extends LitElement {
                   data-row=${index}
                 >
                   ${this.columns.map(
-                    (column: any) =>
+                    (column: Column) =>
                       html`
                         <td>
                           ${column.row(row)}
@@ -85,7 +90,7 @@ export default class ChameleonFilterableTable extends LitElement {
 
                 ${row.details && row.showDetails
                   ? row.details.map(
-                      (detailsRow: any, index: number): TemplateResult => {
+                      (detailsRow: Row, index: number): TemplateResult => {
                         return html`
                           <tr
                             class="details-row ${classMap(
@@ -93,7 +98,7 @@ export default class ChameleonFilterableTable extends LitElement {
                             )}"
                             data-row=${index}
                           >
-                            ${this.columns.map((column: any) =>
+                            ${this.columns.map((column: Column) =>
                               column.detailsRow
                                 ? html`
                                     <td>
@@ -116,27 +121,24 @@ export default class ChameleonFilterableTable extends LitElement {
       <chameleon-paginator
         totalItems=${100}
         pageSize=${6}
+        @page-change=${this.handlePageChange}
       ></chameleon-paginator>
     `;
   }
 
-  rowClassMap(item: any, index: number): any {
+  rowClassMap(row: Row, index: number): any {
     return {
       "highlight-row": index === this.highlightRow,
-      "show-details": item.showDetails
+      "show-details": row.showDetails
     };
   }
 
-  renderColumnHeader(column: any): TemplateResult {
+  renderColumnHeader(column: Column): TemplateResult {
     return column.filter && column.filter.name
       ? column.filter.items
         ? html`
-            <div class="sort-container">
-              <span class="column-header">
-                ${column.header}
-              </span>
-
-              ${this.renderColumnSort(column)}
+            <div class="column-header">
+              ${column.header} ${this.renderColumnSort(column)}
             </div>
 
             <chameleon-multiselect
@@ -144,16 +146,13 @@ export default class ChameleonFilterableTable extends LitElement {
               .label="${`this is the label`}"
               .placeholder="${`Filter by`}"
               .options=${column.filter.items}
-              @chameleon.select=${this.handleFilterSelect}
+              @chameleon.select=${(e: CustomEvent) =>
+                this.handleFilterChange(e.detail.value, column)}
             ></chameleon-multiselect>
           `
         : html`
-            <div class="sort-container">
-              <span class="column-header">
-                ${column.header}
-              </span>
-
-              ${this.renderColumnSort(column)}
+            <div class="column-header">
+              ${column.header} ${this.renderColumnSort(column)}
             </div>
 
             ${column.searchable &&
@@ -164,65 +163,71 @@ export default class ChameleonFilterableTable extends LitElement {
                   placeholder="Search"
                   name=${column.filter.name}
                   @chameleon.input.input=${(e: CustomEvent) =>
-                    this.handleSearchInput(e, column)}
+                    this.handleFilterChange(e.detail.value, column)}
                 ></chameleon-input>
               `}
           `
       : html`
-          <span>
+          <div class="column-header">
             ${column.header}
-          </span>
+          </div>
         `;
   }
 
-  renderColumnSort(column: any) {
+  renderColumnSort(column: Column) {
     return column.sortable
       ? html`
-          <div
-            class="sort-icons"
-            @click=${(e: any) => this.handleSort(e, column)}
-          >
-            <div class="icon-container">
-              ${this.chevronUpIcon}
-            </div>
+          <div class="sort-container">
+            <div
+              class="sort-icons"
+              @click=${(e: CustomEvent) => this.handleSort(e, column)}
+            >
+              <div class="icon-container">
+                ${this.chevronUpIcon}
+              </div>
 
-            <div class="icon-container">
-              ${this.chevronDownIcon}
+              <div class="icon-container">
+                ${this.chevronDownIcon}
+              </div>
             </div>
           </div>
         `
       : nothing;
   }
 
-  handleSearchInput(e: CustomEvent, column: any): void {
+  private handleFilterChange(filterValue: string, column: Column) {
+    if (column.filter && column.filter.name) {
+      this.filters[column.filter.name] = filterValue;
+
+      this.dispatchChangeEvent();
+    }
+  }
+
+  private handleSort(e: CustomEvent, column: Column): void {
+    console.log(e);
+    console.log(column);
+    // this.dispatchChangeEvent();
+  }
+
+  private handlePageChange(e: CustomEvent): void {
+    this.currentPage = e.detail.currentPage;
+
+    this.dispatchChangeEvent();
+  }
+
+  private dispatchChangeEvent(): void {
+    const eventDetail: ChangeCustomEvent = {
+      detail: {
+        filters: this.filters,
+        page: this.currentPage
+      },
+      bubbles: true,
+      composed: true
+    };
+
     this.dispatchEvent(
-      new CustomEvent("chameleon.filterable-table.search", {
-        detail: {
-          filter: column.filter.name,
-          value: e.detail.value
-        },
-        bubbles: true,
-        composed: true
-      })
+      new CustomEvent("chameleon.filterable-table.change", eventDetail)
     );
-
-    // if (!isEqual(this.params, e.detail.params)) {
-    // this.params = JSON.parse(JSON.stringify(e.detail.params));
-
-    // const currentPage = e.detail.paginationOnly
-    //   ? e.detail.params.pagination.currentPage
-    //   : 1;
-
-    // This is where we fetch more results with the updated filter
-    // }
-  }
-
-  handleFilterSelect(e: CustomEvent): void {
-    console.log("handleFilterSelect", e);
-  }
-
-  handleSort(e: any, column: any): void {
-    console.log(e, column);
   }
 
   get chevronUpIcon() {

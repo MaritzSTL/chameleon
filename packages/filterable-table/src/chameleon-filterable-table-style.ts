@@ -73,21 +73,19 @@ export default css`
   }
 
   table th .header-container {
+    align-items: center;
     display: grid;
     grid-auto-rows: 2em 1fr;
-  }
-
-  table th .header-container > * {
+    width: 100%;
   }
 
   table th .column-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
   table th .sort-container {
-    display: flex;
-    justify-content: space-between;
   }
 
   table th .sort-icons {

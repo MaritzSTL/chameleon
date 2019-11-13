@@ -5,6 +5,7 @@ import { TemplateResult, html } from "lit-element";
 import { nothing } from "lit-html";
 
 import "../../packages/filterable-table/src/chameleon-filterable-table";
+import { Row } from "../../packages/filterable-table/types";
 
 const stories = storiesOf("Filterable Table", module);
 
@@ -54,8 +55,8 @@ stories.add(
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
-        @chameleon.filterable-table.search=${eventDetails.action(
-          "chameleon.filterable-table.search"
+        @chameleon.filterable-table.change=${eventDetails.action(
+          "chameleon.filterable-table.change"
         )}
       ></chameleon-filterable-table>
     `;
@@ -66,28 +67,28 @@ stories.add(
 const columns = [
   {
     header: "Column 1",
-    row: (row: any): TemplateResult =>
+    row: (row: Row): TemplateResult =>
       html`
         ${row.field1}
       `
   },
   {
     header: "Column 2",
-    row: (row: any): TemplateResult =>
+    row: (row: Row): TemplateResult =>
       html`
         ${row.field2}
       `
   },
   {
     header: "Column 3",
-    row: (row: any): TemplateResult =>
+    row: (row: Row): TemplateResult =>
       html`
         ${row.field3}
       `
   },
   {
     header: "Column 4",
-    row: (row: any): TemplateResult =>
+    row: (row: Row): TemplateResult =>
       html`
         ${row.field4}
       `
@@ -97,7 +98,7 @@ const columns = [
 const columnsWithDetailFields = [
   {
     header: "Column 1",
-    row: (row: any): TemplateResult =>
+    row: (row: Row): TemplateResult =>
       html`
         ${row.field1}
       `,
@@ -105,33 +106,33 @@ const columnsWithDetailFields = [
   },
   {
     header: "Column 2",
-    row: (row: any): TemplateResult =>
+    row: (row: Row): TemplateResult =>
       html`
         ${row.field2}
       `,
-    detailsRow: (detailsRow: any): TemplateResult =>
+    detailsRow: (detailsRow: Row): TemplateResult =>
       html`
         ${detailsRow.detailsField2}
       `
   },
   {
     header: "Column 3",
-    row: (row: any): TemplateResult =>
+    row: (row: Row): TemplateResult =>
       html`
         ${row.field3}
       `,
-    detailsRow: (detailsRow: any): TemplateResult =>
+    detailsRow: (detailsRow: Row): TemplateResult =>
       html`
         ${detailsRow.detailsField3}
       `
   },
   {
     header: "Column 4",
-    row: (row: any): TemplateResult =>
+    row: (row: Row): TemplateResult =>
       html`
         ${row.field4}
       `,
-    detailsRow: (detailsRow: any): TemplateResult =>
+    detailsRow: (detailsRow: Row): TemplateResult =>
       html`
         ${detailsRow.detailsField4}
       `
@@ -141,35 +142,39 @@ const columnsWithDetailFields = [
 const columnsWithFilters = [
   {
     header: "Column 1",
-    row: (row: any): TemplateResult =>
+    row: (row: Row): TemplateResult =>
       html`
         ${row.field1}
       `
   },
   {
     header: "Column 2",
+    row: (row: Row): TemplateResult =>
+      html`
+        ${row.field2}
+      `,
     filter: {
       name: "column2"
     },
-    sortable: true,
-    row: (row: any): TemplateResult =>
-      html`
-        ${row.field2}
-      `
+    sortable: true
   },
   {
     header: "Column 3",
+    row: (row: Row): TemplateResult =>
+      html`
+        ${row.field3}
+      `,
     filter: {
       name: "filterName_column3"
     },
-    searchable: true,
-    row: (row: any): TemplateResult =>
-      html`
-        ${row.field3}
-      `
+    searchable: true
   },
   {
     header: "Column 4",
+    row: (row: Row): TemplateResult =>
+      html`
+        ${row.field4}
+      `,
     filter: {
       name: "filterName_column4",
       items: [
@@ -188,11 +193,7 @@ const columnsWithFilters = [
       ]
     },
     searchable: true,
-    sortable: true,
-    row: (row: any): TemplateResult =>
-      html`
-        ${row.field4}
-      `
+    sortable: true
   }
 ];
 
