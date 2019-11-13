@@ -5,6 +5,7 @@ export default css`
     --button-border-color: var(--color-primary, #2c6fb7);
     --button-hover-color: var(--color-primary-dark, #004587);
     --button-hover-text-color: var(--color-surface, #ffffff);
+    --button-text-color: var(--color-primary, #2c6fb7);
     display: inline-flex;
     height: var(--button-height, 40px);
   }
@@ -64,7 +65,7 @@ export default css`
 
   .secondary {
     background-color: var(--color-surface, #ffffff);
-    color: var(--button-border-color);
+    color: var(--button-text-color);
   }
 
   .secondary:hover {

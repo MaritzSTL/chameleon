@@ -94,7 +94,7 @@ export default class ChameleonInput extends LitElement {
     return html`
       <div
         class="
-      ${classMap({
+        ${classMap({
           "component-wrapper": true,
           invalid: this._invalidState,
           disabled: this.disabled
@@ -108,18 +108,22 @@ export default class ChameleonInput extends LitElement {
         >
           ${this.labelText}${this.toggleText}
         </div>
+
         <div
           class="
-        ${classMap({
+          ${classMap({
             "input-wrapper": true,
             "icon-left": this["icon-left"],
             "icon-right": this["icon-right"]
           })}"
         >
           <slot name="icon-left"></slot>
+
           ${this._inputEl}
+
           <slot name="icon-right"></slot>
         </div>
+
         ${this.errorText}
       </div>
     `;
@@ -127,23 +131,6 @@ export default class ChameleonInput extends LitElement {
 
   get _inputEl(): TemplateResult {
     switch (this.type) {
-      case "text":
-        return html`
-          <input
-            name="cha-input"
-            .type="${this.type}"
-            .placeholder="${this.placeholder}"
-            .value="${this.value}"
-            ?autocomplete="${this.autocomplete}"
-            ?autofocus="${this.autofocus}"
-            ?disabled="${this.disabled}"
-            ?readonly="${this.readonly}"
-            ?required="${this.required}"
-            @input="${this._handleInput}"
-            @blur="${this._handleBlur}"
-            @invalid="${this._handleInvalid}"
-          />
-        `;
       case "number":
         return html`
           <input
@@ -163,6 +150,7 @@ export default class ChameleonInput extends LitElement {
             @invalid="${this._handleInvalid}"
           />
         `;
+      case "text":
       default:
         return html`
           <input
@@ -254,8 +242,17 @@ export default class ChameleonInput extends LitElement {
   }
 
   _handleInput(e: any): void {
-    // e must have a value of `any` right now because of: https://stackoverflow.com/a/57331338/3713527
     this.value = e.target.value;
+
+    this.dispatchEvent(
+      new CustomEvent("chameleon.input.input", {
+        detail: {
+          value: this.value
+        },
+        bubbles: true,
+        composed: true
+      })
+    );
   }
 
   _handleBlur(): void {
@@ -323,7 +320,7 @@ export default class ChameleonInput extends LitElement {
       >
         <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
         <line x1="1" y1="1" x2="23" y2="23" />
-      </svg>  
+      </svg>
     `;
   }
 }
