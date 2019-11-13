@@ -24,10 +24,6 @@ export default class ChameleonDate extends LitElement {
   /**
    * Lifecycle Methods
    */
-  // firstUpdated() {
-  //   this.value = this.dateToString(this.date);
-  // }
-
   updated(changedProperties: PropertyValues) {
     if (this.touched) {
       if (changedProperties.has("value")) {
