@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, boolean, radios, text } from "@storybook/addon-knobs";
+import { eventDetails } from "../utils";
 import { html, svg } from "lit-html";
 import "@chameleon-ds/input/src/chameleon-input";
 
@@ -54,6 +55,7 @@ stories.add(
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
+        @chameleon.input.input=${eventDetails.action("chameleon.input.input")}
       ></chameleon-input>
     `;
   },
@@ -89,6 +91,7 @@ stories.add(
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
+        @chameleon.input.input=${eventDetails.action("chameleon.input.input")}
       >
         ${searchIcon("icon-left")}
       </chameleon-input>
@@ -126,6 +129,7 @@ stories.add(
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
+        @chameleon.input.input=${eventDetails.action("chameleon.input.input")}
       >
         ${searchIcon("icon-right")}
       </chameleon-input>
