@@ -24,17 +24,19 @@ export default class ChameleonDate extends LitElement {
   /**
    * Lifecycle Methods
    */
-  firstUpdated() {
-    this.value = this.dateToString(this.date);
-  }
+  // firstUpdated() {
+  //   this.value = this.dateToString(this.date);
+  // }
 
   updated(changedProperties: PropertyValues) {
-    if (changedProperties.has("value")) {
-      this.date = this.stringToDate(this.value);
-    }
+    if (this.touched) {
+      if (changedProperties.has("value")) {
+        this.date = this.stringToDate(this.value);
+      }
 
-    if (changedProperties.has("date")) {
-      this.value = this.dateToString(this.date);
+      if (changedProperties.has("date")) {
+        this.value = this.dateToString(this.date);
+      }
     }
   }
 
@@ -46,6 +48,9 @@ export default class ChameleonDate extends LitElement {
 
   @property({ type: Object })
   date = new Date();
+
+  @property({ type: Object })
+  renderedDate = this.date;
 
   @property({ type: String })
   placeholder = "";
@@ -65,6 +70,7 @@ export default class ChameleonDate extends LitElement {
   // TODO: make these configurable properties
   private startDay = 0;
   private weekDayValues = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+  private touched = false;
 
   /**
    * Styles
@@ -96,8 +102,8 @@ export default class ChameleonDate extends LitElement {
             >${this.prevIcon}</chameleon-button
           >
           <h3>
-            ${this.date.toLocaleString("default", { month: "long" })}
-            ${this.date.getFullYear()}
+            ${this.renderedDate.toLocaleString("default", { month: "long" })}
+            ${this.renderedDate.getFullYear()}
           </h3>
           <chameleon-button theme="text" icon-only @click="${this.nextMonth}"
             >${this.nextIcon}</chameleon-button
@@ -168,8 +174,8 @@ export default class ChameleonDate extends LitElement {
   }
 
   get days() {
-    const year = this.date.getFullYear();
-    const month = this.date.getMonth();
+    const year = this.renderedDate.getFullYear();
+    const month = this.renderedDate.getMonth();
 
     return new Array(31)
       .fill(null)
@@ -178,11 +184,13 @@ export default class ChameleonDate extends LitElement {
   }
 
   get renderedDateValue(): string {
-    return this.date.toLocaleDateString(undefined, {
-      month: "long",
-      day: "numeric",
-      year: "numeric"
-    });
+    return this.touched
+      ? this.date.toLocaleDateString(undefined, {
+          month: "long",
+          day: "numeric",
+          year: "numeric"
+        })
+      : "";
   }
 
   get calendarIcon(): SVGTemplateResult {
@@ -218,20 +226,21 @@ export default class ChameleonDate extends LitElement {
   }
 
   prevMonth(): void {
-    const date = this.date;
+    const date = this.renderedDate;
     date.setMonth(date.getMonth() - 1);
 
-    this.date = new Date(date);
+    this.renderedDate = new Date(date);
   }
 
   nextMonth(): void {
-    const date = this.date;
+    const date = this.renderedDate;
     date.setMonth(date.getMonth() + 1);
 
-    this.date = new Date(date);
+    this.renderedDate = new Date(date);
   }
 
   private setDate(e: MouseEvent): void {
+    this.touched = true;
     const date = (<DateSelectTarget>e.target)!.value;
     this.date = date;
     this.active = false;

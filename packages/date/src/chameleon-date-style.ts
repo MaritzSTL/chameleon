@@ -101,7 +101,7 @@ export default css`
   }
 
   .date-grid chameleon-button.active {
-    --button-border-color: var(--color-gray-darkest, #6c737a);
+    --button-border-color: var(--color-secondary, #69c9b9);
   }
 
   .date-grid chameleon-button.current {

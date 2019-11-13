@@ -53,7 +53,8 @@ export default css`
     line-height: 1;
     padding: var(--button-padding, 0.75rem 1.375rem);
     position: relative;
-    transition: all 150ms linear;
+    transition: background-color 150ms linear, color 150ms linear,
+      border 150ms linear;
     height: 100%;
     width: 100%;
   }
