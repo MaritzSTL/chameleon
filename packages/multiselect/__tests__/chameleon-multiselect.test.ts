@@ -6,6 +6,24 @@ const fixture = html`
   <chameleon-multiselect></chameleon-multiselect>
 `;
 
+const fixtureData = [
+  {
+    value: "arch",
+    label: "Gateway Arch",
+    subLabel: "Historical Landmark"
+  },
+  {
+    value: "union-station",
+    label: "Union Station",
+    subLabel: "Historical Landmark"
+  },
+  {
+    value: "scott-joplin-house",
+    label: "Scott Joplin House",
+    subLabel: "Historical Landmark"
+  }
+];
+
 describe("chameleon-multiselect", () => {
   let element;
 
@@ -13,49 +31,74 @@ describe("chameleon-multiselect", () => {
     element = await litFixture(fixture);
   });
 
-  it("renders", () => {
-    expect(Boolean(element.shadowRoot)).to.equal(true);
+  describe("render", () => {
+    it("renders", () => {
+      expect(Boolean(element.shadowRoot)).to.equal(true);
+    });
+
+    it("renders placeholder", async () => {
+      element.placeholder = "chameleon";
+      element.instantSearch = true;
+      element.requestUpdate();
+      await element.updateComplete;
+
+      const inputEl = element.shadowRoot.querySelector("input");
+
+      expect(inputEl.placeholder).equals("chameleon");
+    });
+
+    it("renders loader when loading is true", async () => {
+      element.loading = true;
+      element.requestUpdate();
+      await element.updateComplete;
+
+      const loader = element.shadowRoot.querySelector("chameleon-loader");
+
+      expect(loader).is.not.null;
+    });
   });
 
-  describe("get renderedOptions", () => {
-    it("should return options", async () => {
-      element.options = [
-        {
-          value: "arch",
-          label: "Gateway Arch",
-          subLabel: "Historical Landmark"
-        },
-        {
-          value: "union-station",
-          label: "Union Station",
-          subLabel: "Historical Landmark"
-        },
-        {
-          value: "scott-joplin-house",
-          label: "Scott Joplin House",
-          subLabel: "Historical Landmark"
-        }
-      ];
+  describe("value", async () => {
+    element = await litFixture(
+      html`
+        <chameleon-multiselect
+          .options="${fixtureData}"
+        ></chameleon-multiselect>
+      `
+    );
 
-      const expectedOptions = [
-        {
-          value: "arch",
-          label: "Gateway Arch",
-          subLabel: "Historical Landmark"
-        },
-        {
-          value: "union-station",
-          label: "Union Station",
-          subLabel: "Historical Landmark"
-        },
-        {
-          value: "scott-joplin-house",
-          label: "Scott Joplin House",
-          subLabel: "Historical Landmark"
-        }
-      ];
-      expect(element.options).to.eql(expectedOptions);
+    it("sets value", () => {
+      element.value = ["arch"];
+
+      expect(element.selectedOptions).to.eql([fixtureData[0]]);
     });
+
+    it("throws error if value doesn't exist in options array", () => {
+      expect(() => (element.value = ["chameleon"])).to.throw(
+        "chameleon doesn't exist within the options array"
+      );
+    });
+
+    it("returns correct value", () => {
+      element.value = ["arch"];
+
+      expect(element.value).to.eql(["arch"]);
+    });
+
+    it("returns optionsList", async () => {
+      element.active = true;
+
+      const fixture = await litFixture(element.optionsList);
+
+      expect(fixture).to.contain.html(`<ul class="options__list">`);
+    });
+  });
+
+  it("sets active to true on focus", () => {
+    element.active = false;
+    element.setActive();
+
+    expect(element.active).to.be.true;
   });
 
   describe("toggleActive", () => {
@@ -86,35 +129,5 @@ describe("chameleon-multiselect", () => {
     element.addEventListener("chameleon.search", spy);
     element.dispatchSearchEvent({});
     expect(spy).to.be.calledOnce;
-  });
-
-  it("sets active to true on focus", () => {
-    element.active = false;
-    element.setActive();
-    expect(element.active).to.be.true;
-  });
-
-  describe("value()", () => {
-    it("should set value", () => {});
-
-    it("should get value", () => {
-      const options = (element.options = [
-        {
-          value: "arch",
-          label: "Gateway Arch",
-          subLabel: "Historical Landmark"
-        },
-        {
-          value: "union-station",
-          label: "Union Station",
-          subLabel: "Historical Landmark"
-        }
-      ]);
-
-      const selectedOptions = options.map(option => {
-        return option.value;
-      });
-      expect(element.value).to.equal(selectedOptions);
-    });
   });
 });
