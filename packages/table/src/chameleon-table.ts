@@ -11,7 +11,7 @@ import { classMap } from "lit-html/directives/class-map.js";
 import "@chameleon-ds/multiselect/src/chameleon-multiselect";
 import "@chameleon-ds/paginator/src/chameleon-paginator";
 
-import style from "./chameleon-filterable-table-style";
+import style from "./chameleon-table-style";
 import {
   Column,
   Columns,
@@ -21,8 +21,8 @@ import {
   ChangeCustomEvent
 } from "../types";
 
-@customElement("chameleon-filterable-table")
-export default class ChameleonFilterableTable extends LitElement {
+@customElement("chameleon-table")
+export default class ChameleonTable extends LitElement {
   /**
    * Properties
    */
@@ -225,9 +225,7 @@ export default class ChameleonFilterableTable extends LitElement {
       composed: true
     };
 
-    this.dispatchEvent(
-      new CustomEvent("chameleon.filterable-table.change", eventDetail)
-    );
+    this.dispatchEvent(new CustomEvent("chameleon.table.change", eventDetail));
   }
 
   get chevronUpIcon() {

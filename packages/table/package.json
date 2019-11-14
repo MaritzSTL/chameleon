@@ -1,16 +1,16 @@
 {
-  "name": "@chameleon-ds/filterable-table",
+  "name": "@chameleon-ds/table",
   "version": "0.1.0",
-  "description": "Chameleon Filterable Table",
+  "description": "Chameleon Table",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/tabs#readme",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/tables#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "src/chameleon-filterable-table.js",
-  "module": "src/chameleon-filterable-table.js",
+  "main": "src/chameleon-table.js",
+  "module": "src/chameleon-table.js",
   "files": [
     "/src/",
     "/types/"

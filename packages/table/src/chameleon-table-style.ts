@@ -22,7 +22,7 @@ export default css`
     color: var(--color-black, #000000);
     line-height: 1.4;
     text-align: var(--th-and-td-text-align, initial);
-    width: var(--filterable-table-column-width, initial);
+    width: var(--table-column-width, initial);
   }
 
   table th {

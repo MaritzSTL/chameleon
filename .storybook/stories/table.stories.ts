@@ -4,10 +4,10 @@ import { eventDetails } from "../utils";
 import { TemplateResult, html } from "lit-element";
 import { nothing } from "lit-html";
 
-import "../../packages/filterable-table/src/chameleon-filterable-table";
-import { Row } from "../../packages/filterable-table/types";
+import { Row } from "../../packages/table/types";
+import "../../packages/table/src/chameleon-table";
 
-const stories = storiesOf("Filterable Table", module);
+const stories = storiesOf("Table", module);
 
 // Typecasting this as "any" is a quick workaround. Please come back
 // to this and make these types compatible.
@@ -17,13 +17,13 @@ stories.add(
   "Basic",
   () => {
     return html`
-      <chameleon-filterable-table
+      <chameleon-table
         .columns=${columns}
         .rows=${rows}
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
-      ></chameleon-filterable-table>
+      ></chameleon-table>
     `;
   },
   { info: { inline: true } }
@@ -33,13 +33,13 @@ stories.add(
   "Details Rows",
   () => {
     return html`
-      <chameleon-filterable-table
+      <chameleon-table
         .columns=${columnsWithDetailFields}
         .rows=${rows}
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
-      ></chameleon-filterable-table>
+      ></chameleon-table>
     `;
   },
   { info: { inline: true } }
@@ -49,16 +49,14 @@ stories.add(
   "Filters",
   () => {
     return html`
-      <chameleon-filterable-table
+      <chameleon-table
         .columns=${columnsWithFilters}
         .rows=${rows}
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
-        @chameleon.filterable-table.change=${eventDetails.action(
-          "chameleon.filterable-table.change"
-        )}
-      ></chameleon-filterable-table>
+        @chameleon.table.change=${eventDetails.action("chameleon.table.change")}
+      ></chameleon-table>
     `;
   },
   { info: { inline: true } }

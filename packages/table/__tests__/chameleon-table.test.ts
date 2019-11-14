@@ -1,10 +1,10 @@
 import { fixture, html, expect } from "@open-wc/testing";
-import "../src/chameleon-filterable-table";
+import "../src/chameleon-table";
 
-describe("chameleon-filterable-table", () => {
+describe("chameleon-table", () => {
   it("renders", async () => {
     const el = await fixture(html`
-      <chameleon-filterable-table></chameleon-filterable-table>
+      <chameleon-table></chameleon-table>
     `);
     expect(Boolean(el.shadowRoot)).to.equal(true);
   });
