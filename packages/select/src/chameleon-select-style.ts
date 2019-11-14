@@ -175,4 +175,10 @@ export default css`
     font-size: var(--font-size-input, 0.938rem);
     display: block;
   }
+
+  .label-container {
+    color: var(--color-gray-darkest, #6c737a);
+    font-size: var(--font-size-label, 0.875rem);
+    margin-bottom: 10px;
+  }
 `;
