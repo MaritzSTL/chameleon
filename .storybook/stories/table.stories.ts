@@ -23,6 +23,7 @@ stories.add(
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
+        @chameleon.table.change=${eventDetails.action("chameleon.table.change")}
       ></chameleon-table>
     `;
   },
@@ -39,6 +40,7 @@ stories.add(
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
+        @chameleon.table.change=${eventDetails.action("chameleon.table.change")}
       ></chameleon-table>
     `;
   },
