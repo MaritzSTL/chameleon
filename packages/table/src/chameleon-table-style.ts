@@ -119,5 +119,6 @@ export default css`
   chameleon-paginator {
     display: flex;
     justify-content: center;
+    margin: 2rem 0;
   }
 `;

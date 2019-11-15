@@ -47,6 +47,12 @@ export default class ChameleonTable extends LitElement {
   } as Sort;
 
   @property({ type: Number })
+  pageSize = null;
+
+  @property({ type: Number })
+  totalItems = null;
+
+  @property({ type: Number })
   currentPage = 1;
 
   /**
@@ -127,8 +133,9 @@ export default class ChameleonTable extends LitElement {
       </table>
 
       <chameleon-paginator
-        totalItems=${100}
-        pageSize=${6}
+        totalItems=${this.totalItems}
+        pageSize=${this.pageSize}
+        currentPage=${this.currentPage}
         @page-change=${this.handlePageChange}
       ></chameleon-paginator>
     `;
