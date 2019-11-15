@@ -229,9 +229,13 @@ export default class ChameleonTable extends LitElement {
   private handleSort(column: Column, order: Order): void {
     console.log("handle sort", order);
 
+    // This can be refactored if we add optional chaining
+    const filterName =
+      column.filter && column.filter.name ? column.filter.name : "";
+
     this.sort = {
       order: order,
-      orderBy: column.filter.name || ""
+      orderBy: filterName
     };
 
     this.dispatchChangeEvent();
