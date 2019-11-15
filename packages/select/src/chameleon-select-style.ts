@@ -51,7 +51,8 @@ export default css`
     justify-content: center;
     position: absolute;
     right: 0;
-    top: 30%;
+    top: 50%;
+    transform: translateY(-50%);
     width: 40px;
   }
 
