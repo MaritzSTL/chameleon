@@ -15,7 +15,6 @@ export default css`
     --color-primary: #2c6fb7;
     --color-primary-light: #679dea;
     --color-primary-dark: #004587;
-    --color-primary-light: #679dea;
     --color-secondary: #69c9b9;
     --color-secondary-light: #9cfceb;
     --color-secondary-dark: #349889;

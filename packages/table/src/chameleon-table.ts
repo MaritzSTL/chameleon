@@ -18,6 +18,8 @@ import {
   Row,
   Rows,
   Filters,
+  Sort,
+  Order,
   ChangeCustomEvent
 } from "../types";
 
@@ -37,6 +39,12 @@ export default class ChameleonTable extends LitElement {
 
   @property({ type: Object })
   filters = {} as Filters;
+
+  @property({ type: Object })
+  sort = {
+    orderBy: "",
+    order: "ASC"
+  } as Sort;
 
   @property({ type: Number })
   currentPage = 1;
@@ -75,7 +83,10 @@ export default class ChameleonTable extends LitElement {
             return html`
               <tbody>
                 <tr
-                  class=${classMap(this.rowClassMap(row, index))}
+                  class=${classMap({
+                    "highlight-row": index === this.highlightRow,
+                    "show-details": row.showDetails || false
+                  })}
                   data-row=${index}
                 >
                   ${this.columns.map(
@@ -93,9 +104,10 @@ export default class ChameleonTable extends LitElement {
                       (detailsRow: Row, index: number): TemplateResult => {
                         return html`
                           <tr
-                            class="details-row ${classMap(
-                              this.rowClassMap(row, index)
-                            )}"
+                            class="details-row ${classMap({
+                              "highlight-row": index === this.highlightRow,
+                              "show-details": row.showDetails || false
+                            })}"
                             data-row=${index}
                           >
                             ${this.columns.map((column: Column) =>
@@ -126,11 +138,13 @@ export default class ChameleonTable extends LitElement {
     `;
   }
 
-  rowClassMap(row: Row, index: number): any {
-    return {
-      "highlight-row": index === this.highlightRow,
-      "show-details": row.showDetails
-    };
+  sortActiveClass(column: Column, order: Order): string {
+    return column.filter &&
+      column.filter.name &&
+      this.sort.orderBy === column.filter.name &&
+      this.sort.order === order
+      ? "active"
+      : "";
   }
 
   renderColumnHeader(column: Column): TemplateResult {
@@ -177,18 +191,27 @@ export default class ChameleonTable extends LitElement {
   renderColumnSort(column: Column) {
     return column.sortable
       ? html`
-          <div class="sort-container">
+          <div class="sort-icons">
             <div
-              class="sort-icons"
-              @click=${(e: CustomEvent) => this.handleSort(e, column)}
+              class="
+              icon-container
+              sort-ascending
+              ${this.sortActiveClass(column, "ASC")}
+              "
+              @click=${() => this.handleSort(column, "ASC")}
             >
-              <div class="icon-container">
-                ${this.chevronUpIcon}
-              </div>
+              ${this.chevronUpIcon}
+            </div>
 
-              <div class="icon-container">
-                ${this.chevronDownIcon}
-              </div>
+            <div
+              class="
+              icon-container
+              sort-descending
+              ${this.sortActiveClass(column, "DESC")}
+              "
+              @click=${() => this.handleSort(column, "DESC")}
+            >
+              ${this.chevronDownIcon}
             </div>
           </div>
         `
@@ -203,11 +226,30 @@ export default class ChameleonTable extends LitElement {
     }
   }
 
-  private handleSort(e: CustomEvent, column: Column): void {
-    console.log(e);
-    console.log(column);
-    // this.dispatchChangeEvent();
+  private handleSort(column: Column, order: Order): void {
+    console.log("handle sort", order);
+
+    this.sort = {
+      order: order,
+      orderBy: column.filter.name || ""
+    };
+
+    this.dispatchChangeEvent();
+    this.requestUpdate();
   }
+
+  // private toggleSort(column: Column, order: Order): void {
+  //   this.sort.order = (this.sort?.orderBy !== column?.filter?.name)
+  //     ? "ASC"
+  //     : (this.sort.order === "DESC")
+  //       ? "ASC"
+  //       : "DESC"
+
+  //   this.sort.orderBy = column?.filter?.name || "";
+
+  //   this.dispatchChangeEvent();
+  //   this.requestUpdate();
+  // }
 
   private handlePageChange(e: CustomEvent): void {
     this.currentPage = e.detail.currentPage;
@@ -219,6 +261,7 @@ export default class ChameleonTable extends LitElement {
     const eventDetail: ChangeCustomEvent = {
       detail: {
         filters: this.filters,
+        sort: this.sort,
         page: this.currentPage
       },
       bubbles: true,
@@ -237,12 +280,12 @@ export default class ChameleonTable extends LitElement {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
+        stroke-width="4"
         stroke-linecap="round"
         stroke-linejoin="round"
         class="feather feather-chevron-up"
       >
-        <polyline points="18 15 12 9 6 15"></polyline>
+        <polyline points="4 18 12 10 20 18"></polyline>
       </svg>
     `;
   }
@@ -256,12 +299,12 @@ export default class ChameleonTable extends LitElement {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
+        stroke-width="4"
         stroke-linecap="round"
         stroke-linejoin="round"
         class="feather feather-chevron-down"
       >
-        <polyline points="6 9 12 15 18 9"></polyline>
+        <polyline points="4 6 12 14 20 6"></polyline>
       </svg>
     `;
   }

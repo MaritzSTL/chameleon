@@ -19,7 +19,7 @@ export default css`
 
   table th,
   table td {
-    color: var(--color-black, #000000);
+    color: var(--color-black, #252a33);
     line-height: 1.4;
     text-align: var(--th-and-td-text-align, initial);
     width: var(--table-column-width, initial);
@@ -85,15 +85,24 @@ export default css`
     justify-content: space-between;
   }
 
-  table th .sort-container {
-  }
-
   table th .sort-icons {
-    padding-right: 0.7rem;
+    margin-right: 0.5rem;
+    opacity: 0.5;
   }
 
   table th .sort-icons .icon-container {
+    color: var(--color-primary-light, #679dea);
+    cursor: pointer;
     height: 1rem;
+    opacity: 0.5;
+    transition: all 0.1s ease;
+  }
+
+  table th .sort-icons .icon-container.active,
+  table th .sort-icons .icon-container:hover {
+    color: var(--color-primary, #2c6fb7);
+    opacity: 1;
+    transition: all 0.2s ease;
   }
 
   table th .sort-icons .icon-container svg {

@@ -34,9 +34,17 @@ export type Filters = {
   [key: string]: string | string[];
 };
 
+export type Sort = {
+  orderBy: string;
+  order: Order;
+};
+
+export type Order = "ASC" | "DESC";
+
 export type ChangeCustomEvent = {
   detail: {
     filters: Filters;
+    sort: Sort;
     page: number;
   };
   bubbles: true;
