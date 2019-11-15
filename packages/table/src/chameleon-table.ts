@@ -238,21 +238,6 @@ export default class ChameleonTable extends LitElement {
     this.requestUpdate();
   }
 
-  // To be used if we want to switch to a single button that toggles
-  // between ASC/DESC or to be able to click the header to toggle
-  // private toggleSort(column: Column, order: Order): void {
-  //   this.sort.order = (this.sort?.orderBy !== column?.filter?.name)
-  //     ? "ASC"
-  //     : (this.sort.order === "DESC")
-  //       ? "ASC"
-  //       : "DESC"
-
-  //   this.sort.orderBy = column?.filter?.name || "";
-
-  //   this.dispatchChangeEvent();
-  //   this.requestUpdate();
-  // }
-
   private handlePageChange(e: CustomEvent): void {
     this.currentPage = e.detail.currentPage;
 
