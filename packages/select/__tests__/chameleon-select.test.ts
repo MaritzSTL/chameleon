@@ -13,4 +13,14 @@ describe("chameleon-select", () => {
     element = await litFixture(fixture);
     expect(Boolean(element.shadowRoot)).to.equal(true);
   });
+
+  it("renders labelText", async () => {
+    element.label = "chameleon";
+
+    const labelEl = await litFixture(element.labelText);
+
+    expect(labelEl).dom.to.equal(
+      "<div class=label-container><label>chameleon</label></div>"
+    );
+  });
 });
