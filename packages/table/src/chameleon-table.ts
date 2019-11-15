@@ -58,10 +58,6 @@ export default class ChameleonTable extends LitElement {
    * Template
    */
   render(): TemplateResult {
-    console.log("columns");
-    console.log(this.columns);
-    console.log("rows");
-    console.log(this.rows);
     return html`
       <table>
         <thead>
@@ -219,30 +215,24 @@ export default class ChameleonTable extends LitElement {
   }
 
   private handleFilterChange(filterValue: string, column: Column) {
-    // refactor this with optional chaining
-    if (column.filter && column.filter.name) {
+    if (column?.filter?.name) {
       this.filters[column.filter.name] = filterValue;
+      this.dispatchChangeEvent();
     }
-
-    this.dispatchChangeEvent();
   }
 
   private handleSort(column: Column, order: Order): void {
-    console.log("handle sort", order);
-
-    // This can be refactored if we add optional chaining
-    const filterName =
-      column.filter && column.filter.name ? column.filter.name : "";
-
     this.sort = {
       order: order,
-      orderBy: filterName
+      orderBy: column?.filter?.name || ""
     };
 
     this.dispatchChangeEvent();
     this.requestUpdate();
   }
 
+  // To be used if we want to switch to a single button that toggles
+  // between ASC/DESC or to be able to click the header to toggle
   // private toggleSort(column: Column, order: Order): void {
   //   this.sort.order = (this.sort?.orderBy !== column?.filter?.name)
   //     ? "ASC"

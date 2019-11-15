@@ -25,8 +25,7 @@
   "dependencies": {
     "@chameleon-ds/paginator": "^1.1.1",
     "@chameleon-ds/multiselect": "^0.2.2",
-    "lit-element": "^2.2.1",
-    "lit-html": "^1.1.2"
+    "lit-element": "^2.2.1"
   },
   "publishConfig": {
     "access": "public"
