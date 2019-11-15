@@ -30,6 +30,9 @@ export default css`
     border-radius: var(--border-radius, 5px);
     cursor: pointer;
     min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
 
   .container.active {
@@ -45,11 +48,10 @@ export default css`
   .select {
     align-items: center;
     display: flex;
-    height: 100%;
     justify-content: center;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 30%;
     width: 40px;
   }
 
