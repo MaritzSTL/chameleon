@@ -1,11 +1,18 @@
-import { fixture, html, expect } from "@open-wc/testing";
+import { litFixture, html, expect } from "@open-wc/testing";
 import "../src/chameleon-table";
 
+const fixture = html`
+  <chameleon-table></chameleon-table>
+`;
+
 describe("chameleon-table", () => {
-  it("renders", async () => {
-    const el = await fixture(html`
-      <chameleon-table></chameleon-table>
-    `);
-    expect(Boolean(el.shadowRoot)).to.equal(true);
+  let element;
+
+  beforeEach(async () => {
+    element = await litFixture(fixture);
+  });
+
+  it("renders", () => {
+    expect(Boolean(element.shadowRoot)).to.equal(true);
   });
 });

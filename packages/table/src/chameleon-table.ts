@@ -138,15 +138,6 @@ export default class ChameleonTable extends LitElement {
     `;
   }
 
-  sortActiveClass(column: Column, order: Order): string {
-    return column.filter &&
-      column.filter.name &&
-      this.sort.orderBy === column.filter.name &&
-      this.sort.order === order
-      ? "active"
-      : "";
-  }
-
   renderColumnHeader(column: Column): TemplateResult {
     return column.filter && column.filter.name
       ? column.filter.items
@@ -218,12 +209,22 @@ export default class ChameleonTable extends LitElement {
       : nothing;
   }
 
+  sortActiveClass(column: Column, order: Order): string {
+    return column.filter &&
+      column.filter.name &&
+      this.sort.orderBy === column.filter.name &&
+      this.sort.order === order
+      ? "active"
+      : "";
+  }
+
   private handleFilterChange(filterValue: string, column: Column) {
+    // refactor this with optional chaining
     if (column.filter && column.filter.name) {
       this.filters[column.filter.name] = filterValue;
-
-      this.dispatchChangeEvent();
     }
+
+    this.dispatchChangeEvent();
   }
 
   private handleSort(column: Column, order: Order): void {
