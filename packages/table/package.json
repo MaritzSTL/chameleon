@@ -24,11 +24,9 @@
   },
   "dependencies": {
     "@chameleon-ds/paginator": "^1.1.1",
-    "@chameleon-ds/multiselect": "^0.2.0",
-    "@types/lodash": "^4.14.144",
+    "@chameleon-ds/multiselect": "^0.2.2",
     "lit-element": "^2.2.1",
-    "lit-html": "^1.1.2",
-    "lodash": "^4.17.15"
+    "lit-html": "^1.1.2"
   },
   "publishConfig": {
     "access": "public"
