@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{270:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_loader_style=lit_element.b`
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{179:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_loader_style=lit_element.b`
   :host {
     box-sizing: border-box;
     --loader-color: var(--color-primary, #2c6fb7);
@@ -144,7 +144,7 @@
       >
         <circle cx="50" cy="50" r="45" />
       </svg>
-    `}};chameleon_loader_ChameleonLoader.styles=[chameleon_loader_style],__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_loader_ChameleonLoader.prototype,"loader",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_loader_ChameleonLoader.prototype,"size",void 0);chameleon_loader_ChameleonLoader=__decorate([Object(lit_element.c)("chameleon-loader")],chameleon_loader_ChameleonLoader)},271:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_card_style=lit_element.b`
+    `}};chameleon_loader_ChameleonLoader.styles=[chameleon_loader_style],__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_loader_ChameleonLoader.prototype,"loader",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_loader_ChameleonLoader.prototype,"size",void 0);chameleon_loader_ChameleonLoader=__decorate([Object(lit_element.c)("chameleon-loader")],chameleon_loader_ChameleonLoader)},277:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_card_style=lit_element.b`
   :host {
     background-color: var(--color-surface, #ffffff);
     display: flex;
@@ -162,7 +162,7 @@
   }
 `,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};let chameleon_card_ChameleonCard=class ChameleonCard extends lit_element.a{constructor(){super(...arguments),this.accentColor=null}render(){return lit_element.d`
       <slot></slot>
-    `}updated(changedProperties){changedProperties.has("accentColor")&&""!==this.accentColor&&(this.style.borderTop=`7px solid ${this.accentColor}`),changedProperties.has("accentColor")&&""===this.accentColor&&void 0!==this.accentColor&&(this.style.borderTop="7px solid var(--color-primary)")}};chameleon_card_ChameleonCard.styles=[chameleon_card_style],__decorate([Object(lit_element.e)({type:String})],chameleon_card_ChameleonCard.prototype,"accentColor",void 0);chameleon_card_ChameleonCard=__decorate([Object(lit_element.c)("chameleon-card")],chameleon_card_ChameleonCard)},272:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_chip_style=lit_element.b`
+    `}updated(changedProperties){changedProperties.has("accentColor")&&""!==this.accentColor&&(this.style.borderTop=`7px solid ${this.accentColor}`),changedProperties.has("accentColor")&&""===this.accentColor&&void 0!==this.accentColor&&(this.style.borderTop="7px solid var(--color-primary)")}};chameleon_card_ChameleonCard.styles=[chameleon_card_style],__decorate([Object(lit_element.e)({type:String})],chameleon_card_ChameleonCard.prototype,"accentColor",void 0);chameleon_card_ChameleonCard=__decorate([Object(lit_element.c)("chameleon-card")],chameleon_card_ChameleonCard)},278:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_chip_style=lit_element.b`
   :host {
     align-items: center;
     background-color: var(--color-primary, #2c6fb7);
@@ -194,7 +194,7 @@
       ${this.closeable?lit_element.d`
             <span @click="${this._remove}">${this.removeIcon}</span>
           `:lit_html.nothing}
-    `}_remove(){const e=new CustomEvent("remove-chip",{detail:{value:this.value},bubbles:!0,composed:!0});this.dispatchEvent(e)}get removeIcon(){return lit_element.f`<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`}get value(){return""!==this._value?this._value:this.innerText}set value(value){this._value=value}};chameleon_chip_ChameleonChip.styles=[chameleon_chip_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_chip_ChameleonChip.prototype,"closeable",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_chip_ChameleonChip.prototype,"_value",void 0);chameleon_chip_ChameleonChip=__decorate([Object(lit_element.c)("chameleon-chip")],chameleon_chip_ChameleonChip)},273:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_skeleton_style=lit_element.b`
+    `}_remove(){const e=new CustomEvent("remove-chip",{detail:{value:this.value},bubbles:!0,composed:!0});this.dispatchEvent(e)}get removeIcon(){return lit_element.f`<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`}get value(){return""!==this._value?this._value:this.innerText}set value(value){this._value=value}};chameleon_chip_ChameleonChip.styles=[chameleon_chip_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_chip_ChameleonChip.prototype,"closeable",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_chip_ChameleonChip.prototype,"_value",void 0);chameleon_chip_ChameleonChip=__decorate([Object(lit_element.c)("chameleon-chip")],chameleon_chip_ChameleonChip)},279:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_skeleton_style=lit_element.b`
   .rectangle {
     fill: var(--color-gray-lightest, #e1e3e4);
   }
@@ -210,9 +210,9 @@
           ry="10"
         />
       </svg>
-    `}};chameleon_skeleton_ChameleonSkeleton.styles=[chameleon_skeleton_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"theme",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"height",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"width",void 0);chameleon_skeleton_ChameleonSkeleton=__decorate([Object(lit_element.c)("chameleon-skeleton")],chameleon_skeleton_ChameleonSkeleton)},275:function(module,exports,__webpack_require__){__webpack_require__(276),__webpack_require__(389),module.exports=__webpack_require__(390)},297:function(module,exports){},390:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3);const req=__webpack_require__(570);Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.configure)((function loadStories(){req.keys().forEach(req)}),module)}.call(this,__webpack_require__(12)(module))},570:function(module,exports,__webpack_require__){var map={"./alert.stories.ts":571,"./button.stories.ts":581,"./card.stories.ts":582,"./checkbox.stories.ts":583,"./chip.stories.ts":584,"./dialog.stories.ts":585,"./hero.stories.ts":586,"./input.stories.ts":587,"./loader.stories.ts":588,"./multiselect.stories.ts":589,"./paginator.stories.ts":590,"./radio.stories.ts":591,"./rice-ball-dessert.stories.ts":592,"./select.stories.ts":593,"./sheet.stories.ts":594,"./skeleton.stories.ts":595,"./switch.stories.ts":596,"./tabs.stories.ts":597,"./textarea.stories.ts":598,"./toast.stories.ts":599};function webpackContext(req){var id=webpackContextResolve(req);return __webpack_require__(id)}function webpackContextResolve(req){if(!__webpack_require__.o(map,req)){var e=new Error("Cannot find module '"+req+"'");throw e.code="MODULE_NOT_FOUND",e}return map[req]}webpackContext.keys=function webpackContextKeys(){return Object.keys(map)},webpackContext.resolve=webpackContextResolve,module.exports=webpackContext,webpackContext.id=570},571:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(602);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Alert",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Alert (Default)",()=>{const message=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Alert Message","This is an alert message from chameleon!");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `}};chameleon_skeleton_ChameleonSkeleton.styles=[chameleon_skeleton_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"theme",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"height",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"width",void 0);chameleon_skeleton_ChameleonSkeleton=__decorate([Object(lit_element.c)("chameleon-skeleton")],chameleon_skeleton_ChameleonSkeleton)},282:function(module,exports,__webpack_require__){__webpack_require__(283),__webpack_require__(396),module.exports=__webpack_require__(397)},304:function(module,exports){},397:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4);const req=__webpack_require__(577);Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.configure)((function loadStories(){req.keys().forEach(req)}),module)}.call(this,__webpack_require__(13)(module))},577:function(module,exports,__webpack_require__){var map={"./alert.stories.ts":578,"./button.stories.ts":588,"./card.stories.ts":589,"./checkbox.stories.ts":590,"./chip.stories.ts":591,"./dialog.stories.ts":604,"./hero.stories.ts":605,"./input.stories.ts":606,"./loader.stories.ts":607,"./multiselect.stories.ts":608,"./paginator.stories.ts":609,"./radio.stories.ts":610,"./rice-ball-dessert.stories.ts":611,"./select.stories.ts":612,"./sheet.stories.ts":613,"./skeleton.stories.ts":614,"./switch.stories.ts":615,"./tabs.stories.ts":616,"./textarea.stories.ts":617,"./toast.stories.ts":618};function webpackContext(req){var id=webpackContextResolve(req);return __webpack_require__(id)}function webpackContextResolve(req){if(!__webpack_require__.o(map,req)){var e=new Error("Cannot find module '"+req+"'");throw e.code="MODULE_NOT_FOUND",e}return map[req]}webpackContext.keys=function webpackContextKeys(){return Object.keys(map)},webpackContext.resolve=webpackContextResolve,module.exports=webpackContext,webpackContext.id=577},578:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(621);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Alert",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Alert (Default)",()=>{const message=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Alert Message","This is an alert message from chameleon!");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-alert .message="${message}"> </chameleon-alert>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},581:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(94);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Button",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);stories.add("Primary",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),fullWidth=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Width",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),newTab=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open Link in New Tab",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},588:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(98);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Button",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);stories.add("Primary",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),fullWidth=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Width",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),newTab=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open Link in New Tab",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-button
         ?disabled=${disabled}
         ?loading=${loading}
@@ -268,7 +268,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right" slot="${slot}"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 `)("icon-only")}</chameleon-button
       >
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},582:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(271),__webpack_require__(603),__webpack_require__(604),__webpack_require__(605),__webpack_require__(94);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Card",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.addParameters({backgrounds:[{name:"gray",value:"#f5f5f8",default:!0},{name:"black",value:"#252a33"}]}),stories.add("Basic",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},589:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(277),__webpack_require__(622),__webpack_require__(623),__webpack_require__(624),__webpack_require__(98);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Card",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.addParameters({backgrounds:[{name:"gray",value:"#f5f5f8",default:!0},{name:"black",value:"#252a33"}]}),stories.add("Basic",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <style>
         chameleon-card {
           max-width: 400px;
@@ -344,21 +344,30 @@
           <chameleon-button theme="secondary">Button</chameleon-button>
         </chameleon-card-footer>
       </chameleon-card>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},583:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(606);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Checkbox",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Checkbox",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},590:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(625);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Checkbox",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Checkbox",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-checkbox
         label="${label}"
         name="test"
         ?checked="${checked}"
       ></chameleon-checkbox>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},584:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(272);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Chip",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Chip",()=>{const valueText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Value","Salty");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-chip>${valueText}</chameleon-chip>
-    `},{info:{inline:!0}}),stories.add("With Icon",()=>{const valueText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Value","Crunchy");return document.addEventListener("remove-chip",e=>console.log("Chameleon Chip Close Event: ",e.detail.value)),lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-chip .value="${valueText}" closeable
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},591:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(278);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Chip",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Chip",()=>{const valueText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Value","Salty");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-chip @remove-chip=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("remove-chip")}
         >${valueText}</chameleon-chip
       >
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},585:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(601);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Dialog",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);stories.add("Basic",()=>{const dialogVisible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open",!0),dismissible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Dismissible",!0);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-dialog ?open="${dialogVisible}" ?dismissible="${dismissible}">
-        ${(slot=>lit_html__WEBPACK_IMPORTED_MODULE_2__.svg`
+    `},{info:{inline:!0}}),stories.add("With Icon",()=>{const valueText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Value","Crunchy");return document.addEventListener("remove-chip",e=>console.log("Chameleon Chip Close Event: ",e.detail.value)),lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-chip
+        .value="${valueText}"
+        closeable
+        @remove-chip=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("remove-chip")}
+        >${valueText}</chameleon-chip
+      >
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},604:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(620);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Dialog",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);stories.add("Basic",()=>{const dialogVisible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open",!0),dismissible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Dismissible",!0);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-dialog
+        ?open="${dialogVisible}"
+        ?dismissible="${dismissible}"
+        @toggle-dialog=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("toggle-dialog")}
+      >
+        ${(slot=>lit_html__WEBPACK_IMPORTED_MODULE_3__.svg`
   <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle" slot="${slot}"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12" y2="17"></line></svg>
 `)("icon")}
         <h1 slot="title">Title</h1>
@@ -381,7 +390,7 @@
           >
         </div>
       </chameleon-dialog>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},586:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(607);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Hero",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("CSS Gradient",()=>{const title=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO"),subtitle=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),heroText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Text","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet non curabitur gravida arcu ac tortor dignissim convallis aenean. Viverra adipiscing at in tellus integer feugiat."),gradientColors=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Hex Colors","#B72126, #14264B"),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},605:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(626);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Hero",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("CSS Gradient",()=>{const title=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO"),subtitle=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),heroText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Text","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet non curabitur gravida arcu ac tortor dignissim convallis aenean. Viverra adipiscing at in tellus integer feugiat."),gradientColors=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Hex Colors","#B72126, #14264B"),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-hero
         title="${title}"
         subTitle="${subtitle}"
@@ -413,7 +422,7 @@
         ?loading="${loading}"
       >
       </chameleon-hero>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},587:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(608);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Input",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const searchIcon=slot=>lit_html__WEBPACK_IMPORTED_MODULE_2__.svg`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},606:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(627);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Input",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const searchIcon=slot=>lit_html__WEBPACK_IMPORTED_MODULE_3__.svg`
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -430,7 +439,7 @@
     <circle cx="11" cy="11" r="8"></circle>
     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
   </svg>
-`;stories.add("Basic",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),toggleable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Toggleable password visibility",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),typeSelection=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.radios)("Type",{Text:"text",Password:"password",Email:"email",Number:"number",Search:"search",Tel:"tel",Url:"url"},"text");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+`;stories.add("Basic",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),toggleable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Toggleable password visibility",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),typeSelection=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.radios)("Type",{Text:"text",Password:"password",Email:"email",Number:"number",Search:"search",Tel:"tel",Url:"url"},"text");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-input
         ?disabled="${disabled}"
         ?toggleable="${toggleable}"
@@ -438,8 +447,9 @@
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
+        @chameleon.input.input=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.input.input")}
       ></chameleon-input>
-    `},{info:{inline:!0}}),stories.add("Icon Left",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),toggleable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Toggleable password visibility",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),typeSelection=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.radios)("Type",{Text:"text",Password:"password",Email:"email",Number:"number",Search:"search",Tel:"tel",Url:"url"},"text");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}}),stories.add("Icon Left",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),toggleable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Toggleable password visibility",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),typeSelection=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.radios)("Type",{Text:"text",Password:"password",Email:"email",Number:"number",Search:"search",Tel:"tel",Url:"url"},"text");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-input
         ?disabled="${disabled}"
         ?toggleable="${toggleable}"
@@ -448,10 +458,11 @@
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
+        @chameleon.input.input=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.input.input")}
       >
         ${searchIcon("icon-left")}
       </chameleon-input>
-    `},{info:{inline:!0}}),stories.add("Icon Right",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),toggleable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Toggleable password visibility",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),typeSelection=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.radios)("Type",{Text:"text",Password:"password",Email:"email",Number:"number",Search:"search",Tel:"tel",Url:"url"},"text");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}}),stories.add("Icon Right",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),toggleable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Toggleable password visibility",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),typeSelection=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.radios)("Type",{Text:"text",Password:"password",Email:"email",Number:"number",Search:"search",Tel:"tel",Url:"url"},"text");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-input
         ?disabled="${disabled}"
         ?toggleable="${toggleable}"
@@ -460,48 +471,55 @@
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
+        @chameleon.input.input=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.input.input")}
       >
         ${searchIcon("icon-right")}
       </chameleon-input>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},588:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(270);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Loader",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Spinner (Default)",()=>{const size=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Size","21px");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},607:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(179);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Loader",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Spinner (Default)",()=>{const size=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Size","21px");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-loader loader="spinner" size="${size}"></chameleon-loader>
     `},{info:{inline:!0}}),stories.add("Ellipsis",()=>lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-loader loader="ellipsis"></chameleon-loader>
-    `,{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},589:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(609);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Multiselect",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const options=[{value:"arch",label:"Gateway Arch",subLabel:"Historical Landmark",preLabel:lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `,{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},608:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(628);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Multiselect",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const options=[{value:"arch",label:"Gateway Arch",subLabel:"Historical Landmark",preLabel:lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/0/00/St_Louis_night_expblend_cropped.jpg"
       />
-    `,postLabel:"St. Louis, MO"},{value:"union-station",label:"Union Station",subLabel:"Historical Landmark",preLabel:lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `,postLabel:"St. Louis, MO"},{value:"union-station",label:"Union Station",subLabel:"Historical Landmark",preLabel:lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/St._Louis_Union_Station_%2817577826564%29.jpg/320px-St._Louis_Union_Station_%2817577826564%29.jpg"
       />
-    `,postLabel:"St. Louis, MO"},{value:"scott-joplin-house",label:"Scott Joplin House",subLabel:"Historical Landmark",preLabel:lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `,postLabel:"St. Louis, MO"},{value:"scott-joplin-house",label:"Scott Joplin House",subLabel:"Historical Landmark",preLabel:lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Scott_Joplin_House.jpg/568px-Scott_Joplin_House.jpg"
       />
-    `,postLabel:"St. Louis, MO"}];stories.add("Multiselect",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Select an option...");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `,postLabel:"St. Louis, MO"}];stories.add("Multiselect",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Select an option...");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
+        @chameleon.select=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.select")}
       ></chameleon-multiselect>
-    `},{info:{inline:!0},options:{enableShortcuts:!1}}),stories.add("Pre-Selected Values",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Select an option...");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0},options:{enableShortcuts:!1}}),stories.add("Pre-Selected Values",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Select an option...");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
         .value="${["arch"]}"
+        @chameleon.select=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.select")}
       ></chameleon-multiselect>
-    `},{info:{inline:!0},options:{enableShortcuts:!1}}),stories.add("With Icon",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Select an option...");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0},options:{enableShortcuts:!1}}),stories.add("With Icon",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Select an option...");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
+        @chameleon.select=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.select")}
       >
-        ${(slot=>lit_html__WEBPACK_IMPORTED_MODULE_2__.svg`
+        ${(slot=>lit_html__WEBPACK_IMPORTED_MODULE_3__.svg`
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -520,31 +538,37 @@
   </svg>
 `)("icon")}
       </chameleon-multiselect>
-    `},{info:{inline:!0},options:{enableShortcuts:!1}})}.call(this,__webpack_require__(12)(module))},590:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(610);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Paginator",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Paginator",()=>{const totalItems=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Total Items",100),pageSize=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Page Size",10);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0},options:{enableShortcuts:!1}})}.call(this,__webpack_require__(13)(module))},609:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(629);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Paginator",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Paginator",()=>{const totalItems=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Total Items",100),pageSize=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Page Size",10);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-paginator
         totalItems="${totalItems||0}"
         pageSize="${pageSize||0}"
+        @page-change=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("page-change")}
       ></chameleon-paginator>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},591:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(611);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Radio",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Radio",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},610:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(630);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Radio",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Radio",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-radio
         label="${label}"
         name="test"
         ?checked="${checked}"
         ?disabled=${disabled}
       ></chameleon-radio>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},592:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(612);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Rice Ball Dessert",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const ballColor=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Ball Color","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},611:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(631);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Rice Ball Dessert",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const ballColor=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Ball Color","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-rice-ball-dessert
         riceBallColor=${ballColor}
       ></chameleon-rice-ball-dessert>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},593:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(613);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Select",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const exampleData=[{value:"value-0",label:"Direct Marketing",preLabel:"pre-label",postLabel:"Custom"},{value:"value-1",label:"District 1",preLabel:"pre-label",postLabel:"Custom"},{value:"value-2",label:"District 2",preLabel:"pre-label",postLabel:"Enrollment"},{value:"value-3",label:"District 3",preLabel:"pre-label",postLabel:"Custom"},{value:"value-4",label:"four",preLabel:"pre-label",postLabel:"Enrollment"},{value:"value-5",label:"five",preLabel:"pre-label",postLabel:"Custom"},{value:"value-6",label:"six",preLabel:"pre-label",postLabel:"Custom"},{value:"value-7",label:"seven",preLabel:"pre-label",postLabel:"Custom"},{value:"value-8",label:"eight",preLabel:"pre-label",postLabel:"Enrollment"},{value:"value-9",label:"nine",preLabel:"pre-label",postLabel:"Custom"},{value:"value-10",label:"ten",preLabel:"pre-label",postLabel:"Custom"}];stories.add("Basic",()=>{const placeHolder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Place Holder","Please select an option");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-select .options="${exampleData}" placeHolder="${placeHolder}"
-        >select</chameleon-select
-      >
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},594:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(614);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Sheet",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.addParameters({backgrounds:[{name:"gray",value:"#f5f5f8",default:!0},{name:"black",value:"#252a33"}]}),stories.add("Sheet",()=>{const header=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Missouri"),subHeader=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Sub Label","Tour Guide"),sheetOpened=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},612:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(632);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Select",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const exampleData=[{value:"value-0",label:"Direct Marketing",preLabel:"pre-label",postLabel:"Custom"},{value:"value-1",label:"District 1",preLabel:"pre-label",postLabel:"Custom"},{value:"value-2",label:"District 2",preLabel:"pre-label",postLabel:"Enrollment"},{value:"value-3",label:"District 3",preLabel:"pre-label",postLabel:"Custom"},{value:"value-4",label:"four",preLabel:"pre-label",postLabel:"Enrollment"},{value:"value-5",label:"five",preLabel:"pre-label",postLabel:"Custom"},{value:"value-6",label:"six",preLabel:"pre-label",postLabel:"Custom"},{value:"value-7",label:"seven",preLabel:"pre-label",postLabel:"Custom"},{value:"value-8",label:"eight",preLabel:"pre-label",postLabel:"Enrollment"},{value:"value-9",label:"nine",preLabel:"pre-label",postLabel:"Custom"},{value:"value-10",label:"ten",preLabel:"pre-label",postLabel:"Custom"}];stories.add("Basic",()=>{const placeHolder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Place Holder","Please select an option");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-select
+        .options="${exampleData}"
+        placeHolder="${placeHolder}"
+        @chameleon.select=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.select")}
+        @chameleon-select.close=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon-select.close")}
+        >select
+      </chameleon-select>
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},613:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(633);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Sheet",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.addParameters({backgrounds:[{name:"gray",value:"#f5f5f8",default:!0},{name:"black",value:"#252a33"}]}),stories.add("Sheet",()=>{const header=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Missouri"),subHeader=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Sub Label","Tour Guide"),sheetOpened=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open",!1);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-sheet
         header="${header}"
         subHeader="${subHeader}"
         ?sheetOpened="${sheetOpened}"
+        @toggle-sheet=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("toggle-sheet")}
       >
         <section slot="details">
           <p>City: Saint Louis</p>
@@ -560,17 +584,20 @@
           <p>Famous People: Nelly</p>
         </section></chameleon-sheet
       >
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},595:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(273);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Skeleton",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Skeleton",()=>{const height=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Height","100%"),width=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Width","100%");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},614:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(279);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Skeleton",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Skeleton",()=>{const height=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Height","100%"),width=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Width","100%");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-skeleton height="${height}" width="${width}">
       </chameleon-skeleton>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},596:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(615);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Switch",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Switch",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},615:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(634);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Switch",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Switch",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-switch
         label="${label}"
         name="test"
         ?checked="${checked}"
       ></chameleon-switch>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},597:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(600);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Tabs",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Tabs",()=>lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-tabs selected="0">
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},616:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(619);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Tabs",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Tabs",()=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-tabs
+        selected="0"
+        @selected-changed=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("selected-changed")}
+      >
         <chameleon-tab>
           Tab One
         </chameleon-tab>
@@ -581,7 +608,7 @@
           Tab Three
         </chameleon-tab>
       </chameleon-tabs>
-    `,{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},598:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(616);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Textarea",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Textarea",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),minlength=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("minlength",0),maxlength=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("maxlength",500),rows=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Rows",2),cols=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Columns",20),nonresizeable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("non-resizeable",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `,{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},617:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(635);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Textarea",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Textarea",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),minlength=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("minlength",0),maxlength=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("maxlength",500),rows=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Rows",2),cols=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Columns",20),nonresizeable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("non-resizeable",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-textarea
         ?disabled="${disabled}"
         .placeholder="${placeholder}"
@@ -593,16 +620,17 @@
         .cols="${cols}"
         .nonresizeable="${nonresizeable}"
       ></chameleon-textarea>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},599:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(617);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Toast",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Toast",()=>{const color=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Color",""),backgroundColor=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Background Color",""),showCloseable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Show",!0),imageUrl=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Image Url","https://media.istockphoto.com/photos/chocolate-chip-cookie-isolated-picture-id517109442?k=6&m=517109442&s=612x612&w=0&h=NvQ5y8ENWZvpr84vEFWmxUgV2rCgtOGEsjJXa3IYsZ4="),toastText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Text","This website uses cookies to remember you and improve your experience. By using our site, you accept our use of cookies.");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},618:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(4),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(8),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(636);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Toast",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Toast",()=>{const color=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Color",""),backgroundColor=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Background Color",""),showCloseable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Show",!0),imageUrl=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Image Url","https://media.istockphoto.com/photos/chocolate-chip-cookie-isolated-picture-id517109442?k=6&m=517109442&s=612x612&w=0&h=NvQ5y8ENWZvpr84vEFWmxUgV2rCgtOGEsjJXa3IYsZ4="),toastText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Text","This website uses cookies to remember you and improve your experience. By using our site, you accept our use of cookies.");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-toast
         color="${color}"
         backgroundColor="${backgroundColor}"
         ?showCloseable="${showCloseable}"
+        @close-toast=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("close-toast")}
       >
         <span slot="toast-text">${toastText}</span>
         <img slot="closed-icon" src="${imageUrl}" />
       </chameleon-toast>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(12)(module))},600:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0);let chameleon_tab_ChameleonTab=class ChameleonTab extends lit_element.a{constructor(){super(),this.addEventListener("click",this.handleToggle)}render(){return lit_element.d`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(13)(module))},619:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0);let chameleon_tab_ChameleonTab=class ChameleonTab extends lit_element.a{constructor(){super(),this.addEventListener("click",this.handleToggle)}render(){return lit_element.d`
       <slot></slot>
     `}handleToggle(){this.dispatchEvent(new CustomEvent("selected-changed",{detail:{value:this.dataset.index},bubbles:!0,composed:!0}))}};chameleon_tab_ChameleonTab=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r}([Object(lit_element.c)("chameleon-tab")],chameleon_tab_ChameleonTab);var chameleon_tabs_style=lit_element.b`
   :host {
@@ -635,7 +663,7 @@
   }
 `,chameleon_tabs_decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};let chameleon_tabs_ChameleonTabs=class ChameleonTabs extends lit_element.a{constructor(){super(),this.selected=0,this.addEventListener("selected-changed",this._handleSelectedChanged)}firstUpdated(){const tabs=Array.from(this.querySelectorAll("chameleon-tab"));if(tabs.length<=0)throw new Error("<chameleon-tabs> must have at least one <chameleon-tab> element");tabs.forEach((tab,i)=>tab.setAttribute("data-index",i.toString()))}updated(changedProperties){if(changedProperties.has("selected")){Array.from(this.querySelectorAll("chameleon-tab")).forEach((tab,i)=>{tab.removeAttribute("active"),i===this.selected&&tab.setAttribute("active","true")})}}render(){return lit_element.d`
       <slot></slot>
-    `}_handleSelectedChanged(e){e.preventDefault(),this.selected=parseInt(e.detail.value)}};chameleon_tabs_ChameleonTabs.styles=[chameleon_tabs_style],chameleon_tabs_decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_tabs_ChameleonTabs.prototype,"selected",void 0);chameleon_tabs_ChameleonTabs=chameleon_tabs_decorate([Object(lit_element.c)("chameleon-tabs")],chameleon_tabs_ChameleonTabs)},601:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(19),base=lit_element.b`
+    `}_handleSelectedChanged(e){e.preventDefault(),this.selected=parseInt(e.detail.value)}};chameleon_tabs_ChameleonTabs.styles=[chameleon_tabs_style],chameleon_tabs_decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_tabs_ChameleonTabs.prototype,"selected",void 0);chameleon_tabs_ChameleonTabs=chameleon_tabs_decorate([Object(lit_element.c)("chameleon-tabs")],chameleon_tabs_ChameleonTabs)},620:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(22),base=lit_element.b`
   :host {
     --border-radius: 0.5rem;
     --border-radius-input: 0.313rem;
@@ -781,7 +809,7 @@
       opacity: 1;
     }
   }
-`,__decorate=(__webpack_require__(271),__webpack_require__(94),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_dialog_ChameleonDialog=class ChameleonDialog extends lit_element.a{constructor(){super(...arguments),this.open=!0,this.icon=!1,this.dismissible=!1}render(){return lit_element.d`
+`,__decorate=(__webpack_require__(277),__webpack_require__(98),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_dialog_ChameleonDialog=class ChameleonDialog extends lit_element.a{constructor(){super(...arguments),this.open=!0,this.icon=!1,this.dismissible=!1}render(){return lit_element.d`
       <div
         class="${Object(class_map.a)({overlay:!0,open:this.open,close:!this.open})}"
       >
@@ -811,7 +839,7 @@
       </chameleon-card>
     `}_toggleDialog(){this.open=!this.open;const e=new CustomEvent("toggle-dialog",{bubbles:!0,composed:!0});this.dispatchEvent(e)}get closeIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"close-icon"===slot.slot)?lit_html.svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`:lit_element.d`
         <slot name="close-icon"></slot>
-      `}};chameleon_dialog_ChameleonDialog.styles=[base,chameleon_dialog_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"open",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"icon",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"dismissible",void 0);chameleon_dialog_ChameleonDialog=__decorate([Object(lit_element.c)("chameleon-dialog")],chameleon_dialog_ChameleonDialog)},602:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_alert_style=lit_element.b`
+      `}};chameleon_dialog_ChameleonDialog.styles=[base,chameleon_dialog_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"open",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"icon",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"dismissible",void 0);chameleon_dialog_ChameleonDialog=__decorate([Object(lit_element.c)("chameleon-dialog")],chameleon_dialog_ChameleonDialog)},621:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_alert_style=lit_element.b`
   :host {
     align-items: center;
     background-color: var(--color-error-lightest, #f1d1d0);
@@ -875,7 +903,7 @@
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
-    `}};chameleon_alert_ChameleonAlert.styles=[chameleon_alert_style],__decorate([Object(lit_element.e)({type:String})],chameleon_alert_ChameleonAlert.prototype,"message",void 0);chameleon_alert_ChameleonAlert=__decorate([Object(lit_element.c)("chameleon-alert")],chameleon_alert_ChameleonAlert)},603:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_card_header_style=lit_element.b`
+    `}};chameleon_alert_ChameleonAlert.styles=[chameleon_alert_style],__decorate([Object(lit_element.e)({type:String})],chameleon_alert_ChameleonAlert.prototype,"message",void 0);chameleon_alert_ChameleonAlert=__decorate([Object(lit_element.c)("chameleon-alert")],chameleon_alert_ChameleonAlert)},622:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_card_header_style=lit_element.b`
   :host {
     display: block;
     margin-bottom: 11px;
@@ -907,7 +935,7 @@
       ${""!==this.title?lit_element.d`
             <h2>${this.title}</h2>
           `:lit_html.nothing}
-    `}};chameleon_card_header_ChameleonCardHeader.styles=[chameleon_card_header_style],__decorate([Object(lit_element.e)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"title",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"subtitle",void 0);chameleon_card_header_ChameleonCardHeader=__decorate([Object(lit_element.c)("chameleon-card-header")],chameleon_card_header_ChameleonCardHeader)},604:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_card_image_style=lit_element.b`
+    `}};chameleon_card_header_ChameleonCardHeader.styles=[chameleon_card_header_style],__decorate([Object(lit_element.e)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"title",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"subtitle",void 0);chameleon_card_header_ChameleonCardHeader=__decorate([Object(lit_element.c)("chameleon-card-header")],chameleon_card_header_ChameleonCardHeader)},623:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_card_image_style=lit_element.b`
   :host {
     display: inline-block;
   }
@@ -919,14 +947,14 @@
   }
 `,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};let chameleon_card_image_ChameleonCardImage=class ChameleonCardImage extends lit_element.a{constructor(){super(...arguments),this.src="",this.alt=""}render(){return lit_element.d`
       <img src="${this.src}" alt="${this.alt}" />
-    `}};chameleon_card_image_ChameleonCardImage.styles=[chameleon_card_image_style],__decorate([Object(lit_element.e)({type:String})],chameleon_card_image_ChameleonCardImage.prototype,"src",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_card_image_ChameleonCardImage.prototype,"alt",void 0);chameleon_card_image_ChameleonCardImage=__decorate([Object(lit_element.c)("chameleon-card-image")],chameleon_card_image_ChameleonCardImage)},605:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_card_footer_style=lit_element.b`
+    `}};chameleon_card_image_ChameleonCardImage.styles=[chameleon_card_image_style],__decorate([Object(lit_element.e)({type:String})],chameleon_card_image_ChameleonCardImage.prototype,"src",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_card_image_ChameleonCardImage.prototype,"alt",void 0);chameleon_card_image_ChameleonCardImage=__decorate([Object(lit_element.c)("chameleon-card-image")],chameleon_card_image_ChameleonCardImage)},624:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_card_footer_style=lit_element.b`
   :host {
     display: flex;
     margin: 1.5rem 0 0.625rem 0;
   }
 `,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};let chameleon_card_footer_ChameleonCardFooter=class ChameleonCardFooter extends lit_element.a{render(){return lit_element.d`
       <slot></slot>
-    `}};chameleon_card_footer_ChameleonCardFooter.styles=[chameleon_card_footer_style];chameleon_card_footer_ChameleonCardFooter=__decorate([Object(lit_element.c)("chameleon-card-footer")],chameleon_card_footer_ChameleonCardFooter)},606:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_checkbox_style=lit_element.b`
+    `}};chameleon_card_footer_ChameleonCardFooter.styles=[chameleon_card_footer_style];chameleon_card_footer_ChameleonCardFooter=__decorate([Object(lit_element.c)("chameleon-card-footer")],chameleon_card_footer_ChameleonCardFooter)},625:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_checkbox_style=lit_element.b`
   :host {
     align-items: center;
     cursor: pointer;
@@ -984,7 +1012,7 @@
       <input type="checkbox" ?checked="${this.checked}" value="${this.value}" />
       <span class="checkmark"></span>
       ${this.labelText}
-    `}get labelText(){return""!==this.label?this.label:lit_html.nothing}};chameleon_checkbox_ChameleonCheckbox.styles=[chameleon_checkbox_style],__decorate([Object(lit_element.e)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"checked",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"value",void 0);chameleon_checkbox_ChameleonCheckbox=__decorate([Object(lit_element.c)("chameleon-checkbox")],chameleon_checkbox_ChameleonCheckbox)},607:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),style_map=__webpack_require__(274),lit_html=__webpack_require__(2),chameleon_hero_style=lit_element.b`
+    `}get labelText(){return""!==this.label?this.label:lit_html.nothing}};chameleon_checkbox_ChameleonCheckbox.styles=[chameleon_checkbox_style],__decorate([Object(lit_element.e)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"checked",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"value",void 0);chameleon_checkbox_ChameleonCheckbox=__decorate([Object(lit_element.c)("chameleon-checkbox")],chameleon_checkbox_ChameleonCheckbox)},626:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),style_map=__webpack_require__(281),lit_html=__webpack_require__(2),chameleon_hero_style=lit_element.b`
   header {
     padding: 0 5em;
   }
@@ -1023,7 +1051,7 @@
   .hero-text {
     color: var(--color-hero-text, #ffffff);
   }
-`,__decorate=(__webpack_require__(273),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_hero_ChameleonHero=class ChameleonHero extends lit_element.a{constructor(){super(...arguments),this.title="",this.subTitle="",this.heroText="",this.imageUrl="",this.type="gradient",this.gradient="var(--color-primary-dark), var(--color-secondary-dark)",this.gradientAlpha=.5,this.loading=!1}render(){return lit_element.d`
+`,__decorate=(__webpack_require__(279),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_hero_ChameleonHero=class ChameleonHero extends lit_element.a{constructor(){super(...arguments),this.title="",this.subTitle="",this.heroText="",this.imageUrl="",this.type="gradient",this.gradient="var(--color-primary-dark), var(--color-secondary-dark)",this.gradientAlpha=.5,this.loading=!1}render(){return lit_element.d`
       ${this.loading?lit_element.d`
             <chameleon-skeleton height="${400}"></chameleon-skeleton>
           `:lit_element.d`
@@ -1046,14 +1074,16 @@
               </header>
             </div>
           `}
-    `}get backgroundImageStyles(){switch(this.type){case"imageGradient":return{backgroundImage:`linear-gradient(to right, ${this.gradientOverlay}), url(${this.imageUrl})`};case"gradient":return{backgroundImage:`linear-gradient(to right, ${this.gradientHex})`};case"image":return{backgroundImage:`url(${this.imageUrl})`};default:return{backgroundImage:`linear-gradient(to right, ${this.gradientHex})`}}}get gradientHex(){return this.gradient.split(",").map(h=>h.trim())}get gradientOverlay(){return this.gradient.split(",").map(h=>this.hex2rgba(h.trim(),this.gradientAlpha))}hex2rgba(hex,alpha=.5){const[r,g,b]=hex.match(/\w\w/g).map(x=>parseInt(x,16));return`rgba(${r},${g},${b},${alpha})`}};chameleon_hero_ChameleonHero.styles=[chameleon_hero_style],__decorate([Object(lit_element.e)({type:String})],chameleon_hero_ChameleonHero.prototype,"title",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_hero_ChameleonHero.prototype,"subTitle",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_hero_ChameleonHero.prototype,"heroText",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_hero_ChameleonHero.prototype,"imageUrl",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_hero_ChameleonHero.prototype,"type",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_hero_ChameleonHero.prototype,"gradient",void 0),__decorate([Object(lit_element.e)({type:Number})],chameleon_hero_ChameleonHero.prototype,"gradientAlpha",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_hero_ChameleonHero.prototype,"loading",void 0);chameleon_hero_ChameleonHero=__decorate([Object(lit_element.c)("chameleon-hero")],chameleon_hero_ChameleonHero)},608:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(19),chameleon_input_style=lit_element.b`
+    `}get backgroundImageStyles(){switch(this.type){case"imageGradient":return{backgroundImage:`linear-gradient(to right, ${this.gradientOverlay}), url(${this.imageUrl})`};case"gradient":return{backgroundImage:`linear-gradient(to right, ${this.gradientHex})`};case"image":return{backgroundImage:`url(${this.imageUrl})`};default:return{backgroundImage:`linear-gradient(to right, ${this.gradientHex})`}}}get gradientHex(){return this.gradient.split(",").map(h=>h.trim())}get gradientOverlay(){return this.gradient.split(",").map(h=>this.hex2rgba(h.trim(),this.gradientAlpha))}hex2rgba(hex,alpha=.5){const[r,g,b]=hex.match(/\w\w/g).map(x=>parseInt(x,16));return`rgba(${r},${g},${b},${alpha})`}};chameleon_hero_ChameleonHero.styles=[chameleon_hero_style],__decorate([Object(lit_element.e)({type:String})],chameleon_hero_ChameleonHero.prototype,"title",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_hero_ChameleonHero.prototype,"subTitle",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_hero_ChameleonHero.prototype,"heroText",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_hero_ChameleonHero.prototype,"imageUrl",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_hero_ChameleonHero.prototype,"type",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_hero_ChameleonHero.prototype,"gradient",void 0),__decorate([Object(lit_element.e)({type:Number})],chameleon_hero_ChameleonHero.prototype,"gradientAlpha",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_hero_ChameleonHero.prototype,"loading",void 0);chameleon_hero_ChameleonHero=__decorate([Object(lit_element.c)("chameleon-hero")],chameleon_hero_ChameleonHero)},627:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(22),chameleon_input_style=lit_element.b`
   :host {
+    display: inline-block;
     font-family: var(--font-family, sans-serif);
   }
 
   .component-wrapper {
     display: inline-flex;
     flex-direction: column;
+    width: 100%;
   }
 
   input {
@@ -1062,7 +1092,7 @@
     box-sizing: border-box;
     font-size: var(--font-size-input, 0.938rem);
     font-family: var(--font-family, sans-serif);
-    max-width: 100%;
+    width: 100%;
     padding: var(--input-padding, 0.625rem 0.5rem);
   }
 
@@ -1163,39 +1193,28 @@
 `,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};let chameleon_input_ChameleonInput=class ChameleonInput extends lit_element.a{constructor(){super(...arguments),this.autocomplete=!1,this.autofocus=!1,this.disabled=!1,this.readonly=!1,this.required=!1,this.toggleable=!1,this.type="text",this.placeholder="",this.value="",this.min=null,this.max=null,this.label="",this.validationMessage="",this["icon-left"]=!1,this["icon-right"]=!1}firstUpdated(){this.requestUpdate()}render(){return lit_element.d`
       <div
         class="
-      ${Object(class_map.a)({"component-wrapper":!0,invalid:this._invalidState,disabled:this.disabled})}"
+        ${Object(class_map.a)({"component-wrapper":!0,invalid:this._invalidState,disabled:this.disabled})}"
       >
         <div
           class="${Object(class_map.a)({"label-row":!0,"split-row":this.toggleable})}"
         >
           ${this.labelText}${this.toggleText}
         </div>
+
         <div
           class="
-        ${Object(class_map.a)({"input-wrapper":!0,"icon-left":this["icon-left"],"icon-right":this["icon-right"]})}"
+          ${Object(class_map.a)({"input-wrapper":!0,"icon-left":this["icon-left"],"icon-right":this["icon-right"]})}"
         >
           <slot name="icon-left"></slot>
+
           ${this._inputEl}
+
           <slot name="icon-right"></slot>
         </div>
+
         ${this.errorText}
       </div>
-    `}get _inputEl(){switch(this.type){case"text":return lit_element.d`
-          <input
-            name="cha-input"
-            .type="${this.type}"
-            .placeholder="${this.placeholder}"
-            .value="${this.value}"
-            ?autocomplete="${this.autocomplete}"
-            ?autofocus="${this.autofocus}"
-            ?disabled="${this.disabled}"
-            ?readonly="${this.readonly}"
-            ?required="${this.required}"
-            @input="${this._handleInput}"
-            @blur="${this._handleBlur}"
-            @invalid="${this._handleInvalid}"
-          />
-        `;case"number":return lit_element.d`
+    `}get _inputEl(){switch(this.type){case"number":return lit_element.d`
           <input
             name="cha-input"
             .type="${this.type}"
@@ -1212,7 +1231,7 @@
             @blur="${this._handleBlur}"
             @invalid="${this._handleInvalid}"
           />
-        `;default:return lit_element.d`
+        `;case"text":default:return lit_element.d`
           <input
             name="cha-input"
             .type="${this.type}"
@@ -1240,7 +1259,7 @@
         </span>
       `:lit_html.nothing}_toggleType(){"password"==this.type?this.type="text":this.type="password"}get errorText(){return""!==this.validationMessage?lit_element.d`
         <span class="error">${this.warningIcon} ${this.validationMessage}</span>
-      `:lit_html.nothing}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}get _invalidState(){return null===this._el||(!this.checkValidity()||this.validationMessage.length>0)}_handleInput(e){this.value=e.target.value}_handleBlur(){this.checkValidity()&&(this.validationMessage="")}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}get warningIcon(){return lit_html.svg`
+      `:lit_html.nothing}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}get _invalidState(){return null===this._el||(!this.checkValidity()||this.validationMessage.length>0)}_handleInput(e){this.value=e.target.value,this.dispatchEvent(new CustomEvent("chameleon.input.input",{detail:{value:this.value},bubbles:!0,composed:!0}))}_handleBlur(){this.checkValidity()&&(this.validationMessage="")}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}get warningIcon(){return lit_html.svg`
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="14"
@@ -1286,8 +1305,8 @@
       >
         <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
         <line x1="1" y1="1" x2="23" y2="23" />
-      </svg>  
-    `}};chameleon_input_ChameleonInput.styles=[chameleon_input_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autocomplete",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autofocus",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"readonly",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"required",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"toggleable",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"type",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"placeholder",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_input_ChameleonInput.prototype,"value",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"min",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"max",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_input_ChameleonInput.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_input_ChameleonInput.prototype,"validationMessage",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-left",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-right",void 0);chameleon_input_ChameleonInput=__decorate([Object(lit_element.c)("chameleon-input")],chameleon_input_ChameleonInput)},609:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(19),repeat=__webpack_require__(126),chameleon_multiselect_style=lit_element.b`
+      </svg>
+    `}};chameleon_input_ChameleonInput.styles=[chameleon_input_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autocomplete",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autofocus",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"readonly",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"required",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"toggleable",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"type",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"placeholder",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_input_ChameleonInput.prototype,"value",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"min",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"max",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_input_ChameleonInput.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_input_ChameleonInput.prototype,"validationMessage",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-left",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-right",void 0);chameleon_input_ChameleonInput=__decorate([Object(lit_element.c)("chameleon-input")],chameleon_input_ChameleonInput)},628:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(22),repeat=__webpack_require__(128),chameleon_multiselect_style=lit_element.b`
   :host {
     align-items: center;
     display: flex;
@@ -1369,6 +1388,7 @@
     position: absolute;
     top: calc(100% + 13px);
     width: 100%;
+    z-index: 1;
   }
 
   .options__list {
@@ -1396,7 +1416,8 @@
     margin-right: 10px;
   }
 
-  .options__option-preLabel img {
+  .options__option-preLabel img,
+  svg {
     border-radius: 50%;
     height: 34px;
     vertical-align: top;
@@ -1434,7 +1455,12 @@
     color: var(--color-gray-darkest, #6c737a);
     height: 16px;
   }
-`,__decorate=(__webpack_require__(272),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_multiselect_ChameleonMultiselect=class ChameleonMultiselect extends lit_element.a{constructor(){super(),this.options=[],this.filteredOptions=[],this.selectedOptions=[],this.active=!1,this.disabled=!1,this.valid=!0,this.label="",this.placeholder="",this.addEventListener("remove-chip",this.handleChipClose)}disconnectedCallback(){this.removeEventListener("remove-chip",this.handleChipClose)}render(){return lit_element.d`
+
+  chameleon-loader {
+    height: 24px;
+    width: 24px;
+  }
+`,__decorate=(__webpack_require__(278),__webpack_require__(179),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_multiselect_ChameleonMultiselect=class ChameleonMultiselect extends lit_element.a{constructor(){super(),this.options=[],this.filteredOptions=[],this.selectedOptions=[],this.active=!1,this.disabled=!1,this.valid=!0,this.label="",this.placeholder="",this.instantSearch=!1,this.instantSearchValue="",this.loading=!1,this.addEventListener("remove-chip",this.handleChipClose)}disconnectedCallback(){this.removeEventListener("remove-chip",this.handleChipClose)}render(){return lit_element.d`
       <div
         class="tags ${Object(class_map.a)({"tags-active":this.selectedOptions.length>0})}"
       >
@@ -1442,13 +1468,17 @@
         <input
           class="${Object(class_map.a)({"tags-active":this.selectedOptions.length>0})}"
           type="text"
-          placeholder="${this.renderedOptions.length>0?this.placeholder:""}"
+          placeholder="${this.renderedOptions.length>0||this.instantSearch?this.placeholder:""}"
           @focus="${this.setActive}"
           @input="${this.handleSearch}"
         />
       </div>
       ${this.optionsList}
-      <slot name="icon"></slot>
+      ${this.loading?lit_element.d`
+            <chameleon-loader loader="spinner" size="24px"></chameleon-loader>
+          `:lit_element.d`
+            <slot name="icon"></slot>
+          `}
     `}get value(){return this.selectedOptions.map(option=>option.value)}set value(values){const selectedOptions=[];values.forEach(value=>{const option=this.options.find(option=>option.value===value);if(!option)throw new Error(`${value} doesn't exist within the options array`);selectedOptions.push(option)}),this.selectedOptions=[...selectedOptions]}get optionsList(){return this.active?lit_element.d`
           <div class="options">
             <ul class="options__list">
@@ -1484,7 +1514,7 @@
             <chameleon-chip .value="${option.value}" closeable
               >${option.label}</chameleon-chip
             >
-          `):lit_html.nothing}get renderedOptions(){return this.options.filter(option=>!this.selectedOptions.includes(option))}setActive(){this.active=!0}toggleActive(){this.active=!this.active}addSelection(e){const value=e.composedPath().find(el=>el.hasAttribute("data-value")).dataset.value,selection=this.options.find(option=>option.value===value);this.filteredOptions=[],this.shadowRoot.querySelector("input").value="",e.stopPropagation(),selection&&(this.selectedOptions=[...this.selectedOptions,selection]),this.dispatchChangeEvent(),this.toggleActive()}handleSearch(e){const query=e.target.value.toLowerCase();this.filteredOptions=this.options.filter(option=>option.label.toLowerCase().includes(query))}handleChipClose(e){this.selectedOptions=[...this.selectedOptions.filter(option=>option.value!==e.detail.value)],this.dispatchChangeEvent()}dispatchChangeEvent(){this.dispatchEvent(new CustomEvent("chameleon.select",{detail:{value:this.value},bubbles:!0,composed:!0}))}};chameleon_multiselect_ChameleonMultiselect.styles=[chameleon_multiselect_style],__decorate([Object(lit_element.e)({type:Array,reflect:!0})],chameleon_multiselect_ChameleonMultiselect.prototype,"options",void 0),__decorate([Object(lit_element.e)({type:Array,reflect:!0})],chameleon_multiselect_ChameleonMultiselect.prototype,"filteredOptions",void 0),__decorate([Object(lit_element.e)({type:Array})],chameleon_multiselect_ChameleonMultiselect.prototype,"selectedOptions",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_multiselect_ChameleonMultiselect.prototype,"active",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_multiselect_ChameleonMultiselect.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_multiselect_ChameleonMultiselect.prototype,"valid",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_multiselect_ChameleonMultiselect.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_multiselect_ChameleonMultiselect.prototype,"placeholder",void 0);chameleon_multiselect_ChameleonMultiselect=__decorate([Object(lit_element.c)("chameleon-multiselect")],chameleon_multiselect_ChameleonMultiselect)},610:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_paginator_style=lit_element.b`
+          `):lit_html.nothing}get renderedOptions(){return this.options.filter(option=>!this.selectedOptions.some(selectedOption=>option.value===selectedOption.value))}setActive(){this.active=!0}toggleActive(){this.active=!this.active}addSelection(e){const value=e.composedPath().find(el=>el.hasAttribute("data-value")).dataset.value,selection=this.options.find(option=>option.value===value);this.filteredOptions=[],this.shadowRoot.querySelector("input").value="",e.stopPropagation(),selection&&(this.selectedOptions=[...this.selectedOptions,selection]),this.dispatchChangeEvent(),this.toggleActive()}handleSearch(e){const query=e.target.value.toLowerCase();this.instantSearch?(this.instantSearchValue=query,this.dispatchSearchEvent()):this.filteredOptions=this.renderedOptions.filter(option=>option.label.toLowerCase().includes(query))}handleChipClose(e){this.selectedOptions=[...this.selectedOptions.filter(option=>option.value!==e.detail.value)],this.dispatchChangeEvent()}dispatchChangeEvent(){this.dispatchEvent(new CustomEvent("chameleon.select",{detail:{value:this.value,selectedOptions:this.selectedOptions},bubbles:!0,composed:!0}))}dispatchSearchEvent(){this.dispatchEvent(new CustomEvent("chameleon.search",{detail:{value:this.instantSearchValue},bubbles:!0,composed:!0}))}};chameleon_multiselect_ChameleonMultiselect.styles=[chameleon_multiselect_style],__decorate([Object(lit_element.e)({type:Array,reflect:!0})],chameleon_multiselect_ChameleonMultiselect.prototype,"options",void 0),__decorate([Object(lit_element.e)({type:Array,reflect:!0})],chameleon_multiselect_ChameleonMultiselect.prototype,"filteredOptions",void 0),__decorate([Object(lit_element.e)({type:Array})],chameleon_multiselect_ChameleonMultiselect.prototype,"selectedOptions",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_multiselect_ChameleonMultiselect.prototype,"active",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_multiselect_ChameleonMultiselect.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_multiselect_ChameleonMultiselect.prototype,"valid",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_multiselect_ChameleonMultiselect.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_multiselect_ChameleonMultiselect.prototype,"placeholder",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_multiselect_ChameleonMultiselect.prototype,"instantSearch",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_multiselect_ChameleonMultiselect.prototype,"instantSearchValue",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_multiselect_ChameleonMultiselect.prototype,"loading",void 0);chameleon_multiselect_ChameleonMultiselect=__decorate([Object(lit_element.c)("chameleon-multiselect")],chameleon_multiselect_ChameleonMultiselect)},629:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_paginator_style=lit_element.b`
   :host {
     align-items: center;
     display: flex;
@@ -1528,7 +1558,7 @@
   .placeholder {
     width: 68px;
   }
-`,__decorate=(__webpack_require__(94),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_paginator_ChameleonPaginator=class ChameleonPaginator extends lit_element.a{constructor(){super(...arguments),this.totalItems=null,this.pageSize=null,this.currentPage=1,this.maxLength=7,this.separator="..."}render(){return lit_element.d`
+`,__decorate=(__webpack_require__(98),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_paginator_ChameleonPaginator=class ChameleonPaginator extends lit_element.a{constructor(){super(...arguments),this.totalItems=null,this.pageSize=null,this.currentPage=1,this.maxLength=7,this.separator="..."}render(){return lit_element.d`
       ${this.isFirstPage?lit_element.d`
             <div class="placeholder"></div>
           `:lit_element.d`
@@ -1561,7 +1591,7 @@
               ${this.iconRightCircle}
             </chameleon-button>
           `}
-    `}get iconLeftCircle(){return lit_element.f`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>`}get iconRightCircle(){return lit_element.f`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>`}get isFirstPage(){return 1===this.currentPage}get isLastPage(){return this.currentPage===this.totalPages}get totalPages(){const totalItems=this.totalItems,pageSize=this.pageSize;return null===totalItems||null===pageSize?0:Math.ceil(totalItems/pageSize)}get pages(){const result=[],midPoint=Math.round(this.maxLength/2);if(this.currentPage=Math.max(1,Math.min(this.currentPage,this.totalPages)),this.totalPages<=this.maxLength)for(let i=1;i<=this.totalPages;i++)result.push(i);else if(this.currentPage<midPoint&&this.currentPage<this.maxLength){const highestNum=Math.max(midPoint,this.maxLength-1);for(let i=1;i<highestNum;i++)result.push(i);result.push(this.separator),result.push(this.totalPages)}else if(this.currentPage>this.totalPages-this.maxLength+3){result.push(1),result.push(this.separator);const offset=3;for(let i=this.totalPages-this.maxLength+offset;i<=this.totalPages;i++)result.push(i)}else{result.push(1),result.push(this.separator);const midPages=this.maxLength-4,first=this.currentPage-Math.ceil(midPages/2)+1;for(let i=0;i<midPages;i++)result.push(first+i);result.push(this.separator),result.push(this.totalPages)}return result}_previous(){this.currentPage--,this.dispatchChange()}_next(){this.currentPage++,this.dispatchChange()}_goToPage(e){const page=e.target.closest("[data-page]").dataset.page,currentPage=parseInt(String(page));this.currentPage=isNaN(currentPage)?1:currentPage,this.dispatchChange()}dispatchChange(){this.dispatchEvent(new CustomEvent("page-change",{detail:{currentPage:this.currentPage},composed:!0,bubbles:!0}))}};chameleon_paginator_ChameleonPaginator.styles=[chameleon_paginator_style],__decorate([Object(lit_element.e)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"totalItems",void 0),__decorate([Object(lit_element.e)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"pageSize",void 0),__decorate([Object(lit_element.e)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"currentPage",void 0),__decorate([Object(lit_element.e)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"maxLength",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_paginator_ChameleonPaginator.prototype,"separator",void 0);chameleon_paginator_ChameleonPaginator=__decorate([Object(lit_element.c)("chameleon-paginator")],chameleon_paginator_ChameleonPaginator)},611:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_radio_style=lit_element.b`
+    `}get iconLeftCircle(){return lit_element.f`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>`}get iconRightCircle(){return lit_element.f`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>`}get isFirstPage(){return 1===this.currentPage}get isLastPage(){return this.currentPage===this.totalPages}get totalPages(){const totalItems=this.totalItems,pageSize=this.pageSize;return null===totalItems||null===pageSize?0:Math.ceil(totalItems/pageSize)}get pages(){const result=[],midPoint=Math.round(this.maxLength/2);if(this.currentPage=Math.max(1,Math.min(this.currentPage,this.totalPages)),this.totalPages<=this.maxLength)for(let i=1;i<=this.totalPages;i++)result.push(i);else if(this.currentPage<midPoint&&this.currentPage<this.maxLength){const highestNum=Math.max(midPoint,this.maxLength-1);for(let i=1;i<highestNum;i++)result.push(i);result.push(this.separator),result.push(this.totalPages)}else if(this.currentPage>this.totalPages-this.maxLength+3){result.push(1),result.push(this.separator);const offset=3;for(let i=this.totalPages-this.maxLength+offset;i<=this.totalPages;i++)result.push(i)}else{result.push(1),result.push(this.separator);const midPages=this.maxLength-4,first=this.currentPage-Math.ceil(midPages/2)+1;for(let i=0;i<midPages;i++)result.push(first+i);result.push(this.separator),result.push(this.totalPages)}return result}_previous(){this.currentPage--,this.dispatchChange()}_next(){this.currentPage++,this.dispatchChange()}_goToPage(e){const page=e.target.closest("[data-page]").dataset.page,currentPage=parseInt(String(page));this.currentPage=isNaN(currentPage)?1:currentPage,this.dispatchChange()}dispatchChange(){this.dispatchEvent(new CustomEvent("page-change",{detail:{currentPage:this.currentPage},composed:!0,bubbles:!0}))}};chameleon_paginator_ChameleonPaginator.styles=[chameleon_paginator_style],__decorate([Object(lit_element.e)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"totalItems",void 0),__decorate([Object(lit_element.e)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"pageSize",void 0),__decorate([Object(lit_element.e)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"currentPage",void 0),__decorate([Object(lit_element.e)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"maxLength",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_paginator_ChameleonPaginator.prototype,"separator",void 0);chameleon_paginator_ChameleonPaginator=__decorate([Object(lit_element.c)("chameleon-paginator")],chameleon_paginator_ChameleonPaginator)},630:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_radio_style=lit_element.b`
   :host {
     align-items: center;
     cursor: pointer;
@@ -1637,7 +1667,7 @@
       />
       <span class="checkmark ${this.disabled?"disabled":""}"></span>
       ${this.labelText}
-    `}get labelText(){return""!==this.label?this.label:lit_html.nothing}};chameleon_radio_ChameleonRadio.styles=[chameleon_radio_style],__decorate([Object(lit_element.e)({type:String})],chameleon_radio_ChameleonRadio.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"checked",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_radio_ChameleonRadio.prototype,"value",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"disabled",void 0);chameleon_radio_ChameleonRadio=__decorate([Object(lit_element.c)("chameleon-radio")],chameleon_radio_ChameleonRadio)},612:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_rice_ball_dessert_style=lit_element.b`
+    `}get labelText(){return""!==this.label?this.label:lit_html.nothing}};chameleon_radio_ChameleonRadio.styles=[chameleon_radio_style],__decorate([Object(lit_element.e)({type:String})],chameleon_radio_ChameleonRadio.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"checked",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_radio_ChameleonRadio.prototype,"value",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"disabled",void 0);chameleon_radio_ChameleonRadio=__decorate([Object(lit_element.c)("chameleon-radio")],chameleon_radio_ChameleonRadio)},631:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_rice_ball_dessert_style=lit_element.b`
   html,
   body {
     width: 100%;
@@ -2146,7 +2176,7 @@
           </div>
         </div>
       </div>
-    `}};chameleon_rice_ball_dessert_ChameleonRiceBallDessert.styles=[chameleon_rice_ball_dessert_style],__decorate([Object(lit_element.e)({type:String})],chameleon_rice_ball_dessert_ChameleonRiceBallDessert.prototype,"riceBallColor",void 0);chameleon_rice_ball_dessert_ChameleonRiceBallDessert=__decorate([Object(lit_element.c)("chameleon-rice-ball-dessert")],chameleon_rice_ball_dessert_ChameleonRiceBallDessert)},613:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),repeat=__webpack_require__(126),class_map=__webpack_require__(19),lit_html=__webpack_require__(2),chameleon_select_style=lit_element.b`
+    `}};chameleon_rice_ball_dessert_ChameleonRiceBallDessert.styles=[chameleon_rice_ball_dessert_style],__decorate([Object(lit_element.e)({type:String})],chameleon_rice_ball_dessert_ChameleonRiceBallDessert.prototype,"riceBallColor",void 0);chameleon_rice_ball_dessert_ChameleonRiceBallDessert=__decorate([Object(lit_element.c)("chameleon-rice-ball-dessert")],chameleon_rice_ball_dessert_ChameleonRiceBallDessert)},632:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),repeat=__webpack_require__(128),class_map=__webpack_require__(22),lit_html=__webpack_require__(2),chameleon_select_style=lit_element.b`
   :host {
     font-family: var(--font-family, sans-serif);
     display: block;
@@ -2430,7 +2460,7 @@
       class="feather feather-chevron-up">
       <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
-  `}};chameleon_select_ChameleonSelect.styles=[chameleon_select_style],__decorate([Object(lit_element.e)({type:Array})],chameleon_select_ChameleonSelect.prototype,"options",void 0),__decorate([Object(lit_element.e)({type:Array})],chameleon_select_ChameleonSelect.prototype,"filteredOptions",void 0),__decorate([Object(lit_element.e)({type:Object})],chameleon_select_ChameleonSelect.prototype,"selectedOption",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_select_ChameleonSelect.prototype,"_value",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_select_ChameleonSelect.prototype,"placeHolder",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"active",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"searchable",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"valid",void 0);chameleon_select_ChameleonSelect=__decorate([Object(lit_element.c)("chameleon-select")],chameleon_select_ChameleonSelect)},614:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_sheet_style=lit_element.b`
+  `}};chameleon_select_ChameleonSelect.styles=[chameleon_select_style],__decorate([Object(lit_element.e)({type:Array})],chameleon_select_ChameleonSelect.prototype,"options",void 0),__decorate([Object(lit_element.e)({type:Array})],chameleon_select_ChameleonSelect.prototype,"filteredOptions",void 0),__decorate([Object(lit_element.e)({type:Object})],chameleon_select_ChameleonSelect.prototype,"selectedOption",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_select_ChameleonSelect.prototype,"_value",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_select_ChameleonSelect.prototype,"placeHolder",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"active",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"searchable",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"valid",void 0);chameleon_select_ChameleonSelect=__decorate([Object(lit_element.c)("chameleon-select")],chameleon_select_ChameleonSelect)},633:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_sheet_style=lit_element.b`
   :host {
     position: fixed;
     display: inline-block;
@@ -2496,7 +2526,7 @@
     padding: 0 20px;
     font-size: var(--font-size-label, 0.875rem);
   }
-`,__decorate=(__webpack_require__(94),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_sheet_ChameleonSheet=class ChameleonSheet extends lit_element.a{constructor(){super(...arguments),this.header="",this.subHeader="",this.sheetOpened=!1}render(){return lit_element.d`
+`,__decorate=(__webpack_require__(98),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_sheet_ChameleonSheet=class ChameleonSheet extends lit_element.a{constructor(){super(...arguments),this.header="",this.subHeader="",this.sheetOpened=!1}render(){return lit_element.d`
       <header class="head-container">
         <chameleon-button
           class="close-icon"
@@ -2518,7 +2548,7 @@
       <slot name="content"></slot>
     `}_toggleSheet(){this.sheetOpened=!this.sheetOpened;const e=new CustomEvent("toggle-sheet",{bubbles:!0,composed:!0});this.dispatchEvent(e)}get closeIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"close-icon"===slot.slot)?lit_html.svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`:lit_element.d`
         <slot name="close-icon"></slot>
-      `}};chameleon_sheet_ChameleonSheet.styles=[chameleon_sheet_style],__decorate([Object(lit_element.e)({type:String})],chameleon_sheet_ChameleonSheet.prototype,"header",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_sheet_ChameleonSheet.prototype,"subHeader",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_sheet_ChameleonSheet.prototype,"sheetOpened",void 0);chameleon_sheet_ChameleonSheet=__decorate([Object(lit_element.c)("chameleon-sheet")],chameleon_sheet_ChameleonSheet)},615:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_switch_style=lit_element.b`
+      `}};chameleon_sheet_ChameleonSheet.styles=[chameleon_sheet_style],__decorate([Object(lit_element.e)({type:String})],chameleon_sheet_ChameleonSheet.prototype,"header",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_sheet_ChameleonSheet.prototype,"subHeader",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_sheet_ChameleonSheet.prototype,"sheetOpened",void 0);chameleon_sheet_ChameleonSheet=__decorate([Object(lit_element.c)("chameleon-sheet")],chameleon_sheet_ChameleonSheet)},634:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_switch_style=lit_element.b`
   :host {
     align-items: center;
     display: inline-flex;
@@ -2580,7 +2610,7 @@
         <span class="slider"></span>
       </div>
       ${this.labelText}
-    `}get labelText(){return""!==this.label?this.label:lit_html.nothing}};chameleon_switch_ChameleonSwitch.styles=[chameleon_switch_style],__decorate([Object(lit_element.e)({type:String})],chameleon_switch_ChameleonSwitch.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_switch_ChameleonSwitch.prototype,"checked",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_switch_ChameleonSwitch.prototype,"value",void 0);chameleon_switch_ChameleonSwitch=__decorate([Object(lit_element.c)("chameleon-switch")],chameleon_switch_ChameleonSwitch)},616:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_textarea_style=lit_element.b`
+    `}get labelText(){return""!==this.label?this.label:lit_html.nothing}};chameleon_switch_ChameleonSwitch.styles=[chameleon_switch_style],__decorate([Object(lit_element.e)({type:String})],chameleon_switch_ChameleonSwitch.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_switch_ChameleonSwitch.prototype,"checked",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_switch_ChameleonSwitch.prototype,"value",void 0);chameleon_switch_ChameleonSwitch=__decorate([Object(lit_element.c)("chameleon-switch")],chameleon_switch_ChameleonSwitch)},635:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_textarea_style=lit_element.b`
   :host {
     display: inline-flex;
     flex-direction: column;
@@ -2633,7 +2663,7 @@
         <label for="cha-textarea">${this.label}</label>
       `:lit_html.nothing}get errorText(){return""!==this.validationMessage?lit_element.d`
         <span class="error">${this.validationMessage}</span>
-      `:lit_html.nothing}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}_handleInput(e){this.value=e.target.value}};chameleon_textarea_ChameleonTextarea.styles=[chameleon_textarea_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autocomplete",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autofocus",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"cols",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"maxlength",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"minlength",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"placeholder",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"readonly",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"required",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"rows",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"spellcheck",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"value",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"validationMessage",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_textarea_ChameleonTextarea.prototype,"nonresizeable",void 0);chameleon_textarea_ChameleonTextarea=__decorate([Object(lit_element.c)("chameleon-textarea")],chameleon_textarea_ChameleonTextarea)},617:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),class_map=__webpack_require__(19),chameleon_toast_style=lit_element.b`
+      `:lit_html.nothing}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}_handleInput(e){this.value=e.target.value}};chameleon_textarea_ChameleonTextarea.styles=[chameleon_textarea_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autocomplete",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autofocus",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"cols",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"maxlength",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"minlength",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"placeholder",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"readonly",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"required",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"rows",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"spellcheck",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"value",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"validationMessage",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_textarea_ChameleonTextarea.prototype,"nonresizeable",void 0);chameleon_textarea_ChameleonTextarea=__decorate([Object(lit_element.c)("chameleon-textarea")],chameleon_textarea_ChameleonTextarea)},636:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),class_map=__webpack_require__(22),chameleon_toast_style=lit_element.b`
   /* The toast - position it at the bottom and in the middle of the screen */
   #toast {
     visibility: hidden; /* Hidden by default. Visible on click */
@@ -2783,19 +2813,29 @@
           <slot name="closed-icon">x</slot>
         </a>
       </div>
-    `}closeToast(){const x=this.shadowRoot.getElementById("toast");x.className=x.className.replace("show-closeable",""),this.showCloseable=!this.showCloseable,this.dispatchEvent(new CustomEvent("close-toast",{bubbles:!0,composed:!0}))}};chameleon_toast_ChameleonToast.styles=[chameleon_toast_style],__decorate([Object(lit_element.e)({type:String})],chameleon_toast_ChameleonToast.prototype,"color",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_toast_ChameleonToast.prototype,"showCloseable",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_toast_ChameleonToast.prototype,"backgroundColor",void 0);chameleon_toast_ChameleonToast=__decorate([Object(lit_element.c)("chameleon-toast")],chameleon_toast_ChameleonToast)},94:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(19),chameleon_button_style=lit_element.b`
+    `}closeToast(){const x=this.shadowRoot.getElementById("toast");x.className=x.className.replace("show-closeable",""),this.showCloseable=!this.showCloseable,this.dispatchEvent(new CustomEvent("close-toast",{bubbles:!0,composed:!0}))}};chameleon_toast_ChameleonToast.styles=[chameleon_toast_style],__decorate([Object(lit_element.e)({type:String})],chameleon_toast_ChameleonToast.prototype,"color",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_toast_ChameleonToast.prototype,"showCloseable",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_toast_ChameleonToast.prototype,"backgroundColor",void 0);chameleon_toast_ChameleonToast=__decorate([Object(lit_element.c)("chameleon-toast")],chameleon_toast_ChameleonToast)},8:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.d(__webpack_exports__,"a",(function(){return eventDetails}));var _storybook_addon_actions__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(280);const eventDetails=Object(_storybook_addon_actions__WEBPACK_IMPORTED_MODULE_0__.decorate)([args=>args.map(arg=>({type:arg.type,detail:arg.detail}))])},98:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(22),chameleon_button_style=lit_element.b`
   :host {
-    display: inline;
+    --button-border-color: var(--color-primary, #2c6fb7);
+    --button-hover-color: var(--color-primary-dark, #004587);
+    --button-hover-text-color: var(--color-surface, #ffffff);
+    --button-text-color: var(--color-primary, #2c6fb7);
+    display: inline-flex;
+    height: var(--button-height, 40px);
   }
 
   :host([full-width]) {
-    flex: 1;
+    width: 100%;
   }
 
   :host([full-width]) a,
   :host([full-width]) button {
-    flex: 1;
     width: 100%;
+  }
+
+  :host([icon-only]) button,
+  :host([icon-left]) button,
+  :host([icon-right]) button {
+    padding: 0;
   }
 
   a {
@@ -2814,7 +2854,7 @@
     align-items: center;
     background-color: var(--color-primary, #2c6fb7);
     border-radius: var(--border-radius-input, 0.313rem);
-    border: 1px solid var(--color-primary, #2c6fb7);
+    border: 1px solid var(--button-border-color);
     color: var(--color-surface, #ffffff);
     cursor: pointer;
     display: flex;
@@ -2823,24 +2863,26 @@
     font-size: var(--font-size-paragraph-medium, 0.938rem);
     justify-content: center;
     letter-spacing: var(--font-letter-spacing, 0.018rem);
+    line-height: 1;
     padding: var(--button-padding, 0.75rem 1.375rem);
     position: relative;
     transition: all 150ms linear;
-    height: var(--button-height, 40px);
+    height: 100%;
+    width: 100%;
   }
 
   button:hover {
-    background-color: var(--color-primary-dark, #004587);
-    border-color: var(--color-primary-dark, #004587);
+    background-color: var(--button-hover-color);
+    border-color: var(--button-hover-color);
   }
 
   .secondary {
     background-color: var(--color-surface, #ffffff);
-    color: var(--color-primary, #2c6fb7);
+    color: var(--button-text-color);
   }
 
   .secondary:hover {
-    color: var(--color-surface, #ffffff);
+    color: var(--button-hover-text-color);
   }
 
   .text {
@@ -2886,7 +2928,7 @@
   slot[name="icon-loading"] ~ * {
     visibility: hidden;
   }
-`,__decorate=(__webpack_require__(270),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_button_ChameleonButton=class ChameleonButton extends lit_element.a{constructor(){super(...arguments),this.disabled=!1,this.loading=!1,this.theme="primary",this["icon-left"]=!1,this["icon-right"]=!1,this["icon-only"]=!1,this.href=null,this["new-tab"]=!1}render(){return lit_element.d`
+`,__decorate=(__webpack_require__(179),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_button_ChameleonButton=class ChameleonButton extends lit_element.a{constructor(){super(...arguments),this.disabled=!1,this.loading=!1,this.theme="primary",this["icon-left"]=!1,this["icon-right"]=!1,this["icon-only"]=!1,this.href=null,this["new-tab"]=!1}render(){return lit_element.d`
       ${this.href&&!this.disabled?lit_element.d`
             <a
               href=${this.href}
@@ -2913,5 +2955,5 @@
         <slot name="icon-right"></slot>
         <slot name="icon-only"></slot>
       </button>
-    `}getTarget(){return this["new-tab"]?"_blank":"_top"}getRel(){return this["new-tab"]?"noopener noreferrer":""}};chameleon_button_ChameleonButton.styles=[chameleon_button_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"loading",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"theme",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-left",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-right",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-only",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"href",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"new-tab",void 0);chameleon_button_ChameleonButton=__decorate([Object(lit_element.c)("chameleon-button")],chameleon_button_ChameleonButton)}},[[275,1,2]]]);
-//# sourceMappingURL=main.e77c84c66d5f5aebaa10.bundle.js.map
+    `}getTarget(){return this["new-tab"]?"_blank":"_top"}getRel(){return this["new-tab"]?"noopener noreferrer":""}};chameleon_button_ChameleonButton.styles=[chameleon_button_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"loading",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"theme",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-left",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-right",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-only",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"href",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"new-tab",void 0);chameleon_button_ChameleonButton=__decorate([Object(lit_element.c)("chameleon-button")],chameleon_button_ChameleonButton)}},[[282,1,2]]]);
+//# sourceMappingURL=main.5f072b68016547eaef75.bundle.js.map

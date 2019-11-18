@@ -83,6 +83,10 @@ export default class ChameleonSelect extends LitElement {
   @property({ type: Boolean })
   searchable = false;
 
+  // The select's label
+  @property({ type: String })
+  label = "";
+
   @property({ type: Boolean })
   valid = true;
 
@@ -91,6 +95,7 @@ export default class ChameleonSelect extends LitElement {
    */
   render(): TemplateResult {
     return html`
+      ${this.labelText}
       <div
         class="${classMap({
           "chameleon-select": true,
@@ -255,6 +260,16 @@ export default class ChameleonSelect extends LitElement {
     } else {
       return nothing;
     }
+  }
+
+  get labelText(): TemplateResult | object {
+    if (this.label !== "") {
+      return html`
+        <div class="label-container">
+          <label>${this.label}</label>
+        </div>
+      `;
+    } else return nothing;
   }
 
   /**
