@@ -6,7 +6,7 @@ import {
   html
 } from "lit-element";
 import { svg, nothing } from "lit-html";
-import { classMap } from "lit-html/directives/class-map.js";
+import { classMap } from "lit-html/directives/class-map";
 
 import "@chameleon-ds/input/src/chameleon-input";
 import "@chameleon-ds/multiselect/src/chameleon-multiselect";
@@ -152,12 +152,13 @@ export default class ChameleonTable extends LitElement {
 
             <chameleon-multiselect
               class="filter"
-              .label="${`this is the label`}"
-              .placeholder="${`Filter by`}"
+              .placeholder="${column.filter.placeholder ?? "Filter by"}"
               .options=${column.filter.items}
               @chameleon.select=${(e: CustomEvent) =>
                 this.handleFilterChange(e.detail.value, column)}
-            ></chameleon-multiselect>
+            >
+              ${this.chevronDownIcon}
+            </chameleon-multiselect>
           `
         : html`
             <div class="column-header">
@@ -169,7 +170,7 @@ export default class ChameleonTable extends LitElement {
                 <chameleon-input
                   class="search"
                   outlined
-                  placeholder="Search"
+                  .placeholder="${column.filter.placeholder ?? "Search"}"
                   name=${column.filter.name}
                   @chameleon.input.input=${(e: CustomEvent) =>
                     this.handleFilterChange(e.detail.value, column)}
@@ -291,6 +292,7 @@ export default class ChameleonTable extends LitElement {
         stroke-linecap="round"
         stroke-linejoin="round"
         class="feather feather-chevron-down"
+        slot="icon"
       >
         <polyline points="4 6 12 14 20 6"></polyline>
       </svg>

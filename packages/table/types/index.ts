@@ -9,6 +9,7 @@ export type Column = {
   filter?: {
     name?: string;
     items?: FilterItems;
+    placeholder?: string;
   };
   sortable?: boolean;
   searchable?: boolean;

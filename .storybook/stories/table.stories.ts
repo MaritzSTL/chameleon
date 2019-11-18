@@ -4,14 +4,12 @@ import { eventDetails } from "../utils";
 import { TemplateResult, html } from "lit-element";
 import { nothing } from "lit-html";
 
-import { Row } from "../../packages/table/types";
-import "../../packages/table/src/chameleon-table";
+import { Row } from "@chameleon-ds/table/types";
+import "@chameleon-ds/table/src/chameleon-table";
 
 const stories = storiesOf("Table", module);
 
-// Typecasting this as "any" is a quick workaround. Please come back
-// to this and make these types compatible.
-stories.addDecorator(withKnobs as any);
+stories.addDecorator(withKnobs);
 
 stories.add(
   "Basic",

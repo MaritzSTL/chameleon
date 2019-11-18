@@ -23,8 +23,9 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/paginator": "^1.1.1",
+    "@chameleon-ds/input": "^1.0.2",
     "@chameleon-ds/multiselect": "^0.2.2",
+    "@chameleon-ds/paginator": "^1.1.1",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
