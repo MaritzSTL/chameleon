@@ -44,6 +44,7 @@ export default css`
     flex-grow: 1;
     font-size: var(--font-size-label, 0.938rem);
     height: 23px;
+    width: 100%;
     padding: 0;
   }
 
