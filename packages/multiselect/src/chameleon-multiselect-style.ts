@@ -4,6 +4,7 @@ export default css`
   :host {
     align-items: center;
     display: flex;
+    background-color: var(--color-surface, #ffffff);
     border: 1px solid var(--color-gray-dark, #9fa4a8);
     border-radius: var(--border-radius-input, 0.313rem);
     box-sizing: border-box;
