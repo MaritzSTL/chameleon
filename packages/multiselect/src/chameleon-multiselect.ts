@@ -274,7 +274,8 @@ export default class ChameleonMultiselect extends LitElement {
     this.dispatchEvent(
       new CustomEvent("chameleon.select", {
         detail: {
-          value: this.value
+          value: this.value,
+          selectedOptions: this.selectedOptions
         },
         bubbles: true,
         composed: true
