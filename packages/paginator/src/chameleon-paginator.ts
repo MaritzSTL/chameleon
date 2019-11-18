@@ -49,6 +49,7 @@ export default class ChameleonPaginator extends LitElement {
             <chameleon-button
               theme="text"
               name="prev"
+              icon-only
               @click="${this._previous}"
               >${this.iconLeftCircle}</chameleon-button
             >
@@ -81,7 +82,12 @@ export default class ChameleonPaginator extends LitElement {
       ${this.isLastPage
         ? nothing
         : html`
-            <chameleon-button theme="text" name="next" @click="${this._next}">
+            <chameleon-button
+              theme="text"
+              name="next"
+              icon-only
+              @click="${this._next}"
+            >
               ${this.iconRightCircle}
             </chameleon-button>
           `}
