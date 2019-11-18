@@ -4,8 +4,8 @@ export default css`
   /* The toast - position it at the bottom and in the middle of the screen */
   #toast {
     visibility: hidden; /* Hidden by default. Visible on click */
-    min-width: 28%; /* Set a default minimum width */
-    max-width: 28%; /* Set a default max width */
+    min-width: 375px; /* Set a default minimum width */
+    width: 456px; /* Set a default max width */
     background-color: #333; /* Black background color */
     color: #f5f5f8; /* off white text color */
     text-align: left; /* left-aligned text */
@@ -24,17 +24,21 @@ export default css`
     margin: 0 5px;
   }
 
-  @media (max-width: 768px) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     #toast {
-      min-width: 90%;
-      max-width: 90%;
+      bottom: 70px;
+      width: 90%;
+      min-width: 320px;
+      max-width: 350px;
     }
   }
 
-  @media (max-width: 420px) {
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
     #toast {
       bottom: 70px;
-      min-width: 0px;
+      width: 90%;
+      min-width: 375px;
+      max-width: 375px;
     }
   }
 
