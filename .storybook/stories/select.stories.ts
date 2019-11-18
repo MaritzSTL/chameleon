@@ -83,10 +83,12 @@ stories.add(
   "Basic",
   () => {
     const placeHolder = text("Place Holder", "Please select an option");
+    const label = text("Label", "");
 
     return html`
       <chameleon-select
         .options="${exampleData}"
+        .label="${label}"
         placeHolder="${placeHolder}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
         @chameleon-select.close=${eventDetails.action("chameleon-select.close")}
