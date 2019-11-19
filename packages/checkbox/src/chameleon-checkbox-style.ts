@@ -54,4 +54,16 @@ export default css`
   input:checked ~ .checkmark::after {
     display: inline-block;
   }
+
+  :host([disabled="true"]) {
+    pointer-events: none;
+    background-color: gray;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    width: 20px;
+  }
 `;

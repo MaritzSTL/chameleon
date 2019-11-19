@@ -26,7 +26,7 @@ export default class ChameleonCheckbox extends LitElement {
   @property({ type: String })
   value = "";
 
-  //This checkbox enabled/disabled status
+  //This checkbox's enabled/disabled status
   @property({ type: Boolean })
   disabled = false;
 
@@ -44,7 +44,7 @@ export default class ChameleonCheckbox extends LitElement {
         type="checkbox"
         ?checked="${this.checked}"
         value="${this.value}"
-        disabled=${this.disabled}
+        ?disabled=${this.disabled}
       />
       <span class="checkmark"></span>
       ${this.labelText}
