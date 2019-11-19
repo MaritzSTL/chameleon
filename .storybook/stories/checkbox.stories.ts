@@ -12,12 +12,14 @@ stories.add(
   () => {
     const label = text("Label", "");
     const checked = boolean("Checked", true);
+    const disabled = boolean("Disabled", false);
 
     return html`
       <chameleon-checkbox
         label="${label}"
         name="test"
         ?checked="${checked}"
+        disabled=${disabled}
       ></chameleon-checkbox>
     `;
   },
