@@ -19,7 +19,7 @@ stories.add(
         label="${label}"
         name="test"
         ?checked="${checked}"
-        disabled=${disabled}
+        ?disabled="${disabled}"
       ></chameleon-checkbox>
     `;
   },

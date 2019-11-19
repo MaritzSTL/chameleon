@@ -64,7 +64,7 @@ export default css`
     pointer-events: none;
   }
 
-  :host([disabled="true"]) input:checked ~ .checkmark {
+  :host([disabled]) input:checked ~ .checkmark {
     background-color: var(--color-gray-lightest, #e1e3e4);
   }
 
@@ -72,7 +72,7 @@ export default css`
     position: relative;
   }
 
-  :host([disabled="true"]) .checkmark:after {
+  :host([disabled]) .checkmark:after {
     border: none;
     background-color: var(--color-surface, #ffffff);
     height: 2px;
