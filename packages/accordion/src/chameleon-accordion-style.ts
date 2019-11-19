@@ -3,8 +3,6 @@ import { css } from "lit-element";
 export default css`
   :host {
     display: block;
-    width: var(--accordion-width, 100%);
-    font-family: var(--font-family);
   }
   :host([hidden]) {
     display: none !important;
@@ -13,10 +11,10 @@ export default css`
     display: flex;
     justify-content: space-between;
   }
-  .expanded {
-    display: block;
-  }
-  .collapsed {
+  ::slotted([slot="panel"]) {
     display: none;
+  }
+  :host([expanded]) ::slotted([slot="panel"]) {
+    display: block;
   }
 `;
