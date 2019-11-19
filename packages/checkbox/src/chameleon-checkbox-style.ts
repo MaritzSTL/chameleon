@@ -68,7 +68,7 @@ export default css`
     background-color: var(--color-gray-lightest, #e1e3e4);
   }
 
-  :host([disabled="true"]) .checkmark {
+  :host([disabled]) .checkmark {
     position: relative;
   }
 
