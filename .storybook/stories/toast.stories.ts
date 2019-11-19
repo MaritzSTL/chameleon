@@ -30,7 +30,7 @@ stories.add(
         @close-toast=${eventDetails.action("close-toast")}
       >
         <span slot="toast-text">${toastText}</span>
-        <img slot="closed-icon" src="${imageUrl}" />
+        <img slot="close-icon" src="${imageUrl}" />
       </chameleon-toast>
     `;
   },
