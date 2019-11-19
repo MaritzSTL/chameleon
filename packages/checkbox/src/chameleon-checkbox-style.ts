@@ -60,15 +60,27 @@ export default css`
     display: inline-block;
   }
 
-  :host([disabled="true"]) {
-    background-color: var(--color-gray-lightest, #e1e3e4);
-    border-radius: 3px;
-    box-sizing: border-box;
-    display: inline-block;
-    height: 20px;
-    margin-right: 10px;
+  :host([disabled]) {
     pointer-events: none;
+  }
+
+  :host([disabled="true"]) input:checked ~ .checkmark {
+    background-color: var(--color-gray-lightest, #e1e3e4);
+  }
+
+  :host([disabled="true"]) .checkmark {
     position: relative;
-    width: 20px;
+  }
+
+  :host([disabled="true"]) .checkmark:after {
+    border: none;
+    background-color: var(--color-surface, #ffffff);
+    height: 2px;
+    width: 12px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 `;
