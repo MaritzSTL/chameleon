@@ -8,6 +8,7 @@ import {
   html
 } from "lit-element";
 import style from "./chameleon-accordion-style";
+import "@chameleon-ds/button/src/chameleon-button";
 
 @customElement("chameleon-accordion")
 export default class Chameleonaccordion extends LitElement {
@@ -30,10 +31,10 @@ export default class Chameleonaccordion extends LitElement {
       <div class="header">
         <slot name="header"></slot>
         <chameleon-button
-          @click="${this.handleToggle}"
           class="toggle-icon"
           icon-only
           theme="text"
+          @click="${this.handleToggle}"
           >${this.toggleIcon}</chameleon-button
         >
       </div>
