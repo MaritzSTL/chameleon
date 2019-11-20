@@ -20,11 +20,9 @@ export default css`
     transform: translateX(0);
   } */
   .panel.collapsed {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    display: none;
   }
   .panel.expanded {
-    max-height: 100%;
+    display: block;
   }
 `;

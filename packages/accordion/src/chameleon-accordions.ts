@@ -3,8 +3,7 @@ import {
   TemplateResult,
   customElement,
   property,
-  html,
-  PropertyValues
+  html
 } from "lit-element";
 import style from "./chameleon-accordions-style";
 
@@ -31,21 +30,6 @@ export default class ChameleonAccordions extends LitElement {
     );
   }
 
-  updated(changedProperties: PropertyValues) {
-    console.log("updated");
-    if (changedProperties.has("expandedIndex")) {
-      const accordions = Array.from(
-        this.querySelectorAll("chameleon-accordion")
-      );
-
-      accordions.forEach((accordion, i) => {
-        accordion.removeAttribute("expanded");
-        if (i === this.expandedIndex)
-          accordion.setAttribute("expanded", "true");
-      });
-    }
-  }
-
   /**
    * Properties
    */
@@ -69,5 +53,17 @@ export default class ChameleonAccordions extends LitElement {
   _handleExpandedChanged(e: any): void {
     e.preventDefault();
     this.expandedIndex = parseInt(e.detail.value);
+
+    const accordions = Array.from(this.querySelectorAll("chameleon-accordion"));
+
+    accordions.forEach((accordion, i) => {
+      if (i === this.expandedIndex && accordion.hasAttribute("expanded")) {
+        accordion.removeAttribute("expanded");
+        return;
+      }
+      accordion.removeAttribute("expanded");
+      if (accordion.hasAttribute("expanded")) return;
+      if (i === this.expandedIndex) accordion.setAttribute("expanded", "true");
+    });
   }
 }
