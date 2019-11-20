@@ -30,11 +30,6 @@ export default css`
     width: 20px;
   }
 
-  /* .horizontal-line {
-    border: 10px solid green;
-    border-radius: 5px;
-  } */
-
   :host:hover input ~ .checkmark {
     background-color: var(--color-surface, #ffffff);
   }
@@ -76,11 +71,11 @@ export default css`
     border: none;
     background-color: var(--color-surface, #ffffff);
     height: 2px;
-    width: 12px;
+    left: 50%;
     margin: 0;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
+    width: 12px;
   }
 `;
