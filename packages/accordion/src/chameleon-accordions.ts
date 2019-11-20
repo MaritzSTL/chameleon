@@ -9,7 +9,7 @@ import {
 import style from "./chameleon-accordions-style";
 
 @customElement("chameleon-accordions")
-export default class Chameleonaccordions extends LitElement {
+export default class ChameleonAccordions extends LitElement {
   constructor() {
     super();
     this.addEventListener("expanded-changed", this._handleExpandedChanged);

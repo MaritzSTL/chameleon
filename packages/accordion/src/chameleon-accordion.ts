@@ -11,7 +11,7 @@ import style from "./chameleon-accordion-style";
 import "@chameleon-ds/button/src/chameleon-button";
 
 @customElement("chameleon-accordion")
-export default class Chameleonaccordion extends LitElement {
+export default class ChameleonAccordion extends LitElement {
   /**
    * Styles
    */
@@ -38,7 +38,9 @@ export default class Chameleonaccordion extends LitElement {
           >${this.toggleIcon}</chameleon-button
         >
       </div>
-      <slot name="panel"></slot>
+      <div class="panel ${this.expanded ? "expanded" : "collapsed"}">
+        <slot name="panel"></slot>
+      </div>
     `;
   }
 

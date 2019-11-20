@@ -13,10 +13,7 @@ stories.add(
   "Text-only accordions",
   () => {
     return html`
-      <chameleon-accordions
-        style="--accordion-width: 400px;"
-        @expanded-changed=${eventDetails.action("expanded-changed")}
-      >
+      <chameleon-accordions style="--accordion-width: 400px;">
         <chameleon-accordion>
           <h3 slot="header">Who are you?</h3>
           <div slot="panel">Who, who</div>
@@ -38,9 +35,25 @@ stories.add(
 );
 
 stories.add(
-  "Complex accordions",
+  "Text button accordions",
   () => {
     return html`
+      <style>
+        :root {
+          background-color: gray;
+        }
+        chameleon-accordion {
+          background-color: white;
+          padding-left: 22px;
+        }
+        chameleon-accordion:not(:last-of-type) {
+          margin-bottom: 12px;
+        }
+        chameleon-accordion div {
+          border-top: 1px gray solid;
+          padding: 12px;
+        }
+      </style>
       <chameleon-accordions
         style="--accordion-width: 600px;"
         @expanded-changed=${eventDetails.action("expanded-changed")}
@@ -50,7 +63,13 @@ stories.add(
           <chameleon-button slot="toggle-icon" theme="text"
             >Edit</chameleon-button
           >
-          <div slot="panel">Santa</div>
+          <div slot="panel">
+            <ul>
+              <li>Jason</li>
+              <li>Paul</li>
+              <li>June</li>
+            </ul>
+          </div>
         </chameleon-accordion>
         <chameleon-accordion>
           <chameleon-button slot="toggle-icon" theme="text"
