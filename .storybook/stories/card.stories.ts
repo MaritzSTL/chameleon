@@ -153,3 +153,28 @@ stories.add(
   },
   { info: { inline: true } }
 );
+
+stories.add(
+  "Complication",
+  () => {
+    const subtitleText = text("Subtitle", "Destination");
+    const titleText = text("Title", "St. Louis, MO");
+    const complicationText = text("Complication Text", "Sup??");
+
+    return html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
+      <chameleon-card .complication=${complicationText}>
+        <chameleon-card-header
+          title="${titleText}"
+          subtitle="${subtitleText}"
+        ></chameleon-card-header>
+        <p>Here is some sample content for the card</p>
+      </chameleon-card>
+    `;
+  },
+  { info: { inline: true } }
+);
