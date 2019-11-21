@@ -47,7 +47,6 @@ export default class ChameleonAccordion extends LitElement {
   }
 
   handleToggle(): void {
-    console.log("clicked");
     this.dispatchEvent(
       new CustomEvent("expanded-changed", {
         detail: {
