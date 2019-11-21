@@ -25,4 +25,12 @@ export default css`
   .panel.expanded {
     display: block;
   }
+  .toggle-icon {
+    transform: rotate(0deg);
+    transition: transform 3ms linear;
+  }
+  .rotated {
+    transform: rotate(90deg);
+    transition: transform 3ms linear;
+  }
 `;
