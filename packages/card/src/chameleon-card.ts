@@ -7,6 +7,7 @@ import {
   PropertyValues
 } from "lit-element";
 import style from "./chameleon-card-style";
+import { nothing } from "lit-html";
 
 @customElement("chameleon-card")
 export default class ChameleonCard extends LitElement {
@@ -21,13 +22,25 @@ export default class ChameleonCard extends LitElement {
   @property({ type: String })
   accentColor = null;
 
+  @property({ type: String, reflect: true })
+  complication = null;
+
   /**
    * Template
    */
   render(): TemplateResult {
     return html`
+      ${this.complicationText}
       <slot></slot>
     `;
+  }
+
+  get complicationText(): TemplateResult | object {
+    return this.complication !== null
+      ? html`
+          <div class="complication">${this.complication}</div>
+        `
+      : nothing;
   }
 
   updated(changedProperties: PropertyValues) {
