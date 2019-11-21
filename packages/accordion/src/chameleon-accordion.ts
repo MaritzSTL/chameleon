@@ -22,6 +22,8 @@ export default class ChameleonAccordion extends LitElement {
    */
   @property({ type: Boolean, reflect: true })
   expanded = false;
+  @property({ type: Boolean, reflect: true })
+  fixed = false;
 
   /**
    * Template
@@ -31,7 +33,7 @@ export default class ChameleonAccordion extends LitElement {
       <div class="header">
         <slot name="header"></slot>
         <chameleon-button
-          class="toggle-icon ${this.expanded ? "rotated" : ""}"
+          class="toggle-icon ${this.expanded && !this.fixed ? "rotated" : ""}"
           icon-only
           theme="text"
           @click="${this.handleToggle}"

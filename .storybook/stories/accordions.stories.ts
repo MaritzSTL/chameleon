@@ -58,7 +58,7 @@ stories.add(
         style="--accordion-width: 600px;"
         @expanded-changed=${eventDetails.action("expanded-changed")}
       >
-        <chameleon-accordion>
+        <chameleon-accordion fixed="true">
           <h3 slot="header">People</h3>
           <chameleon-button slot="toggle-icon" theme="text"
             >Edit</chameleon-button
@@ -71,14 +71,14 @@ stories.add(
             </ul>
           </div>
         </chameleon-accordion>
-        <chameleon-accordion>
+        <chameleon-accordion fixed="true">
           <chameleon-button slot="toggle-icon" theme="text"
             >Edit</chameleon-button
           >
           <h3 slot="header">Places</h3>
           <div slot="panel">North Pole</div>
         </chameleon-accordion>
-        <chameleon-accordion>
+        <chameleon-accordion fixed="true">
           <chameleon-button slot="toggle-icon" theme="text"
             >Edit</chameleon-button
           >
