@@ -18,9 +18,10 @@ export default css`
   }
 
   .complication {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    width: 50px;
+    /* top: 0;
+    left: 0; */
     background-color: var(--color-secondary, #69c9b9);
     font-size: var(--font-size-label, 0.875rem);
     color: var(--color-primary-light, #679dea);
