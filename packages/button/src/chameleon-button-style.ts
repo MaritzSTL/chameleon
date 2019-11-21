@@ -103,6 +103,11 @@ export default css`
     padding: 0.1875rem;
   }
 
+  ::slotted(svg) {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
   slot[name="icon-loading"] > * {
     height: calc(100% - 1rem);
     margin: 0.5rem 0;

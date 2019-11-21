@@ -1,80 +1,71 @@
 import { css } from "lit-element";
 
 export default css`
-  /* The toast - position it at the bottom and in the middle of the screen */
-  #toast {
-    visibility: hidden; /* Hidden by default. Visible on click */
-    min-width: 28%; /* Set a default minimum width */
-    max-width: 28%; /* Set a default max width */
-    background-color: #333; /* Black background color */
-    color: #f5f5f8; /* off white text color */
-    text-align: left; /* left-aligned text */
-    border-radius: 10px; /* Rounded borders */
-    padding: 1rem; /* Padding */
-    position: fixed; /* Sit on top of the screen */
-    z-index: 1; /* Add a z-index if needed */
-    bottom: 30px; /* 30px from the bottom */
-    font-size: 14px;
-    line-height: 18px;
+  :host {
+    align-items: center;
+    animation: fadeout 0.5s forwards;
+    background-color: var(--color-black, #252a33);
+    border-radius: var(--border-radius, 0.5rem);
+    bottom: 30px;
+    box-sizing: border-box;
+    left: 30px;
+    color: var(--color-surface, #ffffff);
     display: flex;
+    font-size: var(--font-size-label, 0.875rem);
     justify-content: space-between;
+    line-height: 1.125rem;
+    padding: 16px 24px;
+    position: fixed;
+    width: 456px;
   }
 
-  .toast-text {
-    margin: 0 5px;
-  }
-
-  @media (max-width: 768px) {
-    #toast {
-      min-width: 90%;
-      max-width: 90%;
-    }
-  }
-
-  @media (max-width: 420px) {
-    #toast {
-      bottom: 70px;
-      min-width: 0px;
-    }
-  }
-
-  /* Show the toast */
-  #toast.show-closeable {
-    visibility: visible; /* Show the toast */
-    /* Add animation: Take 0.5 seconds to fade in the toast.*/
-    -webkit-animation: fadein 0.5s;
+  :host([showcloseable]) {
+    visibility: visible;
     animation: fadein 0.5s;
   }
 
-  /* Hide the toast */
-  #toast.hide-closeable {
-    visibility: visible;
-    -webkit-animation: fadeout 0.5s forwards;
-    animation: fadeout 0.5s forwards;
-    /* Show the toast */
-    /* Add animation: Take 0.5 seconds to fade out the toast. */
+  .toast-text {
+    margin-right: 10px;
   }
 
-  .closed-icon {
-    align-self: center;
+  .close-icon {
     display: flex;
   }
 
-  ::slotted(*) {
+  ::slotted([slot="close-icon"]) {
+    cursor: pointer;
     height: 20px;
     width: 20px;
     border-radius: 50%;
   }
 
-  /* Animations to fade the toast in */
-  @-webkit-keyframes fadein {
-    from {
-      bottom: 0;
-      opacity: 0;
+  @media only screen and (max-width: 768px) {
+    :host {
+      bottom: 10px;
+      left: 10px;
+      width: calc(100vw - 20px);
     }
-    to {
-      bottom: 30px;
-      opacity: 1;
+
+    @keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+      to {
+        bottom: 10px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeout {
+      from {
+        bottom: 10px;
+        opacity: 1;
+      }
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
     }
   }
 
@@ -88,17 +79,6 @@ export default css`
       opacity: 1;
     }
   }
-  /* Animations to fade the toast out */
-  @-webkit-keyframes fadeout {
-    from {
-      bottom: 30px;
-      opacity: 1;
-    }
-    to {
-      bottom: 0;
-      opacity: 0;
-    }
-  }
 
   @keyframes fadeout {
     from {
@@ -108,29 +88,6 @@ export default css`
     to {
       bottom: 0;
       opacity: 0;
-    }
-  }
-
-  @media (max-width: 420px) {
-    @-webkit-keyframes fadeout {
-      from {
-        bottom: 70px;
-        opacity: 1;
-      }
-      to {
-        bottom: 0;
-        opacity: 0;
-      }
-    }
-    @keyframes fadeout {
-      from {
-        bottom: 70px;
-        opacity: 1;
-      }
-      to {
-        bottom: 0;
-        opacity: 0;
-      }
     }
   }
 `;
