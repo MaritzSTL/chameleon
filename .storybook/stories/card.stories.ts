@@ -167,7 +167,7 @@ stories.add(
           max-width: 400px;
         }
       </style>
-      <chameleon-card .complication=${complicationText}>
+      <chameleon-card .complication=${complicationText} rounded>
         <chameleon-card-header
           title="${titleText}"
           subtitle="${subtitleText}"
