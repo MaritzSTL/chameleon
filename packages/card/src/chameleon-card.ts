@@ -22,7 +22,7 @@ export default class ChameleonCard extends LitElement {
   @property({ type: String })
   accentColor = null;
 
-  @property({ type: String })
+  @property({ type: String, reflect: true })
   complication = null;
 
   /**
