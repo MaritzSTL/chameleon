@@ -30,7 +30,7 @@ export default class ChameleonDialog extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template
