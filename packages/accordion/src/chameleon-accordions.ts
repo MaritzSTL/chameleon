@@ -11,7 +11,10 @@ import style from "./chameleon-accordions-style";
 export default class ChameleonAccordions extends LitElement {
   constructor() {
     super();
-    this.addEventListener("expanded-changed", this._handleExpandedChanged);
+    this.addEventListener(
+      "chameleon.accordions.expanded-changed",
+      this._handleExpandedChanged
+    );
   }
 
   /**

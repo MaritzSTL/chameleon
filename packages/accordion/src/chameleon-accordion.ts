@@ -48,7 +48,7 @@ export default class ChameleonAccordion extends LitElement {
 
   handleToggle(): void {
     this.dispatchEvent(
-      new CustomEvent("expanded-changed", {
+      new CustomEvent("chameleon.accordions.expanded-changed", {
         detail: {
           value: this.dataset.index
         },
