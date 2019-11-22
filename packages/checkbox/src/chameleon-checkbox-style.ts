@@ -54,4 +54,28 @@ export default css`
   input:checked ~ .checkmark::after {
     display: inline-block;
   }
+
+  :host([disabled]) {
+    pointer-events: none;
+  }
+
+  :host([disabled]) input:checked ~ .checkmark {
+    background-color: var(--color-gray-lightest, #e1e3e4);
+  }
+
+  :host([disabled]) .checkmark {
+    position: relative;
+  }
+
+  :host([disabled]) .checkmark:after {
+    border: none;
+    background-color: var(--color-surface, #ffffff);
+    height: 2px;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+  }
 `;
