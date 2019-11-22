@@ -15,6 +15,7 @@
     "build:ci": "lerna exec --concurrency 1 -- yarn run build",
     "build": "lerna exec yarn run build",
     "build-storybook": "del-cli docs/assets/storybook/ && build-storybook -c .storybook -o .out && cp -a .out/./ docs/assets/storybook/ && del-cli .out",
+    "bump-versions": "lerna version",
     "publish-packages": "yarn build && lerna publish --yes from-package"
   },
   "repository": {
