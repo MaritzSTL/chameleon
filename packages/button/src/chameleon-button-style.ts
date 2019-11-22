@@ -7,7 +7,7 @@ export default css`
     --button-hover-text-color: var(--color-surface, #ffffff);
     --button-text-color: var(--color-primary, #2c6fb7);
     display: inline-flex;
-    height: var(--button-height, 40px);
+    height: var(--button-height, auto);
   }
 
   :host([full-width]) {
@@ -97,10 +97,6 @@ export default css`
 
   ::slotted([slot="icon-right"]) {
     margin-left: 0.1875rem;
-  }
-
-  ::slotted([slot="icon-only"]) {
-    padding: 0.1875rem;
   }
 
   ::slotted(svg) {
