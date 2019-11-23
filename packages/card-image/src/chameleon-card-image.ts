@@ -3,7 +3,8 @@ import {
   TemplateResult,
   customElement,
   html,
-  property
+  property,
+  PropertyValues
 } from "lit-element";
 import style from "./chameleon-card-image-style";
 
@@ -25,6 +26,7 @@ export default class ChameleonCardImage extends LitElement {
    * Styles
    */
   static styles = [style];
+  style: any;
 
   /**
    * Template
@@ -34,4 +36,13 @@ export default class ChameleonCardImage extends LitElement {
       <img src="${this.src}" alt="${this.alt}" />
     `;
   }
+  updated(changedProperties: PropertyValues) {
+  if (
+    changedProperties.has("src") && 
+   this.src === "" &&
+   this.src !== undefined
+    ) {
+    this.style.backgroundColor = "green"
+   }
+
 }
