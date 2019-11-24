@@ -7,7 +7,6 @@ import {
 } from "lit-element";
 import { nothing, svg, SVGTemplateResult } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import base from "@chameleon-ds/theme/base";
 import style from "./chameleon-dialog-style";
 import "@chameleon-ds/card/src/chameleon-card";
 import "@chameleon-ds/button/src/chameleon-button";
@@ -31,7 +30,7 @@ export default class ChameleonDialog extends LitElement {
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template

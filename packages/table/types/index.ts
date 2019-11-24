@@ -21,7 +21,7 @@ export type Row = {
   showDetails?: boolean;
   details?: Row[];
 } & {
-  [key: string]: string | string[];
+  [key: string]: any;
 };
 
 export type FilterItems = FilterItem[];
