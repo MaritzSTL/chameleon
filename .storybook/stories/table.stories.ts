@@ -279,6 +279,24 @@ const rows = [
         detailsField4: "Details Row 4 - Field 4"
       }
     ]
+  },
+  {
+    field1: "Row 5 - Field 1",
+    field2: "Row 5 - Field 2",
+    field3: "Row 5 - Field 3",
+    field4: "Row 5 - Field 4"
+  },
+  {
+    field1: "Row 6 - Field 1",
+    field2: "Row 6 - Field 2",
+    field3: "Row 6 - Field 3",
+    field4: "Row 6 - Field 4"
+  },
+  {
+    field1: "Row 7 - Field 1",
+    field2: "Row 7 - Field 2",
+    field3: "Row 7 - Field 3",
+    field4: "Row 7 - Field 4"
   }
 ];
 
@@ -286,4 +304,4 @@ const pageSize = 6;
 
 const currentPage = 1;
 
-const totalItems = 4;
+const totalItems = 7;
