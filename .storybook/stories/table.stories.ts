@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, boolean } from "@storybook/addon-knobs";
 import { eventDetails } from "../utils";
 import { TemplateResult, html } from "lit-element";
 import { nothing } from "lit-html";
@@ -14,6 +14,7 @@ stories.addDecorator(withKnobs);
 stories.add(
   "Basic",
   () => {
+    const hidePagination = boolean("Hide Pagination", false);
     return html`
       <chameleon-table
         .columns=${columns}
@@ -21,6 +22,7 @@ stories.add(
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
+        ?hidePagination=${hidePagination}
         @chameleon.table.change=${eventDetails.action("chameleon.table.change")}
       ></chameleon-table>
     `;

@@ -56,6 +56,9 @@ export default class ChameleonTable extends LitElement {
   @property({ type: Number })
   currentPage = 1;
 
+  @property({ type: Boolean })
+  hidePagination = false;
+
   /**
    * Styles
    */
@@ -133,12 +136,16 @@ export default class ChameleonTable extends LitElement {
         )}
       </table>
 
-      <chameleon-paginator
-        totalItems=${this.totalItems}
-        pageSize=${this.pageSize}
-        currentPage=${this.currentPage}
-        @page-change=${this.handlePageChange}
-      ></chameleon-paginator>
+      ${!this.hidePagination
+        ? html`
+            <chameleon-paginator
+              totalItems=${this.totalItems}
+              pageSize=${this.pageSize}
+              currentPage=${this.currentPage}
+              @page-change=${this.handlePageChange}
+            ></chameleon-paginator>
+          `
+        : nothing}
     `;
   }
 
