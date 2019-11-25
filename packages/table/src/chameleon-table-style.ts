@@ -39,16 +39,14 @@ export default css`
     padding: 1.5rem 0.5rem;
   }
 
-  table th:first-child,
-  table td:first-child {
-    @media (min-width: 480px) {
+  @media (min-width: 480px) {
+    table th:first-child,
+    table td:first-child {
       padding-left: 1rem;
     }
-  }
 
-  table th:last-child,
-  table td:last-child {
-    @media (min-width: 480px) {
+    table th:last-child,
+    table td:last-child {
       padding-right: 1rem;
     }
   }
@@ -114,6 +112,10 @@ export default css`
   table th .search {
     display: flex;
     margin-top: 0.5rem;
+  }
+
+  table td .svg-inline--fa {
+    height: 1.4rem;
   }
 
   chameleon-paginator {
