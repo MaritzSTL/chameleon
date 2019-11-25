@@ -47,9 +47,9 @@ export default css`
     display: flex;
     font-family: var(--font-family, sans-serif);
     font-weight: var(--font-weight, 600);
-    font-size: var(--font-size-paragraph-medium, 0.9375rem);
+    font-size: var(--font-size-paragraph-medium, 0.938rem);
     justify-content: center;
-    letter-spacing: var(--font-letter-spacing, 0.0175rem);
+    letter-spacing: var(--font-letter-spacing, 0.018rem);
     line-height: 1;
     padding: var(--button-padding, 0.75rem 1.375rem);
     position: relative;
