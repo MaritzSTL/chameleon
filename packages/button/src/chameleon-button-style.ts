@@ -7,7 +7,7 @@ export default css`
     --button-hover-text-color: var(--color-surface, #ffffff);
     --button-text-color: var(--color-primary, #2c6fb7);
     display: inline-flex;
-    height: var(--button-height, auto);
+    height: var(--button-height, 40px);
   }
 
   :host([full-width]) {
@@ -17,6 +17,11 @@ export default css`
   :host([full-width]) a,
   :host([full-width]) button {
     width: 100%;
+  }
+
+  :host([icon-only]),
+  :host([theme="text"]) {
+    --button-height: auto;
   }
 
   :host([icon-only]) button,
@@ -74,21 +79,20 @@ export default css`
 
   .text {
     background-color: transparent;
-    border-color: transparent;
     color: var(--color-primary, #2c6fb7);
     text-decoration: underline;
     align-self: center;
+    padding: 0;
+    border: none;
   }
 
   .text:hover {
     background-color: transparent;
-    border-color: transparent;
     color: var(--color-primary-dark, #004587);
   }
 
   button[disabled].text {
     background-color: transparent;
-    border-color: transparent;
   }
 
   ::slotted([slot="icon-left"]) {
