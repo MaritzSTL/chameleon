@@ -235,6 +235,11 @@ const rows = [
         detailsField2: "Details Row 2 - Field 2",
         detailsField3: "Details Row 2 - Field 3",
         detailsField4: "Details Row 2 - Field 4"
+      },
+      {
+        detailsField2: "Details Row 3 - Field 2",
+        detailsField3: "Details Row 3 - Field 3",
+        detailsField4: "Details Row 3 - Field 4"
       }
     ]
   },

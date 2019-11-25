@@ -53,6 +53,20 @@ export default css`
 
   table tr.details-row td {
     border: 0;
+    padding: 1rem 0.5rem;
+  }
+
+  table tr:not(.details-row) + tr.details-row td {
+    padding-top: 1.5rem;
+  }
+
+  table tr:last-child.details-row td {
+    padding-bottom: 1.5rem;
+  }
+
+  table tr.details-row td {
+    border: 0;
+    padding: 0.75rem 0.5rem;
   }
 
   table tr:last-child td,
