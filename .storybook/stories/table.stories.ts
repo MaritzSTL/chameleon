@@ -15,6 +15,7 @@ stories.add(
   "Basic",
   () => {
     const hidePagination = boolean("Hide Pagination", false);
+
     return html`
       <chameleon-table
         .columns=${columns}
@@ -33,6 +34,8 @@ stories.add(
 stories.add(
   "Details Rows",
   () => {
+    const hidePagination = boolean("Hide Pagination", false);
+
     return html`
       <chameleon-table
         .columns=${columnsWithDetailFields}
@@ -40,6 +43,7 @@ stories.add(
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
+        ?hidePagination=${hidePagination}
         @chameleon.table.change=${eventDetails.action("chameleon.table.change")}
       ></chameleon-table>
     `;
@@ -50,6 +54,8 @@ stories.add(
 stories.add(
   "Filters",
   () => {
+    const hidePagination = boolean("Hide Pagination", false);
+
     return html`
       <chameleon-table
         .columns=${columnsWithFilters}
@@ -57,6 +63,7 @@ stories.add(
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
+        ?hidePagination=${hidePagination}
         @chameleon.table.change=${eventDetails.action("chameleon.table.change")}
       ></chameleon-table>
     `;
