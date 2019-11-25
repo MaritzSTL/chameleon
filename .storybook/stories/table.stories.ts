@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, boolean } from "@storybook/addon-knobs";
 import { eventDetails } from "../utils";
 import { TemplateResult, html } from "lit-element";
 import { nothing } from "lit-html";
@@ -14,6 +14,8 @@ stories.addDecorator(withKnobs);
 stories.add(
   "Basic",
   () => {
+    const hidePagination = boolean("Hide Pagination", false);
+
     return html`
       <chameleon-table
         .columns=${columns}
@@ -21,6 +23,7 @@ stories.add(
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
+        ?hidePagination=${hidePagination}
         @chameleon.table.change=${eventDetails.action("chameleon.table.change")}
       ></chameleon-table>
     `;
@@ -31,6 +34,8 @@ stories.add(
 stories.add(
   "Details Rows",
   () => {
+    const hidePagination = boolean("Hide Pagination", false);
+
     return html`
       <chameleon-table
         .columns=${columnsWithDetailFields}
@@ -38,6 +43,7 @@ stories.add(
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
+        ?hidePagination=${hidePagination}
         @chameleon.table.change=${eventDetails.action("chameleon.table.change")}
       ></chameleon-table>
     `;
@@ -48,6 +54,8 @@ stories.add(
 stories.add(
   "Filters",
   () => {
+    const hidePagination = boolean("Hide Pagination", false);
+
     return html`
       <chameleon-table
         .columns=${columnsWithFilters}
@@ -55,6 +63,7 @@ stories.add(
         .pageSize=${pageSize}
         .currentPage=${currentPage}
         .totalItems=${totalItems}
+        ?hidePagination=${hidePagination}
         @chameleon.table.change=${eventDetails.action("chameleon.table.change")}
       ></chameleon-table>
     `;
@@ -226,6 +235,11 @@ const rows = [
         detailsField2: "Details Row 2 - Field 2",
         detailsField3: "Details Row 2 - Field 3",
         detailsField4: "Details Row 2 - Field 4"
+      },
+      {
+        detailsField2: "Details Row 3 - Field 2",
+        detailsField3: "Details Row 3 - Field 3",
+        detailsField4: "Details Row 3 - Field 4"
       }
     ]
   },
@@ -265,6 +279,24 @@ const rows = [
         detailsField4: "Details Row 4 - Field 4"
       }
     ]
+  },
+  {
+    field1: "Row 5 - Field 1",
+    field2: "Row 5 - Field 2",
+    field3: "Row 5 - Field 3",
+    field4: "Row 5 - Field 4"
+  },
+  {
+    field1: "Row 6 - Field 1",
+    field2: "Row 6 - Field 2",
+    field3: "Row 6 - Field 3",
+    field4: "Row 6 - Field 4"
+  },
+  {
+    field1: "Row 7 - Field 1",
+    field2: "Row 7 - Field 2",
+    field3: "Row 7 - Field 3",
+    field4: "Row 7 - Field 4"
   }
 ];
 
@@ -272,4 +304,4 @@ const pageSize = 6;
 
 const currentPage = 1;
 
-const totalItems = 4;
+const totalItems = 7;

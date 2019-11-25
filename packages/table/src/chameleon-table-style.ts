@@ -39,22 +39,34 @@ export default css`
     padding: 1.5rem 0.5rem;
   }
 
-  table th:first-child,
-  table td:first-child {
-    @media (min-width: 480px) {
+  @media (min-width: 480px) {
+    table th:first-child,
+    table td:first-child {
       padding-left: 1rem;
     }
-  }
 
-  table th:last-child,
-  table td:last-child {
-    @media (min-width: 480px) {
+    table th:last-child,
+    table td:last-child {
       padding-right: 1rem;
     }
   }
 
   table tr.details-row td {
     border: 0;
+    padding: 1rem 0.5rem;
+  }
+
+  table tr:not(.details-row) + tr.details-row td {
+    padding-top: 1.5rem;
+  }
+
+  table tr:last-child.details-row td {
+    padding-bottom: 1.5rem;
+  }
+
+  table tr.details-row td {
+    border: 0;
+    padding: 0.75rem 0.5rem;
   }
 
   table tr:last-child td,
@@ -114,6 +126,10 @@ export default css`
   table th .search {
     display: flex;
     margin-top: 0.5rem;
+  }
+
+  table td .svg-inline--fa {
+    height: 1.4rem;
   }
 
   chameleon-paginator {
