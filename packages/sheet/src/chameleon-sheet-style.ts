@@ -39,12 +39,13 @@ export default css`
   }
 
   .close-icon {
+    --button-height: auto;
     display: flex;
     cursor: pointer;
     margin: 0;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 14;
+    right: 14;
   }
 
   ::slotted(p) {
