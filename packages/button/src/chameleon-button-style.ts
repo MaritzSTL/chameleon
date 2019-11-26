@@ -19,6 +19,11 @@ export default css`
     width: 100%;
   }
 
+  :host([icon-only]),
+  :host([theme="text"]) {
+    --button-height: auto;
+  }
+
   :host([icon-only]) button,
   :host([icon-left]) button,
   :host([icon-right]) button {
@@ -46,7 +51,7 @@ export default css`
     cursor: pointer;
     display: flex;
     font-family: var(--font-family, sans-serif);
-    font-weight: var(--font-weight, normal);
+    font-weight: var(--font-weight, 600);
     font-size: var(--font-size-paragraph-medium, 0.938rem);
     justify-content: center;
     letter-spacing: var(--font-letter-spacing, 0.018rem);
@@ -74,21 +79,20 @@ export default css`
 
   .text {
     background-color: transparent;
-    border-color: transparent;
     color: var(--color-primary, #2c6fb7);
     text-decoration: underline;
     align-self: center;
+    padding: 0;
+    border: none;
   }
 
   .text:hover {
     background-color: transparent;
-    border-color: transparent;
     color: var(--color-primary-dark, #004587);
   }
 
   button[disabled].text {
     background-color: transparent;
-    border-color: transparent;
   }
 
   ::slotted([slot="icon-left"]) {
@@ -97,10 +101,6 @@ export default css`
 
   ::slotted([slot="icon-right"]) {
     margin-left: 0.1875rem;
-  }
-
-  ::slotted([slot="icon-only"]) {
-    padding: 0.1875rem;
   }
 
   ::slotted(svg) {
