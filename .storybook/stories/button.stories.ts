@@ -51,6 +51,7 @@ stories.add(
 
     return html`
       <chameleon-button
+        style="--button-height: 40px;"
         ?disabled=${disabled}
         ?loading=${loading}
         theme="secondary"
