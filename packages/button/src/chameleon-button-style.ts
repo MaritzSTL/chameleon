@@ -30,10 +30,6 @@ export default css`
     padding: 0;
   }
 
-  :host([icon-only]) button {
-    border: none;
-  }
-
   a {
     display: inline-block;
     text-decoration: none;

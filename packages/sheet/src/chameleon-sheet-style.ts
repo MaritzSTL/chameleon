@@ -39,7 +39,6 @@ export default css`
   }
 
   .close-icon {
-    --button-height: auto;
     display: flex;
     cursor: pointer;
     margin: 0;
