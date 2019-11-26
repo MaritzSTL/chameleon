@@ -837,6 +837,7 @@
       </chameleon-button>
     `},{info:{inline:!0}}),stories.add("Secondary",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),fullWidth=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Width",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),newTab=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open Link in New Tab",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-button
+        style="--button-height: 40px;"
         ?disabled=${disabled}
         ?loading=${loading}
         theme="secondary"
@@ -3304,6 +3305,11 @@
     width: 100%;
   }
 
+  :host([icon-only]),
+  :host([theme="text"]) {
+    --button-height: auto;
+  }
+
   :host([icon-only]) button,
   :host([icon-left]) button,
   :host([icon-right]) button {
@@ -3331,7 +3337,7 @@
     cursor: pointer;
     display: flex;
     font-family: var(--font-family, sans-serif);
-    font-weight: var(--font-weight, normal);
+    font-weight: var(--font-weight, 600);
     font-size: var(--font-size-paragraph-medium, 0.938rem);
     justify-content: center;
     letter-spacing: var(--font-letter-spacing, 0.018rem);
@@ -3359,21 +3365,20 @@
 
   .text {
     background-color: transparent;
-    border-color: transparent;
     color: var(--color-primary, #2c6fb7);
     text-decoration: underline;
     align-self: center;
+    padding: 0;
+    border: none;
   }
 
   .text:hover {
     background-color: transparent;
-    border-color: transparent;
     color: var(--color-primary-dark, #004587);
   }
 
   button[disabled].text {
     background-color: transparent;
-    border-color: transparent;
   }
 
   ::slotted([slot="icon-left"]) {
@@ -3382,10 +3387,6 @@
 
   ::slotted([slot="icon-right"]) {
     margin-left: 0.1875rem;
-  }
-
-  ::slotted([slot="icon-only"]) {
-    padding: 0.1875rem;
   }
 
   ::slotted(svg) {
@@ -3433,4 +3434,4 @@
         <slot name="icon-only"></slot>
       </button>
     `}getTarget(){return this["new-tab"]?"_blank":"_top"}getRel(){return this["new-tab"]?"noopener noreferrer":""}};chameleon_button_ChameleonButton.styles=[chameleon_button_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"loading",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"theme",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-left",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-right",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-only",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"href",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"new-tab",void 0);chameleon_button_ChameleonButton=__decorate([Object(lit_element.c)("chameleon-button")],chameleon_button_ChameleonButton)}},[[287,1,2]]]);
-//# sourceMappingURL=main.43c105b4685173ad4a20.bundle.js.map
+//# sourceMappingURL=main.f43d47601a6f1c19871a.bundle.js.map
