@@ -27,6 +27,9 @@ export default class ChameleonDialog extends LitElement {
   @property({ type: Boolean, reflect: true })
   "dismissible" = false;
 
+  @property({ type: Boolean, reflect: true })
+  "fullScreen" = false;
+
   /**
    * Styles
    */
@@ -44,7 +47,7 @@ export default class ChameleonDialog extends LitElement {
           close: !this.open
         })}"
       >
-        <chameleon-card>
+        <chameleon-card class="${this.fullScreen ? "full-screen" : ""}">
           <div class="dialog">
           ${
             this.dismissible

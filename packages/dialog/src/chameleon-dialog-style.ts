@@ -46,6 +46,14 @@ export default css`
     animation-duration: 1s;
   }
 
+  .full-screen {
+    border-radius: unset;
+    position: relative;
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
   .actions {
     display: flex;
     flex-direction: column;
