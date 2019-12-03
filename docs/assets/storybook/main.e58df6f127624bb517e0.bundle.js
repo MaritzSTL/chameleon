@@ -448,7 +448,7 @@
   .component-wrapper {
     display: inline-flex;
     flex-direction: column;
-    //width: 100%;
+    width: 100%;
   }
 
   input {
@@ -457,7 +457,7 @@
     box-sizing: border-box;
     font-size: var(--font-size-input, 0.938rem);
     font-family: var(--font-family, sans-serif);
-    //width: 100%;
+    width: 100%;
     padding: var(--input-padding, 0.625rem 0.5rem);
   }
 
@@ -988,10 +988,11 @@
         @remove-chip=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("remove-chip")}
         >${valueText}</chameleon-chip
       >
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(11)(module))},609:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(632);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Dialog",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);stories.add("Basic",()=>{const dialogVisible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open",!0),dismissible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Dismissible",!0);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(11)(module))},609:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(632);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Dialog",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);stories.add("Basic",()=>{const dialogVisible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open",!0),dismissible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Dismissible",!0),fullScreen=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Screen",!1);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-dialog
         ?open="${dialogVisible}"
         ?dismissible="${dismissible}"
+        ?fullScreen="${fullScreen}"
         @toggle-dialog=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("toggle-dialog")}
       >
         ${(slot=>lit_html__WEBPACK_IMPORTED_MODULE_3__.svg`
@@ -2543,6 +2544,14 @@
     animation-duration: 1s;
   }
 
+  .full-screen {
+    border-radius: unset;
+    position: relative;
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
   .actions {
     display: flex;
     flex-direction: column;
@@ -2603,11 +2612,11 @@
       opacity: 1;
     }
   }
-`,__decorate=(__webpack_require__(284),__webpack_require__(66),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_dialog_ChameleonDialog=class ChameleonDialog extends lit_element.a{constructor(){super(...arguments),this.open=!0,this.icon=!1,this.dismissible=!1}render(){return lit_element.d`
+`,__decorate=(__webpack_require__(284),__webpack_require__(66),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_dialog_ChameleonDialog=class ChameleonDialog extends lit_element.a{constructor(){super(...arguments),this.open=!0,this.icon=!1,this.dismissible=!1,this.fullScreen=!1}render(){return lit_element.d`
       <div
         class="${Object(class_map.a)({overlay:!0,open:this.open,close:!this.open})}"
       >
-        <chameleon-card>
+        <chameleon-card class="${this.fullScreen?"full-screen":""}">
           <div class="dialog">
           ${this.dismissible?lit_element.d`
                   <chameleon-button
@@ -2633,7 +2642,7 @@
       </chameleon-card>
     `}_toggleDialog(){this.open=!this.open;const e=new CustomEvent("toggle-dialog",{bubbles:!0,composed:!0});this.dispatchEvent(e)}get closeIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"close-icon"===slot.slot)?lit_html.svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`:lit_element.d`
         <slot name="close-icon"></slot>
-      `}};chameleon_dialog_ChameleonDialog.styles=[chameleon_dialog_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"open",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"icon",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"dismissible",void 0);chameleon_dialog_ChameleonDialog=__decorate([Object(lit_element.c)("chameleon-dialog")],chameleon_dialog_ChameleonDialog)},633:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_checkbox_style=lit_element.b`
+      `}};chameleon_dialog_ChameleonDialog.styles=[chameleon_dialog_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"open",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"icon",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"dismissible",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"fullScreen",void 0);chameleon_dialog_ChameleonDialog=__decorate([Object(lit_element.c)("chameleon-dialog")],chameleon_dialog_ChameleonDialog)},633:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_checkbox_style=lit_element.b`
   :host {
     align-items: center;
     cursor: pointer;
@@ -3434,4 +3443,4 @@
         <slot name="icon-only"></slot>
       </button>
     `}getTarget(){return this["new-tab"]?"_blank":"_top"}getRel(){return this["new-tab"]?"noopener noreferrer":""}};chameleon_button_ChameleonButton.styles=[chameleon_button_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"loading",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"theme",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-left",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-right",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-only",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"href",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"new-tab",void 0);chameleon_button_ChameleonButton=__decorate([Object(lit_element.c)("chameleon-button")],chameleon_button_ChameleonButton)}},[[287,1,2]]]);
-//# sourceMappingURL=main.f43d47601a6f1c19871a.bundle.js.map
+//# sourceMappingURL=main.e58df6f127624bb517e0.bundle.js.map
