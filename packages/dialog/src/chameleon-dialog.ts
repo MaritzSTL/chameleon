@@ -17,7 +17,7 @@ export default class ChameleonDialog extends LitElement {
    * Properties
    */
   @property({ type: Boolean, reflect: true })
-  open = true;
+  open = false;
 
   // Card has an icon
   @property({ type: Boolean, reflect: true })
