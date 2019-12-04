@@ -17,12 +17,14 @@ stories.add(
   () => {
     const dialogVisible = boolean("Open", true);
     const dismissible = boolean("Dismissible", true);
+    const canGoBack = boolean("Can Go Back", false);
     const fullScreen = boolean("Full Screen", false);
 
     return html`
       <chameleon-dialog
         ?open="${dialogVisible}"
         ?dismissible="${dismissible}"
+        ?canGoBack="${canGoBack}"
         ?fullScreen="${fullScreen}"
         @toggle-dialog=${eventDetails.action("toggle-dialog")}
       >
