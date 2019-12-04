@@ -41,20 +41,6 @@ describe("chameleon-dialog", () => {
   });
 
   describe("_goBack", () => {
-    it("should set open to true", () => {
-      element.open = false;
-      element._goBack();
-
-      expect(element.open).to.be.true;
-    });
-
-    it("should set open to false", () => {
-      element.open = true;
-      element._goBack();
-
-      expect(element.open).to.be.false;
-    });
-
     it("should dispatch a go-back event", () => {
       const spy = sinon.spy();
       element.addEventListener("go-back", spy);
