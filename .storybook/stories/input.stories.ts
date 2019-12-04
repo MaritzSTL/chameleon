@@ -35,6 +35,7 @@ stories.add(
     const label = text("Label", "");
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
+    const requiredField = boolean("Required", false);
     const typeOptions = {
       Text: "text",
       Password: "password",
@@ -49,6 +50,7 @@ stories.add(
 
     return html`
       <chameleon-input
+        ?requiredField="${requiredField}"
         ?disabled="${disabled}"
         ?toggleable="${toggleable}"
         .type="${typeSelection}"
@@ -70,6 +72,7 @@ stories.add(
     const label = text("Label", "");
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
+    const requiredField = boolean("Required", false);
     const typeOptions = {
       Text: "text",
       Password: "password",
@@ -84,6 +87,7 @@ stories.add(
 
     return html`
       <chameleon-input
+        ?requiredField="${requiredField}"
         ?disabled="${disabled}"
         ?toggleable="${toggleable}"
         icon-left
@@ -108,6 +112,7 @@ stories.add(
     const label = text("Label", "");
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
+    const requiredField = boolean("Required", false);
     const typeOptions = {
       Text: "text",
       Password: "password",
@@ -122,6 +127,7 @@ stories.add(
 
     return html`
       <chameleon-input
+        ?requiredField="${requiredField}"
         ?disabled="${disabled}"
         ?toggleable="${toggleable}"
         icon-right
