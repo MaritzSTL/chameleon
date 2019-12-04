@@ -69,7 +69,7 @@ export default css`
   }
 
   .secondary {
-    background-color: var(--color-surface, #ffffff);
+    background-color: unset;
     color: var(--button-text-color);
   }
 
