@@ -171,7 +171,7 @@ describe("chameleon-input", () => {
     expect(element._el).to.have.attribute("required");
   });
 
-  it("disables up-arrow key to increment value if noStepper is true", () => {
+  it("_acceptInput disables up-arrow key to increment value if noStepper is true", () => {
     element.value = "5";
     element.noStepper = true;
     element._acceptInput({ e: { which: "40" } });
@@ -179,7 +179,7 @@ describe("chameleon-input", () => {
     expect(element.value).to.equal("5");
   });
 
-  it("disables down-arrow key to increment value if noStepper is true", () => {
+  it("_acceptInput disables down-arrow key to decrement value if noStepper is true", () => {
     element.value = "5";
     element.noStepper = true;
     element._acceptInput({ e: { which: "38" } });
