@@ -35,6 +35,10 @@ export default class ChameleonInput extends LitElement {
   @property({ type: Boolean, reflect: true })
   disabled = false;
 
+  // A Boolean attribute which, if true, and if  should be disabled
+  @property({ type: Boolean, reflect: true })
+  noStepper = false;
+
   // A Boolean attribute which, if true, indicates that the input cannot be edited
   @property({ type: Boolean, reflect: true })
   readonly = false;
@@ -101,7 +105,8 @@ export default class ChameleonInput extends LitElement {
         ${classMap({
           "component-wrapper": true,
           invalid: this._invalidState,
-          disabled: this.disabled
+          disabled: this.disabled,
+          "no-stepper": this.noStepper
         })}"
       >
         <div
@@ -152,6 +157,7 @@ export default class ChameleonInput extends LitElement {
             @input="${this._handleInput}"
             @blur="${this._handleBlur}"
             @invalid="${this._handleInvalid}"
+            @keydown="${this._acceptInput}"
           />
         `;
       case "text":
@@ -170,6 +176,7 @@ export default class ChameleonInput extends LitElement {
             @input="${this._handleInput}"
             @blur="${this._handleBlur}"
             @invalid="${this._handleInvalid}"
+            @keydown="${this._acceptInput}"
           />
         `;
     }
@@ -277,6 +284,13 @@ export default class ChameleonInput extends LitElement {
   _handleInvalid(): void {
     this.validationMessage =
       this._el !== null ? this._el.validationMessage : "";
+  }
+
+  _acceptInput(e: any): boolean {
+    if (this.noStepper && (e.which === 38 || e.which === 40)) {
+      e.preventDefault();
+      return false;
+    } else return true;
   }
 
   get warningIcon(): SVGTemplateResult {

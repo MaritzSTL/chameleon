@@ -36,6 +36,10 @@ stories.add(
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
     const requiredField = boolean("Required", false);
+    const noStepper = boolean(
+      "Hide increment arrows/disable incrementing",
+      false
+    );
     const typeOptions = {
       Text: "text",
       Password: "password",
@@ -52,6 +56,7 @@ stories.add(
       <chameleon-input
         ?requiredField="${requiredField}"
         ?disabled="${disabled}"
+        ?noStepper="${noStepper}"
         ?toggleable="${toggleable}"
         .type="${typeSelection}"
         .placeholder="${placeholder}"
@@ -73,6 +78,10 @@ stories.add(
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
     const requiredField = boolean("Required", false);
+    const noStepper = boolean(
+      "Hide increment arrows/disable incrementing",
+      false
+    );
     const typeOptions = {
       Text: "text",
       Password: "password",
@@ -89,6 +98,7 @@ stories.add(
       <chameleon-input
         ?requiredField="${requiredField}"
         ?disabled="${disabled}"
+        ?noStepper="${noStepper}"
         ?toggleable="${toggleable}"
         icon-left
         .type="${typeSelection}"
@@ -113,6 +123,10 @@ stories.add(
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
     const requiredField = boolean("Required", false);
+    const noStepper = boolean(
+      "Hide increment arrows/disable incrementing",
+      false
+    );
     const typeOptions = {
       Text: "text",
       Password: "password",
@@ -129,6 +143,7 @@ stories.add(
       <chameleon-input
         ?requiredField="${requiredField}"
         ?disabled="${disabled}"
+        ?noStepper="${noStepper}"
         ?toggleable="${toggleable}"
         icon-right
         .type="${typeSelection}"
