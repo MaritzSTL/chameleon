@@ -66,8 +66,17 @@ export default css`
     cursor: pointer;
     position: absolute;
     margin: 0;
-    top: 0;
-    right: 0;
+    top: 25px;
+    right: 25px;
+  }
+
+  .back-icon {
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    margin: 0;
+    top: 25px;
+    left: 25px;
   }
 
   svg {
