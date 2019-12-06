@@ -116,4 +116,13 @@ export default css`
   ::slotted([slot="icon-right"]) {
     right: 13px;
   }
+
+  .no-stepper input[type="number"]::-webkit-inner-spin-button,
+  .no-stepper input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .no-stepper input[type="number"] {
+    -moz-appearance: textfield;
+  }
 `;
