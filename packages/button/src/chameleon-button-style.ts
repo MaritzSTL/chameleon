@@ -2,17 +2,32 @@ import { css } from "lit-element";
 
 export default css`
   :host {
-    display: inline;
+    --button-border-color: var(--color-primary, #2c6fb7);
+    --button-hover-color: var(--color-primary-dark, #004587);
+    --button-hover-text-color: var(--color-surface, #ffffff);
+    --button-text-color: var(--color-primary, #2c6fb7);
+    display: inline-flex;
+    height: var(--button-height, 40px);
   }
 
   :host([full-width]) {
-    flex: 1;
+    width: 100%;
   }
 
   :host([full-width]) a,
   :host([full-width]) button {
-    flex: 1;
     width: 100%;
+  }
+
+  :host([icon-only]),
+  :host([theme="text"]) {
+    --button-height: auto;
+  }
+
+  :host([icon-only]) button,
+  :host([icon-left]) button,
+  :host([icon-right]) button {
+    padding: 0;
   }
 
   a {
@@ -31,52 +46,53 @@ export default css`
     align-items: center;
     background-color: var(--color-primary, #2c6fb7);
     border-radius: var(--border-radius-input, 0.313rem);
-    border: 1px solid var(--color-primary, #2c6fb7);
+    border: 1px solid var(--button-border-color);
     color: var(--color-surface, #ffffff);
     cursor: pointer;
     display: flex;
     font-family: var(--font-family, sans-serif);
-    font-weight: var(--font-weight, normal);
+    font-weight: var(--font-weight, 600);
     font-size: var(--font-size-paragraph-medium, 0.938rem);
     justify-content: center;
     letter-spacing: var(--font-letter-spacing, 0.018rem);
+    line-height: 1;
     padding: var(--button-padding, 0.75rem 1.375rem);
     position: relative;
     transition: all 150ms linear;
-    height: var(--button-height, 40px);
+    height: 100%;
+    width: 100%;
   }
 
   button:hover {
-    background-color: var(--color-primary-dark, #004587);
-    border-color: var(--color-primary-dark, #004587);
+    background-color: var(--button-hover-color);
+    border-color: var(--button-hover-color);
   }
 
   .secondary {
-    background-color: var(--color-surface, #ffffff);
-    color: var(--color-primary, #2c6fb7);
+    background-color: unset;
+    color: var(--button-text-color);
   }
 
   .secondary:hover {
-    color: var(--color-surface, #ffffff);
+    color: var(--button-hover-text-color);
   }
 
   .text {
     background-color: transparent;
-    border-color: transparent;
     color: var(--color-primary, #2c6fb7);
     text-decoration: underline;
     align-self: center;
+    padding: 0;
+    border: none;
   }
 
   .text:hover {
     background-color: transparent;
-    border-color: transparent;
     color: var(--color-primary-dark, #004587);
   }
 
   button[disabled].text {
     background-color: transparent;
-    border-color: transparent;
   }
 
   ::slotted([slot="icon-left"]) {
@@ -87,8 +103,9 @@ export default css`
     margin-left: 0.1875rem;
   }
 
-  ::slotted([slot="icon-only"]) {
-    padding: 0.1875rem;
+  ::slotted(svg) {
+    height: 1.5rem;
+    width: 1.5rem;
   }
 
   slot[name="icon-loading"] > * {

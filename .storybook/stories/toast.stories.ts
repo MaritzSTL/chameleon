@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs";
+import { eventDetails } from "../utils";
 import { html } from "lit-html";
 import "@chameleon-ds/toast/src/chameleon-toast";
 
@@ -26,9 +27,10 @@ stories.add(
         color="${color}"
         backgroundColor="${backgroundColor}"
         ?showCloseable="${showCloseable}"
+        @close-toast=${eventDetails.action("close-toast")}
       >
         <span slot="toast-text">${toastText}</span>
-        <img slot="closed-icon" src="${imageUrl}" />
+        <img slot="close-icon" src="${imageUrl}" />
       </chameleon-toast>
     `;
   },

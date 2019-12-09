@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, boolean, text } from "@storybook/addon-knobs";
+import { eventDetails } from "../utils";
 import { html, svg } from "lit-html";
 import "@chameleon-ds/multiselect/src/chameleon-multiselect";
 
@@ -66,15 +67,18 @@ stories.add(
   "Multiselect",
   () => {
     const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
 
     return html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
+        @chameleon.select=${eventDetails.action("chameleon.select")}
       ></chameleon-multiselect>
     `;
   },
@@ -85,16 +89,19 @@ stories.add(
   "Pre-Selected Values",
   () => {
     const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
 
     return html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
         .value="${["arch"]}"
+        @chameleon.select=${eventDetails.action("chameleon.select")}
       ></chameleon-multiselect>
     `;
   },
@@ -105,15 +112,18 @@ stories.add(
   "With Icon",
   () => {
     const disabled = boolean("Disabled", false);
+    const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
 
     return html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
+        @chameleon.select=${eventDetails.action("chameleon.select")}
       >
         ${searchIcon("icon")}
       </chameleon-multiselect>

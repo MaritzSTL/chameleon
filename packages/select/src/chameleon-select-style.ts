@@ -30,6 +30,9 @@ export default css`
     border-radius: var(--border-radius, 5px);
     cursor: pointer;
     min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
 
   .container.active {
@@ -45,11 +48,11 @@ export default css`
   .select {
     align-items: center;
     display: flex;
-    height: 100%;
     justify-content: center;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     width: 40px;
   }
 
@@ -174,5 +177,11 @@ export default css`
     color: var(--color-gray-darkest, #6c737a);
     font-size: var(--font-size-input, 0.938rem);
     display: block;
+  }
+
+  .label-container {
+    color: var(--color-gray-darkest, #6c737a);
+    font-size: var(--font-size-label, 0.875rem);
+    margin-bottom: 10px;
   }
 `;

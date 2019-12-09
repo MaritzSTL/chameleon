@@ -4,6 +4,7 @@ export default css`
   :host {
     align-items: center;
     display: flex;
+    background-color: var(--color-surface, #ffffff);
     border: 1px solid var(--color-gray-dark, #9fa4a8);
     border-radius: var(--border-radius-input, 0.313rem);
     box-sizing: border-box;
@@ -43,6 +44,7 @@ export default css`
     flex-grow: 1;
     font-size: var(--font-size-label, 0.938rem);
     height: 23px;
+    width: 100%;
     padding: 0;
   }
 
@@ -82,6 +84,7 @@ export default css`
     position: absolute;
     top: calc(100% + 13px);
     width: 100%;
+    z-index: 1;
   }
 
   .options__list {
@@ -109,7 +112,8 @@ export default css`
     margin-right: 10px;
   }
 
-  .options__option-preLabel img {
+  .options__option-preLabel img,
+  svg {
     border-radius: 50%;
     height: 34px;
     vertical-align: top;
@@ -146,5 +150,10 @@ export default css`
   ::slotted(svg) {
     color: var(--color-gray-darkest, #6c737a);
     height: 16px;
+  }
+
+  chameleon-loader {
+    height: 24px;
+    width: 24px;
   }
 `;

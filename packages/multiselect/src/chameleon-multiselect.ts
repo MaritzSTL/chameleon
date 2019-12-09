@@ -11,21 +11,31 @@ import { repeat } from "lit-html/directives/repeat";
 import style from "./chameleon-multiselect-style";
 import { SelectableOption, SelectionTarget } from "../types";
 import "@chameleon-ds/chip/src/chameleon-chip";
+import "@chameleon-ds/loader/src/chameleon-loader";
 
 @customElement("chameleon-multiselect")
 export default class ChameleonMultiselect extends LitElement {
   constructor() {
     super();
     this.addEventListener("remove-chip", <EventListener>this.handleChipClose);
+    document.addEventListener("click", <EventListener>this.closeOptionsList);
+    document.addEventListener("chameleon-multiselect.close", () => {
+      this.active = false;
+    });
   }
 
   /**
    * Lifecycle Methods
    */
   disconnectedCallback() {
-    this.removeEventListener("remove-chip", <EventListener>(
-      this.handleChipClose
-    ));
+    this.removeEventListener(
+      "remove-chip",
+      <EventListener>this.handleChipClose
+    );
+    document.removeEventListener("click", <EventListener>this.closeOptionsList);
+    document.removeEventListener("chameleon-multiselect.close", () => {
+      this.active = false;
+    });
   }
 
   /**
@@ -63,6 +73,15 @@ export default class ChameleonMultiselect extends LitElement {
   @property({ type: String })
   placeholder = "";
 
+  @property({ type: Boolean, reflect: true })
+  instantSearch = false;
+
+  @property({ type: String })
+  instantSearchValue = "";
+
+  @property({ type: Boolean, reflect: true })
+  loading = false;
+
   /**
    * Styles
    */
@@ -80,11 +99,11 @@ export default class ChameleonMultiselect extends LitElement {
       >
         ${this.renderedSelectedOptions}
         <input
-          class="${classMap({
+          class="multiselect-input ${classMap({
             "tags-active": this.selectedOptions.length > 0
           })}"
           type="text"
-          placeholder="${this.renderedOptions.length > 0
+          placeholder="${this.renderedOptions.length > 0 || this.instantSearch
             ? this.placeholder
             : ""}"
           @focus="${this.setActive}"
@@ -92,7 +111,13 @@ export default class ChameleonMultiselect extends LitElement {
         />
       </div>
       ${this.optionsList}
-      <slot name="icon"></slot>
+      ${this.loading
+        ? html`
+            <chameleon-loader loader="spinner" size="24px"></chameleon-loader>
+          `
+        : html`
+            <slot name="icon"></slot>
+          `}
     `;
   }
 
@@ -192,9 +217,11 @@ export default class ChameleonMultiselect extends LitElement {
    * @return {Array<SelectableOption>}
    */
   get renderedOptions(): Array<SelectableOption> {
-    return this.options.filter(
-      option => !this.selectedOptions.includes(option)
-    );
+    return this.options.filter(option => {
+      return !this.selectedOptions.some(selectedOption => {
+        return option.value === selectedOption.value;
+      });
+    });
   }
 
   setActive(): void {
@@ -234,10 +261,13 @@ export default class ChameleonMultiselect extends LitElement {
    */
   handleSearch(e: InputEvent): void {
     const query = (e.target! as HTMLInputElement).value.toLowerCase();
-
-    this.filteredOptions = this.options.filter(option => {
-      return option.label.toLowerCase().includes(query);
-    });
+    if (this.instantSearch) {
+      this.instantSearchValue = query;
+      this.dispatchSearchEvent();
+    } else
+      this.filteredOptions = this.renderedOptions.filter(option => {
+        return option.label.toLowerCase().includes(query);
+      });
   }
 
   private handleChipClose(e: CustomEvent): void {
@@ -249,11 +279,43 @@ export default class ChameleonMultiselect extends LitElement {
     this.dispatchChangeEvent();
   }
 
+  private closeOptionsList(e: CustomEvent): void {
+    if (
+      e.composedPath &&
+      e.composedPath()[0] &&
+      (<HTMLElement>e.composedPath()[0]).classList
+    ) {
+      const classes = Array.from((<HTMLElement>e.composedPath()[0]).classList);
+
+      if (classes.includes("multiselect-input")) {
+        // Early return if the selector isn't open yet
+        e.stopPropagation();
+        return;
+      } else {
+        // Close selector if click is anywhere but inside the selector
+        this.dispatchEvent(new CustomEvent("chameleon-multiselect.close"));
+      }
+    }
+  }
+
   private dispatchChangeEvent(): void {
     this.dispatchEvent(
       new CustomEvent("chameleon.select", {
         detail: {
-          value: this.value
+          value: this.value,
+          selectedOptions: this.selectedOptions
+        },
+        bubbles: true,
+        composed: true
+      })
+    );
+  }
+
+  private dispatchSearchEvent(): void {
+    this.dispatchEvent(
+      new CustomEvent("chameleon.search", {
+        detail: {
+          value: this.instantSearchValue
         },
         bubbles: true,
         composed: true

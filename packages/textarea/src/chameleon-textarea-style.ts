@@ -4,6 +4,7 @@ export default css`
   :host {
     display: inline-flex;
     flex-direction: column;
+    font-family: var(--font-family, sans-serif);
   }
 
   textarea {

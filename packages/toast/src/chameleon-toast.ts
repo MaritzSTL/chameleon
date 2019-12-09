@@ -3,17 +3,25 @@ import {
   TemplateResult,
   customElement,
   html,
-  property
+  property,
+  PropertyValues
 } from "lit-element";
-import { classMap } from "lit-html/directives/class-map";
 import style from "./chameleon-toast-style";
 
 @customElement("chameleon-toast")
 export default class ChameleonToast extends LitElement {
   /**
+   * Lifecycle Methods
+   */
+  updated(changedProperties: PropertyValues): void {
+    if (changedProperties.has("backgroundColor")) {
+      this.style.backgroundColor = this.backgroundColor ?? "";
+    }
+  }
+
+  /**
    * Properties
    */
-
   // The font color of the toast
   @property({ type: String })
   color = "";
@@ -24,7 +32,7 @@ export default class ChameleonToast extends LitElement {
 
   // The background color of the toast
   @property({ type: String })
-  backgroundColor = "";
+  backgroundColor = null;
 
   /**
    * Styles
@@ -36,32 +44,21 @@ export default class ChameleonToast extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <div
-        id="toast"
-        class="
-        ${classMap({
-          "show-closeable": this.showCloseable,
-          "hide-closeable": !this.showCloseable
-        })}"
-        style="background-color: ${this.backgroundColor}"
-      >
-        <div class="toast-text" style="color: ${this.color};">
-          <slot name="toast-text">
-            This website uses cookies to remember you and improve your
-            experience. By using our site, you accept our use of cookies.
-          </slot>
-        </div>
-        <a class="closed-icon" @click="${this.closeToast}">
-          <slot name="closed-icon">x</slot>
-        </a>
+      <div class="toast-text" style="color: ${this.color};">
+        <slot name="toast-text">
+          This website uses cookies to remember you and improve your experience.
+          By using our site, you accept our use of cookies.
+        </slot>
       </div>
+      <a class="close-icon" @click="${this.closeToast}">
+        <slot name="close-icon">x</slot>
+      </a>
     `;
   }
 
   closeToast() {
-    const x = this.shadowRoot!.getElementById("toast");
-    x!.className = x!.className.replace("show-closeable", "");
-    this.showCloseable = !this.showCloseable;
+    this.showCloseable = false;
+
     this.dispatchEvent(
       new CustomEvent("close-toast", {
         bubbles: true,

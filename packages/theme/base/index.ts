@@ -11,6 +11,7 @@ export default css`
 
     --color-surface: #ffffff;
     --color-black: #252a33;
+    --color-background: #f5f5f8;
     --color-primary: #2c6fb7;
     --color-primary-light: #679dea;
     --color-primary-dark: #004587;
@@ -39,5 +40,7 @@ export default css`
     --font-size-input: 0.938rem;
     --font-size-label: 0.875rem;
     --font-family: sans-serif;
+    --font-size-table-header: 1rem;
+    --font-size-table-content: 0.875rem;
   }
 `;

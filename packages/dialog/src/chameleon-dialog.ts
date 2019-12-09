@@ -7,7 +7,6 @@ import {
 } from "lit-element";
 import { nothing, svg, SVGTemplateResult } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import base from "@chameleon-ds/theme/base";
 import style from "./chameleon-dialog-style";
 import "@chameleon-ds/card/src/chameleon-card";
 import "@chameleon-ds/button/src/chameleon-button";
@@ -18,7 +17,7 @@ export default class ChameleonDialog extends LitElement {
    * Properties
    */
   @property({ type: Boolean, reflect: true })
-  open = true;
+  open = false;
 
   // Card has an icon
   @property({ type: Boolean, reflect: true })
@@ -28,10 +27,17 @@ export default class ChameleonDialog extends LitElement {
   @property({ type: Boolean, reflect: true })
   "dismissible" = false;
 
+  // Card has a close icon
+  @property({ type: Boolean, reflect: true })
+  "canGoBack" = false;
+
+  @property({ type: Boolean, reflect: true })
+  "fullScreen" = false;
+
   /**
    * Styles
    */
-  static styles = [base, style];
+  static styles = [style];
 
   /**
    * Template
@@ -45,8 +51,22 @@ export default class ChameleonDialog extends LitElement {
           close: !this.open
         })}"
       >
-        <chameleon-card>
+        <chameleon-card class="${this.fullScreen ? "full-screen" : ""}">
           <div class="dialog">
+          ${
+            this.canGoBack
+              ? html`
+                  <chameleon-button
+                    theme="text"
+                    class="back-icon"
+                    icon-only
+                    @click="${this._goBack}"
+                  >
+                    ${this.backIcon}
+                  </chameleon-button>
+                `
+              : nothing
+          }
           ${
             this.dismissible
               ? html`
@@ -61,7 +81,6 @@ export default class ChameleonDialog extends LitElement {
                 `
               : nothing
           }
-          
         </div>
             <slot name="icon"></slot>
             <slot name="title"></slot>
@@ -85,6 +104,14 @@ export default class ChameleonDialog extends LitElement {
     this.dispatchEvent(e);
   }
 
+  _goBack(): void {
+    const e = new CustomEvent("go-back", {
+      bubbles: true,
+      composed: true
+    });
+    this.dispatchEvent(e);
+  }
+
   get closeIcon(): SVGTemplateResult | TemplateResult {
     const slots = Array.from(this.querySelectorAll("[slot]"));
     const closeIcon = slots.find(slot => slot.slot === "close-icon");
@@ -94,6 +121,18 @@ export default class ChameleonDialog extends LitElement {
     else
       return html`
         <slot name="close-icon"></slot>
+      `;
+  }
+
+  get backIcon(): SVGTemplateResult | TemplateResult {
+    const slots = Array.from(this.querySelectorAll("[slot]"));
+    const backIcon = slots.find(slot => slot.slot === "back-icon");
+
+    if (backIcon === undefined)
+      return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="6" y1="12" x2="24" y2="12"></line><line x1="6" y1="12" x2="12" y2="18"></line><line x1="6" y1="12" x2="12" y2="6"></line></svg>`;
+    else
+      return html`
+        <slot name="back-icon"></slot>
       `;
   }
 }

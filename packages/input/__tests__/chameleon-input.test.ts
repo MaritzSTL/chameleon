@@ -120,6 +120,15 @@ describe("chameleon-input", () => {
     expect(checkValidity.calledImmediatelyAfter(handleBlur));
   });
 
+  it("_handleBlur calls checkRequired", () => {
+    const checkRequired = sinon.spy(element, "_checkRequired");
+    const handleBlur = sinon.spy(element, "_handleBlur");
+
+    element._handleBlur();
+
+    expect(checkRequired.calledImmediatelyAfter(handleBlur));
+  });
+
   it("_handleBlur else path", () => {
     element.checkValidity = sinon.stub(() => false);
     element._handleBlur();
@@ -152,5 +161,29 @@ describe("chameleon-input", () => {
     element._toggleType();
 
     expect(element.type).to.equal("text");
+  });
+
+  it("checkRequired sets required attribute if there's no input", () => {
+    element.value = "";
+    element.requiredField = true;
+    element._checkRequired();
+
+    expect(element._el).to.have.attribute("required");
+  });
+
+  it("_acceptInput disables up-arrow key to increment value if noStepper is true", () => {
+    element.value = "5";
+    element.noStepper = true;
+    element._acceptInput({ e: { which: "40" } });
+
+    expect(element.value).to.equal("5");
+  });
+
+  it("_acceptInput disables down-arrow key to decrement value if noStepper is true", () => {
+    element.value = "5";
+    element.noStepper = true;
+    element._acceptInput({ e: { which: "38" } });
+
+    expect(element.value).to.equal("5");
   });
 });
