@@ -250,9 +250,8 @@ export default class ChameleonUploader extends LitElement {
   }
 
   private dispatchErrorMessage(message: string): void {
-    console.log(message);
     this.dispatchEvent(
-      new CustomEvent("uploader-error", {
+      new CustomEvent("chameleon.uploader.error", {
         detail: {
           errorMessage: message
         },

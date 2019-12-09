@@ -67,6 +67,7 @@ export default css`
 
   chameleon-button {
     --button-padding: 0.3125rem;
+    margin-left: 0.3125rem;
   }
 
   input[type="file"] {
