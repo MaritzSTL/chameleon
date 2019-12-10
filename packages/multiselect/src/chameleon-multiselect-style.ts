@@ -170,7 +170,7 @@ export default css`
   }
   :host(:hover),
   :host(:active) {
-    --label-color: var(--label-hover-color, #26cfb7);
-    --border-color: var(--border-hover-color, #26cfb7);
+    --label-color: var(--label-hover-color, #2c6fb7);
+    --border-color: var(--border-hover-color, #2c6fb7);
   }
 `;
