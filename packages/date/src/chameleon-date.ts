@@ -21,6 +21,12 @@ type DateSelectTarget = EventTarget & {
 
 @customElement("chameleon-date")
 export default class ChameleonDate extends LitElement {
+  constructor() {
+    super();
+
+    document.addEventListener("click", this.closeOverlay as EventListener);
+  }
+
   /**
    * Lifecycle Methods
    */
@@ -34,6 +40,10 @@ export default class ChameleonDate extends LitElement {
         this.value = this.dateToString(this.date);
       }
     }
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener("click", this.closeOverlay as EventListener);
   }
 
   /**
@@ -254,5 +264,16 @@ export default class ChameleonDate extends LitElement {
     const [year, month, day] = date.split("-");
 
     return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+  }
+
+  private closeOverlay(e: CustomEvent): void {
+    const targets = e
+      .composedPath()
+      .map(eventTarget => (eventTarget as Element).tagName);
+
+    if (!targets.includes("CHAMELEON-DATE"))
+      Array.from(document.querySelectorAll("chameleon-date")).forEach(
+        datePicker => ((datePicker as ChameleonDate).active = false)
+      );
   }
 }
