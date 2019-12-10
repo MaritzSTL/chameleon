@@ -35,17 +35,25 @@ export default class ChameleonInput extends LitElement {
   @property({ type: Boolean, reflect: true })
   disabled = false;
 
+  // A Boolean attribute which, if true, indicates that the input with number type will not display increment arrows
+  @property({ type: Boolean, reflect: true })
+  noStepper = false;
+
   // A Boolean attribute which, if true, indicates that the input cannot be edited
   @property({ type: Boolean, reflect: true })
   readonly = false;
 
   // A Boolean which, if true, indicates that the input must have a value before the form can be submitted
   @property({ type: Boolean, reflect: true })
-  required = false;
+  requiredField = false;
 
   // A Boolean which, if present and the input type is 'password', allows visibility of password characters to be toggled
   @property({ type: Boolean, reflect: true })
   toggleable = false;
+
+  // A Boolean which, if true, indicates that the input field has had a blur event
+  @property({ type: Boolean, reflect: true })
+  touched = false;
 
   // A string indicating which input type the <input> element represents
   @property({ type: String, reflect: true })
@@ -97,7 +105,8 @@ export default class ChameleonInput extends LitElement {
         ${classMap({
           "component-wrapper": true,
           invalid: this._invalidState,
-          disabled: this.disabled
+          disabled: this.disabled,
+          "no-stepper": this.noStepper
         })}"
       >
         <div
@@ -144,10 +153,11 @@ export default class ChameleonInput extends LitElement {
             ?autofocus="${this.autofocus}"
             ?disabled="${this.disabled}"
             ?readonly="${this.readonly}"
-            ?required="${this.required}"
+            ?requiredField="${this.requiredField}"
             @input="${this._handleInput}"
             @blur="${this._handleBlur}"
             @invalid="${this._handleInvalid}"
+            @keydown="${this._acceptInput}"
           />
         `;
       case "text":
@@ -162,10 +172,11 @@ export default class ChameleonInput extends LitElement {
             ?autofocus="${this.autofocus}"
             ?disabled="${this.disabled}"
             ?readonly="${this.readonly}"
-            ?required="${this.required}"
+            ?requiredField="${this.requiredField}"
             @input="${this._handleInput}"
             @blur="${this._handleBlur}"
             @invalid="${this._handleInvalid}"
+            @keydown="${this._acceptInput}"
           />
         `;
     }
@@ -241,8 +252,17 @@ export default class ChameleonInput extends LitElement {
     }
   }
 
+  _checkRequired(): void {
+    if (this.requiredField && this.value.length === 0) {
+      if (this._el !== null) {
+        this._el.setAttribute("required", "");
+      }
+    }
+  }
+
   _handleInput(e: any): void {
     this.value = e.target.value;
+    this._checkRequired();
 
     this.dispatchEvent(
       new CustomEvent("chameleon.input.input", {
@@ -256,6 +276,7 @@ export default class ChameleonInput extends LitElement {
   }
 
   _handleBlur(): void {
+    this._checkRequired();
     const elementValid = this.checkValidity();
     if (elementValid) this.validationMessage = "";
   }
@@ -263,6 +284,13 @@ export default class ChameleonInput extends LitElement {
   _handleInvalid(): void {
     this.validationMessage =
       this._el !== null ? this._el.validationMessage : "";
+  }
+
+  _acceptInput(e: any): boolean {
+    if (this.noStepper && (e.which === 38 || e.which === 40)) {
+      e.preventDefault();
+      return false;
+    } else return true;
   }
 
   get warningIcon(): SVGTemplateResult {

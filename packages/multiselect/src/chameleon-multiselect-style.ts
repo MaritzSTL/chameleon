@@ -4,6 +4,7 @@ export default css`
   :host {
     align-items: center;
     display: flex;
+    background-color: var(--color-surface, #ffffff);
     border: 1px solid var(--color-gray-dark, #9fa4a8);
     border-radius: var(--border-radius-input, 0.313rem);
     box-sizing: border-box;
@@ -43,6 +44,7 @@ export default css`
     flex-grow: 1;
     font-size: var(--font-size-label, 0.938rem);
     height: 23px;
+    width: 100%;
     padding: 0;
   }
 

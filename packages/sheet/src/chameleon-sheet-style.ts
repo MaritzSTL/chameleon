@@ -43,8 +43,8 @@ export default css`
     cursor: pointer;
     margin: 0;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 14px;
+    right: 14px;
   }
 
   ::slotted(p) {
