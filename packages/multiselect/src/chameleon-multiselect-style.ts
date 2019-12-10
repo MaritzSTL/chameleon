@@ -8,7 +8,7 @@ export default css`
     border: 1px solid var(--color-gray-dark, #9fa4a8);
     border-radius: var(--border-radius-input, 0.313rem);
     box-sizing: border-box;
-    min-height: 2.5rem;
+    min-height: var(--multiselect-min-height, 2.5rem);
     padding: var(--multiselect-padding, 0.438rem 0.5rem);
     position: relative;
   }
