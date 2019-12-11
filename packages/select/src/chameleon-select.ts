@@ -284,11 +284,9 @@ export default class ChameleonSelect extends LitElement {
    * @param {Event} e - Click event on a SelectionTarget
    */
   addSelection(e: MouseEvent): void {
-    console.log(e);
     let value = <Element | undefined>(
       e.composedPath().find(e => (<HTMLElement>e).hasAttribute("value"))
     );
-    console.log(value);
     this.filteredOptions = [];
 
     // We don't want this event to bubble up to chameleon-select otherwise
