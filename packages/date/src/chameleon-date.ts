@@ -90,6 +90,7 @@ export default class ChameleonDate extends LitElement {
     return html`
       <chameleon-input
         type="text"
+        readonly
         .placeholder="${this.placeholder}"
         .label="${this.label}"
         .value="${this.renderedDateValue}"
@@ -154,8 +155,7 @@ export default class ChameleonDate extends LitElement {
           this.days,
           day =>
             html`
-              <chameleon-button
-                theme="secondary"
+              <div
                 class="${classMap({
                   active:
                     day.getDate() == this.date.getDate() &&
@@ -172,7 +172,7 @@ export default class ChameleonDate extends LitElement {
                 @click="${this.setDate}"
               >
                 ${day.getDate()}
-              </chameleon-button>
+              </div>
             `
         )}
       </div>

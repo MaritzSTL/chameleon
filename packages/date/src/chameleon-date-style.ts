@@ -24,7 +24,7 @@ export default css`
   }
 
   .overlay h3 {
-    font-size: var(--font-size-subtitle, 0.938rem);
+    font-size: var(--font-size-table-header, 1rem);
   }
 
   .overlay header {
@@ -51,60 +51,71 @@ export default css`
   }
 
   .day-of-week {
+    margin-bottom: 5px;
     text-align: center;
   }
 
-  .date-grid.offset-0 chameleon-button:first-child {
+  .date-grid {
+    font-weight: bold;
+    grid-gap: 1px;
+  }
+
+  .date-grid.offset-0 div:first-child {
     grid-column: 1;
   }
 
-  .date-grid.offset-1 chameleon-button:first-child {
+  .date-grid.offset-1 div:first-child {
     grid-column: 2;
   }
 
-  .date-grid.offset-2 chameleon-button:first-child {
+  .date-grid.offset-2 div:first-child {
     grid-column: 3;
   }
 
-  .date-grid.offset-3 chameleon-button:first-child {
+  .date-grid.offset-3 div:first-child {
     grid-column: 4;
   }
 
-  .date-grid.offset-4 chameleon-button:first-child {
+  .date-grid.offset-4 div:first-child {
     grid-column: 5;
   }
 
-  .date-grid.offset-5 chameleon-button:first-child {
+  .date-grid.offset-5 div:first-child {
     grid-column: 6;
   }
 
-  .date-grid.offset-6 chameleon-button:first-child {
+  .date-grid.offset-6 div:first-child {
     grid-column: 7;
   }
 
-  .date-grid chameleon-button {
-    --button-border-color: transparent;
-    --button-text-color: var(--color-gray-darkest, #6c737a);
-    --button-hover-color: var(--color-gray-light, #c4c7ca);
-    box-sizing: border-box;
+  .date-grid div {
+    align-items: center;
+    box-shadow: 0 0 0 1px var(--color-gray-dark, #9fa4a8);
+    color: var(--color-gray-darkest, #6c737a);
     display: flex;
     height: calc(285px / 7);
     justify-content: center;
   }
 
-  .date-grid chameleon-button[disabled] {
+  .date-grid div:hover {
+    background-color: var(--color-gray-lightest, #e1e3e4);
+    cursor: pointer;
+  }
+
+  .date-grid div[disabled] {
     pointer-events: none;
   }
 
-  .date-grid chameleon-button[disabled] {
+  .date-grid div[disabled] {
     --border-radius-input: 0;
   }
 
-  .date-grid chameleon-button.active {
-    --button-border-color: var(--color-secondary, #69c9b9);
+  .date-grid div.active {
+    background-color: var(--color-secondary-dark, #349889);
+    color: var(--color-surface, #ffffff);
   }
 
-  .date-grid chameleon-button.current {
-    --button-text-color: var(--color-secondary, #69c9b9);
+  .date-grid div.current:not(.active) {
+    color: var(--color-secondary, #69c9b9);
   }
 `;
