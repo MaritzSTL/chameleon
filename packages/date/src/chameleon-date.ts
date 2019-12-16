@@ -109,7 +109,6 @@ export default class ChameleonDate extends LitElement {
         .label="${this.label}"
         .value="${this.renderedDateValue}"
         @focus="${this.toggleActive}"
-        @change="${this.dispatchChangeEvent}"
         >${this.calendarIcon}</chameleon-input
       >
       ${this.active
@@ -314,11 +313,23 @@ export default class ChameleonDate extends LitElement {
     this.renderedDate = new Date(date);
   }
 
-  private setDate(e: MouseEvent): void {
+  private async setDate(e: MouseEvent): Promise<void> {
     this.touched = true;
     const date = (<DateSelectTarget>e.target)!.value;
     this.date = date;
     this.active = false;
+
+    this.requestUpdate;
+    await this.updateComplete;
+    this.dispatchEvent(
+      new CustomEvent("chameleon.date.input", {
+        bubbles: true,
+        composed: true,
+        detail: {
+          value: this.value
+        }
+      })
+    );
   }
 
   private setMonth(e: MouseEvent): void {
@@ -369,9 +380,5 @@ export default class ChameleonDate extends LitElement {
       default:
         this.overlayRenderMode = "month";
     }
-  }
-
-  private dispatchChangeEvent(): void {
-    console.log("SOMETHING CHANGED");
   }
 }

@@ -123,11 +123,8 @@ export default css`
   }
 
   .date-grid div[disabled] {
+    background-color: var(--color-gray-lightest, #e1e3e4);
     pointer-events: none;
-  }
-
-  .date-grid div[disabled] {
-    --border-radius-input: 0;
   }
 
   .date-grid div.active {
