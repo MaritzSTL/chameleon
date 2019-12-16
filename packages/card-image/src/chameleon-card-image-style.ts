@@ -10,6 +10,7 @@ export default css`
     vertical-align: top;
     width: 100%;
   }
+
   :host([noImage]) {
     background-image: linear-gradient(
       to top,

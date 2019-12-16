@@ -23,7 +23,7 @@ export default class ChameleonCardImage extends LitElement {
   alt = "";
 
   @property({ type: Boolean, reflect: true })
-  "noImage" = false;
+  noImage = false;
 
   /**
    * Styles
@@ -39,7 +39,7 @@ export default class ChameleonCardImage extends LitElement {
     `;
   }
 
-  updated(changedProperties: PropertyValues) {
+  updated(changedProperties: PropertyValues): void {
     if (
       changedProperties.has("src") &&
       this.src === "" &&
@@ -47,6 +47,5 @@ export default class ChameleonCardImage extends LitElement {
     ) {
       this.noImage = true;
     }
-    return this.noImage;
   }
 }
