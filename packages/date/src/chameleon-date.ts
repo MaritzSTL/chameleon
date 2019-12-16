@@ -11,13 +11,10 @@ import {
 import { repeat } from "lit-html/directives/repeat";
 import { classMap } from "lit-html/directives/class-map";
 import { nothing } from "lit-html/lib/part";
+import { DateSelectTarget, MonthSelectionTarget } from "../types";
 import style from "./chameleon-date-style";
 import "@chameleon-ds/input/src/chameleon-input";
 import "@chameleon-ds/button/src/chameleon-button";
-
-type DateSelectTarget = EventTarget & {
-  value: Date;
-};
 
 @customElement("chameleon-date")
 export default class ChameleonDate extends LitElement {
@@ -73,9 +70,26 @@ export default class ChameleonDate extends LitElement {
   @property({ type: String, reflect: true })
   max = null;
 
-  // TODO: make these configurable properties
+  @property({ type: String })
+  overlayRenderMode = "month";
+
+  // TODO: make these configurable properties/i18n
   private startDay = 0;
   private weekDayValues = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+  private monthValues = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ];
   private touched = false;
 
   /**
@@ -95,30 +109,71 @@ export default class ChameleonDate extends LitElement {
         .label="${this.label}"
         .value="${this.renderedDateValue}"
         @focus="${this.toggleActive}"
+        @change="${this.dispatchChangeEvent}"
         >${this.calendarIcon}</chameleon-input
       >
-      ${this.active ? this.overlay : nothing}
+      ${this.active
+        ? html`
+            <div class="overlay ${this.overlayRenderMode}">${this.overlay}</div>
+          `
+        : nothing}
     `;
   }
 
   get overlay(): TemplateResult {
-    return html`
-      <div class="overlay">
-        <header>
-          <chameleon-button theme="text" icon-only @click="${this.prevMonth}"
-            >${this.prevIcon}</chameleon-button
-          >
-          <h3>
-            ${this.renderedDate.toLocaleString("default", { month: "long" })}
-            ${this.renderedDate.getFullYear()}
-          </h3>
-          <chameleon-button theme="text" icon-only @click="${this.nextMonth}"
-            >${this.nextIcon}</chameleon-button
-          >
-        </header>
-        ${this.dayOfWeek} ${this.dateGrid}
-      </div>
-    `;
+    switch (this.overlayRenderMode) {
+      case "year":
+        return html`
+          <header>
+            <chameleon-button theme="text" icon-only @click="${this.prevYear}"
+              >${this.prevIcon}</chameleon-button
+            >
+            <h3>
+              ${this.renderedDate.getFullYear()}
+            </h3>
+            <chameleon-button theme="text" icon-only @click="${this.nextYear}"
+              >${this.nextIcon}</chameleon-button
+            >
+          </header>
+          <div class="date-grid">
+            ${repeat(
+              this.monthValues,
+              (month, i) =>
+                html`
+                  <div
+                    class="month"
+                    .value="${{
+                      month: i,
+                      year: this.renderedDate.getFullYear()
+                    }}"
+                    @click="${this.setMonth}"
+                  >
+                    ${month}
+                  </div>
+                `
+            )}
+          </div>
+        `;
+      case "month":
+      default:
+        return html`
+          <header>
+            <chameleon-button theme="text" icon-only @click="${this.prevMonth}"
+              >${this.prevIcon}</chameleon-button
+            >
+            <h3 @click="${this.toggleOverlayView}">
+              ${this.renderedDate.toLocaleString("default", {
+                month: "long"
+              })}
+              ${this.renderedDate.getFullYear()}
+            </h3>
+            <chameleon-button theme="text" icon-only @click="${this.nextMonth}"
+              >${this.nextIcon}</chameleon-button
+            >
+          </header>
+          ${this.dayOfWeek} ${this.dateGrid}
+        `;
+    }
   }
 
   get dayOfWeek(): TemplateResult {
@@ -245,11 +300,36 @@ export default class ChameleonDate extends LitElement {
     this.renderedDate = new Date(date);
   }
 
+  prevYear(): void {
+    const date = this.renderedDate;
+    date.setFullYear(date.getFullYear() - 1);
+
+    this.renderedDate = new Date(date);
+  }
+
+  nextYear(): void {
+    const date = this.renderedDate;
+    date.setFullYear(date.getFullYear() + 1);
+
+    this.renderedDate = new Date(date);
+  }
+
   private setDate(e: MouseEvent): void {
     this.touched = true;
     const date = (<DateSelectTarget>e.target)!.value;
     this.date = date;
     this.active = false;
+  }
+
+  private setMonth(e: MouseEvent): void {
+    this.touched = true;
+    const month = (<MonthSelectionTarget>e.target)!.value!.month;
+    const year = (<MonthSelectionTarget>e.target)!.value!.year;
+    const date = new Date();
+    date.setFullYear(year);
+    date.setMonth(month);
+    this.renderedDate = date;
+    this.overlayRenderMode = "month";
   }
 
   private dateToString(date: Date): string {
@@ -273,7 +353,25 @@ export default class ChameleonDate extends LitElement {
 
     if (!targets.includes("CHAMELEON-DATE"))
       Array.from(document.querySelectorAll("chameleon-date")).forEach(
-        datePicker => ((datePicker as ChameleonDate).active = false)
+        datePicker => {
+          const datePickerEl = datePicker as ChameleonDate;
+          datePickerEl.active = false;
+          datePickerEl.overlayRenderMode = "month";
+        }
       );
+  }
+
+  private toggleOverlayView(): void {
+    switch (this.overlayRenderMode) {
+      case "month":
+        this.overlayRenderMode = "year";
+        break;
+      default:
+        this.overlayRenderMode = "month";
+    }
+  }
+
+  private dispatchChangeEvent(): void {
+    console.log("SOMETHING CHANGED");
   }
 }

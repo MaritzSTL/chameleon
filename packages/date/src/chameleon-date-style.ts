@@ -27,6 +27,10 @@ export default css`
     font-size: var(--font-size-table-header, 1rem);
   }
 
+  .overlay.month h3 {
+    cursor: pointer;
+  }
+
   .overlay header {
     align-items: center;
     display: flex;
@@ -34,9 +38,21 @@ export default css`
     margin-bottom: 10px;
   }
 
+  .overlay.year header {
+    justify-content: space-around;
+  }
+
   .overlay header svg {
     color: var(--color-gray-darkest, #6c737a);
     height: 25px;
+  }
+
+  .overlay.year .month {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 50px;
+    justify-content: center;
   }
 
   chameleon-input {
@@ -58,6 +74,10 @@ export default css`
   .date-grid {
     font-weight: bold;
     grid-gap: 1px;
+  }
+
+  .overlay.year .date-grid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .date-grid.offset-0 div:first-child {
