@@ -92,32 +92,36 @@ export default class ChameleonMultiselect extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <div
-        class="tags ${classMap({
-          "tags-active": this.selectedOptions.length > 0
-        })}"
-      >
-        ${this.renderedSelectedOptions}
-        <input
-          class="multiselect-input ${classMap({
+      ${this.getLabel}
+      <div class="multiselect-box">
+        <div
+          class="tags ${classMap({
             "tags-active": this.selectedOptions.length > 0
           })}"
-          type="text"
-          placeholder="${this.renderedOptions.length > 0 || this.instantSearch
-            ? this.placeholder
-            : ""}"
-          @focus="${this.setActive}"
-          @input="${this.handleSearch}"
-        />
+        >
+          ${this.renderedSelectedOptions}
+          <input
+            name="multiselect-input"
+            class="multiselect-input ${classMap({
+              "tags-active": this.selectedOptions.length > 0
+            })}"
+            type="text"
+            placeholder="${this.renderedOptions.length > 0 || this.instantSearch
+              ? this.placeholder
+              : ""}"
+            @focus="${this.setActive}"
+            @input="${this.handleSearch}"
+          />
+        </div>
+        ${this.optionsList}
+        ${this.loading
+          ? html`
+              <chameleon-loader loader="spinner" size="24px"></chameleon-loader>
+            `
+          : html`
+              <slot name="icon"></slot>
+            `}
       </div>
-      ${this.optionsList}
-      ${this.loading
-        ? html`
-            <chameleon-loader loader="spinner" size="24px"></chameleon-loader>
-          `
-        : html`
-            <slot name="icon"></slot>
-          `}
     `;
   }
 
@@ -127,6 +131,14 @@ export default class ChameleonMultiselect extends LitElement {
    */
   get value(): Array<SelectableOption["value"]> {
     return this.selectedOptions.map(option => option.value);
+  }
+
+  get getLabel(): string | object {
+    if (this.label !== "")
+      return html`
+        <label for="multiselect-input">${this.label}</label>
+      `;
+    else return nothing;
   }
 
   /**
