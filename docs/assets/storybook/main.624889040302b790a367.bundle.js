@@ -474,10 +474,21 @@
       </svg>
     `}};chameleon_input_ChameleonInput.styles=[chameleon_input_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autocomplete",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"autofocus",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"noStepper",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"readonly",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"requiredField",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"toggleable",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"touched",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"type",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_input_ChameleonInput.prototype,"placeholder",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_input_ChameleonInput.prototype,"value",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"min",void 0),__decorate([Object(lit_element.e)({type:Number,reflect:!0})],chameleon_input_ChameleonInput.prototype,"max",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_input_ChameleonInput.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_input_ChameleonInput.prototype,"validationMessage",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-left",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_input_ChameleonInput.prototype,"icon-right",void 0);chameleon_input_ChameleonInput=__decorate([Object(lit_element.c)("chameleon-input")],chameleon_input_ChameleonInput)},283:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(21),repeat=__webpack_require__(127),chameleon_multiselect_style=lit_element.b`
   :host {
+    font-family: var(--font-family, Arial);
+  }
+  label {
+    display: block;
+    color: var(--label-color, #6c737a);
+    font-size: var(--label-font-size, 0.875rem);
+    line-height: var(--label-line-height, 1.125rem);
+    letter-spacing: var(--label-letter-spacing, 0);
+    margin-bottom: 0.5rem;
+  }
+  .multiselect-box {
     align-items: center;
     display: flex;
     background-color: var(--color-surface, #ffffff);
-    border: 1px solid var(--color-gray-dark, #9fa4a8);
+    border: 1px solid var(--border-color, #9fa4a8);
     border-radius: var(--border-radius-input, 0.313rem);
     box-sizing: border-box;
     min-height: 2.5rem;
@@ -513,6 +524,7 @@
     align-self: stretch;
     border: none;
     color: var(--color-gray-darkest, #6c737a);
+    font-family: var(--font-family, Arial);
     flex-grow: 1;
     font-size: var(--font-size-label, 0.938rem);
     height: 23px;
@@ -613,7 +625,7 @@
   .options__option-postLabel {
     align-self: flex-start;
     color: var(--color-gray-darkest, #6c737a);
-    dipslay: block;
+    display: block;
     font-size: 0.75rem;
     margin-left: auto;
   }
@@ -627,26 +639,37 @@
     height: 24px;
     width: 24px;
   }
+  :host(:hover),
+  :host(:active) {
+    --label-color: var(--label-hover-color, #2c6fb7);
+    --border-color: var(--border-hover-color, #2c6fb7);
+  }
 `,__decorate=(__webpack_require__(280),__webpack_require__(179),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_multiselect_ChameleonMultiselect=class ChameleonMultiselect extends lit_element.a{constructor(){super(),this.options=[],this.filteredOptions=[],this.selectedOptions=[],this.active=!1,this.disabled=!1,this.valid=!0,this.label="",this.placeholder="",this.instantSearch=!1,this.instantSearchValue="",this.loading=!1,this.addEventListener("remove-chip",this.handleChipClose),document.addEventListener("click",this.closeOptionsList),document.addEventListener("chameleon-multiselect.close",()=>{this.active=!1})}disconnectedCallback(){this.removeEventListener("remove-chip",this.handleChipClose),document.removeEventListener("click",this.closeOptionsList),document.removeEventListener("chameleon-multiselect.close",()=>{this.active=!1})}render(){return lit_element.d`
-      <div
-        class="tags ${Object(class_map.a)({"tags-active":this.selectedOptions.length>0})}"
-      >
-        ${this.renderedSelectedOptions}
-        <input
-          class="multiselect-input ${Object(class_map.a)({"tags-active":this.selectedOptions.length>0})}"
-          type="text"
-          placeholder="${this.renderedOptions.length>0||this.instantSearch?this.placeholder:""}"
-          @focus="${this.setActive}"
-          @input="${this.handleSearch}"
-        />
+      ${this.getLabel}
+      <div class="multiselect-box">
+        <div
+          class="tags ${Object(class_map.a)({"tags-active":this.selectedOptions.length>0})}"
+        >
+          ${this.renderedSelectedOptions}
+          <input
+            name="multiselect-input"
+            class="multiselect-input ${Object(class_map.a)({"tags-active":this.selectedOptions.length>0})}"
+            type="text"
+            placeholder="${this.renderedOptions.length>0||this.instantSearch?this.placeholder:""}"
+            @focus="${this.setActive}"
+            @input="${this.handleSearch}"
+          />
+        </div>
+        ${this.optionsList}
+        ${this.loading?lit_element.d`
+              <chameleon-loader loader="spinner" size="24px"></chameleon-loader>
+            `:lit_element.d`
+              <slot name="icon"></slot>
+            `}
       </div>
-      ${this.optionsList}
-      ${this.loading?lit_element.d`
-            <chameleon-loader loader="spinner" size="24px"></chameleon-loader>
-          `:lit_element.d`
-            <slot name="icon"></slot>
-          `}
-    `}get value(){return this.selectedOptions.map(option=>option.value)}set value(values){const selectedOptions=[];values.forEach(value=>{const option=this.options.find(option=>option.value===value);if(!option)throw new Error(`${value} doesn't exist within the options array`);selectedOptions.push(option)}),this.selectedOptions=[...selectedOptions]}get optionsList(){return this.active?lit_element.d`
+    `}get value(){return this.selectedOptions.map(option=>option.value)}get getLabel(){return""!==this.label?lit_element.d`
+        <label for="multiselect-input">${this.label}</label>
+      `:lit_html.nothing}set value(values){const selectedOptions=[];values.forEach(value=>{const option=this.options.find(option=>option.value===value);if(!option)throw new Error(`${value} doesn't exist within the options array`);selectedOptions.push(option)}),this.selectedOptions=[...selectedOptions]}get optionsList(){return this.active?lit_element.d`
           <div class="options">
             <ul class="options__list">
               ${Object(repeat.a)(this.filteredOptions.length>0?this.filteredOptions:this.renderedOptions,option=>lit_element.d`
@@ -3481,4 +3504,4 @@
         <slot name="icon-only"></slot>
       </button>
     `}getTarget(){return this["new-tab"]?"_blank":"_top"}getRel(){return this["new-tab"]?"noopener noreferrer":""}};chameleon_button_ChameleonButton.styles=[chameleon_button_style],__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"loading",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"theme",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-left",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-right",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-only",void 0),__decorate([Object(lit_element.e)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"href",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"new-tab",void 0);chameleon_button_ChameleonButton=__decorate([Object(lit_element.c)("chameleon-button")],chameleon_button_ChameleonButton)}},[[287,1,2]]]);
-//# sourceMappingURL=main.72f7a81771d1292cf468.bundle.js.map
+//# sourceMappingURL=main.624889040302b790a367.bundle.js.map
