@@ -103,7 +103,9 @@ export default class ChameleonTextarea extends LitElement {
         @blur="${this._handleBlur}"
         @invalid="${this._handleInvalid}"
         @input="${this._handleInput}"
-      ></textarea>
+      >
+${this.value}</textarea
+      >
       ${this.errorText}
     `;
   }

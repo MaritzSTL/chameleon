@@ -19,11 +19,13 @@ stories.add(
     const rows = number("Rows", 2);
     const cols = number("Columns", 20);
     const nonresizeable = boolean("non-resizeable", false);
+    const value = text("Value", "");
 
     return html`
       <chameleon-textarea
         ?disabled="${disabled}"
         .placeholder="${placeholder}"
+        .value=${value}
         .label="${label}"
         .validationMessage="${error}"
         .minlength="${minlength}"
