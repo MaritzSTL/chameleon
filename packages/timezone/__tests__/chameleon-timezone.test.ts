@@ -1,8 +1,8 @@
-import "../src/chameleon-timezone";
+// import "@chameleon-ds/timezone/src/chameleon-timezone";
 import { html, fixture, expect } from "@open-wc/testing";
 import sinon from "sinon";
 
-describe("mtzwc-datetime", () => {
+describe("chameleon-timezone", () => {
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   let element;
   let spy;
@@ -20,6 +20,6 @@ describe("mtzwc-datetime", () => {
   });
 
   it("should have tag name defined", () => {
-    expect(element.tagName.toLowerCase()).to.equal("mtzwc-datetime");
+    expect(element.tagName.toLowerCase()).to.equal("chameleon-timezone");
   });
 });
