@@ -9,10 +9,17 @@ import {
 } from "lit-element";
 import { nothing } from "lit-html";
 import { repeat } from "lit-html/directives/repeat";
-import moment from "moment-timezone";
-import "@chameleon-ds/select/src/chameleon-select";
 import { SelectableOption } from "@chameleon-ds/select/types";
 import style from "./chameleon-timezone-style";
+import "@chameleon-ds/select/src/chameleon-select";
+
+const moment = {
+  tz: {
+    names() {
+      return ["test"];
+    }
+  }
+};
 
 @customElement("chameleon-timezone")
 export default class ChameleonTimezone extends LitElement {
@@ -65,7 +72,7 @@ export default class ChameleonTimezone extends LitElement {
    * Gets the timezone value
    */
   get value(): string {
-    return moment.tz(this.timeZone).toISOString(true);
+    return this._timeZoneValue;
   }
 
   /**

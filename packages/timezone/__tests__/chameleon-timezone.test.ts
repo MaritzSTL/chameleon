@@ -1,8 +1,8 @@
-// import "@chameleon-ds/timezone/src/chameleon-timezone";
 import { html, fixture, expect } from "@open-wc/testing";
 import sinon from "sinon";
+import "@chameleon-ds/timezone/src/chameleon-timezone";
 
-describe("chameleon-timezone", () => {
+describe.only("chameleon-timezone", () => {
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   let element;
   let spy;
