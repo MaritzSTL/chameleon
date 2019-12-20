@@ -25,3 +25,6 @@ _site/
 !docs/assets/storybook/**/*.js.map
 /**/*.d.ts
 /**/*.d.ts.map
+
+# Declaration Files to Keep
+!/**/timezones.d.ts

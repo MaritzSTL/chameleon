@@ -12,14 +12,7 @@ import { repeat } from "lit-html/directives/repeat";
 import { SelectableOption } from "@chameleon-ds/select/types";
 import style from "./chameleon-timezone-style";
 import "@chameleon-ds/select/src/chameleon-select";
-
-const moment = {
-  tz: {
-    names() {
-      return ["test"];
-    }
-  }
-};
+import { default as timezones } from "../data/timezones.json";
 
 @customElement("chameleon-timezone")
 export default class ChameleonTimezone extends LitElement {
@@ -38,7 +31,7 @@ export default class ChameleonTimezone extends LitElement {
   @property({ type: Boolean, reflect: true }) autovalidate = false;
   @property({ type: String }) timeZoneLabel = "";
   @property({ type: String }) timeZoneSubLabel = "";
-  @property({ type: Array }) timeZones = moment.tz.names();
+  @property({ type: Array }) timeZones = timezones;
   @property({ type: String }) _timeZoneValue = "";
   @property({ type: Array }) errors = [];
 

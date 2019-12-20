@@ -12,7 +12,8 @@
   "main": "src/chameleon-timezone.js",
   "module": "src/chameleon-timezone.js",
   "files": [
-    "/src/"
+    "/src/",
+    "/data/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
