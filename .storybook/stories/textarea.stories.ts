@@ -25,7 +25,7 @@ stories.add(
       <chameleon-textarea
         ?disabled="${disabled}"
         .placeholder="${placeholder}"
-        .value=${value}
+        value="${value}"
         .label="${label}"
         .validationMessage="${error}"
         .minlength="${minlength}"
