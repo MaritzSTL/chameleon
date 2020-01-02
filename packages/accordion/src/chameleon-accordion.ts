@@ -35,30 +35,36 @@ export default class ChameleonAccordion extends LitElement {
       ${this.clickable
         ? html`
             <div @click="${this.handleToggle}" class="header clickable">
-              <slot name="header"></slot>
-              <chameleon-button
-                class="toggle-icon ${this.expanded && !this.fixed
-                  ? "rotated"
-                  : ""}"
-                icon-only
-                theme="text"
-                @click="${(e: any) => this.disregardToggle(e)}"
-                >${this.toggleIcon}</chameleon-button
-              >
+              <div class="header-button-div">
+                <slot name="header"></slot>
+                <chameleon-button
+                  class="toggle-icon ${this.expanded && !this.fixed
+                    ? "rotated"
+                    : ""}"
+                  icon-only
+                  theme="text"
+                  @click="${(e: any) => this.disregardToggle(e)}"
+                  >${this.toggleIcon}</chameleon-button
+                >
+              </div>
+              <slot name="subheader"></slot>
             </div>
           `
         : html`
             <div class="header">
-              <slot name="header"></slot>
-              <chameleon-button
-                class="toggle-icon ${this.expanded && !this.fixed
-                  ? "rotated"
-                  : ""}"
-                icon-only
-                theme="text"
-                @click="${this.handleToggle}"
-                >${this.toggleIcon}</chameleon-button
-              >
+              <div class="header-button-div">
+                <slot name="header"></slot>
+                <chameleon-button
+                  class="toggle-icon ${this.expanded && !this.fixed
+                    ? "rotated"
+                    : ""}"
+                  icon-only
+                  theme="text"
+                  @click="${this.handleToggle}"
+                  >${this.toggleIcon}</chameleon-button
+                >
+              </div>
+              <slot name="subheader"></slot>
             </div>
           `}
       <div class="panel ${this.expanded ? "expanded" : "collapsed"}">

@@ -33,25 +33,6 @@ stories.add("New basic accordions with default icons", () => {
 });
 
 stories.add(
-  "Accordions with clickable headers",
-  () => {
-    return html`
-      <chameleon-accordions style="--accordion-width: 600px;">
-        ${faq.map(
-          faq => html`
-            <chameleon-accordion clickable>
-              <h3 slot="header">${faq.question}</h3>
-              <div slot="panel">${faq.answer}</div>
-            </chameleon-accordion>
-          `
-        )}
-      </chameleon-accordions>
-    `;
-  },
-  { info: { inline: true } }
-);
-
-stories.add(
   "Accordions with custom icons in fixed position",
   () => {
     return html`
@@ -102,6 +83,61 @@ stories.add(
           <h3 slot="header">Things</h3>
           <div slot="panel">Candy canes</div>
         </chameleon-accordion>
+      </chameleon-accordions>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Accordions with clickable headers",
+  () => {
+    return html`
+      <chameleon-accordions style="--accordion-width: 600px;">
+        ${faq.map(
+          faq => html`
+            <chameleon-accordion clickable>
+              <h3 slot="header">${faq.question}</h3>
+              <div slot="panel">${faq.answer}</div>
+            </chameleon-accordion>
+          `
+        )}
+      </chameleon-accordions>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Accordions with clickable headers including subheaders",
+  () => {
+    return html`
+      <style>
+        .subheader {
+          display: flex;
+          justify-content: space-between;
+        }
+        .answer {
+          padding: 1rem 0;
+          background-color: lightgrey;
+        }
+      </style>
+      <chameleon-accordions style="--accordion-width: 600px;">
+        ${faq.map(
+          faq => html`
+            <chameleon-accordion clickable fixed>
+              <span slot="toggle-icon">Edit</span>
+              <h3 slot="header">${faq.question}</h3>
+              <div slot="subheader" class="subheader">
+                <span
+                  >Subheader message goes here for additional information</span
+                >
+                <span>0 people</span>
+              </div>
+              <div slot="panel" class="answer">${faq.answer}</div>
+            </chameleon-accordion>
+          `
+        )}
       </chameleon-accordions>
     `;
   },
