@@ -130,4 +130,25 @@ describe("chameleon-multiselect", () => {
     element.dispatchSearchEvent({});
     expect(spy).to.be.calledOnce;
   });
+
+  describe("getLabel", () => {
+    it("renders a label tag when one is given", async () => {
+      element.label = "This is a fantastic label.";
+      element.requestUpdate();
+      await element.updateComplete;
+
+      const inputEl = element.shadowRoot.querySelector("label");
+
+      expect(Boolean(inputEl)).to.equal(true);
+    });
+    it("does not render a label tag if none is given", async () => {
+      element.label = "";
+      element.requestUpdate();
+      await element.updateComplete;
+
+      const inputEl = element.shadowRoot.querySelector("label");
+
+      expect(Boolean(inputEl)).to.equal(false);
+    });
+  });
 });
