@@ -61,7 +61,7 @@ stories.add(
         }
         chameleon-accordion {
           background-color: white;
-          padding-left: 22px;
+          padding: 0 22px;
         }
         chameleon-accordion:not(:last-of-type) {
           margin-bottom: 12px;
