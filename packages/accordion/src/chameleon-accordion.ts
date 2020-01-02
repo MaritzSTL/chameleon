@@ -21,6 +21,8 @@ export default class ChameleonAccordion extends LitElement {
    * Properties
    */
   @property({ type: Boolean, reflect: true })
+  clickable = false;
+  @property({ type: Boolean, reflect: true })
   expanded = false;
   @property({ type: Boolean, reflect: true })
   fixed = false;
@@ -30,20 +32,43 @@ export default class ChameleonAccordion extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <div class="header">
-        <slot name="header"></slot>
-        <chameleon-button
-          class="toggle-icon ${this.expanded && !this.fixed ? "rotated" : ""}"
-          icon-only
-          theme="text"
-          @click="${this.handleToggle}"
-          >${this.toggleIcon}</chameleon-button
-        >
-      </div>
+      ${this.clickable
+        ? html`
+            <div @click="${this.handleToggle}" class="header clickable">
+              <slot name="header"></slot>
+              <chameleon-button
+                class="toggle-icon ${this.expanded && !this.fixed
+                  ? "rotated"
+                  : ""}"
+                icon-only
+                theme="text"
+                @click="${(e: any) => this.disregardToggle(e)}"
+                >${this.toggleIcon}</chameleon-button
+              >
+            </div>
+          `
+        : html`
+            <div class="header">
+              <slot name="header"></slot>
+              <chameleon-button
+                class="toggle-icon ${this.expanded && !this.fixed
+                  ? "rotated"
+                  : ""}"
+                icon-only
+                theme="text"
+                @click="${this.handleToggle}"
+                >${this.toggleIcon}</chameleon-button
+              >
+            </div>
+          `}
       <div class="panel ${this.expanded ? "expanded" : "collapsed"}">
         <slot name="panel"></slot>
       </div>
     `;
+  }
+
+  disregardToggle(e: any) {
+    e.preventDefault();
   }
 
   handleToggle(): void {

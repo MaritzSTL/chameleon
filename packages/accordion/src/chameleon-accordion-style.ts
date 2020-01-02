@@ -12,6 +12,9 @@ export default css`
     justify-content: space-between;
     align-items: baseline;
   }
+  .clickable {
+    cursor: pointer;
+  }
   /* ::slotted([slot="panel"]) {
     transform: translateY(100%);
     transition: transform 0.3s ease-in-out;
