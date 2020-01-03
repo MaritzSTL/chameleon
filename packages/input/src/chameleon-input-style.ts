@@ -18,6 +18,8 @@ export default css`
     box-sizing: border-box;
     font-size: var(--font-size-input, 0.938rem);
     font-family: var(--font-family, sans-serif);
+    height: 100%;
+    max-height: 40px;
     width: 100%;
     padding: var(--input-padding, 0.625rem 0.5rem);
   }
