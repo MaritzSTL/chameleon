@@ -11,6 +11,11 @@ import "@chameleon-ds/button/src/chameleon-button";
 
 @customElement("chameleon-sheet")
 export default class ChameleonSheet extends LitElement {
+  constructor() {
+    super();
+    document.body.appendChild(this);
+  }
+
   /**
    * Properties
    */
@@ -27,10 +32,18 @@ export default class ChameleonSheet extends LitElement {
   @property({ type: Boolean, reflect: true })
   sheetOpened = false;
 
+  // The sheet object
+  @property({ type: Object })
+  sheetEl: any;
+
   /**
    * Styles
    */
   static styles = [style];
+
+  disconnectedCallback(): void {
+    document.body.removeChild(this);
+  }
 
   /**
    * Template
@@ -69,6 +82,14 @@ export default class ChameleonSheet extends LitElement {
     });
     this.dispatchEvent(e);
   }
+
+  // get sheet(): HTMLElement {
+  //   const sheet = document.createElement("chameleon-sheet");
+  //   sheet.style.top = "172px";
+  //   sheet.style.maxWidth = "620px";
+
+  //   return sheet;
+  // }
 
   get closeIcon(): SVGTemplateResult | TemplateResult {
     const slots = Array.from(this.querySelectorAll("[slot]"));
