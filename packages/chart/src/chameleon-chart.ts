@@ -23,6 +23,15 @@ export default class ChameleonChart extends LitElement {
   @property({ type: String })
   type = "";
 
+  /*The color of the chart*/
+
+  @property({ type: String })
+  color = "";
+
+  /* percentage to be displayed in the donut chart */
+  @property({ type: Number })
+  percentage = 0;
+
   /**
    * Styles
    */
@@ -56,13 +65,15 @@ export default class ChameleonChart extends LitElement {
           -120,
           120
         )}" />
-        <path fill="transparent" stroke="#00870a" stroke-width="10px" stroke-linecap="round" d="${this._describeArc(
-          50,
-          50,
-          45,
-          -120,
-          0
-        )}" />
+        <path fill="transparent" stroke="${
+          this.color
+        }" stroke-width="10px" stroke-linecap="round" d="${this._describeArc(
+      50,
+      50,
+      45,
+      -120,
+      this._percentageToDegrees(this.percentage)
+    )}" />
       </svg>
     `;
   }
@@ -79,6 +90,11 @@ export default class ChameleonChart extends LitElement {
       x: centerX + radius * Math.cos(angleInRadians),
       y: centerY + radius * Math.sin(angleInRadians)
     };
+  }
+
+  private _percentageToDegrees(percentage: number): number {
+    const degrees = (percentage / 100) * 240 - 120;
+    return degrees;
   }
 
   private _describeArc(

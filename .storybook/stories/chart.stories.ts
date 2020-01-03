@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, text, number } from "@storybook/addon-knobs";
 import { html } from "lit-html";
 import "@chameleon-ds/chart/src/chameleon-chart";
 
@@ -15,8 +15,15 @@ stories.add(
     // const subtitleText = text("Subtitle", "Destination");
     // const titleText = text("Title", "St. Louis, MO");
 
+    const color = text("Color", "");
+    const percentage = number("Percentage", 0);
+
     return html`
-      <chameleon-chart type="arc"></chameleon-chart>
+      <chameleon-chart
+        color="${color}"
+        percentage="${percentage}"
+        type="arc"
+      ></chameleon-chart>
     `;
   },
   { info: { inline: true } }
