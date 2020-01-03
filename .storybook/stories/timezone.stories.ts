@@ -5,8 +5,6 @@ import "@chameleon-ds/timezone/src/chameleon-timezone";
 
 const stories = storiesOf("Timezone", module);
 
-// Typecasting this as "any" is a quick workaround. Please come back
-// to this and make these types compatible.
 stories.addDecorator(withKnobs);
 
 stories.add(

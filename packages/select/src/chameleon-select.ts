@@ -4,48 +4,27 @@ import {
   customElement,
   html,
   property,
-  PropertyValues,
   svg,
   SVGTemplateResult
 } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import { classMap } from "lit-html/directives/class-map";
 import { nothing } from "lit-html";
-import { SelectableOption } from "../types";
+import { SelectableOption, SelectionTarget } from "../types";
 import style from "./chameleon-select-style";
 
 @customElement("chameleon-select")
 export default class ChameleonSelect extends LitElement {
   constructor() {
     super();
-    document.addEventListener("click", this.closeOptionsList);
+    document.addEventListener("click", <EventListener>this.closeOptionsList);
     document.addEventListener("chameleon-select.close", () => {
       this.active = false;
     });
   }
 
-  updated(changedProperties: PropertyValues) {
-    if (changedProperties.has("_value")) {
-      this.setSelection(this._value);
-    }
-
-    if (changedProperties.has("options")) {
-      // Set selected option to current value
-      if (this.options.find(option => option.value === this._value)) {
-        this.setSelection(this._value);
-      }
-      // Set selected option if any have selected: true
-      // takes precedence over existing value
-      this.options.forEach(option => {
-        if (option.selected && option.selected === true) {
-          this.setSelection(option);
-        }
-      });
-    }
-  }
-
   disconnectedCallback() {
-    document.removeEventListener("click", this.closeOptionsList);
+    document.removeEventListener("click", <EventListener>this.closeOptionsList);
     document.removeEventListener("chameleon-select.close", () => {
       this.active = false;
     });
@@ -69,18 +48,15 @@ export default class ChameleonSelect extends LitElement {
   selectedOption = <SelectableOption>{};
 
   @property({ type: String })
-  _value = "";
+  placeholder = "";
 
-  @property({ type: String })
-  placeHolder = "";
-
-  @property({ type: Boolean })
+  @property({ type: Boolean, reflect: true })
   active = false;
 
   @property({ type: Boolean })
   disabled = false;
 
-  @property({ type: Boolean })
+  @property({ type: Boolean, reflect: true })
   searchable = false;
 
   // The select's label
@@ -90,6 +66,9 @@ export default class ChameleonSelect extends LitElement {
   @property({ type: Boolean })
   valid = true;
 
+  @property({ type: Boolean, reflect: true })
+  loading = false;
+
   /**
    * Template
    */
@@ -97,20 +76,20 @@ export default class ChameleonSelect extends LitElement {
     return html`
       ${this.labelText}
       <div
-        class="${classMap({
-          "chameleon-select": true,
-          container: true,
+        class="container ${classMap({
           active: this.active
         })}"
         @click="${this.activateSelections}"
       >
-        <div class="chameleon-select tags">
+        <div class="tags">
           ${this.renderedselectedOption}
         </div>
-        <div class="chameleon-select select">
-          ${this.selectCaret}
-        </div>
-        ${this.searchBar} ${this.optionsList}
+        ${this.loading
+          ? html`
+              <chameleon-loader loader="spinner" size="24px"></chameleon-loader>
+            `
+          : this.selectCaret}
+        ${this.optionsList}
       </div>
     `;
   }
@@ -127,7 +106,10 @@ export default class ChameleonSelect extends LitElement {
    * Sets the canonical value of the selector
    */
   set value(value: string) {
-    this._value = value;
+    const found = this.options.find(option => value === option.value);
+    if (found === undefined)
+      throw new Error("Value not found within the options array!");
+    else this.selectedOption = { ...found };
   }
 
   /**
@@ -142,33 +124,32 @@ export default class ChameleonSelect extends LitElement {
 
   /**
    * Returns a list of rendered options that can be selected
-   * @return {TemplateResult | Object}
+   * @return {TemplateResult | object}
    */
-  get optionsList(): TemplateResult | Object {
-    if (this.active === true) {
-      // If the options are object values
-      return html`
-        <div class="chameleon-select options">
-          <ul class="options__list">
-            ${repeat(
-              this.filteredOptions.length > 0
-                ? this.filteredOptions
-                : this.options,
-              (option: SelectableOption) => html`
-                <li
-                  class="options__option"
-                  value="${option.value}"
-                  @click="${this.addSelection}"
-                >
-                  ${option.preLabel ? option.preLabel : nothing}
-                  <div class="options__option-labels">
+  get optionsList(): TemplateResult | object {
+    return this.active
+      ? html`
+          <div class="options">
+            <ul class="options__list">
+              ${repeat(
+                this.filteredOptions.length > 0
+                  ? this.filteredOptions
+                  : this.options,
+                (option: SelectableOption) => html`
+                  <li
+                    class="options__option"
+                    data-value="${option.value}"
+                    @click="${this.addSelection}"
+                  >
+                    ${option.preLabel
+                      ? html`
+                          <div class="options__option-preLabel">
+                            ${option.preLabel}
+                          </div>
+                        `
+                      : nothing}
                     <div class="options__option-group">
-                      <span
-                        class="options__option-label ${option.subLabel
-                          ? "bold"
-                          : ""}"
-                        >${option.label}</span
-                      >
+                      <span class="options__option-label">${option.label}</span>
                       ${option.subLabel
                         ? html`
                             <span class="options__option-subLabel">
@@ -184,78 +165,75 @@ export default class ChameleonSelect extends LitElement {
                           >
                         `
                       : nothing}
-                  </div>
-                </li>
-              `
-            )}
-          </ul>
-        </div>
-      `;
-    } else {
-      return nothing;
-    }
+                  </li>
+                `
+              )}
+            </ul>
+          </div>
+        `
+      : nothing;
   }
 
   /**
    * Returns the rendered selected options
-   * @return {TemplateResult}
+   * @return {TemplateResult | object}
    */
-  get renderedselectedOption(): TemplateResult {
+  get renderedselectedOption(): TemplateResult | object {
     if (this.selectedOption.value !== undefined) {
       // If the options are object values
       const option = this.selectedOption;
       return html`
-        <span class="chameleon-select options__option-selected">
-          ${option.preLabel ? option.preLabel : nothing}
-          <div class="options__option-labels">
-            <div class="options__option-group">
-              <span
-                class="options__option-label ${option.subLabel ? "bold" : ""}"
-                >${option.label}</span
-              >
-              ${option.subLabel
-                ? html`
-                    <span class="options__option-subLabel">
-                      ${option.subLabel}
-                    </span>
-                  `
-                : nothing}
-            </div>
-            ${option.postLabel
+        <div class="options__option">
+          ${option.preLabel
+            ? html`
+                <div class="options__option-preLabel">
+                  ${option.preLabel}
+                </div>
+              `
+            : nothing}
+          <div class="options__option-group">
+            <span class="options__option-label">${option.label}</span>
+            ${option.subLabel
               ? html`
-                  <span class="options__option-postLabel">
-                    ${option.postLabel}</span
-                  >
+                  <span class="options__option-subLabel">
+                    ${option.subLabel}
+                  </span>
                 `
               : nothing}
           </div>
-        </span>
+          ${option.postLabel
+            ? html`
+                <span class="options__option-postLabel">
+                  ${option.postLabel}</span
+                >
+              `
+            : nothing}
+        </div>
       `;
     } else {
-      return html`
-        <span class="chameleon-select placeholder">${this.placeHolder}</span>
-      `;
+      return this.active && this.searchable
+        ? this.searchBar
+        : html`
+            <span class="placeholder">${this.placeholder}</span>
+          `;
     }
   }
 
   /**
    * Returns the rendered search bar if the searchable is equal to true
-   * @return {TemplateResult | Object}
+   * @return {TemplateResult | object}
    */
-  get searchBar(): TemplateResult | Object {
+  get searchBar(): TemplateResult | object {
     if (this.active && this.searchable) {
       return html`
-        <div class="chameleon-select search">
-          <input
-            class="chameleon-select search__input"
-            autocomplete="off"
-            autocorrect="off"
-            autocapitalize="off"
-            spellcheck="true"
-            type="text"
-            @input="${this.handleSearch}"
-          />
-        </div>
+        <input
+          type="text"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          placeholder="Type to filter..."
+          @input="${this.handleSearch}"
+        />
       `;
     } else {
       return nothing;
@@ -275,8 +253,16 @@ export default class ChameleonSelect extends LitElement {
   /**
    * Sets the component status to active rendering a list of selections
    */
-  activateSelections(): void {
-    if (!this.disabled) this.active = true;
+  async activateSelections(): Promise<void> {
+    if (!this.disabled) {
+      this.active = true;
+
+      if (this.searchable) {
+        // Wait until the render completes to focus input, otherwise it will be undefined
+        await this.updateComplete;
+        this.shadowRoot!.querySelector("input")!.focus();
+      }
+    }
   }
 
   /**
@@ -284,19 +270,17 @@ export default class ChameleonSelect extends LitElement {
    * @param {Event} e - Click event on a SelectionTarget
    */
   addSelection(e: MouseEvent): void {
-    let value = <Element | undefined>(
-      e.composedPath().find(e => (<HTMLElement>e).hasAttribute("value"))
-    );
-    this.filteredOptions = [];
+    const parents = e.composedPath() as Array<SelectionTarget>;
+    const parent = parents.find(el => el.hasAttribute("data-value"));
+    const value = parent!.dataset.value;
+    const selection = this.options.find(option => option.value === value);
 
-    // We don't want this event to bubble up to chameleon-select otherwise
-    // it will reopen the optionsList
+    this.filteredOptions = [];
     e.stopPropagation();
 
-    const option = this.options.find(
-      option => option.value === value!.getAttribute("value")
-    );
-    this.selectedOption = option || <SelectableOption>{};
+    if (selection) {
+      this.selectedOption = selection;
+    }
 
     // Dispatch a change event
     this.dispatchEvent(
@@ -313,18 +297,6 @@ export default class ChameleonSelect extends LitElement {
   }
 
   /**
-   * Directly sets the canonical value of the selector
-   * @param {string | SelectableOption} value - The canonical value to be set
-   */
-  setSelection(value: string | SelectableOption) {
-    if (value === "" || value === undefined) return; // Early return if no value or empty value
-    const found = this.options.find(option => value === option.value);
-    if (found === undefined)
-      throw new Error("Value not found within the options array!");
-    else this.selectedOption = { ...found };
-  }
-
-  /**
    * Clears the selected options
    */
   clearSelections(): void {
@@ -336,10 +308,9 @@ export default class ChameleonSelect extends LitElement {
    * @param {InputEvent} e - Event target that contains the search query
    */
   handleSearch(e: InputEvent): void {
-    const query = (<HTMLInputElement>e!.target!).value.toLowerCase();
-    // If the options are object values
+    const query = (e.target! as HTMLInputElement).value.toLowerCase();
     this.filteredOptions = this.options.filter(option => {
-      if (option.label) option.label.toLowerCase().includes(query);
+      return option.label.toLowerCase().includes(query);
     });
   }
 
@@ -347,23 +318,18 @@ export default class ChameleonSelect extends LitElement {
    * Closes the selector when a user clicks anywhere except for inside
    * @param {MouseEvent} e - Click event
    */
-  closeOptionsList(e: MouseEvent): void {
-    if (
-      e.composedPath &&
-      e.composedPath()[0] &&
-      (<HTMLElement>e.composedPath()[0]).classList
-    ) {
-      const classes = Array.from((<HTMLElement>e.composedPath()[0]).classList);
-
-      if (classes.includes("chameleon-select") && !classes.includes("active")) {
-        // Early return if the selector isn't open yet
+  private closeOptionsList(e: MouseEvent): void {
+    const elements = Array.from(e.composedPath()) as Array<HTMLElement>;
+    const tags = elements.map(el => el.tagName);
+    elements.forEach(el => {
+      if (
+        el.tagName === "CHAMELEON-SELECT" &&
+        (el as ChameleonSelect).active === true
+      )
         e.stopPropagation();
-        return;
-      } else if (!classes.includes("chameleon-select")) {
-        // Close selector if click is anywhere but inside the selector
-        this.dispatchEvent(new CustomEvent("chameleon-select.close"));
-      }
-    }
+    });
+    if (!tags.includes("CHAMELEON-SELECT"))
+      this.dispatchEvent(new CustomEvent("chameleon-select.close"));
   }
 
   get carrotDown(): SVGTemplateResult {

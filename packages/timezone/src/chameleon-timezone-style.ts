@@ -1,12 +1,6 @@
 import { css } from "lit-element";
 
 export default css`
-  :host {
-    align-items: center;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-  }
-
   :host([readonly]),
   :host([disabled]) {
     pointer-events: none;
@@ -21,7 +15,7 @@ export default css`
     border-radius: var(--border-radius-input, 5px);
     font-family: inherit;
     font-size: 16px;
-    padding: var(--multiselect-padding, 0.5rem);
+    padding: var(--select-padding, 0.438rem 0.5rem);
   }
 
   .mdc-text-field-error-text {

@@ -106,9 +106,9 @@ export default class ChameleonMultiselect extends LitElement {
               "tags-active": this.selectedOptions.length > 0
             })}"
             type="text"
-            placeholder="${this.renderedOptions.length > 0 || this.instantSearch
-              ? this.placeholder
-              : ""}"
+            placeholder="${this.active
+              ? "Type to filter..."
+              : this.placeholder}"
             @focus="${this.setActive}"
             @input="${this.handleSearch}"
           />
