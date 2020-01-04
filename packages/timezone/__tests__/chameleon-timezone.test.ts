@@ -1,20 +1,14 @@
 import { html, fixture, expect } from "@open-wc/testing";
-import sinon from "sinon";
 import "@chameleon-ds/timezone/src/chameleon-timezone";
 
-describe.only("chameleon-timezone", () => {
-  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+describe("chameleon-timezone", () => {
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   let element;
-  let spy;
 
   beforeEach(async () => {
-    spy = sinon.spy();
     element = await fixture(
       html`
-        <chameleon-timezone
-          .timeZone="${timeZone}"
-          @chameleon.input=${spy}
-        ></chameleon-timezone>
+        <chameleon-timezone .timezone="${timezone}"></chameleon-timezone>
       `
     );
   });
@@ -23,26 +17,19 @@ describe.only("chameleon-timezone", () => {
     expect(element.tagName.toLowerCase()).to.equal("chameleon-timezone");
   });
 
-  describe("timeZone()", () => {
-    it("should set timeZone", async () => {
-      element = await fixture(
-        html`
-          <chameleon-timezone
-            .timeZone="${timeZone}"
-            @chameleon.input=${spy}
-          ></chameleon-timezone>
-        `
-      );
-      expect(element.timeZone).to.equal(element._timeZoneValue);
+  describe("timezone()", () => {
+    it("should set timezone", () => {
+      element.timezone = timezone;
+      expect(element.timezone).to.equal(element._timezoneValue);
     });
 
-    it("should get timeZone", () => {
-      expect(element.timeZone).to.equal(element._timeZoneValue);
+    it("should get timezone", () => {
+      expect(element.timezone).to.equal(element._timezoneValue);
     });
 
     // TODO
     xit("should default to local timezone if none is supplied", () => {
-      expect(element.timeZone).to.equal(element.localtimeZone);
+      expect(element.timezone).to.equal(element.localTimeone);
     });
   });
 
@@ -52,7 +39,7 @@ describe.only("chameleon-timezone", () => {
         <div class="datetime-inputs">
           <div>
             <chameleon-select
-              name="timeZone"
+              name="timezone"
               searchable=""
             ></chameleon-select>
           </div>
@@ -68,10 +55,10 @@ describe.only("chameleon-timezone", () => {
      * Labels
      */
 
-    it("should render timeZoneLabel", async () => {
+    it("should render timezoneLabel", async () => {
       element = await fixture(
         html`
-          <chameleon-timezone timeZoneLabel="asdf"></chameleon-timezone>
+          <chameleon-timezone timezoneLabel="asdf"></chameleon-timezone>
         `
       );
       expect(element).shadowDom.to.equal(`
@@ -79,7 +66,7 @@ describe.only("chameleon-timezone", () => {
           <div>
             <label class="label">asdf</label>
             <chameleon-select
-              name="timeZone"
+              name="timezone"
               searchable=""
             ></chameleon-timezone>
           </div>
@@ -87,17 +74,17 @@ describe.only("chameleon-timezone", () => {
       `);
     });
 
-    it("should render timeZoneSubLabel", async () => {
+    it("should render timeoneSubLabel", async () => {
       element = await fixture(
         html`
-          <chameleon-timezone timeZoneSubLabel="asdf"></chameleon-timezone>
+          <chameleon-timezone timezoneSubLabel="asdf"></chameleon-timezone>
         `
       );
       expect(element).shadowDom.to.equal(`
         <div class="datetime-inputs">
           <div>
             <chameleon-select
-              name="timeZone"
+              name="timezone"
               searchable=""
             ></chameleon-select>
             <label class="label">asdf</label>
@@ -115,18 +102,18 @@ describe.only("chameleon-timezone", () => {
     });
   });
 
-  describe("localTimeZone()", () => {
+  describe("localTimezone()", () => {
     it("should return the users's local timeZone", () => {
-      expect(element.timeZone).to.equal(
+      expect(element.timezone).to.equal(
         Intl.DateTimeFormat().resolvedOptions().timeZone
       );
     });
   });
 
   describe("handleInput()", () => {
-    it("should update timeZone value", () => {
+    it("should update timezone value", () => {
       element.value = "US/Pacific";
-      expect(element._timeZoneValue).to.equal("US/Pacific");
+      expect(element._timezoneValue).to.equal("US/Pacific");
     });
   });
 });

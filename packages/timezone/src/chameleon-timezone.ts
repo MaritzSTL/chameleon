@@ -12,7 +12,7 @@ import { repeat } from "lit-html/directives/repeat";
 import { SelectableOption } from "@chameleon-ds/select/types";
 import style from "./chameleon-timezone-style";
 import "@chameleon-ds/select/src/chameleon-select";
-import { default as timeZoneData } from "../data/timezones.json";
+import { default as timezoneData } from "../data/timezones.json";
 
 @customElement("chameleon-timezone")
 export default class ChameleonTimezone extends LitElement {
@@ -23,10 +23,10 @@ export default class ChameleonTimezone extends LitElement {
   @property({ type: Boolean, reflect: true }) required = false;
   @property({ type: Boolean, reflect: true }) disabled = false;
   @property({ type: Boolean, reflect: true }) autovalidate = false;
-  @property({ type: String }) timeZoneLabel = "";
-  @property({ type: String }) timeZoneSubLabel = "";
-  @property({ type: Array }) timeZones = timeZoneData;
-  @property({ type: String }) _timeZoneValue = this.localTimeZone;
+  @property({ type: String }) timezoneLabel = "";
+  @property({ type: String }) timezoneSubLabel = "";
+  @property({ type: Array }) timezones = timezoneData;
+  @property({ type: String }) _timezoneValue = this.localTimezone;
   @property({ type: Array }) errors = [];
 
   /**
@@ -42,15 +42,15 @@ export default class ChameleonTimezone extends LitElement {
     return html`
       <div class="datetime-inputs">
         <div>
-          ${this.timeZoneLabelText}
+          ${this.timezoneLabelText}
           <chameleon-select
-            name="timeZone"
-            .options="${this.timeZoneOptions}"
+            name="timezone"
+            .options="${this.timezoneOptions}"
             .value="${this.value}"
             ?searchable="${true}"
             @chameleon.select="${this.handleInput}"
           ></chameleon-select>
-          ${this.timeZoneSubLabelText} ${this.errorText}
+          ${this.timezoneSubLabelText} ${this.errorText}
         </div>
       </div>
     `;
@@ -60,7 +60,7 @@ export default class ChameleonTimezone extends LitElement {
    * Gets the timezone value
    */
   get value(): string {
-    return this._timeZoneValue;
+    return this._timezoneValue;
   }
 
   /**
@@ -69,11 +69,11 @@ export default class ChameleonTimezone extends LitElement {
    */
   set value(value: string) {
     if (!value) return;
-    this._timeZoneValue = value;
+    this._timezoneValue = value;
   }
 
-  get timeZoneOptions(): Array<SelectableOption> {
-    return this.timeZones.map((timezone: string) => {
+  get timezoneOptions(): Array<SelectableOption> {
+    return this.timezones.map((timezone: string) => {
       return {
         value: timezone,
         label: timezone
@@ -82,23 +82,23 @@ export default class ChameleonTimezone extends LitElement {
   }
 
   /**
-   * timeZone label text
+   * timezone label text
    */
-  get timeZoneLabelText(): TemplateResult | object {
-    return this.timeZoneLabel !== ""
+  get timezoneLabelText(): TemplateResult | object {
+    return this.timezoneLabel !== ""
       ? html`
-          <label class="label">${this.timeZoneLabel}</label>
+          <label class="label">${this.timezoneLabel}</label>
         `
       : nothing;
   }
 
   /**
-   * timeZone sublabel text
+   * timezone sublabel text
    */
-  get timeZoneSubLabelText(): TemplateResult | object {
-    return this.timeZoneSubLabel !== ""
+  get timezoneSubLabelText(): TemplateResult | object {
+    return this.timezoneSubLabel !== ""
       ? html`
-          <label class="label">${this.timeZoneSubLabel}</label>
+          <label class="label">${this.timezoneSubLabel}</label>
         `
       : nothing;
   }
@@ -106,7 +106,7 @@ export default class ChameleonTimezone extends LitElement {
   /**
    * The user's local browser time zone
    */
-  get localTimeZone(): string {
+  get localTimezone(): string {
     return Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
@@ -114,16 +114,16 @@ export default class ChameleonTimezone extends LitElement {
    * Sets the value of the time zone
    * @param {string} value - The timezone value to set
    */
-  set timeZone(value: string) {
+  set timezone(value: string) {
     if (!value) return;
-    this._timeZoneValue = value;
+    this._timezoneValue = value;
   }
 
   /**
    * Gets the value of the time zone
    */
-  get timeZone(): string {
-    return this._timeZoneValue;
+  get timezone(): string {
+    return this._timezoneValue;
   }
 
   /**
@@ -134,7 +134,7 @@ export default class ChameleonTimezone extends LitElement {
       ? html`
           ${repeat(
             this.errors,
-            error => html`
+            (error: string) => html`
               <p class="mdc-text-field-error-text">
                 ${this.errorIcon} ${error}
               </p>
@@ -146,7 +146,7 @@ export default class ChameleonTimezone extends LitElement {
 
   handleInput(e: any): void {
     const value = e.target.value;
-    this._timeZoneValue = value;
+    this._timezoneValue = value;
     this.dispatchEvent(new Event("blur"));
   }
 
