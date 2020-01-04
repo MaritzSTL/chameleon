@@ -179,11 +179,11 @@ export default class ChameleonSelect extends LitElement {
    * @return {TemplateResult | object}
    */
   get renderedselectedOption(): TemplateResult | object {
-    if (this.selectedOption.value !== undefined) {
+    if (this.selectedOption.value !== undefined && !this.active) {
       // If the options are object values
       const option = this.selectedOption;
       return html`
-        <div class="options__option">
+        <div class="options__option view-only">
           ${option.preLabel
             ? html`
                 <div class="options__option-preLabel">

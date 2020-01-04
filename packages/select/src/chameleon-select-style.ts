@@ -82,7 +82,7 @@ export default css`
     padding: 0.5rem 1rem;
   }
 
-  .options__option:hover {
+  .options__option:not(.view-only):hover {
     background-color: rgba(44, 111, 183, 0.26);
   }
 
