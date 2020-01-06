@@ -11,9 +11,12 @@ import "@chameleon-ds/button/src/chameleon-button";
 
 @customElement("chameleon-sheet")
 export default class ChameleonSheet extends LitElement {
-  constructor() {
-    super();
-    document.body.appendChild(this);
+  firstUpdated() {
+    document.body.appendChild(this.parentNode!);
+
+    this.addEventListener("unload", () => {
+      document.body.removeChild(this.parentNode!);
+    });
   }
 
   /**
@@ -41,36 +44,34 @@ export default class ChameleonSheet extends LitElement {
    */
   static styles = [style];
 
-  disconnectedCallback(): void {
-    document.body.removeChild(this);
-  }
-
   /**
    * Template
    */
   render(): TemplateResult {
     return html`
-      <header class="head-container">
-        <chameleon-button
-          class="close-icon"
-          icon-only
-          theme="text"
-          @click="${this._toggleSheet}"
-          >${this.closeIcon}</chameleon-button
-        >
+      <div id="sheet-wrapper">
+        <header class="head-container">
+          <chameleon-button
+            class="close-icon"
+            icon-only
+            theme="text"
+            @click="${this._toggleSheet}"
+            >${this.closeIcon}</chameleon-button
+          >
 
-        <h3 class="header">${this.header}</h3>
+          <h3 class="header">${this.header}</h3>
 
-        <slot name="details"></slot>
-      </header>
+          <slot name="details"></slot>
+        </header>
 
-      <slot name="actions"></slot>
-      ${this.subHeader
-        ? html`
-            <span class="sub-header">${this.subHeader}</span>
-          `
-        : nothing}
-      <slot name="content"></slot>
+        <slot name="actions"></slot>
+        ${this.subHeader
+          ? html`
+              <span class="sub-header">${this.subHeader}</span>
+            `
+          : nothing}
+        <slot name="content"></slot>
+      </div>
     `;
   }
 
@@ -82,14 +83,6 @@ export default class ChameleonSheet extends LitElement {
     });
     this.dispatchEvent(e);
   }
-
-  // get sheet(): HTMLElement {
-  //   const sheet = document.createElement("chameleon-sheet");
-  //   sheet.style.top = "172px";
-  //   sheet.style.maxWidth = "620px";
-
-  //   return sheet;
-  // }
 
   get closeIcon(): SVGTemplateResult | TemplateResult {
     const slots = Array.from(this.querySelectorAll("[slot]"));
