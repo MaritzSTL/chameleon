@@ -28,3 +28,21 @@ stories.add(
   },
   { info: { inline: true }, options: { enableShortcuts: false } }
 );
+
+stories.add(
+  "Pre-selected Value",
+  () => {
+    const placeholder = text("Placeholder", "Select Date");
+    const label = text("Label", "Date *");
+
+    return html`
+      <chameleon-date
+        .placeholder="${placeholder}"
+        .label="${label}"
+        value="${`2020-01-13`}"
+        @chameleon.date.input="${eventDetails.action("chameleon.date.input")}"
+      ></chameleon-date>
+    `;
+  },
+  { info: { inline: true }, options: { enableShortcuts: false } }
+);
