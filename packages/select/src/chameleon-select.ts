@@ -117,9 +117,7 @@ export default class ChameleonSelect extends LitElement {
    * @return {TemplateResult}
    */
   get selectCaret(): TemplateResult {
-    if (this.active === false) return this.carrotDown;
-    if (this.active === true) return this.carrotUp;
-    return this.carrotDown;
+    return this.active ? this.caretUp : this.caretDown;
   }
 
   /**
@@ -176,11 +174,10 @@ export default class ChameleonSelect extends LitElement {
 
   /**
    * Returns the rendered selected options
-   * @return {TemplateResult | object}
+   * @return {TemplateResult}
    */
   get renderedselectedOption(): TemplateResult | object {
     if (this.selectedOption.value !== undefined && !this.active) {
-      // If the options are object values
       const option = this.selectedOption;
       return html`
         <div class="options__option view-only">
@@ -248,6 +245,42 @@ export default class ChameleonSelect extends LitElement {
         </div>
       `;
     } else return nothing;
+  }
+
+  get caretDown(): SVGTemplateResult {
+    return svg`
+      <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      width="24" 
+      height="24" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      stroke-width="2" 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      class="feather feather-chevron-down">
+      <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+  `;
+  }
+
+  get caretUp(): SVGTemplateResult {
+    return svg`
+      <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      width="24" 
+      height="24" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      stroke-width="2" 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      class="feather feather-chevron-up">
+      <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+  `;
   }
 
   /**
@@ -330,41 +363,5 @@ export default class ChameleonSelect extends LitElement {
     });
     if (!tags.includes("CHAMELEON-SELECT"))
       this.dispatchEvent(new CustomEvent("chameleon-select.close"));
-  }
-
-  get carrotDown(): SVGTemplateResult {
-    return svg`
-      <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      width="24" 
-      height="24" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      stroke-width="2" 
-      stroke-linecap="round" 
-      stroke-linejoin="round" 
-      class="feather feather-chevron-down">
-      <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-  `;
-  }
-
-  get carrotUp(): SVGTemplateResult {
-    return svg`
-      <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      width="24" 
-      height="24" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      stroke-width="2" 
-      stroke-linecap="round" 
-      stroke-linejoin="round" 
-      class="feather feather-chevron-up">
-      <polyline points="18 15 12 9 6 15"></polyline>
-      </svg>
-  `;
   }
 }
