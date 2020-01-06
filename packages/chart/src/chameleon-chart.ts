@@ -25,12 +25,16 @@ export default class ChameleonChart extends LitElement {
 
   /*The color of the chart*/
 
-  @property({ type: String })
-  color = "";
+  @property({ type: String, reflect: true })
+  color = "#00870a";
 
   /* percentage to be displayed in the donut chart */
   @property({ type: Number })
   percentage = 0;
+
+  /* value to show in the the label */
+  @property({ type: String })
+  label = "0";
 
   /**
    * Styles
@@ -43,6 +47,10 @@ export default class ChameleonChart extends LitElement {
   render(): TemplateResult {
     return html`
       ${this.chart}
+      <div class="labels-container">
+        <label style="color:${this.color};">${this.label}</label>
+        <label>Funds Remaining</label>
+      </div>
     `;
   }
 
@@ -57,7 +65,7 @@ export default class ChameleonChart extends LitElement {
 
   get arc(): SVGTemplateResult {
     return svg`
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" height="100px" width="100px">
+      <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg" height="100px" width="100px">
         <path fill="transparent" stroke="#c4c7ca" stroke-width="10px" stroke-linecap="round" d="${this._describeArc(
           50,
           50,

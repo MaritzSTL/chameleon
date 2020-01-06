@@ -15,13 +15,15 @@ stories.add(
     // const subtitleText = text("Subtitle", "Destination");
     // const titleText = text("Title", "St. Louis, MO");
 
-    const color = text("Color", "");
-    const percentage = number("Percentage", 0);
+    const color = text("Color", "#00870a");
+    const label = text("Label", "1,000");
+    const percentage = number("Percentage", 90);
 
     return html`
       <chameleon-chart
         color="${color}"
         percentage="${percentage}"
+        label="${label}"
         type="arc"
       ></chameleon-chart>
     `;
