@@ -24,7 +24,7 @@ export default class ChameleonDate extends LitElement {
   firstUpdated(): void {
     if (this.value === "") {
       this.date = new Date();
-    } else if (this.value) {
+    } else {
       this.touched = true;
       this.requestUpdate();
     }
@@ -34,7 +34,7 @@ export default class ChameleonDate extends LitElement {
   }
 
   updated(changedProperties: PropertyValues): void {
-    if (changedProperties.has("value")) {
+    if (changedProperties.has("value") && this.value !== undefined) {
       this.renderedDate = this.stringToDate(this.value);
     }
   }
@@ -204,9 +204,9 @@ export default class ChameleonDate extends LitElement {
 
   get dateGrid(): TemplateResult | object {
     const currentDate = new Date();
-    const minDate = this.min ? this.stringToDate(this.min || "").getTime() : -1;
+    const minDate = this.min ? this.stringToDate(this.min!).getTime() : -1;
     const maxDate = this.max
-      ? this.stringToDate(this.max || "").getTime()
+      ? this.stringToDate(this.max!).getTime()
       : Infinity;
 
     return this.days
@@ -329,7 +329,7 @@ export default class ChameleonDate extends LitElement {
     this.date = date;
     this.active = false;
 
-    this.requestUpdate;
+    this.requestUpdate();
     await this.updateComplete;
     this.dispatchEvent(
       new CustomEvent("chameleon.date.input", {
