@@ -4,6 +4,7 @@ export default css`
   :host {
     font-family: var(--font-family, Arial);
   }
+
   label {
     display: block;
     color: var(--label-color, #6c737a);
@@ -12,6 +13,7 @@ export default css`
     letter-spacing: var(--label-letter-spacing, 0);
     margin-bottom: 0.5rem;
   }
+
   .multiselect-box {
     align-items: center;
     display: flex;
@@ -20,7 +22,7 @@ export default css`
     border-radius: var(--border-radius-input, 0.313rem);
     box-sizing: border-box;
     min-height: 2.5rem;
-    padding: var(--multiselect-padding, 0.438rem 0.5rem);
+    padding: var(--select-padding, 0.438rem 0.5rem);
     position: relative;
   }
 

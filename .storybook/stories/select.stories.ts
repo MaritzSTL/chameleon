@@ -6,76 +6,41 @@ import "@chameleon-ds/select/src/chameleon-select";
 
 const stories = storiesOf("Select", module);
 
-// Typecasting this as "any" is a quick workaround. Please come back
-// to this and make these types compatible.
 stories.addDecorator(withKnobs);
 
-const exampleData = [
+const options = [
   {
-    value: "value-0",
-    label: "Direct Marketing",
-    preLabel: "pre-label",
-    postLabel: "Custom"
+    value: "arch",
+    label: "Gateway Arch",
+    subLabel: "Historical Landmark",
+    preLabel: html`
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/0/00/St_Louis_night_expblend_cropped.jpg"
+      />
+    `,
+    postLabel: "St. Louis, MO"
   },
   {
-    value: "value-1",
-    label: "District 1",
-    preLabel: "pre-label",
-    postLabel: "Custom"
+    value: "union-station",
+    label: "Union Station",
+    subLabel: "Historical Landmark",
+    preLabel: html`
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/St._Louis_Union_Station_%2817577826564%29.jpg/320px-St._Louis_Union_Station_%2817577826564%29.jpg"
+      />
+    `,
+    postLabel: "St. Louis, MO"
   },
   {
-    value: "value-2",
-    label: "District 2",
-    preLabel: "pre-label",
-    postLabel: "Enrollment"
-  },
-  {
-    value: "value-3",
-    label: "District 3",
-    preLabel: "pre-label",
-    postLabel: "Custom"
-  },
-  {
-    value: "value-4",
-    label: "four",
-    preLabel: "pre-label",
-    postLabel: "Enrollment"
-  },
-  {
-    value: "value-5",
-    label: "five",
-    preLabel: "pre-label",
-    postLabel: "Custom"
-  },
-  {
-    value: "value-6",
-    label: "six",
-    preLabel: "pre-label",
-    postLabel: "Custom"
-  },
-  {
-    value: "value-7",
-    label: "seven",
-    preLabel: "pre-label",
-    postLabel: "Custom"
-  },
-  {
-    value: "value-8",
-    label: "eight",
-    preLabel: "pre-label",
-    postLabel: "Enrollment"
-  },
-  {
-    value: "value-9",
-    label: "nine",
-    preLabel: "pre-label",
-    postLabel: "Custom"
-  },
-  {
-    value: "value-10",
-    label: "ten",
-    preLabel: "pre-label",
-    postLabel: "Custom"
+    value: "scott-joplin-house",
+    label: "Scott Joplin House",
+    subLabel: "Historical Landmark",
+    preLabel: html`
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Scott_Joplin_House.jpg/568px-Scott_Joplin_House.jpg"
+      />
+    `,
+    postLabel: "St. Louis, MO"
   }
 ];
 
@@ -87,9 +52,30 @@ stories.add(
 
     return html`
       <chameleon-select
-        .options="${exampleData}"
+        .options="${options}"
         .label="${label}"
         placeHolder="${placeHolder}"
+        @chameleon.select=${eventDetails.action("chameleon.select")}
+        @chameleon-select.close=${eventDetails.action("chameleon-select.close")}
+        >select
+      </chameleon-select>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Searchable",
+  () => {
+    const placeHolder = text("Place Holder", "Please select an option");
+    const label = text("Label", "");
+
+    return html`
+      <chameleon-select
+        .options="${options}"
+        .label="${label}"
+        placeHolder="${placeHolder}"
+        ?searchable="${true}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
         @chameleon-select.close=${eventDetails.action("chameleon-select.close")}
         >select

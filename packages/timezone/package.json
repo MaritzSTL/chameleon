@@ -1,0 +1,32 @@
+{
+  "name": "@chameleon-ds/timezone",
+  "version": "0.1.0",
+  "description": "Chameleon timezone",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/timezone#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "src/chameleon-timezone.js",
+  "module": "src/chameleon-timezone.js",
+  "files": [
+    "/src/",
+    "/data/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "@chameleon-ds/select": "^0.2.3",
+    "lit-element": "^2.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
