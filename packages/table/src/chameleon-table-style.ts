@@ -97,6 +97,30 @@ export default css`
     justify-content: space-between;
   }
 
+  table th.left .column-header {
+    justify-content: flex-start;
+  }
+
+  table td.left {
+    text-align: left;
+  }
+
+  table th.right .column-header {
+    justify-content: flex-end;
+  }
+
+  table td.right {
+    text-align: right;
+  }
+
+  table th.center .column-header {
+    justify-content: center;
+  }
+
+  table td.center {
+    text-align: center;
+  }
+
   table th .sort-icons {
     margin-right: 0.5rem;
     opacity: 0.5;
@@ -126,6 +150,10 @@ export default css`
   table th .search {
     display: flex;
     margin-top: 0.5rem;
+  }
+
+  table td a {
+    cursor: pointer;
   }
 
   table td .svg-inline--fa {
