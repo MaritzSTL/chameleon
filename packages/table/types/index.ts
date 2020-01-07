@@ -4,7 +4,9 @@ export type Columns = Column[];
 
 export type Column = {
   header: string;
+  headerClass?: string;
   row: (row: Row) => TemplateResult;
+  columnClass?: string;
   detailsRow?: (detailsRow: Row, row: Row) => TemplateResult;
   filter?: {
     name?: string;
