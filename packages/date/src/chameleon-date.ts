@@ -18,12 +18,6 @@ import "@chameleon-ds/button/src/chameleon-button";
 
 @customElement("chameleon-date")
 export default class ChameleonDate extends LitElement {
-  constructor() {
-    super();
-
-    document.addEventListener("click", this.closeOverlay as EventListener);
-  }
-
   /**
    * Lifecycle Methods
    */
@@ -35,6 +29,8 @@ export default class ChameleonDate extends LitElement {
       this.requestUpdate();
     }
     this.renderedDate = this.date!;
+
+    document.addEventListener("click", this.closeOverlay.bind(this));
   }
 
   updated(changedProperties: PropertyValues): void {
@@ -44,7 +40,7 @@ export default class ChameleonDate extends LitElement {
   }
 
   disconnectedCallback(): void {
-    document.removeEventListener("click", this.closeOverlay as EventListener);
+    document.removeEventListener("click", this.closeOverlay.bind(this));
   }
 
   /**
@@ -371,19 +367,15 @@ export default class ChameleonDate extends LitElement {
     return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
   }
 
-  private closeOverlay(e: CustomEvent): void {
+  private closeOverlay(e: MouseEvent): void {
     const targets = e
       .composedPath()
       .map(eventTarget => (eventTarget as Element).tagName);
 
-    if (!targets.includes("CHAMELEON-DATE"))
-      Array.from(document.querySelectorAll("chameleon-date")).forEach(
-        datePicker => {
-          const datePickerEl = datePicker as ChameleonDate;
-          datePickerEl.active = false;
-          datePickerEl.overlayRenderMode = "month";
-        }
-      );
+    if (!targets.includes("CHAMELEON-DATE")) {
+      this.active = false;
+      this.overlayRenderMode = "month";
+    }
   }
 
   private toggleOverlayView(): void {
