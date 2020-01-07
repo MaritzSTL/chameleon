@@ -1,19 +1,19 @@
 {
-  "name": "@chameleon-ds/table",
-  "version": "0.3.1",
-  "description": "Chameleon Table",
+  "name": "@chameleon-ds/timezone",
+  "version": "0.1.1",
+  "description": "Chameleon timezone",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
-  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/tables#readme",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/timezone#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "src/chameleon-table.js",
-  "module": "src/chameleon-table.js",
+  "main": "src/chameleon-timezone.js",
+  "module": "src/chameleon-timezone.js",
   "files": [
     "/src/",
-    "/types/"
+    "/data/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
@@ -23,9 +23,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/input": "^1.1.1",
-    "@chameleon-ds/multiselect": "^0.2.8",
-    "@chameleon-ds/paginator": "^1.1.7",
+    "@chameleon-ds/select": "^0.2.4",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
