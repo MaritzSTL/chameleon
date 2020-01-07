@@ -10,13 +10,13 @@ stories.addDecorator(withKnobs);
 stories.add(
   "Basic",
   () => {
-    const timeZoneLabel = text("Label", "Please select your Timezone");
-    const timeZoneSubLabel = text("Sub Label", "");
+    const timezoneLabel = text("Label", "Please select your Timezone");
+    const timezoneSubLabel = text("Sub Label", "");
 
     return html`
       <chameleon-timezone
-        .timeZoneLabel=${timeZoneLabel}
-        .timeZoneSubLabel=${timeZoneSubLabel}
+        .timezoneLabel=${timezoneLabel}
+        .timezoneSubLabel=${timezoneSubLabel}
       ></chameleon-timezone>
     `;
   },
