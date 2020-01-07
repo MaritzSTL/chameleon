@@ -74,7 +74,7 @@ export default class ChameleonTable extends LitElement {
           <tr>
             ${this.columns.map(
               column => html`
-                <th>
+                <th class=${column.headerClass ?? ""}>
                   <div class="header-container">
                     ${this.renderColumnHeader(column)}
                   </div>
@@ -98,7 +98,7 @@ export default class ChameleonTable extends LitElement {
                   ${this.columns.map(
                     (column: Column) =>
                       html`
-                        <td>
+                        <td class=${column.columnClass ?? ""}>
                           ${column.row(row)}
                         </td>
                       `

@@ -95,6 +95,8 @@ const columns = [
   },
   {
     header: "Column 4",
+    headerClass: "right",
+    columnClass: "right",
     row: (row: Row): TemplateResult =>
       html`
         ${row.field4}

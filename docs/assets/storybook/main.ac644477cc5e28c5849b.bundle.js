@@ -162,6 +162,8 @@
     box-sizing: border-box;
     font-size: var(--font-size-input, 0.938rem);
     font-family: var(--font-family, sans-serif);
+    height: 100%;
+    max-height: 40px;
     width: 100%;
     padding: var(--input-padding, 0.625rem 0.5rem);
   }
@@ -1388,11 +1390,11 @@
         @chameleon-select.close=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon-select.close")}
         >select
       </chameleon-select>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(9)(module))},619:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(639);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Sheet",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.addParameters({backgrounds:[{name:"gray",value:"#f5f5f8",default:!0},{name:"black",value:"#252a33"}]}),stories.add("Sheet",()=>{const header=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Missouri"),subHeader=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Sub Label","Tour Guide"),sheetOpened=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open",!1);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(9)(module))},619:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(639);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Sheet",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.addParameters({backgrounds:[{name:"gray",value:"#f5f5f8",default:!0},{name:"black",value:"#252a33"}]}),stories.add("Sheet",()=>{const header=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Missouri"),subHeader=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Sub Label","Tour Guide");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-sheet
         header="${header}"
         subHeader="${subHeader}"
-        ?sheetOpened="${sheetOpened}"
+        ?sheetOpened="${!0}"
         @toggle-sheet=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("toggle-sheet")}
       >
         <section slot="details">
@@ -1454,7 +1456,7 @@
         ${row.field2}
       `},{header:"Column 3",row:row=>lit_element__WEBPACK_IMPORTED_MODULE_3__.d`
         ${row.field3}
-      `},{header:"Column 4",row:row=>lit_element__WEBPACK_IMPORTED_MODULE_3__.d`
+      `},{header:"Column 4",headerClass:"right",columnClass:"right",row:row=>lit_element__WEBPACK_IMPORTED_MODULE_3__.d`
         ${row.field4}
       `}],columnsWithDetailFields=[{header:"Column 1",row:row=>lit_element__WEBPACK_IMPORTED_MODULE_3__.d`
         ${row.field1}
@@ -3145,18 +3147,37 @@
       </svg>
   `}};chameleon_select_ChameleonSelect.styles=[chameleon_select_style],__decorate([Object(lit_element.e)({type:Array})],chameleon_select_ChameleonSelect.prototype,"options",void 0),__decorate([Object(lit_element.e)({type:Array})],chameleon_select_ChameleonSelect.prototype,"filteredOptions",void 0),__decorate([Object(lit_element.e)({type:Object})],chameleon_select_ChameleonSelect.prototype,"selectedOption",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_select_ChameleonSelect.prototype,"_value",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_select_ChameleonSelect.prototype,"placeHolder",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"active",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"disabled",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"searchable",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_select_ChameleonSelect.prototype,"label",void 0),__decorate([Object(lit_element.e)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"valid",void 0);chameleon_select_ChameleonSelect=__decorate([Object(lit_element.c)("chameleon-select")],chameleon_select_ChameleonSelect)},639:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_sheet_style=lit_element.b`
   :host {
-    position: fixed;
-    display: inline-block;
-    height: 100%;
-    right: 0;
-    min-width: 320px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
+    width: 320px;
+    max-width: 33vw;
+    visibility: hidden;
+    transition: visibility 0.5s;
     background-color: var(--color-surface, #ffffff);
   }
 
   :host([sheetopened]) {
-    transform: translateX(0);
+    visibility: visible;
+  }
+
+  #sheet-wrapper {
+    position: fixed;
+    z-index: 999;
+    background-color: inherit;
+    overflow: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    width: inherit;
+    max-width: inherit;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+  }
+
+  :host([sheetopened]) #sheet-wrapper {
+    transform: none;
   }
 
   .head-container {
@@ -3209,29 +3230,31 @@
     padding: 0 20px;
     font-size: var(--font-size-label, 0.875rem);
   }
-`,__decorate=(__webpack_require__(59),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_sheet_ChameleonSheet=class ChameleonSheet extends lit_element.a{constructor(){super(...arguments),this.header="",this.subHeader="",this.sheetOpened=!1}render(){return lit_element.d`
-      <header class="head-container">
-        <chameleon-button
-          class="close-icon"
-          icon-only
-          theme="text"
-          @click="${this._toggleSheet}"
-          >${this.closeIcon}</chameleon-button
-        >
+`,__decorate=(__webpack_require__(59),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});let chameleon_sheet_ChameleonSheet=class ChameleonSheet extends lit_element.a{constructor(){super(...arguments),this.header="",this.subHeader="",this.sheetOpened=!1}firstUpdated(){document.body.appendChild(this.parentNode),this.addEventListener("unload",()=>{document.body.removeChild(this.parentNode)})}render(){return lit_element.d`
+      <div id="sheet-wrapper">
+        <header class="head-container">
+          <chameleon-button
+            class="close-icon"
+            icon-only
+            theme="text"
+            @click="${this._toggleSheet}"
+            >${this.closeIcon}</chameleon-button
+          >
 
-        <h3 class="header">${this.header}</h3>
+          <h3 class="header">${this.header}</h3>
 
-        <slot name="details"></slot>
-      </header>
+          <slot name="details"></slot>
+        </header>
 
-      <slot name="actions"></slot>
-      ${this.subHeader?lit_element.d`
-            <span class="sub-header">${this.subHeader}</span>
-          `:lit_html.nothing}
-      <slot name="content"></slot>
+        <slot name="actions"></slot>
+        ${this.subHeader?lit_element.d`
+              <span class="sub-header">${this.subHeader}</span>
+            `:lit_html.nothing}
+        <slot name="content"></slot>
+      </div>
     `}_toggleSheet(){this.sheetOpened=!this.sheetOpened;const e=new CustomEvent("toggle-sheet",{bubbles:!0,composed:!0});this.dispatchEvent(e)}get closeIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"close-icon"===slot.slot)?lit_html.svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`:lit_element.d`
         <slot name="close-icon"></slot>
-      `}};chameleon_sheet_ChameleonSheet.styles=[chameleon_sheet_style],__decorate([Object(lit_element.e)({type:String})],chameleon_sheet_ChameleonSheet.prototype,"header",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_sheet_ChameleonSheet.prototype,"subHeader",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_sheet_ChameleonSheet.prototype,"sheetOpened",void 0);chameleon_sheet_ChameleonSheet=__decorate([Object(lit_element.c)("chameleon-sheet")],chameleon_sheet_ChameleonSheet)},640:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_switch_style=lit_element.b`
+      `}};chameleon_sheet_ChameleonSheet.styles=[chameleon_sheet_style],__decorate([Object(lit_element.e)({type:String})],chameleon_sheet_ChameleonSheet.prototype,"header",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_sheet_ChameleonSheet.prototype,"subHeader",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_sheet_ChameleonSheet.prototype,"sheetOpened",void 0),__decorate([Object(lit_element.e)({type:Object})],chameleon_sheet_ChameleonSheet.prototype,"sheetEl",void 0);chameleon_sheet_ChameleonSheet=__decorate([Object(lit_element.c)("chameleon-sheet")],chameleon_sheet_ChameleonSheet)},640:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_switch_style=lit_element.b`
   :host {
     align-items: center;
     display: inline-flex;
@@ -3390,6 +3413,30 @@
     justify-content: space-between;
   }
 
+  table th.left .column-header {
+    justify-content: flex-start;
+  }
+
+  table td.left {
+    text-align: left;
+  }
+
+  table th.right .column-header {
+    justify-content: flex-end;
+  }
+
+  table td.right {
+    text-align: right;
+  }
+
+  table th.center .column-header {
+    justify-content: center;
+  }
+
+  table td.center {
+    text-align: center;
+  }
+
   table th .sort-icons {
     margin-right: 0.5rem;
     opacity: 0.5;
@@ -3421,6 +3468,10 @@
     margin-top: 0.5rem;
   }
 
+  table td a {
+    cursor: pointer;
+  }
+
   table td .svg-inline--fa {
     height: 1.4rem;
   }
@@ -3434,13 +3485,13 @@
       <table>
         <thead>
           <tr>
-            ${this.columns.map(column=>lit_element.d`
-                <th>
+            ${this.columns.map(column=>{var _a;return lit_element.d`
+                <th class=${_a=column.headerClass,null!=_a?_a:""}>
                   <div class="header-container">
                     ${this.renderColumnHeader(column)}
                   </div>
                 </th>
-              `)}
+              `})}
           </tr>
         </thead>
 
@@ -3450,11 +3501,11 @@
                   class=${Object(class_map.a)({"highlight-row":index===this.highlightRow,"show-details":row.showDetails||!1})}
                   data-row=${index}
                 >
-                  ${this.columns.map(column=>lit_element.d`
-                        <td>
+                  ${this.columns.map(column=>{var _a;return lit_element.d`
+                        <td class=${_a=column.columnClass,null!=_a?_a:""}>
                           ${column.row(row)}
                         </td>
-                      `)}
+                      `})}
                 </tr>
 
                 ${row.details&&row.showDetails?row.details.map((detailsRow,index)=>lit_element.d`
@@ -3724,4 +3775,4 @@ ${this.value}</textarea
         <slot name="close-icon">x</slot>
       </a>
     `}closeToast(){this.showCloseable=!1,this.dispatchEvent(new CustomEvent("close-toast",{bubbles:!0,composed:!0}))}};chameleon_toast_ChameleonToast.styles=[chameleon_toast_style],__decorate([Object(lit_element.e)({type:String})],chameleon_toast_ChameleonToast.prototype,"color",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_toast_ChameleonToast.prototype,"showCloseable",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_toast_ChameleonToast.prototype,"backgroundColor",void 0);chameleon_toast_ChameleonToast=__decorate([Object(lit_element.c)("chameleon-toast")],chameleon_toast_ChameleonToast)}},[[287,1,2]]]);
-//# sourceMappingURL=main.f6d53cbd88869a24de01.bundle.js.map
+//# sourceMappingURL=main.ac644477cc5e28c5849b.bundle.js.map

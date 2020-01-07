@@ -11,6 +11,14 @@ import "@chameleon-ds/button/src/chameleon-button";
 
 @customElement("chameleon-sheet")
 export default class ChameleonSheet extends LitElement {
+  firstUpdated() {
+    document.body.appendChild(this.parentNode!);
+
+    this.addEventListener("unload", () => {
+      document.body.removeChild(this.parentNode!);
+    });
+  }
+
   /**
    * Properties
    */
@@ -27,6 +35,10 @@ export default class ChameleonSheet extends LitElement {
   @property({ type: Boolean, reflect: true })
   sheetOpened = false;
 
+  // The sheet object
+  @property({ type: Object })
+  sheetEl: any;
+
   /**
    * Styles
    */
@@ -37,27 +49,29 @@ export default class ChameleonSheet extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <header class="head-container">
-        <chameleon-button
-          class="close-icon"
-          icon-only
-          theme="text"
-          @click="${this._toggleSheet}"
-          >${this.closeIcon}</chameleon-button
-        >
+      <div id="sheet-wrapper">
+        <header class="head-container">
+          <chameleon-button
+            class="close-icon"
+            icon-only
+            theme="text"
+            @click="${this._toggleSheet}"
+            >${this.closeIcon}</chameleon-button
+          >
 
-        <h3 class="header">${this.header}</h3>
+          <h3 class="header">${this.header}</h3>
 
-        <slot name="details"></slot>
-      </header>
+          <slot name="details"></slot>
+        </header>
 
-      <slot name="actions"></slot>
-      ${this.subHeader
-        ? html`
-            <span class="sub-header">${this.subHeader}</span>
-          `
-        : nothing}
-      <slot name="content"></slot>
+        <slot name="actions"></slot>
+        ${this.subHeader
+          ? html`
+              <span class="sub-header">${this.subHeader}</span>
+            `
+          : nothing}
+        <slot name="content"></slot>
+      </div>
     `;
   }
 
