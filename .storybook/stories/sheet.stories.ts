@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, boolean, text } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import { eventDetails } from "../utils";
 import { html } from "lit-html";
 import "@chameleon-ds/sheet/src/chameleon-sheet";
@@ -20,13 +20,12 @@ stories.add(
   () => {
     const header = text("Label", "Missouri");
     const subHeader = text("Sub Label", "Tour Guide");
-    const sheetOpened = boolean("Open", false);
 
     return html`
       <chameleon-sheet
         header="${header}"
         subHeader="${subHeader}"
-        ?sheetOpened="${sheetOpened}"
+        ?sheetOpened="${true}"
         @toggle-sheet=${eventDetails.action("toggle-sheet")}
       >
         <section slot="details">
