@@ -11,6 +11,9 @@ describe("chameleon-date", () => {
 
   beforeEach(async () => {
     element = await litFixture(fixture);
+    element.date = new Date(2020, 0, 1);
+    element.requestUpdate();
+    await element.updateComplete;
   });
 
   it("renders", async () => {
