@@ -10,10 +10,16 @@
 </div>
 <div class="container">
   <div class="tags">
-    <span class="placeholder"> </span>
+    <span class="placeholder">
+    </span>
   </div>
-  <chameleon-loader loader="spinner" size="24px"> </chameleon-loader>
+  <chameleon-loader
+    loader="spinner"
+    size="24px"
+  >
+  </chameleon-loader>
 </div>
+
 ```
 
 #### `renders filtered options`
@@ -21,7 +27,10 @@
 ```html
 <div class="options">
   <ul class="options__list">
-    <li class="options__option" data-value="asdf">
+    <li
+      class="options__option"
+      data-value="asdf"
+    >
       <div class="options__option-group">
         <span class="options__option-label">
           asdf
@@ -30,6 +39,7 @@
     </li>
   </ul>
 </div>
+
 ```
 
 #### `renders preLabel, subLabel, and postLabel`
@@ -37,7 +47,10 @@
 ```html
 <div class="options">
   <ul class="options__list">
-    <li class="options__option" data-value="asdf">
+    <li
+      class="options__option"
+      data-value="asdf"
+    >
       <div class="options__option-preLabel">
         asdf
       </div>
@@ -55,4 +68,6 @@
     </li>
   </ul>
 </div>
+
 ```
+
