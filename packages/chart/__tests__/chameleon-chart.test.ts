@@ -23,4 +23,11 @@ describe("chameleon-chart", () => {
     const expectedDegrees = -96;
     expect(degrees).to.be.equal(expectedDegrees);
   });
+
+  it("returns the arc chart type", async () => {
+    element.type = "arc";
+    const chart = await litFixture(element.chart);
+
+    expect(chart).lightDom.to.equalSnapshot();
+  });
 });

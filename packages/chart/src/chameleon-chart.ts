@@ -9,11 +9,7 @@ import {
 } from "lit-element";
 import style from "./chameleon-chart-style";
 import { nothing } from "lit-html";
-
-type CartesianCoordinates = {
-  x: number;
-  y: number;
-};
+import { CartesianCoordinates } from "../types";
 
 @customElement("chameleon-chart")
 export default class ChameleonChart extends LitElement {
@@ -47,8 +43,8 @@ export default class ChameleonChart extends LitElement {
   render(): TemplateResult {
     return html`
       ${this.chart}
-      <div class="labels-container">
-        <label style="color:${this.color};">${this.label}</label>
+      <div class="labels">
+        <label style="color:${this.color}">${this.label}</label>
         <label>Funds Remaining</label>
       </div>
     `;
@@ -65,7 +61,7 @@ export default class ChameleonChart extends LitElement {
 
   get arc(): SVGTemplateResult {
     return svg`
-      <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg" height="100px" width="100px">
+      <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%">
         <path fill="transparent" stroke="#c4c7ca" stroke-width="10px" stroke-linecap="round" d="${this._describeArc(
           50,
           50,

@@ -1,18 +1,18 @@
 import { css } from "lit-element";
 
 export default css`
-  .labels-container {
-    width: 100px;
+  :host {
+    display: inline-block;
+    max-width: 130px;
+  }
+
+  .labels {
     text-align: center;
   }
 
   label {
     display: block;
-    font-family: Arial;
-    color: #9fa4a8;
-    font-size: 11px;
-    line-height: 15px;
-    letter-spacing: 0;
-    font-weight: 600;
+    color: var(--color-gray-dark, #9fa4a8);
+    font-size: 0.75rem;
   }
 `;
