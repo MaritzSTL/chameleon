@@ -24,9 +24,9 @@ describe("chameleon-select", () => {
     );
   });
 
-  it("sets active to false when document.chameleon-select.close is dispatched", () => {
+  it("sets active to false when document.chameleon.select.close is dispatched", () => {
     element.active = true;
-    document.dispatchEvent(new CustomEvent("chameleon-select.close"));
+    document.dispatchEvent(new CustomEvent("chameleon.select.close"));
     expect(element.active).to.be.false;
   });
 
