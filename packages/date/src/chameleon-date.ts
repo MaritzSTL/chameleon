@@ -18,29 +18,29 @@ import "@chameleon-ds/button/src/chameleon-button";
 
 @customElement("chameleon-date")
 export default class ChameleonDate extends LitElement {
-  constructor() {
-    super();
-
-    document.addEventListener("click", this.closeOverlay as EventListener);
-  }
-
   /**
    * Lifecycle Methods
    */
-  updated(changedProperties: PropertyValues) {
-    if (this.touched) {
-      if (changedProperties.has("value")) {
-        this.date = this.stringToDate(this.value);
-      }
+  firstUpdated(): void {
+    if (this.value === "") {
+      this.date = new Date();
+    } else {
+      this.touched = true;
+      this.requestUpdate();
+    }
+    this.renderedDate = this.date!;
 
-      if (changedProperties.has("date")) {
-        this.value = this.dateToString(this.date);
-      }
+    document.addEventListener("click", this.closeOverlay.bind(this));
+  }
+
+  updated(changedProperties: PropertyValues): void {
+    if (changedProperties.has("value") && this.value !== undefined) {
+      this.renderedDate = this.stringToDate(this.value);
     }
   }
 
-  disconnectedCallback() {
-    document.removeEventListener("click", this.closeOverlay as EventListener);
+  disconnectedCallback(): void {
+    document.removeEventListener("click", this.closeOverlay.bind(this));
   }
 
   /**
@@ -50,10 +50,7 @@ export default class ChameleonDate extends LitElement {
   active = false;
 
   @property({ type: Object })
-  date = new Date();
-
-  @property({ type: Object })
-  renderedDate = this.date;
+  renderedDate: Date | null = null;
 
   @property({ type: String })
   placeholder = "";
@@ -119,6 +116,15 @@ export default class ChameleonDate extends LitElement {
     `;
   }
 
+  get date(): Date | undefined {
+    if (this.value && this.value !== "") return this.stringToDate(this.value);
+    return undefined;
+  }
+
+  set date(value: Date | undefined) {
+    if (value) this.value = this.dateToString(value);
+  }
+
   get overlay(): TemplateResult {
     switch (this.overlayRenderMode) {
       case "year":
@@ -128,7 +134,7 @@ export default class ChameleonDate extends LitElement {
               >${this.prevIcon}</chameleon-button
             >
             <h3>
-              ${this.renderedDate.getFullYear()}
+              ${this.renderedDate?.getFullYear()}
             </h3>
             <chameleon-button theme="text" icon-only @click="${this.nextYear}"
               >${this.nextIcon}</chameleon-button
@@ -143,7 +149,7 @@ export default class ChameleonDate extends LitElement {
                     class="month"
                     .value="${{
                       month: i,
-                      year: this.renderedDate.getFullYear()
+                      year: this.renderedDate?.getFullYear()
                     }}"
                     @click="${this.setMonth}"
                   >
@@ -161,10 +167,10 @@ export default class ChameleonDate extends LitElement {
               >${this.prevIcon}</chameleon-button
             >
             <h3 @click="${this.toggleOverlayView}">
-              ${this.renderedDate.toLocaleString("default", {
+              ${this.renderedDate?.toLocaleString("default", {
                 month: "long"
               })}
-              ${this.renderedDate.getFullYear()}
+              ${this.renderedDate?.getFullYear()}
             </h3>
             <chameleon-button theme="text" icon-only @click="${this.nextMonth}"
               >${this.nextIcon}</chameleon-button
@@ -196,60 +202,64 @@ export default class ChameleonDate extends LitElement {
     `;
   }
 
-  get dateGrid(): TemplateResult {
+  get dateGrid(): TemplateResult | object {
     const currentDate = new Date();
-    const minDate = this.min ? this.stringToDate(this.min || "").getTime() : -1;
+    const minDate = this.min ? this.stringToDate(this.min!).getTime() : -1;
     const maxDate = this.max
-      ? this.stringToDate(this.max || "").getTime()
+      ? this.stringToDate(this.max!).getTime()
       : Infinity;
 
-    return html`
-      <div class="date-grid offset-${this.days[0].getDay()}">
-        ${repeat(
-          this.days,
-          day =>
-            html`
-              <div
-                class="${classMap({
-                  active:
-                    day.getDate() == this.date.getDate() &&
-                    day.getMonth() == this.date.getMonth() &&
-                    day.getFullYear() == this.date.getFullYear(),
-                  current:
-                    day.getDate() == currentDate.getDate() &&
-                    day.getMonth() == currentDate.getMonth() &&
-                    day.getFullYear() == currentDate.getFullYear()
-                })}"
-                .value="${day}"
-                ?disabled="${day.getTime() < minDate ||
-                  day.getTime() > maxDate}"
-                @click="${this.setDate}"
-              >
-                ${day.getDate()}
-              </div>
-            `
-        )}
-      </div>
-    `;
+    return this.days
+      ? html`
+          <div class="date-grid offset-${this.days[0].getDay()}">
+            ${repeat(
+              this.days,
+              day => html`
+                <div
+                  class="${classMap({
+                    active:
+                      day.getDate() == this.date?.getDate() &&
+                      day.getMonth() == this.date?.getMonth() &&
+                      day.getFullYear() == this.date?.getFullYear(),
+                    current:
+                      day.getDate() == currentDate.getDate() &&
+                      day.getMonth() == currentDate.getMonth() &&
+                      day.getFullYear() == currentDate.getFullYear()
+                  })}"
+                  .value="${day}"
+                  ?disabled="${day.getTime() < minDate ||
+                    day.getTime() > maxDate}"
+                  @click="${this.setDate}"
+                >
+                  ${day.getDate()}
+                </div>
+              `
+            )}
+          </div>
+        `
+      : nothing;
   }
 
-  get days() {
-    const year = this.renderedDate.getFullYear();
-    const month = this.renderedDate.getMonth();
+  get days(): Date[] | undefined {
+    const year = this.renderedDate?.getFullYear();
+    const month = this.renderedDate?.getMonth();
 
-    return new Array(31)
-      .fill(null)
-      .map((_v, i) => new Date(year, month, i + 1))
-      .filter(v => v.getMonth() === month);
+    if (year !== undefined && month !== undefined)
+      return new Array(31)
+        .fill(null)
+        .map((_v, i) => new Date(year, month, i + 1))
+        .filter(v => v.getMonth() === month);
+
+    return undefined;
   }
 
   get renderedDateValue(): string {
     return this.touched
-      ? this.date.toLocaleDateString(undefined, {
+      ? this.date?.toLocaleDateString(undefined, {
           month: "long",
           day: "numeric",
           year: "numeric"
-        })
+        }) ?? ""
       : "";
   }
 
@@ -286,28 +296,28 @@ export default class ChameleonDate extends LitElement {
   }
 
   prevMonth(): void {
-    const date = this.renderedDate;
+    const date = this.renderedDate!;
     date.setMonth(date.getMonth() - 1);
 
     this.renderedDate = new Date(date);
   }
 
   nextMonth(): void {
-    const date = this.renderedDate;
+    const date = this.renderedDate!;
     date.setMonth(date.getMonth() + 1);
 
     this.renderedDate = new Date(date);
   }
 
   prevYear(): void {
-    const date = this.renderedDate;
+    const date = this.renderedDate!;
     date.setFullYear(date.getFullYear() - 1);
 
     this.renderedDate = new Date(date);
   }
 
   nextYear(): void {
-    const date = this.renderedDate;
+    const date = this.renderedDate!;
     date.setFullYear(date.getFullYear() + 1);
 
     this.renderedDate = new Date(date);
@@ -319,7 +329,7 @@ export default class ChameleonDate extends LitElement {
     this.date = date;
     this.active = false;
 
-    this.requestUpdate;
+    this.requestUpdate();
     await this.updateComplete;
     this.dispatchEvent(
       new CustomEvent("chameleon.date.input", {
@@ -357,19 +367,15 @@ export default class ChameleonDate extends LitElement {
     return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
   }
 
-  private closeOverlay(e: CustomEvent): void {
+  private closeOverlay(e: MouseEvent): void {
     const targets = e
       .composedPath()
       .map(eventTarget => (eventTarget as Element).tagName);
 
-    if (!targets.includes("CHAMELEON-DATE"))
-      Array.from(document.querySelectorAll("chameleon-date")).forEach(
-        datePicker => {
-          const datePickerEl = datePicker as ChameleonDate;
-          datePickerEl.active = false;
-          datePickerEl.overlayRenderMode = "month";
-        }
-      );
+    if (!targets.includes("CHAMELEON-DATE")) {
+      this.active = false;
+      this.overlayRenderMode = "month";
+    }
   }
 
   private toggleOverlayView(): void {
