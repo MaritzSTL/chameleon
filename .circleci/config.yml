@@ -4,6 +4,8 @@ jobs:
     working_directory: ~/chameleon
     docker:
       - image: circleci/node:current-browsers
+      - environment:
+        TZ: "America/Chicago"
     steps:
       - checkout
       - run:
