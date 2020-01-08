@@ -32,6 +32,10 @@ export default class ChameleonChart extends LitElement {
   @property({ type: String })
   label = "0";
 
+  /* value to show in the the subLabel */
+  @property({ type: String })
+  subLabel = "";
+
   /**
    * Styles
    */
@@ -45,7 +49,7 @@ export default class ChameleonChart extends LitElement {
       ${this.chart}
       <div class="labels">
         <label style="color:${this.color}">${this.label}</label>
-        <label>Funds Remaining</label>
+        <label>${this.subLabel}</label>
       </div>
     `;
   }

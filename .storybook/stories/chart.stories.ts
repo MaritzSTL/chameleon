@@ -17,6 +17,7 @@ stories.add(
 
     const color = text("Color", "#00870a");
     const label = text("Label", "1,000");
+    const subLabel = text("SubLabel", "Funds Remaining");
     const percentage = number("Percentage", 90);
 
     return html`
@@ -24,6 +25,7 @@ stories.add(
         color="${color}"
         percentage="${percentage}"
         label="${label}"
+        subLabel="${subLabel}"
         type="arc"
       ></chameleon-chart>
     `;
