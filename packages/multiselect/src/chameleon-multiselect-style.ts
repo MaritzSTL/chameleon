@@ -2,13 +2,27 @@ import { css } from "lit-element";
 
 export default css`
   :host {
+    font-family: var(--font-family, Arial);
+  }
+
+  label {
+    display: block;
+    color: var(--label-color, #6c737a);
+    font-size: var(--label-font-size, 0.875rem);
+    line-height: var(--label-line-height, 1.125rem);
+    letter-spacing: var(--label-letter-spacing, 0);
+    margin-bottom: 0.5rem;
+  }
+
+  .multiselect-box {
     align-items: center;
     display: flex;
-    border: 1px solid var(--color-gray-dark, #9fa4a8);
+    background-color: var(--color-surface, #ffffff);
+    border: 1px solid var(--border-color, #9fa4a8);
     border-radius: var(--border-radius-input, 0.313rem);
     box-sizing: border-box;
     min-height: 2.5rem;
-    padding: var(--multiselect-padding, 0.438rem 0.5rem);
+    padding: var(--select-padding, 0.438rem 0.5rem);
     position: relative;
   }
 
@@ -40,6 +54,7 @@ export default css`
     align-self: stretch;
     border: none;
     color: var(--color-gray-darkest, #6c737a);
+    font-family: var(--font-family, Arial);
     flex-grow: 1;
     font-size: var(--font-size-label, 0.938rem);
     height: 23px;
@@ -82,6 +97,7 @@ export default css`
     position: absolute;
     top: calc(100% + 13px);
     width: 100%;
+    z-index: 1;
   }
 
   .options__list {
@@ -139,7 +155,7 @@ export default css`
   .options__option-postLabel {
     align-self: flex-start;
     color: var(--color-gray-darkest, #6c737a);
-    dipslay: block;
+    display: block;
     font-size: 0.75rem;
     margin-left: auto;
   }
@@ -152,5 +168,10 @@ export default css`
   chameleon-loader {
     height: 24px;
     width: 24px;
+  }
+  :host(:hover),
+  :host(:active) {
+    --label-color: var(--label-hover-color, #2c6fb7);
+    --border-color: var(--border-hover-color, #2c6fb7);
   }
 `;

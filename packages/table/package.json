@@ -1,0 +1,34 @@
+{
+  "name": "@chameleon-ds/table",
+  "version": "0.3.1",
+  "description": "Chameleon Table",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/tables#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "src/chameleon-table.js",
+  "module": "src/chameleon-table.js",
+  "files": [
+    "/src/",
+    "/types/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "@chameleon-ds/input": "^1.1.1",
+    "@chameleon-ds/multiselect": "^0.2.8",
+    "@chameleon-ds/paginator": "^1.1.7",
+    "lit-element": "^2.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

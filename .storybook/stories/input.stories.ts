@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, boolean, radios, text } from "@storybook/addon-knobs";
+import { eventDetails } from "../utils";
 import { html, svg } from "lit-html";
 import "@chameleon-ds/input/src/chameleon-input";
 
@@ -34,6 +35,11 @@ stories.add(
     const label = text("Label", "");
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
+    const requiredField = boolean("Required", false);
+    const noStepper = boolean(
+      "Hide increment arrows/disable incrementing",
+      false
+    );
     const typeOptions = {
       Text: "text",
       Password: "password",
@@ -48,12 +54,15 @@ stories.add(
 
     return html`
       <chameleon-input
+        ?requiredField="${requiredField}"
         ?disabled="${disabled}"
+        ?noStepper="${noStepper}"
         ?toggleable="${toggleable}"
         .type="${typeSelection}"
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
+        @chameleon.input.input=${eventDetails.action("chameleon.input.input")}
       ></chameleon-input>
     `;
   },
@@ -68,6 +77,11 @@ stories.add(
     const label = text("Label", "");
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
+    const requiredField = boolean("Required", false);
+    const noStepper = boolean(
+      "Hide increment arrows/disable incrementing",
+      false
+    );
     const typeOptions = {
       Text: "text",
       Password: "password",
@@ -82,13 +96,16 @@ stories.add(
 
     return html`
       <chameleon-input
+        ?requiredField="${requiredField}"
         ?disabled="${disabled}"
+        ?noStepper="${noStepper}"
         ?toggleable="${toggleable}"
         icon-left
         .type="${typeSelection}"
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
+        @chameleon.input.input=${eventDetails.action("chameleon.input.input")}
       >
         ${searchIcon("icon-left")}
       </chameleon-input>
@@ -105,6 +122,11 @@ stories.add(
     const label = text("Label", "");
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
+    const requiredField = boolean("Required", false);
+    const noStepper = boolean(
+      "Hide increment arrows/disable incrementing",
+      false
+    );
     const typeOptions = {
       Text: "text",
       Password: "password",
@@ -119,13 +141,16 @@ stories.add(
 
     return html`
       <chameleon-input
+        ?requiredField="${requiredField}"
         ?disabled="${disabled}"
+        ?noStepper="${noStepper}"
         ?toggleable="${toggleable}"
         icon-right
         .type="${typeSelection}"
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
+        @chameleon.input.input=${eventDetails.action("chameleon.input.input")}
       >
         ${searchIcon("icon-right")}
       </chameleon-input>
