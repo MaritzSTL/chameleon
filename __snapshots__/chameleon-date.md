@@ -50,7 +50,7 @@
     </div>
   </div>
   <div class="date-grid offset-3">
-    <div>
+    <div class="active">
       1
     </div>
     <div>
@@ -68,7 +68,7 @@
     <div>
       6
     </div>
-    <div class="active current">
+    <div class="current">
       7
     </div>
     <div>
@@ -173,7 +173,7 @@
 
 ```html
 <div class="date-grid offset-3">
-  <div>
+  <div class="active">
     1
   </div>
   <div>
@@ -191,7 +191,7 @@
   <div>
     6
   </div>
-  <div class="active current">
+  <div class="current">
     7
   </div>
   <div>
