@@ -3,14 +3,28 @@
 #### `renders overlay`
 
 ```html
-<chameleon-input placeholder="" readonly="" type="text"> </chameleon-input>
+<chameleon-input
+  placeholder=""
+  readonly=""
+  type="text"
+>
+</chameleon-input>
 <div class="month overlay">
   <header>
-    <chameleon-button icon-only="" theme="text"> </chameleon-button>
+    <chameleon-button
+      icon-only=""
+      theme="text"
+    >
+    </chameleon-button>
     <h3>
-      January 2020
+      January
+              2020
     </h3>
-    <chameleon-button icon-only="" theme="text"> </chameleon-button>
+    <chameleon-button
+      icon-only=""
+      theme="text"
+    >
+    </chameleon-button>
   </header>
   <div class="day-of-week">
     <div>
@@ -131,18 +145,28 @@
     </div>
   </div>
 </div>
+
 ```
 
 #### `renders year overlay`
 
 ```html
 <header>
-  <chameleon-button icon-only="" theme="text"> </chameleon-button>
+  <chameleon-button
+    icon-only=""
+    theme="text"
+  >
+  </chameleon-button>
   <h3>
     2020
   </h3>
-  <chameleon-button icon-only="" theme="text"> </chameleon-button>
+  <chameleon-button
+    icon-only=""
+    theme="text"
+  >
+  </chameleon-button>
 </header>
+
 ```
 
 #### `renders date grid with min/max values`
@@ -243,32 +267,64 @@
     31
   </div>
 </div>
+
 ```
 
 #### `prevIcon() returns default icon if none is supplied`
 
 ```html
-<circle cx="12" cy="12" r="10"> </circle>
-<polyline points="12 8 8 12 12 16"> </polyline>
-<line x1="16" x2="8" y1="12" y2="12"> </line>
+<circle
+  cx="12"
+  cy="12"
+  r="10"
+>
+</circle>
+<polyline points="12 8 8 12 12 16">
+</polyline>
+<line
+  x1="16"
+  x2="8"
+  y1="12"
+  y2="12"
+>
+</line>
+
 ```
 
 #### `prevIcon() returns the slot if one is provided`
 
 ```html
-<slot name="prev-icon"> </slot>
+<slot name="prev-icon">
+</slot>
+
 ```
 
 #### `nextIcon() returns default icon if none is supplied`
 
 ```html
-<circle cx="12" cy="12" r="10"> </circle>
-<polyline points="12 16 16 12 12 8"> </polyline>
-<line x1="8" x2="16" y1="12" y2="12"> </line>
+<circle
+  cx="12"
+  cy="12"
+  r="10"
+>
+</circle>
+<polyline points="12 16 16 12 12 8">
+</polyline>
+<line
+  x1="8"
+  x2="16"
+  y1="12"
+  y2="12"
+>
+</line>
+
 ```
 
 #### `nextIcon() returns the slot if one is provided`
 
 ```html
-<slot name="next-icon"> </slot>
+<slot name="next-icon">
+</slot>
+
 ```
+
