@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/polymer";
 import { withKnobs, text } from "@storybook/addon-knobs";
+import { eventDetails } from "../utils";
 import { html } from "lit-html";
 import "@chameleon-ds/timezone/src/chameleon-timezone";
 
@@ -17,6 +18,9 @@ stories.add(
       <chameleon-timezone
         .timezoneLabel=${timezoneLabel}
         .timezoneSubLabel=${timezoneSubLabel}
+        @chameleon.timezone.input="${eventDetails.action(
+          "chameleon.timezone.input"
+        )}"
       ></chameleon-timezone>
     `;
   },

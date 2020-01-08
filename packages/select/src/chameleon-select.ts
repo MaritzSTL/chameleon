@@ -15,19 +15,12 @@ import style from "./chameleon-select-style";
 
 @customElement("chameleon-select")
 export default class ChameleonSelect extends LitElement {
-  constructor() {
-    super();
-    document.addEventListener("click", <EventListener>this.closeOptionsList);
-    document.addEventListener("chameleon-select.close", () => {
-      this.active = false;
-    });
+  firstUpdated() {
+    document.addEventListener("click", this.closeOptionsList.bind(this));
   }
 
   disconnectedCallback() {
-    document.removeEventListener("click", <EventListener>this.closeOptionsList);
-    document.removeEventListener("chameleon-select.close", () => {
-      this.active = false;
-    });
+    document.removeEventListener("click", this.closeOptionsList.bind(this));
   }
 
   /**
@@ -317,7 +310,7 @@ export default class ChameleonSelect extends LitElement {
 
     // Dispatch a change event
     this.dispatchEvent(
-      new CustomEvent("chameleon.select", {
+      new CustomEvent("chameleon.select.input", {
         detail: {
           value: this.value,
           selectedOption: this.selectedOption
@@ -352,16 +345,12 @@ export default class ChameleonSelect extends LitElement {
    * @param {MouseEvent} e - Click event
    */
   private closeOptionsList(e: MouseEvent): void {
-    const elements = Array.from(e.composedPath()) as Array<HTMLElement>;
-    const tags = elements.map(el => el.tagName);
-    elements.forEach(el => {
-      if (
-        el.tagName === "CHAMELEON-SELECT" &&
-        (el as ChameleonSelect).active === true
-      )
-        e.stopPropagation();
-    });
-    if (!tags.includes("CHAMELEON-SELECT"))
-      this.dispatchEvent(new CustomEvent("chameleon-select.close"));
+    const targets = e
+      .composedPath()
+      .map(eventTarget => (eventTarget as Element).tagName);
+
+    if (!targets.includes("CHAMELEON-SELECT")) {
+      this.active = false;
+    }
   }
 }

@@ -38,7 +38,6 @@ export default class ChameleonTimezone extends LitElement {
    * @return {TemplateResult}
    */
   render(): TemplateResult {
-    // debugger;
     return html`
       <div class="datetime-inputs">
         <div>
@@ -48,7 +47,7 @@ export default class ChameleonTimezone extends LitElement {
             .options="${this.timezoneOptions}"
             .value="${this.value}"
             ?searchable="${true}"
-            @chameleon.select="${this.handleInput}"
+            @chameleon.select.input="${this.handleInput}"
           ></chameleon-select>
           ${this.timezoneSubLabelText} ${this.errorText}
         </div>
@@ -144,10 +143,20 @@ export default class ChameleonTimezone extends LitElement {
       : nothing;
   }
 
-  handleInput(e: any): void {
-    const value = e.target.value;
+  handleInput(e: CustomEvent): void {
+    const value = e.detail.value;
+    e.stopPropagation();
     this._timezoneValue = value;
-    this.dispatchEvent(new Event("blur"));
+
+    this.dispatchEvent(
+      new CustomEvent("chameleon.timezone.input", {
+        detail: {
+          value
+        },
+        bubbles: true,
+        composed: true
+      })
+    );
   }
 
   get errorIcon(): SVGTemplateResult {

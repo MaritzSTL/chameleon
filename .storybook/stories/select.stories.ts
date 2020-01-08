@@ -55,9 +55,9 @@ stories.add(
         .options="${options}"
         .label="${label}"
         placeHolder="${placeHolder}"
-        @chameleon.select=${eventDetails.action("chameleon.select")}
-        @chameleon-select.close=${eventDetails.action("chameleon-select.close")}
-        >select
+        @chameleon.select.input=${eventDetails.action("chameleon.select.input")}
+        @chameleon.select.close=${eventDetails.action("chameleon.select.close")}
+      >
       </chameleon-select>
     `;
   },
