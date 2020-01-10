@@ -35,15 +35,14 @@ export default class ChameleonCardImage extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <img src="${this.src}" />
+      <img src="${this.src}" alt="${this.alt}" />
     `;
   }
 
   updated(changedProperties: PropertyValues): void {
     if (
-      changedProperties.has("src") &&
-      this.src === "" &&
-      this.src !== undefined
+      (changedProperties.has("src") && this.src === "") ||
+      this.src === undefined
     ) {
       this.noImage = true;
     }
