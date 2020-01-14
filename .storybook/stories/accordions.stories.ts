@@ -6,36 +6,34 @@ import "@chameleon-ds/accordions/src/index";
 import "@chameleon-ds/button";
 
 const stories = storiesOf("Accordions", module);
+const faq = [
+  { question: "Who are you?", answer: "Who, who" },
+  { question: "What is love?", answer: "Baby don't hurt me" },
+  {
+    question: "Why do birds suddenly appear every time you are near?",
+    answer: "Just like me, they long to be close to you"
+  }
+];
 
 stories.addDecorator(withKnobs);
 
-stories.add(
-  "Text-only accordions",
-  () => {
-    return html`
-      <chameleon-accordions style="--accordion-width: 400px;">
-        <chameleon-accordion>
-          <h3 slot="header">Who are you?</h3>
-          <div slot="panel">Who, who</div>
-        </chameleon-accordion>
-        <chameleon-accordion>
-          <h3 slot="header">What is love?</h3>
-          <div slot="panel">Baby don't hurt me</div>
-        </chameleon-accordion>
-        <chameleon-accordion>
-          <h3 slot="header">
-            Why do birds suddenly appear every time you are near?
-          </h3>
-          <div slot="panel">Just like me, they long to be close to you</div>
-        </chameleon-accordion>
-      </chameleon-accordions>
-    `;
-  },
-  { info: { inline: true } }
-);
+stories.add("New basic accordions with default icons", () => {
+  return html`
+    <chameleon-accordions style="--accordion-width: 600px;">
+      ${faq.map(
+        faq => html`
+          <chameleon-accordion>
+            <h3 slot="header">${faq.question}</h3>
+            <div slot="panel">${faq.answer}</div>
+          </chameleon-accordion>
+        `
+      )}
+    </chameleon-accordions>
+  `;
+});
 
 stories.add(
-  "Text button accordions",
+  "Accordions with custom icons in fixed position",
   () => {
     return html`
       <style>
@@ -44,7 +42,7 @@ stories.add(
         }
         chameleon-accordion {
           background-color: white;
-          padding-left: 22px;
+          padding: 0 22px;
         }
         chameleon-accordion:not(:last-of-type) {
           margin-bottom: 12px;
@@ -85,6 +83,61 @@ stories.add(
           <h3 slot="header">Things</h3>
           <div slot="panel">Candy canes</div>
         </chameleon-accordion>
+      </chameleon-accordions>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Accordions with clickable headers",
+  () => {
+    return html`
+      <chameleon-accordions style="--accordion-width: 600px;">
+        ${faq.map(
+          faq => html`
+            <chameleon-accordion clickable>
+              <h3 slot="header">${faq.question}</h3>
+              <div slot="panel">${faq.answer}</div>
+            </chameleon-accordion>
+          `
+        )}
+      </chameleon-accordions>
+    `;
+  },
+  { info: { inline: true } }
+);
+
+stories.add(
+  "Accordions with clickable headers including subheaders",
+  () => {
+    return html`
+      <style>
+        .subheader {
+          display: flex;
+          justify-content: space-between;
+        }
+        .answer {
+          padding: 1rem 0;
+          background-color: lightgrey;
+        }
+      </style>
+      <chameleon-accordions style="--accordion-width: 600px;">
+        ${faq.map(
+          faq => html`
+            <chameleon-accordion clickable fixed>
+              <span slot="toggle-icon">Edit</span>
+              <h3 slot="header">${faq.question}</h3>
+              <div slot="subheader" class="subheader">
+                <span
+                  >Subheader message goes here for additional information</span
+                >
+                <span>0 people</span>
+              </div>
+              <div slot="panel" class="answer">${faq.answer}</div>
+            </chameleon-accordion>
+          `
+        )}
       </chameleon-accordions>
     `;
   },
