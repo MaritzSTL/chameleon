@@ -34,7 +34,11 @@ export default class ChameleonDate extends LitElement {
   }
 
   updated(changedProperties: PropertyValues): void {
-    if (changedProperties.has("value") && this.value !== undefined) {
+    if (
+      changedProperties.has("value") &&
+      this.value !== undefined &&
+      this.value !== ""
+    ) {
       this.renderedDate = this.stringToDate(this.value);
     }
   }
