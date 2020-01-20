@@ -150,7 +150,7 @@ export default class ChameleonTable extends LitElement {
   }
 
   renderColumnHeader(column: Column): TemplateResult {
-    return column.filter && column.filter.name
+    return column?.filter?.name
       ? column.filter.items
         ? html`
             <div class="column-header">
@@ -222,8 +222,7 @@ export default class ChameleonTable extends LitElement {
   }
 
   sortActiveClass(column: Column, order: Order): string {
-    return column.filter &&
-      column.filter.name &&
+    return column?.filter?.name &&
       this.sort.orderBy === column.filter.name &&
       this.sort.order === order
       ? "active"

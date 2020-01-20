@@ -16,6 +16,7 @@ module.exports = (config: any) => {
         nodeResolve: true,
         compatibility: "all",
         fileExtensions: [".ts"],
+        coverageExclude: ["packages/**/*.test.ts"],
         customBabelConfig: {
           presets: ["@babel/preset-typescript"],
           plugins: [
@@ -31,12 +32,11 @@ module.exports = (config: any) => {
       },
       coverageIstanbulReporter: {
         thresholds: {
-          emitWarning: true, // set to `true` to not fail the test command when thresholds are not met
-          // thresholds for all files
+          emitWarning: true,
           global: {
-            statements: 80,
-            branches: 80,
-            functions: 80
+            statements: 90,
+            functions: 90,
+            branches: 90
           }
         }
       }
