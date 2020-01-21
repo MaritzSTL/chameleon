@@ -7,6 +7,10 @@ export default css`
     font-size: var(--font-size-input, 0.938rem);
   }
 
+  :host([readonly]) {
+    pointer-events: none;
+  }
+
   .switch {
     display: inline-block;
     height: 20px;

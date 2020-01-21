@@ -12,6 +12,10 @@ export default css`
     box-sizing: border-box;
   }
 
+  :host([readonly]) {
+    pointer-events: none;
+  }
+
   :host([disabled]) .container {
     cursor: not-allowed;
   }

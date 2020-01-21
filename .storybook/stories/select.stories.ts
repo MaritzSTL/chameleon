@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, text } from "@storybook/addon-knobs";
+import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import { eventDetails } from "../utils";
 import { html } from "lit-html";
 import "@chameleon-ds/select/src/chameleon-select";
@@ -49,11 +49,13 @@ stories.add(
   () => {
     const placeHolder = text("Place Holder", "Please select an option");
     const label = text("Label", "");
+    const readonly = boolean("Read Only", false);
 
     return html`
       <chameleon-select
         .options="${options}"
         .label="${label}"
+        ?readonly="${readonly}"
         placeHolder="${placeHolder}"
         @chameleon.select.input=${eventDetails.action("chameleon.select.input")}
         @chameleon.select.close=${eventDetails.action("chameleon.select.close")}
@@ -69,11 +71,13 @@ stories.add(
   () => {
     const placeHolder = text("Place Holder", "Please select an option");
     const label = text("Label", "");
+    const readonly = boolean("Read Only", false);
 
     return html`
       <chameleon-select
         .options="${options}"
         .label="${label}"
+        ?readonly="${readonly}"
         placeHolder="${placeHolder}"
         ?searchable="${true}"
         @chameleon.select=${eventDetails.action("chameleon.select")}

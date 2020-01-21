@@ -13,6 +13,7 @@ stories.add(
     const label = text("Label", "");
     const checked = boolean("Checked", true);
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
 
     return html`
       <chameleon-checkbox
@@ -20,6 +21,7 @@ stories.add(
         name="test"
         ?checked="${checked}"
         ?disabled="${disabled}"
+        ?readonly="${readonly}"
       ></chameleon-checkbox>
     `;
   },

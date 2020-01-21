@@ -22,6 +22,10 @@ export default class ChameleonSwitch extends LitElement {
   @property({ type: Boolean, reflect: true })
   checked = false;
 
+  // A Boolean attribute which, if true, indicates that the switch cannot be edited
+  @property({ type: Boolean, reflect: true })
+  readonly = false;
+
   // The switch's current value
   @property({ type: String })
   value = "";
@@ -37,7 +41,12 @@ export default class ChameleonSwitch extends LitElement {
   render(): TemplateResult {
     return html`
       <div class="switch">
-        <input type="radio" ?checked="${this.checked}" value="${this.value}" />
+        <input
+          type="radio"
+          ?checked="${this.checked}"
+          value="${this.value}"
+          ?readonly="${this.readonly}"
+        />
         <span class="slider"></span>
       </div>
       ${this.labelText}

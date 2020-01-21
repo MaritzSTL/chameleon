@@ -47,6 +47,7 @@ export default class ChameleonTimezone extends LitElement {
             .options="${this.timezoneOptions}"
             .value="${this.value}"
             ?searchable="${true}"
+            ?readonly="${this.readonly}"
             @chameleon.select.input="${this.handleInput}"
           ></chameleon-select>
           ${this.timezoneSubLabelText} ${this.errorText}

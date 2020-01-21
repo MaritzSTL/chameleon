@@ -50,6 +50,9 @@ export default class ChameleonSelect extends LitElement {
   disabled = false;
 
   @property({ type: Boolean, reflect: true })
+  readonly = false;
+
+  @property({ type: Boolean, reflect: true })
   searchable = false;
 
   // The select's label
@@ -223,6 +226,7 @@ export default class ChameleonSelect extends LitElement {
           autocapitalize="off"
           placeholder="Type to filter..."
           @input="${this.handleSearch}"
+          ?readonly="${this.readonly}"
         />
       `;
     } else {
