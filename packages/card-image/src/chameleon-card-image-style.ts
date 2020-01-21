@@ -11,13 +11,13 @@ export default css`
     width: 100%;
   }
 
-  :host([noImage]) {
+  .placeholder {
     background-image: linear-gradient(
       to top,
       var(--color-primary-dark, #004587),
       var(--color-primary-light, #679dea)
     );
     border-radius: var(--border-radius, 0.5rem);
-    height: 100px;
+    min-height: 100px;
   }
 `;

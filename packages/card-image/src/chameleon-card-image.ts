@@ -3,8 +3,7 @@ import {
   TemplateResult,
   customElement,
   html,
-  property,
-  PropertyValues
+  property
 } from "lit-element";
 import style from "./chameleon-card-image-style";
 
@@ -22,9 +21,6 @@ export default class ChameleonCardImage extends LitElement {
   @property({ type: String })
   alt = "";
 
-  @property({ type: Boolean, reflect: true })
-  noImage = false;
-
   /**
    * Styles
    */
@@ -34,17 +30,12 @@ export default class ChameleonCardImage extends LitElement {
    * Template
    */
   render(): TemplateResult {
-    return html`
-      <img src="${this.src}" alt="${this.alt}" />
-    `;
-  }
-
-  updated(changedProperties: PropertyValues): void {
-    if (
-      (changedProperties.has("src") && this.src === "") ||
-      this.src === undefined
-    ) {
-      this.noImage = true;
-    }
+    return this.src !== ""
+      ? html`
+          <img src="${this.src}" alt="${this.alt}" />
+        `
+      : html`
+          <div class="placeholder"></div>
+        `;
   }
 }
