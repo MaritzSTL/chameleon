@@ -41,12 +41,7 @@ export default class ChameleonSwitch extends LitElement {
   render(): TemplateResult {
     return html`
       <div class="switch">
-        <input
-          type="radio"
-          ?checked="${this.checked}"
-          value="${this.value}"
-          ?readonly="${this.readonly}"
-        />
+        <input type="radio" ?checked="${this.checked}" value="${this.value}" />
         <span class="slider"></span>
       </div>
       ${this.labelText}

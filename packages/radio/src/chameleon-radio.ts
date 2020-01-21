@@ -44,13 +44,7 @@ export default class ChameleonRadio extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <input
-        type="radio"
-        ?checked="${this.checked}"
-        value="${this.value}"
-        ?disabled="${this.disabled}"
-        ?readonly="${this.readonly}"
-      />
+      <input type="radio" ?checked="${this.checked}" value="${this.value}" />
       <span class="checkmark ${this.disabled ? "disabled" : ""}"></span>
       ${this.labelText}
     `;

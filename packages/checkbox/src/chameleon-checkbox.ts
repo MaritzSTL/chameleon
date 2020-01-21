@@ -44,13 +44,7 @@ export default class ChameleonCheckbox extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <input
-        type="checkbox"
-        ?checked="${this.checked}"
-        value="${this.value}"
-        ?disabled="${this.disabled}"
-        ?readonly="${this.readonly}"
-      />
+      <input type="checkbox" ?checked="${this.checked}" value="${this.value}" />
       <span class="checkmark"></span>
       ${this.labelText}
     `;

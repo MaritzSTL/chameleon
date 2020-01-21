@@ -108,7 +108,7 @@ export default class ChameleonDate extends LitElement {
     return html`
       <chameleon-input
         type="text"
-        ?readonly="${this.readonly}"
+        readonly
         .placeholder="${this.placeholder}"
         .label="${this.label}"
         .value="${this.renderedDateValue}"

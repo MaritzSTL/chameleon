@@ -226,7 +226,6 @@ export default class ChameleonSelect extends LitElement {
           autocapitalize="off"
           placeholder="Type to filter..."
           @input="${this.handleSearch}"
-          ?readonly="${this.readonly}"
         />
       `;
     } else {

@@ -105,7 +105,6 @@ export default class ChameleonMultiselect extends LitElement {
         >
           ${this.renderedSelectedOptions}
           <input
-            ?readonly="${this.readonly}"
             name="multiselect-input"
             class="multiselect-input ${classMap({
               "tags-active": this.selectedOptions.length > 0
