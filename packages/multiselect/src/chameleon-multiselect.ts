@@ -15,27 +15,20 @@ import "@chameleon-ds/loader/src/chameleon-loader";
 
 @customElement("chameleon-multiselect")
 export default class ChameleonMultiselect extends LitElement {
-  constructor() {
-    super();
-    this.addEventListener("remove-chip", <EventListener>this.handleChipClose);
-    document.addEventListener("click", <EventListener>this.closeOptionsList);
-    document.addEventListener("chameleon-multiselect.close", () => {
-      this.active = false;
-    });
-  }
-
   /**
    * Lifecycle Methods
    */
+  firstUpdated() {
+    this.addEventListener("remove-chip", <EventListener>this.handleChipClose);
+    document.addEventListener("click", this.closeOptionsList.bind(this));
+  }
+
   disconnectedCallback() {
     this.removeEventListener(
       "remove-chip",
       <EventListener>this.handleChipClose
     );
-    document.removeEventListener("click", <EventListener>this.closeOptionsList);
-    document.removeEventListener("chameleon-multiselect.close", () => {
-      this.active = false;
-    });
+    document.removeEventListener("click", this.closeOptionsList.bind(this));
   }
 
   /**
@@ -258,9 +251,7 @@ export default class ChameleonMultiselect extends LitElement {
     this.shadowRoot!.querySelector("input")!.value = "";
     e.stopPropagation();
 
-    if (selection) {
-      this.selectedOptions = [...this.selectedOptions, selection];
-    }
+    this.selectedOptions = [...this.selectedOptions, selection!];
 
     this.dispatchChangeEvent();
 
@@ -291,22 +282,13 @@ export default class ChameleonMultiselect extends LitElement {
     this.dispatchChangeEvent();
   }
 
-  private closeOptionsList(e: CustomEvent): void {
-    if (
-      e.composedPath &&
-      e.composedPath()[0] &&
-      (<HTMLElement>e.composedPath()[0]).classList
-    ) {
-      const classes = Array.from((<HTMLElement>e.composedPath()[0]).classList);
+  private closeOptionsList(e: MouseEvent): void {
+    const targets = e
+      .composedPath()
+      .map(eventTarget => (eventTarget as Element).tagName);
 
-      if (classes.includes("multiselect-input")) {
-        // Early return if the selector isn't open yet
-        e.stopPropagation();
-        return;
-      } else {
-        // Close selector if click is anywhere but inside the selector
-        this.dispatchEvent(new CustomEvent("chameleon-multiselect.close"));
-      }
+    if (!targets.includes("CHAMELEON-MULTISELECT")) {
+      this.active = false;
     }
   }
 
