@@ -57,7 +57,7 @@ export default css`
     transform: translate(-50%, -50%);
     width: 8px;
   }
-
+  :host([readonly]),
   :host([disabled]),
   input[disabled] {
     pointer-events: none;

@@ -22,7 +22,7 @@ describe("chameleon-radio", () => {
     await element.updateComplete;
 
     expect(element).shadowDom.to.equal(
-      "<input disabled='' type='radio' value='' /><span class='checkmark disabled'></span>"
+      "<input type='radio' value='' /><span class='checkmark disabled'></span>"
     );
   });
 

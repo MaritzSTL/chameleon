@@ -30,6 +30,10 @@ export default class ChameleonRadio extends LitElement {
   @property({ type: Boolean, reflect: true })
   disabled = false;
 
+  // A Boolean attribute which, if true, indicates that the radio button cannot be edited
+  @property({ type: Boolean, reflect: true })
+  readonly = false;
+
   /**
    * Styles
    */
@@ -40,12 +44,7 @@ export default class ChameleonRadio extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <input
-        type="radio"
-        ?checked="${this.checked}"
-        value="${this.value}"
-        ?disabled="${this.disabled}"
-      />
+      <input type="radio" ?checked="${this.checked}" value="${this.value}" />
       <span class="checkmark ${this.disabled ? "disabled" : ""}"></span>
       ${this.labelText}
     `;
