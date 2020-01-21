@@ -62,6 +62,9 @@ export default class ChameleonDate extends LitElement {
   @property({ type: String })
   label = "";
 
+  @property({ type: Boolean, reflect: true })
+  readonly = false;
+
   @property({ type: String })
   value = "";
 

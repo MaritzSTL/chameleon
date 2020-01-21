@@ -31,6 +31,7 @@ stories.add(
   "Basic",
   () => {
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
     const toggleable = boolean("Toggleable password visibility", false);
     const label = text("Label", "");
     const error = text("Error", "");
@@ -56,6 +57,7 @@ stories.add(
       <chameleon-input
         ?requiredField="${requiredField}"
         ?disabled="${disabled}"
+        ?readonly="${readonly}"
         ?noStepper="${noStepper}"
         ?toggleable="${toggleable}"
         .type="${typeSelection}"
@@ -73,6 +75,7 @@ stories.add(
   "Icon Left",
   () => {
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
     const toggleable = boolean("Toggleable password visibility", false);
     const label = text("Label", "");
     const error = text("Error", "");
@@ -98,6 +101,7 @@ stories.add(
       <chameleon-input
         ?requiredField="${requiredField}"
         ?disabled="${disabled}"
+        ?readonly="${readonly}"
         ?noStepper="${noStepper}"
         ?toggleable="${toggleable}"
         icon-left

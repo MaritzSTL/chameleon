@@ -5,6 +5,11 @@ export default css`
     font-family: var(--font-family, Arial);
   }
 
+  :host([readonly]),
+  :host([disabled]) {
+    pointer-events: none;
+  }
+
   label {
     display: block;
     color: var(--label-color, #6c737a);

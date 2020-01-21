@@ -22,6 +22,10 @@ export default class ChameleonSwitch extends LitElement {
   @property({ type: Boolean, reflect: true })
   checked = false;
 
+  // A Boolean attribute which, if true, indicates that the switch cannot be edited
+  @property({ type: Boolean, reflect: true })
+  readonly = false;
+
   // The switch's current value
   @property({ type: String })
   value = "";

@@ -8,6 +8,11 @@ export default css`
     width: 301px;
   }
 
+  :host([readonly]),
+  :host([disabled]) {
+    pointer-events: none;
+  }
+
   .overlay {
     background-color: var(--color-surface, #ffffff);
     border-radius: var(--border-radius-input, 0.313rem);

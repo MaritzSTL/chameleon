@@ -26,6 +26,10 @@ export default class ChameleonCheckbox extends LitElement {
   @property({ type: String })
   value = "";
 
+  // A Boolean attribute which, if true, indicates that the checkbox cannot be edited
+  @property({ type: Boolean, reflect: true })
+  readonly = false;
+
   //This checkbox's enabled/disabled status
   @property({ type: Boolean })
   disabled = false;
@@ -40,12 +44,7 @@ export default class ChameleonCheckbox extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <input
-        type="checkbox"
-        ?checked="${this.checked}"
-        value="${this.value}"
-        ?disabled=${this.disabled}
-      />
+      <input type="checkbox" ?checked="${this.checked}" value="${this.value}" />
       <span class="checkmark"></span>
       ${this.labelText}
     `;

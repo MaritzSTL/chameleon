@@ -67,6 +67,7 @@ stories.add(
   "Multiselect",
   () => {
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
     const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
@@ -74,6 +75,7 @@ stories.add(
     return html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?readonly="${readonly}"
         ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
@@ -89,6 +91,7 @@ stories.add(
   "Pre-Selected Values",
   () => {
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
     const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
@@ -96,6 +99,7 @@ stories.add(
     return html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?readonly="${readonly}"
         ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
@@ -112,6 +116,7 @@ stories.add(
   "With Icon",
   () => {
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
     const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
@@ -119,6 +124,7 @@ stories.add(
     return html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?readonly="${readonly}"
         ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"

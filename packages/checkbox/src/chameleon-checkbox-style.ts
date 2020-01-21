@@ -1,6 +1,11 @@
 import { css } from "lit-element";
 
 export default css`
+  :host([readonly]),
+  :host([disabled]) {
+    pointer-events: none;
+  }
+
   :host {
     align-items: center;
     cursor: pointer;
