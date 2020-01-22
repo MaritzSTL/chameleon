@@ -299,7 +299,7 @@ export default class ChameleonDate extends LitElement {
   }
 
   toggleActive(): void {
-    this.active = true;
+    if (!this.readonly) this.active = true;
   }
 
   prevMonth(): void {
