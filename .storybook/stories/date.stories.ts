@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, text } from "@storybook/addon-knobs";
+import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import { eventDetails } from "../utils";
 import { html } from "lit-html";
 import "@chameleon-ds/date/src/chameleon-date";
@@ -15,10 +15,12 @@ stories.add(
     const label = text("Label", "Date *");
     const minValue = text("Min Value (YYYY-MM-DD)", "");
     const maxValue = text("Max Value (YYYY-MM-DD)", "");
+    const readonly = boolean("Read Only", false);
 
     return html`
       <chameleon-date
         .placeholder="${placeholder}"
+        ?readonly="${readonly}"
         .label="${label}"
         .min="${minValue}"
         .max="${maxValue}"
@@ -34,11 +36,13 @@ stories.add(
   () => {
     const placeholder = text("Placeholder", "Select Date");
     const label = text("Label", "Date *");
+    const readonly = boolean("Read Only", false);
 
     return html`
       <chameleon-date
         .placeholder="${placeholder}"
         .label="${label}"
+        ?readonly="${readonly}"
         value="${`2020-01-13`}"
         @chameleon.date.input="${eventDetails.action("chameleon.date.input")}"
       ></chameleon-date>

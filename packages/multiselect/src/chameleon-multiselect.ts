@@ -54,6 +54,10 @@ export default class ChameleonMultiselect extends LitElement {
   @property({ type: Boolean, reflect: true })
   disabled = false;
 
+  // A Boolean attribute which, if true, indicates that the multiselect cannot be edited
+  @property({ type: Boolean, reflect: true })
+  readonly = false;
+
   // A Boolean which, if true, indicates that the input is valid
   @property({ type: Boolean, reflect: true })
   valid = true;

@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, text } from "@storybook/addon-knobs";
+import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import { eventDetails } from "../utils";
 import { html } from "lit-html";
 import "@chameleon-ds/timezone/src/chameleon-timezone";
@@ -13,11 +13,13 @@ stories.add(
   () => {
     const timezoneLabel = text("Label", "Please select your Timezone");
     const timezoneSubLabel = text("Sub Label", "");
+    const readonly = boolean("Read Only", false);
 
     return html`
       <chameleon-timezone
-        .timezoneLabel=${timezoneLabel}
-        .timezoneSubLabel=${timezoneSubLabel}
+        ?readonly="${readonly}"
+        .timezoneLabel="${timezoneLabel}"
+        .timezoneSubLabel="${timezoneSubLabel}"
         @chameleon.timezone.input="${eventDetails.action(
           "chameleon.timezone.input"
         )}"
