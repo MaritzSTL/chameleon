@@ -150,11 +150,6 @@
     font-family: var(--font-family, sans-serif);
   }
 
-  :host([readonly]),
-  :host([disabled]) {
-    pointer-events: none;
-  }
-
   .component-wrapper {
     display: inline-flex;
     flex-direction: column;
@@ -311,6 +306,7 @@
             ?autocomplete="${this.autocomplete}"
             ?autofocus="${this.autofocus}"
             ?requiredField="${this.requiredField}"
+            ?readonly="${this.readonly}"
             @input="${this._handleInput}"
             @blur="${this._handleBlur}"
             @invalid="${this._handleInvalid}"
@@ -325,6 +321,7 @@
             ?autocomplete="${this.autocomplete}"
             ?autofocus="${this.autofocus}"
             ?requiredField="${this.requiredField}"
+            ?readonly="${this.readonly}"
             @input="${this._handleInput}"
             @blur="${this._handleBlur}"
             @invalid="${this._handleInvalid}"
@@ -2261,11 +2258,6 @@
     width: 301px;
   }
 
-  :host([readonly]),
-  :host([disabled]) {
-    pointer-events: none;
-  }
-
   .overlay {
     background-color: var(--color-surface, #ffffff);
     border-radius: var(--border-radius-input, 0.313rem);
@@ -3967,4 +3959,4 @@ ${this.value}</textarea
         <slot name="close-icon">x</slot>
       </a>
     `}closeToast(){this.showCloseable=!1,this.dispatchEvent(new CustomEvent("close-toast",{bubbles:!0,composed:!0}))}};chameleon_toast_ChameleonToast.styles=[chameleon_toast_style],__decorate([Object(lit_element.e)({type:String})],chameleon_toast_ChameleonToast.prototype,"color",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_toast_ChameleonToast.prototype,"showCloseable",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_toast_ChameleonToast.prototype,"backgroundColor",void 0);chameleon_toast_ChameleonToast=__decorate([Object(lit_element.c)("chameleon-toast")],chameleon_toast_ChameleonToast)}},[[288,1,2]]]);
-//# sourceMappingURL=main.cd07cc8e2c12e428d6d8.bundle.js.map
+//# sourceMappingURL=main.1834e7aac27afcaeb2c8.bundle.js.map
