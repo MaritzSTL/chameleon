@@ -6,11 +6,6 @@ export default css`
     font-family: var(--font-family, sans-serif);
   }
 
-  :host([readonly]),
-  :host([disabled]) {
-    pointer-events: none;
-  }
-
   .component-wrapper {
     display: inline-flex;
     flex-direction: column;
