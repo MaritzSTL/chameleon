@@ -122,6 +122,7 @@ stories.add(
   "Icon Right",
   () => {
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
     const toggleable = boolean("Toggleable password visibility", false);
     const label = text("Label", "");
     const error = text("Error", "");
@@ -148,6 +149,7 @@ stories.add(
         ?requiredField="${requiredField}"
         ?disabled="${disabled}"
         ?noStepper="${noStepper}"
+        ?readonly="${readonly}"
         ?toggleable="${toggleable}"
         icon-right
         .type="${typeSelection}"
