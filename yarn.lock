@@ -1353,15 +1353,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@chameleon-ds/multiselect@^0.2.8":
-  version "0.2.8"
-  resolved "https://registry.npmjs.org/@chameleon-ds/multiselect/-/multiselect-0.2.8.tgz#05784a6fb6940400050425b745ee3468994136d6"
-  integrity sha512-eDKVS6W2M1oB8I4OAZIzMK6i9P1ue3ZvcJ4vDMWquCfS2/Nk950KHbSYtBAFYYFdCBxxGHnEH7bucNVY3uw2Wg==
-  dependencies:
-    "@chameleon-ds/chip" "^1.0.1"
-    "@chameleon-ds/loader" "^1.2.1"
-    lit-element "^2.2.1"
-
 "@emotion/cache@^10.0.17", "@emotion/cache@^10.0.9":
   version "10.0.19"
   resolved "https://registry.npmjs.org/@emotion/cache/-/cache-10.0.19.tgz#d258d94d9c707dcadaf1558def968b86bb87ad71"
