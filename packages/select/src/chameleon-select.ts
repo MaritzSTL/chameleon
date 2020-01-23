@@ -78,7 +78,7 @@ export default class ChameleonSelect extends LitElement {
         @click="${this.activateSelections}"
       >
         <div class="tags">
-          ${this.renderedselectedOption}
+          ${this.renderedSelectedOption}
         </div>
         ${this.loading
           ? html`
@@ -172,7 +172,7 @@ export default class ChameleonSelect extends LitElement {
    * Returns the rendered selected options
    * @return {TemplateResult}
    */
-  get renderedselectedOption(): TemplateResult | object {
+  get renderedSelectedOption(): TemplateResult {
     if (this.selectedOption.value !== undefined && !this.active) {
       const option = this.selectedOption;
       return html`
@@ -204,32 +204,21 @@ export default class ChameleonSelect extends LitElement {
         </div>
       `;
     } else {
+      // Search Bar
       return this.active && this.searchable
-        ? this.searchBar
+        ? html`
+            <input
+              type="text"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              placeholder="Type to filter..."
+              @input="${this.handleSearch}"
+            />
+          `
         : html`
             <span class="placeholder">${this.placeholder}</span>
           `;
-    }
-  }
-
-  /**
-   * Returns the rendered search bar if the searchable is equal to true
-   * @return {TemplateResult | object}
-   */
-  get searchBar(): TemplateResult | object {
-    if (this.active && this.searchable) {
-      return html`
-        <input
-          type="text"
-          autocomplete="off"
-          autocorrect="off"
-          autocapitalize="off"
-          placeholder="Type to filter..."
-          @input="${this.handleSearch}"
-        />
-      `;
-    } else {
-      return nothing;
     }
   }
 
@@ -307,9 +296,7 @@ export default class ChameleonSelect extends LitElement {
     this.filteredOptions = [];
     e.stopPropagation();
 
-    if (selection) {
-      this.selectedOption = selection;
-    }
+    this.selectedOption = selection!;
 
     // Dispatch a change event
     this.dispatchEvent(
