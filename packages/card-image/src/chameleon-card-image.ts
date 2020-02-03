@@ -30,8 +30,12 @@ export default class ChameleonCardImage extends LitElement {
    * Template
    */
   render(): TemplateResult {
-    return html`
-      <img src="${this.src}" alt="${this.alt}" />
-    `;
+    return this.src !== ""
+      ? html`
+          <img src="${this.src}" alt="${this.alt}" />
+        `
+      : html`
+          <div class="placeholder"></div>
+        `;
   }
 }
