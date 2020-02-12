@@ -6,6 +6,7 @@ export default css`
     --button-hover-color: var(--color-primary-dark, #004587);
     --button-hover-text-color: var(--color-surface, #ffffff);
     --button-text-color: var(--color-primary, #2c6fb7);
+    --button-background-color: var(--color-primary, #2c6fb7);
     display: inline-flex;
     height: var(--button-height, 40px);
   }
@@ -44,7 +45,7 @@ export default css`
 
   button {
     align-items: center;
-    background-color: var(--color-primary, #2c6fb7);
+    background-color: var(--button-background-color);
     border-radius: var(--border-radius-input, 0.313rem);
     border: 1px solid var(--button-border-color);
     color: var(--color-surface, #ffffff);
