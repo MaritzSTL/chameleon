@@ -27,7 +27,7 @@ stories.add(
         header="${header}"
         subHeader="${subHeader}"
         ?sheetOpened="${sheetOpened}"
-        @toggle-sheet=${eventDetails.action("toggle-sheet")}
+        @chameleon.sheet.toggle=${eventDetails.action("chameleon.sheet.toggle")}
       >
         <section slot="details">
           <p>City: Saint Louis</p>
