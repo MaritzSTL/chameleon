@@ -51,6 +51,16 @@ describe("chameleon-input", () => {
     );
   });
 
+  it("_inputEl renders disabled", async () => {
+    element.disabled = true;
+
+    const inputEl = await litFixture(element._inputEl);
+
+    expect(inputEl).dom.to.equal(
+      "<input name='cha-input' placeholder='' type='text' disabled/>"
+    );
+  });
+
   it("renders labelText", async () => {
     element.label = "chameleon";
 
