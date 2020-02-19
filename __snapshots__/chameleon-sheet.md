@@ -1,5 +1,16 @@
 # `chameleon-sheet`
 
+#### `updatesSlot`
+
+```html
+<section slot="content">
+  <div>
+    test
+  </div>
+</section>
+
+```
+
 #### `renders subheader`
 
 ```html
@@ -22,6 +33,5 @@
 </span>
 <slot name="content">
 </slot>
-
 ```
 
