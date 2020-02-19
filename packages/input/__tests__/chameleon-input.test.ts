@@ -51,6 +51,26 @@ describe("chameleon-input", () => {
     );
   });
 
+  it("_inputEl renders disabled", async () => {
+    element.disabled = true;
+
+    const inputEl = await litFixture(element._inputEl);
+
+    expect(inputEl).dom.to.equal(
+      "<input name='cha-input' placeholder='' type='text' disabled/>"
+    );
+  });
+
+  it("_inputEl renders readonly", async () => {
+    element.readonly = true;
+
+    const inputEl = await litFixture(element._inputEl);
+
+    expect(inputEl).dom.to.equal(
+      "<input name='cha-input' placeholder='' type='text' readonly/>"
+    );
+  });
+
   it("renders labelText", async () => {
     element.label = "chameleon";
 
