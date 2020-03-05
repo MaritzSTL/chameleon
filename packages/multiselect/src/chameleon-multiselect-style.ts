@@ -179,4 +179,22 @@ export default css`
     --label-color: var(--label-hover-color, #2c6fb7);
     --border-color: var(--border-hover-color, #2c6fb7);
   }
+
+  .invalid {
+    border-color: var(--color-error, #bc1c16);
+  }
+
+  .error {
+    color: var(--color-error, #bc1c16);
+    font-size: var(--font-size-label, 0.875rem);
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+  }
+
+  .error svg {
+    padding-right: 0.5rem;
+    width: unset;
+    height: unset;
+  }
 `;

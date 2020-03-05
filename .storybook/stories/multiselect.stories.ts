@@ -71,6 +71,7 @@ stories.add(
     const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
+    const error = text("Error", "");
 
     return html`
       <chameleon-multiselect
@@ -81,6 +82,7 @@ stories.add(
         .placeholder="${placeholder}"
         .options="${options}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
+        .errorMessage="${error}"
       ></chameleon-multiselect>
     `;
   },
@@ -95,6 +97,7 @@ stories.add(
     const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
+    const error = text("Error", "");
 
     return html`
       <chameleon-multiselect
@@ -106,6 +109,7 @@ stories.add(
         .options="${options}"
         .value="${["arch"]}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
+        .errorMessage="${error}"
       ></chameleon-multiselect>
     `;
   },
@@ -120,6 +124,7 @@ stories.add(
     const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
+    const error = text("Error", "");
 
     return html`
       <chameleon-multiselect
@@ -130,6 +135,7 @@ stories.add(
         .placeholder="${placeholder}"
         .options="${options}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
+        .errorMessage="${error}"
       >
         ${searchIcon("icon")}
       </chameleon-multiselect>

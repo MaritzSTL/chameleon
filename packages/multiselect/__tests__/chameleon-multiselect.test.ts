@@ -310,4 +310,12 @@ describe("chameleon-multiselect", () => {
     expect(fixture.selectedOptions).to.eql([]);
     expect(dispatchChangeEventSpy).to.be.called;
   });
+
+  it("renders errorText", async () => {
+    element.errorMessage = "chameleon";
+
+    const errorText = await litFixture(element.errorText);
+
+    expect(errorText).dom.to.equal("<span class='error'>chameleon</span>");
+  });
 });
