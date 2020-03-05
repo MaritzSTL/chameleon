@@ -114,7 +114,7 @@ export default css`
     margin: 0.5rem 0;
     position: absolute;
     top: 0;
-    width: 100%;
+    width: 25%;
   }
 
   /* If the loading icon is rendered, hide the rest of the button content */
