@@ -5,7 +5,7 @@ import {
   html,
   property
 } from "lit-element";
-import { nothing } from "lit-html";
+import { nothing, svg, SVGTemplateResult } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
 import style from "./chameleon-multiselect-style";
@@ -79,6 +79,9 @@ export default class ChameleonMultiselect extends LitElement {
   @property({ type: Boolean, reflect: true })
   loading = false;
 
+  @property({ type: String })
+  errorMessage = "";
+
   /**
    * Styles
    */
@@ -90,7 +93,12 @@ export default class ChameleonMultiselect extends LitElement {
   render(): TemplateResult {
     return html`
       ${this.getLabel}
-      <div class="multiselect-box">
+      <div
+        class="${classMap({
+          "multiselect-box": true,
+          invalid: this.errorMessage.length > 0
+        })}"
+      >
         <div
           class="tags ${classMap({
             "tags-active": this.selectedOptions.length > 0
@@ -119,6 +127,7 @@ export default class ChameleonMultiselect extends LitElement {
               <slot name="icon"></slot>
             `}
       </div>
+      ${this.errorText}
     `;
   }
 
@@ -231,6 +240,35 @@ export default class ChameleonMultiselect extends LitElement {
         return option.value === selectedOption.value;
       });
     });
+  }
+
+  get errorText(): TemplateResult | object {
+    if (this.errorMessage !== "") {
+      return html`
+        <span class="error">${this.warningIcon} ${this.errorMessage}</span>
+      `;
+    } else return nothing;
+  }
+
+  get warningIcon(): SVGTemplateResult {
+    return svg`
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-search"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+  `;
   }
 
   setActive(): void {
