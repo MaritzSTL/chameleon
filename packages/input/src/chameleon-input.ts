@@ -74,6 +74,10 @@ export default class ChameleonInput extends LitElement {
   @property({ type: Number, reflect: true })
   max = null;
 
+  // The input's max length (availabile in all types expect type="number")
+  @property({ type: Number, reflect: true })
+  maxLength = null;
+
   // The input's label
   @property({ type: String })
   label = "";
@@ -168,6 +172,7 @@ export default class ChameleonInput extends LitElement {
             .type="${this.type}"
             .placeholder="${this.placeholder}"
             .value="${this.value}"
+            maxlength="${this.maxLength}"
             ?autocomplete="${this.autocomplete}"
             ?autofocus="${this.autofocus}"
             ?requiredField="${this.requiredField}"
