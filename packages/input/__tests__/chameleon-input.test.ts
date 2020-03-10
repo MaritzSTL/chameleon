@@ -47,7 +47,7 @@ describe("chameleon-input", () => {
     const inputEl = await litFixture(element._inputEl);
 
     expect(inputEl).dom.to.equal(
-      "<input name='cha-input' placeholder='' type='email' />"
+      "<input name='cha-input' placeholder='' type='email'  maxlength='null'/>"
     );
   });
 
@@ -57,7 +57,7 @@ describe("chameleon-input", () => {
     const inputEl = await litFixture(element._inputEl);
 
     expect(inputEl).dom.to.equal(
-      "<input name='cha-input' placeholder='' type='text' disabled/>"
+      "<input name='cha-input' placeholder='' type='text' disabled  maxlength='null'/>"
     );
   });
 
@@ -67,7 +67,7 @@ describe("chameleon-input", () => {
     const inputEl = await litFixture(element._inputEl);
 
     expect(inputEl).dom.to.equal(
-      "<input name='cha-input' placeholder='' type='text' readonly/>"
+      "<input name='cha-input' placeholder='' type='text' readonly  maxlength='null'/>"
     );
   });
 
