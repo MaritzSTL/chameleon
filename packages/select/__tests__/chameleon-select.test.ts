@@ -24,9 +24,7 @@ describe("chameleon-select", () => {
 
     const labelEl = await litFixture(element.labelText);
 
-    expect(labelEl).dom.to.equal(
-      "<div class=label-container><label>chameleon</label></div>"
-    );
+    expect(labelEl).dom.to.equalSnapshot;
   });
 
   it("renders the loading spinner when loading is set to true", async () => {

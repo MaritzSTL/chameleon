@@ -2,14 +2,47 @@
 
 ## `render`
 
+
+```html
+<div class="multiselect-box">
+  <div class="tags">
+    <input
+      aria-describedby="cha-multiselect-error"
+      class="multiselect-input"
+      name="cha-multiselect"
+      placeholder="Type to filter..."
+      type="text"
+    >
+  </div>
+  <div class="options">
+    <ul class="options__list">
+      <li
+        class="options__option"
+        data-value="arch"
+      >
+        <div class="options__option-group">
+          <span class="options__option-label">
+            Gateway Arch
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <slot name="icon">
+  </slot>
+</div>
+
+```
+
 ####   `renders data`
 
 ```html
 <div class="multiselect-box">
   <div class="tags">
     <input
+      aria-describedby="cha-multselect-error"
       class="multiselect-input"
-      name="multiselect-input"
+      name="cha-multselect"
       placeholder="Type to filter..."
       type="text"
     >
@@ -51,7 +84,6 @@
   <slot name="icon">
   </slot>
 </div>
-
 ```
 
 ####   `renders data with labels`
@@ -60,8 +92,9 @@
 <div class="multiselect-box">
   <div class="tags">
     <input
+      aria-describedby="cha-multselect-error"
       class="multiselect-input"
-      name="multiselect-input"
+      name="cha-multselect"
       placeholder="Type to filter..."
       type="text"
     >
@@ -130,38 +163,5 @@
   <slot name="icon">
   </slot>
 </div>
-
-```
-
-####   `renders filtered options`
-
-```html
-<div class="multiselect-box">
-  <div class="tags">
-    <input
-      class="multiselect-input"
-      name="multiselect-input"
-      placeholder="Type to filter..."
-      type="text"
-    >
-  </div>
-  <div class="options">
-    <ul class="options__list">
-      <li
-        class="options__option"
-        data-value="arch"
-      >
-        <div class="options__option-group">
-          <span class="options__option-label">
-            Gateway Arch
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <slot name="icon">
-  </slot>
-</div>
-
 ```
 

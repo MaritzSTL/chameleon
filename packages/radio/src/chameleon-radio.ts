@@ -18,6 +18,9 @@ export default class ChameleonRadio extends LitElement {
   @property({ type: String })
   label = "";
 
+  @property({ type: String })
+  name = "cha-radio";
+
   // A Boolean which, if true, indicates that the radio is selected
   @property({ type: Boolean, reflect: true })
   checked = false;
@@ -34,6 +37,10 @@ export default class ChameleonRadio extends LitElement {
   @property({ type: Boolean, reflect: true })
   readonly = false;
 
+  //Invalid boolean to allow validity access from higher level form errors
+  @property({ type: Boolean, reflect: true })
+  invalid = false;
+
   /**
    * Styles
    */
@@ -44,7 +51,16 @@ export default class ChameleonRadio extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <input type="radio" ?checked="${this.checked}" value="${this.value}" />
+      <input
+        type="radio"
+        name="${this.name}"
+        ?checked="${this.checked}"
+        value="${this.value}"
+        ?disabled="${this.disabled}"
+        ?readonly="${this.readonly}"
+        ?aria-invalid="${this.invalid}"
+        aria-describedby="${this.name}-error"
+      />
       <span class="checkmark ${this.disabled ? "disabled" : ""}"></span>
       ${this.labelText}
     `;

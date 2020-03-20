@@ -34,6 +34,9 @@ export default class ChameleonMultiselect extends LitElement {
   /**
    * Properties
    */
+  @property({ type: String })
+  name = "cha-multiselect";
+
   // An array of the possible options to be selected
   @property({ type: Array, reflect: true })
   options = <Array<SelectableOption>>[];
@@ -58,9 +61,13 @@ export default class ChameleonMultiselect extends LitElement {
   @property({ type: Boolean, reflect: true })
   readonly = false;
 
+  // A Boolean attribute which, if true, indicates the input is required
+  @property({ type: Boolean, reflect: true })
+  required = false;
+
   // A Boolean which, if true, indicates that the input is valid
   @property({ type: Boolean, reflect: true })
-  valid = true;
+  invalid = false;
 
   // The input's label
   @property({ type: String })
@@ -80,7 +87,7 @@ export default class ChameleonMultiselect extends LitElement {
   loading = false;
 
   @property({ type: String })
-  errorMessage = "";
+  validationMessage = "";
 
   /**
    * Styles
@@ -96,7 +103,7 @@ export default class ChameleonMultiselect extends LitElement {
       <div
         class="${classMap({
           "multiselect-box": true,
-          invalid: this.errorMessage.length > 0
+          invalid: this.invalid || this.validationMessage.length > 0
         })}"
       >
         <div
@@ -106,14 +113,20 @@ export default class ChameleonMultiselect extends LitElement {
         >
           ${this.renderedSelectedOptions}
           <input
-            name="multiselect-input"
-            class="multiselect-input ${classMap({
+            .name="${this.name}"
+            class="multiselect-input
+            ${classMap({
               "tags-active": this.selectedOptions.length > 0
             })}"
             type="text"
             placeholder="${this.active
               ? "Type to filter..."
               : this.placeholder}"
+            ?aria-invalid="${this.invalid}"
+            aria-describedby="${this.name}-error"
+            ?readonly="${this.readonly}"
+            ?required="${this.required}"
+            ?disabled="${this.disabled}"
             @focus="${this.setActive}"
             @input="${this.handleSearch}"
           />
@@ -142,7 +155,13 @@ export default class ChameleonMultiselect extends LitElement {
   get getLabel(): string | object {
     if (this.label !== "")
       return html`
-        <label for="multiselect-input">${this.label}</label>
+        <label
+          class="${classMap({
+            invalid: this.invalid || this.validationMessage.length > 0
+          })}"
+          for="${this.name}"
+          >${this.label}</label
+        >
       `;
     else return nothing;
   }
@@ -243,9 +262,11 @@ export default class ChameleonMultiselect extends LitElement {
   }
 
   get errorText(): TemplateResult | object {
-    if (this.errorMessage !== "") {
+    if (this.validationMessage !== "") {
       return html`
-        <span class="error">${this.warningIcon} ${this.errorMessage}</span>
+        <span class="error" id="${this.name}-error"
+          >${this.warningIcon} ${this.validationMessage}</span
+        >
       `;
     } else return nothing;
   }

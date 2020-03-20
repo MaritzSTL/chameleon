@@ -50,6 +50,9 @@ export default class ChameleonDate extends LitElement {
   /**
    * Properties
    */
+  @property({ type: String })
+  name = "cha-date";
+
   @property({ type: Boolean })
   active = false;
 
@@ -73,6 +76,21 @@ export default class ChameleonDate extends LitElement {
 
   @property({ type: String, reflect: true })
   max = null;
+
+  // A Boolean which, if true, indicates that the input must have a value before the form can be submitted
+  @property({ type: Boolean, reflect: true })
+  required = false;
+
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  // The external error message
+  @property({ type: String })
+  validationMessage = "";
+
+  //Invalid boolean to allow validity access from higher level form errors
+  @property({ type: Boolean, reflect: true })
+  invalid = false;
 
   @property({ type: String })
   overlayRenderMode = "month";
@@ -107,11 +125,16 @@ export default class ChameleonDate extends LitElement {
   render(): TemplateResult {
     return html`
       <chameleon-input
+        name="${this.name}"
         type="text"
         readonly
         .placeholder="${this.placeholder}"
         .label="${this.label}"
         .value="${this.renderedDateValue}"
+        ?required="${this.required}"
+        ?invalid="${this.invalid}"
+        ?disabled="${this.disabled}"
+        .validationMessage="${this.validationMessage}"
         @focus="${this.toggleActive}"
         >${this.calendarIcon}</chameleon-input
       >
@@ -299,7 +322,7 @@ export default class ChameleonDate extends LitElement {
   }
 
   toggleActive(): void {
-    if (!this.readonly) this.active = true;
+    if (!(this.readonly || this.disabled)) this.active = true;
   }
 
   prevMonth(): void {

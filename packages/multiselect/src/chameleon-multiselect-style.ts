@@ -182,6 +182,7 @@ export default css`
 
   .invalid {
     border-color: var(--color-error, #bc1c16);
+    color: var(--color-error, #bc1c16);
   }
 
   .error {

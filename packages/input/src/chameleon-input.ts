@@ -27,6 +27,10 @@ export default class ChameleonInput extends LitElement {
   @property({ type: Boolean, reflect: true })
   autocomplete = false;
 
+  // The input's form name
+  @property({ type: String })
+  name = "cha-input";
+
   // A Boolean which, if present, makes the input take focus when the form is presented
   @property({ type: Boolean, reflect: true })
   autofocus = false;
@@ -45,7 +49,7 @@ export default class ChameleonInput extends LitElement {
 
   // A Boolean which, if true, indicates that the input must have a value before the form can be submitted
   @property({ type: Boolean, reflect: true })
-  requiredField = false;
+  required = false;
 
   // A Boolean which, if present and the input type is 'password', allows visibility of password characters to be toggled
   @property({ type: Boolean, reflect: true })
@@ -81,6 +85,10 @@ export default class ChameleonInput extends LitElement {
   // The input's label
   @property({ type: String })
   label = "";
+
+  //Invalid boolean to allow validity access from higher level form errors
+  @property({ type: Boolean, reflect: true })
+  invalid = false;
 
   // The input's error message
   @property({ type: String })
@@ -147,7 +155,7 @@ export default class ChameleonInput extends LitElement {
       case "number":
         return html`
           <input
-            name="cha-input"
+            .name="${this.name}"
             .type="${this.type}"
             .placeholder="${this.placeholder}"
             .value="${this.value}"
@@ -155,9 +163,11 @@ export default class ChameleonInput extends LitElement {
             .max="${this.max}"
             ?autocomplete="${this.autocomplete}"
             ?autofocus="${this.autofocus}"
-            ?requiredField="${this.requiredField}"
+            ?required="${this.required}"
             ?disabled="${this.disabled}"
             ?readonly="${this.readonly}"
+            ?aria-invalid="${this._invalidState}"
+            aria-describedby="${this.name}-error"
             @input="${this._handleInput}"
             @blur="${this._handleBlur}"
             @invalid="${this._handleInvalid}"
@@ -168,16 +178,18 @@ export default class ChameleonInput extends LitElement {
       default:
         return html`
           <input
-            name="cha-input"
+            .name="${this.name}"
             .type="${this.type}"
             .placeholder="${this.placeholder}"
             .value="${this.value}"
             maxlength="${this.maxLength}"
             ?autocomplete="${this.autocomplete}"
             ?autofocus="${this.autofocus}"
-            ?requiredField="${this.requiredField}"
+            ?required="${this.required}"
             ?readonly="${this.readonly}"
             ?disabled="${this.disabled}"
+            ?aria-invalid="${this._invalidState}"
+            aria-describedby="${this.name}-error"
             @input="${this._handleInput}"
             @blur="${this._handleBlur}"
             @invalid="${this._handleInvalid}"
@@ -197,7 +209,7 @@ export default class ChameleonInput extends LitElement {
     if (this.label !== "") {
       return html`
         <label
-          for="cha-input"
+          for="${this.name}"
           class="${classMap({ invalid: this._invalidState })}"
           >${this.label}</label
         >
@@ -227,7 +239,9 @@ export default class ChameleonInput extends LitElement {
   get errorText(): TemplateResult | object {
     if (this.validationMessage !== "") {
       return html`
-        <span class="error">${this.warningIcon} ${this.validationMessage}</span>
+        <span class="error" id="${this.name}-error"
+          >${this.warningIcon} ${this.validationMessage}</span
+        >
       `;
     } else return nothing;
   }
@@ -248,17 +262,17 @@ export default class ChameleonInput extends LitElement {
   }
 
   get _invalidState(): boolean {
-    if (this._el !== null) {
-      if (!this.checkValidity() || this.validationMessage.length > 0) {
-        return true;
-      } else return false;
-    } else {
+    if (
+      this.invalid ||
+      this.validationMessage.length > 0 ||
+      !this.checkValidity()
+    ) {
       return true;
-    }
+    } else return false;
   }
 
   _checkRequired(): void {
-    if (this.requiredField && this.value.length === 0) {
+    if (this.required && this.value.length === 0) {
       if (this._el !== null) {
         this._el.setAttribute("required", "");
       }

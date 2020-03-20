@@ -35,16 +35,7 @@ describe("chameleon-timezone", () => {
 
   describe("render()", () => {
     it("should render shadowDom", () => {
-      expect(element).shadowDom.to.equal(`
-        <div class="datetime-inputs">
-          <div>
-            <chameleon-select
-              name="timezone"
-              searchable=""
-            ></chameleon-select>
-          </div>
-        </div>
-      `);
+      expect(element).shadowDom.to.equalSnapshot;
     });
 
     it("should render lightDom", () => {
@@ -61,17 +52,7 @@ describe("chameleon-timezone", () => {
           <chameleon-timezone timezoneLabel="asdf"></chameleon-timezone>
         `
       );
-      expect(element).shadowDom.to.equal(`
-        <div class="datetime-inputs">
-          <div>
-            <label class="label">asdf</label>
-            <chameleon-select
-              name="timezone"
-              searchable=""
-            ></chameleon-timezone>
-          </div>
-        </div>
-      `);
+      expect(element).shadowDom.to.equalSnapshot;
     });
 
     it("should render timeoneSubLabel", async () => {
@@ -80,18 +61,7 @@ describe("chameleon-timezone", () => {
           <chameleon-timezone timezoneSubLabel="asdf"></chameleon-timezone>
         `
       );
-      expect(element).shadowDom.to.equal(`
-        <div class="datetime-inputs">
-          <div>
-            <chameleon-select
-              name="timezone"
-              searchable=""
-            ></chameleon-select>
-            <label class="label">asdf</label>
-          </div>
-        </div>
-
-      `);
+      expect(element).shadowDom.to.equalSnapshot;
     });
 
     it("should render errors", async () => {

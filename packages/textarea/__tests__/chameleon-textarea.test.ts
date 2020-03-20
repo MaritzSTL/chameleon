@@ -68,6 +68,13 @@ describe("chameleon-textarea", () => {
     expect(element.checkValidity()).to.be.false;
   });
 
+  it("invalid sets aria-invalid attribute", async () => {
+    element.value = "";
+    element.invalid = true;
+    await element.updateComplete;
+    expect(element._el).to.have.attribute("aria-invalid");
+  });
+
   it("_handleBlur calls checkValidity", () => {
     // TBH I'm not convinced this test is actually behaving expectedly...
     const checkValidity = sinon.spy(element, "checkValidity");

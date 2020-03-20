@@ -136,8 +136,22 @@ describe("chameleon-date", () => {
   });
 
   it("toggleActive() sets this.active equal to true", () => {
+    element.active = false;
     element.toggleActive();
     expect(element.active).to.be.true;
+  });
+  it("toggleActive() does not set this.active when disabled is true", () => {
+    element.active = false;
+    element.disabled = true;
+    element.toggleActive();
+    expect(element.active).to.be.false;
+  });
+
+  it("toggleActive() does not set this.active when readonly is true", () => {
+    element.active = false;
+    element.readonly = true;
+    element.toggleActive();
+    expect(element.active).to.be.false;
   });
 
   it("prevMonth() sets the rendered date to the previous month", () => {

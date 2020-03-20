@@ -11,15 +11,22 @@ stories.addDecorator(withKnobs);
 stories.add(
   "Basic",
   () => {
+    const name = text("Name", "input-form-name");
     const timezoneLabel = text("Label", "Please select your Timezone");
     const timezoneSubLabel = text("Sub Label", "");
     const readonly = boolean("Read Only", false);
-
+    const invalid = boolean("Invalid", false);
+    const required = boolean("Required", false);
+    const disabled = boolean("Disabled", false);
     return html`
       <chameleon-timezone
-        ?readonly="${readonly}"
+        name="${name}"
         .timezoneLabel="${timezoneLabel}"
         .timezoneSubLabel="${timezoneSubLabel}"
+        ?readonly="${readonly}"
+        ?required="${required}"
+        ?disabled="${disabled}"
+        ?invalid="${invalid}"
         @chameleon.timezone.input="${eventDetails.action(
           "chameleon.timezone.input"
         )}"

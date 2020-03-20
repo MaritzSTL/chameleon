@@ -8,6 +8,7 @@ import {
   SVGTemplateResult
 } from "lit-element";
 import { nothing } from "lit-html";
+import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
 import { SelectableOption } from "@chameleon-ds/select/types";
 import style from "./chameleon-timezone-style";
@@ -19,10 +20,12 @@ export default class ChameleonTimezone extends LitElement {
   /**
    * Properties
    */
-  @property({ type: Boolean, reflect: true }) readonly = false;
   @property({ type: Boolean, reflect: true }) required = false;
+  @property({ type: Boolean, reflect: true }) invalid = false;
+  @property({ type: Boolean, reflect: true }) readonly = false;
   @property({ type: Boolean, reflect: true }) disabled = false;
   @property({ type: Boolean, reflect: true }) autovalidate = false;
+  @property({ type: String }) name = "cha-timezone";
   @property({ type: String }) timezoneLabel = "";
   @property({ type: String }) timezoneSubLabel = "";
   @property({ type: Array }) timezones = timezoneData;
@@ -39,13 +42,21 @@ export default class ChameleonTimezone extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <div class="datetime-inputs">
+      <div
+        class="datetime-inputs
+        ${classMap({
+          invalid: this.invalid
+        })}"
+      >
         <div>
           ${this.timezoneLabelText}
           <chameleon-select
-            name="timezone"
+            .name="${name}"
             .options="${this.timezoneOptions}"
             .value="${this.value}"
+            ?invalid="${this.invalid}"
+            ?readonly="${this.readonly}"
+            ?disabled="${this.disabled}"
             ?searchable="${true}"
             @chameleon.select.input="${this.handleInput}"
           ></chameleon-select>
@@ -134,7 +145,7 @@ export default class ChameleonTimezone extends LitElement {
           ${repeat(
             this.errors,
             (error: string) => html`
-              <p class="mdc-text-field-error-text">
+              <p class="mdc-text-field-error-text" id="${this.name}-error">
                 ${this.errorIcon} ${error}
               </p>
             `

@@ -111,10 +111,11 @@ describe("chameleon-multiselect", () => {
       expect(fixture).shadowDom.to.equalSnapshot();
     });
 
-    it("renders filtered options", async () => {
+    it("renders filtered options correctly", async () => {
       const fixture: ChameleonMultiselect = await litFixture(
         html`
           <chameleon-multiselect
+            name="multiselect-input"
             .options="${fixtureData}"
           ></chameleon-multiselect>
         `
@@ -316,6 +317,6 @@ describe("chameleon-multiselect", () => {
 
     const errorText = await litFixture(element.errorText);
 
-    expect(errorText).dom.to.equal("<span class='error'>chameleon</span>");
+    expect(errorText).dom.to.equalSnapshot;
   });
 });
