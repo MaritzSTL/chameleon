@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/timezone",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Chameleon timezone",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/select": "^1.1.1",
+    "@chameleon-ds/select": "^1.2.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
