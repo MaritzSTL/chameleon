@@ -1,5 +1,17 @@
 # `chameleon-select`
 
+#### `renders labelText`
+
+```html
+<label
+  class="label-container"
+  for="cha-multiselect"
+>
+  chameleon
+</label>
+
+```
+
 #### `renders the loading spinner when loading is set to true`
 
 ```html
@@ -14,7 +26,6 @@
   >
   </chameleon-loader>
 </div>
-
 ```
 
 #### `renders filtered options`
@@ -23,8 +34,10 @@
 <div class="options">
   <ul class="options__list">
     <li
+      aria-roledescription="$1"
       class="options__option"
       data-value="asdf"
+      label="undefined asdf undefined undefined"
     >
       <div class="options__option-group">
         <span class="options__option-label">
@@ -34,7 +47,6 @@
     </li>
   </ul>
 </div>
-
 ```
 
 #### `renders preLabel, subLabel, and postLabel`
@@ -43,8 +55,10 @@
 <div class="options">
   <ul class="options__list">
     <li
+      aria-roledescription="$1"
       class="options__option"
       data-value="asdf"
+      label="asdf asdf asdf asdf"
     >
       <div class="options__option-preLabel">
         asdf
@@ -63,7 +77,6 @@
     </li>
   </ul>
 </div>
-
 ```
 
 #### `activates selections`
@@ -79,7 +92,6 @@
     </ul>
   </div>
 </div>
-
 ```
 
 #### `activate selections fails if disabled`
@@ -91,7 +103,6 @@
     </span>
   </div>
 </div>
-
 ```
 
 #### `activates searchable selections`
@@ -112,7 +123,6 @@
     </ul>
   </div>
 </div>
-
 ```
 
 ## `renders the renderedSelectedOption`
@@ -131,7 +141,6 @@
     </div>
   </div>
 </div>
-
 ```
 
 ####   `renderedSelectedOption with labels`
@@ -157,7 +166,6 @@
     </div>
   </div>
 </div>
-
 ```
 
 ####   `renders search bar`
@@ -178,6 +186,5 @@
     </ul>
   </div>
 </div>
-
 ```
 

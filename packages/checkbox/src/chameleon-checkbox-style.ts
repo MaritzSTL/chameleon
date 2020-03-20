@@ -60,6 +60,19 @@ export default css`
     display: inline-block;
   }
 
+  :host([invalid]) .checkmark {
+    border-color: var(--color-error, #bc1c16);
+  }
+
+  :host([invalid]) input:checked ~ .checkmark {
+    border: 2px solid var(--color-error, #bc1c16);
+  }
+
+  :host([invalid]) input:checked ~ .checkmark:after {
+    margin-top: -1px;
+    margin-left: 5px;
+  }
+
   :host([disabled]) {
     pointer-events: none;
   }

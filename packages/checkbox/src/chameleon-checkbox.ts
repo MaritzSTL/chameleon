@@ -17,6 +17,9 @@ export default class ChameleonCheckbox extends LitElement {
   // The checkbox's label
   @property({ type: String })
   label = "";
+  // The checkbox's form name
+  @property({ type: String })
+  name = "cha-checkbox";
 
   // A Boolean which, if true, indicates that the checkbox is selected
   @property({ type: Boolean, reflect: true })
@@ -31,8 +34,16 @@ export default class ChameleonCheckbox extends LitElement {
   readonly = false;
 
   //This checkbox's enabled/disabled status
-  @property({ type: Boolean })
+  @property({ type: Boolean, reflect: true })
   disabled = false;
+
+  //Invalid boolean to allow validity access from higher level form errors
+  @property({ type: Boolean, reflect: true })
+  invalid = false;
+
+  // A Boolean to indicate the input is required
+  @property({ type: Boolean, reflect: true })
+  required = false;
 
   /**
    * Styles
@@ -44,7 +55,17 @@ export default class ChameleonCheckbox extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <input type="checkbox" ?checked="${this.checked}" value="${this.value}" />
+      <input
+        type="checkbox"
+        ?checked="${this.checked}"
+        .name="${this.name}"
+        value="${this.value}"
+        ?disabled="${this.disabled}"
+        ?readonly="${this.readonly}"
+        ?required="${this.required}"
+        ?aria-invalid="${this.invalid}"
+        aria-describedby="${this.name}-error"
+      />
       <span class="checkmark"></span>
       ${this.labelText}
     `;

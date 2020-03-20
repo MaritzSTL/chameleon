@@ -29,4 +29,8 @@ export default css`
     font-size: var(--font-size-label, 0.875rem);
     margin-top: 3px;
   }
+  :host([invalid]) textarea,
+  textarea.invalid {
+    border-color: var(--color-error, #bc1c16);
+  }
 `;

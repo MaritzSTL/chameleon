@@ -8,8 +8,9 @@
 <div class="multiselect-box">
   <div class="tags">
     <input
+      aria-describedby="cha-multiselect-error"
       class="multiselect-input"
-      name="multiselect-input"
+      name="cha-multiselect"
       placeholder="Type to filter..."
       type="text"
     >
@@ -51,7 +52,6 @@
   <slot name="icon">
   </slot>
 </div>
-
 ```
 
 ####   `renders data with labels`
@@ -60,8 +60,9 @@
 <div class="multiselect-box">
   <div class="tags">
     <input
+      aria-describedby="cha-multiselect-error"
       class="multiselect-input"
-      name="multiselect-input"
+      name="cha-multiselect"
       placeholder="Type to filter..."
       type="text"
     >
@@ -130,15 +131,34 @@
   <slot name="icon">
   </slot>
 </div>
-
 ```
 
-####   `renders filtered options`
+####   `renders out errorText`
 
 ```html
 <div class="multiselect-box">
   <div class="tags">
     <input
+      aria-describedby="cha-multiselect-error"
+      class="multiselect-input"
+      name="cha-multiselect"
+      placeholder=""
+      type="text"
+    >
+  </div>
+  <slot name="icon">
+  </slot>
+</div>
+
+```
+
+####   `filtered options are rendered`
+
+```html
+<div class="multiselect-box">
+  <div class="tags">
+    <input
+      aria-describedby="multiselect-input-error"
       class="multiselect-input"
       name="multiselect-input"
       placeholder="Type to filter..."
@@ -162,6 +182,5 @@
   <slot name="icon">
   </slot>
 </div>
-
 ```
 

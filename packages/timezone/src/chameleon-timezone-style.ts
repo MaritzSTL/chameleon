@@ -24,10 +24,16 @@ export default css`
 
   .label {
     color: var(--color-gray-darkest, #6c737a);
+    font-family: var(--font-family, sans-serif);
+    font-size: var(--font-size-label, 0.875rem);
     display: grid;
     font-weight: 500;
     font-size: 14px;
     margin: 7px 0;
+  }
+  
+  .datetime-inputs.invalid .label{
+    color: var(--color-error, #bc1c16);
   }
 
   @media screen and (max-width: 768px) {

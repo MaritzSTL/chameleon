@@ -34,6 +34,9 @@ export default class ChameleonSelect extends LitElement {
   @property({ type: Array })
   options = <Array<SelectableOption>>[];
 
+  @property({ type: String })
+  name = "cha-multiselect";
+
   @property({ type: Array })
   filteredOptions = <Array<SelectableOption>>[];
 
@@ -60,10 +63,13 @@ export default class ChameleonSelect extends LitElement {
   label = "";
 
   @property({ type: Boolean })
-  valid = true;
+  invalid = false;
 
   @property({ type: Boolean, reflect: true })
   loading = false;
+
+  @property({ type: String })
+  validationMessage = "";
 
   /**
    * Template
@@ -73,7 +79,8 @@ export default class ChameleonSelect extends LitElement {
       ${this.labelText}
       <div
         class="container ${classMap({
-          active: this.active
+          active: this.active,
+          invalid: this.invalid
         })}"
         @click="${this.activateSelections}"
       >
@@ -87,6 +94,7 @@ export default class ChameleonSelect extends LitElement {
           : this.selectCaret}
         ${this.optionsList}
       </div>
+      ${this.errorText}
     `;
   }
 
@@ -116,6 +124,37 @@ export default class ChameleonSelect extends LitElement {
     return this.active ? this.caretUp : this.caretDown;
   }
 
+  get warningIcon(): SVGTemplateResult {
+    return svg`
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-search"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+  `;
+  }
+
+  get errorText(): TemplateResult | object {
+    if (this.validationMessage !== "") {
+      return html`
+        <span class="error" id="${this.name}-error"
+          >${this.warningIcon} ${this.validationMessage}</span
+        >
+      `;
+    } else return nothing;
+  }
+
   /**
    * Returns a list of rendered options that can be selected
    * @return {TemplateResult | object}
@@ -133,6 +172,14 @@ export default class ChameleonSelect extends LitElement {
                   <li
                     class="options__option"
                     data-value="${option.value}"
+                    aria-roledescription="$1"
+                    label="${option?.preLabel +
+                      " " +
+                      option?.label +
+                      " " +
+                      option?.subLabel +
+                      " " +
+                      option?.postLabel}"
                     @click="${this.addSelection}"
                   >
                     ${option.preLabel
@@ -225,9 +272,12 @@ export default class ChameleonSelect extends LitElement {
   get labelText(): TemplateResult | object {
     if (this.label !== "") {
       return html`
-        <div class="label-container">
-          <label>${this.label}</label>
-        </div>
+        <label
+          class="label-container
+        ${classMap({ invalid: this.invalid })}"
+          for="${this.name}"
+          >${this.label}</label
+        >
       `;
     } else return nothing;
   }

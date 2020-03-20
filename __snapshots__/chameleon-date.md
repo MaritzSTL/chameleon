@@ -18,7 +18,6 @@
   y2="12"
 >
 </line>
-
 ```
 
 #### `prevIcon() returns the slot if one is provided`
@@ -26,7 +25,6 @@
 ```html
 <slot name="prev-icon">
 </slot>
-
 ```
 
 #### `nextIcon() returns default icon if none is supplied`
@@ -47,7 +45,6 @@
   y2="12"
 >
 </line>
-
 ```
 
 #### `nextIcon() returns the slot if one is provided`
@@ -55,7 +52,6 @@
 ```html
 <slot name="next-icon">
 </slot>
-
 ```
 
 #### `renders overlay`

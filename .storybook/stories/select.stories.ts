@@ -50,13 +50,20 @@ stories.add(
     const placeHolder = text("Place Holder", "Please select an option");
     const label = text("Label", "");
     const readonly = boolean("Read Only", false);
-
+    const invalid = boolean("Invalid", false);
+    const disabled = boolean("Disabled", false);
+    const name = text("Name", "input-form-name");
+    const error = text("Error", "");
     return html`
       <chameleon-select
+        name="${name}"
         .options="${options}"
         .label="${label}"
         ?readonly="${readonly}"
         placeHolder="${placeHolder}"
+        ?invalid="${invalid}"
+        ?disabled="${disabled}"
+        .validationMessage="${error}"
         @chameleon.select.input=${eventDetails.action("chameleon.select.input")}
         @chameleon.select.close=${eventDetails.action("chameleon.select.close")}
       >
@@ -69,17 +76,24 @@ stories.add(
 stories.add(
   "Searchable",
   () => {
+    const name = text("Name", "input-form-name");
     const placeHolder = text("Place Holder", "Please select an option");
     const label = text("Label", "");
     const readonly = boolean("Read Only", false);
-
+    const invalid = boolean("Invalid", false);
+    const disabled = boolean("Disabled", false);
+    const error = text("Error", "");
     return html`
       <chameleon-select
+        name="${name}"
         .options="${options}"
         .label="${label}"
         ?readonly="${readonly}"
         placeHolder="${placeHolder}"
         ?searchable="${true}"
+        ?invalid="${invalid}"
+        ?disabled="${disabled}"
+        .validationMessage="${error}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
         @chameleon-select.close=${eventDetails.action("chameleon-select.close")}
         >select

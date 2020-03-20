@@ -66,23 +66,29 @@ const options = [
 stories.add(
   "Multiselect",
   () => {
+    const name = text("Name", "input-form-name");
     const disabled = boolean("Disabled", false);
     const readonly = boolean("Read Only", false);
+    const required = boolean("Required", false);
     const loading = boolean("Loading", false);
+    const invalid = boolean("Invalid", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
     const error = text("Error", "");
 
     return html`
       <chameleon-multiselect
+        name="${name}"
         ?disabled="${disabled}"
         ?readonly="${readonly}"
+        ?required="${required}"
         ?loading="${loading}"
+        ?invalid="${invalid}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
-        .errorMessage="${error}"
+        .validationMessage="${error}"
       ></chameleon-multiselect>
     `;
   },
@@ -92,6 +98,7 @@ stories.add(
 stories.add(
   "Pre-Selected Values",
   () => {
+    const name = text("Name", "input-form-name");
     const disabled = boolean("Disabled", false);
     const readonly = boolean("Read Only", false);
     const loading = boolean("Loading", false);
@@ -101,6 +108,7 @@ stories.add(
 
     return html`
       <chameleon-multiselect
+        name="${name}"
         ?disabled="${disabled}"
         ?readonly="${readonly}"
         ?loading="${loading}"
@@ -109,7 +117,7 @@ stories.add(
         .options="${options}"
         .value="${["arch"]}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
-        .errorMessage="${error}"
+        .validationMessage="${error}"
       ></chameleon-multiselect>
     `;
   },
@@ -135,7 +143,7 @@ stories.add(
         .placeholder="${placeholder}"
         .options="${options}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
-        .errorMessage="${error}"
+        .validationMessage="${error}"
       >
         ${searchIcon("icon")}
       </chameleon-multiselect>

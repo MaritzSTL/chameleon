@@ -39,6 +39,10 @@ export default css`
     position: relative;
   }
 
+  .invalid {
+    border-color: var(--color-error, #bc1c16);
+  }
+
   .tags {
     padding: var(--select-padding, 0.438rem 0.5rem);
     width: 100%;
@@ -137,6 +141,9 @@ export default css`
     color: var(--color-gray-darkest, #6c737a);
     font-size: var(--font-size-label, 0.875rem);
     margin-bottom: 10px;
+  }
+  .label-container.invalid {
+    color: var(--color-error, #bc1c16);
   }
 
   svg {
