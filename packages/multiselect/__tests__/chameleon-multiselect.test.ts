@@ -111,7 +111,20 @@ describe("chameleon-multiselect", () => {
       expect(fixture).shadowDom.to.equalSnapshot();
     });
 
-    it("renders filtered options correctly", async () => {
+    it("renders out errorText", async () => {
+      const fixture: ChameleonMultiselect = await litFixture(
+        html`
+          <chameleon-multiselect
+            .validationMessage="Error Text"
+          ></chameleon-multiselect>
+        `
+      );
+      await fixture.updateComplete;
+      debugger;
+      expect(fixture).shadowDom.to.equalSnapshot();
+    });
+
+    it("filtered options are rendered", async () => {
       const fixture: ChameleonMultiselect = await litFixture(
         html`
           <chameleon-multiselect
@@ -310,13 +323,5 @@ describe("chameleon-multiselect", () => {
 
     expect(fixture.selectedOptions).to.eql([]);
     expect(dispatchChangeEventSpy).to.be.called;
-  });
-
-  it("renders errorText", async () => {
-    element.errorMessage = "chameleon";
-
-    const errorText = await litFixture(element.errorText);
-
-    expect(errorText).dom.to.equalSnapshot;
   });
 });

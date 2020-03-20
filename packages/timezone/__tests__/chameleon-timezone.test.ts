@@ -35,7 +35,7 @@ describe("chameleon-timezone", () => {
 
   describe("render()", () => {
     it("should render shadowDom", () => {
-      expect(element).shadowDom.to.equalSnapshot;
+      expect(element).shadowDom.to.equalSnapshot();
     });
 
     it("should render lightDom", () => {
@@ -52,7 +52,7 @@ describe("chameleon-timezone", () => {
           <chameleon-timezone timezoneLabel="asdf"></chameleon-timezone>
         `
       );
-      expect(element).shadowDom.to.equalSnapshot;
+      expect(element).shadowDom.to.equalSnapshot();
     });
 
     it("should render timeoneSubLabel", async () => {
@@ -61,7 +61,7 @@ describe("chameleon-timezone", () => {
           <chameleon-timezone timezoneSubLabel="asdf"></chameleon-timezone>
         `
       );
-      expect(element).shadowDom.to.equalSnapshot;
+      expect(element).shadowDom.to.equalSnapshot();
     });
 
     it("should render errors", async () => {

@@ -1,5 +1,17 @@
 # `chameleon-select`
 
+#### `renders labelText`
+
+```html
+<label
+  class="label-container"
+  for="cha-multiselect"
+>
+  chameleon
+</label>
+
+```
+
 #### `renders the loading spinner when loading is set to true`
 
 ```html
@@ -35,7 +47,6 @@
     </li>
   </ul>
 </div>
-
 ```
 
 #### `renders preLabel, subLabel, and postLabel`
@@ -66,7 +77,6 @@
     </li>
   </ul>
 </div>
-
 ```
 
 #### `activates selections`

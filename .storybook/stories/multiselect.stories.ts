@@ -143,7 +143,7 @@ stories.add(
         .placeholder="${placeholder}"
         .options="${options}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
-        .errorMessage="${error}"
+        .validationMessage="${error}"
       >
         ${searchIcon("icon")}
       </chameleon-multiselect>

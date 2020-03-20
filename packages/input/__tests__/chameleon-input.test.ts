@@ -32,7 +32,7 @@ describe("chameleon-input", () => {
 
     const inputEl = await litFixture(element._inputEl);
 
-    expect(inputEl).dom.to.equalSnapshot;
+    expect(inputEl).dom.to.equalSnapshot();
   });
 
   it("_inputEl renders default type", async () => {
@@ -44,7 +44,7 @@ describe("chameleon-input", () => {
 
     const inputEl = await litFixture(element._inputEl);
 
-    expect(inputEl).dom.to.equalSnapshot;
+    expect(inputEl).dom.to.equalSnapshot();
   });
 
   it("_inputEl renders disabled", async () => {
@@ -52,7 +52,7 @@ describe("chameleon-input", () => {
 
     const inputEl = await litFixture(element._inputEl);
 
-    expect(inputEl).dom.to.equalSnapshot;
+    expect(inputEl).dom.to.equalSnapshot();
   });
 
   it("_inputEl renders readonly", async () => {
@@ -60,7 +60,7 @@ describe("chameleon-input", () => {
 
     const inputEl = await litFixture(element._inputEl);
 
-    expect(inputEl).dom.to.equalSnapshot;
+    expect(inputEl).dom.to.equalSnapshot();
   });
 
   it("renders labelText", async () => {
@@ -78,7 +78,7 @@ describe("chameleon-input", () => {
 
     const errorText = await litFixture(element.errorText);
 
-    expect(errorText).dom.to.equalSnapshot;
+    expect(errorText).dom.to.equalSnapshot();
   });
 
   it("renders toggleText", async () => {

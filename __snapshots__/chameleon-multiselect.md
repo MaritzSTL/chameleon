@@ -2,6 +2,7 @@
 
 ## `render`
 
+####   `renders data`
 
 ```html
 <div class="multiselect-box">
@@ -10,39 +11,6 @@
       aria-describedby="cha-multiselect-error"
       class="multiselect-input"
       name="cha-multiselect"
-      placeholder="Type to filter..."
-      type="text"
-    >
-  </div>
-  <div class="options">
-    <ul class="options__list">
-      <li
-        class="options__option"
-        data-value="arch"
-      >
-        <div class="options__option-group">
-          <span class="options__option-label">
-            Gateway Arch
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <slot name="icon">
-  </slot>
-</div>
-
-```
-
-####   `renders data`
-
-```html
-<div class="multiselect-box">
-  <div class="tags">
-    <input
-      aria-describedby="cha-multselect-error"
-      class="multiselect-input"
-      name="cha-multselect"
       placeholder="Type to filter..."
       type="text"
     >
@@ -92,9 +60,9 @@
 <div class="multiselect-box">
   <div class="tags">
     <input
-      aria-describedby="cha-multselect-error"
+      aria-describedby="cha-multiselect-error"
       class="multiselect-input"
-      name="cha-multselect"
+      name="cha-multiselect"
       placeholder="Type to filter..."
       type="text"
     >
@@ -157,6 +125,57 @@
         <span class="options__option-postLabel">
           asdf
         </span>
+      </li>
+    </ul>
+  </div>
+  <slot name="icon">
+  </slot>
+</div>
+```
+
+####   `renders out errorText`
+
+```html
+<div class="multiselect-box">
+  <div class="tags">
+    <input
+      aria-describedby="cha-multiselect-error"
+      class="multiselect-input"
+      name="cha-multiselect"
+      placeholder=""
+      type="text"
+    >
+  </div>
+  <slot name="icon">
+  </slot>
+</div>
+
+```
+
+####   `filtered options are rendered`
+
+```html
+<div class="multiselect-box">
+  <div class="tags">
+    <input
+      aria-describedby="multiselect-input-error"
+      class="multiselect-input"
+      name="multiselect-input"
+      placeholder="Type to filter..."
+      type="text"
+    >
+  </div>
+  <div class="options">
+    <ul class="options__list">
+      <li
+        class="options__option"
+        data-value="arch"
+      >
+        <div class="options__option-group">
+          <span class="options__option-label">
+            Gateway Arch
+          </span>
+        </div>
       </li>
     </ul>
   </div>
