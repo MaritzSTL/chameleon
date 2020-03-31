@@ -9,8 +9,8 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-table.js",
-  "module": "dist/chameleon-table.js",
+  "main": "dist/src/chameleon-table.js",
+  "module": "dist/src/chameleon-table.js",
   "files": [
     "/dist/",
     "/types/"
