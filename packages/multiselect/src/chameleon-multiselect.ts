@@ -10,8 +10,8 @@ import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
 import style from "./chameleon-multiselect-style";
 import { SelectableOption, SelectionTarget } from "../types";
-import "@chameleon-ds/chip/src/chameleon-chip";
-import "@chameleon-ds/loader/src/chameleon-loader";
+import "@chameleon-ds/chip";
+import "@chameleon-ds/loader";
 
 @customElement("chameleon-multiselect")
 export default class ChameleonMultiselect extends LitElement {

@@ -12,7 +12,7 @@ import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
 import { SelectableOption } from "@chameleon-ds/select/types";
 import style from "./chameleon-timezone-style";
-import "@chameleon-ds/select/src/chameleon-select";
+import "@chameleon-ds/select";
 import { default as timezoneData } from "../data/timezones.json";
 
 @customElement("chameleon-timezone")

@@ -8,9 +8,9 @@ import {
 import { svg, nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 
-import "@chameleon-ds/input/src/chameleon-input";
-import "@chameleon-ds/multiselect/src/chameleon-multiselect";
-import "@chameleon-ds/paginator/src/chameleon-paginator";
+import "@chameleon-ds/input";
+import "@chameleon-ds/multiselect";
+import "@chameleon-ds/paginator";
 
 import style from "./chameleon-table-style";
 import {

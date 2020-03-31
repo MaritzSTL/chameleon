@@ -7,7 +7,7 @@ import {
 } from "lit-element";
 import { nothing, svg, SVGTemplateResult, render } from "lit-html";
 import style from "./chameleon-sheet-style";
-import "@chameleon-ds/button/src/chameleon-button";
+import "@chameleon-ds/button";
 
 @customElement("chameleon-sheet")
 export default class ChameleonSheet extends LitElement {

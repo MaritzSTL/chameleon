@@ -13,8 +13,8 @@ import { classMap } from "lit-html/directives/class-map";
 import { nothing } from "lit-html/lib/part";
 import { DateSelectTarget, MonthSelectionTarget } from "../types";
 import style from "./chameleon-date-style";
-import "@chameleon-ds/input/src/chameleon-input";
-import "@chameleon-ds/button/src/chameleon-button";
+import "@chameleon-ds/input";
+import "@chameleon-ds/button";
 
 @customElement("chameleon-date")
 export default class ChameleonDate extends LitElement {

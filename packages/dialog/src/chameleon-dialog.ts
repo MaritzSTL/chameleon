@@ -8,8 +8,8 @@ import {
 import { nothing, svg, SVGTemplateResult } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import style from "./chameleon-dialog-style";
-import "@chameleon-ds/card/src/chameleon-card";
-import "@chameleon-ds/button/src/chameleon-button";
+import "@chameleon-ds/card";
+import "@chameleon-ds/button";
 
 @customElement("chameleon-dialog")
 export default class ChameleonDialog extends LitElement {

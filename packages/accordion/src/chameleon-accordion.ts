@@ -8,7 +8,7 @@ import {
   html
 } from "lit-element";
 import style from "./chameleon-accordion-style";
-import "@chameleon-ds/button/src/chameleon-button";
+import "@chameleon-ds/button";
 
 @customElement("chameleon-accordion")
 export default class ChameleonAccordion extends LitElement {
