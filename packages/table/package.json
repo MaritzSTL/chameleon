@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Chameleon Table",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "@chameleon-ds/input": "^1.4.1",
-    "@chameleon-ds/multiselect": "^1.0.0",
-    "@chameleon-ds/paginator": "^1.1.9",
+    "@chameleon-ds/multiselect": "^1.0.1",
+    "@chameleon-ds/paginator": "^1.1.10",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
