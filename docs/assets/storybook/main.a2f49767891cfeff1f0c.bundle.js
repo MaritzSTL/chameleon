@@ -1053,7 +1053,7 @@
         ${this.optionsList}
       </div>
       ${this.errorText}
-    `}get value(){return this.selectedOption.value}set value(value){const found=this.options.find(option=>value===option.value);if(void 0===found)throw new Error("Value not found within the options array!");this.selectedOption=Object.assign({},found)}get selectCaret(){return this.active?this.caretUp:this.caretDown}get warningIcon(){return lit_element.f`
+    `}get value(){return this.selectedOption.value}set value(value){const found=this.options.find(option=>value===option.value);if(void 0===found)throw new Error("Value not found within the options array!");this.selectedOption={...found}}get selectCaret(){return this.active?this.caretUp:this.caretDown}get warningIcon(){return lit_element.f`
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="14"
@@ -4175,4 +4175,4 @@ ${this.value}</textarea
         <slot name="close-icon">x</slot>
       </a>
     `}closeToast(){this.showCloseable=!1,this.dispatchEvent(new CustomEvent("close-toast",{bubbles:!0,composed:!0}))}};chameleon_toast_ChameleonToast.styles=[chameleon_toast_style],__decorate([Object(lit_element.e)({type:String})],chameleon_toast_ChameleonToast.prototype,"color",void 0),__decorate([Object(lit_element.e)({type:Boolean,reflect:!0})],chameleon_toast_ChameleonToast.prototype,"showCloseable",void 0),__decorate([Object(lit_element.e)({type:String})],chameleon_toast_ChameleonToast.prototype,"backgroundColor",void 0);chameleon_toast_ChameleonToast=__decorate([Object(lit_element.c)("chameleon-toast")],chameleon_toast_ChameleonToast)}},[[288,1,2]]]);
-//# sourceMappingURL=main.78c358957b6dec082549.bundle.js.map
+//# sourceMappingURL=main.a2f49767891cfeff1f0c.bundle.js.map
