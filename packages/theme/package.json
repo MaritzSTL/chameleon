@@ -9,13 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "base/index.js",
-  "module": "base/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [
-    "/**/*.d.ts",
-    "/**/*.d.ts.map",
-    "/**/*.js",
-    "/**/*.js.map"
+    "/dist/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
