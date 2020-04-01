@@ -21,5 +21,13 @@ module.exports = ({ config }: { config: webpack.Configuration }) => {
     "@chameleon-ds/chip/src/chameleon-chip";
   config!.resolve!.alias!["@chameleon-ds/select"] =
     "@chameleon-ds/select/src/chameleon-select";
+  config!.resolve!.alias!["@chameleon-ds/card"] =
+    "@chameleon-ds/card/src/chameleon-card";
+  config!.resolve!.alias!["@chameleon-ds/input"] =
+    "@chameleon-ds/input/src/chameleon-input";
+  config!.resolve!.alias!["@chameleon-ds/multiselect"] =
+    "@chameleon-ds/multiselect/src/chameleon-multiselect";
+  config!.resolve!.alias!["@chameleon-ds/paginator"] =
+    "@chameleon-ds/paginator/src/chameleon-paginator";
   return config;
 };
