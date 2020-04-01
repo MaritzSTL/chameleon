@@ -28,6 +28,10 @@ export default css`
     border-color: var(--color-error, #bc1c16);
   }
 
+  input:invalid {
+    box-shadow: none;
+  }
+
   .component-wrapper:hover:not(.invalid) input:not([disabled]),
   .component-wrapper:active:not(.invalid) input:not([disabled]) {
     border-color: var(--color-primary, #2c6fb7);
