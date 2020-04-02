@@ -1,7 +1,7 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
 import ChameleonTabs from "@chameleon-ds/tabs/src/chameleon-tabs";
-import "@chameleon-ds/tabs/src/index";
+import "../src";
 
 const fixture = html`
   <chameleon-tabs><chameleon-tab></chameleon-tab></chameleon-tabs>

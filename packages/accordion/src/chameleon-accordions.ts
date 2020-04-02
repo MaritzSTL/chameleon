@@ -1,13 +1,6 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  property,
-  html
-} from "lit-element";
+import { LitElement, TemplateResult, property, html } from "lit-element";
 import style from "./chameleon-accordions-style";
 
-@customElement("chameleon-accordions")
 export default class ChameleonAccordions extends LitElement {
   constructor() {
     super();
@@ -70,3 +63,6 @@ export default class ChameleonAccordions extends LitElement {
     });
   }
 }
+
+if (!window.customElements.get("chameleon-accordions"))
+  window.customElements.define("chameleon-accordions", ChameleonAccordions);

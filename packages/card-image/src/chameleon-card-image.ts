@@ -1,13 +1,6 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import style from "./chameleon-card-image-style";
 
-@customElement("chameleon-card-image")
 export default class ChameleonCardImage extends LitElement {
   /**
    * Properties
@@ -39,3 +32,6 @@ export default class ChameleonCardImage extends LitElement {
         `;
   }
 }
+
+if (!window.customElements.get("chameleon-card-image"))
+  window.customElements.define("chameleon-card-image", ChameleonCardImage);

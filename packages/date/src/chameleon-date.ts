@@ -1,7 +1,6 @@
 import {
   LitElement,
   TemplateResult,
-  customElement,
   property,
   html,
   svg,
@@ -16,7 +15,6 @@ import style from "./chameleon-date-style";
 import "@chameleon-ds/input";
 import "@chameleon-ds/button";
 
-@customElement("chameleon-date")
 export default class ChameleonDate extends LitElement {
   /**
    * Lifecycle Methods
@@ -418,3 +416,6 @@ export default class ChameleonDate extends LitElement {
     }
   }
 }
+
+if (!window.customElements.get("chameleon-date"))
+  window.customElements.define("chameleon-date", ChameleonDate);

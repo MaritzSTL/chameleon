@@ -1,7 +1,6 @@
 import {
   LitElement,
   TemplateResult,
-  customElement,
   property,
   svg,
   SVGTemplateResult,
@@ -10,7 +9,6 @@ import {
 import style from "./chameleon-accordion-style";
 import "@chameleon-ds/button";
 
-@customElement("chameleon-accordion")
 export default class ChameleonAccordion extends LitElement {
   /**
    * Styles
@@ -81,7 +79,8 @@ export default class ChameleonAccordion extends LitElement {
     this.dispatchEvent(
       new CustomEvent("chameleon.accordions.expanded-changed", {
         detail: {
-          value: this.dataset.index
+          value: this.dataset.index,
+          expanded: this.expanded
         },
         bubbles: true,
         composed: true
@@ -115,3 +114,6 @@ export default class ChameleonAccordion extends LitElement {
       `;
   }
 }
+
+if (!window.customElements.get("chameleon-accordion"))
+  window.customElements.define("chameleon-accordion", ChameleonAccordion);

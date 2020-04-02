@@ -1,7 +1,6 @@
 import {
   LitElement,
   TemplateResult,
-  customElement,
   property,
   html,
   svg,
@@ -15,7 +14,6 @@ import style from "./chameleon-timezone-style";
 import "@chameleon-ds/select";
 import { default as timezoneData } from "../data/timezones.json";
 
-@customElement("chameleon-timezone")
 export default class ChameleonTimezone extends LitElement {
   /**
    * Properties
@@ -189,3 +187,6 @@ export default class ChameleonTimezone extends LitElement {
   `;
   }
 }
+
+if (!window.customElements.get("chameleon-timezone"))
+  window.customElements.define("chameleon-timezone", ChameleonTimezone);

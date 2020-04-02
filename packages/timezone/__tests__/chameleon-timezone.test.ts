@@ -1,5 +1,5 @@
 import { html, fixture, expect } from "@open-wc/testing";
-import "@chameleon-ds/timezone/src/chameleon-timezone";
+import "../src/chameleon-timezone";
 
 describe("chameleon-timezone", () => {
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;

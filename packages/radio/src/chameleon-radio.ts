@@ -1,14 +1,7 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import style from "./chameleon-radio-style";
 
-@customElement("chameleon-radio")
 export default class ChameleonRadio extends LitElement {
   /**
    * Properties
@@ -71,3 +64,6 @@ export default class ChameleonRadio extends LitElement {
     else return nothing;
   }
 }
+
+if (!window.customElements.get("chameleon-radio"))
+  window.customElements.define("chameleon-radio", ChameleonRadio);

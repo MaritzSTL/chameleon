@@ -1,15 +1,8 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import style from "./chameleon-loader-style";
 import spinnerStyle from "./chameleon-loader-spinner-style";
 import ellipsisStyle from "./chameleon-loader-ellipsis-style";
 
-@customElement("chameleon-loader")
 export default class ChameleonLoader extends LitElement {
   /**
    * Styles
@@ -68,3 +61,6 @@ export default class ChameleonLoader extends LitElement {
     `;
   }
 }
+
+if (!window.customElements.get("chameleon-loader"))
+  window.customElements.define("chameleon-loader", ChameleonLoader);

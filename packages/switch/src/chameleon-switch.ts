@@ -1,14 +1,7 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import style from "./chameleon-switch-style";
 
-@customElement("chameleon-switch")
 export default class ChameleonSwitch extends LitElement {
   /**
    * Properties
@@ -53,3 +46,6 @@ export default class ChameleonSwitch extends LitElement {
     else return nothing;
   }
 }
+
+if (!window.customElements.get("chameleon-switch"))
+  window.customElements.define("chameleon-switch", ChameleonSwitch);

@@ -1,15 +1,8 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import { nothing, svg, SVGTemplateResult, render } from "lit-html";
 import style from "./chameleon-sheet-style";
 import "@chameleon-ds/button";
 
-@customElement("chameleon-sheet")
 export default class ChameleonSheet extends LitElement {
   /**
    * Properties
@@ -88,3 +81,6 @@ export default class ChameleonSheet extends LitElement {
       `;
   }
 }
+
+if (!window.customElements.get("chameleon-sheet"))
+  window.customElements.define("chameleon-sheet", ChameleonSheet);

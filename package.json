@@ -1,11 +1,12 @@
 {
   "name": "chameleon-ds",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Chameleon Web Components - A collection of lightweight, unidirectional, framework-agnostic elements based on the Chameleon Design System",
   "scripts": {
     "setup": "yarn install",
-    "clean": "lerna clean --yes && del-cli node_modules coverage && git clean -fX",
+    "clean": "lerna clean --yes && del-cli node_modules coverage **/dist && git clean -fX",
     "test": "karma start --coverage",
+    "test:debug": "karma start --coverage --log-level DEBUG",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:update-snapshots": "karma start --update-snapshots",
     "test:prune-snapshots": "karma start --prune-snapshots",

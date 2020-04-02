@@ -1,10 +1,4 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import { nothing, svg, SVGTemplateResult } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
@@ -13,7 +7,6 @@ import { SelectableOption, SelectionTarget } from "../types";
 import "@chameleon-ds/chip";
 import "@chameleon-ds/loader";
 
-@customElement("chameleon-multiselect")
 export default class ChameleonMultiselect extends LitElement {
   /**
    * Lifecycle Methods
@@ -380,3 +373,6 @@ export default class ChameleonMultiselect extends LitElement {
     );
   }
 }
+
+if (!window.customElements.get("chameleon-multiselect"))
+  window.customElements.define("chameleon-multiselect", ChameleonMultiselect);

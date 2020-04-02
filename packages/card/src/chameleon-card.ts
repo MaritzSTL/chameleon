@@ -1,7 +1,6 @@
 import {
   LitElement,
   TemplateResult,
-  customElement,
   html,
   property,
   PropertyValues
@@ -9,7 +8,6 @@ import {
 import style from "./chameleon-card-style";
 import { nothing } from "lit-html";
 
-@customElement("chameleon-card")
 export default class ChameleonCard extends LitElement {
   /**
    * Styles
@@ -56,3 +54,6 @@ export default class ChameleonCard extends LitElement {
     }
   }
 }
+
+if (!window.customElements.get("chameleon-card"))
+  window.customElements.define("chameleon-card", ChameleonCard);

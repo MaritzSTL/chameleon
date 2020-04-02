@@ -1,17 +1,10 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import { nothing, svg, SVGTemplateResult } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import style from "./chameleon-dialog-style";
 import "@chameleon-ds/card";
 import "@chameleon-ds/button";
 
-@customElement("chameleon-dialog")
 export default class ChameleonDialog extends LitElement {
   /**
    * Properties
@@ -136,3 +129,6 @@ export default class ChameleonDialog extends LitElement {
       `;
   }
 }
+
+if (!window.customElements.get("chameleon-dialog"))
+  window.customElements.define("chameleon-dialog", ChameleonDialog);

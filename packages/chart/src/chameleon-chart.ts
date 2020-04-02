@@ -1,7 +1,6 @@
 import {
   LitElement,
   TemplateResult,
-  customElement,
   property,
   html,
   svg,
@@ -11,7 +10,6 @@ import style from "./chameleon-chart-style";
 import { nothing } from "lit-html";
 import { CartesianCoordinates } from "../types";
 
-@customElement("chameleon-chart")
 export default class ChameleonChart extends LitElement {
   /**
    * Properties
@@ -134,3 +132,6 @@ export default class ChameleonChart extends LitElement {
     return d;
   }
 }
+
+if (!window.customElements.get("chameleon-chart"))
+  window.customElements.define("chameleon-chart", ChameleonChart);

@@ -1,15 +1,8 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import { nothing, svg, SVGTemplateResult } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import style from "./chameleon-input-style";
 
-@customElement("chameleon-input")
 export default class ChameleonInput extends LitElement {
   /**
    * Lifecycle Methods
@@ -371,3 +364,6 @@ export default class ChameleonInput extends LitElement {
     `;
   }
 }
+
+if (!window.customElements.get("chameleon-input"))
+  window.customElements.define("chameleon-input", ChameleonInput);

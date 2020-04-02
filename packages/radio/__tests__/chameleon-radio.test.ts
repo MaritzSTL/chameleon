@@ -1,5 +1,5 @@
 import { litFixture, html, expect } from "@open-wc/testing";
-import "@chameleon-ds/radio/src/chameleon-radio";
+import "../src/chameleon-radio";
 
 const fixture = html`
   <chameleon-radio></chameleon-radio>

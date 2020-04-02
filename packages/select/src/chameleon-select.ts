@@ -1,7 +1,6 @@
 import {
   LitElement,
   TemplateResult,
-  customElement,
   html,
   property,
   svg,
@@ -13,7 +12,6 @@ import { nothing } from "lit-html";
 import { SelectableOption, SelectionTarget } from "../types";
 import style from "./chameleon-select-style";
 
-@customElement("chameleon-select")
 export default class ChameleonSelect extends LitElement {
   firstUpdated() {
     document.addEventListener("click", this.closeOptionsList.bind(this));
@@ -394,3 +392,6 @@ export default class ChameleonSelect extends LitElement {
     }
   }
 }
+
+if (!window.customElements.get("chameleon-select"))
+  window.customElements.define("chameleon-select", ChameleonSelect);

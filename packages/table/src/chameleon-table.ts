@@ -1,10 +1,4 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  property,
-  html
-} from "lit-element";
+import { LitElement, TemplateResult, property, html } from "lit-element";
 import { svg, nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 
@@ -24,7 +18,6 @@ import {
   ChangeCustomEvent
 } from "../types";
 
-@customElement("chameleon-table")
 export default class ChameleonTable extends LitElement {
   /**
    * Properties
@@ -305,3 +298,6 @@ export default class ChameleonTable extends LitElement {
     `;
   }
 }
+
+if (!window.customElements.get("chameleon-table"))
+  window.customElements.define("chameleon-table", ChameleonTable);

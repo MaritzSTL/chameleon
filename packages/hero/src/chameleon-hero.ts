@@ -1,16 +1,9 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { nothing } from "lit-html";
 import style from "./chameleon-hero-style";
 import "@chameleon-ds/skeleton";
 
-@customElement("chameleon-hero")
 export default class ChameleonHero extends LitElement {
   /**
    * Properties
@@ -118,3 +111,6 @@ export default class ChameleonHero extends LitElement {
     return `rgba(${r},${g},${b},${alpha})`;
   }
 }
+
+if (!window.customElements.get("chameleon-hero"))
+  window.customElements.define("chameleon-hero", ChameleonHero);

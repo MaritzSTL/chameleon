@@ -1,16 +1,9 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import style from "./chameleon-button-style";
 import "@chameleon-ds/loader";
 
-@customElement("chameleon-button")
 export default class ChameleonButton extends LitElement {
   /**
    * Properties
@@ -99,3 +92,6 @@ export default class ChameleonButton extends LitElement {
     return this["new-tab"] ? `noopener noreferrer` : ``;
   }
 }
+
+if (!window.customElements.get("chameleon-button"))
+  window.customElements.define("chameleon-button", ChameleonButton);

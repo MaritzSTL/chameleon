@@ -1,14 +1,7 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import style from "./chameleon-checkbox-style";
 
-@customElement("chameleon-checkbox")
 export default class ChameleonCheckbox extends LitElement {
   /**
    * Properties
@@ -76,3 +69,6 @@ export default class ChameleonCheckbox extends LitElement {
     else return nothing;
   }
 }
+
+if (!window.customElements.get("chameleon-checkbox"))
+  window.customElements.define("chameleon-checkbox", ChameleonCheckbox);

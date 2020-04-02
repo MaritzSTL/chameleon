@@ -1,14 +1,12 @@
 import {
   LitElement,
   TemplateResult,
-  customElement,
   html,
   property,
   PropertyValues
 } from "lit-element";
 import style from "./chameleon-toast-style";
 
-@customElement("chameleon-toast")
 export default class ChameleonToast extends LitElement {
   /**
    * Lifecycle Methods
@@ -67,3 +65,6 @@ export default class ChameleonToast extends LitElement {
     );
   }
 }
+
+if (!window.customElements.get("chameleon-toast"))
+  window.customElements.define("chameleon-toast", ChameleonToast);

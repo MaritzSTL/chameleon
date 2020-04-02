@@ -1,7 +1,6 @@
-import { LitElement, TemplateResult, customElement, html } from "lit-element";
+import { LitElement, TemplateResult, html } from "lit-element";
 import style from "./chameleon-card-footer-style";
 
-@customElement("chameleon-card-footer")
 export default class ChameleonCardFooter extends LitElement {
   /**
    * Styles
@@ -17,3 +16,6 @@ export default class ChameleonCardFooter extends LitElement {
     `;
   }
 }
+
+if (!window.customElements.get("chameleon-card-footer"))
+  window.customElements.define("chameleon-card-footer", ChameleonCardFooter);
