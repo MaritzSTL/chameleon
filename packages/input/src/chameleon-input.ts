@@ -263,10 +263,9 @@ export default class ChameleonInput extends LitElement {
 
   get _invalidState(): boolean {
     if (
-      this.touched &&
-      (this.invalid ||
-        this.validationMessage.length > 0 ||
-        !this.checkValidity())
+      this.invalid ||
+      this.validationMessage.length > 0 ||
+      (this.touched && !this.checkValidity())
     ) {
       return true;
     } else return false;
