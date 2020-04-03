@@ -258,7 +258,7 @@ export default class ChameleonInput extends LitElement {
     if (
       this.invalid ||
       this.validationMessage.length > 0 ||
-      !this.checkValidity()
+      (this.touched && !this.checkValidity())
     ) {
       return true;
     } else return false;
@@ -291,6 +291,7 @@ export default class ChameleonInput extends LitElement {
     this._checkRequired();
     const elementValid = this.checkValidity();
     if (elementValid) this.validationMessage = "";
+    this.touched = true;
   }
 
   _handleInvalid(): void {
