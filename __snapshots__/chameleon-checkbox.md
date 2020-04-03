@@ -11,6 +11,7 @@
 >
 <span class="checkmark">
 </span>
+
 ```
 
 #### `shows name attribute`
@@ -24,6 +25,7 @@
 >
 <span class="checkmark">
 </span>
+
 ```
 
 #### `shows required attribute`
@@ -52,5 +54,6 @@
 >
 <span class="checkmark">
 </span>
+
 ```
 

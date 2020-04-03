@@ -52,6 +52,7 @@
   <slot name="icon">
   </slot>
 </div>
+
 ```
 
 ####   `renders data with labels`
@@ -131,6 +132,7 @@
   <slot name="icon">
   </slot>
 </div>
+
 ```
 
 ####   `renders out errorText`
@@ -182,5 +184,6 @@
   <slot name="icon">
   </slot>
 </div>
+
 ```
 

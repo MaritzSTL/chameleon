@@ -26,6 +26,7 @@
   >
   </chameleon-loader>
 </div>
+
 ```
 
 #### `renders filtered options`
@@ -47,6 +48,7 @@
     </li>
   </ul>
 </div>
+
 ```
 
 #### `renders preLabel, subLabel, and postLabel`
@@ -77,6 +79,7 @@
     </li>
   </ul>
 </div>
+
 ```
 
 #### `activates selections`
@@ -92,6 +95,7 @@
     </ul>
   </div>
 </div>
+
 ```
 
 #### `activate selections fails if disabled`
@@ -103,6 +107,7 @@
     </span>
   </div>
 </div>
+
 ```
 
 #### `activates searchable selections`
@@ -123,6 +128,7 @@
     </ul>
   </div>
 </div>
+
 ```
 
 ## `renders the renderedSelectedOption`
@@ -141,6 +147,7 @@
     </div>
   </div>
 </div>
+
 ```
 
 ####   `renderedSelectedOption with labels`
@@ -166,6 +173,7 @@
     </div>
   </div>
 </div>
+
 ```
 
 ####   `renders search bar`
@@ -186,5 +194,6 @@
     </ul>
   </div>
 </div>
+
 ```
 
