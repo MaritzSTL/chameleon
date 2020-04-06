@@ -9,18 +9,18 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Dependencies
-          command: |
-            npm config set prefix '~/.npm-global'
-            yarn setup
+        name: Install Dependencies
+        command: |
+          npm config set prefix '~/.npm-global'
+          yarn setup
+      - run: # run build
+        name: Build
+        command: |
+          yarn build:ci
       - run: # run tests
-          name: Test
-          command: yarn test
+        name: Test
+        command: yarn test
       - run: # run coverage report
-          name: Code Coverage
-          command: |
-            yarn run generate-codecov
-      - run:
-          name: Build
-          command: |
-            yarn build:ci
+        name: Code Coverage
+        command: |
+          yarn run generate-codecov
