@@ -39,11 +39,11 @@ export default class ChameleonProgressBar extends LitElement {
           ></div>
         </div>
         <label class="total-item-label">
-          ${this.total > 0 ? this.total : ""}
+          ${this.total > 0 ? this.completed : ""}
         </label>
         <label>
-          ${this.completed > 0
-            ? " of " + this.completed + " " + this.label
+          ${this.total > 0
+            ? " of " + this.total + " " + this.label
             : this.label}
         </label>
       </div>
