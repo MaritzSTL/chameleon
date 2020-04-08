@@ -27,7 +27,7 @@ export default class ChameleonProgressBar extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <div>
+      <div class="progress-bar-container">
         <div class="background">
           <div
             class="progress-bar"

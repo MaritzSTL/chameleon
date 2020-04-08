@@ -2,7 +2,11 @@ import { css } from "lit-element";
 
 export default css`
   :host {
-    display: flex;
+    display: inline-flex;
+  }
+
+  .progress-bar-container {
+    width: 100%;
   }
 
   .background {
