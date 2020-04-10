@@ -2877,7 +2877,11 @@
           `}
     `}get backgroundImageStyles(){switch(this.type){case"imageGradient":return{backgroundImage:`linear-gradient(to right, ${this.gradientOverlay}), url(${this.imageUrl})`};case"gradient":return{backgroundImage:`linear-gradient(to right, ${this.gradientHex})`};case"image":return{backgroundImage:`url(${this.imageUrl})`};default:return{backgroundImage:`linear-gradient(to right, ${this.gradientHex})`}}}get gradientHex(){return this.gradient.split(",").map(h=>h.trim())}get gradientOverlay(){return this.gradient.split(",").map(h=>this.hex2rgba(h.trim(),this.gradientAlpha))}hex2rgba(hex,alpha=.5){const[r,g,b]=hex.match(/\w\w/g).map(x=>parseInt(x,16));return`rgba(${r},${g},${b},${alpha})`}}chameleon_hero_ChameleonHero.styles=[chameleon_hero_style],__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"title",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"subTitle",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"heroText",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"imageUrl",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"type",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"gradient",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_hero_ChameleonHero.prototype,"gradientAlpha",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_hero_ChameleonHero.prototype,"loading",void 0),window.customElements.get("chameleon-hero")||window.customElements.define("chameleon-hero",chameleon_hero_ChameleonHero)},695:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_progress_bar_style=lit_element.b`
   :host {
-    display: flex;
+    display: inline-flex;
+  }
+
+  .progress-bar-container {
+    width: 100%;
   }
 
   .background {
@@ -2904,7 +2908,7 @@
     color: rgba(44, 111, 183, 1);
   }
 `,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};class chameleon_progress_bar_ChameleonProgressBar extends lit_element.a{constructor(){super(...arguments),this.percent=void 0,this.total=0,this.completed=0,this.label=""}render(){return lit_element.c`
-      <div>
+      <div class="progress-bar-container">
         <div class="background">
           <div
             class="progress-bar"
@@ -4233,4 +4237,4 @@ ${this.value}</textarea
         <slot name="close-icon">x</slot>
       </a>
     `}closeToast(){this.showCloseable=!1,this.dispatchEvent(new CustomEvent("close-toast",{bubbles:!0,composed:!0}))}}chameleon_toast_ChameleonToast.styles=[chameleon_toast_style],__decorate([Object(lit_element.d)({type:String})],chameleon_toast_ChameleonToast.prototype,"color",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_toast_ChameleonToast.prototype,"showCloseable",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_toast_ChameleonToast.prototype,"backgroundColor",void 0),window.customElements.get("chameleon-toast")||window.customElements.define("chameleon-toast",chameleon_toast_ChameleonToast)}},[[307,1,2]]]);
-//# sourceMappingURL=main.548ff66ea494f4c84985.bundle.js.map
+//# sourceMappingURL=main.b750b96a1847ae095e4a.bundle.js.map
