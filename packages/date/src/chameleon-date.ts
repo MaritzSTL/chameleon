@@ -143,7 +143,7 @@ export default class ChameleonDate extends LitElement {
         ? html`
             <div class="overlay ${this.overlayRenderMode}">${this.overlay}</div>
           `
-        : this.canDelete && this.value && this.value.length
+        : this.canDelete && this.value && this.value.length && this.touched
         ? html`<chameleon-button
             theme="text"
             class="delete"
@@ -155,6 +155,7 @@ export default class ChameleonDate extends LitElement {
   }
 
   delete() {
+    this.touched = true;
     if (this.value && this.value.length) this.value = "";
   }
 
