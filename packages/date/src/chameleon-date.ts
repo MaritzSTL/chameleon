@@ -356,21 +356,32 @@ export default class ChameleonDate extends LitElement {
 
   private async setDate(e: MouseEvent): Promise<void> {
     this.touched = true;
-    const date = (<DateSelectTarget>e.target)!.value;
-    this.date = date;
-    this.active = false;
-
-    this.requestUpdate();
-    await this.updateComplete;
-    this.dispatchEvent(
-      new CustomEvent("chameleon.date.input", {
-        bubbles: true,
-        composed: true,
-        detail: {
-          value: this.value,
-        },
-      })
-    );
+    if (e && e.target && e.target.value) {
+      const date = e.target.value;
+      this.date = date;
+      this.active = false;
+      this.requestUpdate();
+      await this.updateComplete;
+      this.dispatchEvent(
+        new CustomEvent("chameleon.date.input", {
+          bubbles: true,
+          composed: true,
+          detail: {
+            value: this.value,
+          },
+        })
+      );
+    } else {
+      this.dispatchEvent(
+        new CustomEvent("chameleon.date.input", {
+          bubbles: true,
+          composed: true,
+          detail: {
+            value: null,
+          },
+        })
+      );
+    }
   }
 
   private setMonth(e: MouseEvent): void {
