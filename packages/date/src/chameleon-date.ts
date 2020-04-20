@@ -161,8 +161,7 @@ export default class ChameleonDate extends LitElement {
   }
 
   delete() {
-    this.touched = true;
-    if (this.value && this.value.length) this.value = "";
+    if (this.value?.length) this.value = "";
     this.setDate(null);
   }
 
@@ -367,7 +366,7 @@ export default class ChameleonDate extends LitElement {
 
   private async setDate(e: any): Promise<void> {
     this.touched = true;
-    if (e && e.target && e.target.value) {
+    if (e?.target?.value) {
       const date = e.target.value;
       this.date = date;
       this.active = false;
