@@ -163,6 +163,7 @@ export default class ChameleonDate extends LitElement {
   delete() {
     this.touched = true;
     if (this.value && this.value.length) this.value = "";
+    this.setDate(null);
   }
 
   get date(): Date | undefined {
@@ -372,26 +373,16 @@ export default class ChameleonDate extends LitElement {
       this.active = false;
       this.requestUpdate();
       await this.updateComplete;
-      this.dispatchEvent(
-        new CustomEvent("chameleon.date.input", {
-          bubbles: true,
-          composed: true,
-          detail: {
-            value: this.value,
-          },
-        })
-      );
-    } else {
-      this.dispatchEvent(
-        new CustomEvent("chameleon.date.input", {
-          bubbles: true,
-          composed: true,
-          detail: {
-            value: null,
-          },
-        })
-      );
     }
+    this.dispatchEvent(
+      new CustomEvent("chameleon.date.input", {
+        bubbles: true,
+        composed: true,
+        detail: {
+          value: this.value,
+        },
+      })
+    );
   }
 
   private setMonth(e: MouseEvent): void {

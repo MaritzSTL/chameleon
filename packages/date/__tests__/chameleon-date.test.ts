@@ -2,9 +2,7 @@ import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
 import "../src/chameleon-date";
 
-const fixture = html`
-  <chameleon-date></chameleon-date>
-`;
+const fixture = html` <chameleon-date></chameleon-date> `;
 
 describe("chameleon-date", () => {
   let element;
@@ -22,12 +20,17 @@ describe("chameleon-date", () => {
 
   it("sets touched to true if a value is supplied", async () => {
     element = await litFixture(
-      html`
-        <chameleon-date value="2020-1-1"></chameleon-date>
-      `
+      html` <chameleon-date value="2020-1-1"></chameleon-date> `
     );
 
     expect(element.touched).to.be.true;
+  });
+
+  it("deletes a date", async () => {
+    element.value = "2020-04-20";
+    element.delete();
+    expect(element.value).to.eql("");
+    expect(element.setDate(null)).to.be.called;
   });
 
   xit("renders overlay", async () => {
@@ -109,9 +112,7 @@ describe("chameleon-date", () => {
 
   it("prevIcon() returns the slot if one is provided", async () => {
     element = await litFixture(
-      html`
-        <chameleon-date><svg slot="prev-icon"></svg></chameleon-date>
-      `
+      html` <chameleon-date><svg slot="prev-icon"></svg></chameleon-date> `
     );
     const prevIcon = await litFixture(element.prevIcon);
 
@@ -126,9 +127,7 @@ describe("chameleon-date", () => {
 
   it("nextIcon() returns the slot if one is provided", async () => {
     element = await litFixture(
-      html`
-        <chameleon-date><svg slot="next-icon"></svg></chameleon-date>
-      `
+      html` <chameleon-date><svg slot="next-icon"></svg></chameleon-date> `
     );
     const nextIcon = await litFixture(element.nextIcon);
 
@@ -209,11 +208,11 @@ describe("chameleon-date", () => {
     expect({
       year: element.renderedDate.getFullYear(),
       month: element.renderedDate.getMonth(),
-      day: element.renderedDate.getDate()
+      day: element.renderedDate.getDate(),
     }).to.eql({
       year: date.getFullYear(),
       month: date.getMonth(),
-      day: date.getDate()
+      day: date.getDate(),
     });
 
     expect(element.overlayRenderMode).to.equal("month");
@@ -224,7 +223,7 @@ describe("chameleon-date", () => {
     const mouseEvent = {
       composedPath() {
         return [{ tagName: "asdf" }];
-      }
+      },
     };
     element.closeOverlay(mouseEvent);
 
@@ -236,7 +235,7 @@ describe("chameleon-date", () => {
     const mouseEvent = {
       composedPath() {
         return [{ tagName: "CHAMELEON-DATE" }];
-      }
+      },
     };
     element.closeOverlay(mouseEvent);
 
