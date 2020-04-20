@@ -10,7 +10,7 @@ import {
 import { repeat } from "lit-html/directives/repeat";
 import { classMap } from "lit-html/directives/class-map";
 import { nothing } from "lit-html/lib/part";
-import { DateSelectTarget, MonthSelectionTarget } from "../types";
+import { MonthSelectionTarget } from "../types";
 import style from "./chameleon-date-style";
 import "@chameleon-ds/input";
 import "@chameleon-ds/button";
@@ -137,7 +137,9 @@ export default class ChameleonDate extends LitElement {
         ?disabled="${this.disabled}"
         .validationMessage="${this.validationMessage}"
         @focus="${this.toggleActive}"
-        >${this.calendarIcon}</chameleon-input
+        >${!this.value || !this.value.length || !this.touched
+          ? this.calendarIcon
+          : nothing}</chameleon-input
       >
       ${this.active
         ? html`
@@ -148,8 +150,8 @@ export default class ChameleonDate extends LitElement {
             theme="text"
             class="delete"
             @click="${this.delete}"
-            >Delete</chameleon-button
-          >`
+            >${this.closeIcon}
+          </chameleon-button>`
         : nothing}
     `;
   }
@@ -300,6 +302,10 @@ export default class ChameleonDate extends LitElement {
       : "";
   }
 
+  get closeIcon(): SVGTemplateResult {
+    return svg`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18"><path fill="gray" d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"/></svg>`;
+  }
+
   get calendarIcon(): SVGTemplateResult {
     return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" slot="icon-right"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`;
   }
@@ -354,7 +360,7 @@ export default class ChameleonDate extends LitElement {
     this.renderedDate = new Date(date);
   }
 
-  private async setDate(e: MouseEvent): Promise<void> {
+  private async setDate(e: any): Promise<void> {
     this.touched = true;
     if (e && e.target && e.target.value) {
       const date = e.target.value;
