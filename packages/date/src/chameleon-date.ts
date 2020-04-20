@@ -137,7 +137,7 @@ export default class ChameleonDate extends LitElement {
         ?disabled="${this.disabled}"
         .validationMessage="${this.validationMessage}"
         @focus="${this.toggleActive}"
-        >${!this.value || !this.value.length || !this.touched
+        >${!this.value || !this.value.length || !this.touched || !this.canDelete
           ? this.calendarIcon
           : nothing}</chameleon-input
       >
@@ -157,8 +157,10 @@ export default class ChameleonDate extends LitElement {
   }
 
   delete() {
-    this.touched = true;
-    if (this.value && this.value.length) this.value = "";
+    if (!this.readonly) {
+      this.touched = true;
+      if (this.value && this.value.length) this.value = "";
+    }
   }
 
   get date(): Date | undefined {
