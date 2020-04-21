@@ -10,7 +10,7 @@ import {
 import { repeat } from "lit-html/directives/repeat";
 import { classMap } from "lit-html/directives/class-map";
 import { nothing } from "lit-html/lib/part";
-import { MonthSelectionTarget } from "../types";
+import { MonthSelectionTarget, DateSelectTarget } from "../types";
 import style from "./chameleon-date-style";
 import "@chameleon-ds/input";
 import "@chameleon-ds/button";
@@ -364,10 +364,10 @@ export default class ChameleonDate extends LitElement {
     this.renderedDate = new Date(date);
   }
 
-  private async setDate(e: any): Promise<void> {
+  private async setDate(e: MouseEvent | null): Promise<void> {
     this.touched = true;
-    if (e?.target?.value) {
-      const date = e.target.value;
+    if (e?.target) {
+      const date = (<DateSelectTarget>e.target).value;
       this.date = date;
       this.active = false;
       this.requestUpdate();
