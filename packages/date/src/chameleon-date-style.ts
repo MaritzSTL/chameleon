@@ -8,6 +8,12 @@ export default css`
     width: 301px;
   }
 
+  .delete {
+    position: absolute;
+    right: 0.5rem;
+    top: 2.25rem;
+  }
+
   .overlay {
     background-color: var(--color-surface, #ffffff);
     border-radius: var(--border-radius-input, 0.313rem);
@@ -57,6 +63,7 @@ export default css`
 
   chameleon-input {
     width: 100%;
+    position: relative;
   }
 
   .day-of-week,
