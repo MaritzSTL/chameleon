@@ -26,11 +26,10 @@ describe("chameleon-date", () => {
     expect(element.touched).to.be.true;
   });
 
-  it("deletes a date", async () => {
+  it("deletes a date", () => {
     element.value = "2020-04-20";
     element.delete();
     expect(element.value).to.eql("");
-    expect(element.setDate(null)).to.be.called;
   });
 
   xit("renders overlay", async () => {

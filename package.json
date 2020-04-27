@@ -5,7 +5,7 @@
   "scripts": {
     "setup": "yarn install",
     "clean": "lerna clean --yes && del-cli node_modules coverage **/dist && git clean -fX",
-    "test": "karma start --coverage",
+    "test": "karma start",
     "test:debug": "karma start --coverage --log-level DEBUG",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:update-snapshots": "karma start --update-snapshots",
