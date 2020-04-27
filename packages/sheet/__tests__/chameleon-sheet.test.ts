@@ -1,9 +1,13 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "@chameleon-ds/sheet/src/chameleon-sheet";
+import "../src/chameleon-sheet";
 
 const fixture = html`
-  <chameleon-sheet></chameleon-sheet>
+  <chameleon-sheet header="chameleon" subHeader="chameleon">
+    <section slot="content">
+      <h1>This is some content!</h1>
+    </section>
+  </chameleon-sheet>
 `;
 
 describe("chameleon-sheet", () => {
@@ -17,44 +21,42 @@ describe("chameleon-sheet", () => {
     expect(Boolean(element.shadowRoot)).to.equal(true);
   });
 
-  it("renders subheader", async () => {
-    element.subHeader = "chameleon";
-    element.requestUpdate();
-    await element.updateComplete;
+  it("opens sheet", () => {
+    element.open();
 
-    expect(element).shadowDom.to.equal(`
-      <header class="head-container">
-        <chameleon-button class="close-icon" icon-only="" theme="text"></chameleon-button>
-        <h3 class="header"></h3>
-        <slot name="details"></slot>
-      </header>
-      <slot name="actions"></slot>
-      <span class="sub-header">chameleon</span>
-      <slot name="content"></slot>
-    `);
+    expect(element.sheetOpened).to.be.true;
+
+    element.open();
+
+    expect(element.sheetOpened).to.be.true;
   });
 
-  describe("_toggleSheet", () => {
-    it("should set sheetOpened to true", () => {
-      element.sheetOpened = false;
-      element._toggleSheet();
+  it("closes sheet", () => {
+    element.sheetOpened = true;
+    element.close();
 
-      expect(element.sheetOpened).to.be.true;
-    });
+    expect(element.sheetOpened).to.be.false;
 
-    it("should set sheetOpened to false", () => {
-      element.sheetOpened = true;
-      element._toggleSheet();
+    element.close();
 
-      expect(element.sheetOpened).to.be.false;
-    });
+    expect(element.sheetOpened).to.be.false;
+  });
 
-    it("should dispatch a toggle-sheet event", () => {
-      const spy = sinon.spy();
-      element.addEventListener("toggle-sheet", spy);
-      element._toggleSheet({});
-      expect(spy).to.be.calledOnce;
-    });
+  it("updatesSlot", async () => {
+    element.updateSlot(
+      "content",
+      html`
+        <div>test</div>
+      `
+    );
+    await element.updateComplete;
+    const fixture = await litFixture(
+      html`
+        ${element.querySelector("[slot='content']")}
+      `
+    );
+
+    expect(fixture).to.equalSnapshot();
   });
 
   it("closeIcon returns a slot if one doesn't exist", async () => {

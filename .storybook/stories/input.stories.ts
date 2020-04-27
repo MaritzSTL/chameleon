@@ -30,12 +30,16 @@ const searchIcon = (slot: string) => svg`
 stories.add(
   "Basic",
   () => {
+    const name = text("Name", "input-form-name");
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
     const toggleable = boolean("Toggleable password visibility", false);
     const label = text("Label", "");
+    const invalid = boolean("Invalid", false);
+
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
-    const requiredField = boolean("Required", false);
+    const required = boolean("Required", false);
     const noStepper = boolean(
       "Hide increment arrows/disable incrementing",
       false
@@ -54,8 +58,11 @@ stories.add(
 
     return html`
       <chameleon-input
-        ?requiredField="${requiredField}"
+        name="${name}"
+        ?required="${required}"
         ?disabled="${disabled}"
+        ?readonly="${readonly}"
+        ?invalid="${invalid}"
         ?noStepper="${noStepper}"
         ?toggleable="${toggleable}"
         .type="${typeSelection}"
@@ -72,12 +79,15 @@ stories.add(
 stories.add(
   "Icon Left",
   () => {
+    const name = text("Name", "input-form-name");
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
     const toggleable = boolean("Toggleable password visibility", false);
+    const invalid = boolean("Invalid", false);
     const label = text("Label", "");
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
-    const requiredField = boolean("Required", false);
+    const required = boolean("Required", false);
     const noStepper = boolean(
       "Hide increment arrows/disable incrementing",
       false
@@ -96,8 +106,11 @@ stories.add(
 
     return html`
       <chameleon-input
-        ?requiredField="${requiredField}"
+        name="${name}"
+        ?required="${required}"
         ?disabled="${disabled}"
+        ?readonly="${readonly}"
+        ?invalid="${invalid}"
         ?noStepper="${noStepper}"
         ?toggleable="${toggleable}"
         icon-left
@@ -117,12 +130,15 @@ stories.add(
 stories.add(
   "Icon Right",
   () => {
+    const name = text("Name", "input-form-name");
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
     const toggleable = boolean("Toggleable password visibility", false);
     const label = text("Label", "");
     const error = text("Error", "");
+    const invalid = boolean("Invalid", false);
     const placeholder = text("Placeholder", "Text...");
-    const requiredField = boolean("Required", false);
+    const required = boolean("Required", false);
     const noStepper = boolean(
       "Hide increment arrows/disable incrementing",
       false
@@ -141,9 +157,12 @@ stories.add(
 
     return html`
       <chameleon-input
-        ?requiredField="${requiredField}"
+        name="${name}"
+        ?required="${required}"
         ?disabled="${disabled}"
         ?noStepper="${noStepper}"
+        ?invalid="${invalid}"
+        ?readonly="${readonly}"
         ?toggleable="${toggleable}"
         icon-right
         .type="${typeSelection}"

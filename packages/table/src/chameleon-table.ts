@@ -1,16 +1,10 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  property,
-  html
-} from "lit-element";
+import { LitElement, TemplateResult, property, html } from "lit-element";
 import { svg, nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 
-import "@chameleon-ds/input/src/chameleon-input";
-import "@chameleon-ds/multiselect/src/chameleon-multiselect";
-import "@chameleon-ds/paginator/src/chameleon-paginator";
+import "@chameleon-ds/input";
+import "@chameleon-ds/multiselect";
+import "@chameleon-ds/paginator";
 
 import style from "./chameleon-table-style";
 import {
@@ -24,7 +18,6 @@ import {
   ChangeCustomEvent
 } from "../types";
 
-@customElement("chameleon-table")
 export default class ChameleonTable extends LitElement {
   /**
    * Properties
@@ -74,7 +67,7 @@ export default class ChameleonTable extends LitElement {
           <tr>
             ${this.columns.map(
               column => html`
-                <th>
+                <th class=${column.headerClass ?? ""}>
                   <div class="header-container">
                     ${this.renderColumnHeader(column)}
                   </div>
@@ -98,7 +91,7 @@ export default class ChameleonTable extends LitElement {
                   ${this.columns.map(
                     (column: Column) =>
                       html`
-                        <td>
+                        <td class=${column.columnClass ?? ""}>
                           ${column.row(row)}
                         </td>
                       `
@@ -150,7 +143,7 @@ export default class ChameleonTable extends LitElement {
   }
 
   renderColumnHeader(column: Column): TemplateResult {
-    return column.filter && column.filter.name
+    return column?.filter?.name
       ? column.filter.items
         ? html`
             <div class="column-header">
@@ -222,8 +215,7 @@ export default class ChameleonTable extends LitElement {
   }
 
   sortActiveClass(column: Column, order: Order): string {
-    return column.filter &&
-      column.filter.name &&
+    return column?.filter?.name &&
       this.sort.orderBy === column.filter.name &&
       this.sort.order === order
       ? "active"
@@ -306,3 +298,6 @@ export default class ChameleonTable extends LitElement {
     `;
   }
 }
+
+if (!window.customElements.get("chameleon-table"))
+  window.customElements.define("chameleon-table", ChameleonTable);

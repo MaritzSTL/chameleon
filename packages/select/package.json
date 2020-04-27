@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/select",
-  "version": "0.2.2",
+  "version": "1.2.3",
   "description": "Chameleon select",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,10 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "src/chameleon-select.js",
-  "module": "src/chameleon-select.js",
+  "main": "dist/src/chameleon-select.js",
+  "module": "dist/src/chameleon-select.js",
   "files": [
-    "/src/",
+    "/dist/",
     "/types/"
   ],
   "scripts": {

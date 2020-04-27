@@ -1,13 +1,6 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import style from "./chameleon-rice-ball-dessert-style";
 
-@customElement("chameleon-rice-ball-dessert")
 export default class ChameleonRiceBallDessert extends LitElement {
   /**
    * Properties
@@ -47,3 +40,9 @@ export default class ChameleonRiceBallDessert extends LitElement {
     `;
   }
 }
+
+if (!window.customElements.get("chameleon-rice-ball-dessert"))
+  window.customElements.define(
+    "chameleon-rice-ball-dessert",
+    ChameleonRiceBallDessert
+  );

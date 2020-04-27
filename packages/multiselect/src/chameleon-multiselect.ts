@@ -1,46 +1,35 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
-import { nothing } from "lit-html";
+import { LitElement, TemplateResult, html, property } from "lit-element";
+import { nothing, svg, SVGTemplateResult } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
 import style from "./chameleon-multiselect-style";
 import { SelectableOption, SelectionTarget } from "../types";
-import "@chameleon-ds/chip/src/chameleon-chip";
-import "@chameleon-ds/loader/src/chameleon-loader";
+import "@chameleon-ds/chip";
+import "@chameleon-ds/loader";
 
-@customElement("chameleon-multiselect")
 export default class ChameleonMultiselect extends LitElement {
-  constructor() {
-    super();
-    this.addEventListener("remove-chip", <EventListener>this.handleChipClose);
-    document.addEventListener("click", <EventListener>this.closeOptionsList);
-    document.addEventListener("chameleon-multiselect.close", () => {
-      this.active = false;
-    });
-  }
-
   /**
    * Lifecycle Methods
    */
+  firstUpdated() {
+    this.addEventListener("remove-chip", <EventListener>this.handleChipClose);
+    document.addEventListener("click", this.closeOptionsList.bind(this));
+  }
+
   disconnectedCallback() {
     this.removeEventListener(
       "remove-chip",
       <EventListener>this.handleChipClose
     );
-    document.removeEventListener("click", <EventListener>this.closeOptionsList);
-    document.removeEventListener("chameleon-multiselect.close", () => {
-      this.active = false;
-    });
+    document.removeEventListener("click", this.closeOptionsList.bind(this));
   }
 
   /**
    * Properties
    */
+  @property({ type: String })
+  name = "cha-multiselect";
+
   // An array of the possible options to be selected
   @property({ type: Array, reflect: true })
   options = <Array<SelectableOption>>[];
@@ -61,9 +50,17 @@ export default class ChameleonMultiselect extends LitElement {
   @property({ type: Boolean, reflect: true })
   disabled = false;
 
+  // A Boolean attribute which, if true, indicates that the multiselect cannot be edited
+  @property({ type: Boolean, reflect: true })
+  readonly = false;
+
+  // A Boolean attribute which, if true, indicates the input is required
+  @property({ type: Boolean, reflect: true })
+  required = false;
+
   // A Boolean which, if true, indicates that the input is valid
   @property({ type: Boolean, reflect: true })
-  valid = true;
+  invalid = false;
 
   // The input's label
   @property({ type: String })
@@ -82,6 +79,9 @@ export default class ChameleonMultiselect extends LitElement {
   @property({ type: Boolean, reflect: true })
   loading = false;
 
+  @property({ type: String })
+  validationMessage = "";
+
   /**
    * Styles
    */
@@ -92,32 +92,48 @@ export default class ChameleonMultiselect extends LitElement {
    */
   render(): TemplateResult {
     return html`
+      ${this.getLabel}
       <div
-        class="tags ${classMap({
-          "tags-active": this.selectedOptions.length > 0
+        class="${classMap({
+          "multiselect-box": true,
+          invalid: this.invalid || this.validationMessage.length > 0
         })}"
       >
-        ${this.renderedSelectedOptions}
-        <input
-          class="multiselect-input ${classMap({
+        <div
+          class="tags ${classMap({
             "tags-active": this.selectedOptions.length > 0
           })}"
-          type="text"
-          placeholder="${this.renderedOptions.length > 0 || this.instantSearch
-            ? this.placeholder
-            : ""}"
-          @focus="${this.setActive}"
-          @input="${this.handleSearch}"
-        />
+        >
+          ${this.renderedSelectedOptions}
+          <input
+            .name="${this.name}"
+            class="multiselect-input
+            ${classMap({
+              "tags-active": this.selectedOptions.length > 0
+            })}"
+            type="text"
+            placeholder="${this.active
+              ? "Type to filter..."
+              : this.placeholder}"
+            ?aria-invalid="${this.invalid}"
+            aria-describedby="${this.name}-error"
+            ?readonly="${this.readonly}"
+            ?required="${this.required}"
+            ?disabled="${this.disabled}"
+            @focus="${this.setActive}"
+            @input="${this.handleSearch}"
+          />
+        </div>
+        ${this.optionsList}
+        ${this.loading
+          ? html`
+              <chameleon-loader loader="spinner" size="24px"></chameleon-loader>
+            `
+          : html`
+              <slot name="icon"></slot>
+            `}
       </div>
-      ${this.optionsList}
-      ${this.loading
-        ? html`
-            <chameleon-loader loader="spinner" size="24px"></chameleon-loader>
-          `
-        : html`
-            <slot name="icon"></slot>
-          `}
+      ${this.errorText}
     `;
   }
 
@@ -127,6 +143,20 @@ export default class ChameleonMultiselect extends LitElement {
    */
   get value(): Array<SelectableOption["value"]> {
     return this.selectedOptions.map(option => option.value);
+  }
+
+  get getLabel(): string | object {
+    if (this.label !== "")
+      return html`
+        <label
+          class="${classMap({
+            invalid: this.invalid || this.validationMessage.length > 0
+          })}"
+          for="${this.name}"
+          >${this.label}</label
+        >
+      `;
+    else return nothing;
   }
 
   /**
@@ -224,6 +254,37 @@ export default class ChameleonMultiselect extends LitElement {
     });
   }
 
+  get errorText(): TemplateResult | object {
+    if (this.validationMessage !== "") {
+      return html`
+        <span class="error" id="${this.name}-error"
+          >${this.warningIcon} ${this.validationMessage}</span
+        >
+      `;
+    } else return nothing;
+  }
+
+  get warningIcon(): SVGTemplateResult {
+    return svg`
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-search"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+  `;
+  }
+
   setActive(): void {
     this.active = true;
   }
@@ -246,9 +307,7 @@ export default class ChameleonMultiselect extends LitElement {
     this.shadowRoot!.querySelector("input")!.value = "";
     e.stopPropagation();
 
-    if (selection) {
-      this.selectedOptions = [...this.selectedOptions, selection];
-    }
+    this.selectedOptions = [...this.selectedOptions, selection!];
 
     this.dispatchChangeEvent();
 
@@ -279,22 +338,13 @@ export default class ChameleonMultiselect extends LitElement {
     this.dispatchChangeEvent();
   }
 
-  private closeOptionsList(e: CustomEvent): void {
-    if (
-      e.composedPath &&
-      e.composedPath()[0] &&
-      (<HTMLElement>e.composedPath()[0]).classList
-    ) {
-      const classes = Array.from((<HTMLElement>e.composedPath()[0]).classList);
+  private closeOptionsList(e: MouseEvent): void {
+    const targets = e
+      .composedPath()
+      .map(eventTarget => (eventTarget as Element).tagName);
 
-      if (classes.includes("multiselect-input")) {
-        // Early return if the selector isn't open yet
-        e.stopPropagation();
-        return;
-      } else {
-        // Close selector if click is anywhere but inside the selector
-        this.dispatchEvent(new CustomEvent("chameleon-multiselect.close"));
-      }
+    if (!targets.includes("CHAMELEON-MULTISELECT")) {
+      this.active = false;
     }
   }
 
@@ -323,3 +373,6 @@ export default class ChameleonMultiselect extends LitElement {
     );
   }
 }
+
+if (!window.customElements.get("chameleon-multiselect"))
+  window.customElements.define("chameleon-multiselect", ChameleonMultiselect);

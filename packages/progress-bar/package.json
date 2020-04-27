@@ -1,0 +1,30 @@
+{
+  "name": "@chameleon-ds/progress-bar",
+  "version": "0.1.2",
+  "description": "Chameleon progress bar",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/progress-bar#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "dist/chameleon-progress-bar.js",
+  "module": "dist/chameleon-progress-bar.js",
+  "files": [
+    "/dist/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,14 +1,7 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import style from "./chameleon-switch-style";
 
-@customElement("chameleon-switch")
 export default class ChameleonSwitch extends LitElement {
   /**
    * Properties
@@ -21,6 +14,10 @@ export default class ChameleonSwitch extends LitElement {
   // A Boolean which, if true, indicates that the switch is selected
   @property({ type: Boolean, reflect: true })
   checked = false;
+
+  // A Boolean attribute which, if true, indicates that the switch cannot be edited
+  @property({ type: Boolean, reflect: true })
+  readonly = false;
 
   // The switch's current value
   @property({ type: String })
@@ -49,3 +46,6 @@ export default class ChameleonSwitch extends LitElement {
     else return nothing;
   }
 }
+
+if (!window.customElements.get("chameleon-switch"))
+  window.customElements.define("chameleon-switch", ChameleonSwitch);

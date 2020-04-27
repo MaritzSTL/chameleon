@@ -10,6 +10,7 @@ export default css`
   textarea {
     border: 1px solid var(--color-gray-light, #c4c7ca);
     border-radius: var(--border-radius-input, 0.313rem);
+    font-family: inherit;
     font-size: var(--font-size-input, 0.938rem);
     padding: var(--textarea-padding, 0.438rem 0.813rem);
   }
@@ -28,5 +29,9 @@ export default css`
     color: var(--color-error, #bc1c16);
     font-size: var(--font-size-label, 0.875rem);
     margin-top: 3px;
+  }
+  :host([invalid]) textarea,
+  textarea.invalid {
+    border-color: var(--color-error, #bc1c16);
   }
 `;

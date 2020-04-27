@@ -1,5 +1,5 @@
 import { fixture, html, expect } from "@open-wc/testing";
-import "@chameleon-ds/rice-ball-dessert/src/chameleon-rice-ball-dessert";
+import "../src/chameleon-rice-ball-dessert";
 
 describe("chameleon-rice-ball-dessert", () => {
   it("renders", async () => {

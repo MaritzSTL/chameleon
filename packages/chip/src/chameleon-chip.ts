@@ -1,7 +1,6 @@
 import {
   LitElement,
   TemplateResult,
-  customElement,
   property,
   html,
   svg,
@@ -10,7 +9,6 @@ import {
 import { nothing } from "lit-html";
 import style from "./chameleon-chip-style";
 
-@customElement("chameleon-chip")
 export default class ChameleonChip extends LitElement {
   /**
    * Properties
@@ -66,3 +64,6 @@ export default class ChameleonChip extends LitElement {
     this._value = value;
   }
 }
+
+if (!window.customElements.get("chameleon-chip"))
+  window.customElements.define("chameleon-chip", ChameleonChip);

@@ -1,8 +1,8 @@
 {
   "extends": "../../tsconfig",
   "compilerOptions": {
-    "outDir": "./base"
+    "outDir": "./dist"
   },
   "include": ["**/*.ts"],
-  "exclude": []
+  "exclude": ["dist"]
 }

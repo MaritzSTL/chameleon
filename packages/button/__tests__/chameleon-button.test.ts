@@ -1,5 +1,5 @@
 import { fixture, html, expect } from "@open-wc/testing";
-import "@chameleon-ds/button/src/chameleon-button";
+import "../src/chameleon-button";
 
 describe("chameleon-button", () => {
   it("renders", async () => {

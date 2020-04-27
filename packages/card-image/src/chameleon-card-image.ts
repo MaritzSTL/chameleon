@@ -1,13 +1,6 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import style from "./chameleon-card-image-style";
 
-@customElement("chameleon-card-image")
 export default class ChameleonCardImage extends LitElement {
   /**
    * Properties
@@ -30,8 +23,15 @@ export default class ChameleonCardImage extends LitElement {
    * Template
    */
   render(): TemplateResult {
-    return html`
-      <img src="${this.src}" alt="${this.alt}" />
-    `;
+    return this.src !== ""
+      ? html`
+          <img src="${this.src}" alt="${this.alt}" />
+        `
+      : html`
+          <div class="placeholder"></div>
+        `;
   }
 }
+
+if (!window.customElements.get("chameleon-card-image"))
+  window.customElements.define("chameleon-card-image", ChameleonCardImage);

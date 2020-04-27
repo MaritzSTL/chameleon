@@ -1,14 +1,7 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import style from "./chameleon-card-header-style";
 
-@customElement("chameleon-card-header")
 export default class ChameleonCardHeader extends LitElement {
   /**
    * Styles
@@ -42,3 +35,6 @@ export default class ChameleonCardHeader extends LitElement {
     `;
   }
 }
+
+if (!window.customElements.get("chameleon-card-header"))
+  window.customElements.define("chameleon-card-header", ChameleonCardHeader);

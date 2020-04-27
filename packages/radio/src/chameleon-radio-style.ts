@@ -57,7 +57,15 @@ export default css`
     transform: translate(-50%, -50%);
     width: 8px;
   }
+  :host([invalid]) .checkmark {
+    border-color: var(--color-error, #bc1c16);
+  }
 
+  :host([invalid]) input:checked ~ .checkmark {
+    border: 2px solid var(--color-error, #bc1c16);
+  }
+
+  :host([readonly]),
   :host([disabled]),
   input[disabled] {
     pointer-events: none;

@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "es2015",
+    "target": "ES2019",
+    "module": "ES6",
     "moduleResolution": "node",
-    "lib": ["esnext", "es2017", "es2015", "dom"],
+    "lib": ["ES2019", "ES2018", "ES2017", "ES2016", "ES6", "DOM"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -14,7 +14,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   },
   "exclude": ["**/node_modules", "**/__tests__"]
 }

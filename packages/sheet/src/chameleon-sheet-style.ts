@@ -6,6 +6,7 @@ export default css`
     display: inline-block;
     height: 100%;
     right: 0;
+    top: 0;
     min-width: 320px;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;

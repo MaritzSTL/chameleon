@@ -12,12 +12,14 @@ stories.add(
   () => {
     const label = text("Label", "");
     const checked = boolean("Checked", true);
+    const readonly = boolean("Read Only", false);
 
     return html`
       <chameleon-switch
         label="${label}"
         name="test"
         ?checked="${checked}"
+        ?readonly="${readonly}"
       ></chameleon-switch>
     `;
   },

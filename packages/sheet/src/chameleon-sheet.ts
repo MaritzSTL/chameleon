@@ -1,20 +1,12 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
-import { nothing, svg, SVGTemplateResult } from "lit-html";
+import { LitElement, TemplateResult, html, property } from "lit-element";
+import { nothing, svg, SVGTemplateResult, render } from "lit-html";
 import style from "./chameleon-sheet-style";
-import "@chameleon-ds/button/src/chameleon-button";
+import "@chameleon-ds/button";
 
-@customElement("chameleon-sheet")
 export default class ChameleonSheet extends LitElement {
   /**
    * Properties
    */
-
   // The sheet header
   @property({ type: String })
   header = "";
@@ -42,7 +34,7 @@ export default class ChameleonSheet extends LitElement {
           class="close-icon"
           icon-only
           theme="text"
-          @click="${this._toggleSheet}"
+          @click="${this.close}"
           >${this.closeIcon}</chameleon-button
         >
 
@@ -61,13 +53,20 @@ export default class ChameleonSheet extends LitElement {
     `;
   }
 
-  _toggleSheet(): void {
-    this.sheetOpened = !this.sheetOpened;
-    const e = new CustomEvent("toggle-sheet", {
-      bubbles: true,
-      composed: true
-    });
-    this.dispatchEvent(e);
+  open(): void {
+    if (this.sheetOpened !== true) this.sheetOpened = true;
+  }
+
+  close(): void {
+    if (this.sheetOpened !== false) this.sheetOpened = false;
+  }
+
+  updateSlot(slotName: string, content: TemplateResult): void {
+    const slot = this.querySelector(`[slot="${slotName}"]`);
+
+    if (slot) {
+      render(content, slot);
+    }
   }
 
   get closeIcon(): SVGTemplateResult | TemplateResult {
@@ -82,3 +81,6 @@ export default class ChameleonSheet extends LitElement {
       `;
   }
 }
+
+if (!window.customElements.get("chameleon-sheet"))
+  window.customElements.define("chameleon-sheet", ChameleonSheet);

@@ -1,16 +1,14 @@
 import {
   LitElement,
   TemplateResult,
-  customElement,
   property,
   svg,
   SVGTemplateResult,
   html
 } from "lit-element";
 import style from "./chameleon-accordion-style";
-import "@chameleon-ds/button/src/chameleon-button";
+import "@chameleon-ds/button";
 
-@customElement("chameleon-accordion")
 export default class ChameleonAccordion extends LitElement {
   /**
    * Styles
@@ -21,6 +19,8 @@ export default class ChameleonAccordion extends LitElement {
    * Properties
    */
   @property({ type: Boolean, reflect: true })
+  clickable = false;
+  @property({ type: Boolean, reflect: true })
   expanded = false;
   @property({ type: Boolean, reflect: true })
   fixed = false;
@@ -30,27 +30,57 @@ export default class ChameleonAccordion extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <div class="header">
-        <slot name="header"></slot>
-        <chameleon-button
-          class="toggle-icon ${this.expanded && !this.fixed ? "rotated" : ""}"
-          icon-only
-          theme="text"
-          @click="${this.handleToggle}"
-          >${this.toggleIcon}</chameleon-button
-        >
-      </div>
+      ${this.clickable
+        ? html`
+            <div @click="${this.handleToggle}" class="header clickable">
+              <div class="header-button-div">
+                <slot name="header"></slot>
+                <chameleon-button
+                  class="toggle-icon ${this.expanded && !this.fixed
+                    ? "rotated"
+                    : ""}"
+                  icon-only
+                  theme="text"
+                  @click="${(e: any) => this.disregardToggle(e)}"
+                  >${this.toggleIcon}</chameleon-button
+                >
+              </div>
+              <slot name="subheader"></slot>
+            </div>
+          `
+        : html`
+            <div class="header">
+              <div class="header-button-div">
+                <slot name="header"></slot>
+                <chameleon-button
+                  class="toggle-icon ${this.expanded && !this.fixed
+                    ? "rotated"
+                    : ""}"
+                  icon-only
+                  theme="text"
+                  @click="${this.handleToggle}"
+                  >${this.toggleIcon}</chameleon-button
+                >
+              </div>
+              <slot name="subheader"></slot>
+            </div>
+          `}
       <div class="panel ${this.expanded ? "expanded" : "collapsed"}">
         <slot name="panel"></slot>
       </div>
     `;
   }
 
+  disregardToggle(e: any) {
+    e.preventDefault();
+  }
+
   handleToggle(): void {
     this.dispatchEvent(
       new CustomEvent("chameleon.accordions.expanded-changed", {
         detail: {
-          value: this.dataset.index
+          value: this.dataset.index,
+          expanded: this.expanded
         },
         bubbles: true,
         composed: true
@@ -84,3 +114,6 @@ export default class ChameleonAccordion extends LitElement {
       `;
   }
 }
+
+if (!window.customElements.get("chameleon-accordion"))
+  window.customElements.define("chameleon-accordion", ChameleonAccordion);

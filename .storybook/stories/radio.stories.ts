@@ -10,16 +10,21 @@ stories.addDecorator(withKnobs);
 stories.add(
   "Radio",
   () => {
+    const name = text("Name", "input-form-name");
     const label = text("Label", "");
     const checked = boolean("Checked", true);
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
+    const invalid = boolean("Invalid", false);
 
     return html`
       <chameleon-radio
         label="${label}"
-        name="test"
+        name="${name}"
         ?checked="${checked}"
-        ?disabled=${disabled}
+        ?disabled="${disabled}"
+        ?readonly="${readonly}"
+        ?invalid="${invalid}"
       ></chameleon-radio>
     `;
   },

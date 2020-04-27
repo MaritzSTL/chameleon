@@ -1,18 +1,15 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import { nothing } from "lit-html";
+import { classMap } from "lit-html/directives/class-map";
 import style from "./chameleon-textarea-style";
 
-@customElement("chameleon-textarea")
 export default class ChameleonTextarea extends LitElement {
   /**
    * Properties
    */
+  @property({ type: String })
+  name = "cha-textarea";
+
   // A string indicating the type of autocomplete functionality, if any, to allow on the input
   @property({ type: Boolean, reflect: true })
   autocomplete = false;
@@ -67,6 +64,10 @@ export default class ChameleonTextarea extends LitElement {
   @property({ type: String })
   label = "";
 
+  //Invalid boolean to allow validity access from higher level form errors
+  @property({ type: Boolean, reflect: true })
+  invalid = false;
+
   // The textarea's error message
   @property({ type: String })
   validationMessage = "";
@@ -87,7 +88,10 @@ export default class ChameleonTextarea extends LitElement {
     return html`
       ${this.labelText}
       <textarea
-        name="cha-textarea"
+        name="${this.name}"
+        class="${classMap({
+          invalid: this._invalidState
+        })}"
         ?autocomplete="${this.autocomplete}"
         ?autofocus="${this.autofocus}"
         cols="${this.cols}"
@@ -97,15 +101,25 @@ export default class ChameleonTextarea extends LitElement {
         placeholder="${this.placeholder}"
         ?readonly="${this.readonly}"
         ?required="${this.required}"
+        ?aria-invalid="${this._invalidState}"
+        aria-describedby="${this.name}-error"
         rows="${this.rows}"
         spellcheck="${this.spellcheck}"
         ?nonresizeable="${this.nonresizeable}"
         @blur="${this._handleBlur}"
         @invalid="${this._handleInvalid}"
         @input="${this._handleInput}"
-      ></textarea>
+      >
+${this.value}</textarea
+      >
       ${this.errorText}
     `;
+  }
+
+  firstUpdated() {
+    // TODO(ryuhhnn): This isn't the best strategy for hydrating in the
+    // correct error state. Come back to this to come up with better solution.
+    this.requestUpdate();
   }
 
   get _el(): HTMLTextAreaElement | null {
@@ -125,7 +139,9 @@ export default class ChameleonTextarea extends LitElement {
   get errorText(): TemplateResult | object {
     if (this.validationMessage !== "") {
       return html`
-        <span class="error">${this.validationMessage}</span>
+        <span class="error" id="${this.name}-error"
+          >${this.validationMessage}</span
+        >
       `;
     } else return nothing;
   }
@@ -145,6 +161,16 @@ export default class ChameleonTextarea extends LitElement {
     else return false;
   }
 
+  get _invalidState(): boolean {
+    if (
+      this.invalid ||
+      this.validationMessage.length > 0 ||
+      !this.checkValidity()
+    ) {
+      return true;
+    } else return false;
+  }
+
   private _handleBlur(): void {
     this.checkValidity();
   }
@@ -158,3 +184,6 @@ export default class ChameleonTextarea extends LitElement {
     this.value = (<HTMLTextAreaElement>e.target)!.value;
   }
 }
+
+if (!window.customElements.get("chameleon-textarea"))
+  window.customElements.define("chameleon-textarea", ChameleonTextarea);

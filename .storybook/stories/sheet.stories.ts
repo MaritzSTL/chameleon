@@ -1,6 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, boolean, text } from "@storybook/addon-knobs";
-import { eventDetails } from "../utils";
+import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import { html } from "lit-html";
 import "@chameleon-ds/sheet/src/chameleon-sheet";
 
@@ -27,7 +26,6 @@ stories.add(
         header="${header}"
         subHeader="${subHeader}"
         ?sheetOpened="${sheetOpened}"
-        @toggle-sheet=${eventDetails.action("toggle-sheet")}
       >
         <section slot="details">
           <p>City: Saint Louis</p>

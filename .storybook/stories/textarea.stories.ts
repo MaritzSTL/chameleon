@@ -10,6 +10,7 @@ stories.addDecorator(withKnobs);
 stories.add(
   "Textarea",
   () => {
+    const name = text("Name", "input-form-name");
     const disabled = boolean("Disabled", false);
     const label = text("Label", "");
     const error = text("Error", "");
@@ -19,17 +20,23 @@ stories.add(
     const rows = number("Rows", 2);
     const cols = number("Columns", 20);
     const nonresizeable = boolean("non-resizeable", false);
-
+    const value = text("Value", "");
+    const invalid = boolean("Invalid", false);
+    const required = boolean("Required", false);
     return html`
       <chameleon-textarea
+        name="${name}"
         ?disabled="${disabled}"
+        ?required="${required}"
         .placeholder="${placeholder}"
+        value="${value}"
         .label="${label}"
         .validationMessage="${error}"
         .minlength="${minlength}"
         .maxlength="${maxlength}"
         .rows="${rows}"
         .cols="${cols}"
+        ?invalid="${invalid}"
         .nonresizeable="${nonresizeable}"
       ></chameleon-textarea>
     `;

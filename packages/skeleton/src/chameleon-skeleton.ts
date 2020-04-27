@@ -1,13 +1,6 @@
-import {
-  LitElement,
-  TemplateResult,
-  customElement,
-  html,
-  property
-} from "lit-element";
+import { LitElement, TemplateResult, html, property } from "lit-element";
 import style from "./chameleon-skeleton-style";
 
-@customElement("chameleon-skeleton")
 export default class ChameleonSkeleton extends LitElement {
   /**
    * Properties
@@ -56,3 +49,6 @@ export default class ChameleonSkeleton extends LitElement {
     `;
   }
 }
+
+if (!window.customElements.get("chameleon-skeleton"))
+  window.customElements.define("chameleon-skeleton", ChameleonSkeleton);

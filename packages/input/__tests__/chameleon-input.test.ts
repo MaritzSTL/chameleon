@@ -1,6 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "@chameleon-ds/input/src/chameleon-input";
+import "../src/chameleon-input";
 
 const fixture = html`
   <chameleon-input></chameleon-input>
@@ -32,9 +32,7 @@ describe("chameleon-input", () => {
 
     const inputEl = await litFixture(element._inputEl);
 
-    expect(inputEl).dom.to.equal(
-      "<input max='null' min='null' name='cha-input' placeholder='' type='number' />"
-    );
+    expect(inputEl).dom.to.equalSnapshot();
   });
 
   it("_inputEl renders default type", async () => {
@@ -46,9 +44,23 @@ describe("chameleon-input", () => {
 
     const inputEl = await litFixture(element._inputEl);
 
-    expect(inputEl).dom.to.equal(
-      "<input name='cha-input' placeholder='' type='email' />"
-    );
+    expect(inputEl).dom.to.equalSnapshot();
+  });
+
+  it("_inputEl renders disabled", async () => {
+    element.disabled = true;
+
+    const inputEl = await litFixture(element._inputEl);
+
+    expect(inputEl).dom.to.equalSnapshot();
+  });
+
+  it("_inputEl renders readonly", async () => {
+    element.readonly = true;
+
+    const inputEl = await litFixture(element._inputEl);
+
+    expect(inputEl).dom.to.equalSnapshot();
   });
 
   it("renders labelText", async () => {
@@ -66,7 +78,7 @@ describe("chameleon-input", () => {
 
     const errorText = await litFixture(element.errorText);
 
-    expect(errorText).dom.to.equal("<span class='error'>chameleon</span>");
+    expect(errorText).dom.to.equalSnapshot();
   });
 
   it("renders toggleText", async () => {
@@ -165,10 +177,17 @@ describe("chameleon-input", () => {
 
   it("checkRequired sets required attribute if there's no input", () => {
     element.value = "";
-    element.requiredField = true;
+    element.required = true;
     element._checkRequired();
 
     expect(element._el).to.have.attribute("required");
+  });
+
+  it("invalid sets aria-invalid attribute", async () => {
+    element.value = "";
+    element.invalid = true;
+    await element.updateComplete;
+    expect(element._el).to.have.attribute("aria-invalid");
   });
 
   it("_acceptInput disables up-arrow key to increment value if noStepper is true", () => {

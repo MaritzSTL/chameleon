@@ -1,6 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "@chameleon-ds/dialog/src/chameleon-dialog";
+import "../src/chameleon-dialog";
 
 const fixture = html`
   <chameleon-dialog></chameleon-dialog>

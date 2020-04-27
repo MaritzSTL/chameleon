@@ -1,6 +1,5 @@
-import { LitElement, TemplateResult, customElement, html } from "lit-element";
+import { LitElement, TemplateResult, html } from "lit-element";
 
-@customElement("chameleon-tab")
 export default class ChameleonTab extends LitElement {
   constructor() {
     super();
@@ -28,3 +27,6 @@ export default class ChameleonTab extends LitElement {
     );
   }
 }
+
+if (!window.customElements.get("chameleon-tab"))
+  window.customElements.define("chameleon-tab", ChameleonTab);

@@ -1,14 +1,12 @@
 import {
   LitElement,
   TemplateResult,
-  customElement,
   property,
   html,
   PropertyValues
 } from "lit-element";
 import style from "./chameleon-tabs-style";
 
-@customElement("chameleon-tabs")
 export default class ChameleonTabs extends LitElement {
   constructor() {
     super();
@@ -65,3 +63,6 @@ export default class ChameleonTabs extends LitElement {
     this.selected = parseInt(e.detail.value);
   }
 }
+
+if (!window.customElements.get("chameleon-tabs"))
+  window.customElements.define("chameleon-tabs", ChameleonTabs);

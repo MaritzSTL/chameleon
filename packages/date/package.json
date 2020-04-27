@@ -1,0 +1,34 @@
+{
+  "name": "@chameleon-ds/date",
+  "version": "1.3.0",
+  "description": "Chameleon date",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/date#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "dist/src/chameleon-date.js",
+  "module": "dist/src/chameleon-date.js",
+  "files": [
+    "/dist/",
+    "/types/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "@chameleon-ds/button": "^1.3.9",
+    "@chameleon-ds/input": "^1.4.2",
+    "lit-element": "^2.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "f42fb52b4423dce1ed5f2d20344fc254da1daf36"
+}

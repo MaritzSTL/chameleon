@@ -9,8 +9,15 @@ export default css`
   }
   .header {
     display: flex;
+    flex-direction: column;
+  }
+  .header-button-div {
+    display: flex;
     justify-content: space-between;
     align-items: baseline;
+  }
+  .clickable {
+    cursor: pointer;
   }
   /* ::slotted([slot="panel"]) {
     transform: translateY(100%);

@@ -66,19 +66,29 @@ const options = [
 stories.add(
   "Multiselect",
   () => {
+    const name = text("Name", "input-form-name");
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
+    const required = boolean("Required", false);
     const loading = boolean("Loading", false);
+    const invalid = boolean("Invalid", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
+    const error = text("Error", "");
 
     return html`
       <chameleon-multiselect
+        name="${name}"
         ?disabled="${disabled}"
+        ?readonly="${readonly}"
+        ?required="${required}"
         ?loading="${loading}"
+        ?invalid="${invalid}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
+        .validationMessage="${error}"
       ></chameleon-multiselect>
     `;
   },
@@ -88,20 +98,26 @@ stories.add(
 stories.add(
   "Pre-Selected Values",
   () => {
+    const name = text("Name", "input-form-name");
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
     const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
+    const error = text("Error", "");
 
     return html`
       <chameleon-multiselect
+        name="${name}"
         ?disabled="${disabled}"
+        ?readonly="${readonly}"
         ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
         .value="${["arch"]}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
+        .validationMessage="${error}"
       ></chameleon-multiselect>
     `;
   },
@@ -112,18 +128,22 @@ stories.add(
   "With Icon",
   () => {
     const disabled = boolean("Disabled", false);
+    const readonly = boolean("Read Only", false);
     const loading = boolean("Loading", false);
     const label = text("Label", "");
     const placeholder = text("Placeholder", "Select an option...");
+    const error = text("Error", "");
 
     return html`
       <chameleon-multiselect
         ?disabled="${disabled}"
+        ?readonly="${readonly}"
         ?loading="${loading}"
         .label="${label}"
         .placeholder="${placeholder}"
         .options="${options}"
         @chameleon.select=${eventDetails.action("chameleon.select")}
+        .validationMessage="${error}"
       >
         ${searchIcon("icon")}
       </chameleon-multiselect>

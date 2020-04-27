@@ -1,6 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "@chameleon-ds/textarea/src/chameleon-textarea";
+import "../src/chameleon-textarea";
 
 const fixture = html`
   <chameleon-textarea></chameleon-textarea>
@@ -66,6 +66,13 @@ describe("chameleon-textarea", () => {
     sinon.stub(element, "_el").get(() => null);
 
     expect(element.checkValidity()).to.be.false;
+  });
+
+  it("invalid sets aria-invalid attribute", async () => {
+    element.value = "";
+    element.invalid = true;
+    await element.updateComplete;
+    expect(element._el).to.have.attribute("aria-invalid");
   });
 
   it("_handleBlur calls checkValidity", () => {
