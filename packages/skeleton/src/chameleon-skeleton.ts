@@ -39,7 +39,7 @@ export default class ChameleonSkeleton extends LitElement {
     */
     return html`
       <svg height="${this.height}" width="${this.width}">
-        ${this.theme == "primary"
+        ${this.theme === "primary"
           ? svg`
         <rect
           class="rectangle"
@@ -51,8 +51,10 @@ export default class ChameleonSkeleton extends LitElement {
           ry="10"
         />
       `
-          : svg`
-    <circle class="circle" cx="${this.circleRadius}" cy="${this.circleRadius}" r="${this.circleRadius}"/>`}
+          : this.theme === "secondary"
+          ? svg`
+    <circle class="circle" cx="${this.circleRadius}" cy="${this.circleRadius}" r="${this.circleRadius}"/>`
+          : ``}
       </svg>
     `;
   }

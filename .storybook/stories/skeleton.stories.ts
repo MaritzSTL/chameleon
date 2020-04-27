@@ -24,8 +24,10 @@ stories.add(
           >
           </chameleon-skeleton>
         `
-      : html` <chameleon-skeleton theme="${`secondary`}" cHeight="${cHeight}">
-        </chameleon-skeleton>`;
+      : theme === "secondary"
+      ? html` <chameleon-skeleton theme="${`secondary`}" cHeight="${cHeight}">
+        </chameleon-skeleton>`
+      : html``;
   },
   { info: { inline: true } }
 );
