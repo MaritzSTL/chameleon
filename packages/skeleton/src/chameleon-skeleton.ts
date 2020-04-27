@@ -1,4 +1,4 @@
-import { LitElement, TemplateResult, html, property } from "lit-element";
+import { LitElement, TemplateResult, html, property, svg } from "lit-element";
 import style from "./chameleon-skeleton-style";
 
 export default class ChameleonSkeleton extends LitElement {
@@ -16,6 +16,9 @@ export default class ChameleonSkeleton extends LitElement {
 
   @property({ type: String, reflect: true })
   width = "100%";
+
+  @property({ type: Number, reflect: true })
+  cHeight = 50;
 
   /**
    * Styles
@@ -36,6 +39,8 @@ export default class ChameleonSkeleton extends LitElement {
     */
     return html`
       <svg height="${this.height}" width="${this.width}">
+        ${this.theme == "primary"
+          ? svg`
         <rect
           class="rectangle"
           height="100%"
@@ -45,8 +50,14 @@ export default class ChameleonSkeleton extends LitElement {
           rx="10"
           ry="10"
         />
+      `
+          : svg`
+    <circle class="circle" cx="${this.circleRadius}" cy="${this.circleRadius}" r="${this.circleRadius}"/>`}
       </svg>
     `;
+  }
+  get circleRadius() {
+    return this.cHeight * 0.5;
   }
 }
 
