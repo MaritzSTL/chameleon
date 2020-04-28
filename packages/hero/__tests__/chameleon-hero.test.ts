@@ -1,9 +1,7 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import "../src/chameleon-hero";
 
-const fixture = html`
-  <chameleon-hero></chameleon-hero>
-`;
+const fixture = html` <chameleon-hero></chameleon-hero> `;
 
 describe("chameleon-hero", () => {
   let element;
@@ -22,7 +20,7 @@ describe("chameleon-hero", () => {
     await element.updateComplete;
 
     expect(element).shadowDom.to.equal(
-      "<chameleon-skeleton height='400' theme='primary' width='100%'></chameleon-skeleton>"
+      "<chameleon-skeleton cheight='50' height='400' theme='primary' width='100%'></chameleon-skeleton>"
     );
   });
 
@@ -84,7 +82,7 @@ describe("chameleon-hero", () => {
     element.type = "imageGradient";
 
     expect(element.backgroundImageStyles).to.deep.equal({
-      backgroundImage: `linear-gradient(to right, ${element.gradientOverlay}), url(${element.imageUrl})`
+      backgroundImage: `linear-gradient(to right, ${element.gradientOverlay}), url(${element.imageUrl})`,
     });
   });
 
@@ -92,7 +90,7 @@ describe("chameleon-hero", () => {
     element.type = "gradient";
 
     expect(element.backgroundImageStyles).to.deep.equal({
-      backgroundImage: `linear-gradient(to right, ${element.gradientHex})`
+      backgroundImage: `linear-gradient(to right, ${element.gradientHex})`,
     });
   });
 
@@ -100,7 +98,7 @@ describe("chameleon-hero", () => {
     element.type = "image";
 
     expect(element.backgroundImageStyles).to.deep.equal({
-      backgroundImage: `url(${element.imageUrl})`
+      backgroundImage: `url(${element.imageUrl})`,
     });
   });
 
@@ -108,7 +106,7 @@ describe("chameleon-hero", () => {
     element.type = "chameleon";
 
     expect(element.backgroundImageStyles).to.deep.equal({
-      backgroundImage: `linear-gradient(to right, ${element.gradientHex})`
+      backgroundImage: `linear-gradient(to right, ${element.gradientHex})`,
     });
   });
 
