@@ -30,6 +30,10 @@ export default css`
     padding: 0;
   }
 
+  :host([disabled]) {
+    pointer-events: none;
+  }
+
   a {
     display: inline-block;
     text-decoration: none;
@@ -39,7 +43,6 @@ export default css`
     background-color: var(--color-gray-lightest, #e1e3e4);
     border-color: var(--color-gray-lightest, #e1e3e4);
     color: var(--color-gray-darkest, #6c737a);
-    pointer-events: none;
   }
 
   button {
