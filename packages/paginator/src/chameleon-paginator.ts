@@ -4,7 +4,7 @@ import {
   property,
   html,
   svg,
-  SVGTemplateResult
+  SVGTemplateResult,
 } from "lit-element";
 import style from "./chameleon-paginator-style";
 import "@chameleon-ds/button";
@@ -39,9 +39,7 @@ export default class ChameleonPaginator extends LitElement {
   render(): TemplateResult {
     return html`
       ${this.isFirstPage
-        ? html`
-            <div class="placeholder"></div>
-          `
+        ? html` <div class="placeholder"></div> `
         : html`
             <chameleon-button
               theme="text"
@@ -52,7 +50,7 @@ export default class ChameleonPaginator extends LitElement {
             >
           `}
       <ul class="pages">
-        ${this.pages.map(page => {
+        ${this.pages.map((page) => {
           if (page === this.currentPage) {
             return html`
               <li
@@ -60,26 +58,22 @@ export default class ChameleonPaginator extends LitElement {
                 data-page="${page}"
                 @click="${this._goToPage}"
               >
-                <span>${page}</span>
+                <a href="javascript:"><span>${page}</span></a>
               </li>
             `;
           } else if (page !== this.separator) {
             return html`
               <li class="page" data-page="${page}" @click="${this._goToPage}">
-                <span>${page}</span>
+                <a href="javascript:"><span>${page}</span></a>
               </li>
             `;
           } else {
-            return html`
-              <li class="page separator"><span>${page}</span></li>
-            `;
+            return html` <li class="page separator"><span>${page}</span></li> `;
           }
         })}
       </ul>
       ${this.isLastPage
-        ? html`
-            <div class="placeholder"></div>
-          `
+        ? html` <div class="placeholder"></div> `
         : html`
             <chameleon-button
               theme="text"
@@ -195,10 +189,10 @@ export default class ChameleonPaginator extends LitElement {
     this.dispatchEvent(
       new CustomEvent("page-change", {
         detail: {
-          currentPage: this.currentPage
+          currentPage: this.currentPage,
         },
         composed: true,
-        bubbles: true
+        bubbles: true,
       })
     );
   }
