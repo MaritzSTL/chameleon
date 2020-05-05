@@ -38,7 +38,7 @@ export default css`
     text-decoration: none;
   }
 
-  .current span,
+  .current a,
   .page a:not(.separator):hover {
     align-items: center;
     background-color: var(--color-primary, #2c6fb7);

@@ -58,13 +58,13 @@ export default class ChameleonPaginator extends LitElement {
                 data-page="${page}"
                 @click="${this._goToPage}"
               >
-                <a href="javascript:"><span>${page}</span></a>
+                <a href="javascript:">${page}</a>
               </li>
             `;
           } else if (page !== this.separator) {
             return html`
               <li class="page" data-page="${page}" @click="${this._goToPage}">
-                <a href="javascript:"><span>${page}</span></a>
+                <a href="javascript:">${page}</a>
               </li>
             `;
           } else {
