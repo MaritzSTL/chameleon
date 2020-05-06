@@ -75,7 +75,7 @@ describe("chameleon-paginator", () => {
   });
 
   it("can navigate directly to page", () => {
-    const page = element.shadowRoot.querySelector("[data-page='2'] > span");
+    const page = element.shadowRoot.querySelector("[data-page='2'] > a");
     const spy = sinon.spy(element, "dispatchChange");
 
     page.click();
@@ -86,9 +86,7 @@ describe("chameleon-paginator", () => {
 
   it("goes to first page if navigating directly fails", async () => {
     element.shadowRoot.querySelector("[data-page='2']").dataset.page = "";
-    const page = element.shadowRoot.querySelector(
-      ".page:nth-of-type(2) > span"
-    );
+    const page = element.shadowRoot.querySelector(".page:nth-of-type(2) > a");
 
     page.click();
 
@@ -98,7 +96,7 @@ describe("chameleon-paginator", () => {
   });
 
   it("renders two separators", async () => {
-    const page = element.shadowRoot.querySelector("[data-page='5'] > span");
+    const page = element.shadowRoot.querySelector("[data-page='5'] > a");
 
     page.click();
 
