@@ -33,9 +33,9 @@ export default class ChameleonButton extends LitElement {
   @property({ type: String, reflect: true })
   "href" = null;
 
-  // Element should open href in new tab/window
-  @property({ type: Boolean, reflect: true })
-  "new-tab" = false;
+  // Element should honor the target
+  @property({ type: String, reflect: true })
+  "target" = "_top";
 
   /**
    * Styles
@@ -49,17 +49,11 @@ export default class ChameleonButton extends LitElement {
     return html`
       ${this.href && !this.disabled
         ? html`
-            <a
-              href=${this.href}
-              target=${this.getTarget()}
-              rel=${this.getRel()}
-            >
+            <a href=${this.href} target=${this.target} rel=${this.getRel()}>
               ${this.renderButton()}
             </a>
           `
-        : html`
-            ${this.renderButton()}
-          `}
+        : html` ${this.renderButton()} `}
     `;
   }
 
@@ -84,12 +78,8 @@ export default class ChameleonButton extends LitElement {
     `;
   }
 
-  getTarget(): string {
-    return this["new-tab"] ? `_blank` : `_top`;
-  }
-
   getRel(): string {
-    return this["new-tab"] ? `noopener noreferrer` : ``;
+    return this.target === "_blank" ? `noopener noreferrer` : ``;
   }
 }
 
