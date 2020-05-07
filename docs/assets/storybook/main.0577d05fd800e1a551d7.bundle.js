@@ -473,8 +473,12 @@
   .rectangle {
     fill: var(--color-gray-lightest, #e1e3e4);
   }
-`,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};class chameleon_skeleton_ChameleonSkeleton extends lit_element.a{constructor(){super(...arguments),this.disabled=!1,this.theme="primary",this.height="100%",this.width="100%"}render(){return lit_element.c`
+  .circle {
+    fill: var(--color-gray-lightest, #e1e3e4);
+  }
+`,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};class chameleon_skeleton_ChameleonSkeleton extends lit_element.a{constructor(){super(...arguments),this.disabled=!1,this.theme="primary",this.height="100%",this.width="100%",this.cHeight=50}render(){return lit_element.c`
       <svg height="${this.height}" width="${this.width}">
+        ${"primary"===this.theme?lit_element.e`
         <rect
           class="rectangle"
           height="100%"
@@ -484,8 +488,10 @@
           rx="10"
           ry="10"
         />
+      `:"secondary"===this.theme?lit_element.e`
+    <circle class="circle" cx="${this.circleRadius}" cy="${this.circleRadius}" r="${this.circleRadius}"/>`:""}
       </svg>
-    `}}chameleon_skeleton_ChameleonSkeleton.styles=[chameleon_skeleton_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"theme",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"height",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"width",void 0),window.customElements.get("chameleon-skeleton")||window.customElements.define("chameleon-skeleton",chameleon_skeleton_ChameleonSkeleton)},301:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(10),repeat=__webpack_require__(50),chameleon_multiselect_style=lit_element.b`
+    `}get circleRadius(){return.5*this.cHeight}}chameleon_skeleton_ChameleonSkeleton.styles=[chameleon_skeleton_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"theme",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"height",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"width",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"cHeight",void 0),window.customElements.get("chameleon-skeleton")||window.customElements.define("chameleon-skeleton",chameleon_skeleton_ChameleonSkeleton)},301:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(10),repeat=__webpack_require__(50),chameleon_multiselect_style=lit_element.b`
   :host {
     font-family: var(--font-family, Arial);
   }
@@ -796,6 +802,10 @@
     margin: 18px;
   }
 
+  .page a {
+    color: var(--color-primary, #2c6fb7);
+  }
+
   .separator {
     cursor: auto;
     margin: 14px;
@@ -807,10 +817,15 @@
     margin: 0 4px;
   }
 
-  .current span,
-  .page:not(.separator):hover {
+  a {
+    text-decoration: none;
+  }
+
+  .current a,
+  .page a:not(.separator):hover {
     align-items: center;
     background-color: var(--color-primary, #2c6fb7);
+    color: var(--color-surface, #ffffff);
     border-radius: 50%;
     display: inline-flex;
     height: 36px;
@@ -822,9 +837,7 @@
     width: 68px;
   }
 `,__decorate=(__webpack_require__(67),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});class chameleon_paginator_ChameleonPaginator extends lit_element.a{constructor(){super(...arguments),this.totalItems=null,this.pageSize=null,this.currentPage=1,this.maxLength=7,this.separator="..."}render(){return lit_element.c`
-      ${this.isFirstPage?lit_element.c`
-            <div class="placeholder"></div>
-          `:lit_element.c`
+      ${this.isFirstPage?lit_element.c` <div class="placeholder"></div> `:lit_element.c`
             <chameleon-button
               theme="text"
               name="prev"
@@ -840,19 +853,15 @@
                 data-page="${page}"
                 @click="${this._goToPage}"
               >
-                <span>${page}</span>
+                <a href="javascript:">${page}</a>
               </li>
             `:page!==this.separator?lit_element.c`
               <li class="page" data-page="${page}" @click="${this._goToPage}">
-                <span>${page}</span>
+                <a href="javascript:">${page}</a>
               </li>
-            `:lit_element.c`
-              <li class="page separator"><span>${page}</span></li>
-            `)}
+            `:lit_element.c` <li class="page separator"><span>${page}</span></li> `)}
       </ul>
-      ${this.isLastPage?lit_element.c`
-            <div class="placeholder"></div>
-          `:lit_element.c`
+      ${this.isLastPage?lit_element.c` <div class="placeholder"></div> `:lit_element.c`
             <chameleon-button
               theme="text"
               name="next"
@@ -1640,6 +1649,10 @@
     padding: 0;
   }
 
+  :host([disabled]) {
+    pointer-events: none;
+  }
+
   a {
     display: inline-block;
     text-decoration: none;
@@ -1649,7 +1662,6 @@
     background-color: var(--color-gray-lightest, #e1e3e4);
     border-color: var(--color-gray-lightest, #e1e3e4);
     color: var(--color-gray-darkest, #6c737a);
-    pointer-events: none;
   }
 
   button {
@@ -1917,10 +1929,15 @@
           <p>Famous People: Nelly</p>
         </section></chameleon-sheet
       >
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},677:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(300);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Skeleton",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Skeleton",()=>{const height=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Height","100%"),width=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Width","100%");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-skeleton height="${height}" width="${width}">
-      </chameleon-skeleton>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},678:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(699);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Switch",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Switch",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},677:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(300);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Skeleton",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Skeleton",()=>{const height=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Height","100%"),width=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Width","100%"),theme=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Theme","primary"),cHeight=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Circle Height",50);return"primary"===theme?lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+          <chameleon-skeleton
+            theme="${"primary"}"
+            height="${height}"
+            width="${width}"
+          >
+          </chameleon-skeleton>
+        `:"secondary"===theme?lit_html__WEBPACK_IMPORTED_MODULE_2__.html` <chameleon-skeleton theme="${"secondary"}" cHeight="${cHeight}">
+        </chameleon-skeleton>`:lit_html__WEBPACK_IMPORTED_MODULE_2__.html``},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},678:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(699);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Switch",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Switch",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-switch
         label="${label}"
         name="test"
@@ -4243,4 +4260,4 @@ ${this.value}</textarea
         <slot name="close-icon">x</slot>
       </a>
     `}closeToast(){this.showCloseable=!1,this.dispatchEvent(new CustomEvent("close-toast",{bubbles:!0,composed:!0}))}}chameleon_toast_ChameleonToast.styles=[chameleon_toast_style],__decorate([Object(lit_element.d)({type:String})],chameleon_toast_ChameleonToast.prototype,"color",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_toast_ChameleonToast.prototype,"showCloseable",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_toast_ChameleonToast.prototype,"backgroundColor",void 0),window.customElements.get("chameleon-toast")||window.customElements.define("chameleon-toast",chameleon_toast_ChameleonToast)}},[[307,1,2]]]);
-//# sourceMappingURL=main.5b26ff2359fbe6e2ed48.bundle.js.map
+//# sourceMappingURL=main.0577d05fd800e1a551d7.bundle.js.map
