@@ -3,18 +3,12 @@ import "../src/chameleon-button";
 
 describe("chameleon-button", () => {
   it("renders", async () => {
-    const el = await fixture(html`
-      <chameleon-button></chameleon-button>
-    `);
+    const el = await fixture(html` <chameleon-button></chameleon-button> `);
     expect(Boolean(el.shadowRoot)).to.equal(true);
   });
 
   it("renders as a button when no href is set", async () => {
-    const el = await fixture(
-      html`
-        <chameleon-button></chameleon-button>
-      `
-    );
+    const el = await fixture(html` <chameleon-button></chameleon-button> `);
     expect(Boolean(el.shadowRoot.querySelector(":host > button"))).to.equal(
       true
     );
@@ -36,7 +30,7 @@ describe("chameleon-button", () => {
     );
   });
 
-  it("anchor sets target to _top when new-tab is missing", async () => {
+  it("anchor sets target to _top when target is missing", async () => {
     const el = await fixture(
       html`
         <chameleon-button
@@ -50,12 +44,12 @@ describe("chameleon-button", () => {
     ).to.equal(true);
   });
 
-  it("anchor sets target to _top when new-tab is false", async () => {
+  it("anchor sets target to _top when target set to _top", async () => {
     const el = await fixture(
       html`
         <chameleon-button
           href="https://github.com/MaritzSTL/chameleon"
-          ?new-tab="${false}"
+          target="_top"
         ></chameleon-button>
       `
     );
@@ -65,12 +59,12 @@ describe("chameleon-button", () => {
     ).to.equal(true);
   });
 
-  it("anchor sets target to _blank when new-tab is true", async () => {
+  it("anchor sets target to _blank when target set to _blank", async () => {
     const el = await fixture(
       html`
         <chameleon-button
           href="https://github.com/MaritzSTL/chameleon"
-          new-tab="true"
+          target="_blank"
         ></chameleon-button>
       `
     );
