@@ -19,6 +19,10 @@ export default css`
     margin: 18px;
   }
 
+  .page a {
+    color: var(--color-primary, #2c6fb7);
+  }
+
   .separator {
     cursor: auto;
     margin: 14px;
@@ -30,10 +34,15 @@ export default css`
     margin: 0 4px;
   }
 
-  .current span,
-  .page:not(.separator):hover {
+  a {
+    text-decoration: none;
+  }
+
+  .current a,
+  .page a:not(.separator):hover {
     align-items: center;
     background-color: var(--color-primary, #2c6fb7);
+    color: var(--color-surface, #ffffff);
     border-radius: 50%;
     display: inline-flex;
     height: 36px;
