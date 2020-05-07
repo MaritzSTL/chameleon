@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/hero",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Chameleon hero",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/skeleton": "^1.2.2",
+    "@chameleon-ds/skeleton": "^1.2.3",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
