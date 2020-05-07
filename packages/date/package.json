@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/date",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Chameleon date",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/button": "^1.4.0",
+    "@chameleon-ds/button": "^1.4.1",
     "@chameleon-ds/input": "^1.4.2",
     "lit-element": "^2.2.1"
   },
