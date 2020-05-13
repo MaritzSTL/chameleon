@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/table",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "Chameleon Table",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -23,9 +23,9 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/input": "^1.4.2",
+    "@chameleon-ds/input": "^1.4.4",
     "@chameleon-ds/multiselect": "^1.0.3",
-    "@chameleon-ds/paginator": "^1.2.2",
+    "@chameleon-ds/paginator": "^1.2.4",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {

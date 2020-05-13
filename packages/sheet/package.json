@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/sheet",
-  "version": "1.3.2",
+  "version": "1.3.4",
   "description": "Chameleon sheet",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/button": "^1.4.2",
+    "@chameleon-ds/button": "^1.4.4",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
