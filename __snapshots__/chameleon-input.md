@@ -9,6 +9,7 @@
   min="null"
   name="cha-input"
   placeholder=""
+  step="null"
   type="number"
 >
 
