@@ -27,6 +27,9 @@ export default class ChameleonDialog extends LitElement {
   @property({ type: Boolean, reflect: true })
   "fullScreen" = false;
 
+  @property({ type: Boolean, reflect: true })
+  "wide" = false;
+
   /**
    * Styles
    */
@@ -41,10 +44,14 @@ export default class ChameleonDialog extends LitElement {
         class="${classMap({
           overlay: true,
           open: this.open,
-          close: !this.open
+          close: !this.open,
         })}"
       >
-        <chameleon-card class="${this.fullScreen ? "full-screen" : ""}">
+        <chameleon-card class="${classMap({
+          "full-screen": this.fullScreen,
+          wide: this.wide,
+        })}"
+        >
           <div class="dialog">
           ${
             this.canGoBack
@@ -92,7 +99,7 @@ export default class ChameleonDialog extends LitElement {
     this.open = !this.open;
     const e = new CustomEvent("toggle-dialog", {
       bubbles: true,
-      composed: true
+      composed: true,
     });
     this.dispatchEvent(e);
   }
@@ -100,33 +107,27 @@ export default class ChameleonDialog extends LitElement {
   _goBack(): void {
     const e = new CustomEvent("go-back", {
       bubbles: true,
-      composed: true
+      composed: true,
     });
     this.dispatchEvent(e);
   }
 
   get closeIcon(): SVGTemplateResult | TemplateResult {
     const slots = Array.from(this.querySelectorAll("[slot]"));
-    const closeIcon = slots.find(slot => slot.slot === "close-icon");
+    const closeIcon = slots.find((slot) => slot.slot === "close-icon");
 
     if (closeIcon === undefined)
       return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
-    else
-      return html`
-        <slot name="close-icon"></slot>
-      `;
+    else return html` <slot name="close-icon"></slot> `;
   }
 
   get backIcon(): SVGTemplateResult | TemplateResult {
     const slots = Array.from(this.querySelectorAll("[slot]"));
-    const backIcon = slots.find(slot => slot.slot === "back-icon");
+    const backIcon = slots.find((slot) => slot.slot === "back-icon");
 
     if (backIcon === undefined)
       return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="6" y1="12" x2="24" y2="12"></line><line x1="6" y1="12" x2="12" y2="18"></line><line x1="6" y1="12" x2="12" y2="6"></line></svg>`;
-    else
-      return html`
-        <slot name="back-icon"></slot>
-      `;
+    else return html` <slot name="back-icon"></slot> `;
   }
 }
 

@@ -19,6 +19,7 @@ stories.add(
     const dismissible = boolean("Dismissible", true);
     const canGoBack = boolean("Can Go Back", false);
     const fullScreen = boolean("Full Screen", false);
+    const wide = boolean("Wide", false);
 
     return html`
       <chameleon-dialog
@@ -26,6 +27,7 @@ stories.add(
         ?dismissible="${dismissible}"
         ?canGoBack="${canGoBack}"
         ?fullScreen="${fullScreen}"
+        ?wide="${wide}"
         @toggle-dialog=${eventDetails.action("toggle-dialog")}
       >
         ${defaultIcon("icon")}

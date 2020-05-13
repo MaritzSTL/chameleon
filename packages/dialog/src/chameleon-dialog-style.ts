@@ -46,6 +46,11 @@ export default css`
     animation-duration: 1s;
   }
 
+  .wide {
+    width: 600px;
+    padding: 1.5rem 2.5rem;
+  }
+
   .full-screen {
     border-radius: unset;
     position: relative;
