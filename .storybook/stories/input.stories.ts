@@ -1,5 +1,11 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, boolean, radios, text } from "@storybook/addon-knobs";
+import {
+  withKnobs,
+  boolean,
+  radios,
+  text,
+  number,
+} from "@storybook/addon-knobs";
 import { eventDetails } from "../utils";
 import { html, svg } from "lit-html";
 import "@chameleon-ds/input/src/chameleon-input";
@@ -40,6 +46,7 @@ stories.add(
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
     const required = boolean("Required", false);
+    const step = number("Step", 0.01);
     const noStepper = boolean(
       "Hide increment arrows/disable incrementing",
       false
@@ -51,7 +58,7 @@ stories.add(
       Number: "number",
       Search: "search",
       Tel: "tel",
-      Url: "url"
+      Url: "url",
     };
     const defaultThemeValue = "text";
     const typeSelection = radios("Type", typeOptions, defaultThemeValue);
@@ -69,6 +76,7 @@ stories.add(
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
+        .step="${step}"
         @chameleon.input.input=${eventDetails.action("chameleon.input.input")}
       ></chameleon-input>
     `;
@@ -88,6 +96,7 @@ stories.add(
     const error = text("Error", "");
     const placeholder = text("Placeholder", "Text...");
     const required = boolean("Required", false);
+    const step = number("Step", 0.01);
     const noStepper = boolean(
       "Hide increment arrows/disable incrementing",
       false
@@ -99,7 +108,7 @@ stories.add(
       Number: "number",
       Search: "search",
       Tel: "tel",
-      Url: "url"
+      Url: "url",
     };
     const defaultThemeValue = "text";
     const typeSelection = radios("Type", typeOptions, defaultThemeValue);
@@ -118,6 +127,7 @@ stories.add(
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
+        .step="${step}"
         @chameleon.input.input=${eventDetails.action("chameleon.input.input")}
       >
         ${searchIcon("icon-left")}
@@ -139,6 +149,7 @@ stories.add(
     const invalid = boolean("Invalid", false);
     const placeholder = text("Placeholder", "Text...");
     const required = boolean("Required", false);
+    const step = number("Step", 0.01);
     const noStepper = boolean(
       "Hide increment arrows/disable incrementing",
       false
@@ -150,7 +161,7 @@ stories.add(
       Number: "number",
       Search: "search",
       Tel: "tel",
-      Url: "url"
+      Url: "url",
     };
     const defaultThemeValue = "text";
     const typeSelection = radios("Type", typeOptions, defaultThemeValue);
@@ -169,6 +180,7 @@ stories.add(
         .placeholder="${placeholder}"
         .label="${label}"
         .validationMessage="${error}"
+        .step="${step}"
         @chameleon.input.input=${eventDetails.action("chameleon.input.input")}
       >
         ${searchIcon("icon-right")}

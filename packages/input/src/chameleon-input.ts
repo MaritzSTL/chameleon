@@ -36,6 +36,10 @@ export default class ChameleonInput extends LitElement {
   @property({ type: Boolean, reflect: true })
   noStepper = false;
 
+  // The input's number interval (available in type="number")
+  @property({ type: Number, reflect: true })
+  step = null;
+
   // A Boolean attribute which, if true, indicates that the input cannot be edited
   @property({ type: Boolean, reflect: true })
   readonly = false;
@@ -111,13 +115,13 @@ export default class ChameleonInput extends LitElement {
           "component-wrapper": true,
           invalid: this._invalidState,
           disabled: this.disabled,
-          "no-stepper": this.noStepper
+          "no-stepper": this.noStepper,
         })}"
       >
         <div
           class="${classMap({
             "label-row": true,
-            "split-row": this.toggleable
+            "split-row": this.toggleable,
           })}"
         >
           ${this.labelText}${this.toggleText}
@@ -128,7 +132,7 @@ export default class ChameleonInput extends LitElement {
           ${classMap({
             "input-wrapper": true,
             "icon-left": this["icon-left"],
-            "icon-right": this["icon-right"]
+            "icon-right": this["icon-right"],
           })}"
         >
           <slot name="icon-left"></slot>
@@ -152,6 +156,7 @@ export default class ChameleonInput extends LitElement {
             .type="${this.type}"
             .placeholder="${this.placeholder}"
             .value="${this.value}"
+            .step="${this.step}"
             .min="${this.min}"
             .max="${this.max}"
             ?autocomplete="${this.autocomplete}"
@@ -279,10 +284,10 @@ export default class ChameleonInput extends LitElement {
     this.dispatchEvent(
       new CustomEvent("chameleon.input.input", {
         detail: {
-          value: this.value
+          value: this.value,
         },
         bubbles: true,
-        composed: true
+        composed: true,
       })
     );
   }
