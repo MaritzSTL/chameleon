@@ -4259,4 +4259,4 @@ ${this.value}</textarea
         <slot name="close-icon">x</slot>
       </a>
     `}closeToast(){this.showCloseable=!1,this.dispatchEvent(new CustomEvent("close-toast",{bubbles:!0,composed:!0}))}}chameleon_toast_ChameleonToast.styles=[chameleon_toast_style],__decorate([Object(lit_element.d)({type:String})],chameleon_toast_ChameleonToast.prototype,"color",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_toast_ChameleonToast.prototype,"showCloseable",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_toast_ChameleonToast.prototype,"backgroundColor",void 0),window.customElements.get("chameleon-toast")||window.customElements.define("chameleon-toast",chameleon_toast_ChameleonToast)}},[[307,1,2]]]);
-//# sourceMappingURL=main.48b04a267078f056eb9c.bundle.js.map
+//# sourceMappingURL=main.14f92f4da7570c051f5c.bundle.js.map
