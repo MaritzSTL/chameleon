@@ -10,19 +10,17 @@ export default class ChameleonTab extends LitElement {
    * Template
    */
   render(): TemplateResult {
-    return html`
-      <slot></slot>
-    `;
+    return html`<slot></slot>`;
   }
 
   handleToggle(): void {
     this.dispatchEvent(
-      new CustomEvent("selected-changed", {
+      new CustomEvent("chameleon.tabs.selected-changed", {
         detail: {
-          value: this.dataset.index
+          value: this.dataset.index,
         },
         bubbles: true,
-        composed: true
+        composed: true,
       })
     );
   }
