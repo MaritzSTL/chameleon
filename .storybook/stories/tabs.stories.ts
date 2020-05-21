@@ -14,7 +14,10 @@ stories.add(
     return html`
       <chameleon-tabs
         selected="0"
-        @selected-changed=${eventDetails.action("selected-changed")}
+        id="someid"
+        @chameleon.tabs.selected-changed=${eventDetails.action(
+          "chameleon.tabs.selected-changed"
+        )}
       >
         <chameleon-tab>
           Tab One
