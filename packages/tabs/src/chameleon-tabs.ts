@@ -35,6 +35,9 @@ export default class ChameleonTabs extends LitElement {
       if (params.has(`tabs_${this.id}`)) {
         const index = parseInt(params.get(`tabs_${this.id}`)!);
         this.selected = index <= tabs.length - 1 ? index : 0;
+      } else {
+        if (this.urlRewrite)
+          params.append(`tabs_${this.id}`, String(this.selected));
       }
     }
   }
@@ -56,6 +59,10 @@ export default class ChameleonTabs extends LitElement {
   @property({ type: Number, reflect: true })
   selected = 0;
 
+  /** Automatically rewrite URL with tab index information. Default: true. */
+  @property({ type: Boolean })
+  urlRewrite = true;
+
   /**
    * Styles
    */
@@ -71,6 +78,12 @@ export default class ChameleonTabs extends LitElement {
   _handleSelectedChanged(e: any): void {
     e.preventDefault();
     this.selected = parseInt(e.detail.value);
+    this.updateQueryParams();
+  }
+
+  private updateQueryParams(): void {
+    const params = new URLSearchParams(window.location.search);
+    if (this.urlRewrite) params.set(`tabs_${this.id}`, String(this.selected));
   }
 }
 
