@@ -64,7 +64,7 @@ export default class Chameleonmodal extends LitElement {
         </div>
         <hr/>
         <div class="body">
-            <slot></slot>
+            <slot name="body"></slot>
         </div>
             <div class="footer">
             <chameleon-button
@@ -72,8 +72,8 @@ export default class Chameleonmodal extends LitElement {
                     class="close-bottom"
                     @click="${this._togglemodal}"
                   >
+                  ${this.closeIcon}
                   Close
-                    ${this.closeIcon}
                   </chameleon-button>
                   <chameleon-button
                     theme="primary"

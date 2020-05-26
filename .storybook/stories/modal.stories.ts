@@ -30,22 +30,10 @@ stories.add(
       >
         ${defaultIcon("icon")}
         <h1 slot="title">Title</h1>
-        <div slot="accept-action">
-          <chameleon-button
-            full-width
-            theme="primary"
-            @click="${() => console.log("Accept")}"
-            >Okay</chameleon-button
-          >
-        </div>
-        <div slot="decline-action">
-          <chameleon-button
-            full-width
-            theme="secondary"
-            @click="${() => console.log("Cancel")}"
-            >Cancel</chameleon-button
-          >
-        </div>
+        <p slot="body">
+          We’re sorry but your session has expired. You will need to log back in
+          to continue.
+        </p>
       </chameleon-modal>
     `;
   },

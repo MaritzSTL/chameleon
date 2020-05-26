@@ -106,12 +106,9 @@ export default css`
     margin: 0;
   }
 
-  ::slotted([slot="accept-action"]) {
-    margin-top: 1em;
-  }
-
-  ::slotted([slot="decline-action"]) {
-    margin-top: 1em;
+  ::slotted([slot="body"]) {
+    padding: 20px 0 40px 0;
+    margin: 0;
   }
 
   @keyframes modalopen {
