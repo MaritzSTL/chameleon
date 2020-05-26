@@ -13,7 +13,7 @@ export default css`
     grid-template-rows: auto;
     grid-column-gap: 1.5rem;
     grid-row-gap: 1.5rem;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     width: 100%;
   }
 
@@ -40,7 +40,7 @@ export default css`
     box-shadow: 0 8px 16px 0 rgba(12, 0, 51, 0.1);
     margin: auto;
     background-color: #ffffff;
-    min-width: 600px;
+    max-width: 600px;
     padding: 30px;
     animation-name: modalopen;
     animation-duration: 1s;
