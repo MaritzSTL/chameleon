@@ -30,8 +30,6 @@ stories.add(
       >
         ${defaultIcon("icon")}
         <h1 slot="title">Title</h1>
-        We’re sorry but your session has expired. You will need to log back in
-        to continue.
         <div slot="accept-action">
           <chameleon-button
             full-width

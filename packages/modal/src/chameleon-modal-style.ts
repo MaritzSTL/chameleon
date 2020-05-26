@@ -7,11 +7,12 @@ export default css`
   .close {
     display: none;
   }
-  .header {
+  .header,
+  .footer {
     display: grid;
     max-height: 80px;
     grid-template-rows: auto;
-    grid-column-gap: 1.5rem;
+    grid-column-gap: 1.25rem;
     grid-row-gap: 1.5rem;
     grid-template-columns: repeat(10, 1fr);
     width: 100%;
@@ -40,7 +41,7 @@ export default css`
     box-shadow: 0 8px 16px 0 rgba(12, 0, 51, 0.1);
     margin: auto;
     background-color: #ffffff;
-    max-width: 600px;
+    width: 600px;
     padding: 30px;
     animation-name: modalopen;
     animation-duration: 1s;
@@ -61,9 +62,10 @@ export default css`
     margin-top: 1.5em;
   }
 
-  .close-icon {
+  .close-icon,
+  .continue {
     cursor: pointer;
-    grid-column: col 12 / span 1;
+    grid-column: col 10 / span 2;
   }
 
   .back-icon {
@@ -89,12 +91,19 @@ export default css`
     width: auto;
   }
 
-  ::slotted([slot="title"]) {
+  ::slotted([slot="title"]),
+  .close-bottom {
     color: var(--color-primary-dark, #004587);
-    font-size: 2em;
-    font-weight: 300;
-    letter-spacing: 0.016em;
+    height: 19px;
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
     grid-column: span 3;
+    margin: 0;
   }
 
   ::slotted([slot="accept-action"]) {

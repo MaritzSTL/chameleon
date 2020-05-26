@@ -67,8 +67,21 @@ export default class Chameleonmodal extends LitElement {
             <slot></slot>
         </div>
             <div class="footer">
-              <slot name="accept-action"></slot>
-              <slot name="decline-action"></slot>
+            <chameleon-button
+                    theme="text"
+                    class="close-bottom"
+                    @click="${this._togglemodal}"
+                  >
+                  Close
+                    ${this.closeIcon}
+                  </chameleon-button>
+                  <chameleon-button
+                    theme="primary"
+                    class="continue"
+                    @click="${this._handleContinue}"
+                  >
+                  Continue
+                  </chameleon-button>
             </div>
           </div>
       </chameleon-card>
@@ -78,6 +91,15 @@ export default class Chameleonmodal extends LitElement {
   _togglemodal(): void {
     this.open = !this.open;
     const e = new CustomEvent("toggle-modal", {
+      bubbles: true,
+      composed: true,
+    });
+    this.dispatchEvent(e);
+  }
+
+  _handleContinue(): void {
+    this.open = !this.open;
+    const e = new CustomEvent("chameleon.modal.continue", {
       bubbles: true,
       composed: true,
     });
@@ -99,15 +121,6 @@ export default class Chameleonmodal extends LitElement {
     if (closeIcon === undefined)
       return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
     else return html` <slot name="close-icon"></slot> `;
-  }
-
-  get backIcon(): SVGTemplateResult | TemplateResult {
-    const slots = Array.from(this.querySelectorAll("[slot]"));
-    const backIcon = slots.find((slot) => slot.slot === "back-icon");
-
-    if (backIcon === undefined)
-      return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="6" y1="12" x2="24" y2="12"></line><line x1="6" y1="12" x2="12" y2="18"></line><line x1="6" y1="12" x2="12" y2="6"></line></svg>`;
-    else return html` <slot name="back-icon"></slot> `;
   }
 }
 
