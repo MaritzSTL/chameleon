@@ -45,21 +45,8 @@ export default class Chameleonmodal extends LitElement {
         })}"
       >
         <chameleon-card class="${this.fullScreen ? "full-screen" : ""}">
-          <div class="modal">
-          ${
-            this.canGoBack
-              ? html`
-                  <chameleon-button
-                    theme="text"
-                    class="back-icon"
-                    icon-only
-                    @click="${this._goBack}"
-                  >
-                    ${this.backIcon}
-                  </chameleon-button>
-                `
-              : nothing
-          }
+          <div class="header">
+          <slot name="title"></slot>
           ${
             this.dismissible
               ? html`
@@ -75,15 +62,15 @@ export default class Chameleonmodal extends LitElement {
               : nothing
           }
         </div>
-            <slot name="icon"></slot>
-            <slot name="title"></slot>
+        <hr/>
+        <div class="body">
             <slot></slot>
-            <div class="actions">
+        </div>
+            <div class="footer">
               <slot name="accept-action"></slot>
               <slot name="decline-action"></slot>
             </div>
           </div>
-        </div>
       </chameleon-card>
     `;
   }

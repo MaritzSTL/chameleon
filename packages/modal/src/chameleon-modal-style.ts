@@ -7,12 +7,14 @@ export default css`
   .close {
     display: none;
   }
-  .modal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    padding: 0.5em;
+  .header {
+    display: grid;
+    max-height: 80px;
+    grid-template-rows: auto;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
   }
 
   .overlay {
@@ -35,13 +37,11 @@ export default css`
     top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
-    box-shadow: 0 5px 12px 0 rgba(44, 111, 183, 0.2),
-      0 2px 6px -1px rgba(44, 111, 183, 0.12),
-      0 1px 4px 0 rgba(44, 111, 183, 0.14);
+    box-shadow: 0 8px 16px 0 rgba(12, 0, 51, 0.1);
     margin: auto;
     background-color: #ffffff;
     min-width: 600px;
-    padding: 48px;
+    padding: 30px;
     animation-name: modalopen;
     animation-duration: 1s;
   }
@@ -62,16 +62,11 @@ export default css`
   }
 
   .close-icon {
-    display: flex;
     cursor: pointer;
-    position: absolute;
-    margin: 0;
-    top: 25px;
-    right: 25px;
+    grid-column: col 12 / span 1;
   }
 
   .back-icon {
-    display: flex;
     cursor: pointer;
     position: absolute;
     margin: 0;
@@ -94,17 +89,12 @@ export default css`
     width: auto;
   }
 
-  ::slotted([slot="icon"]) {
-    color: var(--color-secondary-dark);
-    height: 2.625em;
-  }
-
   ::slotted([slot="title"]) {
-    color: var(--color-primary);
+    color: var(--color-primary-dark, #004587);
     font-size: 2em;
     font-weight: 300;
     letter-spacing: 0.016em;
-    margin: 1em 0;
+    grid-column: span 3;
   }
 
   ::slotted([slot="accept-action"]) {
