@@ -3,6 +3,7 @@ import { withKnobs, boolean } from "@storybook/addon-knobs";
 import { eventDetails } from "../utils";
 import { html, svg } from "lit-html";
 import "../../packages/modal/src/chameleon-modal";
+import "@chameleon-ds/input/src/chameleon-input";
 
 const stories = storiesOf("Modal", module);
 
@@ -17,23 +18,44 @@ stories.add(
   () => {
     const modalVisible = boolean("Open", true);
     const dismissible = boolean("Dismissible", true);
-    const canGoBack = boolean("Can Go Back", false);
     const fullScreen = boolean("Full Screen", false);
 
     return html`
       <chameleon-modal
         ?open="${modalVisible}"
         ?dismissible="${dismissible}"
-        ?canGoBack="${canGoBack}"
         ?fullScreen="${fullScreen}"
         @toggle-modal=${eventDetails.action("toggle-modal")}
       >
         ${defaultIcon("icon")}
         <h1 slot="title">Title</h1>
-        <p slot="body">
-          We’re sorry but your session has expired. You will need to log back in
-          to continue.
-        </p>
+        <div slot="body">
+          <chameleon-input
+            .placeholder="${`Chocolate`}"
+            .label="${`Favorite ice cream`}"
+          >
+          </chameleon-input>
+          <chameleon-input
+            .placeholder="${`Coffee`}"
+            .label="${`Favorite drink`}"
+          >
+          </chameleon-input>
+          <chameleon-input
+            .placeholder="${`Pizza`}"
+            .label="${`Favorite food`}"
+          >
+          </chameleon-input>
+          <chameleon-input
+            .placeholder="${`Peppers`}"
+            .label="${`Favorite vegetable`}"
+          >
+          </chameleon-input>
+          <chameleon-input
+            .placeholder="${`Oranges`}"
+            .label="${`Favorite fruit`}"
+          >
+          </chameleon-input>
+        </div>
       </chameleon-modal>
     `;
   },

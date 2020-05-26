@@ -17,6 +17,18 @@ export default css`
     grid-template-columns: repeat(10, 1fr);
     width: 100%;
   }
+  .header {
+    padding-bottom: 30px;
+  }
+  .footer {
+    margin-top: 40px;
+  }
+
+  hr {
+    width: 110%;
+    margin: 0 0 20px -31px;
+    color: var(--color-gray-lightest, #e1e3e4);
+  }
 
   .overlay {
     width: 100vw;
@@ -107,7 +119,8 @@ export default css`
   }
 
   ::slotted([slot="body"]) {
-    padding: 20px 0 40px 0;
+    padding: 20px 20px 40px 20px;
+    background-color: #f5f5f8;
     margin: 0;
   }
 
