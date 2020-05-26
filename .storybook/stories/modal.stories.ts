@@ -2,9 +2,9 @@ import { storiesOf } from "@storybook/polymer";
 import { withKnobs, boolean } from "@storybook/addon-knobs";
 import { eventDetails } from "../utils";
 import { html, svg } from "lit-html";
-import "../../packages/dialog/src/chameleon-dialog";
+import "../../packages/modal/src/chameleon-modal";
 
-const stories = storiesOf("Dialog", module);
+const stories = storiesOf("Modal", module);
 
 stories.addDecorator(withKnobs);
 
@@ -15,18 +15,18 @@ const defaultIcon = (slot: any) => svg`
 stories.add(
   "Basic",
   () => {
-    const dialogVisible = boolean("Open", true);
+    const modalVisible = boolean("Open", true);
     const dismissible = boolean("Dismissible", true);
     const canGoBack = boolean("Can Go Back", false);
     const fullScreen = boolean("Full Screen", false);
 
     return html`
-      <chameleon-dialog
-        ?open="${dialogVisible}"
+      <chameleon-modal
+        ?open="${modalVisible}"
         ?dismissible="${dismissible}"
         ?canGoBack="${canGoBack}"
         ?fullScreen="${fullScreen}"
-        @toggle-dialog=${eventDetails.action("toggle-dialog")}
+        @toggle-modal=${eventDetails.action("toggle-modal")}
       >
         ${defaultIcon("icon")}
         <h1 slot="title">Title</h1>
@@ -48,7 +48,7 @@ stories.add(
             >Cancel</chameleon-button
           >
         </div>
-      </chameleon-dialog>
+      </chameleon-modal>
     `;
   },
   { info: { inline: true } }
