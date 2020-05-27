@@ -4,13 +4,14 @@ import { eventDetails } from "../utils";
 import { html, svg } from "lit-html";
 import "../../packages/modal/src/chameleon-modal";
 import "@chameleon-ds/input/src/chameleon-input";
+import "@chameleon-ds/button/src/chameleon-button";
 
 const stories = storiesOf("Modal", module);
 
 stories.addDecorator(withKnobs);
 
-const defaultIcon = (slot: any) => svg`
-  <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle" slot="${slot}"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12" y2="17"></line></svg>
+const closeIcon = svg`
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
 `;
 
 stories.add(
@@ -27,7 +28,6 @@ stories.add(
         ?fullScreen="${fullScreen}"
         @toggle-modal=${eventDetails.action("toggle-modal")}
       >
-        ${defaultIcon("icon")}
         <h1 slot="title">Title</h1>
         <div slot="body">
           <chameleon-input
@@ -56,6 +56,20 @@ stories.add(
           >
           </chameleon-input>
         </div>
+        <chameleon-button
+          theme="text"
+          slot="left-button"
+          @click="${() => console.log("toggled!")}"
+        >
+          ${closeIcon} Close
+        </chameleon-button>
+        <chameleon-button
+          theme="primary"
+          slot="right-button"
+          @click="${() => console.log("continued!")}"
+        >
+          Continue
+        </chameleon-button>
       </chameleon-modal>
     `;
   },

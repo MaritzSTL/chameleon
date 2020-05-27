@@ -12,17 +12,9 @@ export default class Chameleonmodal extends LitElement {
   @property({ type: Boolean, reflect: true })
   open = false;
 
-  // Card has an icon
-  @property({ type: Boolean, reflect: true })
-  "icon" = false;
-
   // Card has a close icon
   @property({ type: Boolean, reflect: true })
   "dismissible" = false;
-
-  // Card has a close icon
-  @property({ type: Boolean, reflect: true })
-  "canGoBack" = false;
 
   @property({ type: Boolean, reflect: true })
   "fullScreen" = false;
@@ -67,21 +59,8 @@ export default class Chameleonmodal extends LitElement {
             <slot name="body"></slot>
         </div>
             <div class="footer">
-            <chameleon-button
-                    theme="text"
-                    class="close-bottom"
-                    @click="${this._togglemodal}"
-                  >
-                  ${this.closeIcon}
-                  Close
-                  </chameleon-button>
-                  <chameleon-button
-                    theme="primary"
-                    class="continue"
-                    @click="${this._handleContinue}"
-                  >
-                  Continue
-                  </chameleon-button>
+            <slot name="left-button"></slot>
+              <slot name="right-button"></slot>
             </div>
           </div>
       </chameleon-card>
@@ -91,23 +70,6 @@ export default class Chameleonmodal extends LitElement {
   _togglemodal(): void {
     this.open = !this.open;
     const e = new CustomEvent("toggle-modal", {
-      bubbles: true,
-      composed: true,
-    });
-    this.dispatchEvent(e);
-  }
-
-  _handleContinue(): void {
-    this.open = !this.open;
-    const e = new CustomEvent("chameleon.modal.continue", {
-      bubbles: true,
-      composed: true,
-    });
-    this.dispatchEvent(e);
-  }
-
-  _goBack(): void {
-    const e = new CustomEvent("go-back", {
       bubbles: true,
       composed: true,
     });

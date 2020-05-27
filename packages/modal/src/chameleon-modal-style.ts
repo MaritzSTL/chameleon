@@ -67,25 +67,10 @@ export default css`
     margin-top: 0;
   }
 
-  .actions {
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    margin-top: 1.5em;
-  }
-
   .close-icon,
-  .continue {
+  ::slotted([slot="right-button"]) {
     cursor: pointer;
     grid-column: col 10 / span 2;
-  }
-
-  .back-icon {
-    cursor: pointer;
-    position: absolute;
-    margin: 0;
-    top: 25px;
-    left: 25px;
   }
 
   svg {
@@ -94,17 +79,8 @@ export default css`
     color: var(--color-gray-darkest);
   }
 
-  :slotted(*) {
-    color: var(--color-gray-darkest);
-    height: 1.125em;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-  }
-
   ::slotted([slot="title"]),
-  .close-bottom {
+  ::slotted([slot="left-button"]) {
     color: var(--color-primary-dark, #004587);
     height: 19px;
     font-family: Lato;
