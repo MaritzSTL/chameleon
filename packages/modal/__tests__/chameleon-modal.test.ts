@@ -38,15 +38,6 @@ describe("chameleon-modal", () => {
     });
   });
 
-  describe("_goBack", () => {
-    it("should dispatch a go-back event", () => {
-      const spy = sinon.spy();
-      element.addEventListener("go-back", spy);
-      element._goBack({});
-      expect(spy).to.be.calledOnce;
-    });
-  });
-
   describe("closeIcon", () => {
     it("closeIcon returns an Svg if close-icon slot is defined", async () => {
       element = await litFixture(
@@ -66,28 +57,6 @@ describe("chameleon-modal", () => {
       const closeIcon = await litFixture(element.closeIcon);
 
       expect(closeIcon).dom.to.equal("<slot name='close-icon'></slot>");
-    });
-  });
-
-  describe("backIcon", () => {
-    it("backIcon returns an Svg if back-icon slot is defined", async () => {
-      element = await litFixture(
-        html` <chameleon-modal><svg></svg></chameleon-modal> `
-      );
-      const backIcon = await litFixture(element.backIcon);
-
-      expect(backIcon).dom.to.equal(
-        `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="6" y1="12" x2="24" y2="12"></line><line x1="6" y1="12" x2="12" y2="18"></line><line x1="6" y1="12" x2="12" y2="6"></line></svg>`
-      );
-    });
-
-    it("backIcon returns a slot if back-icon is undefined", async () => {
-      element = await litFixture(
-        html` <chameleon-modal><svg slot="back-icon"></svg></chameleon-modal> `
-      );
-      const backIcon = await litFixture(element.backIcon);
-
-      expect(backIcon).dom.to.equal("<slot name='back-icon'></slot>");
     });
   });
 });
