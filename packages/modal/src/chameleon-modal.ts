@@ -55,7 +55,8 @@ export default class ChameleonModal extends LitElement {
           }
         </div>
         <div class="body">
-            <slot name="body"></slot>
+            <slot name="body">
+            </slot>
         </div>
             <div class="footer">
             <slot name="left-button"></slot>
