@@ -1,84 +1,123 @@
-import { LitElement, TemplateResult, html, property } from "lit-element";
-import { nothing, svg, SVGTemplateResult, render } from "lit-html";
+import {
+  LitElement,
+  TemplateResult,
+  PropertyValues,
+  html,
+  property,
+} from "lit-element";
+import { svg, SVGTemplateResult } from "lit-html";
 import style from "./chameleon-sheet-style";
 import "@chameleon-ds/button";
 
 export default class ChameleonSheet extends LitElement {
+  private static _defaultCloseIcon: SVGTemplateResult = svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+
   /**
    * Properties
    */
-  // The sheet header
-  @property({ type: String })
-  header = "";
-
-  // The sheet subheader
-  @property({ type: String })
-  subHeader = "";
 
   // Boolean for open/closed sheet
-  @property({ type: Boolean, reflect: true })
-  sheetOpened = false;
+  @property({ type: Boolean, reflect: true }) opened = false;
+  @property({ type: String, reflect: true }) width = "320px";
 
   /**
    * Styles
    */
   static styles = [style];
 
+  constructor() {
+    super();
+    this.addEventListener("click", this._dataBehaviorClose);
+  }
+
+  createRenderRoot(): ShadowRoot {
+    // Default behavior to play nice with Storybook when inside an iframe
+    if (
+      window.self !== window.top &&
+      window.hasOwnProperty("__STORYBOOK_ADDONS")
+    ) {
+      return this.attachShadow({ mode: "open" });
+    }
+
+    // Place on document body so this is a "top-level" element.
+    const mount = document.createElement("span");
+    document.body.appendChild(mount);
+    return mount.attachShadow({ mode: "open" });
+  }
+
+  updated(changedProperties: PropertyValues): void {
+    debugger;
+    if (changedProperties.has("opened")) {
+      this.dispatchEvent(
+        new CustomEvent("sheetchange", {
+          bubbles: true,
+          composed: true,
+        })
+      );
+    }
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.removeEventListener("click", this._dataBehaviorClose);
+    this.parentElement?.removeChild(this);
+  }
+
+  open(): void {
+    if (this.opened !== true) this.opened = true;
+  }
+
+  close(): void {
+    if (this.opened !== false) this.opened = false;
+  }
+
+  /**
+   * Closes sheet when any element with `data-sheet-close` inside
+   * this sheet is clicked (includes all slotted content).
+   *
+   * @param e ClickEvent
+   */
+  _dataBehaviorClose(e: Event): void {
+    let path = e.composedPath();
+    for (let i = 0, l = path.indexOf(this); i < l; i++) {
+      let target = path[i];
+      if (
+        target instanceof HTMLElement &&
+        target?.dataset?.hasOwnProperty("sheetClose")
+      ) {
+        this.close();
+        e.stopPropagation();
+        break;
+      }
+    }
+  }
+
   /**
    * Template
    */
   render(): TemplateResult {
+    // Please keep style tag here so we can have per-instance styling
     return html`
-      <header class="head-container">
-        <chameleon-button
-          class="close-icon"
-          icon-only
-          theme="text"
-          @click="${this.close}"
-          >${this.closeIcon}</chameleon-button
-        >
+      <style>
+        :host {
+          width: ${this.width};
+        }
+      </style>
+      <article>
+        <slot name="close-icon">
+          <chameleon-button
+            class="close-icon"
+            icon-only
+            theme="text"
+            data-sheet-close
+            aria-role="button"
+            >${ChameleonSheet._defaultCloseIcon}</chameleon-button
+          >
+        </slot>
 
-        <h3 class="header">${this.header}</h3>
-
-        <slot name="details"></slot>
-      </header>
-
-      <slot name="actions"></slot>
-      ${this.subHeader
-        ? html`
-            <span class="sub-header">${this.subHeader}</span>
-          `
-        : nothing}
-      <slot name="content"></slot>
+        <slot></slot>
+      </article>
     `;
-  }
-
-  open(): void {
-    if (this.sheetOpened !== true) this.sheetOpened = true;
-  }
-
-  close(): void {
-    if (this.sheetOpened !== false) this.sheetOpened = false;
-  }
-
-  updateSlot(slotName: string, content: TemplateResult): void {
-    const slot = this.querySelector(`[slot="${slotName}"]`);
-
-    if (slot) {
-      render(content, slot);
-    }
-  }
-
-  get closeIcon(): SVGTemplateResult | TemplateResult {
-    const slots = Array.from(this.querySelectorAll("[slot]"));
-    const closeIcon = slots.find(slot => slot.slot === "close-icon");
-
-    if (closeIcon === undefined)
-      return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
-    else
-      return html`
-        <slot name="close-icon"></slot>
-      `;
   }
 }
 

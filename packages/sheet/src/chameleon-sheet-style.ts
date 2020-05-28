@@ -7,13 +7,12 @@ export default css`
     height: 100%;
     right: 0;
     top: 0;
-    min-width: 320px;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     background-color: var(--color-surface, #ffffff);
   }
 
-  :host([sheetopened]) {
+  :host([opened]) {
     transform: translateX(0);
   }
 

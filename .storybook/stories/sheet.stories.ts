@@ -10,37 +10,36 @@ stories.addDecorator(withKnobs);
 stories.addParameters({
   backgrounds: [
     { name: "gray", value: "#f5f5f8", default: true },
-    { name: "black", value: "#252a33" }
-  ]
+    { name: "black", value: "#252a33" },
+  ],
 });
 
 stories.add(
   "Sheet",
   () => {
-    const header = text("Label", "Missouri");
-    const subHeader = text("Sub Label", "Tour Guide");
-    const sheetOpened = boolean("Open", false);
+    // const header = text("Label", "Missouri");
+    // const subHeader = text("Sub Label", "Tour Guide");
+    const opened = boolean("Open", false);
+    const width = text("Width", "320px");
+    const content = text("Content", "Anything you want! :D");
 
     return html`
-      <chameleon-sheet
-        header="${header}"
-        subHeader="${subHeader}"
-        ?sheetOpened="${sheetOpened}"
-      >
-        <section slot="details">
+      <chameleon-sheet width="${width}" ?opened="${opened}">
+        ${content}
+        <section>
           <p>City: Saint Louis</p>
           <p>Parks: Forest Park</p>
         </section>
-        <section slot="content">
+        <section>
           <p>Food: Blue Ocean Sushi</p>
           <p>Art: Saint Louis Art Gallery</p>
         </section>
-        <section slot="actions">
+        <section>
           <p>Hockey: Blues</p>
           <p>Baseball: Cards</p>
           <p>Famous People: Nelly</p>
-        </section></chameleon-sheet
-      >
+        </section>
+      </chameleon-sheet>
     `;
   },
   { info: { inline: true } }
