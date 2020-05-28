@@ -21,7 +21,6 @@ export default css`
     grid-template-rows: auto;
     grid-column-gap: 1rem;
     grid-template-columns: repeat(10, 1fr);
-    padding: 0 30px;
   }
   .header {
     border-bottom: 1px var(--color-gray-light, #c4c7ca) solid;
@@ -29,7 +28,7 @@ export default css`
     margin: 0 0 20px;
   }
   .footer {
-    margin: 40px 0 30px 0;
+    padding: 40px 30px 30px;
   }
   .overlay {
     width: 100vw;
