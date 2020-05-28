@@ -17,6 +17,17 @@ describe("chameleon-sheet", () => {
     element = await litFixture(fixture);
   });
 
+  it("renders");
+  it("uses and projects into top-level renderRoot");
+  it("can slot new close button");
+  it("can slot content");
+  it("data-sheet-close on clicked element closes sheet");
+  it("properly removes _mount");
+  it("emits sheetchange events when opened changes");
+  it("close()");
+  it("open()");
+  it("can specify width-per-instance");
+
   it("renders", () => {
     expect(Boolean(element.shadowRoot)).to.equal(true);
   });
