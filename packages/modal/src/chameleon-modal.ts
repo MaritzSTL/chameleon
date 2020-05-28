@@ -5,7 +5,7 @@ import style from "./chameleon-modal-style";
 import "@chameleon-ds/card";
 import "@chameleon-ds/button";
 
-export default class Chameleonmodal extends LitElement {
+export default class ChameleonModal extends LitElement {
   /**
    * Properties
    */
@@ -14,10 +14,10 @@ export default class Chameleonmodal extends LitElement {
 
   // Card has a close icon
   @property({ type: Boolean, reflect: true })
-  "dismissible" = false;
+  dismissible = false;
 
   @property({ type: Boolean, reflect: true })
-  "fullScreen" = false;
+  fullScreen = false;
 
   /**
    * Styles
@@ -63,6 +63,7 @@ export default class Chameleonmodal extends LitElement {
               <slot name="right-button"></slot>
             </div>
           </div>
+        </div>
       </chameleon-card>
     `;
   }
@@ -87,4 +88,4 @@ export default class Chameleonmodal extends LitElement {
 }
 
 if (!window.customElements.get("chameleon-modal"))
-  window.customElements.define("chameleon-modal", Chameleonmodal);
+  window.customElements.define("chameleon-modal", ChameleonModal);

@@ -10,7 +10,6 @@ describe("chameleon-skeleton", () => {
     const el = await fixture(html` <chameleon-skeleton></chameleon-skeleton> `);
     el.theme = "secondary";
     el.cHeight = 50;
-    console.log(el);
     expect(el.circleRadius).to.eql(25);
   });
 });
