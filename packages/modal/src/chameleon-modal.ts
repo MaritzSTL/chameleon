@@ -54,7 +54,6 @@ export default class ChameleonModal extends LitElement {
               : nothing
           }
         </div>
-        <div class="gap"></div>
         <div class="body">
             <slot name="body"></slot>
         </div>

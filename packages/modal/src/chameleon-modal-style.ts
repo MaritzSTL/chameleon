@@ -13,26 +13,17 @@ export default css`
     max-height: 80px;
     grid-template-rows: auto;
     grid-column-gap: 1rem;
-    grid-row-gap: 1.5rem;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(20, 1fr);
     width: 100%;
-    margin: 30px 0;
   }
   .header {
-    border-bottom: 2px red;
+    border-bottom: 1px var(--color-gray-light, #c4c7ca) solid;
+    padding: 30px 0;
+    margin: 0 0 20px 0;
   }
   .footer {
+    margin: 40px 0 30px 0;
   }
-  .gap {
-    height: 1px;
-    background-color: var(--color-gray-lightest, #e1e3e4);
-  }
-  hr {
-    width: 110%;
-    margin: 0 0 20px -31px;
-    color: var(--color-gray-lightest, #e1e3e4);
-  }
-
   .overlay {
     width: 100vw;
     height: 100vh;
@@ -71,10 +62,14 @@ export default css`
     margin-top: 0;
   }
 
-  .close-icon,
+  .close-icon {
+    cursor: pointer;
+    grid-column: 18 / span 2;
+  }
+
   ::slotted([slot="right-button"]) {
     cursor: pointer;
-    grid-column: 8 / span 2;
+    grid-column: 16 / span 4;
   }
 
   svg {
@@ -98,9 +93,9 @@ export default css`
   }
 
   ::slotted([slot="body"]) {
-    padding: 20px 20px 40px 20px;
     background-color: #f5f5f8;
-    margin: 30px;
+    padding: 20px 0 40px;
+    margin: 0 30px;
   }
 
   @keyframes modalopen {
