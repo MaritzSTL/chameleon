@@ -58,12 +58,11 @@ export default class ChameleonModal extends LitElement {
             <slot name="body">
             </slot>
         </div>
-            <div class="footer">
+          <div class="footer">
             <slot name="left-button"></slot>
-              <slot name="right-button"></slot>
-            </div>
+            <slot name="right-button"></slot>
           </div>
-        </div>
+      </div>
       </chameleon-card>
     `;
   }
