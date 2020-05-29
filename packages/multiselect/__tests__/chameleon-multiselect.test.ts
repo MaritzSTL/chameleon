@@ -3,23 +3,21 @@ import sinon from "sinon";
 import "../src/chameleon-multiselect";
 import ChameleonMultiselect from "../src/chameleon-multiselect";
 
-const fixture = html`
-  <chameleon-multiselect></chameleon-multiselect>
-`;
+const fixture = html` <chameleon-multiselect></chameleon-multiselect> `;
 
 const fixtureData = [
   {
     value: "arch",
-    label: "Gateway Arch"
+    label: "Gateway Arch",
   },
   {
     value: "union-station",
-    label: "Union Station"
+    label: "Union Station",
   },
   {
     value: "scott-joplin-house",
-    label: "Scott Joplin House"
-  }
+    label: "Scott Joplin House",
+  },
 ];
 
 const fixtureDataWithLabels = [
@@ -28,22 +26,22 @@ const fixtureDataWithLabels = [
     label: "Gateway Arch",
     subLabel: "Historical Landmark",
     preLabel: "asdf",
-    postLabel: "asdf"
+    postLabel: "asdf",
   },
   {
     value: "union-station",
     label: "Union Station",
     subLabel: "Historical Landmark",
     preLabel: "asdf",
-    postLabel: "asdf"
+    postLabel: "asdf",
   },
   {
     value: "scott-joplin-house",
     label: "Scott Joplin House",
     subLabel: "Historical Landmark",
     preLabel: "asdf",
-    postLabel: "asdf"
-  }
+    postLabel: "asdf",
+  },
 ];
 
 describe("chameleon-multiselect", () => {
@@ -120,7 +118,6 @@ describe("chameleon-multiselect", () => {
         `
       );
       await fixture.updateComplete;
-      debugger;
       expect(fixture).shadowDom.to.equalSnapshot();
     });
 
@@ -314,8 +311,8 @@ describe("chameleon-multiselect", () => {
     fixture.selectedOptions = [
       {
         value: "arch",
-        label: "Gateway Arch"
-      }
+        label: "Gateway Arch",
+      },
     ];
     fixture.handleChipClose(
       new CustomEvent("remove-chip", { detail: { value: "arch" } })

@@ -1,83 +1,86 @@
-import { litFixture, html, expect } from "@open-wc/testing";
+import { litFixture, html, expect, aTimeout } from "@open-wc/testing";
 import sinon from "sinon";
 import "../src/chameleon-sheet";
+import ChameleonSheet from "../src/chameleon-sheet";
+
+const spy = sinon.spy();
 
 const fixture = html`
-  <chameleon-sheet header="chameleon" subHeader="chameleon">
-    <section slot="content">
-      <h1>This is some content!</h1>
+  <chameleon-sheet @sheetchange=${spy}>
+    <section>
+      <h1 data-sheet-close>This is some content!</h1>
     </section>
   </chameleon-sheet>
 `;
 
-describe("chameleon-sheet", () => {
-  let element;
+describe.only("chameleon-sheet", () => {
+  let element: ChameleonSheet;
 
   beforeEach(async () => {
     element = await litFixture(fixture);
-  });
-
-  it("renders");
-  it("uses and projects into top-level renderRoot");
-  it("can slot new close button");
-  it("can slot content");
-  it("data-sheet-close on clicked element closes sheet");
-  it("properly removes _mount");
-  it("emits sheetchange events when opened changes");
-  it("close()");
-  it("open()");
-  it("can specify width-per-instance");
-
-  it("renders", () => {
-    expect(Boolean(element.shadowRoot)).to.equal(true);
-  });
-
-  it("opens sheet", () => {
     element.open();
-
-    expect(element.sheetOpened).to.be.true;
-
-    element.open();
-
-    expect(element.sheetOpened).to.be.true;
-  });
-
-  it("closes sheet", () => {
-    element.sheetOpened = true;
-    element.close();
-
-    expect(element.sheetOpened).to.be.false;
-
-    element.close();
-
-    expect(element.sheetOpened).to.be.false;
-  });
-
-  it("updatesSlot", async () => {
-    element.updateSlot(
-      "content",
-      html`
-        <div>test</div>
-      `
-    );
     await element.updateComplete;
-    const fixture = await litFixture(
-      html`
-        ${element.querySelector("[slot='content']")}
-      `
-    );
-
-    expect(fixture).to.equalSnapshot();
+  });
+  afterEach(() => {
+    spy.resetHistory();
   });
 
-  it("closeIcon returns a slot if one doesn't exist", async () => {
-    element = await litFixture(
-      html`
-        <chameleon-sheet><svg slot="close-icon"></svg></chameleon-sheet>
-      `
-    );
-    const closeIcon = await litFixture(element.closeIcon);
+  it("renders slotted content in default slot", () => {
+    expect(element.renderRoot instanceof ShadowRoot).to.equal(true);
 
-    expect(closeIcon).dom.to.equal("<slot name='close-icon'></slot>");
+    expect(element.renderRoot.innerHTML).to.equalSnapshot();
+  });
+  it.skip("uses and projects into top-level renderRoot", () => {
+    expect(document.body.querySelector("span:last-child").shadowRoot).to.equal(
+      element.renderRoot
+    );
+  });
+  it("can slot new close button", async () => {
+    const closeButtonFixture = html`
+      <chameleon-sheet opened="${true}">
+        <div slot="close-button">hey</div>
+        <section>
+          <h1>This is some content!</h1>
+        </section>
+      </chameleon-sheet>
+    `;
+    const el: ChameleonSheet = await litFixture(closeButtonFixture);
+    expect(el.renderRoot.innerHTML).to.equalSnapshot();
+  });
+  it("data-sheet-close on clicked element closes sheet", () => {
+    element.renderRoot.querySelector("[data-sheet-close]").click();
+    expect(element.opened).to.equal(false);
+  });
+  it.skip("properly removes _mount", async () => {
+    const initialCount = document.body.querySelectorAll("body > span").length;
+    element.disconnectedCallback();
+    await aTimeout(1);
+    const newCount = document.body.querySelectorAll("body > span").length;
+    expect(initialCount - 1).to.equal(newCount);
+  });
+  it("emits sheetchange events when opened changes", () => {
+    element.opened = !element.opened;
+    const event = spy.lastCall.args[0];
+    expect(event.type).to.equal("sheetchange");
+    expect(event.target).to.equal(element);
+  });
+  it("close()", () => {
+    element.close();
+    expect(element.opened).to.equal(false);
+  });
+  it("open()", () => {
+    element.close();
+    expect(element.opened).to.equal(false);
+    element.open();
+    expect(element.opened).to.equal(true);
+  });
+  it("can specify width-per-instance", async () => {
+    const widthFixture = html`
+      <chameleon-sheet width="75vw"> </chameleon-sheet>
+    `;
+    const otherElement: ChameleonSheet = await litFixture(widthFixture);
+
+    expect(element.width).to.equal("320px");
+    expect(otherElement.width).to.equal("75vw");
   });
 });

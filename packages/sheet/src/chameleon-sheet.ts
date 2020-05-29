@@ -11,7 +11,6 @@ import "@chameleon-ds/button";
 
 export default class ChameleonSheet extends LitElement {
   private static _defaultCloseIcon: SVGTemplateResult = svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
-  private _mount?: HTMLElement;
 
   /**
    * Properties
@@ -20,30 +19,38 @@ export default class ChameleonSheet extends LitElement {
   // Boolean for open/closed sheet
   @property({ type: Boolean, reflect: true }) opened = false;
   @property({ type: String, reflect: true }) width = "320px";
+  @property({ type: String, reflect: true }) sheetId = "";
 
   /**
    * Styles
    */
   static styles = [style];
 
+  // createRenderRoot(): ShadowRoot {
+  //   // Default behavior to play nice with Storybook when inside an iframe
+  //   if (
+  //     window.self !== window.top &&
+  //     window.hasOwnProperty("__STORYBOOK_ADDONS")
+  //   ) {
+  //     return this.attachShadow({ mode: "open" });
+  //   }
+
+  //   // Place on document body so this is a "top-level" element.
+  //   const mount = document.createElement("span");
+  //   mount.setAttribute("sheet-mount", "unset");
+  //   document.body.appendChild(mount);
+  //   return this.attachShadow({ mode: "open" });
+  // }
+
   constructor() {
     super();
-    this.renderRoot.addEventListener("click", this._dataBehaviorClose);
+    this.sheetId = String(Date.now());
   }
 
-  createRenderRoot(): ShadowRoot {
-    // Default behavior to play nice with Storybook when inside an iframe
-    if (
-      window.self !== window.top &&
-      window.hasOwnProperty("__STORYBOOK_ADDONS")
-    ) {
-      return this.attachShadow({ mode: "open" });
-    }
-
-    // Place on document body so this is a "top-level" element.
-    this._mount = document.createElement("span");
-    document.body.appendChild(this._mount);
-    return this._mount.attachShadow({ mode: "open" });
+  firstUpdated() {
+    document.body
+      .querySelector("[sheet-mount='unset']")
+      ?.setAttribute("sheet-mount", this.sheetId);
   }
 
   updated(changedProperties: PropertyValues): void {
@@ -59,9 +66,11 @@ export default class ChameleonSheet extends LitElement {
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.removeEventListener("click", this._dataBehaviorClose);
-    if (this._mount) {
-      this._mount.parentElement?.removeChild(this._mount);
+    const mount = document.body.querySelector(
+      `[sheet-mount='${this.sheetId}']`
+    );
+    if (mount) {
+      mount.parentElement?.removeChild(mount);
     }
   }
 
@@ -81,7 +90,7 @@ export default class ChameleonSheet extends LitElement {
    */
   _dataBehaviorClose(e: Event): void {
     let path = e.composedPath();
-    for (let i = 0, l = path.indexOf(this); i < l; i++) {
+    for (let i = 0, l = path.length; i < l; i++) {
       let target = path[i];
       if (
         target instanceof HTMLElement &&
@@ -105,7 +114,7 @@ export default class ChameleonSheet extends LitElement {
           width: ${this.width};
         }
       </style>
-      <article>
+      <article @click="${this._dataBehaviorClose}">
         <slot name="close-icon">
           <chameleon-button
             class="close-icon"
