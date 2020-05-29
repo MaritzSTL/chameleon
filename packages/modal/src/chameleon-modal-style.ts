@@ -25,10 +25,9 @@ export default css`
   .header {
     border-bottom: 1px var(--color-gray-light, #c4c7ca) solid;
     padding: 30px 30px;
-    margin: 0 0 20px;
   }
   .footer {
-    padding: 40px 30px 30px;
+    padding: 0 30px 30px;
   }
   .overlay {
     width: 100vw;
@@ -71,6 +70,7 @@ export default css`
   .close-icon {
     cursor: pointer;
     grid-column: 10 / span 1;
+    justify-self: right;
   }
 
   ::slotted([slot="right-button"]) {
@@ -96,6 +96,7 @@ export default css`
     letter-spacing: normal;
     grid-column: 1 / span 1;
     margin: 0;
+    align-self: center;
   }
 
   ::slotted([slot="body"]) {
