@@ -38,9 +38,8 @@ export default class ChameleonModal extends LitElement {
       >
         <chameleon-card class="${this.fullScreen ? "full-screen" : ""}">
           <div class="header">
-          <slot name="title"></slot>
-          ${
-            this.dismissible
+            <slot name="title"></slot>
+            ${this.dismissible
               ? html`
                   <chameleon-button
                     theme="text"
@@ -51,19 +50,17 @@ export default class ChameleonModal extends LitElement {
                     ${this.closeIcon}
                   </chameleon-button>
                 `
-              : nothing
-          }
-        </div>
-        <div class="body">
-            <slot name="body">
-            </slot>
-        </div>
+              : nothing}
+          </div>
+          <div class="body">
+            <slot name="body"> </slot>
+          </div>
           <div class="footer">
             <slot name="left-button"></slot>
             <slot name="right-button"></slot>
           </div>
+        </chameleon-card>
       </div>
-      </chameleon-card>
     `;
   }
 
