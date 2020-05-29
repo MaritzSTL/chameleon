@@ -83,7 +83,12 @@ export default css`
     color: var(--color-gray-darkest);
   }
 
-  ::slotted([slot="title"]),
+  ::slotted(h3) {
+    color: var(--color-primary-dark, #004587);
+    margin: 0;
+  }
+
+  ::slotted(h3, [slot="title"]),
   ::slotted([slot="left-button"]) {
     color: var(--color-primary-dark, #004587);
     height: 19px;

@@ -28,7 +28,7 @@ stories.add(
         ?fullScreen="${fullScreen}"
         @toggle-modal=${eventDetails.action("toggle-modal")}
       >
-        <h1 slot="title">Title</h1>
+        <h3 slot="title">Title</h3>
         <div slot="body">
           <chameleon-input
             .placeholder="${`Chocolate`}"
