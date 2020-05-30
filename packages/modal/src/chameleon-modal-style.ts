@@ -14,12 +14,18 @@ export default css`
     grid-row-gap: 20px;
     grid-template-columns: repeat(2, 1fr);
   }
-  .header,
-  .footer {
+  .header {
     display: grid;
     max-height: 80px;
     grid-template-rows: auto;
     grid-column-gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  .footer {
+    display: grid;
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
     grid-template-columns: repeat(10, 1fr);
   }
   .header {
@@ -75,7 +81,7 @@ export default css`
 
   ::slotted([slot="right-button"]) {
     cursor: pointer;
-    grid-column: 9 / span 2;
+    grid-column: 8 / span 3;
   }
 
   svg {
@@ -99,9 +105,7 @@ export default css`
     font-style: normal;
     line-height: 1.17;
     letter-spacing: normal;
-    grid-column: 1 / span 1;
     margin: 0;
-    align-self: center;
   }
 
   ::slotted([slot="body"]) {
