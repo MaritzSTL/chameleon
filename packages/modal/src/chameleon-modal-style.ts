@@ -84,6 +84,12 @@ export default css`
     grid-column: 9 / span 2;
   }
 
+  @media (max-width: 480px) {
+    ::slotted([slot="right-button"]) {
+      grid-column: 8 / span 3;
+    }
+  }
+
   svg {
     height: 24px;
     color: var(--color-gray-darkest);
