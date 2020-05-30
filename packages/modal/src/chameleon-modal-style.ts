@@ -81,7 +81,7 @@ export default css`
 
   ::slotted([slot="right-button"]) {
     cursor: pointer;
-    grid-column: 8 / span 3;
+    grid-column: 9 / span 2;
   }
 
   svg {
