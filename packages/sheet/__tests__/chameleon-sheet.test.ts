@@ -1,46 +1,30 @@
-import {
-  litFixture,
-  html,
-  expect,
-  unsafeStatic,
-  aTimeout,
-  elementUpdated,
-} from "@open-wc/testing";
-import { runOverlayMixinSuite } from "@lion/overlays/test-suites/OverlayMixin.suite.js";
+import { litFixture, html, expect } from "@open-wc/testing";
 import "../src/chameleon-sheet";
 
-describe.only("chameleon-sheet", () => {
-  describe("Integration tests", () => {
-    const tagString = "chameleon-sheet";
-    const tag = unsafeStatic(tagString);
-
-    // beforeEach(async () => {
-    //   await aTimeout(0);
-    //   await aTimeout(0);
-    // });
-
-    runOverlayMixinSuite({
-      tagString,
-      tag,
-      suffix: " for chameleon sheet",
-    });
+describe("chameleon-sheet", () => {
+  let el;
+  beforeEach(async () => {
+    el = await litFixture(html`
+      <chameleon-sheet>
+        <div slot="content">content</div>
+        <button slot="invoker">invoker</button>
+      </chameleon-sheet>
+    `);
   });
 
-  describe("Basic", () => {
-    let el;
-    beforeEach(async () => {
-      el = await litFixture(html`
-        <chameleon-sheet>
-          <div slot="content">content</div>
-          <button slot="invoker">invoker</button>
-        </chameleon-sheet>
-      `);
-    });
-
-    it("is not opened by default", () => {
-      expect(el.opened).not.to.equal(true);
-    });
-    it("opens when invoker is clicked", () => {});
-    it("relocates content slot", () => {});
+  it("is not opened by default", () => {
+    expect(el.opened).not.to.equal(true);
+  });
+  it("opens when invoker is clicked", () => {
+    const invoker = el.querySelector("[slot='invoker']");
+    invoker.click();
+    expect(el.opened).to.equal(true);
+  });
+  it("relocates content slot", () => {
+    const globalRootNode = document.body.querySelector(".global-overlays");
+    const relocatedNode = globalRootNode.lastChild;
+    expect(relocatedNode.innerHTML).to.equal(
+      `<div slot="content">content</div>`
+    );
   });
 });
