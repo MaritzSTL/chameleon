@@ -1696,6 +1696,25 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
+"@lion/core@0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@lion/core/-/core-0.6.0.tgz#d5954fdc28d2031c52802bbf15d1747c5aa4f5f6"
+  integrity sha512-OTmafJC1A7lxXEgEcaNr2nT0Q7Z9rSb/SJ4RuhiLx16Ahwrfd5OUxNgB9yMR+W+t3skSTTjPdIqclvo85GI5Gw==
+  dependencies:
+    "@open-wc/dedupe-mixin" "^1.2.1"
+    "@open-wc/scoped-elements" "^1.0.3"
+    lit-element "^2.2.1"
+    lit-html "^1.0.0"
+
+"@lion/overlays@^0.16.0":
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/@lion/overlays/-/overlays-0.16.0.tgz#2bf64e9f2d9f6191d8e1134da606307eca02cc52"
+  integrity sha512-aLhe1eHxYcJGkWzwVgKn0LmznO6wTHT+zMKM4+5StIX1ERLLHdBdDtqelRMZnEdQg4ZkOZB1/U6BFWoR8q/9BQ==
+  dependencies:
+    "@lion/core" "0.6.0"
+    popper.js "^1.15.0"
+    singleton-manager "1.0.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -1872,6 +1891,11 @@
     "@open-wc/semantic-dom-diff" "^0.13.16"
     "@types/chai" "^4.1.7"
 
+"@open-wc/dedupe-mixin@^1.2.1", "@open-wc/dedupe-mixin@^1.2.17":
+  version "1.2.17"
+  resolved "https://registry.yarnpkg.com/@open-wc/dedupe-mixin/-/dedupe-mixin-1.2.17.tgz#50fb903fc8785639487d7987caae45d7bba08ec7"
+  integrity sha512-9A3WohqNxEloJa4y1DuBL5zH12cNRNW1vsrkiaLMnOGuQdhibs2XY1oliudsKpvIeNjDXRVRPUdIIzn65BypCw==
+
 "@open-wc/karma-esm@^2.13.21", "@open-wc/karma-esm@^2.13.22":
   version "2.13.22"
   resolved "https://registry.yarnpkg.com/@open-wc/karma-esm/-/karma-esm-2.13.22.tgz#0061953243219020b15ec7a1fe773ca617b459de"
@@ -1886,6 +1910,14 @@
     node-fetch "^2.6.0"
     portfinder "^1.0.21"
     request "^2.88.0"
+
+"@open-wc/scoped-elements@^1.0.3":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@open-wc/scoped-elements/-/scoped-elements-1.1.1.tgz#732744dac4d029ffacdeb169d85855714eda9d0c"
+  integrity sha512-Fx9bFOA14xGeNFQpSeyp6GmqW1vJyETr1qlem9pDS3hlK/HpWUtoBRAPyo4yexjY+aeSsenUeAYDXzPWQgeWXw==
+  dependencies:
+    "@open-wc/dedupe-mixin" "^1.2.17"
+    lit-html "^1.0.0"
 
 "@open-wc/semantic-dom-diff@^0.13.16":
   version "0.13.21"
@@ -8367,7 +8399,7 @@ lit-element@^2.2.0, lit-element@^2.2.1:
   dependencies:
     lit-html "^1.1.1"
 
-lit-html@^1.1.1, lit-html@^1.2.1:
+lit-html@^1.0.0, lit-html@^1.1.1, lit-html@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.2.1.tgz#1fb933dc1e2ddc095f60b8086277d4fcd9d62cc8"
   integrity sha512-GSJHHXMGLZDzTRq59IUfL9FCdAlGfqNp/dEa7k7aBaaWD+JKaCjsAk9KYm2V12ItonVaYx2dprN66Zdm1AuBTQ==
@@ -10117,7 +10149,7 @@ polymer-webpack-loader@^2.0.3:
     postcss "^6.0.9"
     source-map "^0.5.6"
 
-popper.js@^1.14.4, popper.js@^1.14.7:
+popper.js@^1.14.4, popper.js@^1.14.7, popper.js@^1.15.0:
   version "1.16.1"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
   integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
@@ -11504,6 +11536,11 @@ simplebar@^4.2.3:
     lodash.memoize "^4.1.2"
     lodash.throttle "^4.1.1"
     resize-observer-polyfill "^1.5.1"
+
+singleton-manager@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/singleton-manager/-/singleton-manager-1.0.0.tgz#f98539c9809895cb209d6908c78b088ec43711dc"
+  integrity sha512-7VVITgcGAxt+raPcALHkIgnPwkumZAVGp5zZGm6QjxXPg11d3+q4qF16gVsw1d+ypSzSisPr8O269zb3IF5AKA==
 
 sinon-chai@^3.3.0:
   version "3.5.0"

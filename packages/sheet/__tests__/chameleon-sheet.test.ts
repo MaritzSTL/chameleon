@@ -1,72 +1,46 @@
-import { litFixture, html, expect } from "@open-wc/testing";
-import sinon from "sinon";
+import {
+  litFixture,
+  html,
+  expect,
+  unsafeStatic,
+  aTimeout,
+  elementUpdated,
+} from "@open-wc/testing";
+import { runOverlayMixinSuite } from "@lion/overlays/test-suites/OverlayMixin.suite.js";
 import "../src/chameleon-sheet";
 
-const fixture = html`
-  <chameleon-sheet header="chameleon" subHeader="chameleon">
-    <section slot="content">
-      <h1>This is some content!</h1>
-    </section>
-  </chameleon-sheet>
-`;
+describe.only("chameleon-sheet", () => {
+  describe("Integration tests", () => {
+    const tagString = "chameleon-sheet";
+    const tag = unsafeStatic(tagString);
 
-describe("chameleon-sheet", () => {
-  let element;
+    // beforeEach(async () => {
+    //   await aTimeout(0);
+    //   await aTimeout(0);
+    // });
 
-  beforeEach(async () => {
-    element = await litFixture(fixture);
+    runOverlayMixinSuite({
+      tagString,
+      tag,
+      suffix: " for chameleon sheet",
+    });
   });
 
-  it("renders", () => {
-    expect(Boolean(element.shadowRoot)).to.equal(true);
-  });
+  describe("Basic", () => {
+    let el;
+    beforeEach(async () => {
+      el = await litFixture(html`
+        <chameleon-sheet>
+          <div slot="content">content</div>
+          <button slot="invoker">invoker</button>
+        </chameleon-sheet>
+      `);
+    });
 
-  it("opens sheet", () => {
-    element.open();
-
-    expect(element.sheetOpened).to.be.true;
-
-    element.open();
-
-    expect(element.sheetOpened).to.be.true;
-  });
-
-  it("closes sheet", () => {
-    element.sheetOpened = true;
-    element.close();
-
-    expect(element.sheetOpened).to.be.false;
-
-    element.close();
-
-    expect(element.sheetOpened).to.be.false;
-  });
-
-  it("updatesSlot", async () => {
-    element.updateSlot(
-      "content",
-      html`
-        <div>test</div>
-      `
-    );
-    await element.updateComplete;
-    const fixture = await litFixture(
-      html`
-        ${element.querySelector("[slot='content']")}
-      `
-    );
-
-    expect(fixture).to.equalSnapshot();
-  });
-
-  it("closeIcon returns a slot if one doesn't exist", async () => {
-    element = await litFixture(
-      html`
-        <chameleon-sheet><svg slot="close-icon"></svg></chameleon-sheet>
-      `
-    );
-    const closeIcon = await litFixture(element.closeIcon);
-
-    expect(closeIcon).dom.to.equal("<slot name='close-icon'></slot>");
+    it("is not opened by default", () => {
+      expect(el.opened).not.to.equal(true);
+    });
+    it("opens when invoker is clicked", () => {});
+    it("relocates content slot", () => {});
   });
 });

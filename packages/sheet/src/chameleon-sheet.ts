@@ -1,86 +1,54 @@
-import { LitElement, TemplateResult, html, property } from "lit-element";
-import { nothing, svg, SVGTemplateResult, render } from "lit-html";
-import style from "./chameleon-sheet-style";
-import "@chameleon-ds/button";
+import { OverlayMixin } from "@lion/overlays";
+import { LitElement, html } from "lit-element";
 
-export default class ChameleonSheet extends LitElement {
-  /**
-   * Properties
-   */
-  // The sheet header
-  @property({ type: String })
-  header = "";
+export class ChameleonSheet extends OverlayMixin(LitElement) {
+  __toggle!: () => void;
 
-  // The sheet subheader
-  @property({ type: String })
-  subHeader = "";
-
-  // Boolean for open/closed sheet
-  @property({ type: Boolean, reflect: true })
-  sheetOpened = false;
-
-  /**
-   * Styles
-   */
-  static styles = [style];
-
-  /**
-   * Template
-   */
-  render(): TemplateResult {
-    return html`
-      <header class="head-container">
-        <chameleon-button
-          class="close-icon"
-          icon-only
-          theme="text"
-          @click="${this.close}"
-          >${this.closeIcon}</chameleon-button
-        >
-
-        <h3 class="header">${this.header}</h3>
-
-        <slot name="details"></slot>
-      </header>
-
-      <slot name="actions"></slot>
-      ${this.subHeader
-        ? html`
-            <span class="sub-header">${this.subHeader}</span>
-          `
-        : nothing}
-      <slot name="content"></slot>
-    `;
+  // eslint-disable-next-line class-methods-use-this
+  _defineOverlayConfig() {
+    return {
+      placementMode: "global",
+      viewportConfig: {
+        placement: "right",
+      },
+      hasBackdrop: true,
+      hidesOnEsc: true,
+      preventsScroll: true,
+      handleAccessibility: true,
+      trapsKeyboardFocus: true,
+    };
   }
 
-  open(): void {
-    if (this.sheetOpened !== true) this.sheetOpened = true;
-  }
+  _setupOpenCloseListeners() {
+    super._setupOpenCloseListeners();
+    this.__toggle = () => {
+      this.opened = !this.opened;
+    };
 
-  close(): void {
-    if (this.sheetOpened !== false) this.sheetOpened = false;
-  }
-
-  updateSlot(slotName: string, content: TemplateResult): void {
-    const slot = this.querySelector(`[slot="${slotName}"]`);
-
-    if (slot) {
-      render(content, slot);
+    if (this._overlayInvokerNode) {
+      this._overlayInvokerNode.addEventListener("click", this.__toggle);
     }
   }
 
-  get closeIcon(): SVGTemplateResult | TemplateResult {
-    const slots = Array.from(this.querySelectorAll("[slot]"));
-    const closeIcon = slots.find(slot => slot.slot === "close-icon");
+  _teardownOpenCloseListeners() {
+    super._teardownOpenCloseListeners();
 
-    if (closeIcon === undefined)
-      return svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
-    else
-      return html`
-        <slot name="close-icon"></slot>
-      `;
+    if (this._overlayInvokerNode) {
+      this._overlayInvokerNode.removeEventListener("click", this.__toggle);
+    }
+  }
+
+  render() {
+    return html`
+      <slot name="invoker"></slot>
+      <slot name="_overlay-shadow-outlet"></slot>
+      <div id="overlay-content-node-wrapper">
+        <slot name="content"></slot>
+      </div>
+    `;
   }
 }
 
-if (!window.customElements.get("chameleon-sheet"))
-  window.customElements.define("chameleon-sheet", ChameleonSheet);
+if (!window.customElements.get("chameleon-sheet")) {
+  customElements.define("chameleon-sheet", ChameleonSheet as any);
+}
