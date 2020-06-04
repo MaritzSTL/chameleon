@@ -15,9 +15,10 @@ describe("chameleon-sheet", () => {
   it("is not opened by default", () => {
     expect(el.opened).not.to.equal(true);
   });
-  it("opens when invoker is clicked", () => {
+  it("opens when invoker is clicked", async () => {
     const invoker = el.querySelector("[slot='invoker']");
     invoker.click();
+    await el.updateComplete;
     expect(el.opened).to.equal(true);
   });
   it("relocates content slot", () => {

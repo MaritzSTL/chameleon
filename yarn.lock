@@ -1706,7 +1706,7 @@
     lit-element "^2.2.1"
     lit-html "^1.0.0"
 
-"@lion/overlays@^0.16.0":
+"@lion/overlays@0.16.0":
   version "0.16.0"
   resolved "https://registry.yarnpkg.com/@lion/overlays/-/overlays-0.16.0.tgz#2bf64e9f2d9f6191d8e1134da606307eca02cc52"
   integrity sha512-aLhe1eHxYcJGkWzwVgKn0LmznO6wTHT+zMKM4+5StIX1ERLLHdBdDtqelRMZnEdQg4ZkOZB1/U6BFWoR8q/9BQ==
