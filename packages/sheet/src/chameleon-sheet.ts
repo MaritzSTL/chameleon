@@ -13,6 +13,7 @@ export class ChameleonSheet extends OverlayMixin(LitElement) {
       },
       hasBackdrop: true,
       hidesOnEsc: true,
+      hidesOnOutsideClick: true,
       preventsScroll: true,
       handleAccessibility: true,
       trapsKeyboardFocus: true,
