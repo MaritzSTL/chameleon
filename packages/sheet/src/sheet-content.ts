@@ -7,6 +7,33 @@ export class SheetContent extends LitElement {
     return [
       css`
         @keyframes sheet-slide {
+          10% {
+            transform: translateX(90%);
+          }
+          20% {
+            transform: translateX(80%);
+          }
+          30% {
+            transform: translateX(70%);
+          }
+          40% {
+            transform: translateX(60%);
+          }
+          50% {
+            transform: translateX(50%);
+          }
+          60% {
+            transform: translateX(40%);
+          }
+          70% {
+            transform: translateX(30%);
+          }
+          80% {
+            transform: translateX(20%);
+          }
+          90% {
+            transform: translateX(10%);
+          }
           100% {
             transform: translateX(0);
           }
@@ -16,8 +43,8 @@ export class SheetContent extends LitElement {
           height: 100%;
           background-color: var(--color-surface, #ffffff);
           transform: translateX(100%);
-          -webkit-animation: sheet-slide 0.5s forwards;
-          animation: sheet-slide 0.5s forwards;
+          -webkit-animation: sheet-slide 0.3s forwards;
+          animation: sheet-slide 0.3s forwards;
         }
 
         .close-icon {
@@ -62,9 +89,10 @@ export class SheetContent extends LitElement {
       </span>
     `;
   }
+
   render() {
     return html`
-      <style>
+      <style id="dynamicWidth">
         :host {
           width: ${this.width};
         }

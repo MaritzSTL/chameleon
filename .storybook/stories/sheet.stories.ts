@@ -1,6 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
 import { html } from "lit-html";
-import { withKnobs, text } from "@storybook/addon-knobs";
 import "@chameleon-ds/sheet/src/chameleon-sheet";
 import "@chameleon-ds/sheet/src/sheet-content";
 
@@ -13,19 +12,15 @@ stories.addParameters({
   ],
 });
 
-stories.addDecorator(withKnobs);
-
 stories.add(
   "Sheet",
   () => {
-    const width = text("Width", "75vw");
-
     return html`
       <chameleon-sheet>
         <span slot="invoker">
-          <button>Click me to see the sheet!</button>
+          <button>Standard Sheet</button>
         </span>
-        <sheet-content .width="${width}" slot="content">
+        <sheet-content slot="content">
           <style>
             .head-container {
               position: relative;

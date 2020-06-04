@@ -18,6 +18,19 @@ describe("sheet-content", () => {
     const styleNode = el.shadowRoot.querySelector("style");
     expect(styleNode.textContent.includes("75vw")).to.equal(true);
   });
+  it("maintains width-per-instance", async () => {
+    const el2 = await litFixture(html`
+      <sheet-content .width="${`75vw`}">
+        <p id="myContent">content</p>
+      </sheet-content>
+    `);
+    const styleNode = el.shadowRoot.querySelector("style");
+    const styleNode2 = el2.shadowRoot.querySelector("style");
+    expect(el.width).to.equal("320px");
+    expect(styleNode.textContent.includes("320px")).to.equal(true);
+    expect(el2.width).to.equal(`75vw`);
+    expect(styleNode2.textContent.includes("75vw")).to.equal(true);
+  });
   it("accepts default slotted content", () => {
     const assignedElement = el.querySelector("#myContent");
     const slot = el.shadowRoot.querySelector("slot");
