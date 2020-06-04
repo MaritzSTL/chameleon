@@ -3,6 +3,8 @@ import { LitElement, html } from "lit-element";
 
 export class ChameleonSheet extends OverlayMixin(LitElement) {
   __toggle!: () => void;
+  opened!: boolean; // declared by OverlayMixin
+  _overlayInvokerNode: any;
 
   // eslint-disable-next-line class-methods-use-this
   _defineOverlayConfig() {
