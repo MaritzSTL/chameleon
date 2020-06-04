@@ -6,9 +6,18 @@ export class SheetContent extends LitElement {
   static get styles() {
     return [
       css`
+        @keyframes sheet-slide {
+          100% {
+            transform: translateX(0);
+          }
+        }
+
         :host {
           height: 100%;
           background-color: var(--color-surface, #ffffff);
+          transform: translateX(100%);
+          -webkit-animation: sheet-slide 0.5s forwards;
+          animation: sheet-slide 0.5s forwards;
         }
 
         .close-icon {
