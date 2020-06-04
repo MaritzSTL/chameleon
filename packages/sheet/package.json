@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@chameleon-ds/button": "^1.4.7",
-    "@lion/overlays": "^0.16.0",
+    "@lion/overlays": "0.16.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
