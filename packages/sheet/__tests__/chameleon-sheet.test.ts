@@ -1,72 +1,31 @@
 import { litFixture, html, expect } from "@open-wc/testing";
-import sinon from "sinon";
 import "../src/chameleon-sheet";
 
-const fixture = html`
-  <chameleon-sheet header="chameleon" subHeader="chameleon">
-    <section slot="content">
-      <h1>This is some content!</h1>
-    </section>
-  </chameleon-sheet>
-`;
-
 describe("chameleon-sheet", () => {
-  let element;
-
+  let el;
   beforeEach(async () => {
-    element = await litFixture(fixture);
+    el = await litFixture(html`
+      <chameleon-sheet>
+        <div slot="content">content</div>
+        <button slot="invoker">invoker</button>
+      </chameleon-sheet>
+    `);
   });
 
-  it("renders", () => {
-    expect(Boolean(element.shadowRoot)).to.equal(true);
+  it("is not opened by default", () => {
+    expect(el.opened).not.to.equal(true);
   });
-
-  it("opens sheet", () => {
-    element.open();
-
-    expect(element.sheetOpened).to.be.true;
-
-    element.open();
-
-    expect(element.sheetOpened).to.be.true;
+  it("opens when invoker is clicked", async () => {
+    const invoker = el.querySelector("[slot='invoker']");
+    invoker.click();
+    await el.updateComplete;
+    expect(el.opened).to.equal(true);
   });
-
-  it("closes sheet", () => {
-    element.sheetOpened = true;
-    element.close();
-
-    expect(element.sheetOpened).to.be.false;
-
-    element.close();
-
-    expect(element.sheetOpened).to.be.false;
-  });
-
-  it("updatesSlot", async () => {
-    element.updateSlot(
-      "content",
-      html`
-        <div>test</div>
-      `
+  it("relocates content slot", () => {
+    const globalRootNode = document.body.querySelector(".global-overlays");
+    const relocatedNode = globalRootNode.lastChild;
+    expect(relocatedNode.innerHTML).to.equal(
+      `<div slot="content">content</div>`
     );
-    await element.updateComplete;
-    const fixture = await litFixture(
-      html`
-        ${element.querySelector("[slot='content']")}
-      `
-    );
-
-    expect(fixture).to.equalSnapshot();
-  });
-
-  it("closeIcon returns a slot if one doesn't exist", async () => {
-    element = await litFixture(
-      html`
-        <chameleon-sheet><svg slot="close-icon"></svg></chameleon-sheet>
-      `
-    );
-    const closeIcon = await litFixture(element.closeIcon);
-
-    expect(closeIcon).dom.to.equal("<slot name='close-icon'></slot>");
   });
 });

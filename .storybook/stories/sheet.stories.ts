@@ -1,46 +1,68 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import { html } from "lit-html";
 import "@chameleon-ds/sheet/src/chameleon-sheet";
+import "@chameleon-ds/sheet/src/sheet-content";
 
 const stories = storiesOf("Sheet", module);
-
-stories.addDecorator(withKnobs);
 
 stories.addParameters({
   backgrounds: [
     { name: "gray", value: "#f5f5f8", default: true },
-    { name: "black", value: "#252a33" }
-  ]
+    { name: "black", value: "#252a33" },
+  ],
 });
 
 stories.add(
   "Sheet",
   () => {
-    const header = text("Label", "Missouri");
-    const subHeader = text("Sub Label", "Tour Guide");
-    const sheetOpened = boolean("Open", false);
-
     return html`
-      <chameleon-sheet
-        header="${header}"
-        subHeader="${subHeader}"
-        ?sheetOpened="${sheetOpened}"
-      >
-        <section slot="details">
-          <p>City: Saint Louis</p>
-          <p>Parks: Forest Park</p>
-        </section>
-        <section slot="content">
-          <p>Food: Blue Ocean Sushi</p>
-          <p>Art: Saint Louis Art Gallery</p>
-        </section>
-        <section slot="actions">
-          <p>Hockey: Blues</p>
-          <p>Baseball: Cards</p>
-          <p>Famous People: Nelly</p>
-        </section></chameleon-sheet
-      >
+      <chameleon-sheet>
+        <span slot="invoker">
+          <button>Standard Sheet</button>
+        </span>
+        <sheet-content slot="content">
+          <style>
+            .head-container {
+              position: relative;
+              padding: 20px;
+            }
+
+            .header {
+              font-family: var(--font-family, sans-serif);
+              color: var(--color-primary, #2c6fb7);
+              font-size: var(--font-size-title, 1.4rem);
+              font-weight: 400;
+              margin-top: 0;
+            }
+
+            .sub-header {
+              display: block;
+              font-family: var(--font-family, sans-serif);
+              color: var(--color-primary, #2c6fb7);
+              font-size: 1rem;
+              font-weight: 400;
+              margin: 16px 20px 0 20px;
+            }
+          </style>
+          <span class="head-container">
+            <h1 class="header">Header</h1>
+            <h2 class="sub-header">Subheader</h1>
+          </span>
+          <section>
+            <p>City: Saint Louis</p>
+            <p>Parks: Forest Park</p>
+          </section>
+          <section>
+            <p>Food: Blue Ocean Sushi</p>
+            <p>Art: Saint Louis Art Gallery</p>
+          </section>
+          <section>
+            <p>Hockey: Blues</p>
+            <p>Baseball: Cards</p>
+            <p>Famous People: Nelly</p>
+          </section>
+        </sheet-content>
+      </chameleon-sheet>
     `;
   },
   { info: { inline: true } }
