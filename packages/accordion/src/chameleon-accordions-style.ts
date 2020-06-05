@@ -7,7 +7,7 @@ export default css`
     font-family: var(--font-family, sans-serif);
   }
 
-  :host([hidden]) {
-    display: none !important;
+  ::slotted(chameleon-accordion:not(:last-of-type)) {
+    margin-bottom: 25px;
   }
 `;

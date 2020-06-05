@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/polymer";
-import { withKnobs } from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import { eventDetails } from "../utils";
 import { html } from "lit-html";
 import "@chameleon-ds/accordions/src/index";
@@ -11,17 +11,17 @@ const faq = [
   { question: "What is love?", answer: "Baby don't hurt me" },
   {
     question: "Why do birds suddenly appear every time you are near?",
-    answer: "Just like me, they long to be close to you"
-  }
+    answer: "Just like me, they long to be close to you",
+  },
 ];
 
 stories.addDecorator(withKnobs);
 
-stories.add("New basic accordions with default icons", () => {
+stories.add("Basic", () => {
   return html`
     <chameleon-accordions style="--accordion-width: 600px;">
       ${faq.map(
-        faq => html`
+        (faq) => html`
           <chameleon-accordion>
             <h3 slot="header">${faq.question}</h3>
             <div slot="panel">${faq.answer}</div>
@@ -32,31 +32,32 @@ stories.add("New basic accordions with default icons", () => {
   `;
 });
 
+stories.add("Accent Color", () => {
+  const accentColor = text("Accent Color", "#2c6fb7");
+
+  return html`
+    <chameleon-accordions style="--accordion-width: 600px;">
+      ${faq.map(
+        (faq) => html`
+          <chameleon-accordion accentColor="${accentColor}">
+            <h3 slot="header">${faq.question}</h3>
+            <div slot="panel">${faq.answer}</div>
+          </chameleon-accordion>
+        `
+      )}
+    </chameleon-accordions>
+  `;
+});
+
 stories.add(
-  "Accordions with custom icons in fixed position",
+  "Custom Icon",
   () => {
     return html`
-      <style>
-        :root {
-          background-color: gray;
-        }
-        chameleon-accordion {
-          background-color: white;
-          padding: 0 22px;
-        }
-        chameleon-accordion:not(:last-of-type) {
-          margin-bottom: 12px;
-        }
-        chameleon-accordion div {
-          border-top: 1px gray solid;
-          padding: 12px;
-        }
-      </style>
       <chameleon-accordions
         style="--accordion-width: 600px;"
         @expanded-changed=${eventDetails.action("expanded-changed")}
       >
-        <chameleon-accordion fixed="true">
+        <chameleon-accordion>
           <h3 slot="header">People</h3>
           <chameleon-button slot="toggle-icon" theme="text"
             >Edit</chameleon-button
@@ -69,75 +70,20 @@ stories.add(
             </ul>
           </div>
         </chameleon-accordion>
-        <chameleon-accordion fixed="true">
+        <chameleon-accordion>
           <chameleon-button slot="toggle-icon" theme="text"
             >Edit</chameleon-button
           >
           <h3 slot="header">Places</h3>
           <div slot="panel">North Pole</div>
         </chameleon-accordion>
-        <chameleon-accordion fixed="true">
+        <chameleon-accordion>
           <chameleon-button slot="toggle-icon" theme="text"
             >Edit</chameleon-button
           >
           <h3 slot="header">Things</h3>
           <div slot="panel">Candy canes</div>
         </chameleon-accordion>
-      </chameleon-accordions>
-    `;
-  },
-  { info: { inline: true } }
-);
-
-stories.add(
-  "Accordions with clickable headers",
-  () => {
-    return html`
-      <chameleon-accordions style="--accordion-width: 600px;">
-        ${faq.map(
-          faq => html`
-            <chameleon-accordion clickable>
-              <h3 slot="header">${faq.question}</h3>
-              <div slot="panel">${faq.answer}</div>
-            </chameleon-accordion>
-          `
-        )}
-      </chameleon-accordions>
-    `;
-  },
-  { info: { inline: true } }
-);
-
-stories.add(
-  "Accordions with clickable headers including subheaders",
-  () => {
-    return html`
-      <style>
-        .subheader {
-          display: flex;
-          justify-content: space-between;
-        }
-        .answer {
-          padding: 1rem 0;
-          background-color: lightgrey;
-        }
-      </style>
-      <chameleon-accordions style="--accordion-width: 600px;">
-        ${faq.map(
-          faq => html`
-            <chameleon-accordion clickable fixed>
-              <span slot="toggle-icon">Edit</span>
-              <h3 slot="header">${faq.question}</h3>
-              <div slot="subheader" class="subheader">
-                <span
-                  >Subheader message goes here for additional information</span
-                >
-                <span>0 people</span>
-              </div>
-              <div slot="panel" class="answer">${faq.answer}</div>
-            </chameleon-accordion>
-          `
-        )}
       </chameleon-accordions>
     `;
   },

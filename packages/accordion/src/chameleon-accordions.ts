@@ -41,9 +41,7 @@ export default class ChameleonAccordions extends LitElement {
    * Template
    */
   render(): TemplateResult {
-    return html`
-      <slot></slot>
-    `;
+    return html` <slot></slot> `;
   }
 
   _handleExpandedChanged(e: any): void {
