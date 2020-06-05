@@ -28,3 +28,4 @@ _site/
 
 # Declaration Files to Keep
 !/**/timezones.d.ts
+!/**/lionOverlays.d.ts
