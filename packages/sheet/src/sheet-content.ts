@@ -41,7 +41,7 @@ export class SheetContent extends LitElement {
 
         :host {
           height: 100%;
-          background-color: var(--color-surface, #ffffff);
+          background-color: #ffffff;
           transform: translateX(100%);
           -webkit-animation: sheet-slide 0.3s forwards;
           animation: sheet-slide 0.3s forwards;
@@ -54,23 +54,7 @@ export class SheetContent extends LitElement {
           position: absolute;
           top: 14px;
           right: 14px;
-          z-index: 10; // ensure stays clickable above slotted content
-        }
-
-        ::slotted(p) {
-          color: var(--color-gray-darkest, #6c737a);
-        }
-
-        ::slotted(section) {
-          border-top: solid 2px #e1e3e4;
-          border-bottom: solid 2px #e1e3e4;
-          padding: 20px;
-          font-size: var(--font-size-subtitle, 0.938rem);
-        }
-
-        ::slotted(slot) {
-          padding: 0 20px;
-          font-size: var(--font-size-label, 0.875rem);
+          z-index: 10;
         }
       `,
     ];
@@ -84,7 +68,7 @@ export class SheetContent extends LitElement {
 
   get defaultCloseIcon() {
     return html`
-      <span class="close-icon" @click="${this.close}">
+      <span class="close-icon" @click="${this.close}" aria-role="button">
         ${SheetContent._defaultCloseIcon}
       </span>
     `;
