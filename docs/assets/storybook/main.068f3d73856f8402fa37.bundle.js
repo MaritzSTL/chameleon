@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{135:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(8),chameleon_input_style=lit_element.b`
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{135:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(7),chameleon_input_style=lit_element.b`
   :host {
     display: inline-block;
     font-family: var(--font-family, sans-serif);
@@ -492,7 +492,7 @@
       `:"secondary"===this.theme?lit_element.e`
     <circle class="circle" cx="${this.circleRadius}" cy="${this.circleRadius}" r="${this.circleRadius}"/>`:""}
       </svg>
-    `}get circleRadius(){return.5*this.cHeight}}chameleon_skeleton_ChameleonSkeleton.styles=[chameleon_skeleton_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"theme",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"height",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"width",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"cHeight",void 0),window.customElements.get("chameleon-skeleton")||window.customElements.define("chameleon-skeleton",chameleon_skeleton_ChameleonSkeleton)},301:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(8),repeat=__webpack_require__(51),chameleon_multiselect_style=lit_element.b`
+    `}get circleRadius(){return.5*this.cHeight}}chameleon_skeleton_ChameleonSkeleton.styles=[chameleon_skeleton_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"theme",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"height",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"width",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_skeleton_ChameleonSkeleton.prototype,"cHeight",void 0),window.customElements.get("chameleon-skeleton")||window.customElements.define("chameleon-skeleton",chameleon_skeleton_ChameleonSkeleton)},301:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(7),repeat=__webpack_require__(50),chameleon_multiselect_style=lit_element.b`
   :host {
     font-family: var(--font-family, Arial);
   }
@@ -837,7 +837,7 @@
   .placeholder {
     width: 68px;
   }
-`,__decorate=(__webpack_require__(50),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});class chameleon_paginator_ChameleonPaginator extends lit_element.a{constructor(){super(...arguments),this.totalItems=null,this.pageSize=null,this.currentPage=1,this.maxLength=7,this.separator="..."}render(){return lit_element.c`
+`,__decorate=(__webpack_require__(67),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});class chameleon_paginator_ChameleonPaginator extends lit_element.a{constructor(){super(...arguments),this.totalItems=null,this.pageSize=null,this.currentPage=1,this.maxLength=7,this.separator="..."}render(){return lit_element.c`
       ${this.isFirstPage?lit_element.c` <div class="placeholder"></div> `:lit_element.c`
             <chameleon-button
               theme="text"
@@ -872,7 +872,7 @@
               ${this.iconRightCircle}
             </chameleon-button>
           `}
-    `}get iconLeftCircle(){return lit_element.e`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>`}get iconRightCircle(){return lit_element.e`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>`}get isFirstPage(){return 1===this.currentPage}get isLastPage(){return this.currentPage===this.totalPages}get totalPages(){const totalItems=this.totalItems,pageSize=this.pageSize;return null===totalItems||null===pageSize?0:Math.ceil(totalItems/pageSize)}get pages(){const result=[],midPoint=Math.round(this.maxLength/2);if(this.currentPage=Math.max(1,Math.min(this.currentPage,this.totalPages)),this.totalPages<=this.maxLength)for(let i=1;i<=this.totalPages;i++)result.push(i);else if(this.currentPage<midPoint&&this.currentPage<this.maxLength){const highestNum=Math.max(midPoint,this.maxLength-1);for(let i=1;i<highestNum;i++)result.push(i);result.push(this.separator),result.push(this.totalPages)}else if(this.currentPage>this.totalPages-this.maxLength+3){result.push(1),result.push(this.separator);const offset=3;for(let i=this.totalPages-this.maxLength+offset;i<=this.totalPages;i++)result.push(i)}else{result.push(1),result.push(this.separator);const midPages=this.maxLength-4,first=this.currentPage-Math.ceil(midPages/2)+1;for(let i=0;i<midPages;i++)result.push(first+i);result.push(this.separator),result.push(this.totalPages)}return result}_previous(){this.currentPage--,this.dispatchChange()}_next(){this.currentPage++,this.dispatchChange()}_goToPage(e){const page=e.target.closest("[data-page]").dataset.page,currentPage=parseInt(String(page));this.currentPage=isNaN(currentPage)?1:currentPage,this.dispatchChange()}dispatchChange(){this.dispatchEvent(new CustomEvent("page-change",{detail:{currentPage:this.currentPage},composed:!0,bubbles:!0}))}}chameleon_paginator_ChameleonPaginator.styles=[chameleon_paginator_style],__decorate([Object(lit_element.d)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"totalItems",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"pageSize",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"currentPage",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"maxLength",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_paginator_ChameleonPaginator.prototype,"separator",void 0),window.customElements.get("chameleon-paginator")||window.customElements.define("chameleon-paginator",chameleon_paginator_ChameleonPaginator)},303:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),repeat=__webpack_require__(51),class_map=__webpack_require__(8),lit_html=__webpack_require__(2),chameleon_select_style=lit_element.b`
+    `}get iconLeftCircle(){return lit_element.e`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>`}get iconRightCircle(){return lit_element.e`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>`}get isFirstPage(){return 1===this.currentPage}get isLastPage(){return this.currentPage===this.totalPages}get totalPages(){const totalItems=this.totalItems,pageSize=this.pageSize;return null===totalItems||null===pageSize?0:Math.ceil(totalItems/pageSize)}get pages(){const result=[],midPoint=Math.round(this.maxLength/2);if(this.currentPage=Math.max(1,Math.min(this.currentPage,this.totalPages)),this.totalPages<=this.maxLength)for(let i=1;i<=this.totalPages;i++)result.push(i);else if(this.currentPage<midPoint&&this.currentPage<this.maxLength){const highestNum=Math.max(midPoint,this.maxLength-1);for(let i=1;i<highestNum;i++)result.push(i);result.push(this.separator),result.push(this.totalPages)}else if(this.currentPage>this.totalPages-this.maxLength+3){result.push(1),result.push(this.separator);const offset=3;for(let i=this.totalPages-this.maxLength+offset;i<=this.totalPages;i++)result.push(i)}else{result.push(1),result.push(this.separator);const midPages=this.maxLength-4,first=this.currentPage-Math.ceil(midPages/2)+1;for(let i=0;i<midPages;i++)result.push(first+i);result.push(this.separator),result.push(this.totalPages)}return result}_previous(){this.currentPage--,this.dispatchChange()}_next(){this.currentPage++,this.dispatchChange()}_goToPage(e){const page=e.target.closest("[data-page]").dataset.page,currentPage=parseInt(String(page));this.currentPage=isNaN(currentPage)?1:currentPage,this.dispatchChange()}dispatchChange(){this.dispatchEvent(new CustomEvent("page-change",{detail:{currentPage:this.currentPage},composed:!0,bubbles:!0}))}}chameleon_paginator_ChameleonPaginator.styles=[chameleon_paginator_style],__decorate([Object(lit_element.d)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"totalItems",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"pageSize",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"currentPage",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_paginator_ChameleonPaginator.prototype,"maxLength",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_paginator_ChameleonPaginator.prototype,"separator",void 0),window.customElements.get("chameleon-paginator")||window.customElements.define("chameleon-paginator",chameleon_paginator_ChameleonPaginator)},303:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),repeat=__webpack_require__(50),class_map=__webpack_require__(7),lit_html=__webpack_require__(2),chameleon_select_style=lit_element.b`
   :host {
     font-family: var(--font-family, sans-serif);
     display: block;
@@ -1188,7 +1188,394 @@
       class="feather feather-chevron-up">
       <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
-  `}async activateSelections(){this.disabled||(this.active=!0,this.searchable&&(await this.updateComplete,this.shadowRoot.querySelector("input").focus()))}addSelection(e){const value=e.composedPath().find(el=>el.hasAttribute("data-value")).dataset.value,selection=this.options.find(option=>option.value===value);this.filteredOptions=[],e.stopPropagation(),this.selectedOption=selection,this.dispatchEvent(new CustomEvent("chameleon.select.input",{detail:{value:this.value,selectedOption:this.selectedOption},bubbles:!0,composed:!0})),this.active=!1}clearSelections(){this.selectedOption={}}handleSearch(e){const query=e.target.value.toLowerCase();this.filteredOptions=this.options.filter(option=>option.label.toLowerCase().includes(query))}closeOptionsList(e){e.composedPath().map(eventTarget=>eventTarget.tagName).includes("CHAMELEON-SELECT")||(this.active=!1)}}chameleon_select_ChameleonSelect.styles=[chameleon_select_style],__decorate([Object(lit_element.d)({type:Array})],chameleon_select_ChameleonSelect.prototype,"options",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_select_ChameleonSelect.prototype,"name",void 0),__decorate([Object(lit_element.d)({type:Array})],chameleon_select_ChameleonSelect.prototype,"filteredOptions",void 0),__decorate([Object(lit_element.d)({type:Object})],chameleon_select_ChameleonSelect.prototype,"selectedOption",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_select_ChameleonSelect.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_select_ChameleonSelect.prototype,"active",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_select_ChameleonSelect.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_select_ChameleonSelect.prototype,"searchable",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_select_ChameleonSelect.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"invalid",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_select_ChameleonSelect.prototype,"loading",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_select_ChameleonSelect.prototype,"validationMessage",void 0),window.customElements.get("chameleon-select")||window.customElements.define("chameleon-select",chameleon_select_ChameleonSelect)},306:function(module){module.exports=JSON.parse('["Africa/Abidjan","Africa/Accra","Africa/Addis_Ababa","Africa/Algiers","Africa/Asmara","Africa/Asmera","Africa/Bamako","Africa/Bangui","Africa/Banjul","Africa/Bissau","Africa/Blantyre","Africa/Brazzaville","Africa/Bujumbura","Africa/Cairo","Africa/Casablanca","Africa/Ceuta","Africa/Conakry","Africa/Dakar","Africa/Dar_es_Salaam","Africa/Djibouti","Africa/Douala","Africa/El_Aaiun","Africa/Freetown","Africa/Gaborone","Africa/Harare","Africa/Johannesburg","Africa/Juba","Africa/Kampala","Africa/Khartoum","Africa/Kigali","Africa/Kinshasa","Africa/Lagos","Africa/Libreville","Africa/Lome","Africa/Luanda","Africa/Lubumbashi","Africa/Lusaka","Africa/Malabo","Africa/Maputo","Africa/Maseru","Africa/Mbabane","Africa/Mogadishu","Africa/Monrovia","Africa/Nairobi","Africa/Ndjamena","Africa/Niamey","Africa/Nouakchott","Africa/Ouagadougou","Africa/Porto-Novo","Africa/Sao_Tome","Africa/Timbuktu","Africa/Tripoli","Africa/Tunis","Africa/Windhoek","America/Adak","America/Anchorage","America/Anguilla","America/Antigua","America/Araguaina","America/Argentina/Buenos_Aires","America/Argentina/Catamarca","America/Argentina/ComodRivadavia","America/Argentina/Cordoba","America/Argentina/Jujuy","America/Argentina/La_Rioja","America/Argentina/Mendoza","America/Argentina/Rio_Gallegos","America/Argentina/Salta","America/Argentina/San_Juan","America/Argentina/San_Luis","America/Argentina/Tucuman","America/Argentina/Ushuaia","America/Aruba","America/Asuncion","America/Atikokan","America/Atka","America/Bahia_Banderas","America/Bahia","America/Barbados","America/Belem","America/Belize","America/Blanc-Sablon","America/Boa_Vista","America/Bogota","America/Boise","America/Buenos_Aires","America/Cambridge_Bay","America/Campo_Grande","America/Cancun","America/Caracas","America/Catamarca","America/Cayenne","America/Cayman","America/Chicago","America/Chihuahua","America/Coral_Harbour","America/Cordoba","America/Costa_Rica","America/Creston","America/Cuiaba","America/Curacao","America/Danmarkshavn","America/Dawson_Creek","America/Dawson","America/Denver","America/Detroit","America/Dominica","America/Edmonton","America/Eirunepe","America/El_Salvador","America/Ensenada","America/Fort_Nelson","America/Fort_Wayne","America/Fortaleza","America/Glace_Bay","America/Godthab","America/Goose_Bay","America/Grand_Turk","America/Grenada","America/Guadeloupe","America/Guatemala","America/Guayaquil","America/Guyana","America/Halifax","America/Havana","America/Hermosillo","America/Indiana/Indianapolis","America/Indiana/Knox","America/Indiana/Marengo","America/Indiana/Petersburg","America/Indiana/Tell_City","America/Indiana/Vevay","America/Indiana/Vincennes","America/Indiana/Winamac","America/Indianapolis","America/Inuvik","America/Iqaluit","America/Jamaica","America/Jujuy","America/Juneau","America/Kentucky/Louisville","America/Kentucky/Monticello","America/Knox_IN","America/Kralendijk","America/La_Paz","America/Lima","America/Los_Angeles","America/Louisville","America/Lower_Princes","America/Maceio","America/Managua","America/Manaus","America/Marigot","America/Martinique","America/Matamoros","America/Mazatlan","America/Mendoza","America/Menominee","America/Merida","America/Metlakatla","America/Mexico_City","America/Miquelon","America/Moncton","America/Monterrey","America/Montevideo","America/Montreal","America/Montserrat","America/Nassau","America/New_York","America/Nipigon","America/Nome","America/Noronha","America/North_Dakota/Beulah","America/North_Dakota/Center","America/North_Dakota/New_Salem","America/Ojinaga","America/Panama","America/Pangnirtung","America/Paramaribo","America/Phoenix","America/Port_of_Spain","America/Port-au-Prince","America/Porto_Acre","America/Porto_Velho","America/Puerto_Rico","America/Punta_Arenas","America/Rainy_River","America/Rankin_Inlet","America/Recife","America/Regina","America/Resolute","America/Rio_Branco","America/Rosario","America/Santa_Isabel","America/Santarem","America/Santiago","America/Santo_Domingo","America/Sao_Paulo","America/Scoresbysund","America/Shiprock","America/Sitka","America/St_Barthelemy","America/St_Johns","America/St_Kitts","America/St_Lucia","America/St_Thomas","America/St_Vincent","America/Swift_Current","America/Tegucigalpa","America/Thule","America/Thunder_Bay","America/Tijuana","America/Toronto","America/Tortola","America/Vancouver","America/Virgin","America/Whitehorse","America/Winnipeg","America/Yakutat","America/Yellowknife","Antarctica/Casey","Antarctica/Davis","Antarctica/DumontDUrville","Antarctica/Macquarie","Antarctica/Mawson","Antarctica/McMurdo","Antarctica/Palmer","Antarctica/Rothera","Antarctica/South_Pole","Antarctica/Syowa","Antarctica/Troll","Antarctica/Vostok","Arctic/Longyearbyen","Asia/Aden","Asia/Almaty","Asia/Amman","Asia/Anadyr","Asia/Aqtau","Asia/Aqtobe","Asia/Ashgabat","Asia/Ashkhabad","Asia/Atyrau","Asia/Baghdad","Asia/Bahrain","Asia/Baku","Asia/Bangkok","Asia/Barnaul","Asia/Beirut","Asia/Bishkek","Asia/Brunei","Asia/Calcutta","Asia/Chita","Asia/Choibalsan","Asia/Chongqing","Asia/Chungking","Asia/Colombo","Asia/Dacca","Asia/Damascus","Asia/Dhaka","Asia/Dili","Asia/Dubai","Asia/Dushanbe","Asia/Famagusta","Asia/Gaza","Asia/Harbin","Asia/Hebron","Asia/Ho_Chi_Minh","Asia/Hong_Kong","Asia/Hovd","Asia/Irkutsk","Asia/Istanbul","Asia/Jakarta","Asia/Jayapura","Asia/Jerusalem","Asia/Kabul","Asia/Kamchatka","Asia/Karachi","Asia/Kashgar","Asia/Kathmandu","Asia/Katmandu","Asia/Khandyga","Asia/Kolkata","Asia/Krasnoyarsk","Asia/Kuala_Lumpur","Asia/Kuching","Asia/Kuwait","Asia/Macao","Asia/Macau","Asia/Magadan","Asia/Makassar","Asia/Manila","Asia/Muscat","Asia/Nicosia","Asia/Novokuznetsk","Asia/Novosibirsk","Asia/Omsk","Asia/Oral","Asia/Phnom_Penh","Asia/Pontianak","Asia/Pyongyang","Asia/Qatar","Asia/Qostanay","Asia/Qyzylorda","Asia/Rangoon","Asia/Riyadh","Asia/Saigon","Asia/Sakhalin","Asia/Samarkand","Asia/Seoul","Asia/Shanghai","Asia/Singapore","Asia/Srednekolymsk","Asia/Taipei","Asia/Tashkent","Asia/Tbilisi","Asia/Tehran","Asia/Tel_Aviv","Asia/Thimbu","Asia/Thimphu","Asia/Tokyo","Asia/Tomsk","Asia/Ujung_Pandang","Asia/Ulaanbaatar","Asia/Ulan_Bator","Asia/Urumqi","Asia/Ust-Nera","Asia/Vientiane","Asia/Vladivostok","Asia/Yakutsk","Asia/Yangon","Asia/Yekaterinburg","Asia/Yerevan","Atlantic/Azores","Atlantic/Bermuda","Atlantic/Canary","Atlantic/Cape_Verde","Atlantic/Faeroe","Atlantic/Faroe","Atlantic/Jan_Mayen","Atlantic/Madeira","Atlantic/Reykjavik","Atlantic/South_Georgia","Atlantic/St_Helena","Atlantic/Stanley","Australia/ACT","Australia/Adelaide","Australia/Brisbane","Australia/Broken_Hill","Australia/Canberra","Australia/Currie","Australia/Darwin","Australia/Eucla","Australia/Hobart","Australia/LHI","Australia/Lindeman","Australia/Lord_Howe","Australia/Melbourne","Australia/North","Australia/NSW","Australia/Perth","Australia/Queensland","Australia/South","Australia/Sydney","Australia/Tasmania","Australia/Victoria","Australia/West","Australia/Yancowinna","Brazil/Acre","Brazil/DeNoronha","Brazil/East","Brazil/West","Canada/Atlantic","Canada/Central","Canada/Eastern","Canada/Mountain","Canada/Newfoundland","Canada/Pacific","Canada/Saskatchewan","Canada/Yukon","CET","Chile/Continental","Chile/EasterIsland","CST6CDT","Cuba","EET","Egypt","Eire","EST","EST5EDT","Etc/GMT-0","Etc/GMT-1","Etc/GMT-10","Etc/GMT-11","Etc/GMT-12","Etc/GMT-13","Etc/GMT-14","Etc/GMT-2","Etc/GMT-3","Etc/GMT-4","Etc/GMT-5","Etc/GMT-6","Etc/GMT-7","Etc/GMT-8","Etc/GMT-9","Etc/GMT","Etc/GMT+0","Etc/GMT+1","Etc/GMT+10","Etc/GMT+11","Etc/GMT+12","Etc/GMT+2","Etc/GMT+3","Etc/GMT+4","Etc/GMT+5","Etc/GMT+6","Etc/GMT+7","Etc/GMT+8","Etc/GMT+9","Etc/GMT0","Etc/Greenwich","Etc/UCT","Etc/Universal","Etc/UTC","Etc/Zulu","Europe/Amsterdam","Europe/Andorra","Europe/Astrakhan","Europe/Athens","Europe/Belfast","Europe/Belgrade","Europe/Berlin","Europe/Bratislava","Europe/Brussels","Europe/Bucharest","Europe/Budapest","Europe/Busingen","Europe/Chisinau","Europe/Copenhagen","Europe/Dublin","Europe/Gibraltar","Europe/Guernsey","Europe/Helsinki","Europe/Isle_of_Man","Europe/Istanbul","Europe/Jersey","Europe/Kaliningrad","Europe/Kiev","Europe/Kirov","Europe/Lisbon","Europe/Ljubljana","Europe/London","Europe/Luxembourg","Europe/Madrid","Europe/Malta","Europe/Mariehamn","Europe/Minsk","Europe/Monaco","Europe/Moscow","Europe/Nicosia","Europe/Oslo","Europe/Paris","Europe/Podgorica","Europe/Prague","Europe/Riga","Europe/Rome","Europe/Samara","Europe/San_Marino","Europe/Sarajevo","Europe/Saratov","Europe/Simferopol","Europe/Skopje","Europe/Sofia","Europe/Stockholm","Europe/Tallinn","Europe/Tirane","Europe/Tiraspol","Europe/Ulyanovsk","Europe/Uzhgorod","Europe/Vaduz","Europe/Vatican","Europe/Vienna","Europe/Vilnius","Europe/Volgograd","Europe/Warsaw","Europe/Zagreb","Europe/Zaporozhye","Europe/Zurich","GB-Eire","GB","GMT-0","GMT","GMT+0","GMT0","Greenwich","Hongkong","HST","Iceland","Indian/Antananarivo","Indian/Chagos","Indian/Christmas","Indian/Cocos","Indian/Comoro","Indian/Kerguelen","Indian/Mahe","Indian/Maldives","Indian/Mauritius","Indian/Mayotte","Indian/Reunion","Iran","Israel","Jamaica","Japan","Kwajalein","Libya","MET","Mexico/BajaNorte","Mexico/BajaSur","Mexico/General","MST","MST7MDT","Navajo","NZ-CHAT","NZ","Pacific/Apia","Pacific/Auckland","Pacific/Bougainville","Pacific/Chatham","Pacific/Chuuk","Pacific/Easter","Pacific/Efate","Pacific/Enderbury","Pacific/Fakaofo","Pacific/Fiji","Pacific/Funafuti","Pacific/Galapagos","Pacific/Gambier","Pacific/Guadalcanal","Pacific/Guam","Pacific/Honolulu","Pacific/Johnston","Pacific/Kiritimati","Pacific/Kosrae","Pacific/Kwajalein","Pacific/Majuro","Pacific/Marquesas","Pacific/Midway","Pacific/Nauru","Pacific/Niue","Pacific/Norfolk","Pacific/Noumea","Pacific/Pago_Pago","Pacific/Palau","Pacific/Pitcairn","Pacific/Pohnpei","Pacific/Ponape","Pacific/Port_Moresby","Pacific/Rarotonga","Pacific/Saipan","Pacific/Samoa","Pacific/Tahiti","Pacific/Tarawa","Pacific/Tongatapu","Pacific/Truk","Pacific/Wake","Pacific/Wallis","Pacific/Yap","Poland","Portugal","PRC","PST8PDT","ROC","ROK","Singapore","Turkey","UCT","Universal","US/Alaska","US/Aleutian","US/Arizona","US/Central","US/East-Indiana","US/Eastern","US/Hawaii","US/Indiana-Starke","US/Michigan","US/Mountain","US/Pacific-New","US/Pacific","US/Samoa","UTC","W-SU","WET","Zulu"]')},307:function(module,exports,__webpack_require__){__webpack_require__(308),__webpack_require__(454),module.exports=__webpack_require__(455)},372:function(module,exports){},455:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3);const req=__webpack_require__(636);Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.configure)((function loadStories(){req.keys().forEach(req)}),module)}.call(this,__webpack_require__(7)(module))},50:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(8),chameleon_button_style=lit_element.b`
+  `}async activateSelections(){this.disabled||(this.active=!0,this.searchable&&(await this.updateComplete,this.shadowRoot.querySelector("input").focus()))}addSelection(e){const value=e.composedPath().find(el=>el.hasAttribute("data-value")).dataset.value,selection=this.options.find(option=>option.value===value);this.filteredOptions=[],e.stopPropagation(),this.selectedOption=selection,this.dispatchEvent(new CustomEvent("chameleon.select.input",{detail:{value:this.value,selectedOption:this.selectedOption},bubbles:!0,composed:!0})),this.active=!1}clearSelections(){this.selectedOption={}}handleSearch(e){const query=e.target.value.toLowerCase();this.filteredOptions=this.options.filter(option=>option.label.toLowerCase().includes(query))}closeOptionsList(e){e.composedPath().map(eventTarget=>eventTarget.tagName).includes("CHAMELEON-SELECT")||(this.active=!1)}}chameleon_select_ChameleonSelect.styles=[chameleon_select_style],__decorate([Object(lit_element.d)({type:Array})],chameleon_select_ChameleonSelect.prototype,"options",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_select_ChameleonSelect.prototype,"name",void 0),__decorate([Object(lit_element.d)({type:Array})],chameleon_select_ChameleonSelect.prototype,"filteredOptions",void 0),__decorate([Object(lit_element.d)({type:Object})],chameleon_select_ChameleonSelect.prototype,"selectedOption",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_select_ChameleonSelect.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_select_ChameleonSelect.prototype,"active",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_select_ChameleonSelect.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_select_ChameleonSelect.prototype,"searchable",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_select_ChameleonSelect.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_select_ChameleonSelect.prototype,"invalid",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_select_ChameleonSelect.prototype,"loading",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_select_ChameleonSelect.prototype,"validationMessage",void 0),window.customElements.get("chameleon-select")||window.customElements.define("chameleon-select",chameleon_select_ChameleonSelect)},306:function(module){module.exports=JSON.parse('["Africa/Abidjan","Africa/Accra","Africa/Addis_Ababa","Africa/Algiers","Africa/Asmara","Africa/Asmera","Africa/Bamako","Africa/Bangui","Africa/Banjul","Africa/Bissau","Africa/Blantyre","Africa/Brazzaville","Africa/Bujumbura","Africa/Cairo","Africa/Casablanca","Africa/Ceuta","Africa/Conakry","Africa/Dakar","Africa/Dar_es_Salaam","Africa/Djibouti","Africa/Douala","Africa/El_Aaiun","Africa/Freetown","Africa/Gaborone","Africa/Harare","Africa/Johannesburg","Africa/Juba","Africa/Kampala","Africa/Khartoum","Africa/Kigali","Africa/Kinshasa","Africa/Lagos","Africa/Libreville","Africa/Lome","Africa/Luanda","Africa/Lubumbashi","Africa/Lusaka","Africa/Malabo","Africa/Maputo","Africa/Maseru","Africa/Mbabane","Africa/Mogadishu","Africa/Monrovia","Africa/Nairobi","Africa/Ndjamena","Africa/Niamey","Africa/Nouakchott","Africa/Ouagadougou","Africa/Porto-Novo","Africa/Sao_Tome","Africa/Timbuktu","Africa/Tripoli","Africa/Tunis","Africa/Windhoek","America/Adak","America/Anchorage","America/Anguilla","America/Antigua","America/Araguaina","America/Argentina/Buenos_Aires","America/Argentina/Catamarca","America/Argentina/ComodRivadavia","America/Argentina/Cordoba","America/Argentina/Jujuy","America/Argentina/La_Rioja","America/Argentina/Mendoza","America/Argentina/Rio_Gallegos","America/Argentina/Salta","America/Argentina/San_Juan","America/Argentina/San_Luis","America/Argentina/Tucuman","America/Argentina/Ushuaia","America/Aruba","America/Asuncion","America/Atikokan","America/Atka","America/Bahia_Banderas","America/Bahia","America/Barbados","America/Belem","America/Belize","America/Blanc-Sablon","America/Boa_Vista","America/Bogota","America/Boise","America/Buenos_Aires","America/Cambridge_Bay","America/Campo_Grande","America/Cancun","America/Caracas","America/Catamarca","America/Cayenne","America/Cayman","America/Chicago","America/Chihuahua","America/Coral_Harbour","America/Cordoba","America/Costa_Rica","America/Creston","America/Cuiaba","America/Curacao","America/Danmarkshavn","America/Dawson_Creek","America/Dawson","America/Denver","America/Detroit","America/Dominica","America/Edmonton","America/Eirunepe","America/El_Salvador","America/Ensenada","America/Fort_Nelson","America/Fort_Wayne","America/Fortaleza","America/Glace_Bay","America/Godthab","America/Goose_Bay","America/Grand_Turk","America/Grenada","America/Guadeloupe","America/Guatemala","America/Guayaquil","America/Guyana","America/Halifax","America/Havana","America/Hermosillo","America/Indiana/Indianapolis","America/Indiana/Knox","America/Indiana/Marengo","America/Indiana/Petersburg","America/Indiana/Tell_City","America/Indiana/Vevay","America/Indiana/Vincennes","America/Indiana/Winamac","America/Indianapolis","America/Inuvik","America/Iqaluit","America/Jamaica","America/Jujuy","America/Juneau","America/Kentucky/Louisville","America/Kentucky/Monticello","America/Knox_IN","America/Kralendijk","America/La_Paz","America/Lima","America/Los_Angeles","America/Louisville","America/Lower_Princes","America/Maceio","America/Managua","America/Manaus","America/Marigot","America/Martinique","America/Matamoros","America/Mazatlan","America/Mendoza","America/Menominee","America/Merida","America/Metlakatla","America/Mexico_City","America/Miquelon","America/Moncton","America/Monterrey","America/Montevideo","America/Montreal","America/Montserrat","America/Nassau","America/New_York","America/Nipigon","America/Nome","America/Noronha","America/North_Dakota/Beulah","America/North_Dakota/Center","America/North_Dakota/New_Salem","America/Ojinaga","America/Panama","America/Pangnirtung","America/Paramaribo","America/Phoenix","America/Port_of_Spain","America/Port-au-Prince","America/Porto_Acre","America/Porto_Velho","America/Puerto_Rico","America/Punta_Arenas","America/Rainy_River","America/Rankin_Inlet","America/Recife","America/Regina","America/Resolute","America/Rio_Branco","America/Rosario","America/Santa_Isabel","America/Santarem","America/Santiago","America/Santo_Domingo","America/Sao_Paulo","America/Scoresbysund","America/Shiprock","America/Sitka","America/St_Barthelemy","America/St_Johns","America/St_Kitts","America/St_Lucia","America/St_Thomas","America/St_Vincent","America/Swift_Current","America/Tegucigalpa","America/Thule","America/Thunder_Bay","America/Tijuana","America/Toronto","America/Tortola","America/Vancouver","America/Virgin","America/Whitehorse","America/Winnipeg","America/Yakutat","America/Yellowknife","Antarctica/Casey","Antarctica/Davis","Antarctica/DumontDUrville","Antarctica/Macquarie","Antarctica/Mawson","Antarctica/McMurdo","Antarctica/Palmer","Antarctica/Rothera","Antarctica/South_Pole","Antarctica/Syowa","Antarctica/Troll","Antarctica/Vostok","Arctic/Longyearbyen","Asia/Aden","Asia/Almaty","Asia/Amman","Asia/Anadyr","Asia/Aqtau","Asia/Aqtobe","Asia/Ashgabat","Asia/Ashkhabad","Asia/Atyrau","Asia/Baghdad","Asia/Bahrain","Asia/Baku","Asia/Bangkok","Asia/Barnaul","Asia/Beirut","Asia/Bishkek","Asia/Brunei","Asia/Calcutta","Asia/Chita","Asia/Choibalsan","Asia/Chongqing","Asia/Chungking","Asia/Colombo","Asia/Dacca","Asia/Damascus","Asia/Dhaka","Asia/Dili","Asia/Dubai","Asia/Dushanbe","Asia/Famagusta","Asia/Gaza","Asia/Harbin","Asia/Hebron","Asia/Ho_Chi_Minh","Asia/Hong_Kong","Asia/Hovd","Asia/Irkutsk","Asia/Istanbul","Asia/Jakarta","Asia/Jayapura","Asia/Jerusalem","Asia/Kabul","Asia/Kamchatka","Asia/Karachi","Asia/Kashgar","Asia/Kathmandu","Asia/Katmandu","Asia/Khandyga","Asia/Kolkata","Asia/Krasnoyarsk","Asia/Kuala_Lumpur","Asia/Kuching","Asia/Kuwait","Asia/Macao","Asia/Macau","Asia/Magadan","Asia/Makassar","Asia/Manila","Asia/Muscat","Asia/Nicosia","Asia/Novokuznetsk","Asia/Novosibirsk","Asia/Omsk","Asia/Oral","Asia/Phnom_Penh","Asia/Pontianak","Asia/Pyongyang","Asia/Qatar","Asia/Qostanay","Asia/Qyzylorda","Asia/Rangoon","Asia/Riyadh","Asia/Saigon","Asia/Sakhalin","Asia/Samarkand","Asia/Seoul","Asia/Shanghai","Asia/Singapore","Asia/Srednekolymsk","Asia/Taipei","Asia/Tashkent","Asia/Tbilisi","Asia/Tehran","Asia/Tel_Aviv","Asia/Thimbu","Asia/Thimphu","Asia/Tokyo","Asia/Tomsk","Asia/Ujung_Pandang","Asia/Ulaanbaatar","Asia/Ulan_Bator","Asia/Urumqi","Asia/Ust-Nera","Asia/Vientiane","Asia/Vladivostok","Asia/Yakutsk","Asia/Yangon","Asia/Yekaterinburg","Asia/Yerevan","Atlantic/Azores","Atlantic/Bermuda","Atlantic/Canary","Atlantic/Cape_Verde","Atlantic/Faeroe","Atlantic/Faroe","Atlantic/Jan_Mayen","Atlantic/Madeira","Atlantic/Reykjavik","Atlantic/South_Georgia","Atlantic/St_Helena","Atlantic/Stanley","Australia/ACT","Australia/Adelaide","Australia/Brisbane","Australia/Broken_Hill","Australia/Canberra","Australia/Currie","Australia/Darwin","Australia/Eucla","Australia/Hobart","Australia/LHI","Australia/Lindeman","Australia/Lord_Howe","Australia/Melbourne","Australia/North","Australia/NSW","Australia/Perth","Australia/Queensland","Australia/South","Australia/Sydney","Australia/Tasmania","Australia/Victoria","Australia/West","Australia/Yancowinna","Brazil/Acre","Brazil/DeNoronha","Brazil/East","Brazil/West","Canada/Atlantic","Canada/Central","Canada/Eastern","Canada/Mountain","Canada/Newfoundland","Canada/Pacific","Canada/Saskatchewan","Canada/Yukon","CET","Chile/Continental","Chile/EasterIsland","CST6CDT","Cuba","EET","Egypt","Eire","EST","EST5EDT","Etc/GMT-0","Etc/GMT-1","Etc/GMT-10","Etc/GMT-11","Etc/GMT-12","Etc/GMT-13","Etc/GMT-14","Etc/GMT-2","Etc/GMT-3","Etc/GMT-4","Etc/GMT-5","Etc/GMT-6","Etc/GMT-7","Etc/GMT-8","Etc/GMT-9","Etc/GMT","Etc/GMT+0","Etc/GMT+1","Etc/GMT+10","Etc/GMT+11","Etc/GMT+12","Etc/GMT+2","Etc/GMT+3","Etc/GMT+4","Etc/GMT+5","Etc/GMT+6","Etc/GMT+7","Etc/GMT+8","Etc/GMT+9","Etc/GMT0","Etc/Greenwich","Etc/UCT","Etc/Universal","Etc/UTC","Etc/Zulu","Europe/Amsterdam","Europe/Andorra","Europe/Astrakhan","Europe/Athens","Europe/Belfast","Europe/Belgrade","Europe/Berlin","Europe/Bratislava","Europe/Brussels","Europe/Bucharest","Europe/Budapest","Europe/Busingen","Europe/Chisinau","Europe/Copenhagen","Europe/Dublin","Europe/Gibraltar","Europe/Guernsey","Europe/Helsinki","Europe/Isle_of_Man","Europe/Istanbul","Europe/Jersey","Europe/Kaliningrad","Europe/Kiev","Europe/Kirov","Europe/Lisbon","Europe/Ljubljana","Europe/London","Europe/Luxembourg","Europe/Madrid","Europe/Malta","Europe/Mariehamn","Europe/Minsk","Europe/Monaco","Europe/Moscow","Europe/Nicosia","Europe/Oslo","Europe/Paris","Europe/Podgorica","Europe/Prague","Europe/Riga","Europe/Rome","Europe/Samara","Europe/San_Marino","Europe/Sarajevo","Europe/Saratov","Europe/Simferopol","Europe/Skopje","Europe/Sofia","Europe/Stockholm","Europe/Tallinn","Europe/Tirane","Europe/Tiraspol","Europe/Ulyanovsk","Europe/Uzhgorod","Europe/Vaduz","Europe/Vatican","Europe/Vienna","Europe/Vilnius","Europe/Volgograd","Europe/Warsaw","Europe/Zagreb","Europe/Zaporozhye","Europe/Zurich","GB-Eire","GB","GMT-0","GMT","GMT+0","GMT0","Greenwich","Hongkong","HST","Iceland","Indian/Antananarivo","Indian/Chagos","Indian/Christmas","Indian/Cocos","Indian/Comoro","Indian/Kerguelen","Indian/Mahe","Indian/Maldives","Indian/Mauritius","Indian/Mayotte","Indian/Reunion","Iran","Israel","Jamaica","Japan","Kwajalein","Libya","MET","Mexico/BajaNorte","Mexico/BajaSur","Mexico/General","MST","MST7MDT","Navajo","NZ-CHAT","NZ","Pacific/Apia","Pacific/Auckland","Pacific/Bougainville","Pacific/Chatham","Pacific/Chuuk","Pacific/Easter","Pacific/Efate","Pacific/Enderbury","Pacific/Fakaofo","Pacific/Fiji","Pacific/Funafuti","Pacific/Galapagos","Pacific/Gambier","Pacific/Guadalcanal","Pacific/Guam","Pacific/Honolulu","Pacific/Johnston","Pacific/Kiritimati","Pacific/Kosrae","Pacific/Kwajalein","Pacific/Majuro","Pacific/Marquesas","Pacific/Midway","Pacific/Nauru","Pacific/Niue","Pacific/Norfolk","Pacific/Noumea","Pacific/Pago_Pago","Pacific/Palau","Pacific/Pitcairn","Pacific/Pohnpei","Pacific/Ponape","Pacific/Port_Moresby","Pacific/Rarotonga","Pacific/Saipan","Pacific/Samoa","Pacific/Tahiti","Pacific/Tarawa","Pacific/Tongatapu","Pacific/Truk","Pacific/Wake","Pacific/Wallis","Pacific/Yap","Poland","Portugal","PRC","PST8PDT","ROC","ROK","Singapore","Turkey","UCT","Universal","US/Alaska","US/Aleutian","US/Arizona","US/Central","US/East-Indiana","US/Eastern","US/Hawaii","US/Indiana-Starke","US/Michigan","US/Mountain","US/Pacific-New","US/Pacific","US/Samoa","UTC","W-SU","WET","Zulu"]')},308:function(module,exports,__webpack_require__){__webpack_require__(309),__webpack_require__(455),module.exports=__webpack_require__(456)},373:function(module,exports){},456:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3);const req=__webpack_require__(637);Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.configure)((function loadStories(){req.keys().forEach(req)}),module)}.call(this,__webpack_require__(8)(module))},6:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.d(__webpack_exports__,"a",(function(){return eventDetails}));var _storybook_addon_actions__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(304);const eventDetails=Object(_storybook_addon_actions__WEBPACK_IMPORTED_MODULE_0__.decorate)([args=>args.map(arg=>({type:arg.type,detail:arg.detail}))])},637:function(module,exports,__webpack_require__){var map={"./accordions.stories.ts":638,"./alert.stories.ts":660,"./button.stories.ts":661,"./card.stories.ts":662,"./chart.stories.ts":663,"./checkbox.stories.ts":664,"./chip.stories.ts":665,"./date.stories.ts":666,"./dialog.stories.ts":667,"./hero.stories.ts":668,"./input.stories.ts":669,"./loader.stories.ts":670,"./modal.stories.ts":671,"./multiselect.stories.ts":672,"./paginator.stories.ts":673,"./progress-bar.stories.ts":674,"./radio.stories.ts":675,"./rice-ball-dessert.stories.ts":676,"./select.stories.ts":677,"./sheet.stories.ts":678,"./skeleton.stories.ts":681,"./switch.stories.ts":682,"./table.stories.ts":683,"./tabs.stories.ts":684,"./textarea.stories.ts":685,"./timezone.stories.ts":686,"./toast.stories.ts":687};function webpackContext(req){var id=webpackContextResolve(req);return __webpack_require__(id)}function webpackContextResolve(req){if(!__webpack_require__.o(map,req)){var e=new Error("Cannot find module '"+req+"'");throw e.code="MODULE_NOT_FOUND",e}return map[req]}webpackContext.keys=function webpackContextKeys(){return Object.keys(map)},webpackContext.resolve=webpackContextResolve,module.exports=webpackContext,webpackContext.id=637},638:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(688),__webpack_require__(67);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Accordions",module),faq=[{question:"Who are you?",answer:"Who, who"},{question:"What is love?",answer:"Baby don't hurt me"},{question:"Why do birds suddenly appear every time you are near?",answer:"Just like me, they long to be close to you"}];stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+    <chameleon-accordions style="--accordion-width: 600px;">
+      ${faq.map(faq=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+          <chameleon-accordion>
+            <h3 slot="header">${faq.question}</h3>
+            <div slot="panel">${faq.answer}</div>
+          </chameleon-accordion>
+        `)}
+    </chameleon-accordions>
+  `),stories.add("Accent Color",()=>{const accentColor=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Accent Color","#2c6fb7");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+    <chameleon-accordions style="--accordion-width: 600px;">
+      ${faq.map(faq=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+          <chameleon-accordion accentColor="${accentColor}">
+            <h3 slot="header">${faq.question}</h3>
+            <div slot="panel">${faq.answer}</div>
+          </chameleon-accordion>
+        `)}
+    </chameleon-accordions>
+  `}),stories.add("Custom Icon",()=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-accordions
+        style="--accordion-width: 600px;"
+        @expanded-changed=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("expanded-changed")}
+      >
+        <chameleon-accordion>
+          <h3 slot="header">People</h3>
+          <chameleon-button slot="toggle-icon" theme="text"
+            >Edit</chameleon-button
+          >
+          <div slot="panel">
+            <ul>
+              <li>Jason</li>
+              <li>Paul</li>
+              <li>June</li>
+            </ul>
+          </div>
+        </chameleon-accordion>
+        <chameleon-accordion>
+          <chameleon-button slot="toggle-icon" theme="text"
+            >Edit</chameleon-button
+          >
+          <h3 slot="header">Places</h3>
+          <div slot="panel">North Pole</div>
+        </chameleon-accordion>
+        <chameleon-accordion>
+          <chameleon-button slot="toggle-icon" theme="text"
+            >Edit</chameleon-button
+          >
+          <h3 slot="header">Things</h3>
+          <div slot="panel">Candy canes</div>
+        </chameleon-accordion>
+      </chameleon-accordions>
+    `,{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},660:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(690);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Alert",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Alert (Default)",()=>{const message=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Alert Message","This is an alert message from chameleon!");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <chameleon-alert .message="${message}"> </chameleon-alert>
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},661:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(67);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Button",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);stories.add("Primary",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),fullWidth=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Width",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),target=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Target of Link","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <chameleon-button
+        ?disabled=${disabled}
+        ?loading=${loading}
+        theme="primary"
+        ?full-width=${fullWidth}
+        href=${href}
+        target=${target}
+      >
+        Button
+      </chameleon-button>
+    `},{info:{inline:!0}}),stories.add("Secondary",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),fullWidth=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Width",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),target=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Target of Link","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <chameleon-button
+        style="--button-height: 40px;"
+        ?disabled=${disabled}
+        ?loading=${loading}
+        theme="secondary"
+        ?full-width=${fullWidth}
+        href=${href}
+        target=${target}
+        >Button</chameleon-button
+      >
+    `},{info:{inline:!0}}),stories.add("Text",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),fullWidth=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Width",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),target=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Target of Link","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <chameleon-button
+        ?disabled=${disabled}
+        ?loading=${loading}
+        theme="text"
+        ?full-width=${fullWidth}
+        href=${href}
+        target=${target}
+        >Button</chameleon-button
+      >
+    `},{info:{inline:!0}}),stories.add("Text with Icon",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),fullWidth=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Width",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),target=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Target of Link","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <chameleon-button
+        ?disabled=${disabled}
+        ?loading=${loading}
+        theme="text"
+        ?full-width=${fullWidth}
+        icon-left
+        href=${href}
+        target=${target}
+      >
+        ${slot="icon-left",lit_html__WEBPACK_IMPORTED_MODULE_2__.svg`
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus" slot="${slot}"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+`}Add
+      </chameleon-button>
+    `;var slot},{info:{inline:!0}}),stories.add("Icon Only",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),target=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Target of Link","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <chameleon-button
+        ?disabled=${disabled}
+        ?loading=${loading}
+        icon-only
+        theme="text"
+        href=${href}
+        target=${target}
+        >${slot="icon-only",lit_html__WEBPACK_IMPORTED_MODULE_2__.svg`
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right" slot="${slot}"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+`}</chameleon-button
+      >
+    `;var slot},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},662:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(191),__webpack_require__(691),__webpack_require__(692),__webpack_require__(693),__webpack_require__(67);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Card",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.addParameters({backgrounds:[{name:"gray",value:"#f5f5f8",default:!0},{name:"black",value:"#252a33"}]}),stories.add("Basic",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
+      <chameleon-card>
+        <chameleon-card-header
+          title="${titleText}"
+          subtitle="${subtitleText}"
+        ></chameleon-card-header>
+        <p>Here is some sample content for the card</p>
+      </chameleon-card>
+    `},{info:{inline:!0}}),stories.add("Outline",()=>lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
+      <chameleon-card outline>
+        <h3>Card</h3>
+        <p>Here is some sample content for the card</p>
+      </chameleon-card>
+    `,{info:{inline:!0}}),stories.add("Image",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO"),imageSrc=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Image Source","https://images.unsplash.com/photo-1474644746397-786f431dc663?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1080&q=80"),altText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("ALT Text","St. Louis Landscape");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
+      <chameleon-card rounded>
+        <chameleon-card-header
+          title="${titleText}"
+          subtitle="${subtitleText}"
+        ></chameleon-card-header>
+        <chameleon-card-image
+          src="${imageSrc}"
+          alt="${altText}"
+        ></chameleon-card-image>
+        <p>
+          Sample text…Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+          Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
+          turpis.
+        </p>
+      </chameleon-card>
+    `},{info:{inline:!0}}),stories.add("Border",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO"),rounded=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Rounded",!0),accentColor=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Accent Color","green");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
+      <chameleon-card ?rounded="${rounded}" accentColor="${accentColor}">
+        <chameleon-card-header
+          title="${titleText}"
+          subtitle="${subtitleText}"
+        ></chameleon-card-header>
+        <p>Here is some sample content for the card</p>
+      </chameleon-card>
+    `},{info:{inline:!0}}),stories.add("Footer",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
+      <chameleon-card>
+        <chameleon-card-header
+          title="${titleText}"
+          subtitle="${subtitleText}"
+        ></chameleon-card-header>
+        <p>Here is some sample content for the card</p>
+        <chameleon-card-footer>
+          <chameleon-button theme="secondary">Button</chameleon-button>
+        </chameleon-card-footer>
+      </chameleon-card>
+    `},{info:{inline:!0}}),stories.add("Complication",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO"),complicationText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Complication Text","Sup??");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <style>
+        chameleon-card {
+          max-width: 400px;
+        }
+      </style>
+      <chameleon-card .complication=${complicationText} rounded>
+        <chameleon-card-header
+          title="${titleText}"
+          subtitle="${subtitleText}"
+        ></chameleon-card-header>
+        <p>Here is some sample content for the card</p>
+      </chameleon-card>
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},663:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(694);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Chart",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const color=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Color","#00870a"),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","1,000"),subLabel=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("SubLabel","Funds Remaining"),percentage=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Percentage",90);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <chameleon-chart
+        color="${color}"
+        percentage="${percentage}"
+        label="${label}"
+        subLabel="${subLabel}"
+        type="arc"
+      ></chameleon-chart>
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},664:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(695);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Checkbox",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Checkbox",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <chameleon-checkbox
+        label="${label}"
+        name="${name}"
+        ?checked="${checked}"
+        ?disabled="${disabled}"
+        ?readonly="${readonly}"
+        ?invalid="${invalid}"
+        ?required="${required}"
+      ></chameleon-checkbox>
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},665:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(299);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Chip",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Chip",()=>{const valueText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Value","Salty");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-chip @remove-chip=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("remove-chip")}
+        >${valueText}</chameleon-chip
+      >
+    `},{info:{inline:!0}}),stories.add("With Icon",()=>{const valueText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Value","Crunchy");return document.addEventListener("remove-chip",e=>console.log("Chameleon Chip Close Event: ",e.detail.value)),lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-chip
+        .value="${valueText}"
+        closeable
+        @remove-chip=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("remove-chip")}
+        >${valueText}</chameleon-chip
+      >
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},666:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(696);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Date",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Date",()=>{const placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Select Date"),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Date *"),minValue=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Min Value (YYYY-MM-DD)",""),maxValue=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Max Value (YYYY-MM-DD)",""),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-date
+        name="${name}"
+        .placeholder="${placeholder}"
+        ?readonly="${readonly}"
+        .label="${label}"
+        .min="${minValue}"
+        .max="${maxValue}"
+        ?required="${required}"
+        ?invalid="${invalid}"
+        ?disabled="${disabled}"
+        .validationMessage="${error}"
+        @chameleon.date.input="${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.date.input")}"
+      ></chameleon-date>
+    `},{info:{inline:!0},options:{enableShortcuts:!1}}),stories.add("Pre-selected Value",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Select Date"),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Date *"),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error","");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-date
+        name="${name}"
+        .placeholder="${placeholder}"
+        .label="${label}"
+        ?readonly="${readonly}"
+        value="${"2020-01-13"}"
+        ?required="${required}"
+        ?invalid="${invalid}"
+        ?disabled="${disabled}"
+        .validationMessage="${error}"
+        @chameleon.date.input="${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.date.input")}"
+      ></chameleon-date>
+    `},{info:{inline:!0},options:{enableShortcuts:!1}})}.call(this,__webpack_require__(8)(module))},667:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(697);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Dialog",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);stories.add("Basic",()=>{const dialogVisible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open",!0),dismissible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Dismissible",!0),canGoBack=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Can Go Back",!1),fullScreen=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Screen",!1);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-dialog
+        ?open="${dialogVisible}"
+        ?dismissible="${dismissible}"
+        ?canGoBack="${canGoBack}"
+        ?fullScreen="${fullScreen}"
+        @toggle-dialog=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("toggle-dialog")}
+      >
+        ${slot="icon",lit_html__WEBPACK_IMPORTED_MODULE_3__.svg`
+  <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle" slot="${slot}"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12" y2="17"></line></svg>
+`}
+        <h1 slot="title">Title</h1>
+        We’re sorry but your session has expired. You will need to log back in
+        to continue.
+        <div slot="accept-action">
+          <chameleon-button
+            full-width
+            theme="primary"
+            @click="${()=>console.log("Accept")}"
+            >Okay</chameleon-button
+          >
+        </div>
+        <div slot="decline-action">
+          <chameleon-button
+            full-width
+            theme="secondary"
+            @click="${()=>console.log("Cancel")}"
+            >Cancel</chameleon-button
+          >
+        </div>
+      </chameleon-dialog>
+    `;var slot},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},668:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(698);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Hero",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("CSS Gradient",()=>{const title=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO"),subtitle=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),heroText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Text","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet non curabitur gravida arcu ac tortor dignissim convallis aenean. Viverra adipiscing at in tellus integer feugiat."),gradientColors=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Hex Colors","#B72126, #14264B"),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <chameleon-hero
+        title="${title}"
+        subTitle="${subtitle}"
+        heroText="${heroText}"
+        gradient="${gradientColors}"
+        type="${"gradient"}"
+        ?loading="${loading}"
+      >
+      </chameleon-hero>
+    `},{info:{inline:!0}}),stories.add("Background Image",()=>{const title=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","Washington, DC"),subtitle=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),heroText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Text","Cursus eget nunc scelerisque viverra mauris in. Tellus integer feugiat scelerisque varius. Nisl purus in mollis nunc sed id. Risus viverra adipiscing at in tellus."),imageUrl=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Image URL","https://picsum.photos/id/122/2100/856"),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <chameleon-hero
+        title="${title}"
+        subTitle="${subtitle}"
+        heroText="${heroText}"
+        imageUrl="${imageUrl}"
+        type="${"image"}"
+        ?loading="${loading}"
+      >
+      </chameleon-hero>
+    `},{info:{inline:!0}}),stories.add("Image Gradient",()=>{const title=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","New York, NY"),subtitle=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),heroText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Text","Cursus eget nunc scelerisque viverra mauris in. Tellus integer feugiat scelerisque varius. Nisl purus in mollis nunc sed id. Risus viverra adipiscing at in tellus."),imageUrl=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Image URL","https://picsum.photos/id/703/2100/856"),gradientColors=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Hex Colors","#B72126, #14264B"),gradientAlpha=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Gradient Alpha",.5),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+      <chameleon-hero
+        title="${title}"
+        subTitle="${subtitle}"
+        heroText="${heroText}"
+        imageUrl="${imageUrl}"
+        type="${"imageGradient"}"
+        gradient="${gradientColors}"
+        gradientAlpha="${gradientAlpha}"
+        ?loading="${loading}"
+      >
+      </chameleon-hero>
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},669:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(135);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Input",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const searchIcon=slot=>lit_html__WEBPACK_IMPORTED_MODULE_3__.svg`
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="feather feather-search"
+    slot="${slot}"
+  >
+    <circle cx="11" cy="11" r="8"></circle>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+`;stories.add("Basic",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),toggleable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Toggleable password visibility",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),step=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Step",.01),noStepper=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Hide increment arrows/disable incrementing",!1),typeSelection=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.radios)("Type",{Text:"text",Password:"password",Email:"email",Number:"number",Search:"search",Tel:"tel",Url:"url"},"text");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-input
+        name="${name}"
+        ?required="${required}"
+        ?disabled="${disabled}"
+        ?readonly="${readonly}"
+        ?invalid="${invalid}"
+        ?noStepper="${noStepper}"
+        ?toggleable="${toggleable}"
+        .type="${typeSelection}"
+        .placeholder="${placeholder}"
+        .label="${label}"
+        .validationMessage="${error}"
+        .step="${step}"
+        @chameleon.input.input=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.input.input")}
+      ></chameleon-input>
+    `},{info:{inline:!0}}),stories.add("Icon Left",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),toggleable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Toggleable password visibility",!1),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),step=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Step",.01),noStepper=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Hide increment arrows/disable incrementing",!1),typeSelection=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.radios)("Type",{Text:"text",Password:"password",Email:"email",Number:"number",Search:"search",Tel:"tel",Url:"url"},"text");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-input
+        name="${name}"
+        ?required="${required}"
+        ?disabled="${disabled}"
+        ?readonly="${readonly}"
+        ?invalid="${invalid}"
+        ?noStepper="${noStepper}"
+        ?toggleable="${toggleable}"
+        icon-left
+        .type="${typeSelection}"
+        .placeholder="${placeholder}"
+        .label="${label}"
+        .validationMessage="${error}"
+        .step="${step}"
+        @chameleon.input.input=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.input.input")}
+      >
+        ${searchIcon("icon-left")}
+      </chameleon-input>
+    `},{info:{inline:!0}}),stories.add("Icon Right",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),toggleable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Toggleable password visibility",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),step=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Step",.01),noStepper=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Hide increment arrows/disable incrementing",!1),typeSelection=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.radios)("Type",{Text:"text",Password:"password",Email:"email",Number:"number",Search:"search",Tel:"tel",Url:"url"},"text");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      <chameleon-input
+        name="${name}"
+        ?required="${required}"
+        ?disabled="${disabled}"
+        ?noStepper="${noStepper}"
+        ?invalid="${invalid}"
+        ?readonly="${readonly}"
+        ?toggleable="${toggleable}"
+        icon-right
+        .type="${typeSelection}"
+        .placeholder="${placeholder}"
+        .label="${label}"
+        .validationMessage="${error}"
+        .step="${step}"
+        @chameleon.input.input=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.input.input")}
+      >
+        ${searchIcon("icon-right")}
+      </chameleon-input>
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},67:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(7),chameleon_button_style=lit_element.b`
   :host {
     --button-border-color: var(--color-primary, #2c6fb7);
     --button-hover-color: var(--color-primary-dark, #004587);
@@ -1333,443 +1720,11 @@
         <slot name="icon-right"></slot>
         <slot name="icon-only"></slot>
       </button>
-    `}getRel(){return"_blank"===this.target?"noopener noreferrer":""}}chameleon_button_ChameleonButton.styles=[chameleon_button_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"loading",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"theme",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-left",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-right",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-only",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"href",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"target",void 0),window.customElements.get("chameleon-button")||window.customElements.define("chameleon-button",chameleon_button_ChameleonButton)},6:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.d(__webpack_exports__,"a",(function(){return eventDetails}));var _storybook_addon_actions__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(304);const eventDetails=Object(_storybook_addon_actions__WEBPACK_IMPORTED_MODULE_0__.decorate)([args=>args.map(arg=>({type:arg.type,detail:arg.detail}))])},636:function(module,exports,__webpack_require__){var map={"./accordions.stories.ts":637,"./alert.stories.ts":659,"./button.stories.ts":660,"./card.stories.ts":661,"./chart.stories.ts":662,"./checkbox.stories.ts":663,"./chip.stories.ts":664,"./date.stories.ts":665,"./dialog.stories.ts":666,"./hero.stories.ts":667,"./input.stories.ts":668,"./loader.stories.ts":669,"./modal.stories.ts":670,"./multiselect.stories.ts":671,"./paginator.stories.ts":672,"./progress-bar.stories.ts":673,"./radio.stories.ts":674,"./rice-ball-dessert.stories.ts":675,"./select.stories.ts":676,"./sheet.stories.ts":677,"./skeleton.stories.ts":678,"./switch.stories.ts":679,"./table.stories.ts":680,"./tabs.stories.ts":681,"./textarea.stories.ts":682,"./timezone.stories.ts":683,"./toast.stories.ts":684};function webpackContext(req){var id=webpackContextResolve(req);return __webpack_require__(id)}function webpackContextResolve(req){if(!__webpack_require__.o(map,req)){var e=new Error("Cannot find module '"+req+"'");throw e.code="MODULE_NOT_FOUND",e}return map[req]}webpackContext.keys=function webpackContextKeys(){return Object.keys(map)},webpackContext.resolve=webpackContextResolve,module.exports=webpackContext,webpackContext.id=636},637:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(685),__webpack_require__(50);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Accordions",module),faq=[{question:"Who are you?",answer:"Who, who"},{question:"What is love?",answer:"Baby don't hurt me"},{question:"Why do birds suddenly appear every time you are near?",answer:"Just like me, they long to be close to you"}];stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("New basic accordions with default icons",()=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-    <chameleon-accordions style="--accordion-width: 600px;">
-      ${faq.map(faq=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-          <chameleon-accordion>
-            <h3 slot="header">${faq.question}</h3>
-            <div slot="panel">${faq.answer}</div>
-          </chameleon-accordion>
-        `)}
-    </chameleon-accordions>
-  `),stories.add("Accordions with custom icons in fixed position",()=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-      <style>
-        :root {
-          background-color: gray;
-        }
-        chameleon-accordion {
-          background-color: white;
-          padding: 0 22px;
-        }
-        chameleon-accordion:not(:last-of-type) {
-          margin-bottom: 12px;
-        }
-        chameleon-accordion div {
-          border-top: 1px gray solid;
-          padding: 12px;
-        }
-      </style>
-      <chameleon-accordions
-        style="--accordion-width: 600px;"
-        @expanded-changed=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("expanded-changed")}
-      >
-        <chameleon-accordion fixed="true">
-          <h3 slot="header">People</h3>
-          <chameleon-button slot="toggle-icon" theme="text"
-            >Edit</chameleon-button
-          >
-          <div slot="panel">
-            <ul>
-              <li>Jason</li>
-              <li>Paul</li>
-              <li>June</li>
-            </ul>
-          </div>
-        </chameleon-accordion>
-        <chameleon-accordion fixed="true">
-          <chameleon-button slot="toggle-icon" theme="text"
-            >Edit</chameleon-button
-          >
-          <h3 slot="header">Places</h3>
-          <div slot="panel">North Pole</div>
-        </chameleon-accordion>
-        <chameleon-accordion fixed="true">
-          <chameleon-button slot="toggle-icon" theme="text"
-            >Edit</chameleon-button
-          >
-          <h3 slot="header">Things</h3>
-          <div slot="panel">Candy canes</div>
-        </chameleon-accordion>
-      </chameleon-accordions>
-    `,{info:{inline:!0}}),stories.add("Accordions with clickable headers",()=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-      <chameleon-accordions style="--accordion-width: 600px;">
-        ${faq.map(faq=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-            <chameleon-accordion clickable>
-              <h3 slot="header">${faq.question}</h3>
-              <div slot="panel">${faq.answer}</div>
-            </chameleon-accordion>
-          `)}
-      </chameleon-accordions>
-    `,{info:{inline:!0}}),stories.add("Accordions with clickable headers including subheaders",()=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-      <style>
-        .subheader {
-          display: flex;
-          justify-content: space-between;
-        }
-        .answer {
-          padding: 1rem 0;
-          background-color: lightgrey;
-        }
-      </style>
-      <chameleon-accordions style="--accordion-width: 600px;">
-        ${faq.map(faq=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-            <chameleon-accordion clickable fixed>
-              <span slot="toggle-icon">Edit</span>
-              <h3 slot="header">${faq.question}</h3>
-              <div slot="subheader" class="subheader">
-                <span
-                  >Subheader message goes here for additional information</span
-                >
-                <span>0 people</span>
-              </div>
-              <div slot="panel" class="answer">${faq.answer}</div>
-            </chameleon-accordion>
-          `)}
-      </chameleon-accordions>
-    `,{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},659:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(687);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Alert",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Alert (Default)",()=>{const message=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Alert Message","This is an alert message from chameleon!");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-alert .message="${message}"> </chameleon-alert>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},660:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(50);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Button",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);stories.add("Primary",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),fullWidth=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Width",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),target=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Target of Link","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-button
-        ?disabled=${disabled}
-        ?loading=${loading}
-        theme="primary"
-        ?full-width=${fullWidth}
-        href=${href}
-        target=${target}
-      >
-        Button
-      </chameleon-button>
-    `},{info:{inline:!0}}),stories.add("Secondary",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),fullWidth=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Width",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),target=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Target of Link","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-button
-        style="--button-height: 40px;"
-        ?disabled=${disabled}
-        ?loading=${loading}
-        theme="secondary"
-        ?full-width=${fullWidth}
-        href=${href}
-        target=${target}
-        >Button</chameleon-button
-      >
-    `},{info:{inline:!0}}),stories.add("Text",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),fullWidth=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Width",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),target=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Target of Link","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-button
-        ?disabled=${disabled}
-        ?loading=${loading}
-        theme="text"
-        ?full-width=${fullWidth}
-        href=${href}
-        target=${target}
-        >Button</chameleon-button
-      >
-    `},{info:{inline:!0}}),stories.add("Text with Icon",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),fullWidth=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Width",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),target=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Target of Link","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-button
-        ?disabled=${disabled}
-        ?loading=${loading}
-        theme="text"
-        ?full-width=${fullWidth}
-        icon-left
-        href=${href}
-        target=${target}
-      >
-        ${slot="icon-left",lit_html__WEBPACK_IMPORTED_MODULE_2__.svg`
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus" slot="${slot}"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-`}Add
-      </chameleon-button>
-    `;var slot},{info:{inline:!0}}),stories.add("Icon Only",()=>{const disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1),href=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Link",""),target=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Target of Link","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-button
-        ?disabled=${disabled}
-        ?loading=${loading}
-        icon-only
-        theme="text"
-        href=${href}
-        target=${target}
-        >${slot="icon-only",lit_html__WEBPACK_IMPORTED_MODULE_2__.svg`
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right" slot="${slot}"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-`}</chameleon-button
-      >
-    `;var slot},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},661:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(191),__webpack_require__(688),__webpack_require__(689),__webpack_require__(690),__webpack_require__(50);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Card",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.addParameters({backgrounds:[{name:"gray",value:"#f5f5f8",default:!0},{name:"black",value:"#252a33"}]}),stories.add("Basic",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <style>
-        chameleon-card {
-          max-width: 400px;
-        }
-      </style>
-      <chameleon-card>
-        <chameleon-card-header
-          title="${titleText}"
-          subtitle="${subtitleText}"
-        ></chameleon-card-header>
-        <p>Here is some sample content for the card</p>
-      </chameleon-card>
-    `},{info:{inline:!0}}),stories.add("Outline",()=>lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <style>
-        chameleon-card {
-          max-width: 400px;
-        }
-      </style>
-      <chameleon-card outline>
-        <h3>Card</h3>
-        <p>Here is some sample content for the card</p>
-      </chameleon-card>
-    `,{info:{inline:!0}}),stories.add("Image",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO"),imageSrc=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Image Source","https://images.unsplash.com/photo-1474644746397-786f431dc663?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1080&q=80"),altText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("ALT Text","St. Louis Landscape");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <style>
-        chameleon-card {
-          max-width: 400px;
-        }
-      </style>
-      <chameleon-card rounded>
-        <chameleon-card-header
-          title="${titleText}"
-          subtitle="${subtitleText}"
-        ></chameleon-card-header>
-        <chameleon-card-image
-          src="${imageSrc}"
-          alt="${altText}"
-        ></chameleon-card-image>
-        <p>
-          Sample text…Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-          turpis.
-        </p>
-      </chameleon-card>
-    `},{info:{inline:!0}}),stories.add("Border",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO"),rounded=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Rounded",!0),accentColorSelected=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Top Border","green");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <style>
-        chameleon-card {
-          max-width: 400px;
-        }
-      </style>
-      <chameleon-card
-        ?rounded="${rounded}"
-        accentColor="${accentColorSelected}"
-      >
-        <chameleon-card-header
-          title="${titleText}"
-          subtitle="${subtitleText}"
-        ></chameleon-card-header>
-        <p>Here is some sample content for the card</p>
-      </chameleon-card>
-    `},{info:{inline:!0}}),stories.add("Footer",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <style>
-        chameleon-card {
-          max-width: 400px;
-        }
-      </style>
-      <chameleon-card>
-        <chameleon-card-header
-          title="${titleText}"
-          subtitle="${subtitleText}"
-        ></chameleon-card-header>
-        <p>Here is some sample content for the card</p>
-        <chameleon-card-footer>
-          <chameleon-button theme="secondary">Button</chameleon-button>
-        </chameleon-card-footer>
-      </chameleon-card>
-    `},{info:{inline:!0}}),stories.add("Complication",()=>{const subtitleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),titleText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO"),complicationText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Complication Text","Sup??");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <style>
-        chameleon-card {
-          max-width: 400px;
-        }
-      </style>
-      <chameleon-card .complication=${complicationText} rounded>
-        <chameleon-card-header
-          title="${titleText}"
-          subtitle="${subtitleText}"
-        ></chameleon-card-header>
-        <p>Here is some sample content for the card</p>
-      </chameleon-card>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},662:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(691);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Chart",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const color=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Color","#00870a"),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","1,000"),subLabel=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("SubLabel","Funds Remaining"),percentage=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Percentage",90);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-chart
-        color="${color}"
-        percentage="${percentage}"
-        label="${label}"
-        subLabel="${subLabel}"
-        type="arc"
-      ></chameleon-chart>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},663:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(692);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Checkbox",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Checkbox",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-checkbox
-        label="${label}"
-        name="${name}"
-        ?checked="${checked}"
-        ?disabled="${disabled}"
-        ?readonly="${readonly}"
-        ?invalid="${invalid}"
-        ?required="${required}"
-      ></chameleon-checkbox>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},664:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(299);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Chip",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Chip",()=>{const valueText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Value","Salty");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-      <chameleon-chip @remove-chip=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("remove-chip")}
-        >${valueText}</chameleon-chip
-      >
-    `},{info:{inline:!0}}),stories.add("With Icon",()=>{const valueText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Value","Crunchy");return document.addEventListener("remove-chip",e=>console.log("Chameleon Chip Close Event: ",e.detail.value)),lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-      <chameleon-chip
-        .value="${valueText}"
-        closeable
-        @remove-chip=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("remove-chip")}
-        >${valueText}</chameleon-chip
-      >
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},665:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(693);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Date",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Date",()=>{const placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Select Date"),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Date *"),minValue=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Min Value (YYYY-MM-DD)",""),maxValue=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Max Value (YYYY-MM-DD)",""),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-      <chameleon-date
-        name="${name}"
-        .placeholder="${placeholder}"
-        ?readonly="${readonly}"
-        .label="${label}"
-        .min="${minValue}"
-        .max="${maxValue}"
-        ?required="${required}"
-        ?invalid="${invalid}"
-        ?disabled="${disabled}"
-        .validationMessage="${error}"
-        @chameleon.date.input="${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.date.input")}"
-      ></chameleon-date>
-    `},{info:{inline:!0},options:{enableShortcuts:!1}}),stories.add("Pre-selected Value",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Select Date"),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Date *"),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error","");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-      <chameleon-date
-        name="${name}"
-        .placeholder="${placeholder}"
-        .label="${label}"
-        ?readonly="${readonly}"
-        value="${"2020-01-13"}"
-        ?required="${required}"
-        ?invalid="${invalid}"
-        ?disabled="${disabled}"
-        .validationMessage="${error}"
-        @chameleon.date.input="${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.date.input")}"
-      ></chameleon-date>
-    `},{info:{inline:!0},options:{enableShortcuts:!1}})}.call(this,__webpack_require__(7)(module))},666:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(694);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Dialog",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);stories.add("Basic",()=>{const dialogVisible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open",!0),dismissible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Dismissible",!0),canGoBack=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Can Go Back",!1),fullScreen=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Screen",!1);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-      <chameleon-dialog
-        ?open="${dialogVisible}"
-        ?dismissible="${dismissible}"
-        ?canGoBack="${canGoBack}"
-        ?fullScreen="${fullScreen}"
-        @toggle-dialog=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("toggle-dialog")}
-      >
-        ${slot="icon",lit_html__WEBPACK_IMPORTED_MODULE_3__.svg`
-  <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle" slot="${slot}"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12" y2="17"></line></svg>
-`}
-        <h1 slot="title">Title</h1>
-        We’re sorry but your session has expired. You will need to log back in
-        to continue.
-        <div slot="accept-action">
-          <chameleon-button
-            full-width
-            theme="primary"
-            @click="${()=>console.log("Accept")}"
-            >Okay</chameleon-button
-          >
-        </div>
-        <div slot="decline-action">
-          <chameleon-button
-            full-width
-            theme="secondary"
-            @click="${()=>console.log("Cancel")}"
-            >Cancel</chameleon-button
-          >
-        </div>
-      </chameleon-dialog>
-    `;var slot},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},667:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(695);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Hero",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("CSS Gradient",()=>{const title=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","St. Louis, MO"),subtitle=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),heroText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Text","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laoreet non curabitur gravida arcu ac tortor dignissim convallis aenean. Viverra adipiscing at in tellus integer feugiat."),gradientColors=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Hex Colors","#B72126, #14264B"),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-hero
-        title="${title}"
-        subTitle="${subtitle}"
-        heroText="${heroText}"
-        gradient="${gradientColors}"
-        type="${"gradient"}"
-        ?loading="${loading}"
-      >
-      </chameleon-hero>
-    `},{info:{inline:!0}}),stories.add("Background Image",()=>{const title=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","Washington, DC"),subtitle=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),heroText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Text","Cursus eget nunc scelerisque viverra mauris in. Tellus integer feugiat scelerisque varius. Nisl purus in mollis nunc sed id. Risus viverra adipiscing at in tellus."),imageUrl=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Image URL","https://picsum.photos/id/122/2100/856"),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-hero
-        title="${title}"
-        subTitle="${subtitle}"
-        heroText="${heroText}"
-        imageUrl="${imageUrl}"
-        type="${"image"}"
-        ?loading="${loading}"
-      >
-      </chameleon-hero>
-    `},{info:{inline:!0}}),stories.add("Image Gradient",()=>{const title=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Title","New York, NY"),subtitle=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Subtitle","Destination"),heroText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Text","Cursus eget nunc scelerisque viverra mauris in. Tellus integer feugiat scelerisque varius. Nisl purus in mollis nunc sed id. Risus viverra adipiscing at in tellus."),imageUrl=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Image URL","https://picsum.photos/id/703/2100/856"),gradientColors=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Hex Colors","#B72126, #14264B"),gradientAlpha=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Gradient Alpha",.5),loading=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Loading",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-hero
-        title="${title}"
-        subTitle="${subtitle}"
-        heroText="${heroText}"
-        imageUrl="${imageUrl}"
-        type="${"imageGradient"}"
-        gradient="${gradientColors}"
-        gradientAlpha="${gradientAlpha}"
-        ?loading="${loading}"
-      >
-      </chameleon-hero>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},668:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(135);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Input",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const searchIcon=slot=>lit_html__WEBPACK_IMPORTED_MODULE_3__.svg`
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    class="feather feather-search"
-    slot="${slot}"
-  >
-    <circle cx="11" cy="11" r="8"></circle>
-    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-  </svg>
-`;stories.add("Basic",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),toggleable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Toggleable password visibility",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),step=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Step",.01),noStepper=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Hide increment arrows/disable incrementing",!1),typeSelection=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.radios)("Type",{Text:"text",Password:"password",Email:"email",Number:"number",Search:"search",Tel:"tel",Url:"url"},"text");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-      <chameleon-input
-        name="${name}"
-        ?required="${required}"
-        ?disabled="${disabled}"
-        ?readonly="${readonly}"
-        ?invalid="${invalid}"
-        ?noStepper="${noStepper}"
-        ?toggleable="${toggleable}"
-        .type="${typeSelection}"
-        .placeholder="${placeholder}"
-        .label="${label}"
-        .validationMessage="${error}"
-        .step="${step}"
-        @chameleon.input.input=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.input.input")}
-      ></chameleon-input>
-    `},{info:{inline:!0}}),stories.add("Icon Left",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),toggleable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Toggleable password visibility",!1),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),step=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Step",.01),noStepper=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Hide increment arrows/disable incrementing",!1),typeSelection=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.radios)("Type",{Text:"text",Password:"password",Email:"email",Number:"number",Search:"search",Tel:"tel",Url:"url"},"text");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-      <chameleon-input
-        name="${name}"
-        ?required="${required}"
-        ?disabled="${disabled}"
-        ?readonly="${readonly}"
-        ?invalid="${invalid}"
-        ?noStepper="${noStepper}"
-        ?toggleable="${toggleable}"
-        icon-left
-        .type="${typeSelection}"
-        .placeholder="${placeholder}"
-        .label="${label}"
-        .validationMessage="${error}"
-        .step="${step}"
-        @chameleon.input.input=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.input.input")}
-      >
-        ${searchIcon("icon-left")}
-      </chameleon-input>
-    `},{info:{inline:!0}}),stories.add("Icon Right",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),toggleable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Toggleable password visibility",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),step=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Step",.01),noStepper=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Hide increment arrows/disable incrementing",!1),typeSelection=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.radios)("Type",{Text:"text",Password:"password",Email:"email",Number:"number",Search:"search",Tel:"tel",Url:"url"},"text");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
-      <chameleon-input
-        name="${name}"
-        ?required="${required}"
-        ?disabled="${disabled}"
-        ?noStepper="${noStepper}"
-        ?invalid="${invalid}"
-        ?readonly="${readonly}"
-        ?toggleable="${toggleable}"
-        icon-right
-        .type="${typeSelection}"
-        .placeholder="${placeholder}"
-        .label="${label}"
-        .validationMessage="${error}"
-        .step="${step}"
-        @chameleon.input.input=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.input.input")}
-      >
-        ${searchIcon("icon-right")}
-      </chameleon-input>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},669:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(190);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Loader",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Spinner (Default)",()=>{const size=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Size","21px");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `}getRel(){return"_blank"===this.target?"noopener noreferrer":""}}chameleon_button_ChameleonButton.styles=[chameleon_button_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"loading",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"theme",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-left",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-right",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_button_ChameleonButton.prototype,"icon-only",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"href",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_button_ChameleonButton.prototype,"target",void 0),window.customElements.get("chameleon-button")||window.customElements.define("chameleon-button",chameleon_button_ChameleonButton)},670:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(190);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Loader",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Spinner (Default)",()=>{const size=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Size","21px");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-loader loader="spinner" size="${size}"></chameleon-loader>
     `},{info:{inline:!0}}),stories.add("Ellipsis",()=>lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-loader loader="ellipsis"></chameleon-loader>
-    `,{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},670:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(696),__webpack_require__(135),__webpack_require__(50);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Modal",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const closeIcon=lit_html__WEBPACK_IMPORTED_MODULE_3__.svg`
+    `,{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},671:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(699),__webpack_require__(135),__webpack_require__(67);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Modal",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const closeIcon=lit_html__WEBPACK_IMPORTED_MODULE_3__.svg`
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
 `;stories.add("Basic",()=>{const modalVisible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open",!0),dismissible=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Dismissible",!0),fullScreen=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Full Screen",!1);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-modal
@@ -1821,7 +1776,7 @@
           Continue
         </chameleon-button>
       </chameleon-modal>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},671:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(301);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Multiselect",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const options=[{value:"arch",label:"Gateway Arch",subLabel:"Historical Landmark",preLabel:lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},672:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(301);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Multiselect",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const options=[{value:"arch",label:"Gateway Arch",subLabel:"Historical Landmark",preLabel:lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/0/00/St_Louis_night_expblend_cropped.jpg"
       />
@@ -1890,13 +1845,13 @@
   </svg>
 `}
       </chameleon-multiselect>
-    `;var slot},{info:{inline:!0},options:{enableShortcuts:!1}})}.call(this,__webpack_require__(7)(module))},672:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(302);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Paginator",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Paginator",()=>{const totalItems=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Total Items",100),pageSize=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Page Size",10);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+    `;var slot},{info:{inline:!0},options:{enableShortcuts:!1}})}.call(this,__webpack_require__(8)(module))},673:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(302);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Paginator",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Paginator",()=>{const totalItems=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Total Items",100),pageSize=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Page Size",10);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-paginator
         totalItems="${totalItems||0}"
         pageSize="${pageSize||0}"
         @page-change=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("page-change")}
       ></chameleon-paginator>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},673:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(697);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Progress Bar",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const percent=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Percent",75),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Processing...");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},674:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(700);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Progress Bar",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const percent=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Percent",75),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Processing...");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-progress-bar percent="${percent}" label="${label}">
       </chameleon-progress-bar>
     `},{info:{inline:!0}}),stories.add("With Item Count",()=>{const total=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Total Items",100),completed=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Completed Items",75),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Records Processed");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
@@ -1906,7 +1861,7 @@
         label="${label}"
       >
       </chameleon-progress-bar>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},674:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(698);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Radio",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Radio",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},675:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(701);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Radio",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Radio",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-radio
         label="${label}"
         name="${name}"
@@ -1915,11 +1870,11 @@
         ?readonly="${readonly}"
         ?invalid="${invalid}"
       ></chameleon-radio>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},675:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(699);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Rice Ball Dessert",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const ballColor=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Ball Color","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},676:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(702);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Rice Ball Dessert",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const ballColor=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Ball Color","");return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-rice-ball-dessert
         riceBallColor=${ballColor}
       ></chameleon-rice-ball-dessert>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},676:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(303);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Select",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const options=[{value:"arch",label:"Gateway Arch",subLabel:"Historical Landmark",preLabel:lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},677:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(303);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Select",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs);const options=[{value:"arch",label:"Gateway Arch",subLabel:"Historical Landmark",preLabel:lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/0/00/St_Louis_night_expblend_cropped.jpg"
       />
@@ -1960,27 +1915,140 @@
         @chameleon-select.close=${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon-select.close")}
         >select
       </chameleon-select>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},677:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(700);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Sheet",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.addParameters({backgrounds:[{name:"gray",value:"#f5f5f8",default:!0},{name:"black",value:"#252a33"}]}),stories.add("Sheet",()=>{const header=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Missouri"),subHeader=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Sub Label","Tour Guide"),sheetOpened=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Open",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
-      <chameleon-sheet
-        header="${header}"
-        subHeader="${subHeader}"
-        ?sheetOpened="${sheetOpened}"
-      >
-        <section slot="details">
-          <p>City: Saint Louis</p>
-          <p>Parks: Forest Park</p>
-        </section>
-        <section slot="content">
-          <p>Food: Blue Ocean Sushi</p>
-          <p>Art: Saint Louis Art Gallery</p>
-        </section>
-        <section slot="actions">
-          <p>Hockey: Blues</p>
-          <p>Baseball: Cards</p>
-          <p>Famous People: Nelly</p>
-        </section></chameleon-sheet
-      >
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},678:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(300);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Skeleton",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Skeleton",()=>{const height=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Height","100%"),width=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Width","100%"),theme=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Theme","primary"),cHeight=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Circle Height",50);return"primary"===theme?lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},678:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),lit_html__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(2);__webpack_require__(679),__webpack_require__(680);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Sheet",module);stories.addParameters({backgrounds:[{name:"gray",value:"#f5f5f8",default:!0},{name:"black",value:"#252a33"}]}),stories.add("Sheet",()=>lit_html__WEBPACK_IMPORTED_MODULE_1__.html`
+      <chameleon-sheet>
+        <span slot="invoker">
+          <button>Standard Sheet</button>
+        </span>
+        <sheet-content slot="content">
+          <style>
+            .head-container {
+              position: relative;
+              padding: 20px;
+            }
+
+            .header {
+              font-family: var(--font-family, sans-serif);
+              color: var(--color-primary, #2c6fb7);
+              font-size: var(--font-size-title, 1.4rem);
+              font-weight: 400;
+              margin-top: 0;
+            }
+
+            .sub-header {
+              display: block;
+              font-family: var(--font-family, sans-serif);
+              color: var(--color-primary, #2c6fb7);
+              font-size: 1rem;
+              font-weight: 400;
+              margin: 16px 20px 0 20px;
+            }
+          </style>
+          <span class="head-container">
+            <h1 class="header">Header</h1>
+            <h2 class="sub-header">Subheader</h1>
+          </span>
+          <section>
+            <p>City: Saint Louis</p>
+            <p>Parks: Forest Park</p>
+          </section>
+          <section>
+            <p>Food: Blue Ocean Sushi</p>
+            <p>Art: Saint Louis Art Gallery</p>
+          </section>
+          <section>
+            <p>Hockey: Blues</p>
+            <p>Baseball: Cards</p>
+            <p>Famous People: Nelly</p>
+          </section>
+        </sheet-content>
+      </chameleon-sheet>
+    `,{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},679:function(module,__webpack_exports__,__webpack_require__){"use strict";var _lion_overlays__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(709),lit_element__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(0);class ChameleonSheet extends(Object(_lion_overlays__WEBPACK_IMPORTED_MODULE_0__.a)(lit_element__WEBPACK_IMPORTED_MODULE_1__.a)){_defineOverlayConfig(){return{placementMode:"global",viewportConfig:{placement:"right"},hasBackdrop:!0,hidesOnEsc:!0,hidesOnOutsideClick:!0,preventsScroll:!0,handleAccessibility:!0,trapsKeyboardFocus:!0}}_setupOpenCloseListeners(){super._setupOpenCloseListeners(),this.__toggle=()=>{this.opened=!this.opened},this._overlayInvokerNode&&this._overlayInvokerNode.addEventListener("click",this.__toggle)}_teardownOpenCloseListeners(){super._teardownOpenCloseListeners(),this._overlayInvokerNode&&this._overlayInvokerNode.removeEventListener("click",this.__toggle)}render(){return lit_element__WEBPACK_IMPORTED_MODULE_1__.c`
+      <slot name="invoker"></slot>
+      <slot name="_overlay-shadow-outlet"></slot>
+      <div id="overlay-content-node-wrapper">
+        <slot name="content"></slot>
+      </div>
+    `}}window.customElements.get("chameleon-sheet")||customElements.define("chameleon-sheet",ChameleonSheet)},680:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(0),__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};class SheetContent extends lit_element__WEBPACK_IMPORTED_MODULE_0__.a{constructor(){super(...arguments),this.dismissable=!0,this.width="320px"}static get styles(){return[lit_element__WEBPACK_IMPORTED_MODULE_0__.b`
+        @keyframes sheet-slide {
+          10% {
+            transform: translateX(90%);
+          }
+          20% {
+            transform: translateX(80%);
+          }
+          30% {
+            transform: translateX(70%);
+          }
+          40% {
+            transform: translateX(60%);
+          }
+          50% {
+            transform: translateX(50%);
+          }
+          60% {
+            transform: translateX(40%);
+          }
+          70% {
+            transform: translateX(30%);
+          }
+          80% {
+            transform: translateX(20%);
+          }
+          90% {
+            transform: translateX(10%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        :host {
+          height: 100%;
+          background-color: var(--color-surface, #ffffff);
+          transform: translateX(100%);
+          -webkit-animation: sheet-slide 0.3s forwards;
+          animation: sheet-slide 0.3s forwards;
+        }
+
+        .close-icon {
+          display: flex;
+          cursor: pointer;
+          margin: 0;
+          position: absolute;
+          top: 14px;
+          right: 14px;
+          z-index: 10; // ensure stays clickable above slotted content
+        }
+
+        ::slotted(p) {
+          color: var(--color-gray-darkest, #6c737a);
+        }
+
+        ::slotted(section) {
+          border-top: solid 2px #e1e3e4;
+          border-bottom: solid 2px #e1e3e4;
+          padding: 20px;
+          font-size: var(--font-size-subtitle, 0.938rem);
+        }
+
+        ::slotted(slot) {
+          padding: 0 20px;
+          font-size: var(--font-size-label, 0.875rem);
+        }
+      `]}close(){this.dispatchEvent(new Event("close-overlay",{bubbles:!0}))}get defaultCloseIcon(){return lit_element__WEBPACK_IMPORTED_MODULE_0__.c`
+      <span class="close-icon" @click="${this.close}">
+        ${SheetContent._defaultCloseIcon}
+      </span>
+    `}render(){return lit_element__WEBPACK_IMPORTED_MODULE_0__.c`
+      <style id="dynamicWidth">
+        :host {
+          width: ${this.width};
+        }
+      </style>
+      ${this.dismissable?this.defaultCloseIcon:""}
+      <slot> </slot>
+    `}}SheetContent._defaultCloseIcon=lit_element__WEBPACK_IMPORTED_MODULE_0__.e`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`,__decorate([Object(lit_element__WEBPACK_IMPORTED_MODULE_0__.d)({type:Boolean,reflect:!0})],SheetContent.prototype,"dismissable",void 0),__decorate([Object(lit_element__WEBPACK_IMPORTED_MODULE_0__.d)({type:String,reflect:!0})],SheetContent.prototype,"width",void 0),window.customElements.get("sheet-content")||customElements.define("sheet-content",SheetContent)},681:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(300);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Skeleton",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Skeleton",()=>{const height=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Height","100%"),width=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Width","100%"),theme=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Theme","primary"),cHeight=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Circle Height",50);return"primary"===theme?lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
           <chameleon-skeleton
             theme="${"primary"}"
             height="${height}"
@@ -1988,14 +2056,14 @@
           >
           </chameleon-skeleton>
         `:"secondary"===theme?lit_html__WEBPACK_IMPORTED_MODULE_2__.html` <chameleon-skeleton theme="${"secondary"}" cHeight="${cHeight}">
-        </chameleon-skeleton>`:lit_html__WEBPACK_IMPORTED_MODULE_2__.html``},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},679:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(701);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Switch",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Switch",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+        </chameleon-skeleton>`:lit_html__WEBPACK_IMPORTED_MODULE_2__.html``},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},682:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(703);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Switch",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Switch",()=>{const label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),checked=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Checked",!0),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-switch
         label="${label}"
         name="test"
         ?checked="${checked}"
         ?readonly="${readonly}"
       ></chameleon-switch>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},680:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_element__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(0),lit_html__WEBPACK_IMPORTED_MODULE_4__=__webpack_require__(2);__webpack_require__(702);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Table",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const hidePagination=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Hide Pagination",!1);return lit_element__WEBPACK_IMPORTED_MODULE_3__.c`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},683:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_element__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(0),lit_html__WEBPACK_IMPORTED_MODULE_4__=__webpack_require__(2);__webpack_require__(704);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Table",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const hidePagination=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Hide Pagination",!1);return lit_element__WEBPACK_IMPORTED_MODULE_3__.c`
       <chameleon-table
         .columns=${columns}
         .rows=${rows}
@@ -2055,7 +2123,7 @@
         ${row.field3}
       `,filter:{name:"filterName_column3"},searchable:!0},{header:"Column 4",row:row=>lit_element__WEBPACK_IMPORTED_MODULE_3__.c`
         ${row.field4}
-      `,filter:{name:"filterName_column4",items:[{value:"filter1",label:"Filter 1"},{value:"filter2",label:"Filter 2"},{value:"filter3",label:"Filter 3"}]},searchable:!0,sortable:!0}],rows=[{field1:"Row 1 - Field 1",field2:"Row 1 - Field 2",field3:"Row 1 - Field 3",field4:"Row 1 - Field 4",showDetails:!1,details:[{detailsField2:"Details Row 1 - Field 2",detailsField3:"Details Row 1 - Field 3",detailsField4:"Details Row 1 - Field 4"}]},{field1:"Row 2 - Field 1",field2:"Row 2 - Field 2",field3:"Row 2 - Field 3",field4:"Row 2 - Field 4",showDetails:!0,details:[{detailsField2:"Details Row 1 - Field 2",detailsField3:"Details Row 1 - Field 3",detailsField4:"Details Row 1 - Field 4"},{detailsField2:"Details Row 2 - Field 2",detailsField3:"Details Row 2 - Field 3",detailsField4:"Details Row 2 - Field 4"},{detailsField2:"Details Row 3 - Field 2",detailsField3:"Details Row 3 - Field 3",detailsField4:"Details Row 3 - Field 4"}]},{field1:"Row 3 - Field 1",field2:"Row 3 - Field 2",field3:"Row 3 - Field 3",field4:"Row 3 - Field 4",showDetails:!0,details:[]},{field1:"Row 4 - Field 1",field2:"Row 4 - Field 2",field3:"Row 4 - Field 3",field4:"Row 4 - Field 4",showDetails:!0,details:[{detailsField2:"Details Row 1 - Field 2",detailsField3:"Details Row 1 - Field 3",detailsField4:"Details Row 1 - Field 4"},{detailsField2:"Details Row 2 - Field 2",detailsField3:"Details Row 2 - Field 3",detailsField4:"Details Row 2 - Field 4"},{detailsField2:"Details Row 3 - Field 2",detailsField3:"Details Row 3 - Field 3",detailsField4:"Details Row 3 - Field 4"},{detailsField2:"Details Row 4 - Field 2",detailsField3:"Details Row 4 - Field 3",detailsField4:"Details Row 4 - Field 4"}]},{field1:"Row 5 - Field 1",field2:"Row 5 - Field 2",field3:"Row 5 - Field 3",field4:"Row 5 - Field 4"},{field1:"Row 6 - Field 1",field2:"Row 6 - Field 2",field3:"Row 6 - Field 3",field4:"Row 6 - Field 4"},{field1:"Row 7 - Field 1",field2:"Row 7 - Field 2",field3:"Row 7 - Field 3",field4:"Row 7 - Field 4"}],pageSize=6,currentPage=1,totalItems=7}.call(this,__webpack_require__(7)(module))},681:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(686);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Tabs",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Tabs",()=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+      `,filter:{name:"filterName_column4",items:[{value:"filter1",label:"Filter 1"},{value:"filter2",label:"Filter 2"},{value:"filter3",label:"Filter 3"}]},searchable:!0,sortable:!0}],rows=[{field1:"Row 1 - Field 1",field2:"Row 1 - Field 2",field3:"Row 1 - Field 3",field4:"Row 1 - Field 4",showDetails:!1,details:[{detailsField2:"Details Row 1 - Field 2",detailsField3:"Details Row 1 - Field 3",detailsField4:"Details Row 1 - Field 4"}]},{field1:"Row 2 - Field 1",field2:"Row 2 - Field 2",field3:"Row 2 - Field 3",field4:"Row 2 - Field 4",showDetails:!0,details:[{detailsField2:"Details Row 1 - Field 2",detailsField3:"Details Row 1 - Field 3",detailsField4:"Details Row 1 - Field 4"},{detailsField2:"Details Row 2 - Field 2",detailsField3:"Details Row 2 - Field 3",detailsField4:"Details Row 2 - Field 4"},{detailsField2:"Details Row 3 - Field 2",detailsField3:"Details Row 3 - Field 3",detailsField4:"Details Row 3 - Field 4"}]},{field1:"Row 3 - Field 1",field2:"Row 3 - Field 2",field3:"Row 3 - Field 3",field4:"Row 3 - Field 4",showDetails:!0,details:[]},{field1:"Row 4 - Field 1",field2:"Row 4 - Field 2",field3:"Row 4 - Field 3",field4:"Row 4 - Field 4",showDetails:!0,details:[{detailsField2:"Details Row 1 - Field 2",detailsField3:"Details Row 1 - Field 3",detailsField4:"Details Row 1 - Field 4"},{detailsField2:"Details Row 2 - Field 2",detailsField3:"Details Row 2 - Field 3",detailsField4:"Details Row 2 - Field 4"},{detailsField2:"Details Row 3 - Field 2",detailsField3:"Details Row 3 - Field 3",detailsField4:"Details Row 3 - Field 4"},{detailsField2:"Details Row 4 - Field 2",detailsField3:"Details Row 4 - Field 3",detailsField4:"Details Row 4 - Field 4"}]},{field1:"Row 5 - Field 1",field2:"Row 5 - Field 2",field3:"Row 5 - Field 3",field4:"Row 5 - Field 4"},{field1:"Row 6 - Field 1",field2:"Row 6 - Field 2",field3:"Row 6 - Field 3",field4:"Row 6 - Field 4"},{field1:"Row 7 - Field 1",field2:"Row 7 - Field 2",field3:"Row 7 - Field 3",field4:"Row 7 - Field 4"}],pageSize=6,currentPage=1,totalItems=7}.call(this,__webpack_require__(8)(module))},684:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(689);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Tabs",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Tabs",()=>lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-tabs
         selected="0"
         id="someid"
@@ -2071,7 +2139,7 @@
           Tab Three
         </chameleon-tab>
       </chameleon-tabs>
-    `,{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},682:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(703);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Textarea",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Textarea",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),minlength=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("minlength",0),maxlength=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("maxlength",500),rows=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Rows",2),cols=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Columns",20),nonresizeable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("non-resizeable",!1),value=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Value",""),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
+    `,{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},685:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),lit_html__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(2);__webpack_require__(705);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Textarea",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Textarea",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1),label=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label",""),error=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Error",""),placeholder=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Placeholder","Text..."),minlength=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("minlength",0),maxlength=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("maxlength",500),rows=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Rows",2),cols=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.number)("Columns",20),nonresizeable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("non-resizeable",!1),value=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Value",""),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1);return lit_html__WEBPACK_IMPORTED_MODULE_2__.html`
       <chameleon-textarea
         name="${name}"
         ?disabled="${disabled}"
@@ -2087,7 +2155,7 @@
         ?invalid="${invalid}"
         .nonresizeable="${nonresizeable}"
       ></chameleon-textarea>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},683:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(704);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Timezone",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),timezoneLabel=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Please select your Timezone"),timezoneSubLabel=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Sub Label",""),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},686:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(706);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Timezone",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Basic",()=>{const name=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Name","input-form-name"),timezoneLabel=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Label","Please select your Timezone"),timezoneSubLabel=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Sub Label",""),readonly=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Read Only",!1),invalid=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Invalid",!1),required=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Required",!1),disabled=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Disabled",!1);return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-timezone
         name="${name}"
         .timezoneLabel="${timezoneLabel}"
@@ -2098,7 +2166,7 @@
         ?invalid="${invalid}"
         @chameleon.timezone.input="${_utils__WEBPACK_IMPORTED_MODULE_2__.a.action("chameleon.timezone.input")}"
       ></chameleon-timezone>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},684:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(705);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Toast",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Toast",()=>{const color=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Color",""),backgroundColor=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Background Color",""),showCloseable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Show",!0),imageUrl=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Image Url","https://media.istockphoto.com/photos/chocolate-chip-cookie-isolated-picture-id517109442?k=6&m=517109442&s=612x612&w=0&h=NvQ5y8ENWZvpr84vEFWmxUgV2rCgtOGEsjJXa3IYsZ4="),toastText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Text","This website uses cookies to remember you and improve your experience. By using our site, you accept our use of cookies.");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},687:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),function(module){var _storybook_polymer__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(3),_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(1),_utils__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(6),lit_html__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(2);__webpack_require__(707);const stories=Object(_storybook_polymer__WEBPACK_IMPORTED_MODULE_0__.storiesOf)("Toast",module);stories.addDecorator(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.withKnobs),stories.add("Toast",()=>{const color=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Color",""),backgroundColor=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Background Color",""),showCloseable=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.boolean)("Show",!0),imageUrl=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Image Url","https://media.istockphoto.com/photos/chocolate-chip-cookie-isolated-picture-id517109442?k=6&m=517109442&s=612x612&w=0&h=NvQ5y8ENWZvpr84vEFWmxUgV2rCgtOGEsjJXa3IYsZ4="),toastText=Object(_storybook_addon_knobs__WEBPACK_IMPORTED_MODULE_1__.text)("Text","This website uses cookies to remember you and improve your experience. By using our site, you accept our use of cookies.");return lit_html__WEBPACK_IMPORTED_MODULE_3__.html`
       <chameleon-toast
         color="${color}"
         backgroundColor="${backgroundColor}"
@@ -2108,108 +2176,99 @@
         <span slot="toast-text">${toastText}</span>
         <img slot="close-icon" src="${imageUrl}" />
       </chameleon-toast>
-    `},{info:{inline:!0}})}.call(this,__webpack_require__(7)(module))},685:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_accordion_style=lit_element.b`
+    `},{info:{inline:!0}})}.call(this,__webpack_require__(8)(module))},688:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),class_map=__webpack_require__(7),chameleon_accordion_style=lit_element.b`
   :host {
     display: block;
   }
-  :host([hidden]) {
-    display: none !important;
-  }
+
   .header {
+    background-color: var(--accordion-background-color, #ffffff);
+    border: 1px solid var(--color-gray-dark, #9fa4a8);
+    border-radius: var(--border-radius, 0.5rem);
+    cursor: pointer;
     display: flex;
     flex-direction: column;
+    padding: 13px;
   }
-  .header-button-div {
+
+  :host([expanded]) .header {
+    border-radius: var(--border-radius, 0.5rem) var(--border-radius, 0.5rem) 0 0;
+  }
+
+  .header-toggle {
+    align-items: center;
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
   }
-  .clickable {
-    cursor: pointer;
+
+  .header-toggle chameleon-button {
+    margin: 0 15px;
   }
-  /* ::slotted([slot="panel"]) {
-    transform: translateY(100%);
-    transition: transform 0.3s ease-in-out;
-  } */
-  /* :host([expanded]) ::slotted([slot="panel"]) {
-    transform: translateX(0);
-  } */
+
+  .panel {
+    border: 1px solid var(--color-gray-dark, #9fa4a8);
+    border-radius: 0 0 var(--border-radius, 0.5rem) var(--border-radius, 0.5rem);
+    border-top: none;
+    padding: 13px;
+  }
+
   .panel.collapsed {
     display: none;
   }
+
   .panel.expanded {
     display: block;
   }
+
   .toggle-icon {
-    transform: rotate(0deg);
-    transition: transform 3ms linear;
+    margin: 0 30px 0 17px;
   }
-  .rotated {
+
+  .toggle-icon svg {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .toggle-icon.rotate svg {
     transform: rotate(90deg);
-    transition: transform 3ms linear;
   }
-`,__decorate=(__webpack_require__(50),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});class chameleon_accordion_ChameleonAccordion extends lit_element.a{constructor(){super(...arguments),this.clickable=!1,this.expanded=!1,this.fixed=!1}render(){return lit_element.c`
-      ${this.clickable?lit_element.c`
-            <div @click="${this.handleToggle}" class="header clickable">
-              <div class="header-button-div">
-                <slot name="header"></slot>
-                <chameleon-button
-                  class="toggle-icon ${this.expanded&&!this.fixed?"rotated":""}"
-                  icon-only
-                  theme="text"
-                  @click="${e=>this.disregardToggle(e)}"
-                  >${this.toggleIcon}</chameleon-button
-                >
-              </div>
-              <slot name="subheader"></slot>
-            </div>
-          `:lit_element.c`
-            <div class="header">
-              <div class="header-button-div">
-                <slot name="header"></slot>
-                <chameleon-button
-                  class="toggle-icon ${this.expanded&&!this.fixed?"rotated":""}"
-                  icon-only
-                  theme="text"
-                  @click="${this.handleToggle}"
-                  >${this.toggleIcon}</chameleon-button
-                >
-              </div>
-              <slot name="subheader"></slot>
-            </div>
-          `}
+`,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};class chameleon_accordion_ChameleonAccordion extends lit_element.a{constructor(){super(...arguments),this.expanded=!1,this.caret=!0,this.accentColor=null}render(){return lit_element.c`
+      <div @click="${this.handleToggle}" class="header">
+        <div class="header-toggle">
+          ${this.caret?lit_element.c`<span
+                class="${Object(class_map.a)({"toggle-icon":!0,rotate:this.expanded})}"
+                >${this.toggleIcon}
+              </span>`:""}
+          <slot name="header"></slot>
+        </div>
+        <slot name="subheader"></slot>
+      </div>
       <div class="panel ${this.expanded?"expanded":"collapsed"}">
         <slot name="panel"></slot>
       </div>
-    `}disregardToggle(e){e.preventDefault()}handleToggle(){this.dispatchEvent(new CustomEvent("chameleon.accordions.expanded-changed",{detail:{value:this.dataset.index,expanded:this.expanded},bubbles:!0,composed:!0}))}get toggleIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"toggle-icon"===slot.slot)?lit_element.e`
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polyline points="9 18 15 12 9 6" />
-      </svg>
-    `:lit_element.c`
-        <slot name="toggle-icon"></slot>
-      `}}chameleon_accordion_ChameleonAccordion.styles=[chameleon_accordion_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_accordion_ChameleonAccordion.prototype,"clickable",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_accordion_ChameleonAccordion.prototype,"expanded",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_accordion_ChameleonAccordion.prototype,"fixed",void 0),window.customElements.get("chameleon-accordion")||window.customElements.define("chameleon-accordion",chameleon_accordion_ChameleonAccordion);var chameleon_accordions_style=lit_element.b`
+    `}updated(changedProperties){changedProperties.has("accentColor")&&this.accentColor&&(this.shadowRoot.querySelector(".header").style.borderLeft=`5px solid ${this.accentColor}`),changedProperties.has("accentColor")&&""===this.accentColor&&void 0!==this.accentColor&&(this.shadowRoot.querySelector(".header").style.borderLeft="7px solid var(--color-primary)")}handleToggle(){this.dispatchEvent(new CustomEvent("chameleon.accordions.expanded-changed",{detail:{value:this.dataset.index,expanded:this.expanded},bubbles:!0,composed:!0}))}get toggleIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"toggle-icon"===slot.slot)?lit_element.e`
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      `:lit_element.c`<slot name="toggle-icon"></slot>`}}chameleon_accordion_ChameleonAccordion.styles=[chameleon_accordion_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_accordion_ChameleonAccordion.prototype,"expanded",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_accordion_ChameleonAccordion.prototype,"caret",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_accordion_ChameleonAccordion.prototype,"accentColor",void 0),window.customElements.get("chameleon-accordion")||window.customElements.define("chameleon-accordion",chameleon_accordion_ChameleonAccordion);var chameleon_accordions_style=lit_element.b`
   :host {
     display: block;
     width: var(--accordion-width, 100%);
     font-family: var(--font-family, sans-serif);
   }
 
-  :host([hidden]) {
-    display: none !important;
+  ::slotted(chameleon-accordion:not(:last-of-type)) {
+    margin-bottom: 25px;
   }
-`,chameleon_accordions_decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};class chameleon_accordions_ChameleonAccordions extends lit_element.a{constructor(){super(),this.expandedIndex=-1,this.addEventListener("chameleon.accordions.expanded-changed",this._handleExpandedChanged)}firstUpdated(){const accordions=Array.from(this.querySelectorAll("chameleon-accordion"));if(accordions.length<=0)throw new Error("<chameleon-accordions> must have at least one <chameleon-accordion> element");accordions.forEach((accordion,i)=>accordion.setAttribute("data-index",i.toString()))}render(){return lit_element.c`
-      <slot></slot>
-    `}_handleExpandedChanged(e){e.preventDefault(),this.expandedIndex=parseInt(e.detail.value),Array.from(this.querySelectorAll("chameleon-accordion")).forEach((accordion,i)=>{i===this.expandedIndex&&accordion.hasAttribute("expanded")?accordion.removeAttribute("expanded"):(accordion.removeAttribute("expanded"),accordion.hasAttribute("expanded")||i===this.expandedIndex&&accordion.setAttribute("expanded","true"))})}}chameleon_accordions_ChameleonAccordions.styles=[chameleon_accordions_style],chameleon_accordions_decorate([Object(lit_element.d)({type:Number})],chameleon_accordions_ChameleonAccordions.prototype,"expandedIndex",void 0),window.customElements.get("chameleon-accordions")||window.customElements.define("chameleon-accordions",chameleon_accordions_ChameleonAccordions)},686:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0);class chameleon_tab_ChameleonTab extends lit_element.a{constructor(){super(),this.addEventListener("click",this.handleToggle)}render(){return lit_element.c`<slot></slot>`}handleToggle(){this.dispatchEvent(new CustomEvent("chameleon.tabs.selected-changed",{detail:{value:this.dataset.index},bubbles:!0,composed:!0}))}}window.customElements.get("chameleon-tab")||window.customElements.define("chameleon-tab",chameleon_tab_ChameleonTab);var chameleon_tabs_style=lit_element.b`
+`,chameleon_accordions_decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};class chameleon_accordions_ChameleonAccordions extends lit_element.a{constructor(){super(),this.expandedIndex=-1,this.addEventListener("chameleon.accordions.expanded-changed",this._handleExpandedChanged)}firstUpdated(){const accordions=Array.from(this.querySelectorAll("chameleon-accordion"));if(accordions.length<=0)throw new Error("<chameleon-accordions> must have at least one <chameleon-accordion> element");accordions.forEach((accordion,i)=>accordion.setAttribute("data-index",i.toString()))}render(){return lit_element.c` <slot></slot> `}_handleExpandedChanged(e){e.preventDefault(),this.expandedIndex=parseInt(e.detail.value),Array.from(this.querySelectorAll("chameleon-accordion")).forEach((accordion,i)=>{i===this.expandedIndex&&accordion.hasAttribute("expanded")?accordion.removeAttribute("expanded"):(accordion.removeAttribute("expanded"),accordion.hasAttribute("expanded")||i===this.expandedIndex&&accordion.setAttribute("expanded","true"))})}}chameleon_accordions_ChameleonAccordions.styles=[chameleon_accordions_style],chameleon_accordions_decorate([Object(lit_element.d)({type:Number})],chameleon_accordions_ChameleonAccordions.prototype,"expandedIndex",void 0),window.customElements.get("chameleon-accordions")||window.customElements.define("chameleon-accordions",chameleon_accordions_ChameleonAccordions)},689:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0);class chameleon_tab_ChameleonTab extends lit_element.a{constructor(){super(),this.addEventListener("click",this.handleToggle)}render(){return lit_element.c`<slot></slot>`}handleToggle(){this.dispatchEvent(new CustomEvent("chameleon.tabs.selected-changed",{detail:{value:this.dataset.index},bubbles:!0,composed:!0}))}}window.customElements.get("chameleon-tab")||window.customElements.define("chameleon-tab",chameleon_tab_ChameleonTab);var chameleon_tabs_style=lit_element.b`
   :host {
     box-shadow: inset 0 -1px 0 0 rgba(26, 57, 96, 0.1);
     display: flex;
@@ -2238,7 +2297,7 @@
     box-shadow: inset 0 -2px 0 0 var(--color-secondary, #69c9b9);
     color: var(--color-secondary, #69c9b9);
   }
-`,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};class chameleon_tabs_ChameleonTabs extends lit_element.a{constructor(){super(),this.selected=0,this.urlRewrite=!0,this.addEventListener("chameleon.tabs.selected-changed",this._handleSelectedChanged)}firstUpdated(){const tabs=Array.from(this.querySelectorAll("chameleon-tab"));if(tabs.length<=0)throw new Error("<chameleon-tabs> must have at least one <chameleon-tab> element");if(tabs.forEach((tab,i)=>tab.setAttribute("data-index",i.toString())),this.id){const params=new URLSearchParams(window.location.search);if(params.has(`tabs_${this.id}`)){const index=parseInt(params.get(`tabs_${this.id}`));this.selected=index<=tabs.length-1?index:0}else this.urlRewrite&&params.append(`tabs_${this.id}`,String(this.selected))}}updated(changedProperties){if(changedProperties.has("selected")){Array.from(this.querySelectorAll("chameleon-tab")).forEach((tab,i)=>{tab.removeAttribute("active"),i===this.selected&&tab.setAttribute("active","true")})}}render(){return lit_element.c`<slot></slot>`}_handleSelectedChanged(e){e.preventDefault(),this.selected=parseInt(e.detail.value),this.updateQueryParams()}updateQueryParams(){const params=new URLSearchParams(window.location.search);this.urlRewrite&&params.set(`tabs_${this.id}`,String(this.selected))}}chameleon_tabs_ChameleonTabs.styles=[chameleon_tabs_style],__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_tabs_ChameleonTabs.prototype,"selected",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_tabs_ChameleonTabs.prototype,"urlRewrite",void 0),window.customElements.get("chameleon-tabs")||window.customElements.define("chameleon-tabs",chameleon_tabs_ChameleonTabs)},687:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_alert_style=lit_element.b`
+`,__decorate=function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r};class chameleon_tabs_ChameleonTabs extends lit_element.a{constructor(){super(),this.selected=0,this.urlRewrite=!0,this.addEventListener("chameleon.tabs.selected-changed",this._handleSelectedChanged)}firstUpdated(){const tabs=Array.from(this.querySelectorAll("chameleon-tab"));if(tabs.length<=0)throw new Error("<chameleon-tabs> must have at least one <chameleon-tab> element");if(tabs.forEach((tab,i)=>tab.setAttribute("data-index",i.toString())),this.id){const params=new URLSearchParams(window.location.search);if(params.has(`tabs_${this.id}`)){const index=parseInt(params.get(`tabs_${this.id}`));this.selected=index<=tabs.length-1?index:0}else this.urlRewrite&&params.append(`tabs_${this.id}`,String(this.selected))}}updated(changedProperties){if(changedProperties.has("selected")){Array.from(this.querySelectorAll("chameleon-tab")).forEach((tab,i)=>{tab.removeAttribute("active"),i===this.selected&&tab.setAttribute("active","true")})}}render(){return lit_element.c`<slot></slot>`}_handleSelectedChanged(e){e.preventDefault(),this.selected=parseInt(e.detail.value),this.updateQueryParams()}updateQueryParams(){const params=new URLSearchParams(window.location.search);this.urlRewrite&&params.set(`tabs_${this.id}`,String(this.selected))}}chameleon_tabs_ChameleonTabs.styles=[chameleon_tabs_style],__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_tabs_ChameleonTabs.prototype,"selected",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_tabs_ChameleonTabs.prototype,"urlRewrite",void 0),window.customElements.get("chameleon-tabs")||window.customElements.define("chameleon-tabs",chameleon_tabs_ChameleonTabs)},690:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_alert_style=lit_element.b`
   :host {
     align-items: center;
     background-color: var(--color-error-lightest, #f1d1d0);
@@ -2302,7 +2361,7 @@
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
-    `}}chameleon_alert_ChameleonAlert.styles=[chameleon_alert_style],__decorate([Object(lit_element.d)({type:String})],chameleon_alert_ChameleonAlert.prototype,"message",void 0),window.customElements.get("chameleon-alert")||window.customElements.define("chameleon-alert",chameleon_alert_ChameleonAlert)},688:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_card_header_style=lit_element.b`
+    `}}chameleon_alert_ChameleonAlert.styles=[chameleon_alert_style],__decorate([Object(lit_element.d)({type:String})],chameleon_alert_ChameleonAlert.prototype,"message",void 0),window.customElements.get("chameleon-alert")||window.customElements.define("chameleon-alert",chameleon_alert_ChameleonAlert)},691:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_card_header_style=lit_element.b`
   :host {
     display: block;
     margin-bottom: 11px;
@@ -2334,7 +2393,7 @@
       ${""!==this.title?lit_element.c`
             <h2>${this.title}</h2>
           `:lit_html.nothing}
-    `}}chameleon_card_header_ChameleonCardHeader.styles=[chameleon_card_header_style],__decorate([Object(lit_element.d)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"title",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"subtitle",void 0),window.customElements.get("chameleon-card-header")||window.customElements.define("chameleon-card-header",chameleon_card_header_ChameleonCardHeader)},689:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_card_image_style=lit_element.b`
+    `}}chameleon_card_header_ChameleonCardHeader.styles=[chameleon_card_header_style],__decorate([Object(lit_element.d)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"title",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_card_header_ChameleonCardHeader.prototype,"subtitle",void 0),window.customElements.get("chameleon-card-header")||window.customElements.define("chameleon-card-header",chameleon_card_header_ChameleonCardHeader)},692:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_card_image_style=lit_element.b`
   :host {
     display: inline-block;
   }
@@ -2358,14 +2417,14 @@
           <img src="${this.src}" alt="${this.alt}" />
         `:lit_element.c`
           <div class="placeholder"></div>
-        `}}chameleon_card_image_ChameleonCardImage.styles=[chameleon_card_image_style],__decorate([Object(lit_element.d)({type:String})],chameleon_card_image_ChameleonCardImage.prototype,"src",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_card_image_ChameleonCardImage.prototype,"alt",void 0),window.customElements.get("chameleon-card-image")||window.customElements.define("chameleon-card-image",chameleon_card_image_ChameleonCardImage)},690:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_card_footer_style=lit_element.b`
+        `}}chameleon_card_image_ChameleonCardImage.styles=[chameleon_card_image_style],__decorate([Object(lit_element.d)({type:String})],chameleon_card_image_ChameleonCardImage.prototype,"src",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_card_image_ChameleonCardImage.prototype,"alt",void 0),window.customElements.get("chameleon-card-image")||window.customElements.define("chameleon-card-image",chameleon_card_image_ChameleonCardImage)},693:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_card_footer_style=lit_element.b`
   :host {
     display: flex;
     margin: 1.5rem 0 0.625rem 0;
   }
 `;class chameleon_card_footer_ChameleonCardFooter extends lit_element.a{render(){return lit_element.c`
       <slot></slot>
-    `}}chameleon_card_footer_ChameleonCardFooter.styles=[chameleon_card_footer_style],window.customElements.get("chameleon-card-footer")||window.customElements.define("chameleon-card-footer",chameleon_card_footer_ChameleonCardFooter)},691:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_chart_style=lit_element.b`
+    `}}chameleon_card_footer_ChameleonCardFooter.styles=[chameleon_card_footer_style],window.customElements.get("chameleon-card-footer")||window.customElements.define("chameleon-card-footer",chameleon_card_footer_ChameleonCardFooter)},694:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_chart_style=lit_element.b`
   :host {
     display: inline-block;
     max-width: 130px;
@@ -2391,7 +2450,7 @@
         <path fill="transparent" stroke="#c4c7ca" stroke-width="10px" stroke-linecap="round" d="${this._describeArc(50,50,45,-120,120)}" />
         <path fill="transparent" stroke="${this.color}" stroke-width="10px" stroke-linecap="round" d="${this._describeArc(50,50,45,-120,this._percentageToDegrees(this.percentage))}" />
       </svg>
-    `}_polarToCartesian(centerX,centerY,radius,angleInDegrees){const angleInRadians=(angleInDegrees-90)*Math.PI/180;return{x:centerX+radius*Math.cos(angleInRadians),y:centerY+radius*Math.sin(angleInRadians)}}_percentageToDegrees(percentage){return percentage/100*240-120}_describeArc(x,y,radius,startAngle,endAngle){const start=this._polarToCartesian(x,y,radius,endAngle),end=this._polarToCartesian(x,y,radius,startAngle),largeArcFlag=endAngle-startAngle<=180?"0":"1";return["M",start.x,start.y,"A",radius,radius,0,largeArcFlag,0,end.x,end.y].join(" ")}}chameleon_chart_ChameleonChart.styles=[chameleon_chart_style],__decorate([Object(lit_element.d)({type:String})],chameleon_chart_ChameleonChart.prototype,"type",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_chart_ChameleonChart.prototype,"color",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_chart_ChameleonChart.prototype,"percentage",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_chart_ChameleonChart.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_chart_ChameleonChart.prototype,"subLabel",void 0),window.customElements.get("chameleon-chart")||window.customElements.define("chameleon-chart",chameleon_chart_ChameleonChart)},692:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_checkbox_style=lit_element.b`
+    `}_polarToCartesian(centerX,centerY,radius,angleInDegrees){const angleInRadians=(angleInDegrees-90)*Math.PI/180;return{x:centerX+radius*Math.cos(angleInRadians),y:centerY+radius*Math.sin(angleInRadians)}}_percentageToDegrees(percentage){return percentage/100*240-120}_describeArc(x,y,radius,startAngle,endAngle){const start=this._polarToCartesian(x,y,radius,endAngle),end=this._polarToCartesian(x,y,radius,startAngle),largeArcFlag=endAngle-startAngle<=180?"0":"1";return["M",start.x,start.y,"A",radius,radius,0,largeArcFlag,0,end.x,end.y].join(" ")}}chameleon_chart_ChameleonChart.styles=[chameleon_chart_style],__decorate([Object(lit_element.d)({type:String})],chameleon_chart_ChameleonChart.prototype,"type",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_chart_ChameleonChart.prototype,"color",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_chart_ChameleonChart.prototype,"percentage",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_chart_ChameleonChart.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_chart_ChameleonChart.prototype,"subLabel",void 0),window.customElements.get("chameleon-chart")||window.customElements.define("chameleon-chart",chameleon_chart_ChameleonChart)},695:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_checkbox_style=lit_element.b`
   :host([readonly]),
   :host([disabled]) {
     pointer-events: none;
@@ -2501,7 +2560,7 @@
       />
       <span class="checkmark"></span>
       ${this.labelText}
-    `}get labelText(){return""!==this.label?this.label:lit_html.nothing}}chameleon_checkbox_ChameleonCheckbox.styles=[chameleon_checkbox_style],__decorate([Object(lit_element.d)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"name",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"invalid",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"required",void 0),window.customElements.get("chameleon-checkbox")||window.customElements.define("chameleon-checkbox",chameleon_checkbox_ChameleonCheckbox)},693:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),repeat=__webpack_require__(51),class_map=__webpack_require__(8),part=__webpack_require__(16),chameleon_date_style=lit_element.b`
+    `}get labelText(){return""!==this.label?this.label:lit_html.nothing}}chameleon_checkbox_ChameleonCheckbox.styles=[chameleon_checkbox_style],__decorate([Object(lit_element.d)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"name",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_checkbox_ChameleonCheckbox.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"invalid",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_checkbox_ChameleonCheckbox.prototype,"required",void 0),window.customElements.get("chameleon-checkbox")||window.customElements.define("chameleon-checkbox",chameleon_checkbox_ChameleonCheckbox)},696:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),repeat=__webpack_require__(50),class_map=__webpack_require__(7),part=__webpack_require__(16),chameleon_date_style=lit_element.b`
   :host {
     display: block;
     max-width: 301px;
@@ -2643,7 +2702,7 @@
   .date-grid div.current:not(.active) {
     color: var(--color-secondary, #69c9b9);
   }
-`,__decorate=(__webpack_require__(135),__webpack_require__(50),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});class chameleon_date_ChameleonDate extends lit_element.a{constructor(){super(...arguments),this.name="cha-date",this.active=!1,this.renderedDate=null,this.placeholder="",this.label="",this.readonly=!1,this.value="",this.min=null,this.max=null,this.required=!1,this.canDelete=!0,this.disabled=!1,this.validationMessage="",this.invalid=!1,this.overlayRenderMode="month",this.startDay=0,this.weekDayValues=["Su","Mo","Tu","We","Th","Fr","Sa"],this.monthValues=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],this.touched=!1}firstUpdated(){""===this.value?this.date=new Date:(this.touched=!0,this.requestUpdate()),this.renderedDate=this.date,document.addEventListener("click",this.closeOverlay.bind(this))}updated(changedProperties){changedProperties.has("value")&&void 0!==this.value&&""!==this.value&&(this.renderedDate=this.stringToDate(this.value))}disconnectedCallback(){document.removeEventListener("click",this.closeOverlay.bind(this))}render(){return lit_element.c`
+`,__decorate=(__webpack_require__(135),__webpack_require__(67),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});class chameleon_date_ChameleonDate extends lit_element.a{constructor(){super(...arguments),this.name="cha-date",this.active=!1,this.renderedDate=null,this.placeholder="",this.label="",this.readonly=!1,this.value="",this.min=null,this.max=null,this.required=!1,this.canDelete=!0,this.disabled=!1,this.validationMessage="",this.invalid=!1,this.overlayRenderMode="month",this.startDay=0,this.weekDayValues=["Su","Mo","Tu","We","Th","Fr","Sa"],this.monthValues=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],this.touched=!1}firstUpdated(){""===this.value?this.date=new Date:(this.touched=!0,this.requestUpdate()),this.renderedDate=this.date,document.addEventListener("click",this.closeOverlay.bind(this))}updated(changedProperties){changedProperties.has("value")&&void 0!==this.value&&""!==this.value&&(this.renderedDate=this.stringToDate(this.value))}disconnectedCallback(){document.removeEventListener("click",this.closeOverlay.bind(this))}render(){return lit_element.c`
       <chameleon-input
         name="${this.name}"
         type="text"
@@ -2720,7 +2779,7 @@
                 </div>
               `})}
           </div>
-        `:part.b}get days(){var _a,_b;const year=null===(_a=this.renderedDate)||void 0===_a?void 0:_a.getFullYear(),month=null===(_b=this.renderedDate)||void 0===_b?void 0:_b.getMonth();if(void 0!==year&&void 0!==month)return new Array(31).fill(null).map((_v,i)=>new Date(year,month,i+1)).filter(v=>v.getMonth()===month)}get renderedDateValue(){var _a,_b;return this.touched&&null!==(_b=null===(_a=this.date)||void 0===_a?void 0:_a.toLocaleDateString(void 0,{month:"long",day:"numeric",year:"numeric"}))&&void 0!==_b?_b:""}get closeIcon(){return lit_element.e`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18"><path fill="gray" d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"/></svg>`}get calendarIcon(){return lit_element.e`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" slot="icon-right"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`}get prevIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"prev-icon"===slot.slot)?lit_element.e`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>`:lit_element.c` <slot name="prev-icon"></slot> `}get nextIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"next-icon"===slot.slot)?lit_element.e`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>`:lit_element.c` <slot name="next-icon"></slot> `}toggleActive(){this.readonly||this.disabled||(this.active=!0)}prevMonth(){const date=this.renderedDate;date.setMonth(date.getMonth()-1),this.renderedDate=new Date(date)}nextMonth(){const date=this.renderedDate;date.setMonth(date.getMonth()+1),this.renderedDate=new Date(date)}prevYear(){const date=this.renderedDate;date.setFullYear(date.getFullYear()-1),this.renderedDate=new Date(date)}nextYear(){const date=this.renderedDate;date.setFullYear(date.getFullYear()+1),this.renderedDate=new Date(date)}async setDate(e){if(this.touched=!0,null==e?void 0:e.target){const date=e.target.value;this.date=date,this.active=!1,this.requestUpdate(),await this.updateComplete}this.dispatchEvent(new CustomEvent("chameleon.date.input",{bubbles:!0,composed:!0,detail:{value:this.value}}))}setMonth(e){this.touched=!0;const month=e.target.value.month,year=e.target.value.year,date=new Date;date.setFullYear(year),date.setMonth(month),this.renderedDate=date,this.overlayRenderMode="month"}dateToString(date){return`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`}stringToDate(date){const[year,month,day]=date.split("-");return new Date(parseInt(year),parseInt(month)-1,parseInt(day))}closeOverlay(e){e.composedPath().map(eventTarget=>eventTarget.tagName).includes("CHAMELEON-DATE")||(this.active=!1,this.overlayRenderMode="month")}toggleOverlayView(){switch(this.overlayRenderMode){case"month":this.overlayRenderMode="year";break;default:this.overlayRenderMode="month"}}}chameleon_date_ChameleonDate.styles=[chameleon_date_style],__decorate([Object(lit_element.d)({type:String})],chameleon_date_ChameleonDate.prototype,"name",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_date_ChameleonDate.prototype,"active",void 0),__decorate([Object(lit_element.d)({type:Object})],chameleon_date_ChameleonDate.prototype,"renderedDate",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_date_ChameleonDate.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_date_ChameleonDate.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_date_ChameleonDate.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_date_ChameleonDate.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_date_ChameleonDate.prototype,"min",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_date_ChameleonDate.prototype,"max",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_date_ChameleonDate.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_date_ChameleonDate.prototype,"canDelete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_date_ChameleonDate.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_date_ChameleonDate.prototype,"validationMessage",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_date_ChameleonDate.prototype,"invalid",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_date_ChameleonDate.prototype,"overlayRenderMode",void 0),window.customElements.get("chameleon-date")||window.customElements.define("chameleon-date",chameleon_date_ChameleonDate)},694:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(8),chameleon_dialog_style=lit_element.b`
+        `:part.b}get days(){var _a,_b;const year=null===(_a=this.renderedDate)||void 0===_a?void 0:_a.getFullYear(),month=null===(_b=this.renderedDate)||void 0===_b?void 0:_b.getMonth();if(void 0!==year&&void 0!==month)return new Array(31).fill(null).map((_v,i)=>new Date(year,month,i+1)).filter(v=>v.getMonth()===month)}get renderedDateValue(){var _a,_b;return this.touched&&null!==(_b=null===(_a=this.date)||void 0===_a?void 0:_a.toLocaleDateString(void 0,{month:"long",day:"numeric",year:"numeric"}))&&void 0!==_b?_b:""}get closeIcon(){return lit_element.e`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18"><path fill="gray" d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"/></svg>`}get calendarIcon(){return lit_element.e`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" slot="icon-right"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`}get prevIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"prev-icon"===slot.slot)?lit_element.e`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 8 12 12 16"></polyline><line x1="16" y1="12" x2="8" y2="12"></line></svg>`:lit_element.c` <slot name="prev-icon"></slot> `}get nextIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"next-icon"===slot.slot)?lit_element.e`<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>`:lit_element.c` <slot name="next-icon"></slot> `}toggleActive(){this.readonly||this.disabled||(this.active=!0)}prevMonth(){const date=this.renderedDate;date.setMonth(date.getMonth()-1),this.renderedDate=new Date(date)}nextMonth(){const date=this.renderedDate;date.setMonth(date.getMonth()+1),this.renderedDate=new Date(date)}prevYear(){const date=this.renderedDate;date.setFullYear(date.getFullYear()-1),this.renderedDate=new Date(date)}nextYear(){const date=this.renderedDate;date.setFullYear(date.getFullYear()+1),this.renderedDate=new Date(date)}async setDate(e){if(this.touched=!0,null==e?void 0:e.target){const date=e.target.value;this.date=date,this.active=!1,this.requestUpdate(),await this.updateComplete}this.dispatchEvent(new CustomEvent("chameleon.date.input",{bubbles:!0,composed:!0,detail:{value:this.value}}))}setMonth(e){this.touched=!0;const month=e.target.value.month,year=e.target.value.year,date=new Date;date.setFullYear(year),date.setMonth(month),this.renderedDate=date,this.overlayRenderMode="month"}dateToString(date){return`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`}stringToDate(date){const[year,month,day]=date.split("-");return new Date(parseInt(year),parseInt(month)-1,parseInt(day))}closeOverlay(e){e.composedPath().map(eventTarget=>eventTarget.tagName).includes("CHAMELEON-DATE")||(this.active=!1,this.overlayRenderMode="month")}toggleOverlayView(){switch(this.overlayRenderMode){case"month":this.overlayRenderMode="year";break;default:this.overlayRenderMode="month"}}}chameleon_date_ChameleonDate.styles=[chameleon_date_style],__decorate([Object(lit_element.d)({type:String})],chameleon_date_ChameleonDate.prototype,"name",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_date_ChameleonDate.prototype,"active",void 0),__decorate([Object(lit_element.d)({type:Object})],chameleon_date_ChameleonDate.prototype,"renderedDate",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_date_ChameleonDate.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_date_ChameleonDate.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_date_ChameleonDate.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_date_ChameleonDate.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_date_ChameleonDate.prototype,"min",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_date_ChameleonDate.prototype,"max",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_date_ChameleonDate.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_date_ChameleonDate.prototype,"canDelete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_date_ChameleonDate.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_date_ChameleonDate.prototype,"validationMessage",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_date_ChameleonDate.prototype,"invalid",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_date_ChameleonDate.prototype,"overlayRenderMode",void 0),window.customElements.get("chameleon-date")||window.customElements.define("chameleon-date",chameleon_date_ChameleonDate)},697:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(7),chameleon_dialog_style=lit_element.b`
   .open {
     display: flex;
   }
@@ -2843,7 +2902,7 @@
       opacity: 1;
     }
   }
-`,__decorate=(__webpack_require__(191),__webpack_require__(50),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});class chameleon_dialog_ChameleonDialog extends lit_element.a{constructor(){super(...arguments),this.open=!1,this.icon=!1,this.dismissible=!1,this.canGoBack=!1,this.fullScreen=!1}render(){return lit_element.c`
+`,__decorate=(__webpack_require__(191),__webpack_require__(67),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});class chameleon_dialog_ChameleonDialog extends lit_element.a{constructor(){super(...arguments),this.open=!1,this.icon=!1,this.dismissible=!1,this.canGoBack=!1,this.fullScreen=!1}render(){return lit_element.c`
       <div
         class="${Object(class_map.a)({overlay:!0,open:this.open,close:!this.open})}"
       >
@@ -2884,7 +2943,7 @@
         <slot name="close-icon"></slot>
       `}get backIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"back-icon"===slot.slot)?lit_html.svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="6" y1="12" x2="24" y2="12"></line><line x1="6" y1="12" x2="12" y2="18"></line><line x1="6" y1="12" x2="12" y2="6"></line></svg>`:lit_element.c`
         <slot name="back-icon"></slot>
-      `}}chameleon_dialog_ChameleonDialog.styles=[chameleon_dialog_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"open",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"icon",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"dismissible",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"canGoBack",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"fullScreen",void 0),window.customElements.get("chameleon-dialog")||window.customElements.define("chameleon-dialog",chameleon_dialog_ChameleonDialog)},695:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),style_map=__webpack_require__(305),lit_html=__webpack_require__(2),chameleon_hero_style=lit_element.b`
+      `}}chameleon_dialog_ChameleonDialog.styles=[chameleon_dialog_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"open",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"icon",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"dismissible",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"canGoBack",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_dialog_ChameleonDialog.prototype,"fullScreen",void 0),window.customElements.get("chameleon-dialog")||window.customElements.define("chameleon-dialog",chameleon_dialog_ChameleonDialog)},698:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),style_map=__webpack_require__(305),lit_html=__webpack_require__(2),chameleon_hero_style=lit_element.b`
   header {
     padding: 0 5em;
   }
@@ -2946,7 +3005,7 @@
               </header>
             </div>
           `}
-    `}get backgroundImageStyles(){switch(this.type){case"imageGradient":return{backgroundImage:`linear-gradient(to right, ${this.gradientOverlay}), url(${this.imageUrl})`};case"gradient":return{backgroundImage:`linear-gradient(to right, ${this.gradientHex})`};case"image":return{backgroundImage:`url(${this.imageUrl})`};default:return{backgroundImage:`linear-gradient(to right, ${this.gradientHex})`}}}get gradientHex(){return this.gradient.split(",").map(h=>h.trim())}get gradientOverlay(){return this.gradient.split(",").map(h=>this.hex2rgba(h.trim(),this.gradientAlpha))}hex2rgba(hex,alpha=.5){const[r,g,b]=hex.match(/\w\w/g).map(x=>parseInt(x,16));return`rgba(${r},${g},${b},${alpha})`}}chameleon_hero_ChameleonHero.styles=[chameleon_hero_style],__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"title",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"subTitle",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"heroText",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"imageUrl",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"type",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"gradient",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_hero_ChameleonHero.prototype,"gradientAlpha",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_hero_ChameleonHero.prototype,"loading",void 0),window.customElements.get("chameleon-hero")||window.customElements.define("chameleon-hero",chameleon_hero_ChameleonHero)},696:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(8),chameleon_modal_style=lit_element.b`
+    `}get backgroundImageStyles(){switch(this.type){case"imageGradient":return{backgroundImage:`linear-gradient(to right, ${this.gradientOverlay}), url(${this.imageUrl})`};case"gradient":return{backgroundImage:`linear-gradient(to right, ${this.gradientHex})`};case"image":return{backgroundImage:`url(${this.imageUrl})`};default:return{backgroundImage:`linear-gradient(to right, ${this.gradientHex})`}}}get gradientHex(){return this.gradient.split(",").map(h=>h.trim())}get gradientOverlay(){return this.gradient.split(",").map(h=>this.hex2rgba(h.trim(),this.gradientAlpha))}hex2rgba(hex,alpha=.5){const[r,g,b]=hex.match(/\w\w/g).map(x=>parseInt(x,16));return`rgba(${r},${g},${b},${alpha})`}}chameleon_hero_ChameleonHero.styles=[chameleon_hero_style],__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"title",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"subTitle",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"heroText",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"imageUrl",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"type",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_hero_ChameleonHero.prototype,"gradient",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_hero_ChameleonHero.prototype,"gradientAlpha",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_hero_ChameleonHero.prototype,"loading",void 0),window.customElements.get("chameleon-hero")||window.customElements.define("chameleon-hero",chameleon_hero_ChameleonHero)},699:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(7),chameleon_modal_style=lit_element.b`
   .open {
     display: flex;
   }
@@ -3072,7 +3131,7 @@
       opacity: 1;
     }
   }
-`,__decorate=(__webpack_require__(191),__webpack_require__(50),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});class chameleon_modal_ChameleonModal extends lit_element.a{constructor(){super(...arguments),this.open=!1,this.dismissible=!1,this.fullScreen=!1}render(){return lit_element.c`
+`,__decorate=(__webpack_require__(191),__webpack_require__(67),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});class chameleon_modal_ChameleonModal extends lit_element.a{constructor(){super(...arguments),this.open=!1,this.dismissible=!1,this.fullScreen=!1}render(){return lit_element.c`
       <div
         class="${Object(class_map.a)({overlay:!0,open:this.open,close:!this.open})}"
       >
@@ -3099,7 +3158,7 @@
           </div>
         </chameleon-card>
       </div>
-    `}_togglemodal(){this.open=!this.open;const e=new CustomEvent("toggle-modal",{bubbles:!0,composed:!0});this.dispatchEvent(e)}get closeIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"close-icon"===slot.slot)?lit_html.svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`:lit_element.c` <slot name="close-icon"></slot> `}}chameleon_modal_ChameleonModal.styles=[chameleon_modal_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_modal_ChameleonModal.prototype,"open",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_modal_ChameleonModal.prototype,"dismissible",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_modal_ChameleonModal.prototype,"fullScreen",void 0),window.customElements.get("chameleon-modal")||window.customElements.define("chameleon-modal",chameleon_modal_ChameleonModal)},697:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_progress_bar_style=lit_element.b`
+    `}_togglemodal(){this.open=!this.open;const e=new CustomEvent("toggle-modal",{bubbles:!0,composed:!0});this.dispatchEvent(e)}get closeIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"close-icon"===slot.slot)?lit_html.svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`:lit_element.c` <slot name="close-icon"></slot> `}}chameleon_modal_ChameleonModal.styles=[chameleon_modal_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_modal_ChameleonModal.prototype,"open",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_modal_ChameleonModal.prototype,"dismissible",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_modal_ChameleonModal.prototype,"fullScreen",void 0),window.customElements.get("chameleon-modal")||window.customElements.define("chameleon-modal",chameleon_modal_ChameleonModal)},700:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_progress_bar_style=lit_element.b`
   :host {
     display: inline-flex;
   }
@@ -3146,7 +3205,7 @@
           ${this.total>0?" of "+this.total+" "+this.label:this.label}
         </label>
       </div>
-    `}}chameleon_progress_bar_ChameleonProgressBar.styles=[chameleon_progress_bar_style],__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_progress_bar_ChameleonProgressBar.prototype,"percent",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_progress_bar_ChameleonProgressBar.prototype,"total",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_progress_bar_ChameleonProgressBar.prototype,"completed",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_progress_bar_ChameleonProgressBar.prototype,"label",void 0),window.customElements.get("chameleon-progress-bar")||window.customElements.define("chameleon-progress-bar",chameleon_progress_bar_ChameleonProgressBar)},698:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_radio_style=lit_element.b`
+    `}}chameleon_progress_bar_ChameleonProgressBar.styles=[chameleon_progress_bar_style],__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_progress_bar_ChameleonProgressBar.prototype,"percent",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_progress_bar_ChameleonProgressBar.prototype,"total",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_progress_bar_ChameleonProgressBar.prototype,"completed",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_progress_bar_ChameleonProgressBar.prototype,"label",void 0),window.customElements.get("chameleon-progress-bar")||window.customElements.define("chameleon-progress-bar",chameleon_progress_bar_ChameleonProgressBar)},701:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_radio_style=lit_element.b`
   :host {
     align-items: center;
     cursor: pointer;
@@ -3234,7 +3293,7 @@
       />
       <span class="checkmark ${this.disabled?"disabled":""}"></span>
       ${this.labelText}
-    `}get labelText(){return""!==this.label?this.label:lit_html.nothing}}chameleon_radio_ChameleonRadio.styles=[chameleon_radio_style],__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"name",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"invalid",void 0),window.customElements.get("chameleon-radio")||window.customElements.define("chameleon-radio",chameleon_radio_ChameleonRadio)},699:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_rice_ball_dessert_style=lit_element.b`
+    `}get labelText(){return""!==this.label?this.label:lit_html.nothing}}chameleon_radio_ChameleonRadio.styles=[chameleon_radio_style],__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"name",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_radio_ChameleonRadio.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_radio_ChameleonRadio.prototype,"invalid",void 0),window.customElements.get("chameleon-radio")||window.customElements.define("chameleon-radio",chameleon_radio_ChameleonRadio)},702:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_rice_ball_dessert_style=lit_element.b`
   html,
   body {
     width: 100%;
@@ -3743,96 +3802,7 @@
           </div>
         </div>
       </div>
-    `}}chameleon_rice_ball_dessert_ChameleonRiceBallDessert.styles=[chameleon_rice_ball_dessert_style],__decorate([Object(lit_element.d)({type:String})],chameleon_rice_ball_dessert_ChameleonRiceBallDessert.prototype,"riceBallColor",void 0),window.customElements.get("chameleon-rice-ball-dessert")||window.customElements.define("chameleon-rice-ball-dessert",chameleon_rice_ball_dessert_ChameleonRiceBallDessert)},700:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_sheet_style=lit_element.b`
-  :host {
-    position: fixed;
-    display: inline-block;
-    height: 100%;
-    right: 0;
-    top: 0;
-    min-width: 320px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    background-color: var(--color-surface, #ffffff);
-  }
-
-  :host([sheetopened]) {
-    transform: translateX(0);
-  }
-
-  .head-container {
-    position: relative;
-    padding: 20px;
-  }
-
-  .header {
-    font-family: var(--font-family, sans-serif);
-    color: var(--color-primary, #2c6fb7);
-    font-size: var(--font-size-title, 1.4rem);
-    font-weight: 400;
-    margin-top: 0;
-  }
-
-  .sub-header {
-    display: block;
-    font-family: var(--font-family, sans-serif);
-    color: var(--color-primary, #2c6fb7);
-    font-size: 1rem;
-    font-weight: 400;
-    margin: 16px 20px 0 20px;
-  }
-
-  .close-icon {
-    display: flex;
-    cursor: pointer;
-    margin: 0;
-    position: absolute;
-    top: 14px;
-    right: 14px;
-  }
-
-  ::slotted(p) {
-    color: var(--color-gray-darkest, #6c737a);
-  }
-
-  ::slotted([slot="details"]) {
-    font-size: var(--font-size-subtitle, 0.938rem);
-  }
-
-  ::slotted([slot="actions"]) {
-    border-top: solid 2px #e1e3e4;
-    border-bottom: solid 2px #e1e3e4;
-    padding: 20px;
-    font-size: var(--font-size-subtitle, 0.938rem);
-  }
-
-  ::slotted([slot="content"]) {
-    padding: 0 20px;
-    font-size: var(--font-size-label, 0.875rem);
-  }
-`,__decorate=(__webpack_require__(50),function(decorators,target,key,desc){var d,c=arguments.length,r=c<3?target:null===desc?desc=Object.getOwnPropertyDescriptor(target,key):desc;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(decorators,target,key,desc);else for(var i=decorators.length-1;i>=0;i--)(d=decorators[i])&&(r=(c<3?d(r):c>3?d(target,key,r):d(target,key))||r);return c>3&&r&&Object.defineProperty(target,key,r),r});class chameleon_sheet_ChameleonSheet extends lit_element.a{constructor(){super(...arguments),this.header="",this.subHeader="",this.sheetOpened=!1}render(){return lit_element.c`
-      <header class="head-container">
-        <chameleon-button
-          class="close-icon"
-          icon-only
-          theme="text"
-          @click="${this.close}"
-          >${this.closeIcon}</chameleon-button
-        >
-
-        <h3 class="header">${this.header}</h3>
-
-        <slot name="details"></slot>
-      </header>
-
-      <slot name="actions"></slot>
-      ${this.subHeader?lit_element.c`
-            <span class="sub-header">${this.subHeader}</span>
-          `:lit_html.nothing}
-      <slot name="content"></slot>
-    `}open(){!0!==this.sheetOpened&&(this.sheetOpened=!0)}close(){!1!==this.sheetOpened&&(this.sheetOpened=!1)}updateSlot(slotName,content){const slot=this.querySelector(`[slot="${slotName}"]`);slot&&Object(lit_html.render)(content,slot)}get closeIcon(){return void 0===Array.from(this.querySelectorAll("[slot]")).find(slot=>"close-icon"===slot.slot)?lit_html.svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`:lit_element.c`
-        <slot name="close-icon"></slot>
-      `}}chameleon_sheet_ChameleonSheet.styles=[chameleon_sheet_style],__decorate([Object(lit_element.d)({type:String})],chameleon_sheet_ChameleonSheet.prototype,"header",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_sheet_ChameleonSheet.prototype,"subHeader",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_sheet_ChameleonSheet.prototype,"sheetOpened",void 0),window.customElements.get("chameleon-sheet")||window.customElements.define("chameleon-sheet",chameleon_sheet_ChameleonSheet)},701:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_switch_style=lit_element.b`
+    `}}chameleon_rice_ball_dessert_ChameleonRiceBallDessert.styles=[chameleon_rice_ball_dessert_style],__decorate([Object(lit_element.d)({type:String})],chameleon_rice_ball_dessert_ChameleonRiceBallDessert.prototype,"riceBallColor",void 0),window.customElements.get("chameleon-rice-ball-dessert")||window.customElements.define("chameleon-rice-ball-dessert",chameleon_rice_ball_dessert_ChameleonRiceBallDessert)},703:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),chameleon_switch_style=lit_element.b`
   :host {
     align-items: center;
     display: inline-flex;
@@ -3898,7 +3868,7 @@
         <span class="slider"></span>
       </div>
       ${this.labelText}
-    `}get labelText(){return""!==this.label?this.label:lit_html.nothing}}chameleon_switch_ChameleonSwitch.styles=[chameleon_switch_style],__decorate([Object(lit_element.d)({type:String})],chameleon_switch_ChameleonSwitch.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_switch_ChameleonSwitch.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_switch_ChameleonSwitch.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_switch_ChameleonSwitch.prototype,"value",void 0),window.customElements.get("chameleon-switch")||window.customElements.define("chameleon-switch",chameleon_switch_ChameleonSwitch)},702:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(8),chameleon_table_style=(__webpack_require__(135),__webpack_require__(301),__webpack_require__(302),lit_element.b`
+    `}get labelText(){return""!==this.label?this.label:lit_html.nothing}}chameleon_switch_ChameleonSwitch.styles=[chameleon_switch_style],__decorate([Object(lit_element.d)({type:String})],chameleon_switch_ChameleonSwitch.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_switch_ChameleonSwitch.prototype,"checked",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_switch_ChameleonSwitch.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_switch_ChameleonSwitch.prototype,"value",void 0),window.customElements.get("chameleon-switch")||window.customElements.define("chameleon-switch",chameleon_switch_ChameleonSwitch)},704:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(7),chameleon_table_style=(__webpack_require__(135),__webpack_require__(301),__webpack_require__(302),lit_element.b`
   :host {
     --th-and-td-text-align: left;
 
@@ -4200,7 +4170,7 @@
       >
         <polyline points="4 6 12 14 20 6"></polyline>
       </svg>
-    `}}chameleon_table_ChameleonTable.styles=[chameleon_table_style],__decorate([Object(lit_element.d)({type:Array})],chameleon_table_ChameleonTable.prototype,"columns",void 0),__decorate([Object(lit_element.d)({type:Array})],chameleon_table_ChameleonTable.prototype,"rows",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_table_ChameleonTable.prototype,"highlightRow",void 0),__decorate([Object(lit_element.d)({type:Object})],chameleon_table_ChameleonTable.prototype,"filters",void 0),__decorate([Object(lit_element.d)({type:Object})],chameleon_table_ChameleonTable.prototype,"sort",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_table_ChameleonTable.prototype,"pageSize",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_table_ChameleonTable.prototype,"totalItems",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_table_ChameleonTable.prototype,"currentPage",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_table_ChameleonTable.prototype,"hidePagination",void 0),window.customElements.get("chameleon-table")||window.customElements.define("chameleon-table",chameleon_table_ChameleonTable)},703:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(8),chameleon_textarea_style=lit_element.b`
+    `}}chameleon_table_ChameleonTable.styles=[chameleon_table_style],__decorate([Object(lit_element.d)({type:Array})],chameleon_table_ChameleonTable.prototype,"columns",void 0),__decorate([Object(lit_element.d)({type:Array})],chameleon_table_ChameleonTable.prototype,"rows",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_table_ChameleonTable.prototype,"highlightRow",void 0),__decorate([Object(lit_element.d)({type:Object})],chameleon_table_ChameleonTable.prototype,"filters",void 0),__decorate([Object(lit_element.d)({type:Object})],chameleon_table_ChameleonTable.prototype,"sort",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_table_ChameleonTable.prototype,"pageSize",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_table_ChameleonTable.prototype,"totalItems",void 0),__decorate([Object(lit_element.d)({type:Number})],chameleon_table_ChameleonTable.prototype,"currentPage",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_table_ChameleonTable.prototype,"hidePagination",void 0),window.customElements.get("chameleon-table")||window.customElements.define("chameleon-table",chameleon_table_ChameleonTable)},705:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(7),chameleon_textarea_style=lit_element.b`
   :host {
     display: inline-flex;
     flex-direction: column;
@@ -4266,7 +4236,7 @@ ${this.value}</textarea
         <span class="error" id="${this.name}-error"
           >${this.validationMessage}</span
         >
-      `:lit_html.nothing}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}get _invalidState(){return!(!(this.invalid||this.validationMessage.length>0)&&this.checkValidity())}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}_handleInput(e){this.value=e.target.value}}chameleon_textarea_ChameleonTextarea.styles=[chameleon_textarea_style],__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"name",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autocomplete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autofocus",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"cols",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"maxlength",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"minlength",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"rows",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"spellcheck",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"invalid",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"validationMessage",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_textarea_ChameleonTextarea.prototype,"nonresizeable",void 0),window.customElements.get("chameleon-textarea")||window.customElements.define("chameleon-textarea",chameleon_textarea_ChameleonTextarea)},704:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(8),repeat=__webpack_require__(51),chameleon_timezone_style=lit_element.b`
+      `:lit_html.nothing}get validity(){return null!==this._el?this._el.validity:void 0}get willValidate(){return null!==this._el&&this._el.willValidate}checkValidity(){return null!==this._el&&this._el.checkValidity()}get _invalidState(){return!(!(this.invalid||this.validationMessage.length>0)&&this.checkValidity())}_handleBlur(){this.checkValidity()}_handleInvalid(){this.validationMessage=null!==this._el?this._el.validationMessage:""}_handleInput(e){this.value=e.target.value}}chameleon_textarea_ChameleonTextarea.styles=[chameleon_textarea_style],__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"name",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autocomplete",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"autofocus",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"cols",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"maxlength",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"minlength",void 0),__decorate([Object(lit_element.d)({type:String,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"placeholder",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:Number,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"rows",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"spellcheck",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"value",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"label",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_textarea_ChameleonTextarea.prototype,"invalid",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_textarea_ChameleonTextarea.prototype,"validationMessage",void 0),__decorate([Object(lit_element.d)({type:Boolean})],chameleon_textarea_ChameleonTextarea.prototype,"nonresizeable",void 0),window.customElements.get("chameleon-textarea")||window.customElements.define("chameleon-textarea",chameleon_textarea_ChameleonTextarea)},706:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),lit_html=__webpack_require__(2),class_map=__webpack_require__(7),repeat=__webpack_require__(50),chameleon_timezone_style=lit_element.b`
   :host([readonly]),
   :host([disabled]) {
     pointer-events: none;
@@ -4360,7 +4330,7 @@ ${this.value}</textarea
       </path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17">
       </line>
       </svg>
-  `}}chameleon_timezone_ChameleonTimezone.styles=[chameleon_timezone_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_timezone_ChameleonTimezone.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_timezone_ChameleonTimezone.prototype,"invalid",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_timezone_ChameleonTimezone.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_timezone_ChameleonTimezone.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_timezone_ChameleonTimezone.prototype,"autovalidate",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_timezone_ChameleonTimezone.prototype,"name",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_timezone_ChameleonTimezone.prototype,"timezoneLabel",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_timezone_ChameleonTimezone.prototype,"timezoneSubLabel",void 0),__decorate([Object(lit_element.d)({type:Array})],chameleon_timezone_ChameleonTimezone.prototype,"timezones",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_timezone_ChameleonTimezone.prototype,"_timezoneValue",void 0),__decorate([Object(lit_element.d)({type:Array})],chameleon_timezone_ChameleonTimezone.prototype,"errors",void 0),window.customElements.get("chameleon-timezone")||window.customElements.define("chameleon-timezone",chameleon_timezone_ChameleonTimezone)},705:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_toast_style=lit_element.b`
+  `}}chameleon_timezone_ChameleonTimezone.styles=[chameleon_timezone_style],__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_timezone_ChameleonTimezone.prototype,"required",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_timezone_ChameleonTimezone.prototype,"invalid",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_timezone_ChameleonTimezone.prototype,"readonly",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_timezone_ChameleonTimezone.prototype,"disabled",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_timezone_ChameleonTimezone.prototype,"autovalidate",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_timezone_ChameleonTimezone.prototype,"name",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_timezone_ChameleonTimezone.prototype,"timezoneLabel",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_timezone_ChameleonTimezone.prototype,"timezoneSubLabel",void 0),__decorate([Object(lit_element.d)({type:Array})],chameleon_timezone_ChameleonTimezone.prototype,"timezones",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_timezone_ChameleonTimezone.prototype,"_timezoneValue",void 0),__decorate([Object(lit_element.d)({type:Array})],chameleon_timezone_ChameleonTimezone.prototype,"errors",void 0),window.customElements.get("chameleon-timezone")||window.customElements.define("chameleon-timezone",chameleon_timezone_ChameleonTimezone)},707:function(module,__webpack_exports__,__webpack_require__){"use strict";var lit_element=__webpack_require__(0),chameleon_toast_style=lit_element.b`
   :host {
     align-items: center;
     animation: fadeout 0.5s forwards;
@@ -4460,5 +4430,5 @@ ${this.value}</textarea
       <a class="close-icon" @click="${this.closeToast}">
         <slot name="close-icon">x</slot>
       </a>
-    `}closeToast(){this.showCloseable=!1,this.dispatchEvent(new CustomEvent("close-toast",{bubbles:!0,composed:!0}))}}chameleon_toast_ChameleonToast.styles=[chameleon_toast_style],__decorate([Object(lit_element.d)({type:String})],chameleon_toast_ChameleonToast.prototype,"color",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_toast_ChameleonToast.prototype,"showCloseable",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_toast_ChameleonToast.prototype,"backgroundColor",void 0),window.customElements.get("chameleon-toast")||window.customElements.define("chameleon-toast",chameleon_toast_ChameleonToast)}},[[307,1,2]]]);
-//# sourceMappingURL=main.88ebb551691249ea5ec2.bundle.js.map
+    `}closeToast(){this.showCloseable=!1,this.dispatchEvent(new CustomEvent("close-toast",{bubbles:!0,composed:!0}))}}chameleon_toast_ChameleonToast.styles=[chameleon_toast_style],__decorate([Object(lit_element.d)({type:String})],chameleon_toast_ChameleonToast.prototype,"color",void 0),__decorate([Object(lit_element.d)({type:Boolean,reflect:!0})],chameleon_toast_ChameleonToast.prototype,"showCloseable",void 0),__decorate([Object(lit_element.d)({type:String})],chameleon_toast_ChameleonToast.prototype,"backgroundColor",void 0),window.customElements.get("chameleon-toast")||window.customElements.define("chameleon-toast",chameleon_toast_ChameleonToast)}},[[308,1,2]]]);
+//# sourceMappingURL=main.068f3d73856f8402fa37.bundle.js.map

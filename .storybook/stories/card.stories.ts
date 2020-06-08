@@ -14,8 +14,8 @@ stories.addDecorator(withKnobs);
 stories.addParameters({
   backgrounds: [
     { name: "gray", value: "#f5f5f8", default: true },
-    { name: "black", value: "#252a33" }
-  ]
+    { name: "black", value: "#252a33" },
+  ],
 });
 
 stories.add(
@@ -104,7 +104,7 @@ stories.add(
     const subtitleText = text("Subtitle", "Destination");
     const titleText = text("Title", "St. Louis, MO");
     const rounded = boolean("Rounded", true);
-    const accentColorSelected = text("Top Border", "green");
+    const accentColor = text("Accent Color", "green");
 
     return html`
       <style>
@@ -112,10 +112,7 @@ stories.add(
           max-width: 400px;
         }
       </style>
-      <chameleon-card
-        ?rounded="${rounded}"
-        accentColor="${accentColorSelected}"
-      >
+      <chameleon-card ?rounded="${rounded}" accentColor="${accentColor}">
         <chameleon-card-header
           title="${titleText}"
           subtitle="${subtitleText}"

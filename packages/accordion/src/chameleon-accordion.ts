@@ -4,10 +4,11 @@ import {
   property,
   svg,
   SVGTemplateResult,
-  html
+  html,
+  PropertyValues,
 } from "lit-element";
+import { classMap } from "lit-html/directives/class-map";
 import style from "./chameleon-accordion-style";
-import "@chameleon-ds/button";
 
 export default class ChameleonAccordion extends LitElement {
   /**
@@ -19,60 +20,55 @@ export default class ChameleonAccordion extends LitElement {
    * Properties
    */
   @property({ type: Boolean, reflect: true })
-  clickable = false;
-  @property({ type: Boolean, reflect: true })
   expanded = false;
-  @property({ type: Boolean, reflect: true })
-  fixed = false;
+
+  @property({ type: Boolean })
+  caret = true;
+
+  @property({ type: String })
+  accentColor = null;
 
   /**
    * Template
    */
   render(): TemplateResult {
     return html`
-      ${this.clickable
-        ? html`
-            <div @click="${this.handleToggle}" class="header clickable">
-              <div class="header-button-div">
-                <slot name="header"></slot>
-                <chameleon-button
-                  class="toggle-icon ${this.expanded && !this.fixed
-                    ? "rotated"
-                    : ""}"
-                  icon-only
-                  theme="text"
-                  @click="${(e: any) => this.disregardToggle(e)}"
-                  >${this.toggleIcon}</chameleon-button
-                >
-              </div>
-              <slot name="subheader"></slot>
-            </div>
-          `
-        : html`
-            <div class="header">
-              <div class="header-button-div">
-                <slot name="header"></slot>
-                <chameleon-button
-                  class="toggle-icon ${this.expanded && !this.fixed
-                    ? "rotated"
-                    : ""}"
-                  icon-only
-                  theme="text"
-                  @click="${this.handleToggle}"
-                  >${this.toggleIcon}</chameleon-button
-                >
-              </div>
-              <slot name="subheader"></slot>
-            </div>
-          `}
+      <div @click="${this.handleToggle}" class="header">
+        <div class="header-toggle">
+          ${this.caret
+            ? html`<span
+                class="${classMap({
+                  "toggle-icon": true,
+                  rotate: this.expanded,
+                })}"
+                >${this.toggleIcon}
+              </span>`
+            : ""}
+          <slot name="header"></slot>
+        </div>
+        <slot name="subheader"></slot>
+      </div>
       <div class="panel ${this.expanded ? "expanded" : "collapsed"}">
         <slot name="panel"></slot>
       </div>
     `;
   }
 
-  disregardToggle(e: any) {
-    e.preventDefault();
+  updated(changedProperties: PropertyValues) {
+    if (changedProperties.has("accentColor") && this.accentColor)
+      (this.shadowRoot!.querySelector(
+        ".header"
+      )! as HTMLElement).style.borderLeft = `5px solid ${this.accentColor}`;
+
+    if (
+      changedProperties.has("accentColor") &&
+      this.accentColor === "" &&
+      this.accentColor !== undefined
+    ) {
+      (this.shadowRoot!.querySelector(
+        ".header"
+      )! as HTMLElement).style.borderLeft = `7px solid var(--color-primary)`;
+    }
   }
 
   handleToggle(): void {
@@ -80,38 +76,35 @@ export default class ChameleonAccordion extends LitElement {
       new CustomEvent("chameleon.accordions.expanded-changed", {
         detail: {
           value: this.dataset.index,
-          expanded: this.expanded
+          expanded: this.expanded,
         },
         bubbles: true,
-        composed: true
+        composed: true,
       })
     );
   }
 
   get toggleIcon(): SVGTemplateResult | TemplateResult {
     const slots = Array.from(this.querySelectorAll("[slot]"));
-    const toggleIcon = slots.find(slot => slot.slot === "toggle-icon");
+    const toggleIcon = slots.find((slot) => slot.slot === "toggle-icon");
 
     if (toggleIcon === undefined)
       return svg`
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polyline points="9 18 15 12 9 6" />
-      </svg>
-    `;
-    else
-      return html`
-        <slot name="toggle-icon"></slot>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
       `;
+    else return html`<slot name="toggle-icon"></slot>`;
   }
 }
 
