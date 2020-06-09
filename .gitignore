@@ -19,7 +19,6 @@ _site/
 .jekyll-cache/
 
 # Compiler Output
-/**/*.js
 !docs/assets/storybook/**/*.js
 /**/*.js.map
 !docs/assets/storybook/**/*.js.map
