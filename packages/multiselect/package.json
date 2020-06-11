@@ -9,11 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/src/chameleon-multiselect.js",
-  "module": "dist/src/chameleon-multiselect.js",
+  "main": "src/chameleon-multiselect.js",
+  "module": "src/chameleon-multiselect.js",
   "files": [
-    "/dist/",
-    "/types/"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

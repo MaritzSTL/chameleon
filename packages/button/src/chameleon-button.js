@@ -1,7 +1,7 @@
 import { LitElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import style from "./chameleon-button-style";
+import style from "./chameleon-button-style.js";
 import "@chameleon-ds/loader";
 
 export default class ChameleonButton extends LitElement {

@@ -1,7 +1,7 @@
 import { LitElement, property, html } from "lit-element";
 import { svg, nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import style from "./chameleon-table-style";
+import style from "./chameleon-table-style.js";
 import "@chameleon-ds/input";
 import "@chameleon-ds/multiselect";
 import "@chameleon-ds/paginator";

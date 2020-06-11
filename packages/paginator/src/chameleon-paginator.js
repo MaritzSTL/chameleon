@@ -1,5 +1,5 @@
 import { LitElement, property, html, svg } from "lit-element";
-import style from "./chameleon-paginator-style";
+import style from "./chameleon-paginator-style.js";
 import "@chameleon-ds/button";
 
 export default class ChameleonPaginator extends LitElement {

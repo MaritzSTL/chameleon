@@ -2,9 +2,9 @@ import { LitElement, property, html, svg } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
-import style from "./chameleon-timezone-style";
+import style from "./chameleon-timezone-style.js";
 import "@chameleon-ds/select";
-import { default as timezoneData } from "../data/timezones.json";
+import timezoneData from "../data/timezones.js";
 
 export default class ChameleonTimezone extends LitElement {
   /**

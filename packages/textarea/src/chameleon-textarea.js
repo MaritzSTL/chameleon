@@ -1,7 +1,7 @@
 import { LitElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import style from "./chameleon-textarea-style";
+import style from "./chameleon-textarea-style.js";
 
 export default class ChameleonTextarea extends LitElement {
   /**

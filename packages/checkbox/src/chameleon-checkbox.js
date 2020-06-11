@@ -1,6 +1,6 @@
 import { LitElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
-import style from "./chameleon-checkbox-style";
+import style from "./chameleon-checkbox-style.js";
 
 export default class ChameleonCheckbox extends LitElement {
   /**

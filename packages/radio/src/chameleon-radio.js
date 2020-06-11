@@ -1,6 +1,6 @@
 import { LitElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
-import style from "./chameleon-radio-style";
+import style from "./chameleon-radio-style.js";
 
 export default class ChameleonRadio extends LitElement {
   /**

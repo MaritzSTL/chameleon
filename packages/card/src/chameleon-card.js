@@ -1,5 +1,5 @@
 import { LitElement, html, property } from "lit-element";
-import style from "./chameleon-card-style";
+import style from "./chameleon-card-style.js";
 import { nothing } from "lit-html";
 
 export default class ChameleonCard extends LitElement {

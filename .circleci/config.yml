@@ -25,4 +25,4 @@ jobs:
       # - run: # run coverage report
       #     name: Code Coverage
       #     command: |
-      #       yarn run generate-codecov
+      #       yarn run generate:codecov

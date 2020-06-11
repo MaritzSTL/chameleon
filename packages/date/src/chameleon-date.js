@@ -2,7 +2,7 @@ import { LitElement, property, html, svg } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import { classMap } from "lit-html/directives/class-map";
 import { nothing } from "lit-html/lib/part";
-import style from "./chameleon-date-style";
+import style from "./chameleon-date-style.js";
 import "@chameleon-ds/input";
 import "@chameleon-ds/button";
 

@@ -9,10 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-progress-bar.js",
-  "module": "dist/chameleon-progress-bar.js",
+  "main": "src/chameleon-progress-bar.js",
+  "module": "src/chameleon-progress-bar.js",
   "files": [
-    "/dist/"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

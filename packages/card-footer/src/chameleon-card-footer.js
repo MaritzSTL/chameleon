@@ -1,5 +1,5 @@
 import { LitElement, html } from "lit-element";
-import style from "./chameleon-card-footer-style";
+import style from "./chameleon-card-footer-style.js";
 
 export default class ChameleonCardFooter extends LitElement {
   /**

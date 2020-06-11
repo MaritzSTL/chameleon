@@ -1,5 +1,5 @@
 import { LitElement, html, property } from "lit-element";
-import style from "./chameleon-progress-bar-style";
+import style from "./chameleon-progress-bar-style.js";
 
 export default class ChameleonProgressBar extends LitElement {
   /**

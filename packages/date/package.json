@@ -9,10 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/src/chameleon-date.js",
-  "module": "dist/src/chameleon-date.js",
+  "main": "src/src/chameleon-date.js",
+  "module": "src/src/chameleon-date.js",
   "files": [
-    "/dist/",
+    "/src/",
     "/types/"
   ],
   "scripts": {

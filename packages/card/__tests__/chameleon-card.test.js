@@ -10,7 +10,7 @@ describe("chameleon-card", () => {
   });
 
   it("should set default accentColor", async () => {
-    const element: ChameleonCard = await litFixture(
+    const element = await litFixture(
       html` <chameleon-card accentColor></chameleon-card> `
     );
 
@@ -18,7 +18,7 @@ describe("chameleon-card", () => {
   });
 
   it("should set accentColor", async () => {
-    const element: ChameleonCard = await litFixture(
+    const element = await litFixture(
       html` <chameleon-card accentColor="green"></chameleon-card> `
     );
 

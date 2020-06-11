@@ -9,10 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-paginator.js",
-  "module": "dist/chameleon-paginator.js",
+  "main": "src/chameleon-paginator.js",
+  "module": "src/chameleon-paginator.js",
   "files": [
-    "/dist/"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

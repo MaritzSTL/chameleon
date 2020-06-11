@@ -1,5 +1,5 @@
 import { LitElement, html, property } from "lit-element";
-import style from "./chameleon-toast-style";
+import style from "./chameleon-toast-style.js";
 
 export default class ChameleonToast extends LitElement {
   /**

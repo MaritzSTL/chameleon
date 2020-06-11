@@ -1,5 +1,5 @@
 import { LitElement, html, property, svg } from "lit-element";
-import style from "./chameleon-alert-style";
+import style from "./chameleon-alert-style.js";
 
 export default class ChameleonAlert extends LitElement {
   /**

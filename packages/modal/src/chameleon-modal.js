@@ -1,7 +1,7 @@
 import { LitElement, html, property } from "lit-element";
 import { nothing, svg } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import style from "./chameleon-modal-style";
+import style from "./chameleon-modal-style.js";
 import "@chameleon-ds/card";
 import "@chameleon-ds/button";
 

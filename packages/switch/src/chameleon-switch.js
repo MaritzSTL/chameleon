@@ -1,6 +1,6 @@
 import { LitElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
-import style from "./chameleon-switch-style";
+import style from "./chameleon-switch-style.js";
 
 export default class ChameleonSwitch extends LitElement {
   /**

@@ -9,10 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-card-header.js",
-  "module": "dist/chameleon-card-header.js",
+  "main": "src/chameleon-card-header.js",
+  "module": "src/chameleon-card-header.js",
   "files": [
-    "/dist/"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

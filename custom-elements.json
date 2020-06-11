@@ -1,0 +1,2662 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "chameleon-accordion",
+      "path": "./packages/accordion/src/chameleon-accordion.js",
+      "attributes": [
+        {
+          "name": "expanded",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "caret",
+          "type": "boolean",
+          "default": "true"
+        },
+        {
+          "name": "accentColor"
+        }
+      ],
+      "properties": [
+        {
+          "name": "expanded",
+          "attribute": "expanded",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "caret",
+          "attribute": "caret",
+          "type": "boolean",
+          "default": "true"
+        },
+        {
+          "name": "accentColor",
+          "attribute": "accentColor"
+        },
+        {
+          "name": "toggleIcon",
+          "type": "TemplateResult"
+        }
+      ],
+      "events": [
+        {
+          "name": "chameleon.accordions.expanded-changed"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-accordions",
+      "path": "./packages/accordion/src/chameleon-accordions.js",
+      "attributes": [
+        {
+          "name": "expandedIndex",
+          "description": "Properties",
+          "type": "number",
+          "default": "-1"
+        }
+      ],
+      "properties": [
+        {
+          "name": "expandedIndex",
+          "attribute": "expandedIndex",
+          "description": "Properties",
+          "type": "number",
+          "default": "-1"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-button",
+      "path": "./packages/button/src/chameleon-button.js",
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "theme",
+          "type": "string",
+          "default": "\"primary\""
+        },
+        {
+          "name": "\"icon-left\"",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "\"icon-right\"",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "\"icon-only\"",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "href"
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "default": "\"_top\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "loading",
+          "attribute": "loading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "theme",
+          "attribute": "theme",
+          "type": "string",
+          "default": "\"primary\""
+        },
+        {
+          "name": "\"icon-left\"",
+          "attribute": "\"icon-left\"",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "icon-left",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "\"icon-right\"",
+          "attribute": "\"icon-right\"",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "icon-right",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "\"icon-only\"",
+          "attribute": "\"icon-only\"",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "icon-only",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "href",
+          "attribute": "href"
+        },
+        {
+          "name": "target",
+          "attribute": "target",
+          "type": "string",
+          "default": "\"_top\""
+        }
+      ]
+    },
+    {
+      "name": "chameleon-card",
+      "path": "./packages/card/src/chameleon-card.js",
+      "attributes": [
+        {
+          "name": "accentColor",
+          "description": "Properties"
+        },
+        {
+          "name": "complication"
+        }
+      ],
+      "properties": [
+        {
+          "name": "accentColor",
+          "attribute": "accentColor",
+          "description": "Properties"
+        },
+        {
+          "name": "complication",
+          "attribute": "complication"
+        },
+        {
+          "name": "complicationText",
+          "type": "object"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-card-footer",
+      "path": "./packages/card-footer/src/chameleon-card-footer.js"
+    },
+    {
+      "name": "chameleon-alert",
+      "path": "./packages/alert/src/chameleon-alert.js",
+      "attributes": [
+        {
+          "name": "message",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "message",
+          "attribute": "message",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "alertIcon",
+          "type": "SVGTemplateResult"
+        },
+        {
+          "name": "closeIcon",
+          "type": "SVGTemplateResult"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-card-header",
+      "path": "./packages/card-header/src/chameleon-card-header.js",
+      "attributes": [
+        {
+          "name": "title",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "subtitle",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "title",
+          "attribute": "title",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "subtitle",
+          "attribute": "subtitle",
+          "type": "string",
+          "default": "\"\""
+        }
+      ]
+    },
+    {
+      "name": "chameleon-card-image",
+      "path": "./packages/card-image/src/chameleon-card-image.js",
+      "attributes": [
+        {
+          "name": "src",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "alt",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "src",
+          "attribute": "src",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "alt",
+          "attribute": "alt",
+          "type": "string",
+          "default": "\"\""
+        }
+      ]
+    },
+    {
+      "name": "chameleon-checkbox",
+      "path": "./packages/checkbox/src/chameleon-checkbox.js",
+      "attributes": [
+        {
+          "name": "label",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "default": "\"cha-checkbox\""
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "label",
+          "attribute": "label",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "name",
+          "attribute": "name",
+          "type": "string",
+          "default": "\"cha-checkbox\""
+        },
+        {
+          "name": "checked",
+          "attribute": "checked",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "value",
+          "attribute": "value",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "readonly",
+          "attribute": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "invalid",
+          "attribute": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "required",
+          "attribute": "required",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "labelText",
+          "type": "object"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-chart",
+      "path": "./packages/chart/src/chameleon-chart.js",
+      "attributes": [
+        {
+          "name": "type",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "default": "\"#00870a\""
+        },
+        {
+          "name": "percentage",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "default": "\"0\""
+        },
+        {
+          "name": "subLabel",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "type",
+          "attribute": "type",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "color",
+          "attribute": "color",
+          "type": "string",
+          "default": "\"#00870a\""
+        },
+        {
+          "name": "percentage",
+          "attribute": "percentage",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "type": "string",
+          "default": "\"0\""
+        },
+        {
+          "name": "subLabel",
+          "attribute": "subLabel",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "chart",
+          "type": "object"
+        },
+        {
+          "name": "arc",
+          "type": "SVGTemplateResult"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-chip",
+      "path": "./packages/chip/src/chameleon-chip.js",
+      "attributes": [
+        {
+          "name": "closeable",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "closeable",
+          "attribute": "closeable",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "removeIcon",
+          "type": "SVGTemplateResult"
+        },
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ],
+      "events": [
+        {
+          "name": "remove-chip"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-date",
+      "path": "./packages/date/src/chameleon-date.js",
+      "attributes": [
+        {
+          "name": "name",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"cha-date\""
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "renderedDate"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "min"
+        },
+        {
+          "name": "max"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "canDelete",
+          "type": "boolean",
+          "default": "true"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "validationMessage",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "overlayRenderMode",
+          "type": "string",
+          "default": "\"month\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "attribute": "name",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"cha-date\""
+        },
+        {
+          "name": "active",
+          "attribute": "active",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "renderedDate",
+          "attribute": "renderedDate"
+        },
+        {
+          "name": "placeholder",
+          "attribute": "placeholder",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "readonly",
+          "attribute": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "value",
+          "attribute": "value",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "min",
+          "attribute": "min"
+        },
+        {
+          "name": "max",
+          "attribute": "max"
+        },
+        {
+          "name": "required",
+          "attribute": "required",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "canDelete",
+          "attribute": "canDelete",
+          "type": "boolean",
+          "default": "true"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "validationMessage",
+          "attribute": "validationMessage",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "invalid",
+          "attribute": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "overlayRenderMode",
+          "attribute": "overlayRenderMode",
+          "type": "string",
+          "default": "\"month\""
+        },
+        {
+          "name": "startDay",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "weekDayValues",
+          "type": "string[]",
+          "default": "[\"Su\",\"Mo\",\"Tu\",\"We\",\"Th\",\"Fr\",\"Sa\"]"
+        },
+        {
+          "name": "monthValues",
+          "type": "string[]",
+          "default": "[\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\"]"
+        },
+        {
+          "name": "touched",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "date",
+          "type": "Date | undefined"
+        },
+        {
+          "name": "overlay",
+          "type": "TemplateResult"
+        },
+        {
+          "name": "dayOfWeek",
+          "type": "TemplateResult"
+        },
+        {
+          "name": "dateGrid",
+          "type": "object"
+        },
+        {
+          "name": "days",
+          "type": "Date[] | undefined"
+        },
+        {
+          "name": "renderedDateValue",
+          "type": "string"
+        },
+        {
+          "name": "closeIcon",
+          "type": "SVGTemplateResult"
+        },
+        {
+          "name": "calendarIcon",
+          "type": "SVGTemplateResult"
+        },
+        {
+          "name": "prevIcon",
+          "type": "TemplateResult"
+        },
+        {
+          "name": "nextIcon",
+          "type": "TemplateResult"
+        }
+      ],
+      "events": [
+        {
+          "name": "chameleon.date.input"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-dialog",
+      "path": "./packages/dialog/src/chameleon-dialog.js",
+      "attributes": [
+        {
+          "name": "open",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "icon",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "dismissible",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "canGoBack",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "fullScreen",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "open",
+          "attribute": "open",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "icon",
+          "attribute": "icon",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "dismissible",
+          "attribute": "dismissible",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "canGoBack",
+          "attribute": "canGoBack",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "fullScreen",
+          "attribute": "fullScreen",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "closeIcon",
+          "type": "TemplateResult"
+        },
+        {
+          "name": "backIcon",
+          "type": "TemplateResult"
+        }
+      ],
+      "events": [
+        {
+          "name": "toggle-dialog"
+        },
+        {
+          "name": "go-back"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-hero",
+      "path": "./packages/hero/src/chameleon-hero.js",
+      "attributes": [
+        {
+          "name": "title",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "subTitle",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "heroText",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "imageUrl",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "default": "\"gradient\""
+        },
+        {
+          "name": "gradient",
+          "type": "string",
+          "default": "\"var(--color-primary-dark), var(--color-secondary-dark)\""
+        },
+        {
+          "name": "gradientAlpha",
+          "type": "number",
+          "default": "0.5"
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "title",
+          "attribute": "title",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "subTitle",
+          "attribute": "subTitle",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "heroText",
+          "attribute": "heroText",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "imageUrl",
+          "attribute": "imageUrl",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "type",
+          "attribute": "type",
+          "type": "string",
+          "default": "\"gradient\""
+        },
+        {
+          "name": "gradient",
+          "attribute": "gradient",
+          "type": "string",
+          "default": "\"var(--color-primary-dark), var(--color-secondary-dark)\""
+        },
+        {
+          "name": "gradientAlpha",
+          "attribute": "gradientAlpha",
+          "type": "number",
+          "default": "0.5"
+        },
+        {
+          "name": "loading",
+          "attribute": "loading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "backgroundImageStyles",
+          "type": "{ backgroundImage: string; }"
+        },
+        {
+          "name": "gradientHex",
+          "type": "string[]"
+        },
+        {
+          "name": "gradientOverlay",
+          "type": "string[]"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-input",
+      "path": "./packages/input/src/chameleon-input.js",
+      "attributes": [
+        {
+          "name": "autocomplete",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "default": "\"cha-input\""
+        },
+        {
+          "name": "autofocus",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "noStepper",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "step"
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "toggleable",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "touched",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "default": "\"text\""
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "min"
+        },
+        {
+          "name": "max"
+        },
+        {
+          "name": "maxLength"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "validationMessage",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "\"icon-left\"",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "\"icon-right\"",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "autocomplete",
+          "attribute": "autocomplete",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "name",
+          "attribute": "name",
+          "type": "string",
+          "default": "\"cha-input\""
+        },
+        {
+          "name": "autofocus",
+          "attribute": "autofocus",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "noStepper",
+          "attribute": "noStepper",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "step",
+          "attribute": "step"
+        },
+        {
+          "name": "readonly",
+          "attribute": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "required",
+          "attribute": "required",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "toggleable",
+          "attribute": "toggleable",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "touched",
+          "attribute": "touched",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "type",
+          "attribute": "type",
+          "type": "string",
+          "default": "\"text\""
+        },
+        {
+          "name": "placeholder",
+          "attribute": "placeholder",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "value",
+          "attribute": "value",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "min",
+          "attribute": "min"
+        },
+        {
+          "name": "max",
+          "attribute": "max"
+        },
+        {
+          "name": "maxLength",
+          "attribute": "maxLength"
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "invalid",
+          "attribute": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "validationMessage",
+          "attribute": "validationMessage",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "\"icon-left\"",
+          "attribute": "\"icon-left\"",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "icon-left",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "\"icon-right\"",
+          "attribute": "\"icon-right\"",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "icon-right",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "labelText",
+          "type": "object"
+        },
+        {
+          "name": "toggleText",
+          "type": "object"
+        },
+        {
+          "name": "errorText",
+          "type": "object"
+        },
+        {
+          "name": "validity",
+          "type": "ValidityState | undefined"
+        },
+        {
+          "name": "willValidate",
+          "type": "boolean"
+        },
+        {
+          "name": "warningIcon",
+          "type": "SVGTemplateResult"
+        },
+        {
+          "name": "eyeIcon",
+          "type": "SVGTemplateResult"
+        },
+        {
+          "name": "eyeOffIcon",
+          "type": "SVGTemplateResult"
+        }
+      ],
+      "events": [
+        {
+          "name": "chameleon.input.input"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-loader",
+      "path": "./packages/loader/src/chameleon-loader.js",
+      "attributes": [
+        {
+          "name": "loader",
+          "type": "string",
+          "default": "\"spinner\""
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "default": "\"auto\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "loader",
+          "attribute": "loader",
+          "type": "string",
+          "default": "\"spinner\""
+        },
+        {
+          "name": "size",
+          "attribute": "size",
+          "type": "string",
+          "default": "\"auto\""
+        }
+      ]
+    },
+    {
+      "name": "chameleon-modal",
+      "path": "./packages/modal/src/chameleon-modal.js",
+      "attributes": [
+        {
+          "name": "open",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "dismissible",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "fullScreen",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "open",
+          "attribute": "open",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "dismissible",
+          "attribute": "dismissible",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "fullScreen",
+          "attribute": "fullScreen",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "closeIcon",
+          "type": "TemplateResult"
+        }
+      ],
+      "events": [
+        {
+          "name": "toggle-modal"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-multiselect",
+      "path": "./packages/multiselect/src/chameleon-multiselect.js",
+      "attributes": [
+        {
+          "name": "name",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"cha-multiselect\""
+        },
+        {
+          "name": "options",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "filteredOptions",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "selectedOptions",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "instantSearch",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "instantSearchValue",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "validationMessage",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "attribute": "name",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"cha-multiselect\""
+        },
+        {
+          "name": "options",
+          "attribute": "options",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "filteredOptions",
+          "attribute": "filteredOptions",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "selectedOptions",
+          "attribute": "selectedOptions",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "active",
+          "attribute": "active",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "readonly",
+          "attribute": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "required",
+          "attribute": "required",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "invalid",
+          "attribute": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "placeholder",
+          "attribute": "placeholder",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "instantSearch",
+          "attribute": "instantSearch",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "instantSearchValue",
+          "attribute": "instantSearchValue",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "loading",
+          "attribute": "loading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "validationMessage",
+          "attribute": "validationMessage",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "getLabel",
+          "type": "object"
+        },
+        {
+          "name": "value",
+          "description": "The true canonical value of the selector",
+          "type": "string[]"
+        },
+        {
+          "name": "optionsList",
+          "description": "Returns a list of rendered options that can be selected"
+        },
+        {
+          "name": "renderedSelectedOptions",
+          "description": "Returns the rendered selected options"
+        },
+        {
+          "name": "renderedOptions",
+          "description": "An array of the possible options to be selected, minus what's\nalready been selected",
+          "type": "array"
+        },
+        {
+          "name": "errorText",
+          "type": "object"
+        },
+        {
+          "name": "warningIcon",
+          "type": "SVGTemplateResult"
+        }
+      ],
+      "events": [
+        {
+          "name": "chameleon.select"
+        },
+        {
+          "name": "chameleon.search"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-paginator",
+      "path": "./packages/paginator/src/chameleon-paginator.js",
+      "attributes": [
+        {
+          "name": "totalItems",
+          "description": "Properties"
+        },
+        {
+          "name": "pageSize"
+        },
+        {
+          "name": "currentPage",
+          "type": "number",
+          "default": "1"
+        },
+        {
+          "name": "maxLength",
+          "type": "number",
+          "default": "7"
+        },
+        {
+          "name": "separator",
+          "type": "string",
+          "default": "\"...\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "totalItems",
+          "attribute": "totalItems",
+          "description": "Properties"
+        },
+        {
+          "name": "pageSize",
+          "attribute": "pageSize"
+        },
+        {
+          "name": "currentPage",
+          "attribute": "currentPage",
+          "type": "number",
+          "default": "1"
+        },
+        {
+          "name": "maxLength",
+          "attribute": "maxLength",
+          "type": "number",
+          "default": "7"
+        },
+        {
+          "name": "separator",
+          "attribute": "separator",
+          "type": "string",
+          "default": "\"...\""
+        },
+        {
+          "name": "iconLeftCircle",
+          "type": "SVGTemplateResult"
+        },
+        {
+          "name": "iconRightCircle",
+          "type": "SVGTemplateResult"
+        },
+        {
+          "name": "isFirstPage",
+          "type": "boolean"
+        },
+        {
+          "name": "isLastPage",
+          "type": "boolean"
+        },
+        {
+          "name": "totalPages",
+          "type": "number"
+        },
+        {
+          "name": "pages",
+          "type": "(string | number)[]"
+        }
+      ],
+      "events": [
+        {
+          "name": "page-change"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-progress-bar",
+      "path": "./packages/progress-bar/src/chameleon-progress-bar.js",
+      "attributes": [
+        {
+          "name": "percent",
+          "description": "Properties",
+          "default": "\"undefined\""
+        },
+        {
+          "name": "total",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "completed",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "percent",
+          "attribute": "percent",
+          "description": "Properties",
+          "default": "\"undefined\""
+        },
+        {
+          "name": "total",
+          "attribute": "total",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "completed",
+          "attribute": "completed",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "type": "string",
+          "default": "\"\""
+        }
+      ]
+    },
+    {
+      "name": "chameleon-radio",
+      "path": "./packages/radio/src/chameleon-radio.js",
+      "attributes": [
+        {
+          "name": "label",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "default": "\"cha-radio\""
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "label",
+          "attribute": "label",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "name",
+          "attribute": "name",
+          "type": "string",
+          "default": "\"cha-radio\""
+        },
+        {
+          "name": "checked",
+          "attribute": "checked",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "value",
+          "attribute": "value",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "readonly",
+          "attribute": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "invalid",
+          "attribute": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "labelText",
+          "type": "object"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-sheet",
+      "path": "./packages/sheet/src/chameleon-sheet.js"
+    },
+    {
+      "name": "sheet-content",
+      "path": "./packages/sheet/src/sheet-content.js",
+      "attributes": [
+        {
+          "name": "dismissable",
+          "type": "boolean",
+          "default": "true"
+        },
+        {
+          "name": "width",
+          "type": "string",
+          "default": "\"320px\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "dismissable",
+          "attribute": "dismissable",
+          "type": "boolean",
+          "default": "true"
+        },
+        {
+          "name": "width",
+          "attribute": "width",
+          "type": "string",
+          "default": "\"320px\""
+        },
+        {
+          "name": "defaultCloseIcon",
+          "type": "TemplateResult"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-select",
+      "path": "./packages/select/src/chameleon-select.js",
+      "attributes": [
+        {
+          "name": "options",
+          "description": "Properties",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "default": "\"cha-multiselect\""
+        },
+        {
+          "name": "filteredOptions",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "selectedOption",
+          "type": "object",
+          "default": "{}"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "active",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "searchable",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "validationMessage",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "options",
+          "attribute": "options",
+          "description": "Properties",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "name",
+          "attribute": "name",
+          "type": "string",
+          "default": "\"cha-multiselect\""
+        },
+        {
+          "name": "filteredOptions",
+          "attribute": "filteredOptions",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "selectedOption",
+          "attribute": "selectedOption",
+          "type": "object",
+          "default": "{}"
+        },
+        {
+          "name": "placeholder",
+          "attribute": "placeholder",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "active",
+          "attribute": "active",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "readonly",
+          "attribute": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "searchable",
+          "attribute": "searchable",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "invalid",
+          "attribute": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "loading",
+          "attribute": "loading",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "validationMessage",
+          "attribute": "validationMessage",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "value",
+          "description": "The true canonical value of the selector",
+          "type": "string"
+        },
+        {
+          "name": "selectCaret",
+          "description": "Returns the caret that is rendered as part of the dropdown"
+        },
+        {
+          "name": "warningIcon",
+          "type": "SVGTemplateResult"
+        },
+        {
+          "name": "errorText",
+          "type": "object"
+        },
+        {
+          "name": "optionsList",
+          "description": "Returns a list of rendered options that can be selected"
+        },
+        {
+          "name": "renderedSelectedOption",
+          "description": "Returns the rendered selected options"
+        },
+        {
+          "name": "labelText",
+          "type": "object"
+        },
+        {
+          "name": "caretDown",
+          "type": "SVGTemplateResult"
+        },
+        {
+          "name": "caretUp",
+          "type": "SVGTemplateResult"
+        }
+      ],
+      "events": [
+        {
+          "name": "chameleon.select.input"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-skeleton",
+      "path": "./packages/skeleton/src/chameleon-skeleton.js",
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "theme",
+          "type": "string",
+          "default": "\"primary\""
+        },
+        {
+          "name": "height",
+          "type": "string",
+          "default": "\"100%\""
+        },
+        {
+          "name": "width",
+          "type": "string",
+          "default": "\"100%\""
+        },
+        {
+          "name": "cHeight",
+          "type": "number",
+          "default": "50"
+        }
+      ],
+      "properties": [
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "theme",
+          "attribute": "theme",
+          "type": "string",
+          "default": "\"primary\""
+        },
+        {
+          "name": "height",
+          "attribute": "height",
+          "type": "string",
+          "default": "\"100%\""
+        },
+        {
+          "name": "width",
+          "attribute": "width",
+          "type": "string",
+          "default": "\"100%\""
+        },
+        {
+          "name": "cHeight",
+          "attribute": "cHeight",
+          "type": "number",
+          "default": "50"
+        },
+        {
+          "name": "circleRadius",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-switch",
+      "path": "./packages/switch/src/chameleon-switch.js",
+      "attributes": [
+        {
+          "name": "label",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "label",
+          "attribute": "label",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "checked",
+          "attribute": "checked",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "readonly",
+          "attribute": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "value",
+          "attribute": "value",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "labelText",
+          "type": "object"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-table",
+      "path": "./packages/table/src/chameleon-table.js",
+      "attributes": [
+        {
+          "name": "columns",
+          "description": "Properties",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "rows",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "highlightRow"
+        },
+        {
+          "name": "filters",
+          "type": "object",
+          "default": "{}"
+        },
+        {
+          "name": "sort",
+          "type": "{ orderBy: string; order: string; }",
+          "default": "{\"orderBy\":\"\",\"order\":\"ASC\"}"
+        },
+        {
+          "name": "pageSize",
+          "type": "number",
+          "default": "10"
+        },
+        {
+          "name": "totalItems",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "currentPage",
+          "type": "number",
+          "default": "1"
+        },
+        {
+          "name": "hidePagination",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "columns",
+          "attribute": "columns",
+          "description": "Properties",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "rows",
+          "attribute": "rows",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "highlightRow",
+          "attribute": "highlightRow"
+        },
+        {
+          "name": "filters",
+          "attribute": "filters",
+          "type": "object",
+          "default": "{}"
+        },
+        {
+          "name": "sort",
+          "attribute": "sort",
+          "type": "{ orderBy: string; order: string; }",
+          "default": "{\"orderBy\":\"\",\"order\":\"ASC\"}"
+        },
+        {
+          "name": "pageSize",
+          "attribute": "pageSize",
+          "type": "number",
+          "default": "10"
+        },
+        {
+          "name": "totalItems",
+          "attribute": "totalItems",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "currentPage",
+          "attribute": "currentPage",
+          "type": "number",
+          "default": "1"
+        },
+        {
+          "name": "hidePagination",
+          "attribute": "hidePagination",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "chevronUpIcon",
+          "type": "SVGTemplateResult"
+        },
+        {
+          "name": "chevronDownIcon",
+          "type": "SVGTemplateResult"
+        }
+      ],
+      "events": [
+        {
+          "name": "chameleon.table.change"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-tab",
+      "path": "./packages/tabs/src/chameleon-tab.js",
+      "events": [
+        {
+          "name": "chameleon.tabs.selected-changed"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-tabs",
+      "path": "./packages/tabs/src/chameleon-tabs.js",
+      "attributes": [
+        {
+          "name": "selected",
+          "description": "Properties",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "urlRewrite",
+          "description": "Automatically rewrite URL with tab index information. Default: true.",
+          "type": "boolean",
+          "default": "true"
+        }
+      ],
+      "properties": [
+        {
+          "name": "selected",
+          "attribute": "selected",
+          "description": "Properties",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "urlRewrite",
+          "attribute": "urlRewrite",
+          "description": "Automatically rewrite URL with tab index information. Default: true.",
+          "type": "boolean",
+          "default": "true"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-textarea",
+      "path": "./packages/textarea/src/chameleon-textarea.js",
+      "attributes": [
+        {
+          "name": "name",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"cha-textarea\""
+        },
+        {
+          "name": "autocomplete",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "autofocus",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "cols",
+          "type": "number",
+          "default": "20"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "maxlength"
+        },
+        {
+          "name": "minlength"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "rows",
+          "type": "number",
+          "default": "2"
+        },
+        {
+          "name": "spellcheck",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "validationMessage",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "nonresizeable",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "attribute": "name",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"cha-textarea\""
+        },
+        {
+          "name": "autocomplete",
+          "attribute": "autocomplete",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "autofocus",
+          "attribute": "autofocus",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "cols",
+          "attribute": "cols",
+          "type": "number",
+          "default": "20"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "maxlength",
+          "attribute": "maxlength"
+        },
+        {
+          "name": "minlength",
+          "attribute": "minlength"
+        },
+        {
+          "name": "placeholder",
+          "attribute": "placeholder",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "readonly",
+          "attribute": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "required",
+          "attribute": "required",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "rows",
+          "attribute": "rows",
+          "type": "number",
+          "default": "2"
+        },
+        {
+          "name": "spellcheck",
+          "attribute": "spellcheck",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "value",
+          "attribute": "value",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "invalid",
+          "attribute": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "validationMessage",
+          "attribute": "validationMessage",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "nonresizeable",
+          "attribute": "nonresizeable",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "labelText",
+          "type": "object"
+        },
+        {
+          "name": "errorText",
+          "type": "object"
+        },
+        {
+          "name": "validity",
+          "type": "ValidityState | undefined"
+        },
+        {
+          "name": "willValidate",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-timezone",
+      "path": "./packages/timezone/src/chameleon-timezone.js",
+      "attributes": [
+        {
+          "name": "required",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "autovalidate",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "default": "\"cha-timezone\""
+        },
+        {
+          "name": "timezoneLabel",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "timezoneSubLabel",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "timezones",
+          "default": "\"timezoneData\""
+        },
+        {
+          "name": "errors",
+          "type": "array",
+          "default": "[]"
+        }
+      ],
+      "properties": [
+        {
+          "name": "required",
+          "attribute": "required",
+          "description": "Properties",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "invalid",
+          "attribute": "invalid",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "readonly",
+          "attribute": "readonly",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "autovalidate",
+          "attribute": "autovalidate",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "name",
+          "attribute": "name",
+          "type": "string",
+          "default": "\"cha-timezone\""
+        },
+        {
+          "name": "timezoneLabel",
+          "attribute": "timezoneLabel",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "timezoneSubLabel",
+          "attribute": "timezoneSubLabel",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "timezones",
+          "attribute": "timezones",
+          "default": "\"timezoneData\""
+        },
+        {
+          "name": "errors",
+          "attribute": "errors",
+          "type": "array",
+          "default": "[]"
+        },
+        {
+          "name": "value",
+          "description": "Gets the timezone value",
+          "type": "string"
+        },
+        {
+          "name": "timezoneOptions"
+        },
+        {
+          "name": "timezoneLabelText",
+          "description": "timezone label text",
+          "type": "object"
+        },
+        {
+          "name": "timezoneSubLabelText",
+          "description": "timezone sublabel text",
+          "type": "object"
+        },
+        {
+          "name": "localTimezone",
+          "description": "The user's local browser time zone",
+          "type": "string"
+        },
+        {
+          "name": "timezone",
+          "description": "Sets the value of the time zone",
+          "type": "string"
+        },
+        {
+          "name": "errorText",
+          "description": "Error text",
+          "type": "object"
+        },
+        {
+          "name": "errorIcon",
+          "type": "SVGTemplateResult"
+        }
+      ],
+      "events": [
+        {
+          "name": "chameleon.timezone.input"
+        }
+      ]
+    },
+    {
+      "name": "chameleon-toast",
+      "path": "./packages/toast/src/chameleon-toast.js",
+      "attributes": [
+        {
+          "name": "color",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "showCloseable",
+          "type": "boolean",
+          "default": "true"
+        },
+        {
+          "name": "backgroundColor"
+        }
+      ],
+      "properties": [
+        {
+          "name": "color",
+          "attribute": "color",
+          "description": "Properties",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "showCloseable",
+          "attribute": "showCloseable",
+          "type": "boolean",
+          "default": "true"
+        },
+        {
+          "name": "backgroundColor",
+          "attribute": "backgroundColor"
+        }
+      ],
+      "events": [
+        {
+          "name": "close-toast"
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import { LitElement, html, property, svg } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import { classMap } from "lit-html/directives/class-map";
 import { nothing } from "lit-html";
-import style from "./chameleon-select-style";
+import style from "./chameleon-select-style.js";
 
 export default class ChameleonSelect extends LitElement {
   firstUpdated() {

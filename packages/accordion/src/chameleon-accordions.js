@@ -1,5 +1,5 @@
 import { LitElement, property, html } from "lit-element";
-import style from "./chameleon-accordions-style";
+import style from "./chameleon-accordions-style.js";
 
 export default class ChameleonAccordions extends LitElement {
   constructor() {
@@ -41,7 +41,7 @@ export default class ChameleonAccordions extends LitElement {
    * Template
    */
   render() {
-    return html` <slot></slot> `;
+    return html`<slot></slot>`;
   }
 
   _handleExpandedChanged(e) {

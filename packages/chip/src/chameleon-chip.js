@@ -1,6 +1,6 @@
 import { LitElement, property, html, svg } from "lit-element";
 import { nothing } from "lit-html";
-import style from "./chameleon-chip-style";
+import style from "./chameleon-chip-style.js";
 
 export default class ChameleonChip extends LitElement {
   /**

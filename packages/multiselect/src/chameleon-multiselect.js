@@ -2,7 +2,7 @@ import { LitElement, html, property } from "lit-element";
 import { nothing, svg } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
-import style from "./chameleon-multiselect-style";
+import style from "./chameleon-multiselect-style.js";
 import "@chameleon-ds/chip";
 import "@chameleon-ds/loader";
 

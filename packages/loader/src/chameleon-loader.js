@@ -1,7 +1,7 @@
 import { LitElement, html, property } from "lit-element";
-import style from "./chameleon-loader-style";
-import spinnerStyle from "./chameleon-loader-spinner-style";
-import ellipsisStyle from "./chameleon-loader-ellipsis-style";
+import style from "./chameleon-loader-style.js";
+import spinnerStyle from "./chameleon-loader-spinner-style.js";
+import ellipsisStyle from "./chameleon-loader-ellipsis-style.js";
 
 export default class ChameleonLoader extends LitElement {
   /**

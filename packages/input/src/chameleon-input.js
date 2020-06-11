@@ -1,7 +1,7 @@
 import { LitElement, TemplateResult, html, property } from "lit-element";
 import { nothing, svg, SVGTemplateResult } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import style from "./chameleon-input-style";
+import style from "./chameleon-input-style.js";
 
 export default class ChameleonInput extends LitElement {
   /**

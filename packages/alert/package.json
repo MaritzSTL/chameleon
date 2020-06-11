@@ -9,10 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-alert.js",
-  "module": "dist/chameleon-alert.js",
+  "main": "src/chameleon-alert.js",
+  "module": "src/chameleon-alert.js",
   "files": [
-    "/dist/"
+    "/src/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

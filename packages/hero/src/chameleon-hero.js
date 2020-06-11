@@ -1,7 +1,7 @@
 import { LitElement, html, property } from "lit-element";
 import { styleMap } from "lit-html/directives/style-map.js";
 import { nothing } from "lit-html";
-import style from "./chameleon-hero-style";
+import style from "./chameleon-hero-style.js";
 import "@chameleon-ds/skeleton";
 
 export default class ChameleonHero extends LitElement {
