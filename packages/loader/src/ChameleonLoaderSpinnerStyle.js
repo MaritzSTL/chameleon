@@ -5,7 +5,7 @@
  */
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonLoaderSpinnerStyle = css`
   /* SVG styles. */
   svg {
     animation: 2s linear infinite svg-animation;

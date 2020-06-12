@@ -1,13 +1,13 @@
 import { LitElement, html, property } from "lit-element";
-import style from "./chameleon-loader-style.js";
-import spinnerStyle from "./chameleon-loader-spinner-style.js";
-import ellipsisStyle from "./chameleon-loader-ellipsis-style.js";
+import { ChameleonLoaderStyle } from "./ChameleonLoaderStyle.js";
+import { ChameleonLoaderSpinnerStyle } from "./ChameleonLoaderSpinnerStyle.js";
+import { ChameleonLoaderEllipsisStyle } from "./ChameleonLoaderEllipsisStyle.js";
 
 export default class ChameleonLoader extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonLoaderStyle];
 
   @property({ type: String, reflect: true })
   loader = "spinner";
@@ -31,7 +31,7 @@ export default class ChameleonLoader extends LitElement {
   renderEllipsisLoader() {
     return html`
       <style>
-        ${ellipsisStyle}
+        ${ChameleonLoaderEllipsisStyle}
       </style>
 
       <div class="ellipsis">
@@ -46,7 +46,7 @@ export default class ChameleonLoader extends LitElement {
   renderSpinnerLoader() {
     return html`
       <style>
-        ${spinnerStyle}
+        ${ChameleonLoaderSpinnerStyle}
       </style>
 
       <svg
@@ -61,6 +61,3 @@ export default class ChameleonLoader extends LitElement {
     `;
   }
 }
-
-if (!window.customElements.get("chameleon-loader"))
-  window.customElements.define("chameleon-loader", ChameleonLoader);

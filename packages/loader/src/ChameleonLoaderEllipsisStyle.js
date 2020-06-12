@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonLoaderEllipsisStyle = css`
   .ellipsis {
     display: inline-block;
     position: relative;

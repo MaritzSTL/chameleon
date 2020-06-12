@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonLoaderStlye = css`
   :host {
     box-sizing: border-box;
     --loader-color: var(--color-primary, #2c6fb7);
