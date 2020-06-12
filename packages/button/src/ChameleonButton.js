@@ -1,7 +1,7 @@
 import { LitElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import style from "./chameleon-button-style.js";
+import { ChameleonButtonStyle } from "./chameleon-button-style.js";
 import "@chameleon-ds/loader";
 
 export default class ChameleonButton extends LitElement {
@@ -40,7 +40,7 @@ export default class ChameleonButton extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonButtonStyle];
 
   /**
    * Template
@@ -82,6 +82,3 @@ export default class ChameleonButton extends LitElement {
     return this.target === "_blank" ? `noopener noreferrer` : ``;
   }
 }
-
-if (!window.customElements.get("chameleon-button"))
-  window.customElements.define("chameleon-button", ChameleonButton);

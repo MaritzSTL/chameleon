@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonButtonStyle = css`
   :host {
     --button-border-color: var(--color-primary, #2c6fb7);
     --button-hover-color: var(--color-primary-dark, #004587);
