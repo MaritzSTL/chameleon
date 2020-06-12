@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonTimezoneStyle = css`
   :host([readonly]),
   :host([disabled]) {
     pointer-events: none;

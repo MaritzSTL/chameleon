@@ -2,7 +2,7 @@ import { LitElement, property, html, svg } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
-import style from "./chameleon-timezone-style.js";
+import { ChameleonTimezoneStyle } from "./chameleon-timezone-style.js";
 import "@chameleon-ds/select";
 import timezoneData from "../data/timezones.js";
 
@@ -25,7 +25,7 @@ export default class ChameleonTimezone extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonTimezoneStyle];
 
   /**
    * Template
@@ -175,6 +175,3 @@ export default class ChameleonTimezone extends LitElement {
   `;
   }
 }
-
-if (!window.customElements.get("chameleon-timezone"))
-  window.customElements.define("chameleon-timezone", ChameleonTimezone);
