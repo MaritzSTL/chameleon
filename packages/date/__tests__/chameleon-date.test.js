@@ -1,6 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "../src/chameleon-date";
+import "../chameleon-date.js";
 
 const fixture = html`<chameleon-date></chameleon-date>`;
 

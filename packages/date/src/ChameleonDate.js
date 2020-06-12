@@ -2,7 +2,7 @@ import { LitElement, property, html, svg } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import { classMap } from "lit-html/directives/class-map";
 import { nothing } from "lit-html/lib/part";
-import style from "./chameleon-date-style.js";
+import { ChameleonDateStyle } from "./ChameleonDateStyle.js";
 import "@chameleon-ds/input";
 import "@chameleon-ds/button";
 
@@ -109,7 +109,7 @@ export default class ChameleonDate extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonDateStyle];
 
   /**
    * Template
@@ -417,6 +417,3 @@ export default class ChameleonDate extends LitElement {
     }
   }
 }
-
-if (!window.customElements.get("chameleon-date"))
-  window.customElements.define("chameleon-date", ChameleonDate);

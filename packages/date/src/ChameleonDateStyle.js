@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonDateStyle = css`
   :host {
     display: block;
     max-width: 301px;
