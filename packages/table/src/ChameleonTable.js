@@ -1,7 +1,7 @@
 import { LitElement, property, html } from "lit-element";
 import { svg, nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import style from "./chameleon-table-style.js";
+import { ChameleonTableStyle } from "./ChameleonTableStyle.js";
 import "@chameleon-ds/input";
 import "@chameleon-ds/multiselect";
 import "@chameleon-ds/paginator";
@@ -43,7 +43,7 @@ export default class ChameleonTable extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonTableStyle];
 
   /**
    * Template
@@ -282,6 +282,3 @@ export default class ChameleonTable extends LitElement {
     `;
   }
 }
-
-if (!window.customElements.get("chameleon-table"))
-  window.customElements.define("chameleon-table", ChameleonTable);

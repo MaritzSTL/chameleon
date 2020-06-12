@@ -1,6 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "../src/chameleon-table";
+import "../chameleon-table.js";
 
 const columns = [
   {

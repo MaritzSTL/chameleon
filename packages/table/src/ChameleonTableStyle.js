@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonTableStyle = css`
   :host {
     --th-and-td-text-align: left;
 
