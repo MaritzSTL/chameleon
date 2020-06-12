@@ -8,18 +8,12 @@ export default class ChameleonAlert extends LitElement {
   static styles = [style];
 
   /**
-   * Properties
-   */
-  @property({ type: String })
-  message = "";
-
-  /**
    * Template
    */
   render() {
     return html`
       <span class="icon">${this.alertIcon}</span>
-      <span class="message">${this.message}</span>
+      <span class="message"><slot></slot></span>
       <span class="closebtn" @click="${this.handleClose}">
         ${this.closeIcon}
       </span>

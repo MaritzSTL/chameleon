@@ -42,7 +42,7 @@ export default class ChameleonCard extends LitElement {
       this.accentColor === "" &&
       this.accentColor !== undefined
     ) {
-      this.style.borderTop = `7px solid var(--color-primary)`;
+      this.style.borderTop = `7px solid var(--color-primary, #2c6fb7)`;
     }
   }
 }

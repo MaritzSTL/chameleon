@@ -2,7 +2,7 @@ import { addParameters, setCustomElements } from "@open-wc/demoing-storybook";
 
 addParameters({
   docs: {
-    iframeHeight: "200px",
+    iframeHeight: "300px",
   },
 });
 

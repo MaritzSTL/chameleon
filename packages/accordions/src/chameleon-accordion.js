@@ -1,5 +1,5 @@
 import { LitElement, property, svg, html } from "lit-element";
-import { classMap } from "lit-html/directives/class-map";
+import { classMap } from "lit-html/directives/class-map.js";
 import style from "./chameleon-accordion-style.js";
 
 export default class ChameleonAccordion extends LitElement {
@@ -59,7 +59,7 @@ export default class ChameleonAccordion extends LitElement {
     ) {
       this.shadowRoot.querySelector(
         ".header"
-      ).style.borderLeft = `7px solid var(--color-primary)`;
+      ).style.borderLeft = `7px solid var(--color-primary, #2c6fb7)`;
     }
   }
 

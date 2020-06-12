@@ -10,6 +10,7 @@ export default class ChameleonCheckbox extends LitElement {
   // The checkbox's label
   @property({ type: String })
   label = "";
+
   // The checkbox's form name
   @property({ type: String })
   name = "cha-checkbox";
@@ -26,11 +27,11 @@ export default class ChameleonCheckbox extends LitElement {
   @property({ type: Boolean, reflect: true })
   readonly = false;
 
-  //This checkbox's enabled/disabled status
+  // The checkbox's enabled/disabled status
   @property({ type: Boolean, reflect: true })
   disabled = false;
 
-  //Invalid boolean to allow validity access from higher level form errors
+  // Invalid boolean to allow validity access from higher level form errors
   @property({ type: Boolean, reflect: true })
   invalid = false;
 

@@ -95,7 +95,7 @@ export default css`
   }
 
   ::slotted([slot="icon"]) {
-    color: var(--color-secondary-dark);
+    color: var(--color-secondary-dark, #349889);
     height: 2.625em;
   }
 

@@ -35,14 +35,18 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
     "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/plugin-proposal-decorators": "^7.10.1",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.1",
     "@babel/plugin-proposal-optional-chaining": "^7.10.1",
+    "@babel/plugin-transform-react-jsx": "^7.10.1",
     "@open-wc/demoing-storybook": "^2.3.6",
     "@open-wc/karma-esm": "^2.13.21",
     "@open-wc/testing": "^2.5.8",
     "@open-wc/testing-karma": "^3.3.10",
+    "@storybook/theming": "^5.3.19",
     "codecov": "^3.6.5",
     "deepmerge": "^4.2.2",
     "del-cli": "^3.0.0",
@@ -52,6 +56,7 @@
     "lit-html": "^1.2.1",
     "prettier": "^2.0.2",
     "pretty-quick": "^2.0.1",
+    "rollup": "^1.20.0",
     "sinon": "^7.5.0",
     "web-component-analyzer": "^1.0.3"
   },

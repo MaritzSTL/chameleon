@@ -9,15 +9,15 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "src/src/chameleon-table.js",
-  "module": "src/src/chameleon-table.js",
+  "main": "dist/src/chameleon-table.js",
+  "module": "dist/src/chameleon-table.js",
   "files": [
-    "/src/",
+    "/dist/",
     "/types/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "tsc"
+    "build": "babel src --out-dir dist --config-file ../../babel.config.json"
   },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"

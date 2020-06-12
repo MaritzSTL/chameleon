@@ -1,3 +1,9 @@
+```js script
+export default {
+  title: "Sheet/Intro",
+};
+```
+
 # Chameleon Sheet
 
 ## Breaking Changes:
