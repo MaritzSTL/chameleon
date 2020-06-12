@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonHeroStyle = css`
   header {
     padding: 0 5em;
   }
