@@ -1,8 +1,14 @@
 import { OverlayMixin } from "@lion/overlays";
-import { LitElement, html } from "lit-element";
+import { LitElement, html, property } from "lit-element";
 
 export class ChameleonSheet extends OverlayMixin(LitElement) {
   __toggle;
+
+  @property({ type: Boolean }) trapsKeyboardFocus = true;
+  @property({ type: Boolean }) hasBackdrop = true;
+  @property({ type: Boolean }) hidesOnOutsideClick = true;
+  @property({ type: Boolean }) hidesOnEsc = true;
+  @property({ type: Boolean }) preventsScroll = true;
 
   // eslint-disable-next-line class-methods-use-this
   _defineOverlayConfig() {
@@ -11,12 +17,12 @@ export class ChameleonSheet extends OverlayMixin(LitElement) {
       viewportConfig: {
         placement: "right",
       },
-      hasBackdrop: true,
-      hidesOnEsc: true,
-      hidesOnOutsideClick: true,
-      preventsScroll: true,
       handleAccessibility: true,
-      trapsKeyboardFocus: true,
+      hasBackdrop: this.hasBackdrop,
+      hidesOnEsc: this.hidesOnEsc,
+      hidesOnOutsideClick: this.hidesOnOutsideClick,
+      preventsScroll: this.preventsScroll,
+      trapsKeyboardFocus: this.trapsKeyboardFocus,
     };
   }
 
