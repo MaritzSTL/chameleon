@@ -1,6 +1,6 @@
+import "../chameleon-textarea.js";
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "../src/chameleon-textarea";
 
 const fixture = html` <chameleon-textarea></chameleon-textarea> `;
 

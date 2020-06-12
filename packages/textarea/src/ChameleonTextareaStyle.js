@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonTextareaStyle = css`
   :host {
     display: inline-flex;
     flex-direction: column;
