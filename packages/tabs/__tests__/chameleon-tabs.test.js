@@ -1,9 +1,8 @@
+import { litFixture, html, expect } from "@open-wc/testing";
+import sinon from "sinon";
 import { ChameleonTabs } from "../index.js";
 import "../chameleon-tab.js";
 import "../chameleon-tabs.js";
-import { litFixture, html, expect } from "@open-wc/testing";
-import sinon from "sinon";
-import ChameleonTabs from "@chameleon-ds/tabs/src/chameleon-tabs";
 
 const fixture = html`
   <chameleon-tabs><chameleon-tab></chameleon-tab></chameleon-tabs>
