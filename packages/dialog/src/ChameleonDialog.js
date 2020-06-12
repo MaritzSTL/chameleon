@@ -1,7 +1,7 @@
 import { LitElement, html, property } from "lit-element";
 import { nothing, svg } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import style from "./chameleon-dialog-style.js";
+import { ChameleonDialogStyle } from "./ChameleonDialogStyle.js";
 import "@chameleon-ds/card";
 import "@chameleon-ds/button";
 
@@ -29,7 +29,7 @@ export default class ChameleonDialog extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonDialogStyle];
 
   /**
    * Template
@@ -122,6 +122,3 @@ export default class ChameleonDialog extends LitElement {
     else return html` <slot name="back-icon"></slot> `;
   }
 }
-
-if (!window.customElements.get("chameleon-dialog"))
-  window.customElements.define("chameleon-dialog", ChameleonDialog);
