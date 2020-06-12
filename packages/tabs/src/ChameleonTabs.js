@@ -1,5 +1,5 @@
 import { LitElement, property, html } from "lit-element";
-import ChameleonTabsStyle from "./ChameleonTabsStyle.js";
+import { ChameleonTabsStyle } from "./ChameleonTabsStyle.js";
 
 export default class ChameleonTabs extends LitElement {
   constructor() {
