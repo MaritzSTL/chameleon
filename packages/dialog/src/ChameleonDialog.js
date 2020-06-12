@@ -2,8 +2,8 @@ import { LitElement, html, property } from "lit-element";
 import { nothing, svg } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { ChameleonDialogStyle } from "./ChameleonDialogStyle.js";
-import "@chameleon-ds/card";
-import "@chameleon-ds/button";
+import "@chameleon-ds/card/chameleon-card";
+import "@chameleon-ds/button/chameleon-button";
 
 export default class ChameleonDialog extends LitElement {
   /**
