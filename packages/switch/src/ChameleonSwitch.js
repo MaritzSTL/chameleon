@@ -1,6 +1,6 @@
 import { LitElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
-import style from "./chameleon-switch-style.js";
+import ChameleonSwitchStyle from "./ChameleonSwitchStyle.js";
 
 export default class ChameleonSwitch extends LitElement {
   /**
@@ -46,6 +46,3 @@ export default class ChameleonSwitch extends LitElement {
     else return nothing;
   }
 }
-
-if (!window.customElements.get("chameleon-switch"))
-  window.customElements.define("chameleon-switch", ChameleonSwitch);

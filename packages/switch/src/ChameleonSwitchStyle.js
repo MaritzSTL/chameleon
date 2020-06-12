@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonSwitchStyle = css`
   :host {
     align-items: center;
     display: inline-flex;

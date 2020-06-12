@@ -1,5 +1,5 @@
 import { litFixture, html, expect } from "@open-wc/testing";
-import "../src/chameleon-switch";
+import "../chameleon-switch.js";
 
 const fixture = html` <chameleon-switch></chameleon-switch> `;
 
