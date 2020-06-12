@@ -1,5 +1,5 @@
 import { LitElement, html, property, svg } from "lit-element";
-import style from "./chameleon-skeleton-style.js";
+import { ChameleonSkeletonStyle } from "./ChameleonSkeletonStyle.js";
 
 export default class ChameleonSkeleton extends LitElement {
   /**
@@ -23,7 +23,7 @@ export default class ChameleonSkeleton extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonSkeletonStyle];
 
   /**
    * Template
@@ -62,6 +62,3 @@ export default class ChameleonSkeleton extends LitElement {
     return this.cHeight * 0.5;
   }
 }
-
-if (!window.customElements.get("chameleon-skeleton"))
-  window.customElements.define("chameleon-skeleton", ChameleonSkeleton);
