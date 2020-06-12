@@ -10,6 +10,7 @@
 ```js script
 export default {
   title: "Intro|Chameleon Web Components",
+  options: { selectedPanel: "storybookjs/docs/panel" },
 };
 ```
 

@@ -75,7 +75,7 @@ export default class ChameleonHero extends LitElement {
 
   get backgroundImageStyles() {
     switch (this.type) {
-      case "imageGradient":
+      case "image-gradient":
         return {
           backgroundImage: `linear-gradient(to right, ${this.gradientOverlay}), url(${this.imageUrl})`,
         };

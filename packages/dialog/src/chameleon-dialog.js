@@ -20,7 +20,6 @@ export default class ChameleonDialog extends LitElement {
   @property({ type: Boolean, reflect: true })
   dismissible = false;
 
-  // Card has a close icon
   @property({ type: Boolean, reflect: true })
   canGoBack = false;
 

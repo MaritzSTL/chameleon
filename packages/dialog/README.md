@@ -15,23 +15,13 @@ export default {
 
 ## Properties
 
-| Property Name       | Type(s) | Default Value | Description                                      |
-| ------------------- | ------- | ------------- | ------------------------------------------------ |
-| `name`              | String  | `"cha-date"`  | The date's form name                             |
-| `active`            | Boolean | `""`          | Whether or not the date picker drawer is open    |
-| `renderedDate`      | Object  | `""`          | The Date object of the rendered date             |
-| `placeholder`       | String  | `""`          | The date's placeholder text                      |
-| `label`             | String  | `""`          | The date's label text                            |
-| `readonly`          | Boolean | `""`          | Whether or not the date picker is readonly       |
-| `value`             | String  | `""`          | The date picker's text value (YYYY-MM-DD)        |
-| `min`               | String  | `""`          | The date picker's minimum value (YYYY-MM-DD)     |
-| `max`               | String  | `""`          | The date picker's maximum value (YYYY-MM-DD)     |
-| `required`          | Boolean | `""`          | Whether or not the date value is required        |
-| `canDelete`         | Boolean | `""`          | If the date is able to be deleted                |
-| `disabled`          | Boolean | `""`          | Whether or not the date picker is disabled       |
-| `validationMessage` | String  | `""`          | The date picker's validation message             |
-| `invalid`           | Boolean | `""`          | Whether or not the date picker is invalid        |
-| `overlayRenderMode` | String  | `""`          | The date picker's overlay mode ("year", "month") |
+| Property Name | Type(s) | Default Value | Description                              |
+| ------------- | ------- | ------------- | ---------------------------------------- |
+| `open`        | Boolean | `false`       | Whether or not the dialog is open        |
+| `icon`        | Boolean | `false`       | Whether or not the card has an icon      |
+| `dismissible` | Boolean | `false`       | Whether or not the card has a close icon |
+| `canGoBack`   | Boolean | `false`       | Whether or not the dialog can go back    |
+| `fullScreen`  | Boolean | `false`       | Display full screen                      |
 
 ## Examples
 
