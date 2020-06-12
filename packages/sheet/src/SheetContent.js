@@ -86,7 +86,3 @@ export class SheetContent extends LitElement {
     `;
   }
 }
-
-if (!window.customElements.get("sheet-content")) {
-  customElements.define("sheet-content", SheetContent);
-}

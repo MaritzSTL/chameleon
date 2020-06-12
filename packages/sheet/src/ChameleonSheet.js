@@ -55,7 +55,3 @@ export class ChameleonSheet extends OverlayMixin(LitElement) {
     `;
   }
 }
-
-if (!window.customElements.get("chameleon-sheet")) {
-  customElements.define("chameleon-sheet", ChameleonSheet);
-}

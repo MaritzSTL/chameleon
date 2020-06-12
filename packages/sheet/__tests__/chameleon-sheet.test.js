@@ -1,5 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
-import "../src/chameleon-sheet";
+import "../chameleon-sheet.js";
+import "../sheet-content.js";
 
 describe("chameleon-sheet", () => {
   let el;
