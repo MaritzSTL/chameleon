@@ -59,6 +59,3 @@ export default class ChameleonToast extends LitElement {
     );
   }
 }
-
-if (!window.customElements.get("chameleon-toast"))
-  window.customElements.define("chameleon-toast", ChameleonToast);
