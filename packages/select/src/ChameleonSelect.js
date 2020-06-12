@@ -2,7 +2,7 @@ import { LitElement, html, property, svg } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import { classMap } from "lit-html/directives/class-map";
 import { nothing } from "lit-html";
-import style from "./chameleon-select-style.js";
+import { ChameleonSelectStyle } from "./ChameleonSelectStyle.js";
 
 export default class ChameleonSelect extends LitElement {
   firstUpdated() {
@@ -16,7 +16,7 @@ export default class ChameleonSelect extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonSelectStyle];
 
   /**
    * Properties
@@ -380,6 +380,3 @@ export default class ChameleonSelect extends LitElement {
     }
   }
 }
-
-if (!window.customElements.get("chameleon-select"))
-  window.customElements.define("chameleon-select", ChameleonSelect);

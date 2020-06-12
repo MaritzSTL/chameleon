@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonSelectStyle = css`
   :host {
     font-family: var(--font-family, sans-serif);
     display: block;
