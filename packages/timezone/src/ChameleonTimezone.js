@@ -3,7 +3,7 @@ import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
 import { ChameleonTimezoneStyle } from "./ChameleonTimezoneStyle.js";
-import "@chameleon-ds/select";
+import "@chameleon-ds/select/chameleon-select";
 import timezoneData from "../data/timezones.js";
 
 export default class ChameleonTimezone extends LitElement {
