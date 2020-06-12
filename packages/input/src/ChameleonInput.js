@@ -3,7 +3,7 @@ import { nothing, svg } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { ChameleonInputStyle } from "./ChameleonInputStyle.js";
 
-export default class ChameleonInput extends LitElement {
+export class ChameleonInput extends LitElement {
   /**
    * Lifecycle Methods
    */

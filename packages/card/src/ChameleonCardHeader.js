@@ -2,7 +2,7 @@ import { LitElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { ChameleonCardHeaderStyle } from "./ChameleonCardHeaderStyle.js";
 
-export default class ChameleonCardHeader extends LitElement {
+export class ChameleonCardHeader extends LitElement {
   /**
    * Styles
    */

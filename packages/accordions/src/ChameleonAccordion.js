@@ -2,7 +2,7 @@ import { LitElement, property, svg, html } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 import { ChameleonAccordionStyle } from "./ChameleonAccordionStyle.js";
 
-export default class ChameleonAccordion extends LitElement {
+export class ChameleonAccordion extends LitElement {
   /**
    * Styles
    */

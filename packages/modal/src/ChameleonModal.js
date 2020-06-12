@@ -5,7 +5,7 @@ import { ChameleonModalStyle } from "./ChameleonModalStyle.js";
 import "@chameleon-ds/card/chameleon-card";
 import "@chameleon-ds/button/chameleon-button";
 
-export default class ChameleonModal extends LitElement {
+export class ChameleonModal extends LitElement {
   /**
    * Properties
    */

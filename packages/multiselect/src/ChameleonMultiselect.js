@@ -6,7 +6,7 @@ import { ChameleonMultiselectStyle } from "./ChameleonMultiselectStyle.js";
 import "@chameleon-ds/chip/chameleon-chip";
 import "@chameleon-ds/loader/chameleon-loader";
 
-export default class ChameleonMultiselect extends LitElement {
+export class ChameleonMultiselect extends LitElement {
   /**
    * Lifecycle Methods
    */

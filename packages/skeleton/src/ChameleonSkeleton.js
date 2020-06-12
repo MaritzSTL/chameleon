@@ -1,7 +1,7 @@
 import { LitElement, html, property, svg } from "lit-element";
 import { ChameleonSkeletonStyle } from "./ChameleonSkeletonStyle.js";
 
-export default class ChameleonSkeleton extends LitElement {
+export class ChameleonSkeleton extends LitElement {
   /**
    * Properties
    */

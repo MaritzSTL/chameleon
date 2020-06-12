@@ -3,7 +3,7 @@ import { ChameleonLoaderStyle } from "./ChameleonLoaderStyle.js";
 import { ChameleonLoaderSpinnerStyle } from "./ChameleonLoaderSpinnerStyle.js";
 import { ChameleonLoaderEllipsisStyle } from "./ChameleonLoaderEllipsisStyle.js";
 
-export default class ChameleonLoader extends LitElement {
+export class ChameleonLoader extends LitElement {
   /**
    * Styles
    */

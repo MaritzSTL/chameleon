@@ -2,7 +2,7 @@ import { LitElement, property, html, svg } from "lit-element";
 import { ChameleonPaginatorStyle } from "./ChameleonPaginatorStyle.js";
 import "@chameleon-ds/button/chameleon-button";
 
-export default class ChameleonPaginator extends LitElement {
+export class ChameleonPaginator extends LitElement {
   /**
    * Properties
    */

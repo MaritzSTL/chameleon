@@ -4,7 +4,7 @@ import { classMap } from "lit-html/directives/class-map";
 import { nothing } from "lit-html";
 import { ChameleonSelectStyle } from "./ChameleonSelectStyle.js";
 
-export default class ChameleonSelect extends LitElement {
+export class ChameleonSelect extends LitElement {
   firstUpdated() {
     document.addEventListener("click", this.closeOptionsList.bind(this));
   }

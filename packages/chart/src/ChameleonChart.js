@@ -2,7 +2,7 @@ import { LitElement, property, html, svg } from "lit-element";
 import { ChameleonChartStyle } from "./ChameleonChartStyle.js";
 import { nothing } from "lit-html";
 
-export default class ChameleonChart extends LitElement {
+export class ChameleonChart extends LitElement {
   /**
    * Properties
    */

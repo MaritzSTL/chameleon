@@ -2,7 +2,7 @@ import { LitElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { ChameleonCheckboxStyle } from "./ChameleonCheckboxStyle.js";
 
-export default class ChameleonCheckbox extends LitElement {
+export class ChameleonCheckbox extends LitElement {
   /**
    * Properties
    */

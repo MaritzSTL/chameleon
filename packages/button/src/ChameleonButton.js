@@ -1,10 +1,10 @@
 import { LitElement, html, property } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import { ChameleonButtonStyle } from "./chameleon-button-style.js";
+import { ChameleonButtonStyle } from "./ChameleonButtonStyle.js";
 import "@chameleon-ds/loader/chameleon-loader.js";
 
-export default class ChameleonButton extends LitElement {
+export class ChameleonButton extends LitElement {
   /**
    * Properties
    */

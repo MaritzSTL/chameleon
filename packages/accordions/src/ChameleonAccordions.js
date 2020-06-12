@@ -1,7 +1,7 @@
 import { LitElement, property, html } from "lit-element";
 import { ChameleonAccordionsStyle } from "./ChameleonAccordionsStyle.js";
 
-export default class ChameleonAccordions extends LitElement {
+export class ChameleonAccordions extends LitElement {
   constructor() {
     super();
     this.addEventListener(

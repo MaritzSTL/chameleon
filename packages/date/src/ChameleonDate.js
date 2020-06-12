@@ -6,7 +6,7 @@ import { ChameleonDateStyle } from "./ChameleonDateStyle.js";
 import "@chameleon-ds/input/chameleon-input";
 import "@chameleon-ds/button/chameleon-button";
 
-export default class ChameleonDate extends LitElement {
+export class ChameleonDate extends LitElement {
   /**
    * Lifecycle Methods
    */

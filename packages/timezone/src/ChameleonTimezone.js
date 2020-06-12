@@ -6,7 +6,7 @@ import { ChameleonTimezoneStyle } from "./ChameleonTimezoneStyle.js";
 import "@chameleon-ds/select/chameleon-select";
 import timezoneData from "../data/timezones.js";
 
-export default class ChameleonTimezone extends LitElement {
+export class ChameleonTimezone extends LitElement {
   /**
    * Properties
    */

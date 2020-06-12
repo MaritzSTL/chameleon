@@ -1,7 +1,7 @@
 import { LitElement, html, svg } from "lit-element";
 import { ChameleonAlertStyle } from "./ChameleonAlertStyle";
 
-export default class ChameleonAlert extends LitElement {
+export class ChameleonAlert extends LitElement {
   /**
    * Styles
    */

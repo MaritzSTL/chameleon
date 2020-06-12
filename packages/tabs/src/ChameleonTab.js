@@ -1,6 +1,6 @@
 import { LitElement, html } from "lit-element";
 
-export default class ChameleonTab extends LitElement {
+export class ChameleonTab extends LitElement {
   constructor() {
     super();
 

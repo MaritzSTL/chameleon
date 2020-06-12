@@ -5,7 +5,7 @@ import { ChameleonDialogStyle } from "./ChameleonDialogStyle.js";
 import "@chameleon-ds/card/chameleon-card";
 import "@chameleon-ds/button/chameleon-button";
 
-export default class ChameleonDialog extends LitElement {
+export class ChameleonDialog extends LitElement {
   /**
    * Properties
    */

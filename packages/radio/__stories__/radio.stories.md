@@ -2,7 +2,7 @@
 import { html } from "@open-wc/demoing-storybook";
 import "../src/chameleon-radio.js";
 
-export default {
+export {
   title: "Radio",
   component: "chameleon-radio",
   options: { selectedPanel: "storybookjs/knobs/panel" },

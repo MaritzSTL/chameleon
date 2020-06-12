@@ -6,7 +6,7 @@ import "@chameleon-ds/input/chameleon-input";
 import "@chameleon-ds/multiselect/chameleon-multiselect";
 import "@chameleon-ds/paginator/chameleon-paginator";
 
-export default class ChameleonTable extends LitElement {
+export class ChameleonTable extends LitElement {
   /**
    * Properties
    */

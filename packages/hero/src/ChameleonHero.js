@@ -4,7 +4,7 @@ import { nothing } from "lit-html";
 import { ChameleonHeroStyle } from "./ChameleonHeroStyle.js";
 import "@chameleon-ds/skeleton/chameleon-skeleton";
 
-export default class ChameleonHero extends LitElement {
+export class ChameleonHero extends LitElement {
   /**
    * Properties
    */
