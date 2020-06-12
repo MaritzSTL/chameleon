@@ -3,8 +3,8 @@ import { nothing, svg } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
 import { ChameleonMultiselectStyle } from "./ChameleonMultiselectStyle.js";
-import "@chameleon-ds/chip";
-import "@chameleon-ds/loader";
+import "@chameleon-ds/chip/chameleon-chip";
+import "@chameleon-ds/loader/chameleon-loader";
 
 export default class ChameleonMultiselect extends LitElement {
   /**
