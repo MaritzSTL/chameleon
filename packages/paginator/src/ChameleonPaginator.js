@@ -1,5 +1,5 @@
 import { LitElement, property, html, svg } from "lit-element";
-import style from "./chameleon-paginator-style.js";
+import { ChameleonPaginatorStyle } from "./ChameleonPaginatorStyle.js";
 import "@chameleon-ds/button";
 
 export default class ChameleonPaginator extends LitElement {
@@ -24,7 +24,7 @@ export default class ChameleonPaginator extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonPaginatorStyle];
 
   /**
    * Template
@@ -189,6 +189,3 @@ export default class ChameleonPaginator extends LitElement {
     );
   }
 }
-
-if (!window.customElements.get("chameleon-paginator"))
-  window.customElements.define("chameleon-paginator", ChameleonPaginator);
