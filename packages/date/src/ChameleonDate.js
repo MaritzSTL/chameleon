@@ -3,8 +3,8 @@ import { repeat } from "lit-html/directives/repeat";
 import { classMap } from "lit-html/directives/class-map";
 import { nothing } from "lit-html/lib/part";
 import { ChameleonDateStyle } from "./ChameleonDateStyle.js";
-import "@chameleon-ds/input";
-import "@chameleon-ds/button";
+import "@chameleon-ds/input/chameleon-input";
+import "@chameleon-ds/button/chameleon-button";
 
 export default class ChameleonDate extends LitElement {
   /**
