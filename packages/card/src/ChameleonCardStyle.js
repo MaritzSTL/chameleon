@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonCardStyle = css`
   :host {
     background-color: var(--color-surface, #ffffff);
     display: flex;

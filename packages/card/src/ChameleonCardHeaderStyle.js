@@ -1,6 +1,5 @@
 import { css } from "lit-element";
-
-export default css`
+export const ChameleonCardHeaderStyle = css`
   :host {
     display: block;
     margin-bottom: 11px;

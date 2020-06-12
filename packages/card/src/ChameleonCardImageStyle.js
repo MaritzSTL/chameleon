@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonCardImageStyle = css`
   :host {
     display: inline-block;
   }
