@@ -1,5 +1,5 @@
 import { LitElement, property, html } from "lit-element";
-import { ChameleonAccordionsStyles } from "./ChameleonAccordionsStyle.js";
+import { ChameleonAccordionsStyle } from "./ChameleonAccordionsStyle.js";
 
 export default class ChameleonAccordions extends LitElement {
   constructor() {
