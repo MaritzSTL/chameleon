@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonCheckboxStyle = css`
   :host([readonly]),
   :host([disabled]) {
     pointer-events: none;
