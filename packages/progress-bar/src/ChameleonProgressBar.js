@@ -1,5 +1,5 @@
 import { LitElement, html, property } from "lit-element";
-import style from "./chameleon-progress-bar-style.js";
+import { ChameleonProgressBarStyle } from "./ChameleonProgressBarStyle.js";
 
 export default class ChameleonProgressBar extends LitElement {
   /**
@@ -20,7 +20,7 @@ export default class ChameleonProgressBar extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonProgressBarStyle];
 
   /**
    * Template
@@ -50,6 +50,3 @@ export default class ChameleonProgressBar extends LitElement {
     `;
   }
 }
-
-if (!window.customElements.get("chameleon-progress-bar"))
-  window.customElements.define("chameleon-progress-bar", ChameleonProgressBar);

@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonProgressBarStyle = css`
   :host {
     display: inline-flex;
   }
