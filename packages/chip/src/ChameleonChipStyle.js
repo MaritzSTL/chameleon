@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonChipStyle = css`
   :host {
     align-items: center;
     background-color: var(--color-primary, #2c6fb7);

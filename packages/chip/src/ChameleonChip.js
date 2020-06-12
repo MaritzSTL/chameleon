@@ -1,6 +1,6 @@
 import { LitElement, property, html, svg } from "lit-element";
 import { nothing } from "lit-html";
-import style from "./chameleon-chip-style.js";
+import { ChameleonChipStyle } from "./ChameleonChipStyle.js";
 
 export default class ChameleonChip extends LitElement {
   /**
@@ -15,7 +15,7 @@ export default class ChameleonChip extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonChipStyle];
 
   /**
    * Template
@@ -55,6 +55,3 @@ export default class ChameleonChip extends LitElement {
     this._value = value;
   }
 }
-
-if (!window.customElements.get("chameleon-chip"))
-  window.customElements.define("chameleon-chip", ChameleonChip);
