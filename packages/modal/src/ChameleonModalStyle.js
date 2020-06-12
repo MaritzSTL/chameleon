@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonModalStyle = css`
   .open {
     display: flex;
   }
