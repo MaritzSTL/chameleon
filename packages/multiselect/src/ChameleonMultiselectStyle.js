@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonMultiselectStyle = css`
   :host {
     font-family: var(--font-family, Arial);
   }

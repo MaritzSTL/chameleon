@@ -1,6 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "../src/chameleon-multiselect";
+import "../chameleon-multiselect.js";
 
 const fixture = html` <chameleon-multiselect></chameleon-multiselect> `;
 
