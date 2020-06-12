@@ -26,6 +26,3 @@ export default class ChameleonTab extends LitElement {
     );
   }
 }
-
-if (!window.customElements.get("chameleon-tab"))
-  window.customElements.define("chameleon-tab", ChameleonTab);

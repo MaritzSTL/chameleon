@@ -1,5 +1,5 @@
 import { LitElement, property, html } from "lit-element";
-import style from "./chameleon-tabs-style.js";
+import ChameleonTabsStyle from "./ChameleonTabsStyle.js";
 
 export default class ChameleonTabs extends LitElement {
   constructor() {
@@ -60,7 +60,7 @@ export default class ChameleonTabs extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonTabsStyle];
 
   /**
    * Template
@@ -80,6 +80,3 @@ export default class ChameleonTabs extends LitElement {
     if (this.urlRewrite) params.set(`tabs_${this.id}`, String(this.selected));
   }
 }
-
-if (!window.customElements.get("chameleon-tabs"))
-  window.customElements.define("chameleon-tabs", ChameleonTabs);
