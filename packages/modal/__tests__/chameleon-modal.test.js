@@ -1,6 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "../src/chameleon-modal";
+import "../chameleon-modal.js";
 
 const fixture = html`<chameleon-modal></chameleon-modal>`;
 

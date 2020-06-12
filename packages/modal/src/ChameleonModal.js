@@ -1,7 +1,7 @@
 import { LitElement, html, property } from "lit-element";
 import { nothing, svg } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import style from "./chameleon-modal-style.js";
+import { ChameleonModalStyle } from "./ChameleonModalStyle.js";
 import "@chameleon-ds/card";
 import "@chameleon-ds/button";
 
@@ -22,7 +22,7 @@ export default class ChameleonModal extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonModalStyle];
 
   /**
    * Template
@@ -82,6 +82,3 @@ export default class ChameleonModal extends LitElement {
     else return html` <slot name="close-icon"></slot> `;
   }
 }
-
-if (!window.customElements.get("chameleon-modal"))
-  window.customElements.define("chameleon-modal", ChameleonModal);
