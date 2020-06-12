@@ -26,7 +26,7 @@ export default class ChameleonSwitch extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonSwitchStyle];
 
   /**
    * Template
