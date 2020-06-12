@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonTabsStyle = css`
   :host {
     box-shadow: inset 0 -1px 0 0 rgba(26, 57, 96, 0.1);
     display: flex;
