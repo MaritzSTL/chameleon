@@ -2,7 +2,7 @@ import { LitElement, property, html, svg } from "lit-element";
 import { nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { repeat } from "lit-html/directives/repeat";
-import { ChameleonTimezoneStyle } from "./chameleon-timezone-style.js";
+import { ChameleonTimezoneStyle } from "./ChameleonTimezoneStyle.js";
 import "@chameleon-ds/select";
 import timezoneData from "../data/timezones.js";
 
