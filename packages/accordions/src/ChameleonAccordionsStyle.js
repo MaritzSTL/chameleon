@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonAccordionsStyle = css`
   :host {
     display: block;
     width: var(--accordion-width, 100%);

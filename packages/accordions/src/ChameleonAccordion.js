@@ -1,12 +1,12 @@
 import { LitElement, property, svg, html } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
-import style from "./chameleon-accordion-style.js";
+import { ChameleonAccordionStyle } from "./ChameleonAccordionStyle.js";
 
 export default class ChameleonAccordion extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonAccordionStyle];
 
   /**
    * Properties
@@ -99,6 +99,3 @@ export default class ChameleonAccordion extends LitElement {
     else return html`<slot name="toggle-icon"></slot>`;
   }
 }
-
-if (!window.customElements.get("chameleon-accordion"))
-  window.customElements.define("chameleon-accordion", ChameleonAccordion);
