@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonRadioStyle = css`
   :host {
     align-items: center;
     cursor: pointer;
