@@ -1,5 +1,5 @@
 import { LitElement, property, html, svg } from "lit-element";
-import style from "./chameleon-chart-style.js";
+import { ChameleonChartStyle } from "./ChameleonChartStyle.js";
 import { nothing } from "lit-html";
 
 export default class ChameleonChart extends LitElement {
@@ -29,7 +29,7 @@ export default class ChameleonChart extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonChartStyle];
 
   /**
    * Template
@@ -114,6 +114,3 @@ export default class ChameleonChart extends LitElement {
     return d;
   }
 }
-
-if (!window.customElements.get("chameleon-chart"))
-  window.customElements.define("chameleon-chart", ChameleonChart);

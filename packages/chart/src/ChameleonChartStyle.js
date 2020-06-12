@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonChartStyle = css`
   :host {
     display: inline-block;
     max-width: 130px;
