@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonAlertStyle = css`
   :host {
     align-items: center;
     background-color: var(--color-error-lightest, #f1d1d0);

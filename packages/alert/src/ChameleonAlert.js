@@ -1,11 +1,11 @@
-import { LitElement, html, property, svg } from "lit-element";
-import style from "./chameleon-alert-style.js";
+import { LitElement, html, svg } from "lit-element";
+import { ChameleonAlertStyle } from "./ChameleonAlertStyle";
 
 export default class ChameleonAlert extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonAlertStyle];
 
   /**
    * Template
@@ -63,6 +63,3 @@ export default class ChameleonAlert extends LitElement {
     `;
   }
 }
-
-if (!window.customElements.get("chameleon-alert"))
-  window.customElements.define("chameleon-alert", ChameleonAlert);
