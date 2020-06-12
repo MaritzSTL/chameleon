@@ -1,7 +1,7 @@
-import { LitElement, TemplateResult, html, property } from "lit-element";
-import { nothing, svg, SVGTemplateResult } from "lit-html";
+import { LitElement, html, property } from "lit-element";
+import { nothing, svg } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
-import style from "./chameleon-input-style.js";
+import { ChameleonInputStyle } from "./ChameleonInputStyle.js";
 
 export default class ChameleonInput extends LitElement {
   /**
@@ -102,7 +102,7 @@ export default class ChameleonInput extends LitElement {
   /**
    * Styles
    */
-  static styles = [style];
+  static styles = [ChameleonInputStyle];
 
   /**
    * Template
@@ -370,6 +370,3 @@ export default class ChameleonInput extends LitElement {
     `;
   }
 }
-
-if (!window.customElements.get("chameleon-input"))
-  window.customElements.define("chameleon-input", ChameleonInput);

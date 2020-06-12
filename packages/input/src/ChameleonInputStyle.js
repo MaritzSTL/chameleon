@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonInputStyle = css`
   :host {
     display: inline-block;
     font-family: var(--font-family, sans-serif);
