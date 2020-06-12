@@ -2,9 +2,9 @@ import { LitElement, property, html } from "lit-element";
 import { svg, nothing } from "lit-html";
 import { classMap } from "lit-html/directives/class-map";
 import { ChameleonTableStyle } from "./ChameleonTableStyle.js";
-import "@chameleon-ds/input";
-import "@chameleon-ds/multiselect";
-import "@chameleon-ds/paginator";
+import "@chameleon-ds/input/chameleon-input";
+import "@chameleon-ds/multiselect/chameleon-multiselect";
+import "@chameleon-ds/paginator/chameleon-paginator";
 
 export default class ChameleonTable extends LitElement {
   /**
