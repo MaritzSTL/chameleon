@@ -1,6 +1,6 @@
 import { css } from "lit-element";
 
-export default css`
+export const ChameleonToastStyle = css`
   :host {
     align-items: center;
     animation: fadeout 0.5s forwards;
