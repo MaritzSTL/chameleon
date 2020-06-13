@@ -9,8 +9,8 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-textarea.js",
-  "module": "dist/chameleon-textarea.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [
     "/dist/"
   ],

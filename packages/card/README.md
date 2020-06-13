@@ -3,7 +3,10 @@
 ```js script
 import { html } from "@open-wc/demoing-storybook";
 import { withKnobs, text, boolean } from "@open-wc/demoing-storybook";
-import "./src/index.js";
+import "./chameleon-card.js";
+import "./chameleon-card-footer.js";
+import "./chameleon-card-header.js";
+import "./chameleon-card-image.js";
 
 export default {
   title: "Components|Card",

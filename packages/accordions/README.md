@@ -2,7 +2,8 @@
 
 ```js script
 import { html, svg } from "lit-html";
-import "./src/index.js";
+import "./chameleon-accordion.js";
+import "./chameleon-accordions.js";
 
 export default {
   title: "Components|Accordions",

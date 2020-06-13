@@ -1,7 +1,7 @@
 # Typography
 
 ```js script
-export {
+export default {
   title: "Intro|Typography"
 };
 ```

@@ -9,8 +9,8 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-toast.js",
-  "module": "dist/chameleon-toast.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [
     "/dist/"
   ],

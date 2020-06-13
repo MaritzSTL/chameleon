@@ -3,7 +3,7 @@
 ```js script
 import { html, svg } from "lit-html";
 import { withKnobs, text, boolean } from "@open-wc/demoing-storybook";
-import "./src/chameleon-multiselect.js";
+import "./chameleon-multiselect.js";
 
 const options = [
   {

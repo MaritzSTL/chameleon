@@ -9,7 +9,7 @@ import {
   boolean,
   radios,
 } from "@open-wc/demoing-storybook";
-import "./src/chameleon-input.js";
+import "./chameleon-input.js";
 
 const searchIcon = (slot) => svg`
   <svg

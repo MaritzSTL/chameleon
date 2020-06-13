@@ -3,7 +3,7 @@
 ```js script
 import { html } from "@open-wc/demoing-storybook";
 import { withKnobs, text } from "@open-wc/demoing-storybook";
-import "./src/chameleon-loader.js";
+import "./chameleon-loader.js";
 
 export default {
   title: "Components|Loader",

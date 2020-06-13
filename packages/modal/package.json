@@ -9,8 +9,8 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-modal.js",
-  "module": "dist/chameleon-modal.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [
     "/dist/"
   ],

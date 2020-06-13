@@ -3,7 +3,7 @@
 ```js script
 import { html } from "@open-wc/demoing-storybook";
 import { withKnobs, number, text } from "@open-wc/demoing-storybook";
-import "./src/chameleon-progress-bar.js";
+import "./chameleon-progress-bar.js";
 
 export default {
   title: "Components|Progress Bar",

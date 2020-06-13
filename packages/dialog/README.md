@@ -3,7 +3,7 @@
 ```js script
 import { html, svg } from "lit-html";
 import { withKnobs, text, boolean } from "@open-wc/demoing-storybook";
-import "./src/chameleon-dialog.js";
+import "./chameleon-dialog.js";
 
 export default {
   title: "Components|Dialog",

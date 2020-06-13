@@ -2,7 +2,7 @@
 
 ```js script
 import { html } from "@open-wc/demoing-storybook";
-import "./src/chameleon-modal.js";
+import "./chameleon-modal.js";
 
 export default {
   title: "Components|Modal",

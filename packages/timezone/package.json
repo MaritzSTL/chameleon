@@ -9,8 +9,8 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/src/chameleon-timezone.js",
-  "module": "dist/src/chameleon-timezone.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [
     "/dist/",
     "/data/"

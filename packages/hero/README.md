@@ -3,7 +3,7 @@
 ```js script
 import { html } from "@open-wc/demoing-storybook";
 import { withKnobs, text, number } from "@open-wc/demoing-storybook";
-import "./src/chameleon-hero.js";
+import "./chameleon-hero.js";
 
 export default {
   title: "Components|Hero",

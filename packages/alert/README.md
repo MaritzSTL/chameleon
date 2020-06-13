@@ -2,7 +2,7 @@
 
 ```js script
 import { html } from "@open-wc/demoing-storybook";
-import "./src/chameleon-alert.js";
+import "./chameleon-alert.js";
 
 export default {
   title: "Components|Alert",

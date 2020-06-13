@@ -2,7 +2,7 @@
 
 ```js script
 import { html, svg } from "lit-html";
-import "./src/chameleon-button.js";
+import "./chameleon-button.js";
 
 export default {
   title: "Components|Button",

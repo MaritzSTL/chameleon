@@ -2,7 +2,7 @@
 
 ```js script
 import { html } from "@open-wc/demoing-storybook";
-import "./src/chameleon-chip.js";
+import "./chameleon-chip.js";
 
 export default {
   title: "Components|Chip",

@@ -3,7 +3,7 @@
 ```js script
 import { html } from "@open-wc/demoing-storybook";
 import { withKnobs, text, boolean } from "@open-wc/demoing-storybook";
-import "./src/chameleon-checkbox.js";
+import "./chameleon-checkbox.js";
 
 export default {
   title: "Components|Checkbox",

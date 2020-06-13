@@ -3,7 +3,7 @@
 ```js script
 import { html } from "@open-wc/demoing-storybook";
 import { withKnobs, text, boolean } from "@open-wc/demoing-storybook";
-import "./src/chameleon-date.js";
+import "./chameleon-date.js";
 
 export default {
   title: "Components|Date",
