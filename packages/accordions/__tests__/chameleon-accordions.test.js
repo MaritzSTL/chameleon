@@ -1,7 +1,8 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import ChameleonAccordions from "../src/chameleon-accordions";
-import "../src";
+import { ChameleonAccordions } from "../index.js";
+import "../chameleon-accordion.js";
+import "../chameleon-accordions.js";
 
 const fixture = html`
   <chameleon-accordions>

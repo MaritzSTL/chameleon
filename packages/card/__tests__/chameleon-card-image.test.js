@@ -1,5 +1,5 @@
+import "../chameleon-card-image.js";
 import { fixture, html, expect } from "@open-wc/testing";
-import "../src/chameleon-card-image";
 
 describe("chameleon-card-image", () => {
   it("renders", async () => {

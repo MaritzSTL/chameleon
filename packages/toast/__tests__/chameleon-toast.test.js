@@ -1,6 +1,7 @@
+import { ChameleonToast, ChameleonToastStyle } from "../index.js";
+import "../chameleon-toast.js";
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "../src/chameleon-toast";
 
 const fixture = html` <chameleon-toast></chameleon-toast> `;
 

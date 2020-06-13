@@ -1,6 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-import "../src/chameleon-chip";
+import "../chameleon-chip.js";
 
 const fixture = html` <chameleon-chip>chameleon</chameleon-chip> `;
 

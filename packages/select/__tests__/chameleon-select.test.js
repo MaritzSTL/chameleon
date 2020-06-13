@@ -1,7 +1,6 @@
 import { litFixture, html, expect } from "@open-wc/testing";
 import sinon from "sinon";
-
-import "../src/chameleon-select";
+import "../chameleon-select.js";
 
 const fixture = html` <chameleon-select></chameleon-select> `;
 

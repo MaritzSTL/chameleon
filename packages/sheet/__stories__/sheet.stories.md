@@ -2,7 +2,7 @@
 import { html } from "@open-wc/demoing-storybook";
 import "../src/chameleon-sheet.js";
 
-export default {
+export {
   title: "Sheet",
   component: "chameleon-sheet",
   options: { selectedPanel: "storybookjs/knobs/panel" },

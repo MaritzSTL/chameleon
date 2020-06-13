@@ -1,5 +1,5 @@
 import { fixture, html, expect } from "@open-wc/testing";
-import "../src/chameleon-progress-bar";
+import "../chameleon-progress-bar.js";
 
 describe("chameleon-progress-bar", () => {
   it("renders", async () => {

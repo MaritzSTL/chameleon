@@ -1,9 +1,11 @@
+import { ChameleonTimezone, ChameleonTimezoneStyle } from "../index.js";
+import "../chameleon-timezone.js";
+
 /**
  * TODO(ryuhhnn): 4/3/2020 - Commented these all out because it's causing a test
  * failure and don't have time to look into it right now
  */
 // import { html, fixture, expect } from "@open-wc/testing";
-// import "../src/chameleon-timezone";
 
 // describe("chameleon-timezone", () => {
 //   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
