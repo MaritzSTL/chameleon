@@ -33,22 +33,16 @@ export default {
 ```js preview-story
 export const Default = () => {
   const label = text("Label", "");
-  const name = text("Name", "input-form-name");
   const checked = boolean("Checked", true);
   const disabled = boolean("Disabled", false);
-  const readonly = boolean("Read Only", false);
-  const required = boolean("Required", false);
   const invalid = boolean("Invalid", false);
 
   return html`
     <chameleon-checkbox
       label="${label}"
-      name="${name}"
       ?checked="${checked}"
       ?disabled="${disabled}"
-      ?readonly="${readonly}"
       ?invalid="${invalid}"
-      ?required="${required}"
     ></chameleon-checkbox>
   `;
 };

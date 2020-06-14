@@ -30,7 +30,7 @@ export class ChameleonRadio extends LitElement {
   @property({ type: Boolean, reflect: true })
   readonly = false;
 
-  //Invalid boolean to allow validity access from higher level form errors
+  // Invalid boolean to allow validity access from higher level form errors
   @property({ type: Boolean, reflect: true })
   invalid = false;
 

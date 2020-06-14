@@ -5,9 +5,6 @@ export class ChameleonSkeleton extends LitElement {
   /**
    * Properties
    */
-  @property({ type: Boolean, reflect: true })
-  disabled = false;
-
   @property({ type: String, reflect: true })
   theme = "primary";
 
@@ -58,6 +55,7 @@ export class ChameleonSkeleton extends LitElement {
       </svg>
     `;
   }
+
   get circleRadius() {
     return this.cHeight * 0.5;
   }
