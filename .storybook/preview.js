@@ -7,11 +7,11 @@ addParameters({
 });
 
 async function run() {
-  const customElements = await (
-    await fetch(new URL("../custom-elements.json", import.meta.url))
-  ).json();
+  // const customElements = await (
+  //   await fetch(new URL("../custom-elements.json", import.meta.url))
+  // ).json();
 
-  setCustomElements(customElements);
+  setCustomElements({});
 }
 
 run();

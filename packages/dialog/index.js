@@ -1,2 +1,2 @@
-export { ChameleonDialog } from "./src/ChameleonDialog.js";
-export { ChameleonDialogStyle } from "./src/ChameleonDialogStyle.js";
+export { ChameleonDialog } from "./lib/ChameleonDialog.js";
+export { ChameleonDialogStyle } from "./lib/ChameleonDialogStyle.js";

@@ -13,7 +13,9 @@ describe("chameleon-card", () => {
       html` <chameleon-card accentColor></chameleon-card> `
     );
 
-    expect(element.style.borderTop).to.equal("7px solid var(--color-primary)");
+    expect(element.style.borderTop).to.equal(
+      "7px solid var(--color-primary, #2c6fb7)"
+    );
   });
 
   it("should set accentColor", async () => {

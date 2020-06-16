@@ -1,3 +1,3 @@
-import { ChameleonHero } from "./src/ChameleonHero.js";
+import { ChameleonHero } from "./lib/ChameleonHero.js";
 
 customElements.define("chameleon-hero", ChameleonHero);

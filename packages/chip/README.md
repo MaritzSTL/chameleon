@@ -5,7 +5,7 @@ import { html } from "@open-wc/demoing-storybook";
 import "./chameleon-chip.js";
 
 export default {
-  title: "Components|Chip",
+  title: "Components|Data and Visualizations/Chip",
   component: "chameleon-chip",
   options: { selectedPanel: "storybookjs/docs/panel" },
 };

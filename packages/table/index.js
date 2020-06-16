@@ -1,2 +1,2 @@
-export { ChameleonTable } from "./src/ChameleonTable.js";
-export { ChameleonTableStyle } from "./src/ChameleonTableStyle.js";
+export { ChameleonTable } from "./lib/ChameleonTable.js";
+export { ChameleonTableStyle } from "./lib/ChameleonTableStyle.js";

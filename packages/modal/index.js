@@ -1,2 +1,2 @@
-export { ChameleonModal } from "./src/ChameleonModal.js";
-export { ChameleonModalStyle } from "./src/ChameleonModalStyle.js";
+export { ChameleonModal } from "./lib/ChameleonModal.js";
+export { ChameleonModalStyle } from "./lib/ChameleonModalStyle.js";

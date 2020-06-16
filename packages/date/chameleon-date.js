@@ -1,3 +1,3 @@
-import { ChameleonDate } from "./src/ChameleonDate.js";
+import { ChameleonDate } from "./lib/ChameleonDate.js";
 
 customElements.define("chameleon-date", ChameleonDate);

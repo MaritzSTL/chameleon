@@ -6,7 +6,7 @@ import { withKnobs, text, boolean } from "@open-wc/demoing-storybook";
 import "./chameleon-checkbox.js";
 
 export default {
-  title: "Components|Checkbox",
+  title: "Components|Form Elements/Checkbox",
   component: "chameleon-checkbox",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },

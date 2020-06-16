@@ -1,3 +1,3 @@
-import { SheetContent } from "./src/SheetContent.js";
+import { SheetContent } from "./lib/SheetContent.js";
 
 customElements.define("sheet-content", SheetContent);

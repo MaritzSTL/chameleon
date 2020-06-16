@@ -1,2 +1,2 @@
-export { ChameleonTimezone } from "./src/ChameleonTimezone.js";
-export { ChameleonTimezoneStyle } from "./src/ChameleonTimezoneStyle.js";
+export { ChameleonTimezone } from "./lib/ChameleonTimezone.js";
+export { ChameleonTimezoneStyle } from "./lib/ChameleonTimezoneStyle.js";

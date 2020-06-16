@@ -1,3 +1,3 @@
-import { ChameleonCardHeader } from "./src/ChameleonCardHeader.js";
+import { ChameleonCardHeader } from "./lib/ChameleonCardHeader.js";
 
 customElements.define("chameleon-card-header", ChameleonCardHeader);

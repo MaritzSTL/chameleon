@@ -1,2 +1,2 @@
-export { ChameleonTextarea } from "./src/ChameleonTextarea.js";
-export { ChameleonTextareaStyle } from "./src/ChameleonTextareaStyle.js";
+export { ChameleonTextarea } from "./lib/ChameleonTextarea.js";
+export { ChameleonTextareaStyle } from "./lib/ChameleonTextareaStyle.js";

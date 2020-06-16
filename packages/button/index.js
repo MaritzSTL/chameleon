@@ -1,2 +1,2 @@
-export { ChameleonButton } from "./src/ChameleonButton.js";
-export { ChameleonButtonStyle } from "./src/ChameleonButtonStyle.js";
+export { ChameleonButton } from "./lib/ChameleonButton.js";
+export { ChameleonButtonStyle } from "./lib/ChameleonButtonStyle.js";

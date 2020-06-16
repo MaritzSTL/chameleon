@@ -5,7 +5,7 @@ import { html } from "@open-wc/demoing-storybook";
 import "./chameleon-alert.js";
 
 export default {
-  title: "Components|Alert",
+  title: "Components|Feedback/Alert",
   component: "chameleon-alert",
   options: { selectedPanel: "storybookjs/docs/panel" },
 };

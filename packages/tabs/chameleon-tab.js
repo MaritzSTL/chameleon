@@ -1,3 +1,3 @@
-import { ChameleonTab } from "./src/ChameleonTab.js";
+import { ChameleonTab } from "./lib/ChameleonTab.js";
 
 customElements.define("chameleon-tab", ChameleonTab);

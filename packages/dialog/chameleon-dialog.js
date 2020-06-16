@@ -1,3 +1,3 @@
-import { ChameleonDialog } from "./src/ChameleonDialog.js";
+import { ChameleonDialog } from "./lib/ChameleonDialog.js";
 
 customElements.define("chameleon-dialog", ChameleonDialog);

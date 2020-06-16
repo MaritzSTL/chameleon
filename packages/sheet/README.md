@@ -7,7 +7,7 @@ import "./chameleon-sheet.js";
 import "./sheet-content.js";
 
 export default {
-  title: "Components|Sheet",
+  title: "Components|Overlays/Sheet",
   component: "chameleon-sheet",
   decorators: [withKnobs],
   parameters: {

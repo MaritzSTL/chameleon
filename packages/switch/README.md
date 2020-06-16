@@ -6,14 +6,14 @@ import { withKnobs, text, boolean } from "@open-wc/demoing-storybook";
 import "./chameleon-switch.js";
 
 export default {
-  title: "Components|Switch",
+  title: "Components|Form Elements/Switch",
   component: "chameleon-switch",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },
 };
 ```
 
-Properties
+## Properties
 
 | Property Name | Type(s) | Default Value | Description                       |
 | ------------- | ------- | ------------- | --------------------------------- |

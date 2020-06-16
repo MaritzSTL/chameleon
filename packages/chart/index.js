@@ -1,2 +1,2 @@
-export { ChameleonChart } from "./src/ChameleonChart.js";
-export { ChameleonChartStyle } from "./src/ChameleonChartStyle.js";
+export { ChameleonChart } from "./lib/ChameleonChart.js";
+export { ChameleonChartStyle } from "./lib/ChameleonChartStyle.js";

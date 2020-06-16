@@ -1,2 +1,2 @@
-export { ChameleonCheckbox } from "./src/ChameleonCheckbox.js";
-export { ChameleonCheckboxStyle } from "./src/ChameleonCheckboxStyle.js";
+export { ChameleonCheckbox } from "./lib/ChameleonCheckbox.js";
+export { ChameleonCheckboxStyle } from "./lib/ChameleonCheckboxStyle.js";

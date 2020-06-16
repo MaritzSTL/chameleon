@@ -1,3 +1,3 @@
-import { ChameleonTable } from "./src/ChameleonTable.js";
+import { ChameleonTable } from "./lib/ChameleonTable.js";
 
 customElements.define("chameleon-table", ChameleonTable);

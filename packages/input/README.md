@@ -31,7 +31,7 @@ const searchIcon = (slot) => svg`
 `;
 
 export default {
-  title: "Components|Input",
+  title: "Components|Form Elements/Input",
   component: "chameleon-input",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },
@@ -139,18 +139,14 @@ export const IconRight = () => html`
 ### Error State
 
 ```js preview-story
-export const ErrorState = () => {
-  const validationMessage = text("Error", "Field must not be empty");
-
-  return html`
-    <chameleon-input
-      label="Search *"
-      validationMessage="${validationMessage}"
-      invalid="true"
-      icon-right
-    >
-      ${searchIcon("icon-right")}
-    </chameleon-input>
-  `;
-};
+export const ErrorState = () => html`
+  <chameleon-input
+    label="Search *"
+    validationMessage="Field must not be empty"
+    invalid="true"
+    icon-right
+  >
+    ${searchIcon("icon-right")}
+  </chameleon-input>
+`;
 ```

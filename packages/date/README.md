@@ -6,7 +6,7 @@ import { withKnobs, text, boolean } from "@open-wc/demoing-storybook";
 import "./chameleon-date.js";
 
 export default {
-  title: "Components|Date",
+  title: "Components|Form Elements/Date",
   component: "chameleon-date",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },
@@ -70,16 +70,12 @@ export const Default = () => {
 ### Error State
 
 ```js preview-story
-export const ErrorState = () => {
-  const error = text("Error", "Date must be selected");
-
-  return html`
-    <chameleon-date
-      placeholder="Select Date"
-      label="Date *"
-      invalid="true"
-      validationMessage="${error}"
-    ></chameleon-date>
-  `;
-};
+export const ErrorState = () => html`
+  <chameleon-date
+    placeholder="Select Date"
+    label="Date *"
+    invalid="true"
+    validationMessage="Date must be selected"
+  ></chameleon-date>
+`;
 ```

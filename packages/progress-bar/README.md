@@ -6,10 +6,10 @@ import { withKnobs, number, text } from "@open-wc/demoing-storybook";
 import "./chameleon-progress-bar.js";
 
 export default {
-  title: "Components|Progress Bar",
+  title: "Components|Status/Progress Bar",
   component: "chameleon-progress-bar",
   decorators: [withKnobs],
-  options: { selectedPanel: "storybookjs/knobs/panel" },
+  options: { selectedPanel: "storybookjs/docs/panel" },
 };
 ```
 

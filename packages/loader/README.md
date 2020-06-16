@@ -6,7 +6,7 @@ import { withKnobs, text } from "@open-wc/demoing-storybook";
 import "./chameleon-loader.js";
 
 export default {
-  title: "Components|Loader",
+  title: "Components|Feedback/Loader",
   component: "chameleon-loader",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },

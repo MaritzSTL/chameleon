@@ -1,3 +1,3 @@
-import { ChameleonChart } from "./src/ChameleonChart.js";
+import { ChameleonChart } from "./lib/ChameleonChart.js";
 
 customElements.define("chameleon-chart", ChameleonChart);

@@ -1,2 +1,2 @@
-export { ChameleonSkeleton } from "./src/ChameleonSkeleton.js";
-export { ChameleonSkeletonStyle } from "./src/ChameleonSkeletonStyle.js";
+export { ChameleonSkeleton } from "./lib/ChameleonSkeleton.js";
+export { ChameleonSkeletonStyle } from "./lib/ChameleonSkeletonStyle.js";

@@ -1,3 +1,3 @@
-export { ChameleonTab } from "./src/ChameleonTab.js";
-export { ChameleonTabs } from "./src/ChameleonTabs.js";
-export { ChameleonTabsStyle } from "./src/ChameleonTabsStyle.js";
+export { ChameleonTab } from "./lib/ChameleonTab.js";
+export { ChameleonTabs } from "./lib/ChameleonTabs.js";
+export { ChameleonTabsStyle } from "./lib/ChameleonTabsStyle.js";

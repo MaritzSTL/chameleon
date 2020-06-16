@@ -1,8 +1,8 @@
-export { ChameleonCard } from "./src/ChameleonCard.js";
-export { ChameleonCardFooter } from "./src/ChameleonCardFooter.js";
-export { ChameleonCardFooterStyle } from "./src/ChameleonCardFooterStyle.js";
-export { ChameleonCardHeader } from "./src/ChameleonCardHeader.js";
-export { ChameleonCardHeaderStyle } from "./src/ChameleonCardHeaderStyle.js";
-export { ChameleonCardImage } from "./src/ChameleonCardImage.js";
-export { ChameleonCardImageStyle } from "./src/ChameleonCardImageStyle.js";
-export { ChameleonCardStyle } from "./src/ChameleonCardStyle.js";
+export { ChameleonCard } from "./lib/ChameleonCard.js";
+export { ChameleonCardFooter } from "./lib/ChameleonCardFooter.js";
+export { ChameleonCardFooterStyle } from "./lib/ChameleonCardFooterStyle.js";
+export { ChameleonCardHeader } from "./lib/ChameleonCardHeader.js";
+export { ChameleonCardHeaderStyle } from "./lib/ChameleonCardHeaderStyle.js";
+export { ChameleonCardImage } from "./lib/ChameleonCardImage.js";
+export { ChameleonCardImageStyle } from "./lib/ChameleonCardImageStyle.js";
+export { ChameleonCardStyle } from "./lib/ChameleonCardStyle.js";

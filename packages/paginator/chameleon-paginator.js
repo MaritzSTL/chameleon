@@ -1,3 +1,3 @@
-import { ChameleonPaginator } from "./src/ChameleonPaginator.js";
+import { ChameleonPaginator } from "./lib/ChameleonPaginator.js";
 
 customElements.define("chameleon-paginator", ChameleonPaginator);

@@ -6,7 +6,7 @@ import { withKnobs, text, boolean } from "@open-wc/demoing-storybook";
 import "./chameleon-radio.js";
 
 export default {
-  title: "Components|Radio",
+  title: "Components|Form Elements/Radio",
   component: "chameleon-radio",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },

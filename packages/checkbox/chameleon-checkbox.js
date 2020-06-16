@@ -1,3 +1,3 @@
-import { ChameleonCheckbox } from "./src/ChameleonCheckbox.js";
+import { ChameleonCheckbox } from "./lib/ChameleonCheckbox.js";
 
 customElements.define("chameleon-checkbox", ChameleonCheckbox);

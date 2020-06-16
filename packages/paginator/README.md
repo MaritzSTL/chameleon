@@ -6,7 +6,7 @@ import { withKnobs, number } from "@open-wc/demoing-storybook";
 import "./chameleon-paginator.js";
 
 export default {
-  title: "Components|Paginator",
+  title: "Components|Navigation/Paginator",
   component: "chameleon-paginator",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },

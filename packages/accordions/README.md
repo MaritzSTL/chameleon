@@ -6,7 +6,7 @@ import "./chameleon-accordion.js";
 import "./chameleon-accordions.js";
 
 export default {
-  title: "Components|Accordions",
+  title: "Components|Data and Visualizations/Accordions",
   component: "chameleon-accordions",
   options: { selectedPanel: "storybook/docs/panel" },
 };

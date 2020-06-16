@@ -6,7 +6,7 @@ import { withKnobs, text, number } from "@open-wc/demoing-storybook";
 import "./chameleon-hero.js";
 
 export default {
-  title: "Components|Hero",
+  title: "Components|Layout/Hero",
   component: "chameleon-hero",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },

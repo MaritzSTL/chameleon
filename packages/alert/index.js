@@ -1,2 +1,2 @@
-export { ChameleonAlert } from "./src/ChameleonAlert.js";
-export { ChameleonAlertStyle } from "./src/ChameleonAlertStyle.js";
+export { ChameleonAlert } from "./lib/ChameleonAlert.js";
+export { ChameleonAlertStyle } from "./lib/ChameleonAlertStyle.js";

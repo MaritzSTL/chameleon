@@ -1,2 +1,2 @@
-export { ChameleonProgressBar } from "./src/ChameleonProgressBar.js";
-export { ChameleonProgressBarStyle } from "./src/ChameleonProgressBarStyle.js";
+export { ChameleonProgressBar } from "./lib/ChameleonProgressBar.js";
+export { ChameleonProgressBarStyle } from "./lib/ChameleonProgressBarStyle.js";

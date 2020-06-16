@@ -1,2 +1,2 @@
-export { ChameleonChip } from "./src/ChameleonChip.js";
-export { ChameleonChipStyle } from "./src/ChameleonChipStyle.js";
+export { ChameleonChip } from "./lib/ChameleonChip.js";
+export { ChameleonChipStyle } from "./lib/ChameleonChipStyle.js";

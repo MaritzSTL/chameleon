@@ -14,7 +14,6 @@ export class ChameleonTimezone extends LitElement {
   @property({ type: Boolean, reflect: true }) invalid = false;
   @property({ type: Boolean, reflect: true }) readonly = false;
   @property({ type: Boolean, reflect: true }) disabled = false;
-  @property({ type: Boolean, reflect: true }) autovalidate = false;
   @property({ type: String }) name = "cha-timezone";
   @property({ type: String }) timezoneLabel = "";
   @property({ type: String }) timezoneSubLabel = "";

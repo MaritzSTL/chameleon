@@ -1,3 +1,3 @@
-import { ChameleonSheet } from "./src/ChameleonSheet.js";
+import { ChameleonSheet } from "./lib/ChameleonSheet.js";
 
 customElements.define("chameleon-sheet", ChameleonSheet);

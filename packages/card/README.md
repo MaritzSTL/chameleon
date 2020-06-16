@@ -9,7 +9,7 @@ import "./chameleon-card-header.js";
 import "./chameleon-card-image.js";
 
 export default {
-  title: "Components|Card",
+  title: "Components|Data and Visualizations/Card",
   component: "chameleon-card",
   decorators: [withKnobs],
   parameters: {

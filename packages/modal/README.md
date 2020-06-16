@@ -5,7 +5,7 @@ import { html } from "@open-wc/demoing-storybook";
 import "./chameleon-modal.js";
 
 export default {
-  title: "Components|Modal",
+  title: "Components|Overlays/Modal",
   component: "chameleon-modal",
   options: { selectedPanel: "storybookjs/docs/panel" },
 };

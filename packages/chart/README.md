@@ -6,7 +6,7 @@ import { withKnobs, text, number } from "@open-wc/demoing-storybook";
 import "./chameleon-chart.js";
 
 export default {
-  title: "Components|Chart",
+  title: "Components|Data and Visualizations/Chart",
   component: "chameleon-chart",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },

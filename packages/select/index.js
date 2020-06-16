@@ -1,2 +1,2 @@
-export { ChameleonSelect } from "./src/ChameleonSelect.js";
-export { ChameleonSelectStyle } from "./src/ChameleonSelectStyle.js";
+export { ChameleonSelect } from "./lib/ChameleonSelect.js";
+export { ChameleonSelectStyle } from "./lib/ChameleonSelectStyle.js";

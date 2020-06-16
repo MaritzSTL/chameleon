@@ -1,2 +1,2 @@
-export { ChameleonSwitch } from "./src/ChameleonSwitch.js";
-export { ChameleonSwitchStyle } from "./src/ChameleonSwitchStyle.js";
+export { ChameleonSwitch } from "./lib/ChameleonSwitch.js";
+export { ChameleonSwitchStyle } from "./lib/ChameleonSwitchStyle.js";

@@ -6,7 +6,7 @@ import { withKnobs, text, number } from "@open-wc/demoing-storybook";
 import "./chameleon-skeleton.js";
 
 export default {
-  title: "Components|Skeleton",
+  title: "Components|Data and Visualizations/Skeleton",
   component: "chameleon-skeleton",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },
@@ -14,8 +14,6 @@ export default {
 ```
 
 ## Properties
-
-### chameleon-card
 
 | Property Name | Type(s) | Default Value | Description                                   |
 | ------------- | ------- | ------------- | --------------------------------------------- |

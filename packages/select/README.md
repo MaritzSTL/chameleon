@@ -42,7 +42,7 @@ const options = [
 ];
 
 export default {
-  title: "Components|Select",
+  title: "Components|Form Elements/Select",
   component: "chameleon-select",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },
@@ -93,4 +93,17 @@ export const Default = () => {
     </chameleon-select>
   `;
 };
+```
+
+### Error State
+
+```js preview-story
+export const ErrorState = () => html`
+  <chameleon-select
+    label="Landmarks"
+    ?invalid="${true}"
+    validationMessage="Please select an option"
+  >
+  </chameleon-select>
+`;
 ```

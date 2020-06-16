@@ -1,2 +1,2 @@
-export { ChameleonInput } from "./src/ChameleonInput.js";
-export { ChameleonInputStyle } from "./src/ChameleonInputStyle.js";
+export { ChameleonInput } from "./lib/ChameleonInput.js";
+export { ChameleonInputStyle } from "./lib/ChameleonInputStyle.js";

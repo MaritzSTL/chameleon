@@ -1,3 +1,3 @@
-import { ChameleonSkeleton } from "./src/ChameleonSkeleton.js";
+import { ChameleonSkeleton } from "./lib/ChameleonSkeleton.js";
 
 customElements.define("chameleon-skeleton", ChameleonSkeleton);

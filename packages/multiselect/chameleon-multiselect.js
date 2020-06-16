@@ -1,3 +1,3 @@
-import { ChameleonMultiselect } from "./src/ChameleonMultiselect.js";
+import { ChameleonMultiselect } from "./lib/ChameleonMultiselect.js";
 
 customElements.define("chameleon-multiselect", ChameleonMultiselect);

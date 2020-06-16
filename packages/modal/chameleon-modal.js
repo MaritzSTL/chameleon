@@ -1,3 +1,3 @@
-import { ChameleonModal } from "./src/ChameleonModal.js";
+import { ChameleonModal } from "./lib/ChameleonModal.js";
 
 customElements.define("chameleon-modal", ChameleonModal);

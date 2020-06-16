@@ -1,3 +1,3 @@
-import { ChameleonRadio } from "./src/ChameleonRadio.js";
+import { ChameleonRadio } from "./lib/ChameleonRadio.js";
 
 customElements.define("chameleon-radio", ChameleonRadio);

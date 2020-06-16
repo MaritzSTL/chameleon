@@ -5,7 +5,7 @@ import { html, svg } from "lit-html";
 import "./chameleon-button.js";
 
 export default {
-  title: "Components|Button",
+  title: "Components|Buttons/Button",
   component: "chameleon-button",
   options: { selectedPanel: "storybookjs/docs/panel" },
 };

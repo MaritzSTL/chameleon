@@ -1,2 +1,2 @@
-export { ChameleonSheet } from "./src/ChameleonSheet.js";
-export { SheetContent } from "./src/SheetContent.js";
+export { ChameleonSheet } from "./lib/ChameleonSheet.js";
+export { SheetContent } from "./lib/SheetContent.js";

@@ -6,7 +6,7 @@ import { withKnobs, text, boolean } from "@open-wc/demoing-storybook";
 import "./chameleon-dialog.js";
 
 export default {
-  title: "Components|Dialog",
+  title: "Components|Overlays/Dialog",
   component: "chameleon-dialog",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },

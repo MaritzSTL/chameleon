@@ -1,3 +1,3 @@
-import { ChameleonAlert } from "./src/ChameleonAlert.js";
+import { ChameleonAlert } from "./lib/ChameleonAlert.js";
 
 customElements.define("chameleon-alert", ChameleonAlert);

@@ -1,3 +1,3 @@
-import { ChameleonAccordions } from "./src/ChameleonAccordions.js";
+import { ChameleonAccordions } from "./lib/ChameleonAccordions.js";
 
 customElements.define("chameleon-accordions", ChameleonAccordions);

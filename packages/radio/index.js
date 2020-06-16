@@ -1,2 +1,2 @@
-export { ChameleonRadio } from "./src/ChameleonRadio.js";
-export { ChameleonRadioStyle } from "./src/ChameleonRadioStyle.js";
+export { ChameleonRadio } from "./lib/ChameleonRadio.js";
+export { ChameleonRadioStyle } from "./lib/ChameleonRadioStyle.js";

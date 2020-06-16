@@ -61,7 +61,7 @@ const searchIcon = svg`
 `;
 
 export default {
-  title: "Components|Multiselect",
+  title: "Components|Form Elements/Multiselect",
   component: "chameleon-multiselect",
   decorators: [withKnobs],
   options: { selectedPanel: "storybookjs/docs/panel" },
@@ -119,7 +119,7 @@ export const Default = () => {
 };
 ```
 
-Icon
+### Icon
 
 ```js preview-story
 export const Icon = () => html`
@@ -127,6 +127,22 @@ export const Icon = () => html`
     label="Landmarks"
     placeholder="Select an option..."
     .options="${options}"
+  >
+    ${searchIcon}
+  </chameleon-multiselect>
+`;
+```
+
+### Error State
+
+```js preview-story
+export const ErrorState = () => html`
+  <chameleon-multiselect
+    label="Landmarks"
+    placeholder="Select an option..."
+    .options="${options}"
+    ?invalid="${true}"
+    validationMessage="Please select an option"
   >
     ${searchIcon}
   </chameleon-multiselect>

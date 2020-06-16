@@ -11,3 +11,7 @@ export default {
 ### Primary Typeface
 
 #### Lato
+
+### Secondary Typeface
+
+#### Source Sans Pro
