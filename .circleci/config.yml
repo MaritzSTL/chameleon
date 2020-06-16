@@ -13,10 +13,6 @@ jobs:
           command: |
             npm config set prefix '~/.npm-global'
             yarn setup
-      - run: # run build
-          name: Build
-          command: |
-            yarn build:ci
       - run: # run tests
           name: Test
           command: yarn test
