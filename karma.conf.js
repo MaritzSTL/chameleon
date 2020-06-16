@@ -14,20 +14,9 @@ module.exports = (config) => {
       frameworks: ["esm"],
       esm: {
         nodeResolve: true,
-        compatibility: "all",
+        babel: true,
         fileExtensions: [".js"],
         coverageExclude: ["packages/**/*.test.js"],
-        customBabelConfig: {
-          plugins: [
-            [
-              "@babel/plugin-proposal-decorators",
-              { decoratorsBeforeExport: true },
-            ],
-            "@babel/plugin-proposal-class-properties",
-            "@babel/plugin-proposal-optional-chaining",
-            "@babel/plugin-proposal-nullish-coalescing-operator",
-          ],
-        },
       },
       coverageIstanbulReporter: {
         thresholds: {
