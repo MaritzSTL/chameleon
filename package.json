@@ -16,7 +16,7 @@
     "generate:custom-element-file": "wca analyze 'packages/**/src/**/*.js' --outFile custom-elements.json",
     "build:ci": "lerna exec --concurrency 2 -- yarn run build",
     "build": "lerna exec yarn run build",
-    "build-storybook": "del-cli docs/assets/storybook/ && build-storybook -o .out && cp -a .out/ ./docs/prebuilt && del-cli .out",
+    "build-storybook": "del-cli docs/assets/storybook/ && build-storybook -o storybook-prebuilt",
     "bump-versions": "lerna version",
     "publish-packages": "lerna publish --yes from-package"
   },
