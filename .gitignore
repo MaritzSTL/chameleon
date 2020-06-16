@@ -15,7 +15,7 @@ node_modules/
 
 # Generated distribution files
 lib/
-storybook-prebuilt/
+site/
 
 # Compiler Output
 /**/*.js.map
