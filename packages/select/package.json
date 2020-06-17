@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/select",
-  "version": "1.2.3",
+  "version": "2.0.0",
   "description": "Chameleon select",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,15 +9,14 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/src/chameleon-select.js",
-  "module": "dist/src/chameleon-select.js",
+  "main": "index.js",
+  "module": "index.js",
   "files": [
-    "/dist/",
-    "/types/"
+    "/lib/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "tsc"
+    "build": "babel src --out-dir lib --config-file ../../babel.config.json"
   },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"

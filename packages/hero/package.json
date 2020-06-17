@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/hero",
-  "version": "1.2.7",
+  "version": "2.0.0",
   "description": "Chameleon hero",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,20 +9,20 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-hero.js",
-  "module": "dist/chameleon-hero.js",
+  "main": "index.js",
+  "module": "index.js",
   "files": [
-    "/dist/"
+    "/lib/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "tsc"
+    "build": "babel src --out-dir lib --config-file ../../babel.config.json"
   },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/skeleton": "^1.2.7",
+    "@chameleon-ds/skeleton": "^2.0.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {

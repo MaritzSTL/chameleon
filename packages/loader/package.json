@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/loader",
-  "version": "1.2.3",
+  "version": "2.0.0",
   "description": "Chameleon loader",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,14 +9,14 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-loader.js",
-  "module": "dist/chameleon-loader.js",
+  "main": "index.js",
+  "module": "index.js",
   "files": [
-    "/dist/"
+    "/lib/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "tsc"
+    "build": "babel src --out-dir lib --config-file ../../babel.config.json"
   },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"

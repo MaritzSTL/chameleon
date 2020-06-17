@@ -1,13 +1,20 @@
-<p align="center">
-  <img src="assets/chameleon.jpg" />
-</p>
+<div align="center">
+  <img src="docs/assets/chameleon.jpg" />
+</div>
 
 [![CircleCI](https://circleci.com/gh/MaritzSTL/chameleon/tree/master.svg?style=svg)](https://circleci.com/gh/MaritzSTL/chameleon/tree/master)
 [![codecov](https://codecov.io/gh/MaritzSTL/chameleon/branch/master/graph/badge.svg)](https://codecov.io/gh/MaritzSTL/chameleon)
 
-# Chameleon (Currently In Development)
+# Chameleon Web Components
 
-Chameleon Web Components - A collection of lightweight, unidirectional, framework-agnostic elements based on the Chameleon Design System
+```js script
+export default {
+  title: "Intro|Chameleon Web Components",
+  options: { selectedPanel: "storybookjs/docs/panel" },
+};
+```
+
+Chameleon Web Components - A collection of lightweight, unidirectional, framework-agnostic elements based on the Chameleon Design System.
 
 ## Prerequisites
 
