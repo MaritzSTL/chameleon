@@ -1,6 +1,6 @@
 // To run this script, install deno,
 // ensure you're in root, and:
-// deno --allow-read linker.js
+// deno run --allow-read linker.js
 
 const packageNames = async () => {
   const PACKAGE_DIR = "./packages";
@@ -9,7 +9,6 @@ const packageNames = async () => {
   const names = [];
 
   for (const entry of packages) {
-    debugger;
     try {
       const rawPackage = Deno.readTextFileSync(
         `${PACKAGE_DIR}/${entry.name}/package.json`
