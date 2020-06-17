@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/button",
-  "version": "1.4.7",
+  "version": "2.0.0",
   "description": "Chameleon button",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/loader": "^1.2.3",
+    "@chameleon-ds/loader": "^2.0.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
