@@ -2,6 +2,7 @@
   <img src="https://raw.githubusercontent.com/MaritzSTL/chameleon/master/docs/assets/chameleon.jpg" />
 </div>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1dec763c-8977-46bc-b008-140b158960f6/deploy-status)](https://app.netlify.com/sites/chameleon-design-system/deploys)
 [![CircleCI](https://circleci.com/gh/MaritzSTL/chameleon/tree/master.svg?style=svg)](https://circleci.com/gh/MaritzSTL/chameleon/tree/master)
 [![codecov](https://codecov.io/gh/MaritzSTL/chameleon/branch/master/graph/badge.svg)](https://codecov.io/gh/MaritzSTL/chameleon)
 
