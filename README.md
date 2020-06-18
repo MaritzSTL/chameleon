@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/assets/chameleon.jpg" />
+  <img src="https://raw.githubusercontent.com/MaritzSTL/chameleon/master/docs/assets/chameleon.jpg" />
 </div>
 
 [![CircleCI](https://circleci.com/gh/MaritzSTL/chameleon/tree/master.svg?style=svg)](https://circleci.com/gh/MaritzSTL/chameleon/tree/master)
