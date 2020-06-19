@@ -41,6 +41,9 @@ describe("sheet-content", () => {
     expect(el.dismissable).to.equal(true);
   });
   it("displays close icon when dismissable", () => {
+    expect(
+      el.shadowRoot.querySelector(".close-icon").innerHTML.includes("svg")
+    ).to.equal(true);
     expect(el.shadowRoot.querySelector(".close-icon")).to.not.equal(null);
   });
   it("doesn't show close icon when not dismissable", async () => {
