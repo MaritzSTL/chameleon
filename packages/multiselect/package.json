@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/multiselect",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Chameleon multiselect",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -23,8 +23,8 @@
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/chip": "^2.0.0",
-    "@chameleon-ds/loader": "^2.0.0",
+    "@chameleon-ds/chip": "^2.0.1",
+    "@chameleon-ds/loader": "^2.0.1",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {
