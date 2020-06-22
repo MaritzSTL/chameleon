@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/toast",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Chameleon toast",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -12,6 +12,7 @@
   "main": "index.js",
   "module": "index.js",
   "files": [
+    "chameleon-toast.js",
     "/lib/"
   ],
   "scripts": {

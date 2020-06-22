@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/progress-bar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Chameleon progress bar",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -12,6 +12,7 @@
   "main": "index.js",
   "module": "index.js",
   "files": [
+    "chameleon-progress-bar.js",
     "/lib/"
   ],
   "scripts": {

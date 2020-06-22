@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/alert",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Chameleon alert",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -12,6 +12,7 @@
   "main": "index.js",
   "module": "index.js",
   "files": [
+    "chameleon-alert.js",
     "/lib/"
   ],
   "scripts": {

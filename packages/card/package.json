@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/card",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Chameleon card",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -12,6 +12,10 @@
   "main": "index.js",
   "module": "index.js",
   "files": [
+    "chameleon-card.js",
+    "chameleon-card-footer.js",
+    "chameleon-card-header.js",
+    "chameleon-card-image.js",
     "/lib/"
   ],
   "scripts": {
