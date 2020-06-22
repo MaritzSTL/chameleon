@@ -12,6 +12,7 @@
   "main": "index.js",
   "module": "index.js",
   "files": [
+    "chameleon-skeleton.js",
     "/lib/"
   ],
   "scripts": {

@@ -12,6 +12,10 @@
   "main": "index.js",
   "module": "index.js",
   "files": [
+    "chameleon-card.js",
+    "chameleon-card-footer.js",
+    "chameleon-card-header.js",
+    "chameleon-card-image.js",
     "/lib/"
   ],
   "scripts": {

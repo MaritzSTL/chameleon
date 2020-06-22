@@ -12,6 +12,8 @@
   "main": "index.js",
   "module": "index.js",
   "files": [
+    "chameleon-accordion.js",
+    "chameleon-accordions.js",
     "/lib/"
   ],
   "scripts": {

@@ -12,6 +12,8 @@
   "main": "index.js",
   "module": "index.js",
   "files": [
+    "chameleon-tab.js",
+    "chameleon-tabs.js",
     "/lib/"
   ],
   "scripts": {

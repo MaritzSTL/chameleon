@@ -12,6 +12,7 @@
   "main": "index.js",
   "module": "index.js",
   "files": [
+    "chameleon-toast.js",
     "/lib/"
   ],
   "scripts": {

@@ -12,6 +12,8 @@
   "main": "index.js",
   "module": "index.js",
   "files": [
+    "chameleon-sheet.js",
+    "sheet-content.js",
     "/lib/"
   ],
   "scripts": {

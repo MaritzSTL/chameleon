@@ -12,6 +12,7 @@
   "main": "index.js",
   "module": "index.js",
   "files": [
+    "chameleon-hero.js",
     "/lib/"
   ],
   "scripts": {
