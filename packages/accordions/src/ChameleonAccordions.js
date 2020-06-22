@@ -2,35 +2,19 @@ import { LitElement, property, html } from "lit-element";
 import { ChameleonAccordionsStyle } from "./ChameleonAccordionsStyle.js";
 
 export class ChameleonAccordions extends LitElement {
-  constructor() {
-    super();
-    this.addEventListener(
-      "chameleon.accordions.expanded-changed",
-      this._handleExpandedChanged
-    );
-  }
-
   /**
    * Lifecycle Methods
    */
-  firstUpdated() {
-    const accordions = Array.from(this.querySelectorAll("chameleon-accordion"));
-
-    if (accordions.length <= 0)
-      throw new Error(
-        "<chameleon-accordions> must have at least one <chameleon-accordion> element"
-      );
-
-    accordions.forEach((accordion, i) =>
-      accordion.setAttribute("data-index", i.toString())
-    );
+  constructor() {
+    super();
+    this.addEventListener("accordion-connected", this._registerAccordion);
+    this.addEventListener("toggle-accordion", this._handleToggle);
+    this.addEventListener("accordion-disconnected", this._unregisterAccordion);
   }
-
   /**
    * Properties
    */
-  @property({ type: Number })
-  expandedIndex = -1;
+  @property({ type: Array }) accordions = [];
 
   /**
    * Styles
@@ -44,20 +28,32 @@ export class ChameleonAccordions extends LitElement {
     return html`<slot></slot>`;
   }
 
-  _handleExpandedChanged(e) {
+  _registerAccordion(e) {
+    this.accordions = [...this.accordions, e.target];
+    e.detail.connected = true;
     e.preventDefault();
-    this.expandedIndex = parseInt(e.detail.value);
+  }
 
-    const accordions = Array.from(this.querySelectorAll("chameleon-accordion"));
+  _unregisterAccordion(e) {
+    this.accordions = [
+      ...this.accordions.filter(
+        (accordion) => accordion.uuid !== e.target.uuid
+      ),
+    ];
+    e.preventDefault();
+  }
 
-    accordions.forEach((accordion, i) => {
-      if (i === this.expandedIndex && accordion.hasAttribute("expanded")) {
-        accordion.removeAttribute("expanded");
-        return;
-      }
-      accordion.removeAttribute("expanded");
-      if (accordion.hasAttribute("expanded")) return;
-      if (i === this.expandedIndex) accordion.setAttribute("expanded", "true");
-    });
+  _handleToggle(e) {
+    const accordionToToggle = this.accordions.find(
+      (accordion) => accordion.uuid === e.target.uuid
+    );
+    accordionToToggle.expanded = !accordionToToggle.expanded;
+
+    // if opening one, close all others
+    if (accordionToToggle.expanded) {
+      this.accordions
+        .filter((accordion) => accordion !== accordionToToggle)
+        .forEach((accordion) => (accordion.expanded = false));
+    }
   }
 }

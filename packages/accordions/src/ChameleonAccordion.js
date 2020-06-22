@@ -1,6 +1,8 @@
-import { LitElement, property, svg, html } from "lit-element";
+import { LitElement, property, svg, html, query } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 import { ChameleonAccordionStyle } from "./ChameleonAccordionStyle.js";
+
+const uuid = () => Math.random().toString(36).substr(2, 10);
 
 export class ChameleonAccordion extends LitElement {
   /**
@@ -19,6 +21,104 @@ export class ChameleonAccordion extends LitElement {
 
   @property({ type: String })
   accentColor = null;
+
+  @property({ type: String, reflect: true }) uuid = "";
+
+  // Whether or not this accordion is connected to a grouping <chameleon-accordions>
+  @property({ type: Boolean })
+  __connected = false;
+
+  @query(".header") header;
+
+  constructor() {
+    super();
+    this.uuid = uuid();
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    const event = new CustomEvent("accordion-connected", {
+      composed: true,
+      bubbles: true,
+      detail: {
+        connected: false,
+      },
+    });
+
+    this.dispatchEvent(event);
+
+    // chameleon-accordions will update event if it connects
+    this.__connected = event.detail.connected;
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    const event = new CustomEvent("accordion-disconnected", {
+      composed: true,
+      bubbles: true,
+    });
+    this.dispatchEvent(event);
+  }
+
+  updated(changedProperties) {
+    if (changedProperties.has("accentColor") && this.accentColor)
+      this.shadowRoot.querySelector(
+        ".header"
+      ).style.borderLeft = `5px solid ${this.accentColor}`;
+
+    if (
+      changedProperties.has("accentColor") &&
+      this.accentColor === "" &&
+      this.accentColor !== undefined
+    ) {
+      this.shadowRoot.querySelector(
+        ".header"
+      ).style.borderLeft = `7px solid var(--color-primary, #2c6fb7)`;
+    }
+  }
+
+  __dispatchToggleEvent() {
+    this.dispatchEvent(
+      new CustomEvent("toggle-accordion", {
+        bubbles: true,
+        composed: true,
+      })
+    );
+  }
+
+  handleToggle() {
+    this.__connected
+      ? this.__dispatchToggleEvent()
+      : (this.expanded = !this.expanded);
+  }
+
+  get toggleIconSlot() {
+    return this.querySelector("[slot='toggle-icon']");
+  }
+
+  get defaultToggleIcon() {
+    return svg`<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="9 18 15 12 9 6" />
+      </svg>
+    `;
+  }
+
+  get toggleIcon() {
+    // Return custom-slotted icon with svg default if not present
+    return this.toggleIconSlot
+      ? html`<slot name="toggle-icon"></slot>`
+      : this.defaultToggleIcon;
+  }
 
   /**
    * Template
@@ -44,58 +144,5 @@ export class ChameleonAccordion extends LitElement {
         <slot name="panel"></slot>
       </div>
     `;
-  }
-
-  updated(changedProperties) {
-    if (changedProperties.has("accentColor") && this.accentColor)
-      this.shadowRoot.querySelector(
-        ".header"
-      ).style.borderLeft = `5px solid ${this.accentColor}`;
-
-    if (
-      changedProperties.has("accentColor") &&
-      this.accentColor === "" &&
-      this.accentColor !== undefined
-    ) {
-      this.shadowRoot.querySelector(
-        ".header"
-      ).style.borderLeft = `7px solid var(--color-primary, #2c6fb7)`;
-    }
-  }
-
-  handleToggle() {
-    this.dispatchEvent(
-      new CustomEvent("chameleon.accordions.expanded-changed", {
-        detail: {
-          value: this.dataset.index,
-          expanded: this.expanded,
-        },
-        bubbles: true,
-        composed: true,
-      })
-    );
-  }
-
-  get toggleIcon() {
-    const slots = Array.from(this.querySelectorAll("[slot]"));
-    const toggleIcon = slots.find((slot) => slot.slot === "toggle-icon");
-
-    if (toggleIcon === undefined)
-      return svg`
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
-      `;
-    else return html`<slot name="toggle-icon"></slot>`;
   }
 }
