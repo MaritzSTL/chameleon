@@ -45,7 +45,7 @@ export class ChameleonAccordions extends LitElement {
 
   _handleToggle(e) {
     const accordionToToggle = this.accordions.find(
-      (accordion) => accordion.uuid === e.target.uuid
+      (accordion) => accordion.uid === e.target.uid
     );
     accordionToToggle.expanded = !accordionToToggle.expanded;
 

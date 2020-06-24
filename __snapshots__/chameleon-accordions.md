@@ -4,9 +4,9 @@
 
 ```html
 <chameleon-accordions>
-  <chameleon-accordion uuid="1tvd574olb">
+  <chameleon-accordion uuid="6agt6jpik8">
   </chameleon-accordion>
-  <chameleon-accordion uuid="k23a4sp73h">
+  <chameleon-accordion uuid="wypd9znp3a">
   </chameleon-accordion>
 </chameleon-accordions>
 

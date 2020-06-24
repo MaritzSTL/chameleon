@@ -2,7 +2,7 @@ import { LitElement, property, svg, html, query } from "lit-element";
 import { classMap } from "lit-html/directives/class-map.js";
 import { ChameleonAccordionStyle } from "./ChameleonAccordionStyle.js";
 
-const uuid = () => Math.random().toString(36).substr(2, 10);
+const uid = () => Math.random().toString(36).substr(2, 10);
 
 export class ChameleonAccordion extends LitElement {
   /**
@@ -22,7 +22,7 @@ export class ChameleonAccordion extends LitElement {
   @property({ type: String })
   accentColor = null;
 
-  @property({ type: String, reflect: true }) uuid = "";
+  @property({ type: String, reflect: true }) uid = "";
 
   // Whether or not this accordion is connected to a grouping <chameleon-accordions>
   @property({ type: Boolean })
@@ -32,7 +32,7 @@ export class ChameleonAccordion extends LitElement {
 
   constructor() {
     super();
-    this.uuid = uuid();
+    this.uid = uid();
   }
 
   connectedCallback() {

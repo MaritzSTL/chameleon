@@ -18,7 +18,7 @@ describe("chameleon-accordions", () => {
   });
 
   it("renders any slotted content", () => {
-    expect(el).dom.to.equalSnapshot({ ignoreAttributes: ["uuid"] });
+    expect(el).dom.to.equalSnapshot({ ignoreAttributes: ["uid"] });
     expect(el).shadowDom.to.equalSnapshot();
   });
   it("registers accordions on `accordion-connected`", () => {
@@ -27,15 +27,15 @@ describe("chameleon-accordions", () => {
   it("unregisters accordions on `accordion-disconnected`", async () => {
     const initialAccordions = Array.from(
       el.querySelectorAll("chameleon-accordion")
-    ).map((acc) => acc.uuid);
+    ).map((acc) => acc.uid);
     const accordion = el.querySelector("chameleon-accordion");
-    const removedUuid = accordion.uuid;
+    const removedUid = accordion.uid;
 
     accordion.disconnectedCallback();
 
     expect(initialAccordions.length).to.equal(2);
     expect(el.accordions.length).to.equal(1);
-    expect(el.accordions.indexOf(removedUuid)).to.equal(-1);
+    expect(el.accordions.indexOf(removedUid)).to.equal(-1);
   });
   it("toggles targeted accordion on `toggle-accordion`", () => {
     const accordion = el.querySelector("chameleon-accordion");
