@@ -31,14 +31,14 @@ export class ChameleonAccordions extends LitElement {
   _registerAccordion(e) {
     this.accordions = [...this.accordions, e.target];
     e.detail.connected = true;
-    e.preventDefault();
+    e.stopPropagation();
   }
 
   _unregisterAccordion(e) {
     this.accordions = [
       ...this.accordions.filter((accordion) => accordion.uid !== e.target.uid),
     ];
-    e.preventDefault();
+    e.stopPropagation();
   }
 
   _handleToggle(e) {
@@ -53,5 +53,7 @@ export class ChameleonAccordions extends LitElement {
         .filter((accordion) => accordion !== accordionToToggle)
         .forEach((accordion) => (accordion.expanded = false));
     }
+
+    e.stopPropagation();
   }
 }
