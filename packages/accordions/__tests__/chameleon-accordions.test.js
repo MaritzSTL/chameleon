@@ -1,5 +1,4 @@
 import { litFixture, html, expect } from "@open-wc/testing";
-import sinon from "sinon";
 import "../chameleon-accordion.js";
 import "../chameleon-accordions.js";
 

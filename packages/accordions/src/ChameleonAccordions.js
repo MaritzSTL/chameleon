@@ -36,9 +36,7 @@ export class ChameleonAccordions extends LitElement {
 
   _unregisterAccordion(e) {
     this.accordions = [
-      ...this.accordions.filter(
-        (accordion) => accordion.uuid !== e.target.uuid
-      ),
+      ...this.accordions.filter((accordion) => accordion.uid !== e.target.uid),
     ];
     e.preventDefault();
   }

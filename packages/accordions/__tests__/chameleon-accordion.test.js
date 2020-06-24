@@ -118,4 +118,17 @@ describe("chameleon-accordion", () => {
     );
     expect(el.toggleIcon).to.eql(el.defaultToggleIcon);
   });
+  it("dispatches expanded-changed event when expanded changes", async () => {
+    const spy = sinon.spy();
+    // first expanded-changed occurs as component instantiates
+    const el = await fixture(
+      html`<chameleon-accordion
+        @expanded-changed="${spy}"
+      ></chameleon-accordion>`
+    );
+    // trigger second expanded-changed
+    el.expanded = !el.expanded;
+    await el.updateComplete;
+    expect(spy.getCalls().length).to.equal(2);
+  });
 });

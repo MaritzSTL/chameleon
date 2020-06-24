@@ -75,6 +75,10 @@ export class ChameleonAccordion extends LitElement {
         ".header"
       ).style.borderLeft = `7px solid var(--color-primary, #2c6fb7)`;
     }
+
+    if (changedProperties.has("expanded")) {
+      this.__dispatchExpandedChangedEvent();
+    }
   }
 
   __dispatchToggleEvent() {
@@ -84,6 +88,10 @@ export class ChameleonAccordion extends LitElement {
         composed: true,
       })
     );
+  }
+
+  __dispatchExpandedChangedEvent() {
+    this.dispatchEvent(new CustomEvent("expanded-changed"));
   }
 
   handleToggle() {
