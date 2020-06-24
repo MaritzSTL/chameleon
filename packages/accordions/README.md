@@ -29,6 +29,12 @@ export default {
 | `accentColor` | String  | `null`        | The CSS color value to be applied to the accent color |
 | `uid`         | String  | `""`          | A random/unique identifier for this accordion         |
 
+If you're nesting accordions inside your own components and subscribing them to `chameleon-accordions` and need to track whether or not they're `expanded`, you can use:
+
+| Event Name | Composed | Bubbles | Description                                                 |
+| ---------- | -------- | ------- | ----------------------------------------------------------- |
+| `expanded` | `false`  | `false` | Dispatched when the `accordionEl.expanded` property changes |
+
 ## CSS Properties
 
 ### chameleon-accordions
