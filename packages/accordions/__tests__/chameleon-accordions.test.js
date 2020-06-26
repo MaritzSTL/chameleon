@@ -1,6 +1,4 @@
 import { litFixture, html, expect } from "@open-wc/testing";
-import sinon from "sinon";
-import { ChameleonAccordions } from "../index.js";
 import "../chameleon-accordion.js";
 import "../chameleon-accordions.js";
 
@@ -12,54 +10,48 @@ const fixture = html`
 `;
 
 describe("chameleon-accordions", () => {
-  let element;
+  let el;
 
   beforeEach(async () => {
-    element = await litFixture(fixture);
+    el = await litFixture(fixture);
   });
 
-  it("renders", async () => {
-    expect(Boolean(element.shadowRoot)).to.equal(true);
+  it("renders any slotted content", () => {
+    expect(el).dom.to.equalSnapshot({ ignoreAttributes: ["uid"] });
+    expect(el).shadowDom.to.equalSnapshot();
   });
-
-  it("dispatches an event on handleToggle", () => {
-    const accordion = element.querySelector("chameleon-accordion");
-    const spy = sinon.spy(accordion, "dispatchEvent");
-
-    accordion.handleToggle();
-
-    expect(spy).to.be.calledOnce;
+  it("registers accordions on `accordion-connected`", () => {
+    expect(el.accordions.length).to.equal(2);
   });
+  it("unregisters accordions on `accordion-disconnected`", async () => {
+    const initialAccordions = Array.from(
+      el.querySelectorAll("chameleon-accordion")
+    ).map((acc) => acc.uid);
+    const accordion = el.querySelector("chameleon-accordion");
+    const removedUid = accordion.uid;
 
-  it("throws error if no accordions are given", () => {
-    expect(() => new ChameleonAccordions().firstUpdated()).to.throw();
+    accordion.disconnectedCallback();
+
+    expect(initialAccordions.length).to.equal(2);
+    expect(el.accordions.length).to.equal(1);
+    expect(el.accordions.indexOf(removedUid)).to.equal(-1);
   });
-
-  xit("applies rotated class to icon button if panel is open and fixed property is false", () => {
-    const accordion = element.querySelector("chameleon-accordion");
-    accordion.setAttribute("fixed", false);
-    accordion.handleToggle();
-
-    expect(() =>
-      accordion.shadowRoot.querySelector("chameleon-button")
-    ).to.have.class("rotated");
+  it("toggles targeted accordion on `toggle-accordion`", () => {
+    const accordion = el.querySelector("chameleon-accordion");
+    expect(accordion.expanded).to.equal(false);
+    accordion.header.click();
+    expect(accordion.expanded).to.equal(true);
   });
+  it("closes all other registered accordions of targeted accordion is expanded", () => {
+    const accordions = Array.from(el.querySelectorAll("chameleon-accordion"));
+    accordions[0].expanded = true;
 
-  xit("does not apply rotated class to icon button if panel is open and fixed property is true", () => {
-    const accordion = element.querySelector("chameleon-accordion");
-    accordion.setAttribute("fixed", true);
-    accordion.handleToggle();
+    expect(accordions[0].expanded).to.equal(true);
+    expect(accordions[1].expanded).to.equal(false);
 
-    expect(() =>
-      accordion.shadowRoot.querySelector(".toggle-icon")
-    ).not.to.have.class("rotated");
-  });
+    accordions[1].header.click();
 
-  it("updates expandedIndex", async () => {
-    element.expanded = -1;
-    const accordion = element.querySelector("chameleon-accordion");
-    accordion.handleToggle();
-
-    expect(element.expandedIndex).to.equal(0);
+    expect(accordions[0].expanded).to.equal(false);
+    expect(accordions[1].expanded).to.equal(true);
   });
 });

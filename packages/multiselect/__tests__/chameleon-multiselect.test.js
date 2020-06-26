@@ -117,7 +117,6 @@ describe("chameleon-multiselect", () => {
         `
       );
       await fixture.updateComplete;
-      debugger;
       expect(fixture).shadowDom.to.equalSnapshot();
     });
 

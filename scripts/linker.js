@@ -27,7 +27,7 @@ const allNames = await packageNames();
 
 console.log("In this directory, run:");
 console.log("");
-console.log("\t npx lerna exec yarn link");
+console.log(`\t npx lerna exec yarn link`);
 console.log("");
 console.log("To use these in target directory, run:");
 console.log("");
