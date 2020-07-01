@@ -1,0 +1,32 @@
+{
+  "name": "@chameleon-ds/accordions",
+  "version": "4.0.0",
+  "description": "Chameleon accordions",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/accordions#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "index.js",
+  "module": "index.js",
+  "files": [
+    "chameleon-accordion.js",
+    "chameleon-accordions.js",
+    "/lib/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "babel src --out-dir lib --config-file ../../babel.config.json"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

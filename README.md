@@ -1,13 +1,21 @@
-<p align="center">
-  <img src="assets/chameleon.jpg" />
-</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/MaritzSTL/chameleon/master/docs/assets/chameleon.jpg" />
+</div>
 
-[![CircleCI](https://circleci.com/gh/MaritzSTL/chameleon/tree/master.svg?style=svg)](https://circleci.com/gh/MaritzSTL/chameleon/tree/master)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1dec763c-8977-46bc-b008-140b158960f6/deploy-status)](https://app.netlify.com/sites/chameleon-design-system/deploys)
+[![CircleCI](https://circleci.com/gh/MaritzSTL/chameleon/tree/master.svg?style=shield)](https://circleci.com/gh/MaritzSTL/chameleon/tree/master)
 [![codecov](https://codecov.io/gh/MaritzSTL/chameleon/branch/master/graph/badge.svg)](https://codecov.io/gh/MaritzSTL/chameleon)
 
-# Chameleon (Currently In Development)
+# Chameleon Web Components
 
-Chameleon Web Components - A collection of lightweight, unidirectional, framework-agnostic elements based on the Chameleon Design System
+```js script
+export default {
+  title: "Intro|Chameleon Web Components",
+  options: { selectedPanel: "storybookjs/docs/panel" },
+};
+```
+
+Chameleon Web Components - A collection of lightweight, unidirectional, framework-agnostic elements based on the Chameleon Design System.
 
 ## Prerequisites
 

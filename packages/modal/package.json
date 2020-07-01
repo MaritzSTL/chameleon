@@ -1,0 +1,33 @@
+{
+  "name": "@chameleon-ds/modal",
+  "version": "1.0.1",
+  "description": "Chameleon modal",
+  "author": "Maritz Motivation Solutions, Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/MaritzSTL/chameleon/tree/master/packages/modal#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaritzSTL/chameleon.git"
+  },
+  "main": "index.js",
+  "module": "index.js",
+  "files": [
+    "chameleon-modal.js",
+    "/lib/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "babel src --out-dir lib --config-file ../../babel.config.json"
+  },
+  "bugs": {
+    "url": "https://github.com/MaritzSTL/chameleon/issues"
+  },
+  "dependencies": {
+    "@chameleon-ds/button": "^2.0.1",
+    "@chameleon-ds/card": "^2.0.1",
+    "lit-element": "^2.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

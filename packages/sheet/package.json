@@ -1,6 +1,6 @@
 {
   "name": "@chameleon-ds/sheet",
-  "version": "1.2.4",
+  "version": "3.0.2",
   "description": "Chameleon sheet",
   "author": "Maritz Motivation Solutions, Inc.",
   "license": "MIT",
@@ -9,20 +9,23 @@
     "type": "git",
     "url": "git+https://github.com/MaritzSTL/chameleon.git"
   },
-  "main": "dist/chameleon-sheet.js",
-  "module": "dist/chameleon-sheet.js",
+  "main": "index.js",
+  "module": "index.js",
   "files": [
-    "/dist/"
+    "chameleon-sheet.js",
+    "sheet-content.js",
+    "/lib/"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "tsc"
+    "build": "babel src --out-dir lib --config-file ../../babel.config.json"
   },
   "bugs": {
     "url": "https://github.com/MaritzSTL/chameleon/issues"
   },
   "dependencies": {
-    "@chameleon-ds/button": "^1.3.9",
+    "@chameleon-ds/button": "^2.0.1",
+    "@lion/overlays": "0.16.0",
     "lit-element": "^2.2.1"
   },
   "publishConfig": {

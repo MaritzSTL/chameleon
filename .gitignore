@@ -14,17 +14,10 @@ node_modules/
 .DS_Store
 
 # Generated distribution files
-dist/
-_site/
-.jekyll-cache/
+lib/
+site/
 
 # Compiler Output
-/**/*.js
-!docs/assets/storybook/**/*.js
 /**/*.js.map
-!docs/assets/storybook/**/*.js.map
 /**/*.d.ts
 /**/*.d.ts.map
-
-# Declaration Files to Keep
-!/**/timezones.d.ts
