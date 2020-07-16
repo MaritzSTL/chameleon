@@ -64,10 +64,9 @@ export class ChameleonTable extends LitElement {
             )}
           </tr>
         </thead>
-
-        ${this.rows.map((row, index) => {
-          return html`
-            <tbody>
+        <tbody>
+          ${this.rows.map((row, index) => {
+            return html`
               <tr
                 class=${classMap({
                   "highlight-row": index === this.highlightRow,
@@ -108,9 +107,9 @@ export class ChameleonTable extends LitElement {
                     `;
                   })
                 : nothing}
-            </tbody>
-          `;
-        })}
+            `;
+          })}
+        </tbody>
       </table>
 
       ${this.hidePagination || this.totalItems <= this.pageSize
