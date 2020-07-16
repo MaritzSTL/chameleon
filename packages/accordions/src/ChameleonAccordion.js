@@ -104,6 +104,14 @@ export class ChameleonAccordion extends LitElement {
     return this.querySelector("[slot='toggle-icon']");
   }
 
+  get toggleIconSlotClosed() {
+    return this.querySelector("[slot='toggle-icon-closed']");
+  }
+
+  get toggleIconSlotExpanded() {
+    return this.querySelector("[slot='toggle-icon-expanded']");
+  }
+
   get defaultToggleIcon() {
     return svg`<svg
         xmlns="http://www.w3.org/2000/svg"
@@ -123,6 +131,11 @@ export class ChameleonAccordion extends LitElement {
 
   get toggleIcon() {
     // Return custom-slotted icon with svg default if not present
+    if (this.toggleIconSlotClosed && this.toggleIconSlotExpanded) {
+      return this.expanded
+        ? html`<slot name="toggle-icon-expanded"></slot>`
+        : html`<slot name="toggle-icon-closed"></slot>`;
+    }
     return this.toggleIconSlot
       ? html`<slot name="toggle-icon"></slot>`
       : this.defaultToggleIcon;
