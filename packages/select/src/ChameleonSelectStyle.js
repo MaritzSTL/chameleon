@@ -87,7 +87,7 @@ export const ChameleonSelectStyle = css`
     align-items: center;
     cursor: pointer;
     display: flex;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0;
   }
 
   .options__option:not(.view-only):hover {
@@ -117,7 +117,6 @@ export const ChameleonSelectStyle = css`
   .options__option-label {
     color: var(--color-black, #252a33);
     font-size: var(--font-size-input, 0.938rem);
-    font-weight: bold;
     letter-spacing: 0.016rem;
     line-height: 21px;
   }
