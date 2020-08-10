@@ -14,6 +14,7 @@ export default {
   --input-padding: 0.625rem 0.5rem;
   --textarea-padding: 0.438rem 0.813rem;
   --select-padding: 0.438rem 0.5rem;
+  --dialog-width: 18.75rem;
 
   --color-surface: #ffffff;
   --color-black: #252a33;
