@@ -40,7 +40,7 @@ export const ChameleonDialogStyle = css`
       0 1px 4px 0 rgba(44, 111, 183, 0.14);
     margin: auto;
     background-color: #ffffff;
-    width: 300px;
+    width: var(--dialog-width, 18.75rem);
     padding: 48px;
     animation-name: dialogopen;
     animation-duration: 1s;
